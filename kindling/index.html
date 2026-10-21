@@ -1,0 +1,53 @@
+---
+layout: base
+title: Kindling Engine
+description: Kindling is Borrowed Torch's in-house game engine, built on MonoGame with a WPF editor.
+---
+<div class="page">
+  <div class="engine-hero">
+    <img src="{{ '/assets/img/kindling-mark.svg' | relative_url }}" alt="Kindling Engine logo" width="168" height="168">
+    <div class="engine-hero-text">
+      <span class="pill flame">In development</span>
+      <h1 class="page-title">Kindling Engine</h1>
+      <p class="lead">The in-house engine behind Borrowed Torch games. Built in C# on MonoGame, with a WPF editor for building worlds.</p>
+      <div class="actions">
+        <a class="button primary" href="{{ '/docs/' | relative_url }}">Read the docs</a>
+      </div>
+    </div>
+  </div>
+
+  <section aria-labelledby="features">
+    <h2 id="features" class="section-title">What's inside</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Entity component system</h3>
+        <p>Games are built from entities and components, with a shared mesh and material registry.</p>
+      </div>
+      <div class="card">
+        <h3>WPF editor</h3>
+        <p>A desktop editor with the MonoGame viewport embedded right in the window.</p>
+      </div>
+      <div class="card">
+        <h3>Camera system</h3>
+        <p>Free and chase controllers, plus spline camera paths with constant-speed travel.</p>
+      </div>
+      <div class="card">
+        <h3>Cloth simulation</h3>
+        <p>A GPU cloth solver for capes, banners and anything else that should move in the wind.</p>
+      </div>
+      <div class="card">
+        <h3>Raytraced shadows <span class="pill">In progress</span></h3>
+        <p>Shadows computed with ray tracing.</p>
+      </div>
+      <div class="card">
+        <h3>GPU grass <span class="pill">In progress</span></h3>
+        <p>Paint grass areas in the editor; blades are generated on the GPU and drawn instanced.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="status">
+    <h2 id="status" class="section-title">Status</h2>
+    <p class="lead">Kindling is in active development alongside our first game. It will be made public in the future; until then, the docs grow as the engine does.</p>
+  </section>
+</div>

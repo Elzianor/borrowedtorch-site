@@ -1,0 +1,158 @@
+/* Home page: torch landing */
+.home main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 16px 24px;
+}
+
+/* Warm glow behind the torch */
+.glow {
+  position: fixed;
+  left: 50%;
+  top: 36%;
+  width: min(900px, 160vw);
+  height: min(900px, 160vw);
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(var(--ember), .16) 0%, rgba(var(--ember), .05) 35%, transparent 65%);
+  pointer-events: none;
+  opacity: .8;
+  z-index: 0;
+}
+
+.torch {
+  position: relative;
+  display: inline-block;
+  animation: rise 1.2s ease-out both;
+}
+.logo {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: min(420px, 84vw, 40vh);
+  height: auto;
+}
+/* Living flame: WebGL canvas over the flame area (falls back to the static logo) */
+.flame-canvas {
+  position: absolute;
+  left: 15.278%;
+  top: -4.004%;
+  width: 67.222%;
+  height: 41.642%;
+  z-index: 2;
+  pointer-events: none;
+  display: none;
+}
+.torch.live .flame-canvas { display: block; }
+/* Firelight around the flame; JS drives --f (0..1) for an organic flicker */
+.flame-glow {
+  --f: .6;
+  position: absolute;
+  left: 50%;
+  top: 21%;
+  width: 150%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%) scale(calc(.94 + var(--f) * .1));
+  background: radial-gradient(circle,
+    rgba(255, 150, 60, calc(.10 + var(--f) * .16)) 0%,
+    rgba(255, 120, 40, calc(.04 + var(--f) * .07)) 30%,
+    transparent 62%);
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform, background;
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.tagline {
+  margin-top: 28px;
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(1.05rem, 2.6vw, 1.35rem);
+  letter-spacing: .06em;
+  color: var(--gold);
+  animation: rise 1.2s .25s ease-out both;
+}
+.status {
+  margin-top: 10px;
+  font-size: .95rem;
+  color: var(--muted);
+  animation: rise 1.2s .4s ease-out both;
+}
+.soon {
+  margin-top: 4px;
+  font-family: var(--display);
+  font-size: .85rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  animation: rise 1.2s .48s ease-out both;
+}
+.links {
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  list-style: none;
+  animation: rise 1.2s .55s ease-out both;
+}
+.links a {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid rgba(233, 194, 122, .35);
+  border-radius: 999px;
+  color: var(--gold);
+  text-decoration: none;
+  font-size: .9rem;
+  letter-spacing: .04em;
+  transition: background .2s, border-color .2s, color .2s;
+}
+.links a:hover, .links a:focus-visible {
+  background: rgba(233, 194, 122, .1);
+  border-color: var(--gold);
+  color: #fff3d6;
+}
+
+/* Engine badge (links to the Kindling page) */
+.engine {
+  margin-top: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 22px 12px 14px;
+  border: 1px solid rgba(233, 194, 122, .18);
+  border-radius: 16px;
+  background: rgba(233, 194, 122, .03);
+  text-align: left;
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color .2s, background .2s;
+  animation: rise 1.2s .7s ease-out both;
+}
+.engine:hover { border-color: rgba(233, 194, 122, .4); background: rgba(233, 194, 122, .06); color: var(--text); }
+.engine img { display: block; width: 52px; height: 52px; flex: none; }
+.engine span { display: block; }
+.engine-kicker {
+  font-size: .7rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.engine-name {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  line-height: 1.25;
+  letter-spacing: .04em;
+  color: var(--gold);
+}
+.engine-desc { font-size: .82rem; color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  .glow, .torch, .tagline, .status, .soon, .links, .engine { animation: none; }
+}

@@ -1,325 +1,43 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Borrowed Torch — Independent Game Studio</title>
-  <meta name="description" content="Borrowed Torch is an independent game studio crafting atmospheric games. Our dungeon crawler is in the forge.">
-  <meta name="theme-color" content="#050302">
+---
+layout: base
+title: Home
+description: Borrowed Torch is an independent game studio crafting atmospheric games. Our dungeon crawler is in the forge.
+og_description: Take it. See what lies around the corner. An independent game studio.
+body_class: home
+css: [home]
+js: [torch]
+---
+<div class="glow" aria-hidden="true"></div>
 
-  <!-- Social previews -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Borrowed Torch — Independent Game Studio">
-  <meta property="og:description" content="Take it. See what lies around the corner. An independent game studio.">
-  <meta property="og:url" content="https://borrowedtorch.com/">
-  <meta property="og:image" content="https://borrowedtorch.com/og-image.png">
-  <meta name="twitter:card" content="summary_large_image">
+<h1 class="sr-only">Borrowed Torch — Independent Game Studio</h1>
+<div class="torch">
+  <div class="flame-glow" aria-hidden="true"></div>
+  <picture>
+    <source srcset="{{ '/logo.webp' | relative_url }}" type="image/webp">
+    <img class="logo" src="{{ '/logo.png' | relative_url }}" alt="Borrowed Torch game studio logo" width="720" height="999">
+  </picture>
+  <canvas class="flame-canvas" aria-hidden="true"></canvas>
+</div>
 
-  <link rel="icon" type="image/png" sizes="48x48" href="favicon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<p class="tagline">Take it. See what lies around the corner.</p>
+<p class="status">Our dungeon crawler is in the forge.</p>
+<p class="soon">Coming soon.</p>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<ul class="links">
+  <li><a href="mailto:hello@borrowedtorch.com">Contact</a></li>
+  <!-- Uncomment and fill in as accounts go live:
+  <li><a href="https://github.com/YOUR-HANDLE" rel="noopener">GitHub</a></li>
+  <li><a href="https://YOUR-HANDLE.itch.io" rel="noopener">itch.io</a></li>
+  <li><a href="https://store.steampowered.com/developer/YOUR-PAGE" rel="noopener">Steam</a></li>
+  <li><a href="https://x.com/YOUR-HANDLE" rel="noopener">X</a></li>
+  -->
+</ul>
 
-  <style>
-    :root {
-      --bg: #050302;
-      --gold: #e9c27a;
-      --gold-dim: #a8834a;
-      --text: #d9cbb4;
-      --muted: #8a7a63;
-      --ember: 255, 140, 40;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      line-height: 1.6;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    /* Warm glow behind the torch */
-    .glow {
-      position: fixed;
-      left: 50%;
-      top: 32%;
-      width: min(900px, 160vw);
-      height: min(900px, 160vw);
-      transform: translate(-50%, -50%);
-      background: radial-gradient(circle, rgba(var(--ember), .16) 0%, rgba(var(--ember), .05) 35%, transparent 65%);
-      pointer-events: none;
-      opacity: .8;
-      z-index: 0;
-    }
-    @keyframes flicker {
-      0%, 100% { opacity: .85; transform: translate(-50%, -50%) scale(1); }
-      40%      { opacity: 1;   transform: translate(-50%, -50%) scale(1.03); }
-      70%      { opacity: .9;  transform: translate(-50%, -50%) scale(.99); }
-    }
-
-    main {
-      position: relative;
-      z-index: 1;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 48px 16px 24px;
-    }
-
-    .torch {
-      position: relative;
-      display: inline-block;
-      animation: rise 1.2s ease-out both;
-    }
-    .logo {
-      position: relative;
-      z-index: 1;
-      display: block;
-      width: min(420px, 84vw, 44vh);
-      height: auto;
-    }
-    /* Living flame: WebGL canvas over the flame area (falls back to the static logo) */
-    .flame-canvas {
-      position: absolute;
-      left: 15.278%;
-      top: -4.004%;
-      width: 67.222%;
-      height: 41.642%;
-      z-index: 2;
-      pointer-events: none;
-      display: none;
-    }
-    .torch.live .flame-canvas { display: block; }
-    /* Firelight around the flame; JS drives --f (0..1) for an organic flicker */
-    .flame-glow {
-      --f: .6;
-      position: absolute;
-      left: 50%;
-      top: 21%;
-      width: 150%;
-      aspect-ratio: 1;
-      transform: translate(-50%, -50%) scale(calc(.94 + var(--f) * .1));
-      background: radial-gradient(circle,
-        rgba(255, 150, 60, calc(.10 + var(--f) * .16)) 0%,
-        rgba(255, 120, 40, calc(.04 + var(--f) * .07)) 30%,
-        transparent 62%);
-      pointer-events: none;
-      z-index: 0;
-      will-change: transform, background;
-    }
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(12px); }
-      to   { opacity: 1; transform: none; }
-    }
-
-    .sr-only {
-      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
-      overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
-    }
-
-    .tagline {
-      margin-top: 28px;
-      font-family: Cinzel, Georgia, serif;
-      font-weight: 500;
-      font-size: clamp(1.05rem, 2.6vw, 1.35rem);
-      letter-spacing: .06em;
-      color: var(--gold);
-      animation: rise 1.2s .25s ease-out both;
-    }
-    .status {
-      margin-top: 10px;
-      font-size: .95rem;
-      color: var(--muted);
-      animation: rise 1.2s .4s ease-out both;
-    }
-
-    .soon {
-      margin-top: 4px;
-      font-family: Cinzel, Georgia, serif;
-      font-size: .85rem;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: var(--gold-dim);
-      animation: rise 1.2s .48s ease-out both;
-    }
-    .links {
-      margin-top: 32px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      list-style: none;
-      animation: rise 1.2s .55s ease-out both;
-    }
-    .links a {
-      display: inline-block;
-      padding: 10px 20px;
-      border: 1px solid rgba(233, 194, 122, .35);
-      border-radius: 999px;
-      color: var(--gold);
-      text-decoration: none;
-      font-size: .9rem;
-      letter-spacing: .04em;
-      transition: background .2s, border-color .2s, color .2s;
-    }
-    .links a:hover, .links a:focus-visible {
-      background: rgba(233, 194, 122, .1);
-      border-color: var(--gold);
-      color: #fff3d6;
-      outline: none;
-    }
-
-    footer {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      padding: 24px 16px 32px;
-      font-size: .8rem;
-      color: var(--muted);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .glow, .torch, .tagline, .status, .soon, .links { animation: none; }
-    }
-  </style>
-</head>
-<body>
-  <div class="glow" aria-hidden="true"></div>
-
-  <main>
-    <h1 class="sr-only">Borrowed Torch — Independent Game Studio</h1>
-    <div class="torch">
-      <div class="flame-glow" aria-hidden="true"></div>
-      <picture>
-      <source srcset="logo.webp" type="image/webp">
-      <img class="logo" src="logo.png" alt="Borrowed Torch game studio logo" width="720" height="999">
-      </picture>
-      <canvas class="flame-canvas" aria-hidden="true"></canvas>
-    </div>
-
-    <p class="tagline">Take it. See what lies around the corner.</p>
-    <p class="status">Our dungeon crawler is in the forge.</p>
-    <p class="soon">Coming soon.</p>
-
-    <ul class="links">
-      <li><a href="mailto:hello@borrowedtorch.com">Contact</a></li>
-      <!-- Uncomment and fill in as accounts go live:
-      <li><a href="https://github.com/YOUR-HANDLE" rel="noopener">GitHub</a></li>
-      <li><a href="https://YOUR-HANDLE.itch.io" rel="noopener">itch.io</a></li>
-      <li><a href="https://store.steampowered.com/developer/YOUR-PAGE" rel="noopener">Steam</a></li>
-      <li><a href="https://x.com/YOUR-HANDLE" rel="noopener">X</a></li>
-      -->
-    </ul>
-  </main>
-
-  <footer>&copy; <span id="y">2026</span> Borrowed Torch</footer>
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // Torch flicker: layered sines + occasional dips, so it never looks like a loop
-    (function () {
-      const glow = document.querySelector('.flame-glow');
-      if (!glow || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      const waves = [[1.7, .35], [3.1, .25], [5.3, .15], [9.7, .08]].map(([hz, amp]) => [hz, amp, Math.random() * 6.28]);
-      let dip = 0, value = .6;
-      function frame(t) {
-        t /= 1000;
-        let n = 0;
-        for (const [hz, amp, ph] of waves) n += Math.sin(t * hz + ph) * amp;
-        if (Math.random() < .004) dip = .35 + Math.random() * .25;   // brief gust
-        dip *= .9;
-        const target = Math.min(1, Math.max(0, .62 + n * .55 - dip));
-        value += (target - value) * .25;                             // smooth it
-        glow.style.setProperty('--f', value.toFixed(3));
-        requestAnimationFrame(frame);
-      }
-      requestAnimationFrame(frame);
-    })();
-
-    // Living flame: distorts the flame with scrolling noise; strength grows toward the tips
-    (function () {
-      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      const torch = document.querySelector('.torch');
-      const canvas = torch.querySelector('.flame-canvas');
-      const logo = torch.querySelector('.logo');
-      const gl = canvas.getContext('webgl', { premultipliedAlpha: true, alpha: true, antialias: false });
-      if (!gl) return;
-
-      const vs = `attribute vec2 p; varying vec2 uv;
-        void main(){ uv = vec2(p.x * .5 + .5, .5 - p.y * .5); gl_Position = vec4(p, 0., 1.); }`;
-      const fs = `precision mediump float;
-        uniform sampler2D tex; uniform float t; varying vec2 uv;
-        float hash(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
-        float noise(vec2 p){ vec2 i = floor(p), f = fract(p); f = f * f * (3. - 2. * f);
-          return mix(mix(hash(i), hash(i + vec2(1., 0.)), f.x), mix(hash(i + vec2(0., 1.)), hash(i + vec2(1., 1.)), f.x), f.y); }
-        float fbm(vec2 p){ float v = 0., a = .5; for (int i = 0; i < 4; i++){ v += a * noise(p); p *= 2.03; a *= .5; } return v; }
-        void main(){
-          float k = pow(clamp(1. - uv.y, 0., 1.), 1.6);          // 0 at the cup, 1 at the tips
-          vec2 q = vec2(uv.x * 3.2, uv.y * 3.6 + t * 1.15);        // noise scrolls upward
-          float dx = fbm(q) - .5;
-          float dy = fbm(q + vec2(5.2, 1.3)) - .5;
-          vec2 off = vec2(dx * .075, dy * .05 - .012 * (sin(t * 2.3) * .5 + .5)) * k;
-          vec4 c = texture2D(tex, uv + off);
-          float flick = .94 + .1 * fbm(vec2(t * 1.7, 3.1));          // gentle brightness pulse
-          gl_FragColor = vec4(c.rgb * flick, c.a);
-        }`;
-      function sh(type, src){ const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s);
-        if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw gl.getShaderInfoLog(s); return s; }
-      let prog;
-      try {
-        prog = gl.createProgram();
-        gl.attachShader(prog, sh(gl.VERTEX_SHADER, vs)); gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, fs));
-        gl.linkProgram(prog); if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) return;
-      } catch (e) { return; }
-      gl.useProgram(prog);
-      const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
-      const loc = gl.getAttribLocation(prog, 'p'); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
-      const uT = gl.getUniformLocation(prog, 't');
-
-      const img = new Image();
-      img.onload = () => {
-        const tex = gl.createTexture(); gl.bindTexture(gl.TEXTURE_2D, tex);
-        gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, true);
-        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
-        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
-        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-        if (gl.getError() !== gl.NO_ERROR) return;               // e.g. opened from file://
-        const body = new Image();
-        body.onload = () => {
-          logo.parentElement.querySelectorAll('source').forEach(s => s.remove());
-          logo.src = body.src;                                     // logo without the static flame
-          torch.classList.add('live');
-          requestAnimationFrame(draw);
-        };
-        body.src = 'logo-body.png';
-      };
-      img.src = 'logo-flame.png';
-
-      const t0 = performance.now() + Math.random() * 1e5;
-      function draw(now){
-        const r = canvas.getBoundingClientRect(), dpr = Math.min(devicePixelRatio || 1, 2);
-        const w = Math.round(r.width * dpr), h = Math.round(r.height * dpr);
-        if (canvas.width !== w || canvas.height !== h){ canvas.width = w; canvas.height = h; gl.viewport(0, 0, w, h); }
-        gl.clearColor(0, 0, 0, 0); gl.clear(gl.COLOR_BUFFER_BIT);
-        gl.uniform1f(uT, (now - t0) / 1000);
-        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-        requestAnimationFrame(draw);
-      }
-    })();
-  </script>
-</body>
-</html>
+<a class="engine" href="{{ '/kindling/' | relative_url }}">
+  <img src="{{ '/kindling-mark.svg' | relative_url }}" alt="" width="52" height="52">
+  <span>
+    <span class="engine-kicker">Powered by</span>
+    <span class="engine-name">Kindling Engine</span>
+    <span class="engine-desc">Our own in-house game engine.</span>
+  </span>
+</a>

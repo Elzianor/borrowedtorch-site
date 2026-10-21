@@ -1,0 +1,9 @@
+# Top menu. Order here is the order on the site.
+- title: Home
+  url: /
+- title: Kindling
+  url: /kindling/
+- title: Docs
+  url: /docs/
+- title: Games
+  url: /games/

@@ -1,0 +1,25 @@
+---
+layout: docs
+title: Kindling docs
+description: Guides for building games with Kindling, Borrowed Torch's in-house engine.
+---
+<p>Kindling is in active development, so these docs are a work in progress. Articles marked <span class="pill flame">Draft</span> are still being written.</p>
+
+{% for g in site.data.docs %}
+{%- assign shown = 0 -%}
+{%- for a in g.articles -%}{%- if a.url != '/docs/' -%}{%- assign shown = shown | plus: 1 -%}{%- endif -%}{%- endfor -%}
+{%- if shown > 0 %}
+<h2>{{ g.group }}</h2>
+<div class="card-grid">
+  {%- for a in g.articles %}
+  {%- if a.url != '/docs/' %}
+  {%- assign doc = site.pages | where: "url", a.url | first %}
+  <a class="card" href="{{ a.url | relative_url }}">
+    <h3>{{ a.title }}{% if doc.status == 'draft' %} <span class="pill flame">Draft</span>{% endif %}</h3>
+    <p>{{ doc.description }}</p>
+  </a>
+  {%- endif %}
+  {%- endfor %}
+</div>
+{%- endif %}
+{% endfor %}

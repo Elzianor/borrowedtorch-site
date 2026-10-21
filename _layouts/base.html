@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- if page.url == '/' %}
+  {%- assign full_title = site.title | append: ' — Independent Game Studio' %}
+  {%- else %}
+  {%- assign full_title = page.title | append: ' · ' | append: site.title %}
+  {%- endif %}
+  <title>{{ full_title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <meta name="theme-color" content="#050302">
+
+  <!-- Social previews -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ full_title }}">
+  <meta property="og:description" content="{{ page.og_description | default: page.description | default: site.description }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ page.og_image | default: '/og-image.png' | absolute_url }}">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" sizes="48x48" href="{{ '/favicon.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon-32.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="512x512" href="{{ '/icon-512.png' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+  {%- for name in page.css %}
+  <link rel="stylesheet" href="{{ '/assets/css/' | append: name | append: '.css' | relative_url }}">
+  {%- endfor %}
+</head>
+<body class="{{ page.body_class }}">
+  <a class="skip-link" href="#content">Skip to content</a>
+  {% include header.html %}
+
+  <main id="content">
+{{ content }}
+  </main>
+
+  <footer class="site-footer">&copy; <span id="y">2026</span> Borrowed Torch</footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  {%- for name in page.js %}
+  <script src="{{ '/assets/js/' | append: name | append: '.js' | relative_url }}"></script>
+  {%- endfor %}
+</body>
+</html>

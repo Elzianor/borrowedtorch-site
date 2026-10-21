@@ -1,0 +1,24 @@
+# Docs sidebar. Order here is the reading order (also drives Previous / Next links).
+# To add an article: create docs/<name>.md, then add it to a group below.
+- group: Getting started
+  articles:
+    - title: Overview
+      url: /docs/
+    - title: Installation
+      url: /docs/installation/
+    - title: Editor basics
+      url: /docs/editor/
+
+- group: Core
+  articles:
+    - title: Entities & components
+      url: /docs/ecs/
+
+- group: Systems
+  articles:
+    - title: UI
+      url: /docs/ui/
+    - title: Camera
+      url: /docs/camera/
+    - title: Rendering & materials
+      url: /docs/rendering/

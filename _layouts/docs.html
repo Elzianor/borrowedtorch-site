@@ -1,0 +1,76 @@
+---
+layout: base
+---
+{%- comment -%} Flatten _data/docs.yml into reading order for breadcrumbs and Previous / Next. {%- endcomment -%}
+{%- assign doc_urls = "" | split: "" -%}
+{%- assign doc_titles = "" | split: "" -%}
+{%- assign doc_groups = "" | split: "" -%}
+{%- for g in site.data.docs -%}
+  {%- for a in g.articles -%}
+    {%- assign doc_urls = doc_urls | push: a.url -%}
+    {%- assign doc_titles = doc_titles | push: a.title -%}
+    {%- assign doc_groups = doc_groups | push: g.group -%}
+  {%- endfor -%}
+{%- endfor -%}
+{%- assign idx = -1 -%}
+{%- for u in doc_urls -%}
+  {%- if u == page.url -%}{%- assign idx = forloop.index0 -%}{%- endif -%}
+{%- endfor -%}
+<div class="docs">
+  <nav class="docs-nav" aria-label="Docs">
+    <details class="docs-menu" open>
+      <summary>Docs menu</summary>
+      <div class="docs-groups">
+        {%- for g in site.data.docs %}
+        <div class="docs-group">
+          <p class="docs-group-title">{{ g.group }}</p>
+          <ul>
+            {%- for a in g.articles %}
+            <li><a href="{{ a.url | relative_url }}"{% if a.url == page.url %} aria-current="page"{% endif %}>{{ a.title }}</a></li>
+            {%- endfor %}
+          </ul>
+        </div>
+        {%- endfor %}
+      </div>
+    </details>
+    <script>
+      (function () {
+        var menu = document.querySelector('.docs-menu');
+        var mq = matchMedia('(max-width: 860px)');
+        function sync() { if (mq.matches) menu.removeAttribute('open'); else menu.setAttribute('open', ''); }
+        sync();
+        if (mq.addEventListener) mq.addEventListener('change', sync);
+      })();
+    </script>
+  </nav>
+
+  <div class="docs-body">
+    <header class="doc-header">
+      <p class="crumbs">
+        <a href="{{ '/docs/' | relative_url }}">Docs</a>
+        {%- if idx >= 0 and page.url != '/docs/' %} / {{ doc_groups[idx] }}{% endif %}
+      </p>
+      <h1>{{ page.title }}{% if page.status == 'draft' %} <span class="pill flame">Draft</span>{% endif %}</h1>
+      {%- if page.description %}
+      <p class="lead">{{ page.description }}</p>
+      {%- endif %}
+    </header>
+
+    <article class="prose">
+{{ content }}
+    </article>
+
+    {%- if idx >= 0 %}
+    {%- assign prev_i = idx | minus: 1 %}
+    {%- assign next_i = idx | plus: 1 %}
+    <nav class="doc-pager" aria-label="Previous and next article">
+      {%- if idx > 0 %}
+      <a class="prev" href="{{ doc_urls[prev_i] | relative_url }}"><span>Previous</span>{{ doc_titles[prev_i] }}</a>
+      {%- endif %}
+      {%- if next_i < doc_urls.size %}
+      <a class="next" href="{{ doc_urls[next_i] | relative_url }}"><span>Next</span>{{ doc_titles[next_i] }}</a>
+      {%- endif %}
+    </nav>
+    {%- endif %}
+  </div>
+</div>
