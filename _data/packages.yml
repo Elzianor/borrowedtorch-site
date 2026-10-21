@@ -1,0 +1,71 @@
+# Borrowed Torch NuGet packages, shown on the Kindling page.
+# id: NuGet package ID (also builds the link and version badge)
+# needs: optional short requirements line
+- group: Core
+  packages:
+    - id: BorrowedTorch.ECS
+      summary: A small, dependency-free entity component system. Generational entity handles, sparse-set component stores, by-reference queries over one to three component types, and type-erased access for editors and tools.
+      needs: .NET 8+ · no dependencies
+    - id: BorrowedTorch.Math
+      summary: Small maths helpers for System.Numerics — tolerance-aware comparisons, clamping, angle conversion, inverse lerp and remap, frame-rate-independent damping, and a safe LookRotation.
+      needs: .NET 10 · no dependencies
+    - id: BorrowedTorch.ShapingFunctions
+      summary: 44 shaping (easing) functions for animation, interpolation and signal shaping, with tunable parameters, a browsable catalogue for picker UIs, and IDs that are safe to save.
+      needs: .NET 10
+
+- group: Rendering & simulation
+  packages:
+    - id: BorrowedTorch.RayTracing
+      summary: GPU and CPU ray casting for MonoGame — a binned-SAH BVH with per-mesh and per-scene acceleration structures, GPU upload, stackless any-hit traversal in HLSL, and the depth / normal G-buffer that traced passes start from.
+      needs: Windows · MonoGame compute fork
+    - id: BorrowedTorch.FabricSimulator
+      summary: GPU cloth solver for MonoGame. A compute shader integrates particles, relaxes constraints and builds normals with positions kept on the GPU; supports colliders, self-collision, tearing and wind. Solver only — you render the cloth.
+      needs: Windows · MonoGame compute fork
+
+- group: Camera & editor tools
+  packages:
+    - id: BorrowedTorch.Camera
+      summary: Cameras for MonoGame — quaternion orientation, mouse-picking rays and a floating origin for large worlds; free-flight and path-following controllers; Catmull-Rom camera paths with constant-speed travel and a path visualiser.
+      needs: Windows · MonoGame compute fork
+    - id: BorrowedTorch.TransformGizmo
+      summary: A screen-sized move / rotate / scale gizmo with drawing, picking and dragging. Per-target flags choose the modes offered and world or local space; works with any object that exposes its pose.
+      needs: Windows · MonoGame compute fork
+    - id: BorrowedTorch.SceneGizmo
+      summary: A small X / Y / Z orientation widget pinned to a screen corner. It turns with the camera, highlights an axis on hover and lets you click an axis to snap the view.
+      needs: Windows · MonoGame compute fork
+    - id: BorrowedTorch.UIDPGenerator
+      summary: Build tool that generates BorrowedTorch.UI dependency properties and style classes from .dpg files before every build.
+      needs: .NET 10 SDK
+
+- group: Input
+  packages:
+    - id: BorrowedTorch.MonoInput
+      summary: One API for keyboard, mouse, gamepad and MIDI in MonoGame, with a pressed / down / up state for every input, per-frame deltas, gamepad vibration and change events.
+      needs: Windows 10 · MonoGame 3.8.1+
+    - id: BorrowedTorch.InputBinder
+      summary: Binds inputs to game actions — buttons, one-axis and two-axis actions with several bindings each, player rebinding with conflict handling, and modifier keys.
+      needs: .NET 8+ · no dependencies
+
+- group: Audio & localisation
+  packages:
+    - id: BorrowedTorch.Audio
+      summary: Audio manager with 3D positional sound and HRTF, distance attenuation, air absorption and Doppler, per-emitter effect chains, a shared reverb bus, and WAV / Ogg playback from memory or disk.
+      needs: Windows · .NET 10
+    - id: BorrowedTorch.LocalizationManager
+      summary: Simple, efficient switching between languages. Reads the folders produced by Borrowed Torch Localization Helper and returns translated text by string ID.
+      needs: .NET 10 · no dependencies
+
+- group: Procedural generation
+  packages:
+    - id: BorrowedTorch.Randomness
+      summary: Seeded random streams that give the same numbers on every platform and .NET version — PCG32 with forkable sub-streams and stable string hashing, so a world seed always rebuilds the same world.
+      needs: .NET 8+ · no dependencies
+    - id: BorrowedTorch.Architecture
+      summary: Procedural level architecture for grid and tile games — footprint masks, layouts whose edges are walls, openings or doors, a seeded maze generator with distance and dead-end queries, and tilers for thick- or thin-wall tile maps.
+      needs: .NET 8+ · BorrowedTorch.Randomness
+
+- group: Utilities
+  packages:
+    - id: BorrowedTorch.FrameRateCounter
+      summary: A simple FPS counter that also tracks frame time and the worst frame in the window, to expose stutters an average would hide.
+      needs: .NET Standard 2.0 · no dependencies

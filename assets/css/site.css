@@ -95,6 +95,7 @@ a:hover { color: #fff3d6; }
 .site-nav a:hover { background: rgba(233, 194, 122, .08); color: var(--gold); }
 .site-nav a[aria-current="page"] { color: var(--gold); background: rgba(233, 194, 122, .1); }
 @media (max-width: 560px) {
+  :root { --header-h: 104px; }
   .site-header-inner { justify-content: center; padding: 6px 12px 4px; }
   .site-nav ul { justify-content: center; }
   .site-nav a { padding: 0 12px; }
@@ -204,7 +205,27 @@ a.card:hover { border-color: var(--line-strong); background: var(--surface-2); c
 .engine-hero img { width: 168px; height: 168px; flex: none; }
 .engine-hero-text { flex: 1 1 320px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
 .engine-hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
-.page section + section { margin-top: 48px; }
+.page section + section { margin-top: 56px; }
+.section-lead { margin-bottom: 8px; }
+.pkg-group {
+  margin: 28px 0 12px;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.card.pkg { display: flex; flex-direction: column; gap: 8px; }
+.card.pkg h4 {
+  font-family: var(--mono);
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--gold);
+  overflow-wrap: anywhere;
+}
+.card.pkg .pkg-badge { display: block; height: 20px; width: auto; align-self: flex-start; }
+.card.pkg p { color: var(--text); font-size: .9rem; }
+.card.pkg .pkg-needs { margin-top: auto; padding-top: 4px; color: var(--muted); font-size: .8rem; }
 
 /* ---------- Games page ---------- */
 .game-card {
