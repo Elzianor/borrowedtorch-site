@@ -45,21 +45,24 @@ The package also brings the default font (UbuntuMono) and the colour picker's po
 
 ## Setting up the UI
 
-Create the UI once the `GraphicsDevice` exists, call `Update` and `Draw` every frame, and tell it when the window
-changes size. Two more things the UI needs from your game:
+Create the UI once the `GraphicsDevice` exists, give it the game window, and call `Update` and `Draw` every frame. The
+UI takes care of the window by itself:
+
+- **Text and keys.** Typed text and key presses come from the window's `TextInput` and `KeyDown` events.
+- **Size.** At the start of every `Update`, the UI compares the back buffer with the size it saw last. When the window
+  was resized, or the game changed the back buffer, it lays itself out over the new size.
+
+Disposing the UI unsubscribes it from the window. One thing stays with your game:
 
 - **Input.** The game polls the input. Call `KeyboardManager.Update()` and `MouseManager.Update()` from
   BorrowedTorch.MonoInput once per frame, before the UI's `Update`. The UI reads the same managers, so polling them a
   second time in a frame would lose presses.
-- **Text and keys.** Typed text and key presses reach the UI through an `ITextInputEvents`. The adapter below forwards
-  the MonoGame window's events. A UI hosted somewhere else, such as a WPF editor, writes its own adapter.
 
 ```csharp
 using BorrowedTorch.MonoInput.Inputs.Keyboard;
 using BorrowedTorch.MonoInput.Inputs.Mouse;
 using BorrowedTorch.UI;
 using BorrowedTorch.UI.Elements;
-using BorrowedTorch.UI.Misc;
 
 public class MyGame : Game
 {
@@ -79,13 +82,10 @@ public class MyGame : Game
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-        _ui = new BorrowedTorchUI(GraphicsDevice, Content, _spriteBatch, new GameWindowTextInputEvents(Window))
+        _ui = new BorrowedTorchUI(GraphicsDevice, Content, _spriteBatch, Window)
         {
             ExceptionHandler = e => Console.Error.WriteLine(e)
         };
-
-        Window.ClientSizeChanged += (_, _) =>
-            _ui.ApplyNewGameWindowSizeHandler(Window.ClientBounds.Width, Window.ClientBounds.Height);
 
         // build the UI here, see "Your first elements" below
     }
@@ -112,37 +112,34 @@ public class MyGame : Game
         _spriteBatch.Dispose();
     }
 }
-
-// forwards the MonoGame window's text and key events to the UI
-public sealed class GameWindowTextInputEvents : ITextInputEvents
-{
-    public event EventHandler<TextInputEventArgs> OnTextInput;
-    public event EventHandler<InputKeyEventArgs> OnKeyDown;
-
-    public GameWindowTextInputEvents(GameWindow window)
-    {
-        window.TextInput += (s, e) => OnTextInput?.Invoke(s, e);
-        window.KeyDown += (s, e) => OnKeyDown?.Invoke(s, e);
-    }
-}
 ```
 
 The framework keeps its state in static fields, so only one `BorrowedTorchUI` exists at a time. Creating a second one
 throws: dispose the first one before. Disposing the UI detaches the elements you added to the root but doesn't
 dispose them, so dispose the ones that hold resources yourself.
 
+Two cases need more than the window:
+
+- **A UI drawn into a render target of its own size.** Set `FollowsBackBuffer` to `false` and give the size with
+  `ApplyGameWindowSize`. With following on, a size you give stays until the back buffer changes.
+- **A UI hosted outside a game window**, such as a WPF editor or a test. Pass your own `ITextInputEvents` instead of
+  the window. `GameWindowTextInputEvents` is the adapter the window constructor uses, if you need one by hand.
+
 ### BorrowedTorchUI
 
 | Member | Description |
 | --- | --- |
-| `BorrowedTorchUI(GraphicsDevice graphicsDevice, ContentManager contentManager, SpriteBatch spriteBatch, ITextInputEvents textInputEvents)` | Creates the UI over the back buffer's size. The sprite batch is the one the UI draws with; the content manager loads the colour picker's pointer and the textures named by `TexturesPath`. |
+| `BorrowedTorchUI(GraphicsDevice graphicsDevice, ContentManager contentManager, SpriteBatch spriteBatch, GameWindow window)` | Creates the UI over the back buffer's size, with the text and keys of the window. The sprite batch is the one the UI draws with; the content manager loads the colour picker's pointer and the textures named by `TexturesPath`. Disposing the UI unsubscribes from the window. |
+| `BorrowedTorchUI(GraphicsDevice graphicsDevice, ContentManager contentManager, SpriteBatch spriteBatch, ITextInputEvents textInputEvents)` | The same, with the text and keys of a source of your own, for a UI hosted outside a game window. The UI doesn't dispose the source. |
 | `RootElement` | Read-only. The element at the top of the tree, the size of the screen. See [the root element](/docs/ui-base-element/#the-root-element). |
 | `AddElementToRoot(BaseElement element)` | Adds an element to the root. |
 | `GetElementByName(string name)` | Finds an element anywhere in the tree by the name given to its constructor, `null` if there is none. |
 | `GetElementByName<T>(string name)` | The same, `null` also when the element is not a `T`. |
 | `Update(GameTime gameTime)` | Runs timers and animations, lays out what changed, and handles the mouse. Poll the input before it. |
 | `Draw()` | Draws the whole tree with the sprite batch, beginning and ending it itself. |
-| `ApplyNewGameWindowSizeHandler(int width, int height)` | Lays the UI out over a new window size, in device pixels (the back buffer's size). |
+| `FollowsBackBuffer` | Whether the UI takes the back buffer's size by itself, at the start of every `Update`. On by default. Turn it off for a UI drawn into a render target of its own size. Turned on again, it takes the back buffer's size at the next update. |
+| `ApplyGameWindowSize(int width, int height)` | Lays the UI out over a screen size in device pixels. A size of 0, such as a minimised window's, is ignored. With `FollowsBackBuffer` on, the size stays until the back buffer changes. |
+| `ApplyNewGameWindowSizeHandler(int width, int height)` | Obsolete: use `ApplyGameWindowSize`, or leave the size to `FollowsBackBuffer`. |
 | `Scale` | How large one logical unit is on screen, see [display scaling](#display-scaling). Between `MinScale` (0.25) and `MaxScale` (8). |
 | `DrawTransform` | Read-only. The matrix the UI draws with. Draw code that begins its own sprite batch inside the UI passes it to draw in logical units. |
 | `ExceptionHandler` | Gets the exceptions thrown inside `Update`, `Draw` and the handling of text input. Without a handler they are rethrown. |
@@ -153,10 +150,22 @@ dispose them, so dispose the ones that hold resources yourself.
 
 ### ITextInputEvents
 
+The source of typed text and key presses, for a UI hosted outside a game window.
+
 | Event | Description |
 | --- | --- |
 | `OnTextInput` | `EventHandler<TextInputEventArgs>`: a typed character, sent to the element that has the keyboard. |
 | `OnKeyDown` | `EventHandler<InputKeyEventArgs>`: a pressed key, sent to the element that has the keyboard and then up to its parents until one handles it. |
+
+### GameWindowTextInputEvents
+
+An `ITextInputEvents` that forwards a MonoGame window's events. The window constructor of `BorrowedTorchUI` creates and
+disposes one itself.
+
+| Member | Description |
+| --- | --- |
+| `GameWindowTextInputEvents(GameWindow window)` | Subscribes to the window's `TextInput` and `KeyDown` events. |
+| `Dispose()` | Unsubscribes from the window. |
 
 ## Your first elements
 
@@ -326,14 +335,12 @@ static extern bool SetProcessDpiAwarenessContext(IntPtr value);
 
 // in LoadContent, after creating the UI: 144 DPI is 150 %
 _ui.Scale = dpiOfTheWindowsMonitor / 96f;
-_ui.ApplyNewGameWindowSizeHandler(GraphicsDevice.PresentationParameters.BackBufferWidth,
-    GraphicsDevice.PresentationParameters.BackBufferHeight);
 ```
 
 The layout doesn't change with the scale. Sizes, margins, positions, font sizes and the mouse positions in events
 all stay in logical units; only the drawing, the clipping and the reading of the mouse are scaled, and fonts are
-rasterised for the scale. The window size you pass to `ApplyNewGameWindowSizeHandler` stays in device pixels, and the
-root covers it in logical units: at 150 % a 1920 x 1200 back buffer is a 1280 x 800 layout. `Scale` can also carry an
+rasterised for the scale. The screen size stays in device pixels, whether it is the back buffer's or one given to
+`ApplyGameWindowSize`, and the root covers it in logical units: at 150 % a 1920 x 1200 back buffer is a 1280 x 800 layout. `Scale` can also carry an
 in-game UI size setting, multiplied with the display's scale. The screenshots on these pages are rendered at a scale of
 2.
 

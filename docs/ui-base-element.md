@@ -637,8 +637,8 @@ control reaches its parts (the scroll bars of a list, the title bar of a window)
 
 `RootElement` is the top of the element tree. `BorrowedTorchUI` creates it (you can't create one yourself) and gives
 it as `ui.RootElement`; `ui.AddElementToRoot(element)` adds an item to it. It has the size of the game window in
-units (the back buffer size divided by the display scale) and follows the window when `ApplyNewGameWindowSizeHandler`
-is called. It can't be resizable and it draws no background of its own, so give a full-screen panel your background
+units (the back buffer size divided by the display scale) and follows the back buffer when the window is resized,
+or takes the size given to `ApplyGameWindowSize`. It can't be resizable and it draws no background of its own, so give a full-screen panel your background
 colour instead.
 
 Above the tree the root draws the popups: the modal windows (with `ModalWindowActiveShadeTint` under the top one), the

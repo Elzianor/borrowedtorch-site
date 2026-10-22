@@ -9,7 +9,7 @@ tables below don't repeat. Every property listed is a dependency property unless
 `FooDP`, which a style, a binding or an animation can set (see [styles, bindings and animation](/docs/ui-styles/)).
 Screenshots use the theme from [styles](/docs/ui-styles/#the-theme-of-these-pages).
 
-The keyboard reaches these elements through the `ITextInputEvents` you give `BorrowedTorchUI` (see [UI](/docs/ui/)):
+The keyboard reaches these elements from the game window you give `BorrowedTorchUI` (see [UI](/docs/ui/)):
 a key goes to the element that has the keyboard first, then to the elements around it until one uses it.
 
 ## ListBox
