@@ -28,12 +28,25 @@ var levels = new ListBox("levels")
     DesiredWidth = 220,
     DesiredHeight = 176,
     Margin = 16,
-    ScrollableContainerStyle = new ScrollableContainerStyle { ScrollBars = ScrollBars.Vertical, ScrollBarsThickness = 10 }
+    ScrollableContainerStyle = new ScrollableContainerStyle
+    {
+        ScrollBars = ScrollBars.Vertical,
+        ScrollBarsThickness = 10
+    }
 };
 
 levels.AddTextItems(["Forest", "Desert", "Mountains", "Swamp"]);
-levels.AddItem(new Separator { DesiredHeight = 1, BackgroundColor = new Color(168, 131, 74) });
-levels.AddItem(new CheckBox { Text = "Any element as a row", DesiredHeight = 22, Margin = (6, 3) });
+levels.AddItem(new Separator
+{
+    DesiredHeight = 1,
+    BackgroundColor = new Color(168, 131, 74)
+});
+levels.AddItem(new CheckBox
+{
+    Text = "Any element as a row",
+    DesiredHeight = 22,
+    Margin = (6, 3)
+});
 levels.AddTextItems(["Caves", "Ruins"]);
 levels.SelectAt(1);
 levels.OnItemSelect += (sender, item) => Console.WriteLine($"Level {item?.Index}");
@@ -257,7 +270,8 @@ resolution.AddTextItem("1600 x 900");
 resolution.AddTextItem("1920 x 1080");
 resolution.AddTextItem("2560 x 1440");
 resolution.SelectAt(2);
-resolution.OnItemSelect += (sender, item) => Console.WriteLine($"Resolution {item?.Index}");
+resolution.OnItemSelect += (sender, item) =>
+    Console.WriteLine($"Resolution {item?.Index}");
 
 ui.AddElementToRoot(resolution);
 ```
@@ -348,7 +362,9 @@ public sealed class Folder(string name, params Folder[] children)
 ```csharp
 var levels = new BindableCollection<Folder>
 {
-    new("Chapter one", new Folder("Forest"), new Folder("Desert", new Folder("Oasis"), new Folder("Dunes"))),
+    new("Chapter one",
+        new Folder("Forest"),
+        new Folder("Desert", new Folder("Oasis"), new Folder("Dunes"))),
     new("Chapter two", new Folder("Caves"))
 };
 
@@ -499,7 +515,12 @@ var sort = new ContextMenuItem("Sort") { SubMenu = sortMenu };
 var menu = new ContextMenu("listMenu");
 menu.AddItem(copy);
 menu.AddItem(new ContextMenuItem("Rename"));
-menu.AddItem(new Separator { DesiredHeight = 1, Margin = (4, 3), BackgroundColor = new Color(168, 131, 74) });
+menu.AddItem(new Separator
+{
+    DesiredHeight = 1,
+    Margin = (4, 3),
+    BackgroundColor = new Color(168, 131, 74)
+});
 menu.AddItem(new ContextMenuItem("Show grid") { IsCheckable = true, IsChecked = true });
 menu.AddItem(sort);
 menu.OnItemSelect += (sender, item) => Console.WriteLine($"Chosen {item}");

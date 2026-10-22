@@ -25,11 +25,26 @@ var play = new Button("play") { Text = "Play", DesiredWidth = 140, DesiredHeight
 play.OnClick += (sender, e) => Console.WriteLine("Play");
 
 // a toggle keeps its state: ToggledOn, OnToggled
-var music = new Button("music") { Text = "Music: on", Type = ButtonType.Toggle, ToggledOn = true, DesiredWidth = 140, DesiredHeight = 36, Margin = (16, 0) };
+var music = new Button("music")
+{
+    Text = "Music: on",
+    Type = ButtonType.Toggle,
+    ToggledOn = true,
+    DesiredWidth = 140,
+    DesiredHeight = 36,
+    Margin = (16, 0)
+};
 music.OnToggled += (sender, isOn) => music.Text = isOn ? "Music: on" : "Music: off";
 
 // a repeat button raises OnClick again and again while it is held
-var zoom = new Button("zoomIn") { Text = "Zoom in +", Type = ButtonType.Repeat, DesiredWidth = 140, DesiredHeight = 36, Margin = (16, 0) };
+var zoom = new Button("zoomIn")
+{
+    Text = "Zoom in +",
+    Type = ButtonType.Repeat,
+    DesiredWidth = 140,
+    DesiredHeight = 36,
+    Margin = (16, 0)
+};
 zoom.OnClick += (sender, e) => Console.WriteLine("Zoom");
 
 var row = new StackPanel { Orientation = Orientation.Horizontal, Margin = (16, 18) };
@@ -96,12 +111,29 @@ that is one choice of a group.
 </figure>
 
 ```csharp
-var subtitles = new CheckBox("subtitles") { Text = "Subtitles", Checked = true, DesiredHeight = 22 };
-var vibration = new CheckBox("vibration") { Text = "Vibration", DesiredHeight = 22, Margin = (24, 0) };
-subtitles.OnCheckedUnchecked += (sender, isChecked) => Console.WriteLine($"Subtitles {isChecked}");
+var subtitles = new CheckBox("subtitles")
+{
+    Text = "Subtitles",
+    Checked = true,
+    DesiredHeight = 22
+};
+var vibration = new CheckBox("vibration")
+{
+    Text = "Vibration",
+    DesiredHeight = 22,
+    Margin = (24, 0)
+};
+subtitles.OnCheckedUnchecked += (sender, isChecked) =>
+    Console.WriteLine($"Subtitles {isChecked}");
 
 // radio buttons of one group uncheck each other
-CheckBox Difficulty(string text) => new() { Type = CheckBoxType.RadioButton, GroupId = "difficulty", Text = text, DesiredHeight = 22 };
+CheckBox Difficulty(string text) => new()
+{
+    Type = CheckBoxType.RadioButton,
+    GroupId = "difficulty",
+    Text = text,
+    DesiredHeight = 22
+};
 
 var easy = Difficulty("Easy");
 var normal = Difficulty("Normal");
@@ -120,7 +152,11 @@ var mirrored = new CheckBox("rightBox")
     Margin = (16, 84)
 };
 
-var options = new StackPanel { Orientation = Orientation.Horizontal, Margin = (16, 16) };
+var options = new StackPanel
+{
+    Orientation = Orientation.Horizontal,
+    Margin = (16, 16)
+};
 options.AddItemsRange([subtitles, vibration]);
 
 var levels = new StackPanel { Orientation = Orientation.Horizontal, Margin = (16, 50) };
@@ -395,7 +431,14 @@ it.
 </figure>
 
 ```csharp
-var loading = new ProgressBar("loading") { DesiredWidth = 300, DesiredHeight = 14, Max = 100, Value = 35, Margin = (16, 20) };
+var loading = new ProgressBar("loading")
+{
+    DesiredWidth = 300,
+    DesiredHeight = 14,
+    Max = 100,
+    Value = 35,
+    Margin = (16, 20)
+};
 var health = new ProgressBar("health")
 {
     DesiredWidth = 300,
@@ -406,7 +449,15 @@ var health = new ProgressBar("health")
     BackgroundColor = new Color(58, 30, 16),     // the track
     Margin = (16, 52)
 };
-var charge = new ProgressBar("charge") { Orientation = Orientation.Vertical, DesiredWidth = 14, DesiredHeight = 96, Max = 1, Value = 0.6f, Margin = (360, 16) };
+var charge = new ProgressBar("charge")
+{
+    Orientation = Orientation.Vertical,
+    DesiredWidth = 14,
+    DesiredHeight = 96,
+    Max = 1,
+    Value = 0.6f,
+    Margin = (360, 16)
+};
 
 ui.AddElementToRoot(loading);
 ui.AddElementToRoot(health);
@@ -518,7 +569,13 @@ at the centre to the full colour at the edge, and `Brightness` darkens the resul
 </figure>
 
 ```csharp
-var swatch = new Label { DesiredWidth = 96, DesiredHeight = 96, Margin = (220, 16), BackgroundColor = Color.White };
+var swatch = new Label
+{
+    DesiredWidth = 96,
+    DesiredHeight = 96,
+    Margin = (220, 16),
+    BackgroundColor = Color.White
+};
 
 var picker = new ColorPicker("tint")
 {

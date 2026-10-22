@@ -279,22 +279,29 @@ horizontally, `Top`, `Center`, `Bottom` or `Stretch` vertically.
 </figure>
 
 ```csharp
-Label Badge(string text, HorizontalAlignment horizontal, VerticalAlignment vertical) => new()
-{
-    Text = text,
-    TextMargin = (10, 6, 10, 6),
-    HorizontalAlignment = horizontal,
-    VerticalAlignment = vertical,
-    BackgroundColor = new Color(58, 44, 30),
-    Margin = 12
-};
+Label Badge(string text, HorizontalAlignment horizontal, VerticalAlignment vertical) =>
+    new()
+    {
+        Text = text,
+        TextMargin = (10, 6, 10, 6),
+        HorizontalAlignment = horizontal,
+        VerticalAlignment = vertical,
+        BackgroundColor = new Color(58, 44, 30),
+        Margin = 12
+    };
 
-ui.AddElementToRoot(Badge("Left, Top", HorizontalAlignment.Left, VerticalAlignment.Top));
-ui.AddElementToRoot(Badge("Center, Top", HorizontalAlignment.Center, VerticalAlignment.Top));
-ui.AddElementToRoot(Badge("Right, Top", HorizontalAlignment.Right, VerticalAlignment.Top));
-ui.AddElementToRoot(Badge("Center, Center", HorizontalAlignment.Center, VerticalAlignment.Center));
-ui.AddElementToRoot(Badge("Left, Bottom", HorizontalAlignment.Left, VerticalAlignment.Bottom));
-ui.AddElementToRoot(Badge("Right, Bottom", HorizontalAlignment.Right, VerticalAlignment.Bottom));
+ui.AddElementToRoot(Badge("Left, Top",
+    HorizontalAlignment.Left, VerticalAlignment.Top));
+ui.AddElementToRoot(Badge("Center, Top",
+    HorizontalAlignment.Center, VerticalAlignment.Top));
+ui.AddElementToRoot(Badge("Right, Top",
+    HorizontalAlignment.Right, VerticalAlignment.Top));
+ui.AddElementToRoot(Badge("Center, Center",
+    HorizontalAlignment.Center, VerticalAlignment.Center));
+ui.AddElementToRoot(Badge("Left, Bottom",
+    HorizontalAlignment.Left, VerticalAlignment.Bottom));
+ui.AddElementToRoot(Badge("Right, Bottom",
+    HorizontalAlignment.Right, VerticalAlignment.Bottom));
 ```
 
 ### Margins
@@ -374,9 +381,26 @@ var menu = new StackPanel("pauseButtons")
     VerticalAlignment = VerticalAlignment.Center
 };
 
-var resume = new Button("resume") { Text = "Resume", DesiredWidth = 200, DesiredHeight = 36 };
-var settings = new Button("settings") { Text = "Settings", DesiredWidth = 200, DesiredHeight = 36, Margin = (0, 10) };
-var quit = new Button("quit") { Text = "Quit to menu", DesiredWidth = 200, DesiredHeight = 36, Margin = (0, 10) };
+var resume = new Button("resume")
+{
+    Text = "Resume",
+    DesiredWidth = 200,
+    DesiredHeight = 36
+};
+var settings = new Button("settings")
+{
+    Text = "Settings",
+    DesiredWidth = 200,
+    DesiredHeight = 36,
+    Margin = (0, 10)
+};
+var quit = new Button("quit")
+{
+    Text = "Quit to menu",
+    DesiredWidth = 200,
+    DesiredHeight = 36,
+    Margin = (0, 10)
+};
 
 menu.AddItemsRange([resume, settings, quit]);
 

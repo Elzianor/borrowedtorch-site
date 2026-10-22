@@ -32,9 +32,14 @@ Image Framed(Texture2D texture, ImageFill fill, int left) => new()
     Margin = (left, 16)
 };
 
-ui.AddElementToRoot(Framed(logo, ImageFill.Stretch, 16));    // the whole texture over the image
-ui.AddElementToRoot(Framed(mark, ImageFill.Center, 186));    // its own size, in the middle
-ui.AddElementToRoot(Framed(mark, ImageFill.Tile, 356));      // repeated, cut at the edges
+// the whole texture over the image
+ui.AddElementToRoot(Framed(logo, ImageFill.Stretch, 16));
+
+// its own size, in the middle
+ui.AddElementToRoot(Framed(mark, ImageFill.Center, 186));
+
+// repeated, cut at the edges
+ui.AddElementToRoot(Framed(mark, ImageFill.Tile, 356));
 ```
 
 `Source` takes a `Texture2D` or a content path: both convert to a [`SourceData`](#sourcedata) by themselves. A path is
@@ -44,11 +49,14 @@ the image the texture.
 
 ```csharp
 // a PNG file next to the executable
-using var stream = File.OpenRead(Path.Combine(AppContext.BaseDirectory, "Content", "Pattern.png"));
+var path = Path.Combine(AppContext.BaseDirectory, "Content", "Pattern.png");
+using var stream = File.OpenRead(path);
 var pattern = Texture2D.FromStream(GraphicsDevice, stream);
 
 var background = new Image("background") { Source = pattern, Fill = ImageFill.Tile };
-var badge = new Image("badge") { Source = "UITextures/Badge" };   // Badge.xnb, through the ContentManager
+
+// Badge.xnb, through the ContentManager
+var badge = new Image("badge") { Source = "UITextures/Badge" };
 ```
 
 The image never disposes its source. A texture you loaded yourself is yours to dispose when the game unloads; one
@@ -125,7 +133,8 @@ stays. A portrait in a frame is the usual case.
 var portrait = new Stencil("portrait")
 {
     SourceTexture = LoadTexture("Stencil/Source.png"),     // the picture
-    StencilTexture = LoadTexture("Stencil/Stencil.png"),   // the frame, half transparent black where the picture shows
+    // the frame: half transparent black where the picture shows
+    StencilTexture = LoadTexture("Stencil/Stencil.png"),
     KeyColor = new Color(0, 0, 0, 128),                     // the alpha is compared too
     Tolerance = 0.2f,
     DesiredWidth = 152,
@@ -191,15 +200,23 @@ var scene = new ViewPort("scene")
     Margin = 16
 };
 
-// runs inside the view port: GraphicsDevice.Viewport is the view port's rectangle, in device pixels
+// runs inside the view port: GraphicsDevice.Viewport is the view port's rectangle,
+// in device pixels
 scene.DrawInstructions = () =>
 {
     var viewport = GraphicsDevice.Viewport;
     var size = Math.Min(viewport.Width, viewport.Height) * 0.7f;
 
     batch.Begin();
-    batch.Draw(logo, new Vector2(viewport.Width / 2f, viewport.Height / 2f), null, Color.White, angle,
-        new Vector2(logo.Width / 2f, logo.Height / 2f), size / logo.Width, SpriteEffects.None, 0f);
+    batch.Draw(logo,
+        new Vector2(viewport.Width / 2f, viewport.Height / 2f),
+        null,
+        Color.White,
+        angle,
+        new Vector2(logo.Width / 2f, logo.Height / 2f),
+        size / logo.Width,
+        SpriteEffects.None,
+        0f);
     batch.End();
 };
 
@@ -278,7 +295,11 @@ var card = new Label("card")
     HitTest = true,
     DragType = DragType.DragAndDrop,
     // what follows the mouse: a half transparent picture of the card
-    DragAndDropRepresentation = new DragAndDropRepresentation { UseTargetAppearance = true, Transparency = 0.4f }
+    DragAndDropRepresentation = new DragAndDropRepresentation
+    {
+        UseTargetAppearance = true,
+        Transparency = 0.4f
+    }
 };
 
 var slot = new Border("slot")
@@ -290,7 +311,12 @@ var slot = new Border("slot")
     DesiredHeight = 128,
     Margin = (300, 20),
     HitTest = true,
-    Content = new Label { Text = "Slot", HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center }
+    Content = new Label
+    {
+        Text = "Slot",
+        HorizontalAlignment = HorizontalAlignment.Center,
+        VerticalAlignment = VerticalAlignment.Center
+    }
 };
 
 // decides whether the dragged element may land here, and what happens when it does

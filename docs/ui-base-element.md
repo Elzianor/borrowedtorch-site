@@ -296,8 +296,21 @@ through as if they were not there, so only the elements you created decide.
 var row = new StackPanel { Orientation = Orientation.Horizontal, Margin = (16, 18) };
 
 row.AddItem(new Button { Text = "Normal", DesiredWidth = 140, DesiredHeight = 36 });
-row.AddItem(new Button("hovered") { Text = "Hovered", DesiredWidth = 140, DesiredHeight = 36, Margin = (16, 0) });
-row.AddItem(new Button { Text = "Disabled", DesiredWidth = 140, DesiredHeight = 36, Margin = (16, 0), Disabled = true });
+row.AddItem(new Button("hovered")
+{
+    Text = "Hovered",
+    DesiredWidth = 140,
+    DesiredHeight = 36,
+    Margin = (16, 0)
+});
+row.AddItem(new Button
+{
+    Text = "Disabled",
+    DesiredWidth = 140,
+    DesiredHeight = 36,
+    Margin = (16, 0),
+    Disabled = true
+});
 
 ui.AddElementToRoot(row);
 ```
@@ -686,7 +699,8 @@ scroll position) must call `InvalidateArrange()` when it changes, or the childre
 Here is a row that lays its items side by side, each at its own width and at the row's height, with a gap:
 
 ```csharp
-// its items side by side, each at its own width and at the row's height, with a gap between them
+// its items side by side, each at its own width and at the row's height,
+// with a gap between them
 public class Row : BaseElement
 {
     private int _gap;
@@ -742,7 +756,13 @@ And the row in use:
 </figure>
 
 ```csharp
-var row = new Row("row") { Gap = 10, Margin = (16, 16), HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top };
+var row = new Row("row")
+{
+    Gap = 10,
+    Margin = (16, 16),
+    HorizontalAlignment = HorizontalAlignment.Left,
+    VerticalAlignment = VerticalAlignment.Top
+};
 
 foreach (var width in new[] { 60, 100, 40, 140 })
     row.AddItem(new Label

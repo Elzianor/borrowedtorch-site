@@ -39,7 +39,8 @@ var caption = new Label("caption")
 // wraps inside its width, centered lines
 var description = new Label("description")
 {
-    Text = "The torch burns low. Find a way out of the caves before the last ember dies.",
+    Text = "The torch burns low. Find a way out of the caves " +
+           "before the last ember dies.",
     WrapType = TextWrap.Wrap,
     TextAlignment = TextAlignment.Center,
     LineSpacing = 4,
@@ -165,7 +166,8 @@ area are drawn each frame, so the length of the text is limited by memory, not b
 </figure>
 
 ```csharp
-// the tags index these shared lists: [c=0] the first color, [a=0] the first action, [i=0] the first image
+// the tags index these shared lists: [c=0] the first color, [a=0] the first action,
+// [i=0] the first image
 RichTextBox.RichColors.Add(new Color(242, 140, 40));
 RichTextBox.RichColors.Add(new Color(140, 200, 120));
 RichTextBox.RichActions.Add(() => Console.WriteLine("Open the help"));
@@ -173,8 +175,8 @@ RichTextBox.RichImages.Add(LoadTexture("CheckBox/Checked.png"));
 
 var hint = new RichTextBox("hint")
 {
-    Text = "Press [c=0]Space[/] to jump and [c=1]E[/] to use. Quests marked [i=0][/] are done, " +
-           "read the [a=0]help[/] for more.",
+    Text = "Press [c=0]Space[/] to jump and [c=1]E[/] to use. " +
+           "Quests marked [i=0][/] are done, read the [a=0]help[/] for more.",
     Formatting = RichTextBoxFormatting.Rich,
     WrapType = TextWrap.Wrap,
     DesiredWidth = 440,
@@ -226,9 +228,12 @@ var name = new RichTextBox("playerName")
     HorizontalAlignment = HorizontalAlignment.Left,
     VerticalAlignment = VerticalAlignment.Top,
     Margin = (16, 16),
-    TextFilter = text => text.Length > 16 ? text[..16] : text    // every assigned text goes through it
+    // every assigned text goes through it
+    TextFilter = text => text.Length > 16 ? text[..16] : text
 };
-name.OnApply += (sender, text) => Console.WriteLine($"Name: {text}");   // Enter, or the editing ended
+
+// Enter, or the editing ended
+name.OnApply += (sender, text) => Console.WriteLine($"Name: {text}");
 
 var notes = new RichTextBox("notes")
 {
@@ -298,7 +303,8 @@ A read-only box takes the keyboard with a press too, without a caret, so the key
 ```csharp
 var journal = new RichTextBox("journal")
 {
-    Text = string.Join("\n", Enumerable.Range(1, 12).Select(day => $"Day {day}: the corridor goes on, the walls drip and the torch holds.")),
+    Text = string.Join("\n", Enumerable.Range(1, 12).Select(day =>
+        $"Day {day}: the corridor goes on, the walls drip and the torch holds.")),
     WrapType = TextWrap.Wrap,
     DesiredWidth = 420,
     DesiredHeight = 128,
@@ -452,7 +458,12 @@ nothing uses it.
 var fontSystem = new FontSystem(new FontSystemSettings { FontResolutionFactor = 3 });
 fontSystem.AddFont(File.ReadAllBytes("Content/Fonts/Title.ttf"));
 
-var title = new Label("title") { Text = "The Caves", FontSize = 32, FontSystemOverride = fontSystem };
+var title = new Label("title")
+{
+    Text = "The Caves",
+    FontSize = 32,
+    FontSystemOverride = fontSystem
+};
 ```
 
 **Display scale.** The framework's own font systems (the bundled one and those loaded from a `FontPath`) rasterise their

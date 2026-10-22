@@ -81,9 +81,17 @@ public static void Apply()
         TickRemainingColor = Line
     };
 
-    ProgressBar.GeneralStyle = new ProgressBarStyle { BackgroundColor = PanelLight, ForegroundColor = Gold };
+    ProgressBar.GeneralStyle = new ProgressBarStyle
+    {
+        BackgroundColor = PanelLight,
+        ForegroundColor = Gold
+    };
 
-    ScrollableContainer.GeneralStyle = new ScrollableContainerStyle { ScrollBarsThickness = 10, ScrollBarsStyle = scrollBars };
+    ScrollableContainer.GeneralStyle = new ScrollableContainerStyle
+    {
+        ScrollBarsThickness = 10,
+        ScrollBarsStyle = scrollBars
+    };
 
     ListBox.GeneralStyle = new ListBoxStyle
     {
@@ -94,7 +102,11 @@ public static void Apply()
         HoverItemColor = new Color(58, 44, 30),
         PressedItemColor = new Color(80, 60, 38),
         SelectedItemColor = new Color(110, 82, 48),
-        ScrollableContainerStyle = new ScrollableContainerStyle { ScrollBarsThickness = 10, ScrollBarsStyle = scrollBars }
+        ScrollableContainerStyle = new ScrollableContainerStyle
+        {
+            ScrollBarsThickness = 10,
+            ScrollBarsStyle = scrollBars
+        }
     };
 
     ComboBox.GeneralStyle = new ComboBoxStyle
@@ -113,7 +125,13 @@ public static void Apply()
     TreeView.GeneralStyle = new TreeViewStyle
     {
         MinimizedIconColor = GoldDim,
-        ExpandIconStyle = new ImageStyle { DesiredWidth = 10, DesiredHeight = 10, Margin = (4, 6, 6, 0), HitTest = false },
+        ExpandIconStyle = new ImageStyle
+        {
+            DesiredWidth = 10,
+            DesiredHeight = 10,
+            Margin = (4, 6, 6, 0),
+            HitTest = false
+        },
         ExpandedIconColor = Gold,
         ListBoxStyle = new ListBoxStyle
         {
@@ -159,10 +177,24 @@ var danger = new ButtonStyle
 var row = new StackPanel { Orientation = Orientation.Horizontal, Margin = (16, 18) };
 
 row.AddItem(new Button { Text = "Keep", DesiredWidth = 140, DesiredHeight = 36 });
-row.AddItem(new Button { Text = "Delete save", DesiredWidth = 140, DesiredHeight = 36, Margin = (16, 0), StyleOverride = danger });
+row.AddItem(new Button
+{
+    Text = "Delete save",
+    DesiredWidth = 140,
+    DesiredHeight = 36,
+    Margin = (16, 0),
+    StyleOverride = danger
+});
 
 // a value set in code wins over every style
-row.AddItem(new Button { Text = "Own color", DesiredWidth = 140, DesiredHeight = 36, Margin = (16, 0), NormalColor = new Color(120, 140, 90) });
+row.AddItem(new Button
+{
+    Text = "Own color",
+    DesiredWidth = 140,
+    DesiredHeight = 36,
+    Margin = (16, 0),
+    NormalColor = new Color(120, 140, 90)
+});
 
 ui.AddElementToRoot(row);
 ```
@@ -298,8 +330,10 @@ Changing a property of a set in use, or replacing a general or default set, upda
 Button.GeneralMouseCursorsSet = new MouseCursorsSet
 {
     // LoadPng: your own loader of PNG files as Texture2D
-    HoverCursor = MouseCursor.FromTexture2D(LoadPng("UITextures/MouseCursors/ArrowHover.png"), 0, 0),
-    PressedCursor = MouseCursor.FromTexture2D(LoadPng("UITextures/MouseCursors/ArrowPressed.png"), 0, 0)
+    HoverCursor = MouseCursor.FromTexture2D(
+        LoadPng("UITextures/MouseCursors/ArrowHover.png"), 0, 0),
+    PressedCursor = MouseCursor.FromTexture2D(
+        LoadPng("UITextures/MouseCursors/ArrowPressed.png"), 0, 0)
 };
 ```
 
@@ -437,10 +471,15 @@ Reading `Foo` doesn't create it, so an element pays only for the properties it u
 `FooDP.SetValue(value)`.
 
 ```csharp
-button.DesiredWidthDP.SetValue(120);                         // same as button.DesiredWidth = 120
-button.DesiredWidthDP.ClearValue(ValueSources.ManualAssign); // back to the style value
+// the same as button.DesiredWidth = 120
+button.DesiredWidthDP.SetValue(120);
+
+// back to the style value
+button.DesiredWidthDP.ClearValue(ValueSources.ManualAssign);
+
 button.DesiredWidthDP.OnPropertyChanged += width => Console.WriteLine(width);
-button.DesiredWidthDP.PreAction = (ref int value, ref bool canProceed) => value = Math.Max(value, 50);
+button.DesiredWidthDP.PreAction = (ref int value, ref bool canProceed) =>
+    value = Math.Max(value, 50);
 ```
 
 `OnPropertyChanged`, and the element's own reaction, come when the value in effect changes: setting by hand the value
@@ -568,18 +607,36 @@ var name = new RichTextBox("name")
     VerticalAlignment = VerticalAlignment.Top,
     Margin = (16, 16)
 };
-var greeting = new Label { HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top, Margin = (252, 22) };
-var volume = new Slider { DesiredWidth = 220, DesiredHeight = 18, Max = 1, Margin = (16, 66) };
-var volumeText = new Label { HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top, Margin = (252, 66) };
+var greeting = new Label
+{
+    HorizontalAlignment = HorizontalAlignment.Left,
+    VerticalAlignment = VerticalAlignment.Top,
+    Margin = (252, 22)
+};
+var volume = new Slider
+{
+    DesiredWidth = 220,
+    DesiredHeight = 18,
+    Max = 1,
+    Margin = (16, 66)
+};
+var volumeText = new Label
+{
+    HorizontalAlignment = HorizontalAlignment.Left,
+    VerticalAlignment = VerticalAlignment.Top,
+    Margin = (252, 66)
+};
 var levels = new ListBox { DesiredWidth = 220, DesiredHeight = 90, Margin = (16, 100) };
 
 name.TextDP.Bind(settings, nameof(settings.PlayerName), BindingMode.TwoWay);
 greeting.TextDP.Bind(settings, nameof(settings.Greeting), BindingMode.OneWay);
 volume.ValueDP.Bind(settings, nameof(settings.Volume), BindingMode.TwoWay);
-volumeText.TextDP.Bind(settings, nameof(settings.Volume), BindingMode.OneWay, new PercentConverter());
+volumeText.TextDP.Bind(settings, nameof(settings.Volume), BindingMode.OneWay,
+    new PercentConverter());
 levels.ItemsSourceDP.Bind(settings, nameof(settings.Levels), BindingMode.OneWay);
 
-// changes of the view model reach the elements, and the edits of the user reach the view model
+// changes of the view model reach the elements,
+// and the edits of the user reach the view model
 settings.PlayerName = "Ash";
 settings.Volume = 0.65f;
 settings.Levels.Add("Forest");
@@ -764,9 +821,11 @@ view instead of generating new ones.
 ```csharp
 public class LevelTemplate : IRecyclingItemsTemplate
 {
-    public BaseElement GenerateItemElement(object data) => new Label { Text = (string)data, Margin = 5 };
+    public BaseElement GenerateItemElement(object data) =>
+        new Label { Text = (string)data, Margin = 5 };
 
-    public void UpdateItemElement(BaseElement element, object data) => ((Label)element).Text = (string)data;
+    public void UpdateItemElement(BaseElement element, object data) =>
+        ((Label)element).Text = (string)data;
 }
 ```
 
@@ -791,14 +850,21 @@ var banner = new Label("banner")
     VerticalAlignment = VerticalAlignment.Top,
     Margin = (-300, 16)
 };
-var experience = new ProgressBar { DesiredWidth = 300, DesiredHeight = 12, Max = 100, Margin = (16, 70) };
+var experience = new ProgressBar
+{
+    DesiredWidth = 300,
+    DesiredHeight = 12,
+    Max = 100,
+    Margin = (16, 70)
+};
 
 ui.AddElementToRoot(banner);
 ui.AddElementToRoot(experience);
 
 // the banner slides in from the left, easing out
 var slideIn = new Animation<Margin>(500);
-slideIn.AddFrame(new SmoothAnimationFrame<Margin>((-300, 16), (16, 16), 500, shapingFunction: new CubicEaseOut()));
+slideIn.AddFrame(new SmoothAnimationFrame<Margin>((-300, 16), (16, 16), 500,
+    shapingFunction: new CubicEaseOut()));
 slideIn.AddDependencyProperty(banner.MarginDP);
 
 // the bar fills over a second, and its color pulses back and forth
@@ -806,8 +872,10 @@ var fill = new Animation<float>(1000);
 fill.AddFrame(new SmoothAnimationFrame<float>(0, 100, 1000));
 fill.AddDependencyProperty(experience.ValueDP);
 
-var pulse = new Animation<Color>(400, AnimationRepeatType.Infinite, autoReverse: true, deleteOnComplete: false);
-pulse.AddFrame(new SmoothAnimationFrame<Color>(new Color(233, 194, 122), new Color(242, 140, 40), 400));
+var pulse = new Animation<Color>(400, AnimationRepeatType.Infinite,
+    autoReverse: true, deleteOnComplete: false);
+pulse.AddFrame(new SmoothAnimationFrame<Color>(new Color(233, 194, 122),
+    new Color(242, 140, 40), 400));
 pulse.AddDependencyProperty(banner.ForegroundColorDP);
 
 ui.AddAnimation(slideIn);

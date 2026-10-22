@@ -21,17 +21,43 @@ Puts its items one after another, in a column or in a row, and fits their size.
 
 ```csharp
 // a column: the gaps are top margins (a bottom margin adds nothing to the panel's size)
-var menu = new StackPanel("menu") { Orientation = Orientation.Vertical, Margin = (16, 16) };
+var menu = new StackPanel("menu")
+{
+    Orientation = Orientation.Vertical,
+    Margin = (16, 16)
+};
 
 menu.AddItem(new Button { Text = "New game", DesiredWidth = 180, DesiredHeight = 34 });
-menu.AddItem(new Button { Text = "Options", DesiredWidth = 180, DesiredHeight = 34, Margin = (0, 8) });
-menu.AddItem(new Button { Text = "Quit", DesiredWidth = 180, DesiredHeight = 34, Margin = (0, 8) });
+menu.AddItem(new Button
+{
+    Text = "Options",
+    DesiredWidth = 180,
+    DesiredHeight = 34,
+    Margin = (0, 8)
+});
+menu.AddItem(new Button
+{
+    Text = "Quit",
+    DesiredWidth = 180,
+    DesiredHeight = 34,
+    Margin = (0, 8)
+});
 
 // a row: the gaps are left margins
-var toolbar = new StackPanel("toolbar") { Orientation = Orientation.Horizontal, Margin = (220, 16) };
+var toolbar = new StackPanel("toolbar")
+{
+    Orientation = Orientation.Horizontal,
+    Margin = (220, 16)
+};
 
 foreach (var (text, index) in new[] { "Cut", "Copy", "Paste" }.Select((t, i) => (t, i)))
-    toolbar.AddItem(new Button { Text = text, DesiredWidth = 80, DesiredHeight = 34, Margin = (index == 0 ? 0 : 8, 0) });
+    toolbar.AddItem(new Button
+    {
+        Text = text,
+        DesiredWidth = 80,
+        DesiredHeight = 34,
+        Margin = (index == 0 ? 0 : 8, 0)
+    });
 
 ui.AddElementToRoot(menu);
 ui.AddElementToRoot(toolbar);
@@ -201,7 +227,11 @@ code.
 var log = new StackPanel("logLines") { Orientation = Orientation.Vertical };
 
 for (var i = 1; i <= 30; i++)
-    log.AddItem(new Label { Text = $"{i:00}  The torch flickers in the corridor, line {i} of the log", TextMargin = (6, 2) });
+    log.AddItem(new Label
+    {
+        Text = $"{i:00}  The torch flickers in the corridor, line {i} of the log",
+        TextMargin = (6, 2)
+    });
 
 var scrollable = new ScrollableContainer("log")
 {
@@ -296,7 +326,8 @@ A frame around one `Content` element, drawn in a solid colour or from eight text
 var framed = new Border("framed")
 {
     Thickness = 2,                                 // the same on every side
-    Padding = 14,                                  // the content's inset, instead of the thickness
+    // the content's inset, instead of the thickness
+    Padding = 14,
     ForegroundColor = new Color(233, 194, 122),    // the frame
     BackgroundColor = new Color(40, 31, 23),       // behind the content
     HorizontalAlignment = HorizontalAlignment.Left,
@@ -307,7 +338,8 @@ var framed = new Border("framed")
 
 var underlined = new Border("underlined")
 {
-    Thickness = (0, 0, 0, 3),                      // left, top, right, bottom: a bottom rule only
+    // left, top, right, bottom: a bottom rule only
+    Thickness = (0, 0, 0, 3),
     Padding = (4, 4, 4, 8),
     ForegroundColor = new Color(242, 140, 40),
     HorizontalAlignment = HorizontalAlignment.Left,
@@ -375,13 +407,28 @@ and it fills itself with its `BackgroundColor`.
 </figure>
 
 ```csharp
-var panel = new StackPanel { Orientation = Orientation.Vertical, DesiredWidth = 220, Margin = (16, 16) };
+var panel = new StackPanel
+{
+    Orientation = Orientation.Vertical,
+    DesiredWidth = 220,
+    Margin = (16, 16)
+};
 
 panel.AddItem(new Label { Text = "Inventory" });
-panel.AddItem(new Separator { DesiredHeight = 1, Margin = (0, 8), BackgroundColor = new Color(168, 131, 74) });
+panel.AddItem(new Separator
+{
+    DesiredHeight = 1,
+    Margin = (0, 8),
+    BackgroundColor = new Color(168, 131, 74)
+});
 panel.AddItem(new Label { Text = "Torch x 3", Margin = (0, 8) });
 panel.AddItem(new Label { Text = "Rope x 1", Margin = (0, 4) });
-panel.AddItem(new Separator { DesiredHeight = 1, Margin = (0, 8), BackgroundColor = new Color(70, 56, 42) });
+panel.AddItem(new Separator
+{
+    DesiredHeight = 1,
+    Margin = (0, 8),
+    BackgroundColor = new Color(70, 56, 42)
+});
 panel.AddItem(new Label { Text = "Gold  120", Margin = (0, 8) });
 
 ui.AddElementToRoot(panel);
@@ -412,7 +459,13 @@ var body = new StackPanel { Orientation = Orientation.Vertical, Margin = (14, 12
 
 body.AddItem(new Label { Text = "Drag the title bar to move the window," });
 body.AddItem(new Label { Text = "pull its edges to resize it.", Margin = (0, 4) });
-body.AddItem(new CheckBox { Text = "Show hints", DesiredHeight = 22, Checked = true, Margin = (0, 14) });
+body.AddItem(new CheckBox
+{
+    Text = "Show hints",
+    DesiredHeight = 22,
+    Checked = true,
+    Margin = (0, 14)
+});
 
 var window = new Window("hints")
 {
@@ -512,7 +565,13 @@ You place the tabs and the contents yourself, for example buttons in a stack pan
 
 ```csharp
 var tabRow = new StackPanel { Orientation = Orientation.Horizontal, Margin = (16, 16) };
-var pages = new Grid { DesiredWidth = 400, DesiredHeight = 110, Margin = (16, 58), BackgroundColor = new Color(40, 31, 23) };
+var pages = new Grid
+{
+    DesiredWidth = 400,
+    DesiredHeight = 110,
+    Margin = (16, 58),
+    BackgroundColor = new Color(40, 31, 23)
+};
 
 pages.AddColumnDefinition(1.0f);
 pages.AddRowDefinition(1.0f);
@@ -520,16 +579,28 @@ pages.AddRowDefinition(1.0f);
 var tabs = new TabControl();
 var tabButtons = new List<Button>();
 
-// only the open tab's page is shown; the toggle color marks the open tab (subscribed first: adding the first
-// tab opens it)
+// only the open tab's page is shown; the toggle color marks the open tab
+// (subscribed first: adding the first tab opens it)
 tabs.OnTabOpened += (_, tab) =>
 {
     foreach (var tabButton in tabButtons) tabButton.ToggledOn = tabButton == tab;
 };
 
-foreach (var (title, text) in new[] { ("General", "Language, subtitles"), ("Audio", "Music and effects volume"), ("Video", "Resolution, full screen") })
+foreach (var (title, text) in new[]
 {
-    var tabButton = new Button { Text = title, Type = ButtonType.Toggle, DesiredWidth = 110, DesiredHeight = 34, Margin = (tabButtons.Count == 0 ? 0 : 6, 0) };
+    ("General", "Language, subtitles"),
+    ("Audio", "Music and effects volume"),
+    ("Video", "Resolution, full screen")
+})
+{
+    var tabButton = new Button
+    {
+        Text = title,
+        Type = ButtonType.Toggle,
+        DesiredWidth = 110,
+        DesiredHeight = 34,
+        Margin = (tabButtons.Count == 0 ? 0 : 6, 0)
+    };
     var page = new Label { Text = text, TextMargin = 14 };
 
     tabButtons.Add(tabButton);
