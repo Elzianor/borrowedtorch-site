@@ -1,6 +1,6 @@
 ---
 layout: docs
-legend: [prop, method, dp]
+legend: [prop, dp, method]
 title: "Glossary: ListBoxItem"
 description: "The properties, methods and events of ListBoxItem, in alphabetical order."
 ---

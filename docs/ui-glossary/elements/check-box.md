@@ -1,6 +1,6 @@
 ---
 layout: docs
-legend: [prop, method, event, dp]
+legend: [prop, dp, method, event]
 title: "Glossary: CheckBox"
 description: "The properties, methods and events of CheckBox, in alphabetical order."
 ---

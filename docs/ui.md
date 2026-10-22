@@ -1,6 +1,6 @@
 ---
 layout: docs
-legend: [prop, method, event, dp]
+legend: [prop, dp, method, event]
 title: "UI: quick start guide"
 description: Set up BorrowedTorch.UI in a MonoGame game, lay elements out, and find your way around the UI pages.
 ---

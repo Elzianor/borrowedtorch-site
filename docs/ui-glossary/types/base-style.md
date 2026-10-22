@@ -1,6 +1,6 @@
 ---
 layout: docs
-legend: [prop, method, dp]
+legend: [prop, dp, method]
 title: "Glossary: BaseStyle"
 description: "The members of BaseStyle, in alphabetical order."
 ---

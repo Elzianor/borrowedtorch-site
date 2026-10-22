@@ -1,6 +1,6 @@
 ---
 layout: docs
-legend: [prop, method, event, dp]
+legend: [prop, dp, method, event]
 title: "Glossary: ContextMenu"
 description: "The properties, methods and events of ContextMenu, in alphabetical order."
 ---

@@ -1,6 +1,6 @@
 ---
 layout: docs
-legend: [prop, method, event, dp]
+legend: [prop, dp, method, event]
 title: "UI: styles, bindings and animation"
 description: Style classes, mouse cursors, default settings, dependency properties, view model bindings, items templates and animations.
 ---

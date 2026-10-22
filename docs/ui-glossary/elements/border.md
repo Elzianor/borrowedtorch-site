@@ -1,6 +1,6 @@
 ---
 layout: docs
-legend: [prop, method, dp]
+legend: [prop, dp, method]
 title: "Glossary: Border"
 description: "The properties, methods and events of Border, in alphabetical order."
 ---

@@ -1,6 +1,6 @@
 ---
 layout: docs
-legend: [prop, method, dp]
+legend: [prop, dp, method]
 title: "Glossary: ColorPickerStyle"
 description: "The members of ColorPickerStyle, in alphabetical order."
 ---

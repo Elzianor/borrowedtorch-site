@@ -1,6 +1,6 @@
 ---
 layout: docs
-legend: [prop, method, dp]
+legend: [prop, dp, method]
 title: "Glossary: ToolTipStyle"
 description: "The members of ToolTipStyle, in alphabetical order."
 ---

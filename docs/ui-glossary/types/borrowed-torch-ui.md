@@ -1,6 +1,6 @@
 ---
 layout: docs
-legend: [prop, method, dp]
+legend: [prop, dp, method]
 title: "Glossary: BorrowedTorchUI"
 description: "The members of BorrowedTorchUI, in alphabetical order."
 ---

@@ -484,8 +484,12 @@ a.card:hover { border-color: var(--line-strong); background: var(--surface-2); c
 .prose .shot { margin-top: 1.4em; }
 .prose .shot img {
   display: block;
-  max-width: 100%;
+  /* the canvas around the picture, in its own colour: the rounded corners cut into it, not into the picture's
+     frame; outside the picture's size (content-box), so the picture isn't scaled */
+  box-sizing: content-box;
+  max-width: calc(100% - 18px);
   height: auto;
+  padding: 8px;
   border: 1px solid var(--line);
   border-radius: 10px;
   background: #100c09;

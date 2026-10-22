@@ -1,6 +1,6 @@
 ---
 layout: docs
-legend: [prop, method, dp]
+legend: [prop, dp, method]
 title: "Glossary: Window"
 description: "The properties, methods and events of Window, in alphabetical order."
 ---

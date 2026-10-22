@@ -1,6 +1,6 @@
 ---
 layout: docs
-legend: [prop, method, event, dp]
+legend: [prop, dp, method, event]
 title: "UI: layout elements"
 description: Stack panels, grids, scrolling containers, borders, separators, windows and tabs.
 ---

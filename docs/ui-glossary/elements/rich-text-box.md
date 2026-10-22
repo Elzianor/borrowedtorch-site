@@ -1,6 +1,6 @@
 ---
 layout: docs
-legend: [prop, method, event, dp]
+legend: [prop, dp, method, event]
 title: "Glossary: RichTextBox"
 description: "The properties, methods and events of RichTextBox, in alphabetical order."
 ---

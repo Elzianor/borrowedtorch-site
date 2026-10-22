@@ -1,6 +1,6 @@
 ---
 layout: docs
-legend: [prop, method, dp]
+legend: [prop, dp, method]
 title: "Glossary: StackPanel"
 description: "The properties, methods and events of StackPanel, in alphabetical order."
 ---

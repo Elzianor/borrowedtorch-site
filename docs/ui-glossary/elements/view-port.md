@@ -1,6 +1,6 @@
 ---
 layout: docs
-legend: [prop, method, dp]
+legend: [prop, dp, method]
 title: "Glossary: ViewPort"
 description: "The properties, methods and events of ViewPort, in alphabetical order."
 ---

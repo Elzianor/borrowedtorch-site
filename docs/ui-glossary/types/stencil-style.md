@@ -1,6 +1,6 @@
 ---
 layout: docs
-legend: [prop, method, dp]
+legend: [prop, dp, method]
 title: "Glossary: StencilStyle"
 description: "The members of StencilStyle, in alphabetical order."
 ---

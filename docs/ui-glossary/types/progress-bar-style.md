@@ -1,6 +1,6 @@
 ---
 layout: docs
-legend: [prop, method, dp]
+legend: [prop, dp, method]
 title: "Glossary: ProgressBarStyle"
 description: "The members of ProgressBarStyle, in alphabetical order."
 ---

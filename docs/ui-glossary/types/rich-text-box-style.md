@@ -1,6 +1,6 @@
 ---
 layout: docs
-legend: [prop, method, dp]
+legend: [prop, dp, method]
 title: "Glossary: RichTextBoxStyle"
 description: "The members of RichTextBoxStyle, in alphabetical order."
 ---

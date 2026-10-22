@@ -1,6 +1,6 @@
 ---
 layout: docs
-legend: [prop, method, dp]
+legend: [prop, dp, method]
 title: "Glossary: SourceData"
 description: "The members of SourceData, in alphabetical order."
 ---
