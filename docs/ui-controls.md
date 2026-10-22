@@ -106,8 +106,8 @@ A box with a text or any element beside it. It works as a check box that turns o
 that is one choice of a group.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/controls-checkbox.png' | relative_url }}" width="275" height="124" alt="Check boxes Subtitles (checked) and Vibration, radio buttons Easy, Normal (checked) and Hard, and a checked box to the right of its text">
-  <figcaption>Two check boxes, a radio group and a box on the right of its text.</figcaption>
+  <img src="{{ '/assets/img/ui/controls-checkbox-check.png' | relative_url }}" width="256" height="56" alt="Two check boxes: Subtitles checked, Vibration unchecked">
+  <figcaption>Two check boxes, the first one checked.</figcaption>
 </figure>
 
 ```csharp
@@ -126,6 +126,22 @@ var vibration = new CheckBox("vibration")
 subtitles.OnCheckedUnchecked += (sender, isChecked) =>
     Console.WriteLine($"Subtitles {isChecked}");
 
+var options = new StackPanel
+{
+    Orientation = Orientation.Horizontal,
+    Margin = (16, 16)
+};
+options.AddItemsRange([subtitles, vibration]);
+
+ui.AddElementToRoot(options);
+```
+
+<figure class="shot">
+  <img src="{{ '/assets/img/ui/controls-checkbox-radio.png' | relative_url }}" width="275" height="56" alt="Three radio buttons, Easy, Normal and Hard, with Normal chosen">
+  <figcaption>A radio group: one choice of three.</figcaption>
+</figure>
+
+```csharp
 // radio buttons of one group uncheck each other
 CheckBox Difficulty(string text) => new()
 {
@@ -140,6 +156,24 @@ var normal = Difficulty("Normal");
 var hard = Difficulty("Hard");
 normal.Margin = hard.Margin = (24, 0);
 
+var levels = new StackPanel
+{
+    Orientation = Orientation.Horizontal,
+    Margin = (16, 16)
+};
+levels.AddItemsRange([easy, normal, hard]);
+
+ui.AddElementToRoot(levels);
+
+normal.Checked = true;
+```
+
+<figure class="shot">
+  <img src="{{ '/assets/img/ui/controls-checkbox-right.png' | relative_url }}" width="189" height="56" alt="A check box with its box on the right of the text Box on the right">
+  <figcaption>The box on the right of its text.</figcaption>
+</figure>
+
+```csharp
 // the box on the right of its text
 var mirrored = new CheckBox("rightBox")
 {
@@ -149,24 +183,10 @@ var mirrored = new CheckBox("rightBox")
     DesiredHeight = 22,
     HorizontalAlignment = HorizontalAlignment.Left,
     VerticalAlignment = VerticalAlignment.Top,
-    Margin = (16, 84)
-};
-
-var options = new StackPanel
-{
-    Orientation = Orientation.Horizontal,
     Margin = (16, 16)
 };
-options.AddItemsRange([subtitles, vibration]);
 
-var levels = new StackPanel { Orientation = Orientation.Horizontal, Margin = (16, 50) };
-levels.AddItemsRange([easy, normal, hard]);
-
-ui.AddElementToRoot(options);
-ui.AddElementToRoot(levels);
 ui.AddElementToRoot(mirrored);
-
-normal.Checked = true;
 ```
 
 The box is a square as high as the check box, and the content takes the rest of the width beside it. Without a
