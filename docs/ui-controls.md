@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, event, dp]
 title: "UI: controls"
 description: Buttons, check boxes, sliders, progress bars, tooltips and the colour picker.
 ---

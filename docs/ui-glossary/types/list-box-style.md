@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, dp]
 title: "Glossary: ListBoxStyle"
 description: "The members of ListBoxStyle, in alphabetical order."
 ---

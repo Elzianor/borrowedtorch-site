@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method]
 title: "Glossary: ComboBoxStyle"
 description: "The members of ComboBoxStyle, in alphabetical order."
 ---

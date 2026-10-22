@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, event, dp]
 title: "UI: images and drawing"
 description: Images, stencils, view ports for your own drawing, and drag and drop.
 ---

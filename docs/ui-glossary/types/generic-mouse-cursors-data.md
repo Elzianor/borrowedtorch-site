@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, event]
 title: "Glossary: GenericMouseCursorsData&lt;T&gt;"
 description: "The members of GenericMouseCursorsData<T>, in alphabetical order."
 ---

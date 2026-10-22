@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method]
 title: "Glossary: ContentContainer"
 description: "The properties, methods and events of ContentContainer, in alphabetical order."
 ---

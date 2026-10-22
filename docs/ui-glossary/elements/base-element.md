@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, event, dp]
 title: "Glossary: base element"
 description: "The properties, methods and events of BaseElement, in alphabetical order."
 ---

@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, event]
 title: "Glossary: BindableCollection&lt;T&gt;"
 description: "The members of BindableCollection<T>, in alphabetical order."
 ---

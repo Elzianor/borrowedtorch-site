@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method]
 title: "Glossary: ScrollableContainerStyle"
 description: "The members of ScrollableContainerStyle, in alphabetical order."
 ---

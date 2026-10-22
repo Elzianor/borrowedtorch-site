@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop]
 title: "Glossary: RootElement"
 description: "The properties, methods and events of RootElement, in alphabetical order."
 ---

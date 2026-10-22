@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method]
 title: "Glossary: RichTextCursors"
 description: "The members of RichTextCursors, in alphabetical order."
 ---

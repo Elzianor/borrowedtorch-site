@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method]
 title: "Glossary: ViewPortStyle"
 description: "The members of ViewPortStyle, in alphabetical order."
 ---

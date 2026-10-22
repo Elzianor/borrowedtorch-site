@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop]
 title: "Glossary: BaseAnimation"
 description: "The members of BaseAnimation, in alphabetical order."
 ---

@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [event]
 title: "Glossary: ITextInputEvents"
 description: "The members of ITextInputEvents, in alphabetical order."
 ---

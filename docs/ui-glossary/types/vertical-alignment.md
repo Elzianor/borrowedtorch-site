@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [dp]
 title: "Glossary: VerticalAlignment"
 description: "The values of VerticalAlignment."
 ---

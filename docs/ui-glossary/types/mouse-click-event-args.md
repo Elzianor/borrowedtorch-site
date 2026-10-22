@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, event]
 title: "Glossary: MouseClickEventArgs"
 description: "The members of MouseClickEventArgs, in alphabetical order."
 ---

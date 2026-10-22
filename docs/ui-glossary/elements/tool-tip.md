@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, dp]
 title: "Glossary: ToolTip"
 description: "The properties, methods and events of ToolTip, in alphabetical order."
 ---

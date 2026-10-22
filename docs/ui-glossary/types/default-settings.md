@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [dp]
 title: "Glossary: DefaultSettings"
 description: "The members of DefaultSettings, in alphabetical order."
 ---

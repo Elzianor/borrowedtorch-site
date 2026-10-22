@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, dp]
 title: "Glossary: SliderStyle"
 description: "The members of SliderStyle, in alphabetical order."
 ---

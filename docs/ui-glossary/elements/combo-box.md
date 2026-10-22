@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, event, dp]
 title: "Glossary: ComboBox"
 description: "The properties, methods and events of ComboBox, in alphabetical order."
 ---

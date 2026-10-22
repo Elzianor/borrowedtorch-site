@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, dp]
 title: "Glossary: ContextMenuStyle"
 description: "The members of ContextMenuStyle, in alphabetical order."
 ---

@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, dp]
 title: "Glossary: DefaultWindowTitleBar"
 description: "The properties, methods and events of DefaultWindowTitleBar, in alphabetical order."
 ---

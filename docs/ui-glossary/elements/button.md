@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, event, dp]
 title: "Glossary: Button"
 description: "The properties, methods and events of Button, in alphabetical order."
 ---

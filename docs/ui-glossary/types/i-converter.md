@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [method]
 title: "Glossary: IConverter"
 description: "The members of IConverter, in alphabetical order."
 ---

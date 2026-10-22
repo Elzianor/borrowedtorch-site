@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, dp]
 title: "Glossary: BorderStyle"
 description: "The members of BorderStyle, in alphabetical order."
 ---

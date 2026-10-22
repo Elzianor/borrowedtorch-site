@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, dp]
 title: "Glossary: ScrollableContainer"
 description: "The properties, methods and events of ScrollableContainer, in alphabetical order."
 ---

@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, event, dp]
 title: "Glossary: CheckBoxStyle"
 description: "The members of CheckBoxStyle, in alphabetical order."
 ---

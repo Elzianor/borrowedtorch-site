@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method]
 title: "Glossary: DisposableBase"
 description: "The members of DisposableBase, in alphabetical order."
 ---

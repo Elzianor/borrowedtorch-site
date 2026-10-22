@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, dp]
 title: "Glossary: DragAndDropRepresentation"
 description: "The properties, methods and events of DragAndDropRepresentation, in alphabetical order."
 ---

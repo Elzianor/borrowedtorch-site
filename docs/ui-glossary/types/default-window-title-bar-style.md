@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [method]
 title: "Glossary: DefaultWindowTitleBarStyle"
 description: "The members of DefaultWindowTitleBarStyle, in alphabetical order."
 ---

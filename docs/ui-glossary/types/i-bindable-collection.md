@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [event]
 title: "Glossary: IBindableCollection"
 description: "The members of IBindableCollection, in alphabetical order."
 ---

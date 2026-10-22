@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, dp]
 title: "Glossary: TreeViewStyle"
 description: "The members of TreeViewStyle, in alphabetical order."
 ---

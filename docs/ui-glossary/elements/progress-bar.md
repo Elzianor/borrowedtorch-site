@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, dp]
 title: "Glossary: ProgressBar"
 description: "The properties, methods and events of ProgressBar, in alphabetical order."
 ---

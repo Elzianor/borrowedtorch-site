@@ -162,6 +162,19 @@ layout: base
     </header>
 
     <article class="prose">
+    {%- comment %} the kinds of the names coloured on the page (front matter legend: [prop, method, event, dp]) {% endcomment %}
+    {%- if page.legend %}
+    <p class="kind-legend"><span class="kind-legend-title">Names</span>
+      {%- for k in page.legend %}
+      {%- case k %}
+        {%- when "prop" %} <span class="kb kb-prop">plain property</span>
+        {%- when "method" %} <span class="kb kb-method">method</span>
+        {%- when "event" %} <span class="kb kb-event">event</span>
+        {%- when "dp" %} <span class="kb kb-dp">dependency property</span>
+      {%- endcase %}
+      {%- endfor %}
+    </p>
+    {%- endif %}
 {{ content }}
     </article>
 

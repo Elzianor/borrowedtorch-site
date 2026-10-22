@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method]
 title: "Glossary: Animation&lt;T&gt;"
 description: "The members of Animation<T>, in alphabetical order."
 ---

@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, event]
 title: "Glossary: GenericStyle&lt;T&gt;"
 description: "The members of GenericStyle<T>, in alphabetical order."
 ---

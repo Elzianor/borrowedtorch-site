@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, event, dp]
 title: "UI: layout elements"
 description: Stack panels, grids, scrolling containers, borders, separators, windows and tabs.
 ---
@@ -15,51 +16,59 @@ theme from [styles](/docs/ui-styles/#the-theme-of-these-pages).
 Puts its items one after another, in a column or in a row, and fits their size.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/layout-stackpanel.png' | relative_url }}" width="494" height="152" alt="A column of three buttons, New game, Options and Quit, and a row of three buttons, Cut, Copy and Paste">
-  <figcaption>A vertical and a horizontal stack panel.</figcaption>
+  <img src="{{ '/assets/img/ui/layout-stackpanel-vertical.png' | relative_url }}" width="214" height="152" alt="A column of three buttons: New game, Options and Quit">
+  <figcaption>A vertical stack panel: its items in a column.</figcaption>
 </figure>
 
 ```csharp
-// a column: the gaps are top margins (a bottom margin adds nothing to the panel's size)
+// a column: each gap is the top margin of the next item
+// (a bottom margin adds nothing to the panel's size)
 var menu = new StackPanel("menu")
 {
     Orientation = Orientation.Vertical,
     Margin = (16, 16)
 };
 
-menu.AddItem(new Button { Text = "New game", DesiredWidth = 180, DesiredHeight = 34 });
-menu.AddItem(new Button
+Button MenuButton(string text, int gap) => new()
 {
-    Text = "Options",
+    Text = text,
     DesiredWidth = 180,
     DesiredHeight = 34,
-    Margin = (0, 8)
-});
-menu.AddItem(new Button
-{
-    Text = "Quit",
-    DesiredWidth = 180,
-    DesiredHeight = 34,
-    Margin = (0, 8)
-});
+    Margin = (0, gap)
+};
 
-// a row: the gaps are left margins
+menu.AddItem(MenuButton("New game", 0));
+menu.AddItem(MenuButton("Options", 8));
+menu.AddItem(MenuButton("Quit", 8));
+
+ui.AddElementToRoot(menu);
+```
+
+<figure class="shot">
+  <img src="{{ '/assets/img/ui/layout-stackpanel-horizontal.png' | relative_url }}" width="290" height="68" alt="A row of three buttons: Cut, Copy and Paste">
+  <figcaption>A horizontal stack panel: its items in a row.</figcaption>
+</figure>
+
+```csharp
+// a row: each gap is the left margin of the next item
 var toolbar = new StackPanel("toolbar")
 {
     Orientation = Orientation.Horizontal,
-    Margin = (220, 16)
+    Margin = (16, 16)
 };
 
-foreach (var (text, index) in new[] { "Cut", "Copy", "Paste" }.Select((t, i) => (t, i)))
-    toolbar.AddItem(new Button
-    {
-        Text = text,
-        DesiredWidth = 80,
-        DesiredHeight = 34,
-        Margin = (index == 0 ? 0 : 8, 0)
-    });
+Button ToolButton(string text, int gap) => new()
+{
+    Text = text,
+    DesiredWidth = 80,
+    DesiredHeight = 34,
+    Margin = (gap, 0)
+};
 
-ui.AddElementToRoot(menu);
+toolbar.AddItem(ToolButton("Cut", 0));
+toolbar.AddItem(ToolButton("Copy", 8));
+toolbar.AddItem(ToolButton("Paste", 8));
+
 ui.AddElementToRoot(toolbar);
 ```
 

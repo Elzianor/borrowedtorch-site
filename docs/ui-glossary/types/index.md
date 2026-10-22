@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, event, dp]
 title: "UI glossary: types"
 description: "Every other type the UI provides: classes, structs, interfaces, enums and delegates, one page per type."
 ---

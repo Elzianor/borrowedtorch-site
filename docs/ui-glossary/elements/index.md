@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, dp]
 title: "UI glossary: elements"
 description: "Every UI element with its properties, methods and events, one page per element."
 ---

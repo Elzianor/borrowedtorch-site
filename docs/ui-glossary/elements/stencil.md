@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, dp]
 title: "Glossary: Stencil"
 description: "The properties, methods and events of Stencil, in alphabetical order."
 ---

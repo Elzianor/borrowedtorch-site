@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method]
 title: "Glossary: RunBoundaryValues&lt;T&gt;"
 description: "The members of RunBoundaryValues<T>, in alphabetical order."
 ---

@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, event, dp]
 title: "UI: text"
 description: Plain labels, the rich text box for formatted, editable and scrolling text, and the fonts both of them draw with.
 ---

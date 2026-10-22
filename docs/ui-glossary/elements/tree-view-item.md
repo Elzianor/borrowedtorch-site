@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, dp]
 title: "Glossary: TreeViewItem"
 description: "The properties, methods and events of TreeViewItem, in alphabetical order."
 ---

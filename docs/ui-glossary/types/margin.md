@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method]
 title: "Glossary: Margin"
 description: "The members of Margin, in alphabetical order."
 ---

@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method]
 title: "Glossary: DragAndDropCursors"
 description: "The members of DragAndDropCursors, in alphabetical order."
 ---

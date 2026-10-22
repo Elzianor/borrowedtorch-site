@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, event, dp]
 title: "Glossary: TreeView"
 description: "The properties, methods and events of TreeView, in alphabetical order."
 ---

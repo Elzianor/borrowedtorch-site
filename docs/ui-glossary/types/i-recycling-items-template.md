@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [method, dp]
 title: "Glossary: IRecyclingItemsTemplate"
 description: "The members of IRecyclingItemsTemplate, in alphabetical order."
 ---

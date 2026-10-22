@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, event, dp]
 title: "UI: lists and menus"
 description: List boxes, combo boxes, tree views and context menus, with selection, data sources, virtualization and keyboard control.
 ---

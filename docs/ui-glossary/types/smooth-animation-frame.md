@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method]
 title: "Glossary: SmoothAnimationFrame&lt;T&gt;"
 description: "The members of SmoothAnimationFrame<T>, in alphabetical order."
 ---

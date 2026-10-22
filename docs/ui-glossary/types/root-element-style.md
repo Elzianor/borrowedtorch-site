@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [method]
 title: "Glossary: RootElementStyle"
 description: "The members of RootElementStyle, in alphabetical order."
 ---

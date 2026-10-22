@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop]
 title: "Glossary: DragType"
 description: "The values of DragType."
 ---

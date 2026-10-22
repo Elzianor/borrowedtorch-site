@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [dp]
 title: "Glossary: HorizontalAlignment"
 description: "The values of HorizontalAlignment."
 ---

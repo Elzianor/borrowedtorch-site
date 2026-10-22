@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [dp]
 title: "Glossary: CheckBoxType"
 description: "The values of CheckBoxType."
 ---

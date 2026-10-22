@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, dp]
 title: "Glossary: Image"
 description: "The properties, methods and events of Image, in alphabetical order."
 ---

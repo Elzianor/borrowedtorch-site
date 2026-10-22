@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [method]
 title: "Glossary: IItemsTemplate"
 description: "The members of IItemsTemplate, in alphabetical order."
 ---

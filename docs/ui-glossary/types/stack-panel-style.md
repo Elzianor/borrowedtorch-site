@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method]
 title: "Glossary: StackPanelStyle"
 description: "The members of StackPanelStyle, in alphabetical order."
 ---

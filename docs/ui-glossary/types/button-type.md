@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [dp]
 title: "Glossary: ButtonType"
 description: "The values of ButtonType."
 ---

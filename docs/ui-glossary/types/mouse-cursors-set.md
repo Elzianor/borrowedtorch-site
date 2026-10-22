@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method]
 title: "Glossary: MouseCursorsSet"
 description: "The members of MouseCursorsSet, in alphabetical order."
 ---

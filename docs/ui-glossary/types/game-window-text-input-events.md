@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [method, event]
 title: "Glossary: GameWindowTextInputEvents"
 description: "The members of GameWindowTextInputEvents, in alphabetical order."
 ---

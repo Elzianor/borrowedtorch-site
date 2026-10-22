@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, event, dp]
 title: "Glossary: ButtonStyle"
 description: "The members of ButtonStyle, in alphabetical order."
 ---

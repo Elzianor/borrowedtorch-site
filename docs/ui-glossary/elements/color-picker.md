@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, event, dp]
 title: "Glossary: ColorPicker"
 description: "The properties, methods and events of ColorPicker, in alphabetical order."
 ---

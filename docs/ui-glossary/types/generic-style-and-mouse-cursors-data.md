@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop]
 title: "Glossary: GenericStyleAndMouseCursorsData&lt;TStyle&gt;"
 description: "The members of GenericStyleAndMouseCursorsData<TStyle>, in alphabetical order."
 ---

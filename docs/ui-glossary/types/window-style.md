@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, dp]
 title: "Glossary: WindowStyle"
 description: "The members of WindowStyle, in alphabetical order."
 ---

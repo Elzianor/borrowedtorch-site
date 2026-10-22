@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method]
 title: "Glossary: ResizeCursors"
 description: "The members of ResizeCursors, in alphabetical order."
 ---

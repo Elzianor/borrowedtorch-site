@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [method]
 title: "Glossary: DisplayScale"
 description: "The members of DisplayScale, in alphabetical order."
 ---

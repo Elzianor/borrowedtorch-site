@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, dp]
 title: "Glossary: SliderType"
 description: "The values of SliderType."
 ---

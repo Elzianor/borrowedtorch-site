@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [dp]
 title: "Glossary: ListBoxVirtualizationMode"
 description: "The values of ListBoxVirtualizationMode."
 ---

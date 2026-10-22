@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method]
 title: "Glossary: DiscreteAnimationFrame&lt;T&gt;"
 description: "The members of DiscreteAnimationFrame<T>, in alphabetical order."
 ---

@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, dp]
 title: "Glossary: Label"
 description: "The properties, methods and events of Label, in alphabetical order."
 ---

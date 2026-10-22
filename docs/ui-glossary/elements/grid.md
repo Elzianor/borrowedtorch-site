@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, dp]
 title: "Glossary: Grid"
 description: "The properties, methods and events of Grid, in alphabetical order."
 ---

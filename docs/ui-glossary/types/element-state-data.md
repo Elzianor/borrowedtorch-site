@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, event]
 title: "Glossary: ElementStateData"
 description: "The members of ElementStateData, in alphabetical order."
 ---

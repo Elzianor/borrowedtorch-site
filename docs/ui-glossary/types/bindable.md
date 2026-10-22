@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [method, event]
 title: "Glossary: Bindable"
 description: "The members of Bindable, in alphabetical order."
 ---

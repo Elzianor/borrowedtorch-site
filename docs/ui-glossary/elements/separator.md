@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [method, dp]
 title: "Glossary: Separator"
 description: "The properties, methods and events of Separator, in alphabetical order."
 ---

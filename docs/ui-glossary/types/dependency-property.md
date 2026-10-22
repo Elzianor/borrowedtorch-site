@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, event]
 title: "Glossary: DependencyProperty&lt;T&gt;"
 description: "The members of DependencyProperty<T>, in alphabetical order."
 ---

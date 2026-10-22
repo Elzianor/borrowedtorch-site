@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, event]
 title: "Glossary: TabControl"
 description: "The members of TabControl, in alphabetical order."
 ---

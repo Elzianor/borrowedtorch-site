@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, dp]
 title: "Glossary: LabelStyle"
 description: "The members of LabelStyle, in alphabetical order."
 ---

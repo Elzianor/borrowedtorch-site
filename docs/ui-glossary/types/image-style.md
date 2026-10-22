@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method]
 title: "Glossary: ImageStyle"
 description: "The members of ImageStyle, in alphabetical order."
 ---

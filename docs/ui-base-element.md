@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, event, dp]
 title: "UI: base element"
 description: What every element has in common, input and states, resizing, the root element and how to write your own element.
 ---

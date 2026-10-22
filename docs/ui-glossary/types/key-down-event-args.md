@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method]
 title: "Glossary: KeyDownEventArgs"
 description: "The members of KeyDownEventArgs, in alphabetical order."
 ---
