@@ -174,7 +174,7 @@ Every element has a constructor taking an optional name. Set its properties, sub
 root (or to another element). The snippets on these pages call the UI `ui`; in the game above it is `_ui`.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/ui-first-elements.png' | relative_url }}" width="440" height="112" alt="A title label and a Play button">
+  <img src="{{ '/assets/img/ui/ui-first-elements.png' | relative_url }}" width="201" height="115" alt="A title label and a Play button">
   <figcaption>A label and a button added to the root.</figcaption>
 </figure>
 
@@ -220,7 +220,7 @@ line. When nothing else gives a width, as for a label alone in a fitted panel, t
 Give the parent a `MaxWidth` to make it wrap.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/ui-sizes.png' | relative_url }}" width="520" height="220" alt="Four identical framed areas, each with one label: a fixed size at the top left, one fitted to its text, one stretched across the width and one filling its area">
+  <img src="{{ '/assets/img/ui/ui-sizes.png' | relative_url }}" width="522" height="222" alt="Four identical framed areas, each with one label: a fixed size at the top left, one fitted to its text, one stretched across the width and one filling its area">
   <figcaption>The same label in four identical areas: fixed, fitted, stretched across, stretched both ways.</figcaption>
 </figure>
 
@@ -276,7 +276,7 @@ The alignments place an element inside the space its parent gives it: `Left`, `C
 horizontally, `Top`, `Center`, `Bottom` or `Stretch` vertically.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/ui-alignment.png' | relative_url }}" width="520" height="200" alt="Six labels placed at the corners, the top centre and the middle of the screen">
+  <img src="{{ '/assets/img/ui/ui-alignment.png' | relative_url }}" width="522" height="202" alt="Six labels placed at the corners, the top centre and the middle of the screen">
   <figcaption>Elements aligned within the screen, each with a margin of 12.</figcaption>
 </figure>
 
@@ -387,7 +387,7 @@ A modal window over the game, with three buttons in a stack panel. While it is o
 gets no mouse input, and Escape closes it.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/ui-pause-menu.png' | relative_url }}" width="520" height="300" alt="A modal Paused window with Resume, Settings and Quit to menu buttons over a shaded game screen">
+  <img src="{{ '/assets/img/ui/ui-pause-menu.png' | relative_url }}" width="522" height="302" alt="A modal Paused window with Resume, Settings and Quit to menu buttons over a shaded game screen">
   <figcaption>The pause menu over the game's own UI.</figcaption>
 </figure>
 

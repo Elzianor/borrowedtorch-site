@@ -15,7 +15,7 @@ theme from [styles](/docs/ui-styles/#the-theme-of-these-pages).
 Puts its items one after another, in a column or in a row, and fits their size.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/layout-stackpanel.png' | relative_url }}" width="520" height="160" alt="A column of three buttons, New game, Options and Quit, and a row of three buttons, Cut, Copy and Paste">
+  <img src="{{ '/assets/img/ui/layout-stackpanel.png' | relative_url }}" width="494" height="152" alt="A column of three buttons, New game, Options and Quit, and a row of three buttons, Cut, Copy and Paste">
   <figcaption>A vertical and a horizontal stack panel.</figcaption>
 </figure>
 
@@ -103,7 +103,7 @@ Lays its items out in columns and rows. Each column and row is fixed, fitted to 
 left.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/layout-grid.png' | relative_url }}" width="520" height="240" alt="A grid with its cell lines drawn: a fixed Sidebar column, a narrower 1 share column and a wider 2 shares column">
+  <img src="{{ '/assets/img/ui/layout-grid.png' | relative_url }}" width="522" height="242" alt="A grid with its cell lines drawn: a fixed Sidebar column, a narrower 1 share column and a wider 2 shares column">
   <figcaption>A fixed column and two proportional ones, with <code>ShowLayout</code> on.</figcaption>
 </figure>
 
@@ -219,7 +219,7 @@ Shows its items in a view of its own size and scrolls them when they are larger,
 code.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/layout-scrollable.png' | relative_url }}" width="520" height="200" alt="A dark scrollable container showing part of a long list of log lines">
+  <img src="{{ '/assets/img/ui/layout-scrollable.png' | relative_url }}" width="394" height="202" alt="A dark scrollable container showing part of a long list of log lines">
   <figcaption>A container with a long log, scrolled to 40 %.</figcaption>
 </figure>
 
@@ -318,7 +318,7 @@ Style class: `ScrollableContainerStyle` (the five dependency properties above; i
 A frame around one `Content` element, drawn in a solid colour or from eight textures.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/layout-border.png' | relative_url }}" width="520" height="140" alt="A label in a thin golden frame, and a Section title label underlined by an orange rule">
+  <img src="{{ '/assets/img/ui/layout-border.png' | relative_url }}" width="416" height="78" alt="A label in a thin golden frame, and a Section title label underlined by an orange rule">
   <figcaption>A frame on every side, and a border with only a bottom side.</figcaption>
 </figure>
 
@@ -402,7 +402,7 @@ An empty element to draw a dividing line or leave a gap: give it a size along on
 and it fills itself with its `BackgroundColor`.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/layout-separator.png' | relative_url }}" width="360" height="150" alt="An inventory list divided by two thin horizontal lines, a golden one and a dark one">
+  <img src="{{ '/assets/img/ui/layout-separator.png' | relative_url }}" width="254" height="137" alt="An inventory list divided by two thin horizontal lines, a golden one and a dark one">
   <figcaption>Two separators in a vertical stack panel.</figcaption>
 </figure>
 
@@ -450,7 +450,7 @@ A separator has no style class of its own.
 A frame with a title bar and a content area. The user moves it by its title bar, and it can be modal.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/layout-window.png' | relative_url }}" width="520" height="260" alt="A Hints window with a title bar, an x close button and a checked Show hints check box">
+  <img src="{{ '/assets/img/ui/layout-window.png' | relative_url }}" width="410" height="240" alt="A Hints window with a title bar, an x close button and a checked Show hints check box">
   <figcaption>A resizable window with the default title bar.</figcaption>
 </figure>
 
@@ -559,7 +559,7 @@ Not an element but a helper: it pairs tab elements with content elements and sho
 You place the tabs and the contents yourself, for example buttons in a stack panel and the pages in one grid cell.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/layout-tabcontrol.png' | relative_url }}" width="520" height="190" alt="Three tab buttons, General, Audio and Video, above a panel showing the text of the open tab">
+  <img src="{{ '/assets/img/ui/layout-tabcontrol.png' | relative_url }}" width="434" height="186" alt="Three tab buttons, General, Audio and Video, above a panel showing the text of the open tab">
   <figcaption>Three toggle buttons as tabs over one page area.</figcaption>
 </figure>
 

@@ -18,7 +18,7 @@ A scrollable list of rows with single or multiple selection. A row can be a text
 `ItemsSource`, and long lists can be virtualized so only the rows in view have elements.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/controls-listbox.png' | relative_url }}" width="520" height="210" alt="Two lists: on the left text rows with Desert selected, a separator line and a check box row, with a vertical scroll bar; on the right five rows with Fire, Poison and Shadow selected">
+  <img src="{{ '/assets/img/ui/controls-listbox.png' | relative_url }}" width="506" height="210" alt="Two lists: on the left text rows with Desert selected, a separator line and a check box row, with a vertical scroll bar; on the right five rows with Fire, Poison and Shadow selected">
   <figcaption>A single selection list with a separator and a check box row, and a multiple selection list.</figcaption>
 </figure>
 
@@ -252,7 +252,7 @@ A selection image, a toggle button and a drop-down list box: the closed combo bo
 one lists all rows to choose from.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/controls-combobox.png' | relative_url }}" width="420" height="200" alt="A combo box showing 1920 x 1080 next to an orange v button, with its drop-down list open below it listing four resolutions">
+  <img src="{{ '/assets/img/ui/controls-combobox.png' | relative_url }}" width="254" height="168" alt="A combo box showing 1920 x 1080 next to an orange v button, with its drop-down list open below it listing four resolutions">
   <figcaption>An open combo box with the third row selected.</figcaption>
 </figure>
 
@@ -355,7 +355,7 @@ public sealed class Folder(string name, params Folder[] children)
 ```
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/controls-treeview.png' | relative_url }}" width="420" height="220" alt="A tree view with Chapter one expanded to Forest and Desert, Desert expanded to Oasis and Dunes with Oasis selected, and Chapter two expanded to Caves; square icons mark the branches">
+  <img src="{{ '/assets/img/ui/controls-treeview.png' | relative_url }}" width="294" height="222" alt="A tree view with Chapter one expanded to Forest and Desert, Desert expanded to Oasis and Dunes with Oasis selected, and Chapter two expanded to Caves; square icons mark the branches">
   <figcaption>A tree filled from folders, fully expanded, with a leaf selected.</figcaption>
 </figure>
 
@@ -498,7 +498,7 @@ A menu that opens at the mouse on a right click, drawn above everything. Its ite
 separators, or the objects of an `ItemsSource`; an item can be checkable and can open a sub-menu.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/controls-contextmenu.png' | relative_url }}" width="460" height="230" alt="A label reading Right click here with a menu open below it: Copy, Rename, a separator, a checked Show grid item and a highlighted Sort item whose sub-menu shows By name and By date">
+  <img src="{{ '/assets/img/ui/controls-contextmenu.png' | relative_url }}" width="224" height="195" alt="A label reading Right click here with a menu open below it: Copy, Rename, a separator, a checked Show grid item and a highlighted Sort item whose sub-menu shows By name and By date">
   <figcaption>A context menu with a separator, a checked item and an open sub-menu.</figcaption>
 </figure>
 

@@ -15,7 +15,7 @@ A clickable element with a text or any element as content. It can act once per c
 on and off.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/controls-button.png' | relative_url }}" width="520" height="72" alt="Three buttons: Play, a toggled Music button, and Zoom in">
+  <img src="{{ '/assets/img/ui/controls-button.png' | relative_url }}" width="486" height="74" alt="Three buttons: Play, a toggled Music button, and Zoom in">
   <figcaption>A normal, a toggled and a repeat button.</figcaption>
 </figure>
 
@@ -105,7 +105,7 @@ A box with a text or any element beside it. It works as a check box that turns o
 that is one choice of a group.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/controls-checkbox.png' | relative_url }}" width="520" height="118" alt="Check boxes Subtitles (checked) and Vibration, radio buttons Easy, Normal (checked) and Hard, and a checked box to the right of its text">
+  <img src="{{ '/assets/img/ui/controls-checkbox.png' | relative_url }}" width="275" height="124" alt="Check boxes Subtitles (checked) and Vibration, radio buttons Easy, Normal (checked) and Hard, and a checked box to the right of its text">
   <figcaption>Two check boxes, a radio group and a box on the right of its text.</figcaption>
 </figure>
 
@@ -239,7 +239,7 @@ A track with a thumb that picks a value between `Min` and `Max`. The same elemen
 elements: with `ContentSize` and `ViewSize` its thumb shows how much of the content is in view.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/controls-slider.png' | relative_url }}" width="520" height="190" alt="A volume slider at 60 with tick marks under it, a slider with end caps, a scroll bar with a long thumb, and a vertical slider">
+  <img src="{{ '/assets/img/ui/controls-slider.png' | relative_url }}" width="395" height="184" alt="A volume slider at 60 with tick marks under it, a slider with end caps, a scroll bar with a long thumb, and a vertical slider">
   <figcaption>A slider with ticks, a slider with caps, a scroll bar and a vertical slider.</figcaption>
 </figure>
 
@@ -425,7 +425,7 @@ A bar that fills in proportion to `Value` between `Min` and `Max`. It only shows
 it.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/controls-progressbar.png' | relative_url }}" width="520" height="130" alt="Two horizontal progress bars, one at 35 percent and an orange one at 80 percent, and a vertical bar at 60 percent">
+  <img src="{{ '/assets/img/ui/controls-progressbar.png' | relative_url }}" width="392" height="130" alt="Two horizontal progress bars, one at 35 percent and an orange one at 80 percent, and a vertical bar at 60 percent">
   <figcaption>Two horizontal bars, one with its own colours, and a vertical bar.</figcaption>
 </figure>
 
@@ -493,7 +493,7 @@ A small popup that appears next to the mouse cursor while it rests over an eleme
 element's `ToolTip` property (see the [base element](/docs/ui-base-element/)), not by adding it to the tree.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/controls-tooltip.png' | relative_url }}" width="460" height="130" alt="A Save button with a tooltip reading Save the game (Ctrl+S) below and to the right of the cursor">
+  <img src="{{ '/assets/img/ui/controls-tooltip.png' | relative_url }}" width="296" height="95" alt="A Save button with a tooltip reading Save the game (Ctrl+S) below and to the right of the cursor">
   <figcaption>A tooltip placed below and to the right of the cursor.</figcaption>
 </figure>
 
@@ -563,7 +563,7 @@ A colour wheel to pick a colour from with a click. The hue goes around the centr
 at the centre to the full colour at the edge, and `Brightness` darkens the result.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/controls-colorpicker.png' | relative_url }}" width="420" height="220" alt="A square colour wheel with a ring pointer on a light yellow-green, and a swatch of the picked colour beside it">
+  <img src="{{ '/assets/img/ui/controls-colorpicker.png' | relative_url }}" width="334" height="222" alt="A square colour wheel with a ring pointer on a light yellow-green, and a swatch of the picked colour beside it">
   <figcaption>The picker and a label showing the selected colour.</figcaption>
 </figure>
 

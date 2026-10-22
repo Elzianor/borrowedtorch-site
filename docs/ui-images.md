@@ -14,7 +14,7 @@ Unmarked properties are plain C# properties. Screenshots use the theme from [sty
 Draws a texture, stretched over the image, centred at its own size or repeated as tiles.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/images-fills.png' | relative_url }}" width="520" height="160" alt="Three framed images: the Beryllium UI logo stretched over the first, a check box texture centred in the second, and the same texture tiled in rows and columns in the third, cut at the right and bottom edges">
+  <img src="{{ '/assets/img/ui/images-fills.png' | relative_url }}" width="514" height="154" alt="Three framed images: the Beryllium UI logo stretched over the first, a check box texture centred in the second, and the same texture tiled in rows and columns in the third, cut at the right and bottom edges">
   <figcaption>The same frame size with <code>Stretch</code>, <code>Center</code> and <code>Tile</code>.</figcaption>
 </figure>
 
@@ -125,7 +125,7 @@ Shows a picture through a mask texture: where the mask has the key colour, the p
 stays. A portrait in a frame is the usual case.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/images-stencil.png' | relative_url }}" width="360" height="176" alt="A knight portrait inside a gold heraldic frame, and on the right small previews of the portrait labelled source and of the frame labelled stencil">
+  <img src="{{ '/assets/img/ui/images-stencil.png' | relative_url }}" width="354" height="182" alt="A knight portrait inside a gold heraldic frame, and on the right small previews of the portrait labelled source and of the frame labelled stencil">
   <figcaption>The stencil, with its source and stencil textures on the right.</figcaption>
 </figure>
 
@@ -183,7 +183,7 @@ Reserves a rectangle in the layout and runs your own drawing code inside it, for
 render embedded in the UI.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/images-viewport.png' | relative_url }}" width="420" height="200" alt="A dark rectangle with the Beryllium UI logo drawn rotated in its middle">
+  <img src="{{ '/assets/img/ui/images-viewport.png' | relative_url }}" width="314" height="202" alt="A dark rectangle with the Beryllium UI logo drawn rotated in its middle">
   <figcaption>A view port whose draw instructions draw a rotated texture with their own sprite batch.</figcaption>
 </figure>
 
@@ -277,7 +277,7 @@ Any element can be dragged with the left mouse button. Its `DragType` decides wh
 `OnDropDenied`) are on the [base element](/docs/ui-base-element/).
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/images-draganddrop.png' | relative_url }}" width="520" height="170" alt="A Torch card on the left, a half transparent copy of it being dragged, and an outlined Slot on the right">
+  <img src="{{ '/assets/img/ui/images-draganddrop.png' | relative_url }}" width="416" height="162" alt="A Torch card on the left, a half transparent copy of it being dragged, and an outlined Slot on the right">
   <figcaption>The card's half transparent representation follows the mouse towards the slot.</figcaption>
 </figure>
 

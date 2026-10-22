@@ -160,7 +160,7 @@ A style is applied at one of two levels: `X.GeneralStyle` for every element of t
 for one element, over its general style. A value set in code wins over both.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/styles-override.png' | relative_url }}" width="520" height="72" alt="Three buttons in a row: a gold Keep button, a dark red Delete save button with light text, and a green Own color button">
+  <img src="{{ '/assets/img/ui/styles-override.png' | relative_url }}" width="486" height="74" alt="Three buttons in a row: a gold Keep button, a dark red Delete save button with light text, and a green Own color button">
   <figcaption>The general button style, a style override, and a colour set in code.</figcaption>
 </figure>
 
@@ -588,7 +588,7 @@ public sealed class PercentConverter : IConverter
 ```
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/styles-bindings.png' | relative_url }}" width="520" height="200" alt="A text box with Ash and the label Welcome, Ash beside it; a slider at 65 percent with the label Volume 65 %; a list with Forest, Desert and Caves">
+  <img src="{{ '/assets/img/ui/styles-bindings.png' | relative_url }}" width="366" height="208" alt="A text box with Ash and the label Welcome, Ash beside it; a slider at 65 percent with the label Volume 65 %; a list with Forest, Desert and Caves">
   <figcaption>A text box, a slider and a list bound to one view model.</figcaption>
 </figure>
 
@@ -776,7 +776,7 @@ public sealed class QuestTemplate : IItemsTemplate
 ```
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/styles-items-template.png' | relative_url }}" width="420" height="170" alt="A list of four check boxes: Light the beacon and Rest by the fire checked, Find the map and Cross the river unchecked">
+  <img src="{{ '/assets/img/ui/styles-items-template.png' | relative_url }}" width="334" height="154" alt="A list of four check boxes: Light the beacon and Rest by the fire checked, Find the map and Cross the river unchecked">
   <figcaption>Each quest of the source shown as a check box.</figcaption>
 </figure>
 
@@ -837,7 +837,7 @@ describe the values: `SmoothAnimationFrame<T>` goes from one value to another ov
 and start it.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/styles-animation.png' | relative_url }}" width="520" height="120" alt="The orange text Level complete above a progress bar filled to about forty percent">
+  <img src="{{ '/assets/img/ui/styles-animation.png' | relative_url }}" width="334" height="103" alt="The orange text Level complete above a progress bar filled to about forty percent">
   <figcaption>A banner that slid in and a bar that is filling, captured while running.</figcaption>
 </figure>
 

@@ -20,7 +20,7 @@ and draws it from the font atlas. It has no scrolling, editing or rich formattin
 when you need those. `ListBox.AddTextItem` and the default items template make their rows from labels.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/text-label.png' | relative_url }}" width="520" height="200" alt="A gold Chapter one caption, a centred paragraph wrapped over three lines, and three short labels turned clockwise, counterclockwise and upside down">
+  <img src="{{ '/assets/img/ui/text-label.png' | relative_url }}" width="519" height="174" alt="A gold Chapter one caption, a centred paragraph wrapped over three lines, and three short labels turned clockwise, counterclockwise and upside down">
   <figcaption>A caption, a wrapped and centred description, and three turned labels.</figcaption>
 </figure>
 
@@ -160,7 +160,7 @@ area are drawn each frame, so the length of the text is limited by memory, not b
 ### Rich formatting
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/text-rich.png' | relative_url }}" width="520" height="110" alt="A two-line hint with Space in orange, E in green and a small check box image inside the sentence">
+  <img src="{{ '/assets/img/ui/text-rich.png' | relative_url }}" width="466" height="67" alt="A two-line hint with Space in orange, E in green and a small check box image inside the sentence">
   <figcaption>Coloured words and an inline image in a read-only rich text box.</figcaption>
 </figure>
 
@@ -210,7 +210,7 @@ the action. The tags work in read-only boxes only: a `ReadWrite` box shows its t
 ### Editing
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/text-input.png' | relative_url }}" width="520" height="140" alt="A one-line name field holding Ash with the caret after it, and a larger two-line notes field">
+  <img src="{{ '/assets/img/ui/text-input.png' | relative_url }}" width="474" height="138" alt="A one-line name field holding Ash with the caret after it, and a larger two-line notes field">
   <figcaption>A one-line input with its caret, and a wrapping multi-line input.</figcaption>
 </figure>
 
@@ -295,7 +295,7 @@ A read-only box takes the keyboard with a press too, without a caret, so the key
 ### Scrolling and text animation
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/text-scrolling.png' | relative_url }}" width="520" height="160" alt="A journal box with wrapped lines Day 1 to Day 4 and a vertical scroll bar on its right">
+  <img src="{{ '/assets/img/ui/text-scrolling.png' | relative_url }}" width="454" height="162" alt="A journal box with wrapped lines Day 1 to Day 4 and a vertical scroll bar on its right">
   <figcaption>A read-only box taller in text than in size, with a vertical scroll bar.</figcaption>
 </figure>
 

@@ -138,7 +138,7 @@ textures draw them from that folder instead (each element's section says which t
 is drawn darker, and `Transparency` fades the element together with everything inside it.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/base-transparency.png' | relative_url }}" width="520" height="96" alt="Four sand coloured labels reading 0.00, 0.25, 0.50 and 0.75, each one more faded into the dark background than the one before">
+  <img src="{{ '/assets/img/ui/base-transparency.png' | relative_url }}" width="494" height="98" alt="Four sand coloured labels reading 0.00, 0.25, 0.50 and 0.75, each one more faded into the dark background than the one before">
   <figcaption>The same label at a transparency of 0, 0.25, 0.5 and 0.75.</figcaption>
 </figure>
 
@@ -287,7 +287,7 @@ label is hovered; the label with `FromParent` lights up with the title bar. The 
 through as if they were not there, so only the elements you created decide.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/base-states.png' | relative_url }}" width="520" height="72" alt="Three buttons side by side: Normal in sand brown, Hovered in a lighter sand colour, Disabled in a dark brown">
+  <img src="{{ '/assets/img/ui/base-states.png' | relative_url }}" width="486" height="74" alt="Three buttons side by side: Normal in sand brown, Hovered in a lighter sand colour, Disabled in a dark brown">
   <figcaption>A button in its normal state, hovered, and disabled.</figcaption>
 </figure>
 
@@ -507,7 +507,7 @@ With `ResizeWithElementContour` the element stays as it is while you drag: a con
 the new bounds, and the element is resized there once when the button is released.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/base-resize.png' | relative_url }}" width="460" height="190" alt="A dark panel reading Pull the edges, with a sand coloured contour around it reaching further to the right, where the panel will be resized to">
+  <img src="{{ '/assets/img/ui/base-resize.png' | relative_url }}" width="348" height="154" alt="A dark panel reading Pull the edges, with a sand coloured contour around it reaching further to the right, where the panel will be resized to">
   <figcaption>A resize with the contour: the panel is resized to the contour on release.</figcaption>
 </figure>
 
@@ -750,7 +750,7 @@ public class Row : BaseElement
 And the row in use:
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/base-custom-element.png' | relative_url }}" width="460" height="96" alt="Four sand brown labels in a row reading 60, 100, 40 and 140, each as wide as its number, with even gaps between them">
+  <img src="{{ '/assets/img/ui/base-custom-element.png' | relative_url }}" width="404" height="82" alt="Four sand brown labels in a row reading 60, 100, 40 and 140, each as wide as its number, with even gaps between them">
   <figcaption>The custom Row element with four labels of different widths and a gap of 10.</figcaption>
 </figure>
 
