@@ -12,18 +12,18 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 ## Properties
 
-<h3 id="background"><span class="prop"><code>Background</code></span></h3>
+<h3 id="background"><span class="prop"><code>Background</code></span> <a class="ctx" href="/docs/ui-layout/#defaultwindowtitlebar" title="Background in context on the layout page" aria-label="Background in context on the layout page">→</a></h3>
 
 `Image` · Read-only. The image that fills the bar and holds the title and the close button. Its `BackgroundColor` is the bar's colour.
 
-<h3 id="closebutton"><span class="prop"><code>CloseButton</code></span></h3>
+<h3 id="closebutton"><span class="prop"><code>CloseButton</code></span> <a class="ctx" href="/docs/ui-layout/#defaultwindowtitlebar" title="CloseButton in context on the layout page" aria-label="CloseButton in context on the layout page">→</a></h3>
 
 `Button` · Read-only. The close button at the right of the bar. It shows no text until you set its `Text` or `Content`.
 
-<h3 id="onclosebuttonclickaction"><span class="prop"><code>OnCloseButtonClickAction</code></span></h3>
+<h3 id="onclosebuttonclickaction"><span class="prop"><code>OnCloseButtonClickAction</code></span> <a class="ctx" href="/docs/ui-layout/#defaultwindowtitlebar" title="OnCloseButtonClickAction in context on the layout page" aria-label="OnCloseButtonClickAction in context on the layout page">→</a></h3>
 
 `Action` · What a click on the close button does. In a window's default title bar it is the window's `Hide`.
 
-<h3 id="title"><span class="prop"><code>Title</code></span></h3>
+<h3 id="title"><span class="prop"><code>Title</code></span> <a class="ctx" href="/docs/ui-layout/#defaultwindowtitlebar" title="Title in context on the layout page" aria-label="Title in context on the layout page">→</a></h3>
 
 `RichTextBox` · Read-only. The title text, centred in the bar. Set its `Text` and text style properties.

@@ -12,68 +12,68 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 ## Properties
 
-<h3 id="checked"><span class="dp"><code>Checked</code></span></h3>
+<h3 id="checked"><span class="dp"><code>Checked</code></span> <a class="ctx" href="/docs/ui-controls/#checkbox-properties" title="Checked in context on the controls page" aria-label="Checked in context on the controls page">→</a></h3>
 
-`bool` · Whether the box is checked. Setting it raises `OnCheckedUnchecked`, and checking a radio button unchecks the others of its group. ([in context](/docs/ui-controls/#checkbox-properties))
+`bool` · Whether the box is checked. Setting it raises `OnCheckedUnchecked`, and checking a radio button unchecks the others of its group.
 
-<h3 id="checkedsolidcolor"><span class="dp"><code>CheckedSolidColor</code></span></h3>
+<h3 id="checkedsolidcolor"><span class="dp"><code>CheckedSolidColor</code></span> <a class="ctx" href="/docs/ui-controls/#checkbox-properties" title="CheckedSolidColor in context on the controls page" aria-label="CheckedSolidColor in context on the controls page">→</a></h3>
 
-`Color` · The colour of the box while it is checked, without textures. ([in context](/docs/ui-controls/#checkbox-properties))
+`Color` · The colour of the box while it is checked, without textures.
 
-<h3 id="content"><span class="dp"><code>Content</code></span></h3>
+<h3 id="content"><span class="dp"><code>Content</code></span> <a class="ctx" href="/docs/ui-controls/#checkbox-properties" title="Content in context on the controls page" aria-label="Content in context on the controls page">→</a></h3>
 
-`BaseElement` · Any element shown beside the box instead of a text. A content you give is detached, not disposed, when it is replaced. ([in context](/docs/ui-controls/#checkbox-properties))
+`BaseElement` · Any element shown beside the box instead of a text. A content you give is detached, not disposed, when it is replaced.
 
-<h3 id="direction"><span class="dp"><code>Direction</code></span></h3>
+<h3 id="direction"><span class="dp"><code>Direction</code></span> <a class="ctx" href="/docs/ui-controls/#checkbox-properties" title="Direction in context on the controls page" aria-label="Direction in context on the controls page">→</a></h3>
 
-`CheckBoxDirection` · Which side of the content the box is on: `Left` (the default) or `Right`. ([in context](/docs/ui-controls/#checkbox-properties))
+`CheckBoxDirection` · Which side of the content the box is on: `Left` (the default) or `Right`.
 
-<h3 id="generalmousecursorsset"><span class="prop"><code>GeneralMouseCursorsSet</code></span></h3>
+<h3 id="generalmousecursorsset"><span class="prop"><code>GeneralMouseCursorsSet</code></span> <a class="ctx" href="/docs/ui-base-element/#genericstyleandmousecursorsdata-properties" title="GeneralMouseCursorsSet in context on the base element page" aria-label="GeneralMouseCursorsSet in context on the base element page">→</a></h3>
 
-`MouseCursorsSet` · Static. The cursors of every element of this style type; null (the default) falls back to `DefaultMouseCursorsSet`. ([in context](/docs/ui-base-element/#genericstyleandmousecursorsdata-properties))
+`MouseCursorsSet` · Static. The cursors of every element of this style type; null (the default) falls back to `DefaultMouseCursorsSet`.
 
-<h3 id="generalstyle"><span class="prop"><code>GeneralStyle</code></span></h3>
+<h3 id="generalstyle"><span class="prop"><code>GeneralStyle</code></span> <a class="ctx" href="/docs/ui-base-element/#genericstyleandmousecursorsdata-properties" title="GeneralStyle in context on the base element page" aria-label="GeneralStyle in context on the base element page">→</a></h3>
 
-`CheckBoxStyle` · Static. The style of every element of this style type. It starts as a copy of the framework defaults; changing one of its properties updates every such element, a property it leaves unset takes its default. ([in context](/docs/ui-base-element/#genericstyleandmousecursorsdata-properties))
+`CheckBoxStyle` · Static. The style of every element of this style type. It starts as a copy of the framework defaults; changing one of its properties updates every such element, a property it leaves unset takes its default.
 
-<h3 id="groupid"><span class="dp"><code>GroupId</code></span></h3>
+<h3 id="groupid"><span class="dp"><code>GroupId</code></span> <a class="ctx" href="/docs/ui-controls/#checkbox-properties" title="GroupId in context on the controls page" aria-label="GroupId in context on the controls page">→</a></h3>
 
-`string` · The group of a radio button: the radio buttons in the tree with the same id uncheck each other. Not used by a `CheckBox`. ([in context](/docs/ui-controls/#checkbox-properties))
+`string` · The group of a radio button: the radio buttons in the tree with the same id uncheck each other. Not used by a `CheckBox`.
 
-<h3 id="imagestyle"><span class="dp"><code>ImageStyle</code></span></h3>
+<h3 id="imagestyle"><span class="dp"><code>ImageStyle</code></span> <a class="ctx" href="/docs/ui-controls/#checkbox-properties" title="ImageStyle in context on the controls page" aria-label="ImageStyle in context on the controls page">→</a></h3>
 
-`ImageStyle` · The style of the image that draws the box. ([in context](/docs/ui-controls/#checkbox-properties))
+`ImageStyle` · The style of the image that draws the box.
 
-<h3 id="mousecursorsset"><span class="prop"><code>MouseCursorsSet</code></span></h3>
+<h3 id="mousecursorsset"><span class="prop"><code>MouseCursorsSet</code></span> <a class="ctx" href="/docs/ui-base-element/#genericstyleandmousecursorsdata-properties" title="MouseCursorsSet in context on the base element page" aria-label="MouseCursorsSet in context on the base element page">→</a></h3>
 
-`MouseCursorsSet` · Read-only. The cursors the element shows: its override, else the set given to the control it is a part of, else its type's general set, else `DefaultMouseCursorsSet`. ([in context](/docs/ui-base-element/#genericstyleandmousecursorsdata-properties))
+`MouseCursorsSet` · Read-only. The cursors the element shows: its override, else the set given to the control it is a part of, else its type's general set, else `DefaultMouseCursorsSet`.
 
-<h3 id="mousecursorssetoverride"><span class="prop"><code>MouseCursorsSetOverride</code></span></h3>
+<h3 id="mousecursorssetoverride"><span class="prop"><code>MouseCursorsSetOverride</code></span> <a class="ctx" href="/docs/ui-base-element/#genericstyleandmousecursorsdata-properties" title="MouseCursorsSetOverride in context on the base element page" aria-label="MouseCursorsSetOverride in context on the base element page">→</a></h3>
 
-`MouseCursorsSet` · The cursors of this element only, passed on to its parts that have none of their own. ([in context](/docs/ui-base-element/#genericstyleandmousecursorsdata-properties))
+`MouseCursorsSet` · The cursors of this element only, passed on to its parts that have none of their own.
 
-<h3 id="styleoverride"><span class="prop"><code>StyleOverride</code></span></h3>
+<h3 id="styleoverride"><span class="prop"><code>StyleOverride</code></span> <a class="ctx" href="/docs/ui-base-element/#genericstyleandmousecursorsdata-properties" title="StyleOverride in context on the base element page" aria-label="StyleOverride in context on the base element page">→</a></h3>
 
-`CheckBoxStyle` · A style for this element only, applied over the general style. Setting it to null takes its values back out. ([in context](/docs/ui-base-element/#genericstyleandmousecursorsdata-properties))
+`CheckBoxStyle` · A style for this element only, applied over the general style. Setting it to null takes its values back out.
 
-<h3 id="text"><span class="dp"><code>Text</code></span></h3>
+<h3 id="text"><span class="dp"><code>Text</code></span> <a class="ctx" href="/docs/ui-controls/#checkbox-properties" title="Text in context on the controls page" aria-label="Text in context on the controls page">→</a></h3>
 
-`string` · Creates a `RichTextBox` content showing this text, styled by `TextStyle`. ([in context](/docs/ui-controls/#checkbox-properties))
+`string` · Creates a `RichTextBox` content showing this text, styled by `TextStyle`.
 
-<h3 id="textstyle"><span class="dp"><code>TextStyle</code></span></h3>
+<h3 id="textstyle"><span class="dp"><code>TextStyle</code></span> <a class="ctx" href="/docs/ui-controls/#checkbox-properties" title="TextStyle in context on the controls page" aria-label="TextStyle in context on the controls page">→</a></h3>
 
-`RichTextBoxStyle` · The style of the text content made from `Text`. ([in context](/docs/ui-controls/#checkbox-properties))
+`RichTextBoxStyle` · The style of the text content made from `Text`.
 
-<h3 id="type"><span class="dp"><code>Type</code></span></h3>
+<h3 id="type"><span class="dp"><code>Type</code></span> <a class="ctx" href="/docs/ui-controls/#checkbox-properties" title="Type in context on the controls page" aria-label="Type in context on the controls page">→</a></h3>
 
-`CheckBoxType` · `CheckBox` (the default) or `RadioButton`. ([in context](/docs/ui-controls/#checkbox-properties))
+`CheckBoxType` · `CheckBox` (the default) or `RadioButton`.
 
-<h3 id="uncheckedsolidcolor"><span class="dp"><code>UncheckedSolidColor</code></span></h3>
+<h3 id="uncheckedsolidcolor"><span class="dp"><code>UncheckedSolidColor</code></span> <a class="ctx" href="/docs/ui-controls/#checkbox-properties" title="UncheckedSolidColor in context on the controls page" aria-label="UncheckedSolidColor in context on the controls page">→</a></h3>
 
-`Color` · The colour of the box while it is unchecked, without textures. ([in context](/docs/ui-controls/#checkbox-properties))
+`Color` · The colour of the box while it is unchecked, without textures.
 
 ## Events
 
-<h3 id="oncheckedunchecked"><span class="event"><code>OnCheckedUnchecked</code></span></h3>
+<h3 id="oncheckedunchecked"><span class="event"><code>OnCheckedUnchecked</code></span> <a class="ctx" href="/docs/ui-controls/#checkbox-events" title="OnCheckedUnchecked in context on the controls page" aria-label="OnCheckedUnchecked in context on the controls page">→</a></h3>
 
-`(BaseElement sender, bool isChecked)` · `Checked` changes: by a click, from code, by a binding, or because another box of the group was checked. ([in context](/docs/ui-controls/#checkbox-events))
+`(BaseElement sender, bool isChecked)` · `Checked` changes: by a click, from code, by a binding, or because another box of the group was checked.

@@ -12,34 +12,34 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 ## Properties
 
-<h3 id="content"><span class="prop"><code>Content</code></span></h3>
+<h3 id="content"><span class="prop"><code>Content</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenuitem" title="Content in context on the lists and menus page" aria-label="Content in context on the lists and menus page">→</a></h3>
 
 `BaseElement` · Read-only. The element the item shows, given when it is made.
 
-<h3 id="hassubitems"><span class="prop"><code>HasSubItems</code></span></h3>
+<h3 id="hassubitems"><span class="prop"><code>HasSubItems</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenuitem" title="HasSubItems in context on the lists and menus page" aria-label="HasSubItems in context on the lists and menus page">→</a></h3>
 
 `bool` · Read-only. Whether the item has a sub-menu with at least one item.
 
-<h3 id="ischeckable"><span class="prop"><code>IsCheckable</code></span></h3>
+<h3 id="ischeckable"><span class="prop"><code>IsCheckable</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenuitem" title="IsCheckable in context on the lists and menus page" aria-label="IsCheckable in context on the lists and menus page">→</a></h3>
 
 `bool` · Whether choosing the item switches `IsChecked`. Setting it to `false` also clears `IsChecked`.
 
-<h3 id="ischecked"><span class="prop"><code>IsChecked</code></span></h3>
+<h3 id="ischecked"><span class="prop"><code>IsChecked</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenuitem" title="IsChecked in context on the lists and menus page" aria-label="IsChecked in context on the lists and menus page">→</a></h3>
 
 `bool` · Whether the check mark of a checkable item is shown.
 
-<h3 id="mousecursorsset"><span class="prop"><code>MouseCursorsSet</code></span></h3>
+<h3 id="mousecursorsset"><span class="prop"><code>MouseCursorsSet</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenuitem" title="MouseCursorsSet in context on the lists and menus page" aria-label="MouseCursorsSet in context on the lists and menus page">→</a></h3>
 
 `MouseCursorsSet` · Read-only. The mouse cursors of the row the item is in.
 
-<h3 id="parentmenu"><span class="prop"><code>ParentMenu</code></span></h3>
+<h3 id="parentmenu"><span class="prop"><code>ParentMenu</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenuitem" title="ParentMenu in context on the lists and menus page" aria-label="ParentMenu in context on the lists and menus page">→</a></h3>
 
 `ContextMenu` · Read-only. The menu the item is in.
 
-<h3 id="source"><span class="prop"><code>Source</code></span></h3>
+<h3 id="source"><span class="prop"><code>Source</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenuitem" title="Source in context on the lists and menus page" aria-label="Source in context on the lists and menus page">→</a></h3>
 
 `object` · Read-only. The `ItemsSource` object the item shows, `null` for an item added in code.
 
-<h3 id="submenu"><span class="prop"><code>SubMenu</code></span></h3>
+<h3 id="submenu"><span class="prop"><code>SubMenu</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenuitem" title="SubMenu in context on the lists and menus page" aria-label="SubMenu in context on the lists and menus page">→</a></h3>
 
 `ContextMenu` · The menu opened next to the item, on hover or click (see the menu's `SubMenusOpenType`). The arrow shows while it has items.

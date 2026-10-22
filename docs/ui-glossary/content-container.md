@@ -12,10 +12,10 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 ## Properties
 
-<h3 id="content"><span class="prop"><code>Content</code></span></h3>
+<h3 id="content"><span class="prop"><code>Content</code></span> <a class="ctx" href="/docs/ui-layout/#contentcontainer" title="Content in context on the layout page" aria-label="Content in context on the layout page">→</a></h3>
 
 `BaseElement` · Read-only. The element the container holds: its first item, or null.
 
-<h3 id="mousecursorsset"><span class="prop"><code>MouseCursorsSet</code></span></h3>
+<h3 id="mousecursorsset"><span class="prop"><code>MouseCursorsSet</code></span> <a class="ctx" href="/docs/ui-layout/#contentcontainer" title="MouseCursorsSet in context on the layout page" aria-label="MouseCursorsSet in context on the layout page">→</a></h3>
 
 `MouseCursorsSet` · Read-only. The cursors of the container's parent, so the container shows the cursors of its control.
