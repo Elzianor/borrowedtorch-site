@@ -9,7 +9,7 @@ coloured words, links, inline images, editing, scrolling and a typing animation.
 font atlas every frame, so no text texture is made, and both get their fonts the same way (see [Fonts](#fonts)).
 
 Both are elements: they have all the properties, events and methods of [`BaseElement`](/docs/ui-base-element/), which
-the tables below don't repeat (the text colour, for example, is the inherited `ForegroundColor`). Badges tell what each name is: <span class="kb kb-prop">P</span> a plain property, <span class="kb kb-method">M</span> a method, <span class="kb kb-event">E</span> an event, and <span class="kb kb-dp">DP</span> a dependency property: `Foo` is backed by `FooDP`, which a style, a binding or an animation
+the tables below don't repeat (the text colour, for example, is the inherited `ForegroundColor`). Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>: `Foo` is backed by `FooDP`, which a style, a binding or an animation
 can set (see [styles, bindings and animation](/docs/ui-styles/)). Screenshots use the theme from
 [styles](/docs/ui-styles/#the-theme-of-these-pages).
 

@@ -313,8 +313,8 @@ a.card:hover { border-color: var(--line-strong); background: var(--surface-2); c
 .docs-node > summary:hover::before { color: var(--gold); }
 .docs-node ul { margin-left: 14px; border-left: 1px solid var(--line); }
 .docs-node > ul > li > a { padding-left: 16px; }
-.docs-members a { display: flex; align-items: baseline; padding-top: 4px; padding-bottom: 4px; font-family: var(--mono); font-size: .8rem; font-variant-ligatures: none; overflow-wrap: anywhere; }
-.docs-members a[aria-current="location"] { color: var(--gold); border-left-color: var(--gold); }
+.docs-members a { padding-top: 4px; padding-bottom: 4px; font-family: var(--mono); font-size: .8rem; font-variant-ligatures: none; overflow-wrap: anywhere; }
+.docs-members a[aria-current="location"] { border-left-color: var(--kind, var(--gold)); background: color-mix(in srgb, var(--kind, #e9c27a) 16%, transparent); }
 /* a sidebar taller than the window scrolls on its own */
 @media (min-width: 861px) {
   .docs-groups { max-height: calc(100vh - var(--header-h) - 48px); overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent; }
@@ -382,38 +382,30 @@ a.card:hover { border-color: var(--line-strong); background: var(--surface-2); c
   line-height: 1.55;
 }
 .prose pre code { padding: 0; border: 0; background: none; color: #e6d8c2; font-size: .86rem; }
-/* the kind of a member name on the UI pages, a small badge in the colours of the code highlighting: P a plain property,
-   M a method, E an event, DP a dependency property (after a name in the tables and headings, before it in the sidebar) */
+/* the kind of a member name on the UI pages, in the colours of the code highlighting: a plain property, a method, an
+   event, a dependency property. The name's own chip takes the colour in the tables, the headings and the legends, and
+   the name's link in the sidebar */
 .prop, .kb-prop, .kind-prop { --kind: #c9b28a; }
 .dp, .kb-dp, .kind-dp { --kind: #e9c27a; }
 .method, .kb-method, .kind-method { --kind: #b5c77a; }
 .event, .kb-event, .kind-event { --kind: #f2a65a; }
-.prose .prop, .prose .dp, .prose .method, .prose .event { white-space: nowrap; }
-.prose .prop::after, .prose .dp::after, .prose .method::after, .prose .event::after, .prose .kb, .docs-members a::before {
-  display: inline-block;
-  min-width: 1.7em;
-  padding: 0 .3em;
-  border: 1px solid color-mix(in srgb, var(--kind) 45%, transparent);
-  border-radius: 4px;
-  background: color-mix(in srgb, var(--kind) 10%, transparent);
+.prose .prop > code, .prose .dp > code, .prose .method > code, .prose .event > code, .prose .kb {
   color: var(--kind);
-  font-family: var(--sans);
-  font-size: .62rem;
-  font-weight: 600;
-  letter-spacing: .04em;
-  line-height: 1.45;
-  text-align: center;
-  vertical-align: .14em;
+  border-color: color-mix(in srgb, var(--kind) 55%, transparent);
+  background: color-mix(in srgb, var(--kind) 13%, transparent);
 }
-.prose .prop::after { content: "P"; margin-left: .45em; }
-.prose .dp::after { content: "DP"; margin-left: .45em; }
-.prose .method::after { content: "M"; margin-left: .45em; }
-.prose .event::after { content: "E"; margin-left: .45em; }
-.docs-members a::before { flex: none; min-width: 2.2em; margin-right: .55em; }
-.docs-members a.kind-prop::before { content: "P"; }
-.docs-members a.kind-dp::before { content: "DP"; }
-.docs-members a.kind-method::before { content: "M"; }
-.docs-members a.kind-event::before { content: "E"; }
+.prose .kb {
+  font-family: var(--mono);
+  font-size: .88em;
+  font-variant-ligatures: none;
+  padding: .1em .38em;
+  border: 1px solid;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+.docs-members a[class*="kind-"] { color: var(--kind); border-left-color: color-mix(in srgb, var(--kind) 45%, transparent); }
+.docs-members a[class*="kind-"]:hover { background: color-mix(in srgb, var(--kind) 10%, transparent); border-left-color: var(--kind); }
+.docs-members a[class*="kind-"][aria-current="location"] { border-left-color: var(--kind); background: color-mix(in srgb, var(--kind) 18%, transparent); }
 .prose .highlighter-rouge + .highlighter-rouge, .prose div.highlight { margin-top: 1em; }
 .prose table { width: 100%; border-collapse: collapse; font-size: .93rem; display: block; overflow-x: auto; }
 /* the scroll bars of wide code blocks and tables, in the site's colours instead of the browser's */

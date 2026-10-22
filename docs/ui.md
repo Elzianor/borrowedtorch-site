@@ -128,7 +128,7 @@ Two cases need more than the window:
 
 ### BorrowedTorchUI
 
-Badges tell what each name is: <span class="kb kb-prop">P</span> a plain property, <span class="kb kb-method">M</span> a method, <span class="kb kb-event">E</span> an event.
+Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>.
 
 | Member | Description |
 | --- | --- |

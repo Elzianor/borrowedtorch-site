@@ -11,7 +11,7 @@ the class does when the value changes. This page covers what sets those properti
 plus mouse cursors and the framework-wide defaults. None of the properties of the types on this page are dependency
 properties themselves. Screenshots use the theme shown in [the next section](#the-theme-of-these-pages).
 
-Badges tell what each name is: <span class="kb kb-prop">P</span> a plain property, <span class="kb kb-method">M</span> a method, <span class="kb kb-event">E</span> an event.
+Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>.
 
 ## The theme of these pages
 

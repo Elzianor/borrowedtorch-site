@@ -5,7 +5,7 @@ description: What every element has in common, input and states, resizing, the r
 ---
 
 Every element derives from `BaseElement`, so everything on this page applies to all of them: buttons, labels, stack
-panels, windows and your own elements. The other UI pages list only what each element adds. Badges tell what each name is: <span class="kb kb-prop">P</span> a plain property, <span class="kb kb-method">M</span> a method, <span class="kb kb-event">E</span> an event, and <span class="kb kb-dp">DP</span> a dependency property: `Foo` is backed by `FooDP`, which a style, a binding or an animation can
+panels, windows and your own elements. The other UI pages list only what each element adds. Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>: `Foo` is backed by `FooDP`, which a style, a binding or an animation can
 set (see [styles, bindings and animation](/docs/ui-styles/)), and the class has a static `FooDPActions` with the
 property's shared actions and default. Screenshots use the theme from
 [styles](/docs/ui-styles/#the-theme-of-these-pages).
