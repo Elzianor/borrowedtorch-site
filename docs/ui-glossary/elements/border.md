@@ -34,7 +34,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="padding"><span class="dp"><code>Padding</code></span> <a class="ctx" href="/docs/ui-layout/#border-properties" title="Padding in context on the layout page" aria-label="Padding in context on the layout page">→</a></h3>
 
-`Margin?` · The inset of the content from the border's edges, used instead of <a class="ref dp" href="/docs/ui-glossary/elements/border/#thickness">`Thickness`</a>. Null (the default) insets the content by the thickness.
+<code><a href="/docs/ui-glossary/types/margin/">Margin</a>?</code> · The inset of the content from the border's edges, used instead of <a class="ref dp" href="/docs/ui-glossary/elements/border/#thickness">`Thickness`</a>. Null (the default) insets the content by the thickness.
 
 <h3 id="styleoverride"><span class="prop"><code>StyleOverride</code></span> <a class="ctx" href="/docs/ui-base-element/#genericstyleandmousecursorsdata-properties" title="StyleOverride in context on the base element page" aria-label="StyleOverride in context on the base element page">→</a></h3>
 

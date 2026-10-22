@@ -14,7 +14,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="childrenselector"><span class="prop"><code>ChildrenSelector</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-properties" title="ChildrenSelector in context on the lists and menus page" aria-label="ChildrenSelector in context on the lists and menus page">→</a></h3>
 
-`Func<object, IEnumerable>` · Gives the children of an object of the <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#itemssource">`ItemsSource`</a>, `null` or empty for a leaf. A children collection that is a `BindableCollection<T>` is followed.
+`Func<object, IEnumerable>` · Gives the children of an object of the <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#itemssource">`ItemsSource`</a>, `null` or empty for a leaf. A children collection that is a <code><a href="/docs/ui-glossary/types/bindable-collection/">BindableCollection</a>&lt;T&gt;</code> is followed.
 
 <h3 id="expandediconcolor"><span class="dp"><code>ExpandedIconColor</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-properties" title="ExpandedIconColor in context on the lists and menus page" aria-label="ExpandedIconColor in context on the lists and menus page">→</a></h3>
 
@@ -34,7 +34,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="itemssource"><span class="dp"><code>ItemsSource</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-properties" title="ItemsSource in context on the lists and menus page" aria-label="ItemsSource in context on the lists and menus page">→</a></h3>
 
-`IEnumerable` · The top-level objects of the tree. A `BindableCollection<T>` is followed.
+`IEnumerable` · The top-level objects of the tree. A <code><a href="/docs/ui-glossary/types/bindable-collection/">BindableCollection</a>&lt;T&gt;</code> is followed.
 
 <h3 id="itemstemplate"><span class="prop"><code>ItemsTemplate</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-properties" title="ItemsTemplate in context on the lists and menus page" aria-label="ItemsTemplate in context on the lists and menus page">→</a></h3>
 
@@ -42,7 +42,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="leaves"><span class="prop"><code>Leaves</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-properties" title="Leaves in context on the lists and menus page" aria-label="Leaves in context on the lists and menus page">→</a></h3>
 
-`IReadOnlyList<TreeViewItem>` · Read-only. The top-level items.
+<code>IReadOnlyList&lt;<a href="/docs/ui-glossary/elements/tree-view-item/">TreeViewItem</a>&gt;</code> · Read-only. The top-level items.
 
 <h3 id="listboxstyle"><span class="dp"><code>ListBoxStyle</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-properties" title="ListBoxStyle in context on the lists and menus page" aria-label="ListBoxStyle in context on the lists and menus page">→</a></h3>
 
@@ -80,19 +80,19 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="additem"><span class="method"><code>AddItem()</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-methods" title="AddItem() in context on the lists and menus page" aria-label="AddItem() in context on the lists and menus page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/tree-view/#additem">`AddItem(BaseElement item)`</a> · Adds a top-level item; an element that is not a <a class="ref" href="/docs/ui-glossary/elements/tree-view-item/">`TreeViewItem`</a> is put in one. Does nothing while an <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#itemssource">`ItemsSource`</a> is set.
+<span class="method"><code><a href="/docs/ui-glossary/elements/tree-view/#additem">AddItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Adds a top-level item; an element that is not a <a class="ref" href="/docs/ui-glossary/elements/tree-view-item/">`TreeViewItem`</a> is put in one. Does nothing while an <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#itemssource">`ItemsSource`</a> is set.
 
 <h3 id="additemat"><span class="method"><code>AddItemAt()</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-methods" title="AddItemAt() in context on the lists and menus page" aria-label="AddItemAt() in context on the lists and menus page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/tree-view/#additemat">`AddItemAt(BaseElement item, int index)`</a> · Inserts a top-level item at the index.
+<span class="method"><code><a href="/docs/ui-glossary/elements/tree-view/#additemat">AddItemAt</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item, int index)</code></span> · Inserts a top-level item at the index.
 
 <h3 id="additemsrange"><span class="method"><code>AddItemsRange()</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-methods" title="AddItemsRange() in context on the lists and menus page" aria-label="AddItemsRange() in context on the lists and menus page">→</a></h3>
 
-`AddItemsRange(IEnumerable<BaseElement> items)` · Adds top-level items at the end, listed in one go.
+<span class="method"><code><a href="/docs/ui-glossary/elements/tree-view/#additemsrange">AddItemsRange</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items)</code></span> · Adds top-level items at the end, listed in one go.
 
 <h3 id="additemsrangeat"><span class="method"><code>AddItemsRangeAt()</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-methods" title="AddItemsRangeAt() in context on the lists and menus page" aria-label="AddItemsRangeAt() in context on the lists and menus page">→</a></h3>
 
-`AddItemsRangeAt(IEnumerable<BaseElement> items, int index)` · Inserts top-level items at the index, listed in one go.
+<span class="method"><code><a href="/docs/ui-glossary/elements/tree-view/#additemsrangeat">AddItemsRangeAt</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items, int index)</code></span> · Inserts top-level items at the index, listed in one go.
 
 <h3 id="clearitems"><span class="method"><code>ClearItems()</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-methods" title="ClearItems() in context on the lists and menus page" aria-label="ClearItems() in context on the lists and menus page">→</a></h3>
 
@@ -108,7 +108,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="removeitem"><span class="method"><code>RemoveItem()</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-methods" title="RemoveItem() in context on the lists and menus page" aria-label="RemoveItem() in context on the lists and menus page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/tree-view/#removeitem">`RemoveItem(BaseElement item)`</a> · Removes the item (or the item made around the element) from wherever it is in the tree, with its branch.
+<span class="method"><code><a href="/docs/ui-glossary/elements/tree-view/#removeitem">RemoveItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Removes the item (or the item made around the element) from wherever it is in the tree, with its branch.
 
 <h3 id="removeitemat"><span class="method"><code>RemoveItemAt()</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-methods" title="RemoveItemAt() in context on the lists and menus page" aria-label="RemoveItemAt() in context on the lists and menus page">→</a></h3>
 
@@ -126,4 +126,4 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="onitemselect"><span class="event"><code>OnItemSelect</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-events" title="OnItemSelect in context on the lists and menus page" aria-label="OnItemSelect in context on the lists and menus page">→</a></h3>
 
-`(BaseElement sender, TreeViewItem item)` · The selected item changes, by the user or from code. `item` is `null` when nothing is selected any more.
+<code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, <a href="/docs/ui-glossary/elements/tree-view-item/">TreeViewItem</a> item)</code> · The selected item changes, by the user or from code. `item` is `null` when nothing is selected any more.

@@ -38,11 +38,11 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="items"><span class="prop"><code>Items</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenu-properties" title="Items in context on the lists and menus page" aria-label="Items in context on the lists and menus page">→</a></h3>
 
-`IReadOnlyList<BaseElement>` · Read-only. The items and separators of the menu, in order.
+<code>IReadOnlyList&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt;</code> · Read-only. The items and separators of the menu, in order.
 
 <h3 id="itemssource"><span class="dp"><code>ItemsSource</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenu-properties" title="ItemsSource in context on the lists and menus page" aria-label="ItemsSource in context on the lists and menus page">→</a></h3>
 
-`IEnumerable` · The objects to show, one item each. A `BindableCollection<T>` is followed.
+`IEnumerable` · The objects to show, one item each. A <code><a href="/docs/ui-glossary/types/bindable-collection/">BindableCollection</a>&lt;T&gt;</code> is followed.
 
 <h3 id="itemstemplate"><span class="prop"><code>ItemsTemplate</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenu-properties" title="ItemsTemplate in context on the lists and menus page" aria-label="ItemsTemplate in context on the lists and menus page">→</a></h3>
 
@@ -88,19 +88,19 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="additem"><span class="method"><code>AddItem()</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenu-methods" title="AddItem() in context on the lists and menus page" aria-label="AddItem() in context on the lists and menus page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/context-menu/#additem">`AddItem(BaseElement item)`</a> · Adds an item at the end. A <a class="ref" href="/docs/ui-glossary/elements/context-menu-item/">`ContextMenuItem`</a> or <a class="ref" href="/docs/ui-glossary/elements/separator/">`Separator`</a> is added as is, another element is put in an item. Does nothing while an <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#itemssource">`ItemsSource`</a> is set.
+<span class="method"><code><a href="/docs/ui-glossary/elements/context-menu/#additem">AddItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Adds an item at the end. A <a class="ref" href="/docs/ui-glossary/elements/context-menu-item/">`ContextMenuItem`</a> or <a class="ref" href="/docs/ui-glossary/elements/separator/">`Separator`</a> is added as is, another element is put in an item. Does nothing while an <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#itemssource">`ItemsSource`</a> is set.
 
 <h3 id="additemat"><span class="method"><code>AddItemAt()</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenu-methods" title="AddItemAt() in context on the lists and menus page" aria-label="AddItemAt() in context on the lists and menus page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/context-menu/#additemat">`AddItemAt(BaseElement item, int index)`</a> · Inserts an item at the index.
+<span class="method"><code><a href="/docs/ui-glossary/elements/context-menu/#additemat">AddItemAt</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item, int index)</code></span> · Inserts an item at the index.
 
 <h3 id="additemsrange"><span class="method"><code>AddItemsRange()</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenu-methods" title="AddItemsRange() in context on the lists and menus page" aria-label="AddItemsRange() in context on the lists and menus page">→</a></h3>
 
-`AddItemsRange(IEnumerable<BaseElement> items)` · Adds items at the end.
+<span class="method"><code><a href="/docs/ui-glossary/elements/context-menu/#additemsrange">AddItemsRange</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items)</code></span> · Adds items at the end.
 
 <h3 id="additemsrangeat"><span class="method"><code>AddItemsRangeAt()</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenu-methods" title="AddItemsRangeAt() in context on the lists and menus page" aria-label="AddItemsRangeAt() in context on the lists and menus page">→</a></h3>
 
-`AddItemsRangeAt(IEnumerable<BaseElement> items, int index)` · Inserts items at the index.
+<span class="method"><code><a href="/docs/ui-glossary/elements/context-menu/#additemsrangeat">AddItemsRangeAt</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items, int index)</code></span> · Inserts items at the index.
 
 <h3 id="clearitems"><span class="method"><code>ClearItems()</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenu-methods" title="ClearItems() in context on the lists and menus page" aria-label="ClearItems() in context on the lists and menus page">→</a></h3>
 
@@ -116,7 +116,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="removeitem"><span class="method"><code>RemoveItem()</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenu-methods" title="RemoveItem() in context on the lists and menus page" aria-label="RemoveItem() in context on the lists and menus page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/context-menu/#removeitem">`RemoveItem(BaseElement item)`</a> · Removes the item, or the item made around the element.
+<span class="method"><code><a href="/docs/ui-glossary/elements/context-menu/#removeitem">RemoveItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Removes the item, or the item made around the element.
 
 <h3 id="removeitemat"><span class="method"><code>RemoveItemAt()</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenu-methods" title="RemoveItemAt() in context on the lists and menus page" aria-label="RemoveItemAt() in context on the lists and menus page">→</a></h3>
 
@@ -130,4 +130,4 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="onitemselect"><span class="event"><code>OnItemSelect</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenu-events" title="OnItemSelect in context on the lists and menus page" aria-label="OnItemSelect in context on the lists and menus page">→</a></h3>
 
-`(BaseElement sender, ContextMenuItem item)` · An item of the menu or of one of its sub-menus is chosen. It is raised by the menu of the element; the sender is the menu the item is in.
+<code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, <a href="/docs/ui-glossary/elements/context-menu-item/">ContextMenuItem</a> item)</code> · An item of the menu or of one of its sub-menus is chosen. It is raised by the menu of the element; the sender is the menu the item is in.

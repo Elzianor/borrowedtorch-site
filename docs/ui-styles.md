@@ -5,7 +5,7 @@ description: Style classes, mouse cursors, default settings, dependency properti
 ---
 
 Every element property listed on the element pages is a dependency property: `Foo` is backed by `FooDP`, a
-`DependencyProperty<T>` that a style, a binding or an animation sets (see
+<code><a href="/docs/ui-glossary/types/dependency-property/">DependencyProperty</a>&lt;T&gt;</code> that a style, a binding or an animation sets (see
 [dependency properties](#dependency-properties)), and each element class has a static `FooDPActions` that holds what
 the class does when the value changes. This page covers what sets those properties: styles, bindings and animations,
 plus mouse cursors and the framework-wide defaults. None of the properties of the types on this page are dependency
@@ -202,7 +202,7 @@ ui.AddElementToRoot(row);
 ```
 
 A style applies only the properties assigned to it, also when a property is assigned its type's default value. A new
-style has none assigned, so `new ButtonStyle { NormalColor = Color.Red }` changes the colour and leaves everything else
+style has none assigned, so <code>new <a href="/docs/ui-glossary/types/button-style/">ButtonStyle</a> { NormalColor = Color.Red }</code> changes the colour and leaves everything else
 to the level below. The "Delete save" button above takes its colours from `danger` and its size from code; anything
 `danger` doesn't assign comes from <a class="ref prop" href="/docs/ui-glossary/elements/button/#generalstyle">`Button.GeneralStyle`</a>.
 
@@ -218,7 +218,7 @@ to the level below. The "Delete save" button above takes its colours from `dange
   but not added yet, or removed) catches up when it is attached.
 - **Part styles.** Properties such as <a class="ref prop" href="/docs/ui-glossary/types/button-style/#textstyle">`ButtonStyle.TextStyle`</a> or <a class="ref prop" href="/docs/ui-glossary/types/list-box-style/#scrollablecontainerstyle">`ListBoxStyle.ScrollableContainerStyle`</a> hold the
   style of a part inside the control. The part takes it as its own `StyleOverride`, so it lies over the part type's
-  general style: `TextStyle = new RichTextBoxStyle { ForegroundColor = ... }` changes the text colour and keeps the
+  general style: <code>TextStyle = new <a href="/docs/ui-glossary/types/rich-text-box-style/">RichTextBoxStyle</a> { ForegroundColor = ... }</code> changes the text colour and keeps the
   rest of <a class="ref prop" href="/docs/ui-glossary/elements/rich-text-box/#generalstyle">`RichTextBox.GeneralStyle`</a>.
 - **No style class.** <a class="ref" href="/docs/ui-glossary/elements/grid/">`Grid`</a>, <a class="ref" href="/docs/ui-glossary/elements/separator/">`Separator`</a>, <a class="ref" href="/docs/ui-glossary/types/tab-control/">`TabControl`</a> and the parts that only exist inside an element
   (<a class="ref" href="/docs/ui-glossary/elements/list-box-item/">`ListBoxItem`</a>, <a class="ref" href="/docs/ui-glossary/elements/tree-view-item/">`TreeViewItem`</a>, <a class="ref" href="/docs/ui-glossary/elements/context-menu-item/">`ContextMenuItem`</a>, <a class="ref" href="/docs/ui-glossary/elements/grid-cell/">`GridCell`</a>, <a class="ref" href="/docs/ui-glossary/elements/content-container/">`ContentContainer`</a>, <a class="ref" href="/docs/ui-glossary/elements/default-window-title-bar/">`DefaultWindowTitleBar`</a>) have no
@@ -301,7 +301,7 @@ None has properties beyond its element's. The last column lists the framework de
 ### GenericStyle&lt;T&gt;
 
 The static holder of the general style of one style type, where `T` is the style class. <a class="ref prop" href="/docs/ui-glossary/elements/button/#generalstyle">`Button.GeneralStyle`</a> reads
-and writes `GenericStyle<ButtonStyle>.GeneralStyle`. It also keeps the framework defaults of the type, built the first
+and writes <code><a href="/docs/ui-glossary/types/generic-style/">GenericStyle</a>&lt;<a href="/docs/ui-glossary/types/button-style/">ButtonStyle</a>&gt;.GeneralStyle</code>. It also keeps the framework defaults of the type, built the first
 time the type is used from the class's defaults (internal, not reachable from your code).
 
 | Property | Type | Description |
@@ -320,7 +320,7 @@ priority:
 1. its own set, `element.MouseCursorsSetOverride`;
 2. the set given by hand (`MouseCursorsSetOverride`) to the control it is a part of;
 3. the general set of its type, `X.GeneralMouseCursorsSet` (`null` at start);
-4. <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#defaultmousecursorsset">`BaseElement.DefaultMouseCursorsSet`</a>, which <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-u-i/#setdefaultmousecursorsset">`BorrowedTorchUI.SetDefaultMouseCursorsSet`</a> also sets.
+4. <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#defaultmousecursorsset">`BaseElement.DefaultMouseCursorsSet`</a>, which <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#setdefaultmousecursorsset">`BorrowedTorchUI.SetDefaultMouseCursorsSet`</a> also sets.
 
 So a set given to a control reaches the controls inside it (the scroll bars of a list, the list of a tree view or
 combo box, the title bar of a window) unless they have a set of their own. Without one on the control, those parts
@@ -416,7 +416,7 @@ of the box's set. Disposable like <a class="ref" href="/docs/ui-glossary/types/m
 ### GenericMouseCursorsData&lt;T&gt;
 
 The static holder of the general mouse cursors set of one element type, keyed by its style class `T`.
-<a class="ref prop" href="/docs/ui-glossary/elements/button/#generalmousecursorsset">`Button.GeneralMouseCursorsSet`</a> reads and writes `GenericMouseCursorsData<ButtonStyle>.GeneralMouseCursorsSet`.
+<a class="ref prop" href="/docs/ui-glossary/elements/button/#generalmousecursorsset">`Button.GeneralMouseCursorsSet`</a> reads and writes <code><a href="/docs/ui-glossary/types/generic-mouse-cursors-data/">GenericMouseCursorsData</a>&lt;<a href="/docs/ui-glossary/types/button-style/">ButtonStyle</a>&gt;.GeneralMouseCursorsSet</code>.
 
 | Property | Type | Description |
 | --- | --- | --- |
@@ -424,7 +424,7 @@ The static holder of the general mouse cursors set of one element type, keyed by
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| <a class="ref event" href="/docs/ui-glossary/types/generic-mouse-cursors-data/#ongeneralmousecursorssetchanged">`OnGeneralMouseCursorsSetChanged`</a> | `(MouseCursorsSet prevMouseCursorsSet)` | Static. <a class="ref prop" href="/docs/ui-glossary/types/generic-mouse-cursors-data/#generalmousecursorsset">`GeneralMouseCursorsSet`</a> is replaced; the handler gets the previous set. Not raised when a property of the set changes. |
+| <a class="ref event" href="/docs/ui-glossary/types/generic-mouse-cursors-data/#ongeneralmousecursorssetchanged">`OnGeneralMouseCursorsSetChanged`</a> | <code>(<a href="/docs/ui-glossary/types/mouse-cursors-set/">MouseCursorsSet</a> prevMouseCursorsSet)</code> | Static. <a class="ref prop" href="/docs/ui-glossary/types/generic-mouse-cursors-data/#generalmousecursorsset">`GeneralMouseCursorsSet`</a> is replaced; the handler gets the previous set. Not raised when a property of the set changes. |
 
 ## Default settings
 
@@ -466,7 +466,7 @@ without a style class such as <a class="ref" href="/docs/ui-glossary/elements/gr
 
 ## Dependency properties
 
-Every element property `Foo` is backed by `FooDP`, a `DependencyProperty<T>`. It holds the prioritised values (see
+Every element property `Foo` is backed by `FooDP`, a <code><a href="/docs/ui-glossary/types/dependency-property/">DependencyProperty</a>&lt;T&gt;</code>. It holds the prioritised values (see
 [value priority](#value-priority)), runs the element's reaction to a change, raises events, and can be bound or
 animated. An element creates `FooDP` the first time it is used: set, bound, subscribed to, or read through `FooDP`.
 Reading `Foo` doesn't create it, so an element pays only for the properties it uses. Setting `Foo` is the same as
@@ -508,17 +508,17 @@ of your own is on the [base element](/docs/ui-base-element/) page.
 | --- | --- | --- |
 | <a class="ref event" href="/docs/ui-glossary/types/dependency-property/#onpropertychanged">`OnPropertyChanged`</a> | `(T value)` | The value in effect changes. The handler gets the new value. |
 | <a class="ref event" href="/docs/ui-glossary/types/dependency-property/#onsourcepropertychanged">`OnSourcePropertyChanged`</a> | `(object propertyValue)` | The bound <a class="ref" href="/docs/ui-glossary/types/bindable/">`Bindable`</a> source reports a change of the bound property (or of all properties, with an empty name). The handler gets the source property's value, before conversion. Not raised for the echo of the property's own write, nor in `OneWayToSource` mode. |
-| <a class="ref event" href="/docs/ui-glossary/types/dependency-property/#onsourcecollectionchanged">`OnSourceCollectionChanged`</a> | `(CollectionChangeType changeType, int startIndex, int count)` | The <a class="ref" href="/docs/ui-glossary/types/i-bindable-collection/">`IBindableCollection`</a> held by the bound source property adds (`Add`) or removes (`Remove`) items. Not raised in `OneWayToSource` mode. |
+| <a class="ref event" href="/docs/ui-glossary/types/dependency-property/#onsourcecollectionchanged">`OnSourceCollectionChanged`</a> | <code>(<a href="/docs/ui-glossary/types/collection-change-type/">CollectionChangeType</a> changeType, int startIndex, int count)</code> | The <a class="ref" href="/docs/ui-glossary/types/i-bindable-collection/">`IBindableCollection`</a> held by the bound source property adds (`Add`) or removes (`Remove`) items. Not raised in `OneWayToSource` mode. |
 
 ### DependencyProperty&lt;T&gt; methods
 
 | Method | Description |
 | --- | --- |
-| <a class="ref method" href="/docs/ui-glossary/types/dependency-property/#dependencyproperty">`DependencyProperty(BaseElement owner, Action<T> postAction = null, PreActionDelegate preAction = null)`</a> | Creates a stand-alone property owned by an element, with an optional post- and pre-action. Its default is `default(T)`. |
-| <a class="ref method" href="/docs/ui-glossary/types/dependency-property/#dependencyproperty">`DependencyProperty(BaseElement owner, DependencyPropertyActions<T> actions)`</a> | Creates a property that shares the element class's actions and default; the generated `FooDP` properties use it. |
-| <a class="ref method" href="/docs/ui-glossary/types/dependency-property/#setvalue">`SetValue(T value, bool checkForEquality = true, bool setSourceValue = true, ValueSources valueSource = ValueSources.ManualAssign)`</a> | Stores the value for the source. With `checkForEquality` off, the same value raises the change again. With `setSourceValue` off, a bound source is not written. |
-| <a class="ref method" href="/docs/ui-glossary/types/dependency-property/#clearvalue">`ClearValue(ValueSources valueSource)`</a> | Removes the value of that source. If it was the value in effect, the next source (or the default) takes over and the change is raised when the value differs. |
-| <a class="ref method" href="/docs/ui-glossary/types/dependency-property/#bind">`Bind(object dataContext, string sourcePropertyName, BindingMode mode, IConverter converter = null)`</a> | Binds the property to a public property of `dataContext`, replacing any earlier binding. See [bindings](#bindings). |
+| <span class="method"><code><a href="/docs/ui-glossary/types/dependency-property/#dependencyproperty">DependencyProperty</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> owner, Action&lt;T&gt; postAction = null, PreActionDelegate preAction = null)</code></span> | Creates a stand-alone property owned by an element, with an optional post- and pre-action. Its default is `default(T)`. |
+| <span class="method"><code><a href="/docs/ui-glossary/types/dependency-property/#dependencyproperty">DependencyProperty</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> owner, <a href="/docs/ui-glossary/types/dependency-property-actions/">DependencyPropertyActions</a>&lt;T&gt; actions)</code></span> | Creates a property that shares the element class's actions and default; the generated `FooDP` properties use it. |
+| <span class="method"><code><a href="/docs/ui-glossary/types/dependency-property/#setvalue">SetValue</a>(T value, bool checkForEquality = true, bool setSourceValue = true, <a href="/docs/ui-glossary/types/value-sources/">ValueSources</a> valueSource = <a href="/docs/ui-glossary/types/value-sources/#manualassign">ValueSources.ManualAssign</a>)</code></span> | Stores the value for the source. With `checkForEquality` off, the same value raises the change again. With `setSourceValue` off, a bound source is not written. |
+| <span class="method"><code><a href="/docs/ui-glossary/types/dependency-property/#clearvalue">ClearValue</a>(<a href="/docs/ui-glossary/types/value-sources/">ValueSources</a> valueSource)</code></span> | Removes the value of that source. If it was the value in effect, the next source (or the default) takes over and the change is raised when the value differs. |
+| <span class="method"><code><a href="/docs/ui-glossary/types/dependency-property/#bind">Bind</a>(object dataContext, string sourcePropertyName, <a href="/docs/ui-glossary/types/binding-mode/">BindingMode</a> mode, <a href="/docs/ui-glossary/types/i-converter/">IConverter</a> converter = null)</code></span> | Binds the property to a public property of `dataContext`, replacing any earlier binding. See [bindings](#bindings). |
 | <a class="ref method" href="/docs/ui-glossary/types/dependency-property/#dispose">`Dispose()`</a> | Removes the binding and the event handlers. The element calls it when it is disposed. |
 
 `OwnerPreActionDelegate`, with the signature `(BaseElement owner, ref T value, ref bool canProceed, ValueSources
@@ -542,7 +542,7 @@ the static `FooDPActions` field of the element class.
 ## Bindings
 
 A dependency property can be bound to a public property of any object, the view model. When the object derives
-from <a class="ref" href="/docs/ui-glossary/types/bindable/">`Bindable`</a> and calls `PropertyChangedInvoke`, the element follows its changes. `BindableCollection<T>` is a list
+from <a class="ref" href="/docs/ui-glossary/types/bindable/">`Bindable`</a> and calls `PropertyChangedInvoke`, the element follows its changes. <code><a href="/docs/ui-glossary/types/bindable-collection/">BindableCollection</a>&lt;T&gt;</code> is a list
 that tells a bound list box about added and removed items. This view model and converter are used by the example
 below:
 
@@ -820,7 +820,7 @@ view instead of generating new ones.
 
 | Method | Description |
 | --- | --- |
-| <a class="ref method" href="/docs/ui-glossary/types/i-recycling-items-template/#updateitemelement">`UpdateItemElement(BaseElement element, object data)`</a> | Shows `data` in an element that `GenerateItemElement` of this template made earlier. |
+| <span class="method"><code><a href="/docs/ui-glossary/types/i-recycling-items-template/#updateitemelement">UpdateItemElement</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> element, object data)</code></span> | Shows `data` in an element that `GenerateItemElement` of this template made earlier. |
 
 ```csharp
 public class LevelTemplate : IRecyclingItemsTemplate
@@ -835,9 +835,9 @@ public class LevelTemplate : IRecyclingItemsTemplate
 
 ## Animations
 
-An `Animation<T>` drives one or more dependency properties of type `T` along a time line of `durationMs`. Frames
-describe the values: `SmoothAnimationFrame<T>` goes from one value to another over a stretch of the time line,
-`DiscreteAnimationFrame<T>` sets a value at a point of it. Register the animation with `BorrowedTorchUI.AddAnimation`
+An <code><a href="/docs/ui-glossary/types/animation/">Animation</a>&lt;T&gt;</code> drives one or more dependency properties of type `T` along a time line of `durationMs`. Frames
+describe the values: <code><a href="/docs/ui-glossary/types/smooth-animation-frame/">SmoothAnimationFrame</a>&lt;T&gt;</code> goes from one value to another over a stretch of the time line,
+<code><a href="/docs/ui-glossary/types/discrete-animation-frame/">DiscreteAnimationFrame</a>&lt;T&gt;</code> sets a value at a point of it. Register the animation with <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#addanimation">`BorrowedTorchUI.AddAnimation`</a>
 and start it.
 
 <figure class="shot">
@@ -900,7 +900,7 @@ frame doesn't skip boundaries: the animation still turns around, ends its runs a
   then <a class="ref prop" href="/docs/ui-glossary/types/run-boundary-values/#endvalue">`RunBoundaryValues.EndValue`</a> if it has one. With `deleteOnComplete` (the default) it is then removed from the
   UI; add it again to play it after a `Reset`.
 - Animated values are `ManualAssign` values: they win over styles and stay after the animation. Clear them with
-  `FooDP.ClearValue(ValueSources.ManualAssign)` to give the property back to its style.
+  <code>FooDP.ClearValue(<a href="/docs/ui-glossary/types/value-sources/#manualassign">ValueSources.ManualAssign</a>)</code> to give the property back to its style.
 - `int`, `float`, <a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> and `Color` are interpolated. A smooth frame of any other type keeps `From` until the end of
   the frame, then switches to `To`.
 - An animation whose properties all belong to disposed elements is removed automatically.
@@ -912,13 +912,13 @@ An animation of properties of type `T`. It has the properties of [`BaseAnimation
 | Property | Type | Description |
 | --- | --- | --- |
 | <a class="ref prop" href="/docs/ui-glossary/types/animation/#state">`State`</a> | <a class="ref" href="/docs/ui-glossary/types/animation-state/">`AnimationState`</a> | Read-only. Where the animation is: not started, running, paused or completed. |
-| <a class="ref prop" href="/docs/ui-glossary/types/animation/#runboundaryvalues">`RunBoundaryValues`</a> | `RunBoundaryValues<T>` | Read-only. The values applied when the animation starts and when it completes, or `null`. |
+| <a class="ref prop" href="/docs/ui-glossary/types/animation/#runboundaryvalues">`RunBoundaryValues`</a> | <a class="ref prop" href="/docs/ui-glossary/types/animation/#runboundaryvalues">`RunBoundaryValues<T>`</a> | Read-only. The values applied when the animation starts and when it completes, or `null`. |
 
 | Method | Description |
 | --- | --- |
-| <a class="ref method" href="/docs/ui-glossary/types/animation/#animation">`Animation(int durationMs, AnimationRepeatType repeatType = AnimationRepeatType.None, bool autoReverse = false, bool deleteOnComplete = true, RunBoundaryValues<T> runBoundaryValues = null, uint repeatsNumber = 1)`</a> | Creates an animation with a time line of `durationMs` milliseconds. `repeatsNumber` counts the runs of a `NumberOfTimes` animation. A duration of 0 or less completes at once with the end values. |
-| <a class="ref method" href="/docs/ui-glossary/types/animation/#addframe">`AddFrame(BaseAnimationFrame<T> frame)`</a> | Adds a smooth or discrete frame. |
-| <a class="ref method" href="/docs/ui-glossary/types/animation/#adddependencyproperty">`AddDependencyProperty(DependencyProperty<T> property)`</a> | Adds a property the animation drives. One animation can drive several properties. |
+| <span class="method"><code><a href="/docs/ui-glossary/types/animation/#animation">Animation</a>(int durationMs, <a href="/docs/ui-glossary/types/animation-repeat-type/">AnimationRepeatType</a> repeatType = <a href="/docs/ui-glossary/types/animation-repeat-type/#none">AnimationRepeatType.None</a>, bool autoReverse = false, bool deleteOnComplete = true, <a href="/docs/ui-glossary/types/run-boundary-values/">RunBoundaryValues</a>&lt;T&gt; runBoundaryValues = null, uint repeatsNumber = 1)</code></span> | Creates an animation with a time line of `durationMs` milliseconds. `repeatsNumber` counts the runs of a `NumberOfTimes` animation. A duration of 0 or less completes at once with the end values. |
+| <span class="method"><code><a href="/docs/ui-glossary/types/animation/#addframe">AddFrame</a>(<a href="/docs/ui-glossary/types/base-animation-frame/">BaseAnimationFrame</a>&lt;T&gt; frame)</code></span> | Adds a smooth or discrete frame. |
+| <span class="method"><code><a href="/docs/ui-glossary/types/animation/#adddependencyproperty">AddDependencyProperty</a>(<a href="/docs/ui-glossary/types/dependency-property/">DependencyProperty</a>&lt;T&gt; property)</code></span> | Adds a property the animation drives. One animation can drive several properties. |
 | <a class="ref method" href="/docs/ui-glossary/types/animation/#start">`Start()`</a> | Runs a not started or paused animation. On the first start it applies <a class="ref prop" href="/docs/ui-glossary/types/run-boundary-values/#startvalue">`RunBoundaryValues.StartValue`</a> and the values of the time line's start. Does nothing on a completed animation (call <a class="ref method" href="/docs/ui-glossary/types/animation/#reset">`Reset`</a> first) or on a `NumberOfTimes` animation with 0 repeats. |
 | <a class="ref method" href="/docs/ui-glossary/types/animation/#pause">`Pause()`</a> | Pauses a running animation; <a class="ref method" href="/docs/ui-glossary/types/animation/#start">`Start`</a> continues it. |
 | <a class="ref method" href="/docs/ui-glossary/types/animation/#reset">`Reset()`</a> | Puts the animation back to not started, at the start of its time line with its repeats restored. The properties keep their current values. |
@@ -955,8 +955,8 @@ The abstract base of animations, the type `AddAnimation` takes. Its properties a
 
 ### BaseAnimationFrame&lt;T&gt;
 
-The abstract base of the frames an `Animation<T>` takes. It has no public members; use `SmoothAnimationFrame<T>` or
-`DiscreteAnimationFrame<T>`.
+The abstract base of the frames an <code><a href="/docs/ui-glossary/types/animation/">Animation</a>&lt;T&gt;</code> takes. It has no public members; use <code><a href="/docs/ui-glossary/types/smooth-animation-frame/">SmoothAnimationFrame</a>&lt;T&gt;</code> or
+<code><a href="/docs/ui-glossary/types/discrete-animation-frame/">DiscreteAnimationFrame</a>&lt;T&gt;</code>.
 
 ### SmoothAnimationFrame&lt;T&gt;
 
@@ -995,7 +995,7 @@ the same time, the one added last wins.
 ### RunBoundaryValues&lt;T&gt;
 
 Values set on the animated properties outside the frames: <a class="ref prop" href="/docs/ui-glossary/types/run-boundary-values/#startvalue">`StartValue`</a> when the animation first starts, <a class="ref prop" href="/docs/ui-glossary/types/run-boundary-values/#endvalue">`EndValue`</a>
-when it completes. Pass it to the `Animation<T>` constructor.
+when it completes. Pass it to the <code><a href="/docs/ui-glossary/types/animation/">Animation</a>&lt;T&gt;</code> constructor.
 
 | Property | Type | Description |
 | --- | --- | --- |

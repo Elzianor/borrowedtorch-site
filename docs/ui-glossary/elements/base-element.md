@@ -38,7 +38,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="children"><span class="prop"><code>Children</code></span> <a class="ctx" href="/docs/ui-base-element/#items-and-content-properties" title="Children in context on the base element page" aria-label="Children in context on the base element page">→</a></h3>
 
-`IReadOnlyList<BaseElement>` · Read-only. The element's children: its items and the parts it made itself.
+<code>IReadOnlyList&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt;</code> · Read-only. The element's children: its items and the parts it made itself.
 
 <h3 id="contextmenu"><span class="prop"><code>ContextMenu</code></span> <a class="ctx" href="/docs/ui-base-element/#tooltips-and-context-menus" title="ContextMenu in context on the base element page" aria-label="ContextMenu in context on the base element page">→</a></h3>
 
@@ -54,7 +54,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="defaultmousecursorsset"><span class="prop"><code>DefaultMouseCursorsSet</code></span> <a class="ctx" href="/docs/ui-base-element/#baseelement-cursor-properties" title="DefaultMouseCursorsSet in context on the base element page" aria-label="DefaultMouseCursorsSet in context on the base element page">→</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> · Static. The cursors of every element without a more specific set: an arrow on hover, a hand over an element that can be dragged, a "no" cursor over a denied drop, and the sizing arrows over resize areas. <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-u-i/#setdefaultmousecursorsset">`BorrowedTorchUI.SetDefaultMouseCursorsSet`</a> sets it too.
+<a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> · Static. The cursors of every element without a more specific set: an arrow on hover, a hand over an element that can be dragged, a "no" cursor over a denied drop, and the sizing arrows over resize areas. <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#setdefaultmousecursorsset">`BorrowedTorchUI.SetDefaultMouseCursorsSet`</a> sets it too.
 
 <h3 id="desiredheight"><span class="dp"><code>DesiredHeight</code></span> <a class="ctx" href="/docs/ui-base-element/#size-and-position-properties" title="DesiredHeight in context on the base element page" aria-label="DesiredHeight in context on the base element page">→</a></h3>
 
@@ -138,7 +138,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="isdropallowedpredicate"><span class="prop"><code>IsDropAllowedPredicate</code></span> <a class="ctx" href="/docs/ui-base-element/#drag-and-drop-properties" title="IsDropAllowedPredicate in context on the base element page" aria-label="IsDropAllowedPredicate in context on the base element page">→</a></h3>
 
-`IfDropAllowed` · Decides whether a dragged element can be dropped here: `bool (BaseElement draggedElement)`. Without one every drop is denied.
+`IfDropAllowed` · Decides whether a dragged element can be dropped here: <code>bool (<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> draggedElement)</code>. Without one every drop is denied.
 
 <h3 id="isfocused"><span class="prop"><code>IsFocused</code></span> <a class="ctx" href="/docs/ui-base-element/#keyboard-and-focus-properties" title="IsFocused in context on the base element page" aria-label="IsFocused in context on the base element page">→</a></h3>
 
@@ -266,7 +266,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="texturespath"><span class="dp"><code>TexturesPath</code></span> <a class="ctx" href="/docs/ui-base-element/#appearance-properties" title="TexturesPath in context on the base element page" aria-label="TexturesPath in context on the base element page">→</a></h3>
 
-`string` · A content folder with the element's textures, for example `UITextures/Button/`. A missing trailing path separator is added.
+`string` · A content folder with the element's textures, for example <code>UITextures/<a href="/docs/ui-glossary/elements/button/">Button</a>/</code>. A missing trailing path separator is added.
 
 <h3 id="texturespresent"><span class="prop"><code>TexturesPresent</code></span> <a class="ctx" href="/docs/ui-base-element/#appearance-properties" title="TexturesPresent in context on the base element page" aria-label="TexturesPresent in context on the base element page">→</a></h3>
 
@@ -334,23 +334,23 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="additemsrange"><span class="method"><code>AddItemsRange()</code></span> <a class="ctx" href="/docs/ui-base-element/#items-and-content-methods" title="AddItemsRange() in context on the base element page" aria-label="AddItemsRange() in context on the base element page">→</a></h3>
 
-`AddItemsRange(IEnumerable<BaseElement> items)` · Adds the items in order after the other children.
+<a class="ref method" href="/docs/ui-glossary/elements/base-element/#additemsrange">`AddItemsRange(IEnumerable<BaseElement> items)`</a> · Adds the items in order after the other children.
 
 <h3 id="additemsrangeat"><span class="method"><code>AddItemsRangeAt()</code></span> <a class="ctx" href="/docs/ui-base-element/#items-and-content-methods" title="AddItemsRangeAt() in context on the base element page" aria-label="AddItemsRangeAt() in context on the base element page">→</a></h3>
 
-`AddItemsRangeAt(IEnumerable<BaseElement> items, int index)` · Inserts the items in order from the index; a null item takes no place.
+<a class="ref method" href="/docs/ui-glossary/elements/base-element/#additemsrangeat">`AddItemsRangeAt(IEnumerable<BaseElement> items, int index)`</a> · Inserts the items in order from the index; a null item takes no place.
 
 <h3 id="applygeneralstyle"><span class="method"><code>ApplyGeneralStyle()</code></span> <a class="ctx" href="/docs/ui-base-element/#members-for-derived-elements" title="ApplyGeneralStyle() in context on the base element page" aria-label="ApplyGeneralStyle() in context on the base element page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/base-element/#applygeneralstyle">`ApplyGeneralStyle()`</a> · Protected, of `GenericStyleAndMouseCursorsData<TStyle>`. Applies the general style over the framework defaults.
+<a class="ref method" href="/docs/ui-glossary/elements/base-element/#applygeneralstyle">`ApplyGeneralStyle()`</a> · Protected, of <a class="ref method" href="/docs/ui-glossary/elements/base-element/#genericstyleandmousecursorsdata">`GenericStyleAndMouseCursorsData<TStyle>`</a>. Applies the general style over the framework defaults.
 
 <h3 id="applystyle"><span class="method"><code>ApplyStyle()</code></span> <a class="ctx" href="/docs/ui-base-element/#members-for-derived-elements" title="ApplyStyle() in context on the base element page" aria-label="ApplyStyle() in context on the base element page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/base-element/#applystyle">`ApplyStyle(BaseStyle style, ValueSources valueSource)`</a> · Protected. Applies the style's assigned properties to the element as the given value source.
+<span class="method"><code><a href="/docs/ui-glossary/elements/base-element/#applystyle">ApplyStyle</a>(<a href="/docs/ui-glossary/types/base-style/">BaseStyle</a> style, <a href="/docs/ui-glossary/types/value-sources/">ValueSources</a> valueSource)</code></span> · Protected. Applies the style's assigned properties to the element as the given value source.
 
 <h3 id="applystyleoverride"><span class="method"><code>ApplyStyleOverride()</code></span> <a class="ctx" href="/docs/ui-base-element/#members-for-derived-elements" title="ApplyStyleOverride() in context on the base element page" aria-label="ApplyStyleOverride() in context on the base element page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/base-element/#applystyleoverride">`ApplyStyleOverride()`</a> · Protected, of `GenericStyleAndMouseCursorsData<TStyle>`. Applies the style override again.
+<a class="ref method" href="/docs/ui-glossary/elements/base-element/#applystyleoverride">`ApplyStyleOverride()`</a> · Protected, of <a class="ref method" href="/docs/ui-glossary/elements/base-element/#genericstyleandmousecursorsdata">`GenericStyleAndMouseCursorsData<TStyle>`</a>. Applies the style override again.
 
 <h3 id="arrange"><span class="method"><code>Arrange()</code></span> <a class="ctx" href="/docs/ui-base-element/#layout-methods" title="Arrange() in context on the base element page" aria-label="Arrange() in context on the base element page">→</a></h3>
 
@@ -372,7 +372,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="clickhandleroverride"><span class="method"><code>ClickHandlerOverride()</code></span> <a class="ctx" href="/docs/ui-base-element/#handler-overrides" title="ClickHandlerOverride() in context on the base element page" aria-label="ClickHandlerOverride() in context on the base element page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/base-element/#clickhandleroverride">`ClickHandlerOverride(BaseElement sender, MouseClickEventArgs e)`</a> · Before `OnClick`.
+<span class="method"><code><a href="/docs/ui-glossary/elements/base-element/#clickhandleroverride">ClickHandlerOverride</a>(BaseElement sender, <a href="/docs/ui-glossary/types/mouse-click-event-args/">MouseClickEventArgs</a> e)</code></span> · Before `OnClick`.
 
 <h3 id="cursorspropertychangedhandler"><span class="method"><code>CursorsPropertyChangedHandler()</code></span> <a class="ctx" href="/docs/ui-base-element/#members-for-derived-elements" title="CursorsPropertyChangedHandler() in context on the base element page" aria-label="CursorsPropertyChangedHandler() in context on the base element page">→</a></h3>
 
@@ -386,7 +386,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#detachchildren">`DetachChildren()`</a> · Protected. Takes every child out without disposing them.
 
-`DetachChildren(Predicate<BaseElement> match)` · Protected. Takes the matching children out without disposing them.
+<a class="ref method" href="/docs/ui-glossary/elements/base-element/#detachchildren">`DetachChildren(Predicate<BaseElement> match)`</a> · Protected. Takes the matching children out without disposing them.
 
 <h3 id="dispose"><span class="method"><code>Dispose()</code></span> <a class="ctx" href="/docs/ui-base-element/#disposablebase" title="Dispose() in context on the base element page" aria-label="Dispose() in context on the base element page">→</a></h3>
 
@@ -398,7 +398,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="doubleclickhandleroverride"><span class="method"><code>DoubleClickHandlerOverride()</code></span> <a class="ctx" href="/docs/ui-base-element/#handler-overrides" title="DoubleClickHandlerOverride() in context on the base element page" aria-label="DoubleClickHandlerOverride() in context on the base element page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/base-element/#doubleclickhandleroverride">`DoubleClickHandlerOverride(BaseElement sender, MouseClickEventArgs e)`</a> · Before <a class="ref event" href="/docs/ui-glossary/elements/base-element/#ondoubleclick">`OnDoubleClick`</a>.
+<span class="method"><code><a href="/docs/ui-glossary/elements/base-element/#doubleclickhandleroverride">DoubleClickHandlerOverride</a>(BaseElement sender, <a href="/docs/ui-glossary/types/mouse-click-event-args/">MouseClickEventArgs</a> e)</code></span> · Before <a class="ref event" href="/docs/ui-glossary/elements/base-element/#ondoubleclick">`OnDoubleClick`</a>.
 
 <h3 id="doubleclickintervalmspropertychangedhandleroverride"><span class="method"><code>DoubleClickIntervalMsPropertyChangedHandlerOverride()</code></span> <a class="ctx" href="/docs/ui-base-element/#handler-overrides" title="DoubleClickIntervalMsPropertyChangedHandlerOverride() in context on the base element page" aria-label="DoubleClickIntervalMsPropertyChangedHandlerOverride() in context on the base element page">→</a></h3>
 
@@ -434,7 +434,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="inheritstatepropertychangedhandleroverride"><span class="method"><code>InheritStatePropertyChangedHandlerOverride()</code></span> <a class="ctx" href="/docs/ui-base-element/#handler-overrides" title="InheritStatePropertyChangedHandlerOverride() in context on the base element page" aria-label="InheritStatePropertyChangedHandlerOverride() in context on the base element page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/base-element/#inheritstatepropertychangedhandleroverride">`InheritStatePropertyChangedHandlerOverride(InheritState value)`</a> · <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#inheritstate">`InheritState`</a> changed.
+<span class="method"><code><a href="/docs/ui-glossary/elements/base-element/#inheritstatepropertychangedhandleroverride">InheritStatePropertyChangedHandlerOverride</a>(<a href="/docs/ui-glossary/types/inherit-state/">InheritState</a> value)</code></span> · <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#inheritstate">`InheritState`</a> changed.
 
 <h3 id="invalidatearrange"><span class="method"><code>InvalidateArrange()</code></span> <a class="ctx" href="/docs/ui-base-element/#layout-methods" title="InvalidateArrange() in context on the base element page" aria-label="InvalidateArrange() in context on the base element page">→</a></h3>
 
@@ -446,7 +446,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="keydownhandleroverride"><span class="method"><code>KeyDownHandlerOverride()</code></span> <a class="ctx" href="/docs/ui-base-element/#handler-overrides" title="KeyDownHandlerOverride() in context on the base element page" aria-label="KeyDownHandlerOverride() in context on the base element page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/base-element/#keydownhandleroverride">`KeyDownHandlerOverride(KeyDownEventArgs e)`</a> · A key reached the element, before <a class="ref event" href="/docs/ui-glossary/elements/base-element/#onkeydown">`OnKeyDown`</a>; set `e.Handled` for a key the element uses.
+<span class="method"><code><a href="/docs/ui-glossary/elements/base-element/#keydownhandleroverride">KeyDownHandlerOverride</a>(<a href="/docs/ui-glossary/types/key-down-event-args/">KeyDownEventArgs</a> e)</code></span> · A key reached the element, before <a class="ref event" href="/docs/ui-glossary/elements/base-element/#onkeydown">`OnKeyDown`</a>; set `e.Handled` for a key the element uses.
 
 <h3 id="loadtextures"><span class="method"><code>LoadTextures()</code></span> <a class="ctx" href="/docs/ui-base-element/#members-for-derived-elements" title="LoadTextures() in context on the base element page" aria-label="LoadTextures() in context on the base element page">→</a></h3>
 
@@ -502,11 +502,11 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="statechangedhandleroverride"><span class="method"><code>StateChangedHandlerOverride()</code></span> <a class="ctx" href="/docs/ui-base-element/#handler-overrides" title="StateChangedHandlerOverride() in context on the base element page" aria-label="StateChangedHandlerOverride() in context on the base element page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/base-element/#statechangedhandleroverride">`StateChangedHandlerOverride(BaseElement sender, ElementStateData stateData)`</a> · The shown state changed, before <a class="ref event" href="/docs/ui-glossary/elements/base-element/#onstatechanged">`OnStateChanged`</a>.
+<span class="method"><code><a href="/docs/ui-glossary/elements/base-element/#statechangedhandleroverride">StateChangedHandlerOverride</a>(BaseElement sender, <a href="/docs/ui-glossary/types/element-state-data/">ElementStateData</a> stateData)</code></span> · The shown state changed, before <a class="ref event" href="/docs/ui-glossary/elements/base-element/#onstatechanged">`OnStateChanged`</a>.
 
 <h3 id="style"><span class="method"><code>Style()</code></span> <a class="ctx" href="/docs/ui-base-element/#members-for-derived-elements" title="Style() in context on the base element page" aria-label="Style() in context on the base element page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/base-element/#style">`Style`</a> · Protected property of `GenericStyleAndMouseCursorsData<TStyle>`: the style override, or the general style.
+<a class="ref method" href="/docs/ui-glossary/elements/base-element/#style">`Style`</a> · Protected property of <a class="ref method" href="/docs/ui-glossary/elements/base-element/#genericstyleandmousecursorsdata">`GenericStyleAndMouseCursorsData<TStyle>`</a>: the style override, or the general style.
 
 <h3 id="textinputhandleroverride"><span class="method"><code>TextInputHandlerOverride()</code></span> <a class="ctx" href="/docs/ui-base-element/#handler-overrides" title="TextInputHandlerOverride() in context on the base element page" aria-label="TextInputHandlerOverride() in context on the base element page">→</a></h3>
 
@@ -526,50 +526,50 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="visibilitychangedhandleroverride"><span class="method"><code>VisibilityChangedHandlerOverride()</code></span> <a class="ctx" href="/docs/ui-base-element/#handler-overrides" title="VisibilityChangedHandlerOverride() in context on the base element page" aria-label="VisibilityChangedHandlerOverride() in context on the base element page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/base-element/#visibilitychangedhandleroverride">`VisibilityChangedHandlerOverride(Visibility visibility)`</a> · <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#visibility">`Visibility`</a> changed; called before the children hear of it.
+<span class="method"><code><a href="/docs/ui-glossary/elements/base-element/#visibilitychangedhandleroverride">VisibilityChangedHandlerOverride</a>(<a href="/docs/ui-glossary/types/visibility/">Visibility</a> visibility)</code></span> · <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#visibility">`Visibility`</a> changed; called before the children hear of it.
 
 <h3 id="visibilitypropertychangedhandleroverride"><span class="method"><code>VisibilityPropertyChangedHandlerOverride()</code></span> <a class="ctx" href="/docs/ui-base-element/#handler-overrides" title="VisibilityPropertyChangedHandlerOverride() in context on the base element page" aria-label="VisibilityPropertyChangedHandlerOverride() in context on the base element page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/base-element/#visibilitypropertychangedhandleroverride">`VisibilityPropertyChangedHandlerOverride(Visibility value)`</a> · <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#visibility">`Visibility`</a> changed; called after the children heard of it.
+<span class="method"><code><a href="/docs/ui-glossary/elements/base-element/#visibilitypropertychangedhandleroverride">VisibilityPropertyChangedHandlerOverride</a>(<a href="/docs/ui-glossary/types/visibility/">Visibility</a> value)</code></span> · <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#visibility">`Visibility`</a> changed; called after the children heard of it.
 
 ## Events
 
 <h3 id="onclick"><span class="event"><code>OnClick</code></span> <a class="ctx" href="/docs/ui-base-element/#mouse-and-states-events" title="OnClick in context on the base element page" aria-label="OnClick in context on the base element page">→</a></h3>
 
-`(BaseElement sender, MouseClickEventArgs e)` · A mouse button pressed on the element is released over it (with <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#repeatclicks">`RepeatClicks`</a>: on the press and while it is held).
+<code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, <a href="/docs/ui-glossary/types/mouse-click-event-args/">MouseClickEventArgs</a> e)</code> · A mouse button pressed on the element is released over it (with <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#repeatclicks">`RepeatClicks`</a>: on the press and while it is held).
 
 <h3 id="ondisposed"><span class="event"><code>OnDisposed</code></span> <a class="ctx" href="/docs/ui-base-element/#items-and-content-events" title="OnDisposed in context on the base element page" aria-label="OnDisposed in context on the base element page">→</a></h3>
 
-`(BaseElement sender)` · The element was disposed. Raised once, at the end of <a class="ref method" href="/docs/ui-glossary/elements/base-element/#dispose">`Dispose()`</a>; the handlers are let go afterwards.
+<code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender)</code> · The element was disposed. Raised once, at the end of <a class="ref method" href="/docs/ui-glossary/elements/base-element/#dispose">`Dispose()`</a>; the handlers are let go afterwards.
 
 <h3 id="ondoubleclick"><span class="event"><code>OnDoubleClick</code></span> <a class="ctx" href="/docs/ui-base-element/#mouse-and-states-events" title="OnDoubleClick in context on the base element page" aria-label="OnDoubleClick in context on the base element page">→</a></h3>
 
-`(BaseElement sender, MouseClickEventArgs e)` · The left button is pressed a second time within <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#doubleclickintervalms">`DoubleClickIntervalMs`</a>. Not raised by an element with <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#repeatclicks">`RepeatClicks`</a>.
+<code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, <a href="/docs/ui-glossary/types/mouse-click-event-args/">MouseClickEventArgs</a> e)</code> · The left button is pressed a second time within <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#doubleclickintervalms">`DoubleClickIntervalMs`</a>. Not raised by an element with <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#repeatclicks">`RepeatClicks`</a>.
 
 <h3 id="ondraganddropstart"><span class="event"><code>OnDragAndDropStart</code></span> <a class="ctx" href="/docs/ui-base-element/#drag-and-drop-properties" title="OnDragAndDropStart in context on the base element page" aria-label="OnDragAndDropStart in context on the base element page">→</a></h3>
 
-`(BaseElement draggedElement)` · A drag and drop of this element (as the <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#dragtarget">`DragTarget`</a>) starts; the argument is the element whose <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#dragtype">`DragType`</a> started it.
+<code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> draggedElement)</code> · A drag and drop of this element (as the <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#dragtarget">`DragTarget`</a>) starts; the argument is the element whose <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#dragtype">`DragType`</a> started it.
 
 <h3 id="ondrop"><span class="event"><code>OnDrop</code></span> <a class="ctx" href="/docs/ui-base-element/#drag-and-drop-properties" title="OnDrop in context on the base element page" aria-label="OnDrop in context on the base element page">→</a></h3>
 
-`(BaseElement draggedElement, BaseElement dragAndDropDestination)` · A dragged element is released over this element and its predicate allowed it.
+<code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> draggedElement, <a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> dragAndDropDestination)</code> · A dragged element is released over this element and its predicate allowed it.
 
 <h3 id="ondropdenied"><span class="event"><code>OnDropDenied</code></span> <a class="ctx" href="/docs/ui-base-element/#drag-and-drop-properties" title="OnDropDenied in context on the base element page" aria-label="OnDropDenied in context on the base element page">→</a></h3>
 
-`(BaseElement draggedElement, BaseElement dragAndDropDestination)` · A dragged element is released over this element and the drop is denied.
+<code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> draggedElement, <a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> dragAndDropDestination)</code> · A dragged element is released over this element and the drop is denied.
 
 <h3 id="onkeydown"><span class="event"><code>OnKeyDown</code></span> <a class="ctx" href="/docs/ui-base-element/#keyboard-and-focus-events" title="OnKeyDown in context on the base element page" aria-label="OnKeyDown in context on the base element page">→</a></h3>
 
-`(BaseElement sender, KeyDownEventArgs e)` · A key is pressed while the element, or an element inside it that left the key unhandled, has the keyboard.
+<code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, <a href="/docs/ui-glossary/types/key-down-event-args/">KeyDownEventArgs</a> e)</code> · A key is pressed while the element, or an element inside it that left the key unhandled, has the keyboard.
 
 <h3 id="onmouseenter"><span class="event"><code>OnMouseEnter</code></span> <a class="ctx" href="/docs/ui-base-element/#mouse-and-states-events" title="OnMouseEnter in context on the base element page" aria-label="OnMouseEnter in context on the base element page">→</a></h3>
 
-`(BaseElement sender)` · The element starts taking the mouse.
+<code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender)</code> · The element starts taking the mouse.
 
 <h3 id="onmouseleave"><span class="event"><code>OnMouseLeave</code></span> <a class="ctx" href="/docs/ui-base-element/#mouse-and-states-events" title="OnMouseLeave in context on the base element page" aria-label="OnMouseLeave in context on the base element page">→</a></h3>
 
-`(BaseElement sender)` · The element stops taking the mouse: the mouse left, moved onto a child that takes it, or the element got disabled or hidden.
+<code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender)</code> · The element stops taking the mouse: the mouse left, moved onto a child that takes it, or the element got disabled or hidden.
 
 <h3 id="onstatechanged"><span class="event"><code>OnStateChanged</code></span> <a class="ctx" href="/docs/ui-base-element/#mouse-and-states-events" title="OnStateChanged in context on the base element page" aria-label="OnStateChanged in context on the base element page">→</a></h3>
 
-`(BaseElement sender, ElementStateData e)` · The state the element shows changes, its own or one it takes. Raised again for every change of the mouse buttons while the element is pressed.
+<code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, <a href="/docs/ui-glossary/types/element-state-data/">ElementStateData</a> e)</code> · The state the element shows changes, its own or one it takes. Raised again for every change of the mouse buttons while the element is pressed.

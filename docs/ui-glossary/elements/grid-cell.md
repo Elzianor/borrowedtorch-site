@@ -26,4 +26,4 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="items"><span class="prop"><code>Items</code></span> <a class="ctx" href="/docs/ui-layout/#gridcell" title="Items in context on the layout page" aria-label="Items in context on the layout page">→</a></h3>
 
-`IReadOnlyList<BaseElement>` · Read-only. The items in the cell.
+<code>IReadOnlyList&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt;</code> · Read-only. The items in the cell.

@@ -30,17 +30,17 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 <h3 id="dependencyproperty"><span class="method"><code>DependencyProperty()</code></span> <a class="ctx" href="/docs/ui-styles/#dependencypropertyt-methods" title="DependencyProperty() in context on the styles page" aria-label="DependencyProperty() in context on the styles page">→</a></h3>
 
-`DependencyProperty(BaseElement owner, Action<T> postAction = null, PreActionDelegate preAction = null)` · Creates a stand-alone property owned by an element, with an optional post- and pre-action. Its default is `default(T)`.
+<span class="method"><code><a href="/docs/ui-glossary/types/dependency-property/#dependencyproperty">DependencyProperty</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> owner, Action&lt;T&gt; postAction = null, PreActionDelegate preAction = null)</code></span> · Creates a stand-alone property owned by an element, with an optional post- and pre-action. Its default is `default(T)`.
 
-`DependencyProperty(BaseElement owner, DependencyPropertyActions<T> actions)` · Creates a property that shares the element class's actions and default; the generated `FooDP` properties use it.
+<span class="method"><code><a href="/docs/ui-glossary/types/dependency-property/#dependencyproperty">DependencyProperty</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> owner, <a href="/docs/ui-glossary/types/dependency-property-actions/">DependencyPropertyActions</a>&lt;T&gt; actions)</code></span> · Creates a property that shares the element class's actions and default; the generated `FooDP` properties use it.
 
 <h3 id="bind"><span class="method"><code>Bind()</code></span> <a class="ctx" href="/docs/ui-styles/#dependencypropertyt-methods" title="Bind() in context on the styles page" aria-label="Bind() in context on the styles page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/types/dependency-property/#bind">`Bind(object dataContext, string sourcePropertyName, BindingMode mode, IConverter converter = null)`</a> · Binds the property to a public property of `dataContext`, replacing any earlier binding. See [bindings](#bindings).
+<span class="method"><code><a href="/docs/ui-glossary/types/dependency-property/#bind">Bind</a>(object dataContext, string sourcePropertyName, <a href="/docs/ui-glossary/types/binding-mode/">BindingMode</a> mode, <a href="/docs/ui-glossary/types/i-converter/">IConverter</a> converter = null)</code></span> · Binds the property to a public property of `dataContext`, replacing any earlier binding. See [bindings](#bindings).
 
 <h3 id="clearvalue"><span class="method"><code>ClearValue()</code></span> <a class="ctx" href="/docs/ui-styles/#dependencypropertyt-methods" title="ClearValue() in context on the styles page" aria-label="ClearValue() in context on the styles page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/types/dependency-property/#clearvalue">`ClearValue(ValueSources valueSource)`</a> · Removes the value of that source. If it was the value in effect, the next source (or the default) takes over and the change is raised when the value differs.
+<span class="method"><code><a href="/docs/ui-glossary/types/dependency-property/#clearvalue">ClearValue</a>(<a href="/docs/ui-glossary/types/value-sources/">ValueSources</a> valueSource)</code></span> · Removes the value of that source. If it was the value in effect, the next source (or the default) takes over and the change is raised when the value differs.
 
 <h3 id="dispose"><span class="method"><code>Dispose()</code></span> <a class="ctx" href="/docs/ui-styles/#dependencypropertyt-methods" title="Dispose() in context on the styles page" aria-label="Dispose() in context on the styles page">→</a></h3>
 
@@ -48,7 +48,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 <h3 id="setvalue"><span class="method"><code>SetValue()</code></span> <a class="ctx" href="/docs/ui-styles/#dependencypropertyt-methods" title="SetValue() in context on the styles page" aria-label="SetValue() in context on the styles page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/types/dependency-property/#setvalue">`SetValue(T value, bool checkForEquality = true, bool setSourceValue = true, ValueSources valueSource = ValueSources.ManualAssign)`</a> · Stores the value for the source. With `checkForEquality` off, the same value raises the change again. With `setSourceValue` off, a bound source is not written.
+<span class="method"><code><a href="/docs/ui-glossary/types/dependency-property/#setvalue">SetValue</a>(T value, bool checkForEquality = true, bool setSourceValue = true, <a href="/docs/ui-glossary/types/value-sources/">ValueSources</a> valueSource = <a href="/docs/ui-glossary/types/value-sources/#manualassign">ValueSources.ManualAssign</a>)</code></span> · Stores the value for the source. With `checkForEquality` off, the same value raises the change again. With `setSourceValue` off, a bound source is not written.
 
 ## Events
 
@@ -58,7 +58,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 <h3 id="onsourcecollectionchanged"><span class="event"><code>OnSourceCollectionChanged</code></span> <a class="ctx" href="/docs/ui-styles/#dependencypropertyt-events" title="OnSourceCollectionChanged in context on the styles page" aria-label="OnSourceCollectionChanged in context on the styles page">→</a></h3>
 
-`(CollectionChangeType changeType, int startIndex, int count)` · The <a class="ref" href="/docs/ui-glossary/types/i-bindable-collection/">`IBindableCollection`</a> held by the bound source property adds (`Add`) or removes (`Remove`) items. Not raised in `OneWayToSource` mode.
+<code>(<a href="/docs/ui-glossary/types/collection-change-type/">CollectionChangeType</a> changeType, int startIndex, int count)</code> · The <a class="ref" href="/docs/ui-glossary/types/i-bindable-collection/">`IBindableCollection`</a> held by the bound source property adds (`Add`) or removes (`Remove`) items. Not raised in `OneWayToSource` mode.
 
 <h3 id="onsourcepropertychanged"><span class="event"><code>OnSourcePropertyChanged</code></span> <a class="ctx" href="/docs/ui-styles/#dependencypropertyt-events" title="OnSourcePropertyChanged in context on the styles page" aria-label="OnSourcePropertyChanged in context on the styles page">→</a></h3>
 

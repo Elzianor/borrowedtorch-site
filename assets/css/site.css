@@ -425,6 +425,9 @@ a.card:hover { border-color: var(--line-strong); background: var(--surface-2); c
 /* a name that links to its glossary entry: the chip itself is the link */
 .prose a.ref { text-decoration: none; white-space: nowrap; }
 .prose a.ref code { transition: border-color .15s, background .15s; }
+/* the types linked inside a code chip (a signature, a handler, a generic type): the chip's colour, a faint underline */
+.prose code a { color: inherit; text-decoration: underline; text-decoration-color: color-mix(in srgb, currentColor 40%, transparent); text-underline-offset: 2px; }
+.prose code a:hover, .prose code a:focus-visible { color: var(--gold); text-decoration-color: currentColor; }
 .prose a.ref:hover code, .prose a.ref:focus-visible code {
   border-color: var(--kind, var(--gold-dim));
   background: color-mix(in srgb, var(--kind, #e9c27a) 24%, transparent);

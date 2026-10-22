@@ -22,11 +22,11 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="items"><span class="prop"><code>Items</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-properties" title="Items in context on the lists and menus page" aria-label="Items in context on the lists and menus page">→</a></h3>
 
-`IReadOnlyList<ListBoxItem>` · Read-only. The rows of the drop-down list that have an element (see the list box's <a class="ref prop" href="/docs/ui-glossary/elements/combo-box/#items">`Items`</a>).
+<code>IReadOnlyList&lt;<a href="/docs/ui-glossary/elements/list-box-item/">ListBoxItem</a>&gt;</code> · Read-only. The rows of the drop-down list that have an element (see the list box's <a class="ref prop" href="/docs/ui-glossary/elements/combo-box/#items">`Items`</a>).
 
 <h3 id="itemssource"><span class="dp"><code>ItemsSource</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-properties" title="ItemsSource in context on the lists and menus page" aria-label="ItemsSource in context on the lists and menus page">→</a></h3>
 
-`IEnumerable` · The objects to show, one row each. A `BindableCollection<T>` is followed.
+`IEnumerable` · The objects to show, one row each. A <code><a href="/docs/ui-glossary/types/bindable-collection/">BindableCollection</a>&lt;T&gt;</code> is followed.
 
 <h3 id="itemstemplate"><span class="prop"><code>ItemsTemplate</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-properties" title="ItemsTemplate in context on the lists and menus page" aria-label="ItemsTemplate in context on the lists and menus page">→</a></h3>
 
@@ -76,19 +76,19 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="additem"><span class="method"><code>AddItem()</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-methods" title="AddItem() in context on the lists and menus page" aria-label="AddItem() in context on the lists and menus page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/combo-box/#additem">`AddItem(BaseElement item)`</a> · Adds a row at the end of the list.
+<span class="method"><code><a href="/docs/ui-glossary/elements/combo-box/#additem">AddItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Adds a row at the end of the list.
 
 <h3 id="additemat"><span class="method"><code>AddItemAt()</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-methods" title="AddItemAt() in context on the lists and menus page" aria-label="AddItemAt() in context on the lists and menus page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/combo-box/#additemat">`AddItemAt(BaseElement item, int index)`</a> · Inserts a row at the index.
+<span class="method"><code><a href="/docs/ui-glossary/elements/combo-box/#additemat">AddItemAt</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item, int index)</code></span> · Inserts a row at the index.
 
 <h3 id="additemsrange"><span class="method"><code>AddItemsRange()</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-methods" title="AddItemsRange() in context on the lists and menus page" aria-label="AddItemsRange() in context on the lists and menus page">→</a></h3>
 
-`AddItemsRange(IEnumerable<BaseElement> items)` · Adds a row per element at the end, in one batch.
+<span class="method"><code><a href="/docs/ui-glossary/elements/combo-box/#additemsrange">AddItemsRange</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items)</code></span> · Adds a row per element at the end, in one batch.
 
 <h3 id="additemsrangeat"><span class="method"><code>AddItemsRangeAt()</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-methods" title="AddItemsRangeAt() in context on the lists and menus page" aria-label="AddItemsRangeAt() in context on the lists and menus page">→</a></h3>
 
-`AddItemsRangeAt(IEnumerable<BaseElement> items, int index)` · Inserts a row per element at the index, in one batch.
+<span class="method"><code><a href="/docs/ui-glossary/elements/combo-box/#additemsrangeat">AddItemsRangeAt</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items, int index)</code></span> · Inserts a row per element at the index, in one batch.
 
 <h3 id="addtextitem"><span class="method"><code>AddTextItem()</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-methods" title="AddTextItem() in context on the lists and menus page" aria-label="AddTextItem() in context on the lists and menus page">→</a></h3>
 
@@ -100,7 +100,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="deselect"><span class="method"><code>Deselect()</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-methods" title="Deselect() in context on the lists and menus page" aria-label="Deselect() in context on the lists and menus page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/combo-box/#deselect">`Deselect(BaseElement item)`</a> · Deselects the row of the item.
+<span class="method"><code><a href="/docs/ui-glossary/elements/combo-box/#deselect">Deselect</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Deselects the row of the item.
 
 <h3 id="deselectat"><span class="method"><code>DeselectAt()</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-methods" title="DeselectAt() in context on the lists and menus page" aria-label="DeselectAt() in context on the lists and menus page">→</a></h3>
 
@@ -108,7 +108,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="removeitem"><span class="method"><code>RemoveItem()</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-methods" title="RemoveItem() in context on the lists and menus page" aria-label="RemoveItem() in context on the lists and menus page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/combo-box/#removeitem">`RemoveItem(BaseElement item)`</a> · Removes the row of the item.
+<span class="method"><code><a href="/docs/ui-glossary/elements/combo-box/#removeitem">RemoveItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Removes the row of the item.
 
 <h3 id="removeitemat"><span class="method"><code>RemoveItemAt()</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-methods" title="RemoveItemAt() in context on the lists and menus page" aria-label="RemoveItemAt() in context on the lists and menus page">→</a></h3>
 
@@ -120,7 +120,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="select"><span class="method"><code>Select()</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-methods" title="Select() in context on the lists and menus page" aria-label="Select() in context on the lists and menus page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/combo-box/#select">`Select(BaseElement item)`</a> · Selects the row of the item.
+<span class="method"><code><a href="/docs/ui-glossary/elements/combo-box/#select">Select</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Selects the row of the item.
 
 <h3 id="selectat"><span class="method"><code>SelectAt()</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-methods" title="SelectAt() in context on the lists and menus page" aria-label="SelectAt() in context on the lists and menus page">→</a></h3>
 
@@ -142,4 +142,4 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="onitemselect"><span class="event"><code>OnItemSelect</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-events" title="OnItemSelect in context on the lists and menus page" aria-label="OnItemSelect in context on the lists and menus page">→</a></h3>
 
-`(BaseElement sender, ListBoxItem item)` · The selection changes, by the user or from code. The sender is the combo box, `item` a row of its drop-down list, `null` when nothing is selected any more.
+<code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, <a href="/docs/ui-glossary/elements/list-box-item/">ListBoxItem</a> item)</code> · The selection changes, by the user or from code. The sender is the combo box, `item` a row of its drop-down list, `null` when nothing is selected any more.

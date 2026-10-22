@@ -6,6 +6,6 @@ description: "The signature of Button.Toggled and the events it handles."
 
 A delegate: the handler type of an event.
 
-Signature: `void Toggled(BaseElement sender, bool isToggledOn)`
+Signature: <code>void Toggled(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, bool isToggledOn)</code>
 
 Handles [`Button.OnToggled`](/docs/ui-glossary/elements/button/#ontoggled).

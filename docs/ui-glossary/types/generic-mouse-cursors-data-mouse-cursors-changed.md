@@ -6,6 +6,6 @@ description: "The signature of GenericMouseCursorsData<T>.MouseCursorsChanged an
 
 A delegate: the handler type of an event.
 
-Signature: `void MouseCursorsChanged(MouseCursorsSet prevMouseCursorsSet)`
+Signature: <code>void MouseCursorsChanged(<a href="/docs/ui-glossary/types/mouse-cursors-set/">MouseCursorsSet</a> prevMouseCursorsSet)</code>
 
 Handles [`GenericMouseCursorsData.OnGeneralMouseCursorsSetChanged`](/docs/ui-glossary/types/generic-mouse-cursors-data/#ongeneralmousecursorssetchanged).

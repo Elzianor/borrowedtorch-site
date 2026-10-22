@@ -22,7 +22,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="items"><span class="prop"><code>Items</code></span> <a class="ctx" href="/docs/ui-layout/#stackpanel-properties" title="Items in context on the layout page" aria-label="Items in context on the layout page">→</a></h3>
 
-`IReadOnlyList<BaseElement>` · Read-only. The items in the order they are stacked: the elements you added, not the panel's wrappers. A live view, nothing is copied.
+<code>IReadOnlyList&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt;</code> · Read-only. The items in the order they are stacked: the elements you added, not the panel's wrappers. A live view, nothing is copied.
 
 <h3 id="mousecursorsset"><span class="prop"><code>MouseCursorsSet</code></span> <a class="ctx" href="/docs/ui-base-element/#genericstyleandmousecursorsdata-properties" title="MouseCursorsSet in context on the base element page" aria-label="MouseCursorsSet in context on the base element page">→</a></h3>
 
@@ -48,11 +48,11 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="additem"><span class="method"><code>AddItem()</code></span> <a class="ctx" href="/docs/ui-layout/#stackpanel-methods" title="AddItem() in context on the layout page" aria-label="AddItem() in context on the layout page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/stack-panel/#additem">`AddItem(BaseElement item)`</a> · Adds the item at the end. A null item is ignored.
+<span class="method"><code><a href="/docs/ui-glossary/elements/stack-panel/#additem">AddItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Adds the item at the end. A null item is ignored.
 
 <h3 id="additemat"><span class="method"><code>AddItemAt()</code></span> <a class="ctx" href="/docs/ui-layout/#stackpanel-methods" title="AddItemAt() in context on the layout page" aria-label="AddItemAt() in context on the layout page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/stack-panel/#additemat">`AddItemAt(BaseElement item, int index)`</a> · Inserts the item at the index (0 to the item count).
+<span class="method"><code><a href="/docs/ui-glossary/elements/stack-panel/#additemat">AddItemAt</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item, int index)</code></span> · Inserts the item at the index (0 to the item count).
 
 <h3 id="clearitems"><span class="method"><code>ClearItems()</code></span> <a class="ctx" href="/docs/ui-layout/#stackpanel-methods" title="ClearItems() in context on the layout page" aria-label="ClearItems() in context on the layout page">→</a></h3>
 
@@ -60,7 +60,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="removeitem"><span class="method"><code>RemoveItem()</code></span> <a class="ctx" href="/docs/ui-layout/#stackpanel-methods" title="RemoveItem() in context on the layout page" aria-label="RemoveItem() in context on the layout page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/stack-panel/#removeitem">`RemoveItem(BaseElement item)`</a> · Removes the item. It is detached, not disposed.
+<span class="method"><code><a href="/docs/ui-glossary/elements/stack-panel/#removeitem">RemoveItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Removes the item. It is detached, not disposed.
 
 <h3 id="removeitemat"><span class="method"><code>RemoveItemAt()</code></span> <a class="ctx" href="/docs/ui-layout/#stackpanel-methods" title="RemoveItemAt() in context on the layout page" aria-label="RemoveItemAt() in context on the layout page">→</a></h3>
 

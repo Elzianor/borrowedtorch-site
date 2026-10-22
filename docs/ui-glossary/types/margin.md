@@ -4,7 +4,7 @@ title: "Glossary: Margin"
 description: "The members of Margin, in alphabetical order."
 ---
 
-A small read-only struct with one value per side. It converts implicitly from an `int` and from tuples, so you rarely write `new Margin(...)`:
+A small read-only struct with one value per side. It converts implicitly from an `int` and from tuples, so you rarely write <code>new <a href="/docs/ui-glossary/types/margin/">Margin</a>(...)</code>:
 
 A struct. The [base element page](/docs/ui-base-element/#margin) shows it in context.
 

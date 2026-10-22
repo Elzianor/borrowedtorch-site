@@ -115,7 +115,7 @@ public class MyGame : Game
 }
 ```
 
-The framework keeps its state in static fields, so only one <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-u-i/">`BorrowedTorchUI`</a> exists at a time. Creating a second one
+The framework keeps its state in static fields, so only one <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-ui/">`BorrowedTorchUI`</a> exists at a time. Creating a second one
 throws: dispose the first one before. Disposing the UI detaches the elements you added to the root but doesn't
 dispose them, so dispose the ones that hold resources yourself.
 
@@ -140,13 +140,13 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 | <span class="method">`GetElementByName<T>(string name)`</span> | The same, `null` also when the element is not a `T`. |
 | <span class="method">`Update(GameTime gameTime)`</span> | Runs timers and animations, lays out what changed, and handles the mouse. Poll the input before it. |
 | <span class="method">`Draw()`</span> | Draws the whole tree with the sprite batch, beginning and ending it itself. |
-| <span class="prop">`FollowsBackBuffer`</span> | Whether the UI takes the back buffer's size by itself, at the start of every <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-u-i/#update">`Update`</a>. On by default. Turn it off for a UI drawn into a render target of its own size. Turned on again, it takes the back buffer's size at the next update. |
-| <span class="method">`ApplyGameWindowSize(int width, int height)`</span> | Lays the UI out over a screen size in device pixels. A size of 0, such as a minimised window's, is ignored. With <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-u-i/#followsbackbuffer">`FollowsBackBuffer`</a> on, the size stays until the back buffer changes. |
-| <span class="prop">`Scale`</span> | How large one logical unit is on screen, see [display scaling](#display-scaling). Between <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-u-i/#minscale">`MinScale`</a> (0.25) and <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-u-i/#maxscale">`MaxScale`</a> (8). |
-| <span class="prop">`FollowsDisplayScale`</span> | Whether <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-u-i/#scale">`Scale`</a> follows the display scale of the window's monitor, times <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-u-i/#displayscalefactor">`DisplayScaleFactor`</a>. Turned on, it sets the scale at once and then follows the window to other monitors. A scale set by hand stays until the DPI changes. Off by default. Needs the window constructor, otherwise turning it on throws. |
+| <span class="prop">`FollowsBackBuffer`</span> | Whether the UI takes the back buffer's size by itself, at the start of every <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#update">`Update`</a>. On by default. Turn it off for a UI drawn into a render target of its own size. Turned on again, it takes the back buffer's size at the next update. |
+| <span class="method">`ApplyGameWindowSize(int width, int height)`</span> | Lays the UI out over a screen size in device pixels. A size of 0, such as a minimised window's, is ignored. With <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#followsbackbuffer">`FollowsBackBuffer`</a> on, the size stays until the back buffer changes. |
+| <span class="prop">`Scale`</span> | How large one logical unit is on screen, see [display scaling](#display-scaling). Between <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-ui/#minscale">`MinScale`</a> (0.25) and <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-ui/#maxscale">`MaxScale`</a> (8). |
+| <span class="prop">`FollowsDisplayScale`</span> | Whether <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#scale">`Scale`</a> follows the display scale of the window's monitor, times <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#displayscalefactor">`DisplayScaleFactor`</a>. Turned on, it sets the scale at once and then follows the window to other monitors. A scale set by hand stays until the DPI changes. Off by default. Needs the window constructor, otherwise turning it on throws. |
 | <span class="prop">`DisplayScaleFactor`</span> | What the display scale is multiplied with while following: a UI size setting of the game. 1 by default, a positive number. Set while following, it applies at once. |
 | <span class="prop">`DrawTransform`</span> | Read-only. The matrix the UI draws with. Draw code that begins its own sprite batch inside the UI passes it to draw in logical units. |
-| <span class="prop">`ExceptionHandler`</span> | Gets the exceptions thrown inside <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-u-i/#update">`Update`</a>, <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-u-i/#draw">`Draw`</a> and the handling of text input. Without a handler they are rethrown. |
+| <span class="prop">`ExceptionHandler`</span> | Gets the exceptions thrown inside <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#update">`Update`</a>, <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#draw">`Draw`</a> and the handling of text input. Without a handler they are rethrown. |
 | <span class="method">`AddAnimation(BaseAnimation animation)`</span> | Starts updating an animation, see [animations](/docs/ui-styles/#animations). |
 | <span class="method">`RemoveAnimation(BaseAnimation animation)`</span> | Stops updating an animation. It keeps its state, and adding it again continues it. |
 | <span class="method">`SetDefaultMouseCursorsSet(MouseCursorsSet mouseCursorsSet)`</span> | Sets the cursors every element uses unless it has its own, see [mouse cursors](/docs/ui-styles/#mouse-cursors). |
@@ -163,7 +163,7 @@ The source of typed text and key presses, for a UI hosted outside a game window.
 
 ### GameWindowTextInputEvents
 
-An <a class="ref" href="/docs/ui-glossary/types/i-text-input-events/">`ITextInputEvents`</a> that forwards a MonoGame window's events. The window constructor of <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-u-i/">`BorrowedTorchUI`</a> creates and
+An <a class="ref" href="/docs/ui-glossary/types/i-text-input-events/">`ITextInputEvents`</a> that forwards a MonoGame window's events. The window constructor of <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-ui/">`BorrowedTorchUI`</a> creates and
 disposes one itself.
 
 | Member | Description |

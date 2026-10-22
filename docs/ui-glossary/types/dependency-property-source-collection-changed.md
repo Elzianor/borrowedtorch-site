@@ -6,6 +6,6 @@ description: "The signature of DependencyProperty<T>.SourceCollectionChanged and
 
 A delegate: the handler type of an event.
 
-Signature: `void SourceCollectionChanged(CollectionChangeType changeType, int startIndex, int count)`
+Signature: <code>void SourceCollectionChanged(<a href="/docs/ui-glossary/types/collection-change-type/">CollectionChangeType</a> changeType, int startIndex, int count)</code>
 
 Handles [`DependencyProperty.OnSourceCollectionChanged`](/docs/ui-glossary/types/dependency-property/#onsourcecollectionchanged).

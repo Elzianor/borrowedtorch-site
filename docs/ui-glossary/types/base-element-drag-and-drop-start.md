@@ -6,6 +6,6 @@ description: "The signature of BaseElement.DragAndDropStart and the events it ha
 
 A delegate: the handler type of an event.
 
-Signature: `void DragAndDropStart(BaseElement draggedElement)`
+Signature: <code>void DragAndDropStart(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> draggedElement)</code>
 
 Handles [`BaseElement.OnDragAndDropStart`](/docs/ui-glossary/elements/base-element/#ondraganddropstart).

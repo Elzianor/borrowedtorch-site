@@ -4,7 +4,7 @@ title: "Glossary: GameWindowTextInputEvents"
 description: "The members of GameWindowTextInputEvents, in alphabetical order."
 ---
 
-An <a class="ref" href="/docs/ui-glossary/types/i-text-input-events/">`ITextInputEvents`</a> that forwards a MonoGame window's events. The window constructor of <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-u-i/">`BorrowedTorchUI`</a> creates and disposes one itself.
+An <a class="ref" href="/docs/ui-glossary/types/i-text-input-events/">`ITextInputEvents`</a> that forwards a MonoGame window's events. The window constructor of <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-ui/">`BorrowedTorchUI`</a> creates and disposes one itself.
 
 A class. The [quick start guide](/docs/ui/#gamewindowtextinputevents) shows it in context.
 

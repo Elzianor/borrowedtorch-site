@@ -6,6 +6,6 @@ description: "The signature of TabControl.TabOpened and the events it handles."
 
 A delegate: the handler type of an event.
 
-Signature: `void TabOpened(TabControl sender, BaseElement tab)`
+Signature: <code>void TabOpened(<a href="/docs/ui-glossary/types/tab-control/">TabControl</a> sender, <a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> tab)</code>
 
 Handles [`TabControl.OnTabOpened`](/docs/ui-glossary/types/tab-control/#ontabopened).

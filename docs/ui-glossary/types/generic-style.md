@@ -4,7 +4,7 @@ title: "Glossary: GenericStyle&lt;T&gt;"
 description: "The members of GenericStyle<T>, in alphabetical order."
 ---
 
-The static holder of the general style of one style type, where `T` is the style class. <a class="ref prop" href="/docs/ui-glossary/elements/button/#generalstyle">`Button.GeneralStyle`</a> reads and writes `GenericStyle<ButtonStyle>.GeneralStyle`. It also keeps the framework defaults of the type, built the first time the type is used from the class's defaults (internal, not reachable from your code).
+The static holder of the general style of one style type, where `T` is the style class. <a class="ref prop" href="/docs/ui-glossary/elements/button/#generalstyle">`Button.GeneralStyle`</a> reads and writes <code><a href="/docs/ui-glossary/types/generic-style/">GenericStyle</a>&lt;<a href="/docs/ui-glossary/types/button-style/">ButtonStyle</a>&gt;.GeneralStyle</code>. It also keeps the framework defaults of the type, built the first time the type is used from the class's defaults (internal, not reachable from your code).
 
 A static class. The [styles page](/docs/ui-styles/#genericstylet) shows it in context.
 

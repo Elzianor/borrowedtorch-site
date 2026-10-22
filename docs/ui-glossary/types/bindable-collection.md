@@ -36,7 +36,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 <h3 id="addrange"><span class="method"><code>AddRange()</code></span> <a class="ctx" href="/docs/ui-styles/#bindablecollectiont" title="AddRange() in context on the styles page" aria-label="AddRange() in context on the styles page">→</a></h3>
 
-`AddRange(IEnumerable<T> collection)` · Adds the items at the end, reported as one change. Does nothing for `null` or an empty collection.
+<a class="ref method" href="/docs/ui-glossary/types/bindable-collection/#addrange">`AddRange(IEnumerable<T> collection)`</a> · Adds the items at the end, reported as one change. Does nothing for `null` or an empty collection.
 
 <h3 id="clear"><span class="method"><code>Clear()</code></span> <a class="ctx" href="/docs/ui-styles/#bindablecollectiont" title="Clear() in context on the styles page" aria-label="Clear() in context on the styles page">→</a></h3>
 
@@ -60,7 +60,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 <h3 id="insertrange"><span class="method"><code>InsertRange()</code></span> <a class="ctx" href="/docs/ui-styles/#bindablecollectiont" title="InsertRange() in context on the styles page" aria-label="InsertRange() in context on the styles page">→</a></h3>
 
-`InsertRange(int index, IEnumerable<T> collection)` · Inserts the items at the index, reported as one change. An index outside `0..Count` is ignored.
+<a class="ref method" href="/docs/ui-glossary/types/bindable-collection/#insertrange">`InsertRange(int index, IEnumerable<T> collection)`</a> · Inserts the items at the index, reported as one change. An index outside `0..Count` is ignored.
 
 <h3 id="remove"><span class="method"><code>Remove()</code></span> <a class="ctx" href="/docs/ui-styles/#bindablecollectiont" title="Remove() in context on the styles page" aria-label="Remove() in context on the styles page">→</a></h3>
 

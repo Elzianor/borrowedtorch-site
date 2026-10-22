@@ -6,6 +6,6 @@ description: "The signature of BaseElement.Disposed and the events it handles."
 
 A delegate: the handler type of an event.
 
-Signature: `void Disposed(BaseElement sender)`
+Signature: <code>void Disposed(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender)</code>
 
 Handles [`BaseElement.OnDisposed`](/docs/ui-glossary/elements/base-element/#ondisposed).

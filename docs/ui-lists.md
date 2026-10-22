@@ -9,7 +9,7 @@ tables below don't repeat. Names are coloured by what they are: a <span class="k
 `FooDP`, which a style, a binding or an animation can set (see [styles, bindings and animation](/docs/ui-styles/)).
 Screenshots use the theme from [styles](/docs/ui-styles/#the-theme-of-these-pages).
 
-The keyboard reaches these elements from the game window you give <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-u-i/">`BorrowedTorchUI`</a> (see the [quick start guide](/docs/ui/)):
+The keyboard reaches these elements from the game window you give <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-ui/">`BorrowedTorchUI`</a> (see the [quick start guide](/docs/ui/)):
 a key goes to the element that has the keyboard first, then to the elements around it until one uses it.
 
 ## ListBox
@@ -107,7 +107,7 @@ than the row. <a class="ref method" href="/docs/ui-glossary/elements/list-box/#a
 
 ### Virtualization
 
-With `VirtualizationMode = ListBoxVirtualizationMode.Fixed` and an <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#itemheight">`ItemHeight`</a> above 0, every row is <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#itemheight">`ItemHeight`</a>
+With <code>VirtualizationMode = <a href="/docs/ui-glossary/types/list-box-virtualization-mode/#fixed">ListBoxVirtualizationMode.Fixed</a></code> and an <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#itemheight">`ItemHeight`</a> above 0, every row is <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#itemheight">`ItemHeight`</a>
 units high and only the rows in view, three rows above and below them, and the primary selected row get elements.
 The rows are kept as light records, so lists of hundreds of thousands of rows fill quickly. Row elements that scroll
 out of view are reused for the rows that come in: a template that implements <a class="ref" href="/docs/ui-glossary/types/i-recycling-items-template/">`IRecyclingItemsTemplate`</a> (the default
@@ -154,12 +154,12 @@ Ctrl and Shift held with these keys work as with clicks in `Multiple` mode.
 | <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#selectionmode">`SelectionMode`</a> | <a class="ref" href="/docs/ui-glossary/types/list-box-selection-mode/">`ListBoxSelectionMode`</a> | Whether one row or several rows can be selected. `Single` by default. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#selecteditem">`SelectedItem`</a> | <a class="ref" href="/docs/ui-glossary/elements/list-box-item/">`ListBoxItem`</a> | The primary selected row, `null` when nothing is selected. Setting it selects that row; `null` clears the selection. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#selectedindex">`SelectedIndex`</a> | `int` | The index of the primary selected row, `-1` when nothing is selected. Setting it selects that row (the value is clamped to the rows); a negative value clears the selection. |
-| <a class="ref prop" href="/docs/ui-glossary/elements/list-box/#selecteditems">`SelectedItems`</a> | `IReadOnlyList<ListBoxItem>` | Read-only. The selected rows that have an element (see <a class="ref prop" href="/docs/ui-glossary/elements/list-box/#items">`Items`</a>). |
+| <a class="ref prop" href="/docs/ui-glossary/elements/list-box/#selecteditems">`SelectedItems`</a> | <code>IReadOnlyList&lt;<a href="/docs/ui-glossary/elements/list-box-item/">ListBoxItem</a>&gt;</code> | Read-only. The selected rows that have an element (see <a class="ref prop" href="/docs/ui-glossary/elements/list-box/#items">`Items`</a>). |
 | <a class="ref prop" href="/docs/ui-glossary/elements/list-box/#selectedindices">`SelectedIndices`</a> | `IReadOnlyList<int>` | Read-only. The indices of all selected rows, with an element or not. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/list-box/#selectedsources">`SelectedSources`</a> | `IReadOnlyList<object>` | Read-only. The source objects of all selected rows, `null` for rows added as elements or text. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/list-box/#count">`Count`</a> | `int` | Read-only. The number of rows, in every virtualization mode. |
-| <a class="ref prop" href="/docs/ui-glossary/elements/list-box/#items">`Items`</a> | `IReadOnlyList<ListBoxItem>` | Read-only. The rows that have an element, in order: every row in `None` mode, the rows around the view and the primary selected row in `Fixed` mode. A live view, don't keep it across changes. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#itemssource">`ItemsSource`</a> | `IEnumerable` | The objects to show, one row each. A `BindableCollection<T>` is followed. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/list-box/#items">`Items`</a> | <code>IReadOnlyList&lt;<a href="/docs/ui-glossary/elements/list-box-item/">ListBoxItem</a>&gt;</code> | Read-only. The rows that have an element, in order: every row in `None` mode, the rows around the view and the primary selected row in `Fixed` mode. A live view, don't keep it across changes. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#itemssource">`ItemsSource`</a> | `IEnumerable` | The objects to show, one row each. A <code><a href="/docs/ui-glossary/types/bindable-collection/">BindableCollection</a>&lt;T&gt;</code> is followed. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/list-box/#itemstemplate">`ItemsTemplate`</a> | <a class="ref" href="/docs/ui-glossary/types/i-items-template/">`IItemsTemplate`</a> | Makes the element of each <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#itemssource">`ItemsSource`</a> object; a label with the object's text when none is set. Changing it builds the rows again. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#usedualcolors">`UseDualColors`</a> | `bool` | Alternates the background of unselected rows: <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#normalitemcolor">`NormalItemColor`</a> for even indices, <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#alternativeitemcolor">`AlternativeItemColor`</a> for odd ones. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#normalitemcolor">`NormalItemColor`</a> | `Color` | The background of an unselected row (of the even rows with <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#usedualcolors">`UseDualColors`</a>). |
@@ -178,26 +178,26 @@ Ctrl and Shift held with these keys work as with clicks in `Multiple` mode.
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| <a class="ref event" href="/docs/ui-glossary/elements/list-box/#onitemselect">`OnItemSelect`</a> | `(BaseElement sender, ListBoxItem item)` | The primary selection is set, by the user or from code. `item` is `null` when nothing is selected any more. |
-| <a class="ref event" href="/docs/ui-glossary/elements/list-box/#onitemsselect">`OnItemsSelect`</a> | `(BaseElement sender, IReadOnlyList<ListBoxItem> items)` | The set of selected rows changes. `items` is `SelectedItems`, the selected rows that have an element. |
+| <a class="ref event" href="/docs/ui-glossary/elements/list-box/#onitemselect">`OnItemSelect`</a> | <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, <a href="/docs/ui-glossary/elements/list-box-item/">ListBoxItem</a> item)</code> | The primary selection is set, by the user or from code. `item` is `null` when nothing is selected any more. |
+| <a class="ref event" href="/docs/ui-glossary/elements/list-box/#onitemsselect">`OnItemsSelect`</a> | <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, IReadOnlyList&lt;<a href="/docs/ui-glossary/elements/list-box-item/">ListBoxItem</a>&gt; items)</code> | The set of selected rows changes. `items` is <a class="ref prop" href="/docs/ui-glossary/elements/list-box/#selecteditems">`SelectedItems`</a>, the selected rows that have an element. |
 
 ### ListBox methods
 
 | Method | Description |
 | --- | --- |
 | <a class="ref method" href="/docs/ui-glossary/elements/list-box/#listbox">`ListBox(string name = null)`</a> | Creates a list box. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>. |
-| <a class="ref method" href="/docs/ui-glossary/elements/list-box/#additem">`AddItem(BaseElement item)`</a> | Adds a row at the end. A <a class="ref" href="/docs/ui-glossary/elements/list-box-item/">`ListBoxItem`</a> is the row itself, any other element is shown in a row the list makes. |
-| <a class="ref method" href="/docs/ui-glossary/elements/list-box/#additemat">`AddItemAt(BaseElement item, int index)`</a> | Inserts a row at the index (0 to <a class="ref prop" href="/docs/ui-glossary/elements/list-box/#count">`Count`</a>); another index is ignored. |
-| <a class="ref method" href="/docs/ui-glossary/elements/list-box/#additemsrange">`AddItemsRange(IEnumerable<BaseElement> items)`</a> | Adds a row per element at the end, in one batch (the rows are indexed and laid out once). |
-| <a class="ref method" href="/docs/ui-glossary/elements/list-box/#additemsrangeat">`AddItemsRangeAt(IEnumerable<BaseElement> items, int index)`</a> | Inserts a row per element at the index, in one batch. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/list-box/#additem">AddItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> | Adds a row at the end. A <a class="ref" href="/docs/ui-glossary/elements/list-box-item/">`ListBoxItem`</a> is the row itself, any other element is shown in a row the list makes. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/list-box/#additemat">AddItemAt</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item, int index)</code></span> | Inserts a row at the index (0 to <a class="ref prop" href="/docs/ui-glossary/elements/list-box/#count">`Count`</a>); another index is ignored. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/list-box/#additemsrange">AddItemsRange</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items)</code></span> | Adds a row per element at the end, in one batch (the rows are indexed and laid out once). |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/list-box/#additemsrangeat">AddItemsRangeAt</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items, int index)</code></span> | Inserts a row per element at the index, in one batch. |
 | <a class="ref method" href="/docs/ui-glossary/elements/list-box/#addtextitem">`AddTextItem(string text)`</a> | Adds a text row. Does nothing while an <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#itemssource">`ItemsSource`</a> is set. |
 | <a class="ref method" href="/docs/ui-glossary/elements/list-box/#addtextitems">`AddTextItems(IEnumerable<string> texts)`</a> | Adds a text row per string, in one batch. Does nothing while an <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#itemssource">`ItemsSource`</a> is set. |
-| <a class="ref method" href="/docs/ui-glossary/elements/list-box/#removeitem">`RemoveItem(BaseElement item)`</a> | Removes the row of the item (the row itself or the element shown in it). |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/list-box/#removeitem">RemoveItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> | Removes the row of the item (the row itself or the element shown in it). |
 | <a class="ref method" href="/docs/ui-glossary/elements/list-box/#removeitemat">`RemoveItemAt(int index)`</a> | Removes the row at the index. |
 | <a class="ref method" href="/docs/ui-glossary/elements/list-box/#removeitemsrangeat">`RemoveItemsRangeAt(int index, int count)`</a> | Removes `count` rows from the index on (as many as there are). |
 | <a class="ref method" href="/docs/ui-glossary/elements/list-box/#clearitems">`ClearItems()`</a> | Removes every row. |
-| <a class="ref method" href="/docs/ui-glossary/elements/list-box/#select">`Select(BaseElement item)`</a> | Selects the row of the item (the row itself or the element shown in it), as <a class="ref method" href="/docs/ui-glossary/elements/list-box/#selectat">`SelectAt`</a> does. |
-| <a class="ref method" href="/docs/ui-glossary/elements/list-box/#deselect">`Deselect(BaseElement item)`</a> | Deselects the row of the item, as <a class="ref method" href="/docs/ui-glossary/elements/list-box/#deselectat">`DeselectAt`</a> does. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/list-box/#select">Select</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> | Selects the row of the item (the row itself or the element shown in it), as <a class="ref method" href="/docs/ui-glossary/elements/list-box/#selectat">`SelectAt`</a> does. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/list-box/#deselect">Deselect</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> | Deselects the row of the item, as <a class="ref method" href="/docs/ui-glossary/elements/list-box/#deselectat">`DeselectAt`</a> does. |
 | <a class="ref method" href="/docs/ui-glossary/elements/list-box/#selectat">`SelectAt(int index)`</a> | Makes the row at the index the selected row; the other rows are deselected, also in `Multiple` mode. An index out of range is ignored. |
 | <a class="ref method" href="/docs/ui-glossary/elements/list-box/#deselectat">`DeselectAt(int index)`</a> | Deselects the row at the index. If it was the primary row, the first row that is still selected becomes the primary one. |
 | <a class="ref method" href="/docs/ui-glossary/elements/list-box/#selectsource">`SelectSource(object source)`</a> | Selects the row whose `Source` is the object. Nothing happens when there is none. |
@@ -244,7 +244,7 @@ its own height back when it leaves the list. A row added with <a class="ref prop
 
 | Method | Description |
 | --- | --- |
-| <a class="ref method" href="/docs/ui-glossary/elements/list-box-item/#listboxitem">`ListBoxItem(BaseElement content, ListBox parentListBox, string name = null)`</a> | Creates a row showing the content. `parentListBox` gives the row its colours until it is in a list; from then on the list it is in counts. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/list-box-item/#listboxitem">ListBoxItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> content, <a href="/docs/ui-glossary/elements/list-box/">ListBox</a> parentListBox, string name = null)</code></span> | Creates a row showing the content. `parentListBox` gives the row its colours until it is in a list; from then on the list it is in counts. |
 
 ## ComboBox
 
@@ -296,8 +296,8 @@ already). A selection made in code closes an open list as well.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <a class="ref prop" href="/docs/ui-glossary/elements/combo-box/#items">`Items`</a> | `IReadOnlyList<ListBoxItem>` | Read-only. The rows of the drop-down list that have an element (see the list box's <a class="ref prop" href="/docs/ui-glossary/elements/combo-box/#items">`Items`</a>). |
-| <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#itemssource">`ItemsSource`</a> | `IEnumerable` | The objects to show, one row each. A `BindableCollection<T>` is followed. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/combo-box/#items">`Items`</a> | <code>IReadOnlyList&lt;<a href="/docs/ui-glossary/elements/list-box-item/">ListBoxItem</a>&gt;</code> | Read-only. The rows of the drop-down list that have an element (see the list box's <a class="ref prop" href="/docs/ui-glossary/elements/combo-box/#items">`Items`</a>). |
+| <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#itemssource">`ItemsSource`</a> | `IEnumerable` | The objects to show, one row each. A <code><a href="/docs/ui-glossary/types/bindable-collection/">BindableCollection</a>&lt;T&gt;</code> is followed. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/combo-box/#itemstemplate">`ItemsTemplate`</a> | <a class="ref" href="/docs/ui-glossary/types/i-items-template/">`IItemsTemplate`</a> | Makes the element of each <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#itemssource">`ItemsSource`</a> object; a label with the object's text when none is set. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#selecteditem">`SelectedItem`</a> | <a class="ref" href="/docs/ui-glossary/elements/list-box-item/">`ListBoxItem`</a> | The selected row, `null` when nothing is selected. Setting it selects that row. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#selectedindex">`SelectedIndex`</a> | `int` | The index of the selected row, `-1` when nothing is selected. |
@@ -310,24 +310,24 @@ already). A selection made in code closes an open list as well.
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| <a class="ref event" href="/docs/ui-glossary/elements/combo-box/#onitemselect">`OnItemSelect`</a> | `(BaseElement sender, ListBoxItem item)` | The selection changes, by the user or from code. The sender is the combo box, `item` a row of its drop-down list, `null` when nothing is selected any more. |
+| <a class="ref event" href="/docs/ui-glossary/elements/combo-box/#onitemselect">`OnItemSelect`</a> | <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, <a href="/docs/ui-glossary/elements/list-box-item/">ListBoxItem</a> item)</code> | The selection changes, by the user or from code. The sender is the combo box, `item` a row of its drop-down list, `null` when nothing is selected any more. |
 
 ### ComboBox methods
 
 | Method | Description |
 | --- | --- |
 | <a class="ref method" href="/docs/ui-glossary/elements/combo-box/#combobox">`ComboBox(string name = null)`</a> | Creates a combo box. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>. |
-| <a class="ref method" href="/docs/ui-glossary/elements/combo-box/#additem">`AddItem(BaseElement item)`</a> | Adds a row at the end of the list. |
-| <a class="ref method" href="/docs/ui-glossary/elements/combo-box/#additemat">`AddItemAt(BaseElement item, int index)`</a> | Inserts a row at the index. |
-| <a class="ref method" href="/docs/ui-glossary/elements/combo-box/#additemsrange">`AddItemsRange(IEnumerable<BaseElement> items)`</a> | Adds a row per element at the end, in one batch. |
-| <a class="ref method" href="/docs/ui-glossary/elements/combo-box/#additemsrangeat">`AddItemsRangeAt(IEnumerable<BaseElement> items, int index)`</a> | Inserts a row per element at the index, in one batch. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/combo-box/#additem">AddItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> | Adds a row at the end of the list. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/combo-box/#additemat">AddItemAt</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item, int index)</code></span> | Inserts a row at the index. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/combo-box/#additemsrange">AddItemsRange</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items)</code></span> | Adds a row per element at the end, in one batch. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/combo-box/#additemsrangeat">AddItemsRangeAt</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items, int index)</code></span> | Inserts a row per element at the index, in one batch. |
 | <a class="ref method" href="/docs/ui-glossary/elements/combo-box/#addtextitem">`AddTextItem(string text)`</a> | Adds a text row. Does nothing while an <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#itemssource">`ItemsSource`</a> is set. |
-| <a class="ref method" href="/docs/ui-glossary/elements/combo-box/#removeitem">`RemoveItem(BaseElement item)`</a> | Removes the row of the item. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/combo-box/#removeitem">RemoveItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> | Removes the row of the item. |
 | <a class="ref method" href="/docs/ui-glossary/elements/combo-box/#removeitemat">`RemoveItemAt(int index)`</a> | Removes the row at the index. |
 | <a class="ref method" href="/docs/ui-glossary/elements/combo-box/#removeitemsrangeat">`RemoveItemsRangeAt(int index, int count)`</a> | Removes `count` rows from the index on. |
 | <a class="ref method" href="/docs/ui-glossary/elements/combo-box/#clearitems">`ClearItems()`</a> | Removes every row. |
-| <a class="ref method" href="/docs/ui-glossary/elements/combo-box/#select">`Select(BaseElement item)`</a> | Selects the row of the item. |
-| <a class="ref method" href="/docs/ui-glossary/elements/combo-box/#deselect">`Deselect(BaseElement item)`</a> | Deselects the row of the item. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/combo-box/#select">Select</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> | Selects the row of the item. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/combo-box/#deselect">Deselect</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> | Deselects the row of the item. |
 | <a class="ref method" href="/docs/ui-glossary/elements/combo-box/#selectat">`SelectAt(int index)`</a> | Selects the row at the index. |
 | <a class="ref method" href="/docs/ui-glossary/elements/combo-box/#deselectat">`DeselectAt(int index)`</a> | Deselects the row at the index. |
 | <a class="ref method" href="/docs/ui-glossary/elements/combo-box/#selectsource">`SelectSource(object source)`</a> | Selects the row of the <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#itemssource">`ItemsSource`</a> object. Nothing happens when there is none. |
@@ -426,11 +426,11 @@ expanded. The screenshot's theme uses a 10 by 10 icon in its own colours.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#itemssource">`ItemsSource`</a> | `IEnumerable` | The top-level objects of the tree. A `BindableCollection<T>` is followed. |
-| <a class="ref prop" href="/docs/ui-glossary/elements/tree-view/#childrenselector">`ChildrenSelector`</a> | `Func<object, IEnumerable>` | Gives the children of an object of the <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#itemssource">`ItemsSource`</a>, `null` or empty for a leaf. A children collection that is a `BindableCollection<T>` is followed. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#itemssource">`ItemsSource`</a> | `IEnumerable` | The top-level objects of the tree. A <code><a href="/docs/ui-glossary/types/bindable-collection/">BindableCollection</a>&lt;T&gt;</code> is followed. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/tree-view/#childrenselector">`ChildrenSelector`</a> | `Func<object, IEnumerable>` | Gives the children of an object of the <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#itemssource">`ItemsSource`</a>, `null` or empty for a leaf. A children collection that is a <code><a href="/docs/ui-glossary/types/bindable-collection/">BindableCollection</a>&lt;T&gt;</code> is followed. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/tree-view/#itemstemplate">`ItemsTemplate`</a> | <a class="ref" href="/docs/ui-glossary/types/i-items-template/">`IItemsTemplate`</a> | Makes the element of each object; a label with the object's text when none is set. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#selecteditem">`SelectedItem`</a> | <a class="ref" href="/docs/ui-glossary/elements/tree-view-item/">`TreeViewItem`</a> | The selected item, `null` when nothing is selected. Only an item of this tree can be set; the branches above it are expanded. |
-| <a class="ref prop" href="/docs/ui-glossary/elements/tree-view/#leaves">`Leaves`</a> | `IReadOnlyList<TreeViewItem>` | Read-only. The top-level items. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/tree-view/#leaves">`Leaves`</a> | <code>IReadOnlyList&lt;<a href="/docs/ui-glossary/elements/tree-view-item/">TreeViewItem</a>&gt;</code> | Read-only. The top-level items. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#listboxstyle">`ListBoxStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> | The style of the list the items are shown in, for example its row colours and scroll bars. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#expandiconstyle">`ExpandIconStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> | The style of the expand icon of the items, for example its size and margin. By default an 8 by 8 block, centred, with a margin of 4 before and 6 after it. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#minimizediconcolor">`MinimizedIconColor`</a> | `Color` | The colour of the icon of a collapsed branch, when the tree view has no textures. By default `(150, 150, 160)`. |
@@ -441,18 +441,18 @@ expanded. The screenshot's theme uses a 10 by 10 icon in its own colours.
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| <a class="ref event" href="/docs/ui-glossary/elements/tree-view/#onitemselect">`OnItemSelect`</a> | `(BaseElement sender, TreeViewItem item)` | The selected item changes, by the user or from code. `item` is `null` when nothing is selected any more. |
+| <a class="ref event" href="/docs/ui-glossary/elements/tree-view/#onitemselect">`OnItemSelect`</a> | <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, <a href="/docs/ui-glossary/elements/tree-view-item/">TreeViewItem</a> item)</code> | The selected item changes, by the user or from code. `item` is `null` when nothing is selected any more. |
 
 ### TreeView methods
 
 | Method | Description |
 | --- | --- |
 | <a class="ref method" href="/docs/ui-glossary/elements/tree-view/#treeview">`TreeView(string name = null)`</a> | Creates a tree view. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>. |
-| <a class="ref method" href="/docs/ui-glossary/elements/tree-view/#additem">`AddItem(BaseElement item)`</a> | Adds a top-level item; an element that is not a <a class="ref" href="/docs/ui-glossary/elements/tree-view-item/">`TreeViewItem`</a> is put in one. Does nothing while an <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#itemssource">`ItemsSource`</a> is set. |
-| <a class="ref method" href="/docs/ui-glossary/elements/tree-view/#additemat">`AddItemAt(BaseElement item, int index)`</a> | Inserts a top-level item at the index. |
-| <a class="ref method" href="/docs/ui-glossary/elements/tree-view/#additemsrange">`AddItemsRange(IEnumerable<BaseElement> items)`</a> | Adds top-level items at the end, listed in one go. |
-| <a class="ref method" href="/docs/ui-glossary/elements/tree-view/#additemsrangeat">`AddItemsRangeAt(IEnumerable<BaseElement> items, int index)`</a> | Inserts top-level items at the index, listed in one go. |
-| <a class="ref method" href="/docs/ui-glossary/elements/tree-view/#removeitem">`RemoveItem(BaseElement item)`</a> | Removes the item (or the item made around the element) from wherever it is in the tree, with its branch. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/tree-view/#additem">AddItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> | Adds a top-level item; an element that is not a <a class="ref" href="/docs/ui-glossary/elements/tree-view-item/">`TreeViewItem`</a> is put in one. Does nothing while an <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#itemssource">`ItemsSource`</a> is set. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/tree-view/#additemat">AddItemAt</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item, int index)</code></span> | Inserts a top-level item at the index. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/tree-view/#additemsrange">AddItemsRange</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items)</code></span> | Adds top-level items at the end, listed in one go. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/tree-view/#additemsrangeat">AddItemsRangeAt</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items, int index)</code></span> | Inserts top-level items at the index, listed in one go. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/tree-view/#removeitem">RemoveItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> | Removes the item (or the item made around the element) from wherever it is in the tree, with its branch. |
 | <a class="ref method" href="/docs/ui-glossary/elements/tree-view/#removeitemat">`RemoveItemAt(int index)`</a> | Removes the top-level item at the index. |
 | <a class="ref method" href="/docs/ui-glossary/elements/tree-view/#removeitemsrangeat">`RemoveItemsRangeAt(int index, int count)`</a> | Removes `count` top-level items from the index on. |
 | <a class="ref method" href="/docs/ui-glossary/elements/tree-view/#clearitems">`ClearItems()`</a> | Removes every item. |
@@ -475,19 +475,19 @@ gets its place in the tree: its <a class="ref prop" href="/docs/ui-glossary/elem
 | Property | Type | Description |
 | --- | --- | --- |
 | <a class="ref prop" href="/docs/ui-glossary/elements/tree-view-item/#isexpanded">`IsExpanded`</a> | `bool` | Whether the leaves are shown (while the items above are expanded too). An item without leaves is never expanded. An item of a source object makes the items of its children the first time it is expanded. |
-| <a class="ref prop" href="/docs/ui-glossary/elements/tree-view-item/#leaves">`Leaves`</a> | `IReadOnlyList<TreeViewItem>` | Read-only. The items one level below. Empty for an item of a source object until it is first expanded. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/tree-view-item/#leaves">`Leaves`</a> | <code>IReadOnlyList&lt;<a href="/docs/ui-glossary/elements/tree-view-item/">TreeViewItem</a>&gt;</code> | Read-only. The items one level below. Empty for an item of a source object until it is first expanded. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/tree-view-item/#hasleaves">`HasLeaves`</a> | `bool` | Read-only. Whether the item has leaves, also an item of a source object whose children were not made into items yet. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/tree-view-item/#source">`Source`</a> | `object` | Read-only. The <span class="dp">`ItemsSource`</span> object the item shows, `null` for an item added in code. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/tree-view-item/#mousecursorsset">`MouseCursorsSet`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | Read-only. The mouse cursors of the row the item is shown in. |
 
 | Method | Description |
 | --- | --- |
-| <a class="ref method" href="/docs/ui-glossary/elements/tree-view-item/#treeviewitem">`TreeViewItem(TreeView parentTreeView, BaseElement content, Margin shift, string name = null)`</a> | Creates an item of the tree view showing the content. `shift` is its indentation until it is added to the tree, which sets its own. |
-| <a class="ref method" href="/docs/ui-glossary/elements/tree-view-item/#additem">`AddItem(BaseElement item)`</a> | Adds a leaf; an element that is not a `TreeViewItem` is put in one. Does nothing for an item of a source object. |
-| <a class="ref method" href="/docs/ui-glossary/elements/tree-view-item/#additemat">`AddItemAt(BaseElement item, int index)`</a> | Inserts a leaf at the index. |
-| <a class="ref method" href="/docs/ui-glossary/elements/tree-view-item/#additemsrange">`AddItemsRange(IEnumerable<BaseElement> items)`</a> | Adds leaves at the end, listed in one go. |
-| <a class="ref method" href="/docs/ui-glossary/elements/tree-view-item/#additemsrangeat">`AddItemsRangeAt(IEnumerable<BaseElement> items, int index)`</a> | Inserts leaves at the index, listed in one go. |
-| <a class="ref method" href="/docs/ui-glossary/elements/tree-view-item/#removeitem">`RemoveItem(BaseElement item)`</a> | Removes the item (or the item made around the element) from anywhere in this item's branch. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/tree-view-item/#treeviewitem">TreeViewItem</a>(<a href="/docs/ui-glossary/elements/tree-view/">TreeView</a> parentTreeView, <a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> content, <a href="/docs/ui-glossary/types/margin/">Margin</a> shift, string name = null)</code></span> | Creates an item of the tree view showing the content. `shift` is its indentation until it is added to the tree, which sets its own. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/tree-view-item/#additem">AddItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> | Adds a leaf; an element that is not a `TreeViewItem` is put in one. Does nothing for an item of a source object. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/tree-view-item/#additemat">AddItemAt</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item, int index)</code></span> | Inserts a leaf at the index. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/tree-view-item/#additemsrange">AddItemsRange</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items)</code></span> | Adds leaves at the end, listed in one go. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/tree-view-item/#additemsrangeat">AddItemsRangeAt</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items, int index)</code></span> | Inserts leaves at the index, listed in one go. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/tree-view-item/#removeitem">RemoveItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> | Removes the item (or the item made around the element) from anywhere in this item's branch. |
 | <a class="ref method" href="/docs/ui-glossary/elements/tree-view-item/#removeitemat">`RemoveItemAt(int index)`</a> | Removes the leaf at the index, with its branch. |
 | <a class="ref method" href="/docs/ui-glossary/elements/tree-view-item/#removeitemsrangeat">`RemoveItemsRangeAt(int index, int count)`</a> | Removes `count` leaves from the index on. |
 | <a class="ref method" href="/docs/ui-glossary/elements/tree-view-item/#clearitems">`ClearItems()`</a> | Removes every leaf. |
@@ -580,10 +580,10 @@ makes; such items are disposed when they are removed, your own items are only le
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <a class="ref prop" href="/docs/ui-glossary/elements/context-menu/#items">`Items`</a> | `IReadOnlyList<BaseElement>` | Read-only. The items and separators of the menu, in order. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/context-menu/#items">`Items`</a> | <code>IReadOnlyList&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt;</code> | Read-only. The items and separators of the menu, in order. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/context-menu/#isopen">`IsOpen`</a> | `bool` | Read-only. Whether the menu is open. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/context-menu/#parentitem">`ParentItem`</a> | <a class="ref" href="/docs/ui-glossary/elements/context-menu-item/">`ContextMenuItem`</a> | Read-only. The item whose sub-menu this menu is, `null` for the menu of an element. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#itemssource">`ItemsSource`</a> | `IEnumerable` | The objects to show, one item each. A `BindableCollection<T>` is followed. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#itemssource">`ItemsSource`</a> | `IEnumerable` | The objects to show, one item each. A <code><a href="/docs/ui-glossary/types/bindable-collection/">BindableCollection</a>&lt;T&gt;</code> is followed. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/context-menu/#itemstemplate">`ItemsTemplate`</a> | <a class="ref" href="/docs/ui-glossary/types/i-items-template/">`IItemsTemplate`</a> | Makes the content of the item of each <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#itemssource">`ItemsSource`</a> object; a label with the object's text when none is set. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#placement">`Placement`</a> | <a class="ref" href="/docs/ui-glossary/types/context-menu-placement/">`ContextMenuPlacement`</a> | On which side of the point the menu opens. `BottomRight` by default. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#marginfrommousecursor">`MarginFromMouseCursor`</a> | <a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> | An offset added to the point the menu opens at: `Left` to the x, `Top` to the y, in units. |
@@ -597,7 +597,7 @@ makes; such items are disposed when they are removed, your own items are only le
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| <a class="ref event" href="/docs/ui-glossary/elements/context-menu/#onitemselect">`OnItemSelect`</a> | `(BaseElement sender, ContextMenuItem item)` | An item of the menu or of one of its sub-menus is chosen. It is raised by the menu of the element; the sender is the menu the item is in. |
+| <a class="ref event" href="/docs/ui-glossary/elements/context-menu/#onitemselect">`OnItemSelect`</a> | <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, <a href="/docs/ui-glossary/elements/context-menu-item/">ContextMenuItem</a> item)</code> | An item of the menu or of one of its sub-menus is chosen. It is raised by the menu of the element; the sender is the menu the item is in. |
 
 ### ContextMenu methods
 
@@ -606,11 +606,11 @@ makes; such items are disposed when they are removed, your own items are only le
 | <a class="ref method" href="/docs/ui-glossary/elements/context-menu/#contextmenu">`ContextMenu(string name = null)`</a> | Creates a closed menu. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>. |
 | <a class="ref method" href="/docs/ui-glossary/elements/context-menu/#open">`Open(Point position)`</a> | Opens the menu at a point of the screen, placed by <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#placement">`Placement`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#marginfrommousecursor">`MarginFromMouseCursor`</a> and kept on the screen. Only a menu in the element tree that can take the keyboard opens; a sub-menu doesn't. |
 | <a class="ref method" href="/docs/ui-glossary/elements/context-menu/#close">`Close()`</a> | Closes the menu with its open sub-menus, and gives the keyboard back to the element that had it before. On a sub-menu it closes only that sub-menu. |
-| <a class="ref method" href="/docs/ui-glossary/elements/context-menu/#additem">`AddItem(BaseElement item)`</a> | Adds an item at the end. A <a class="ref" href="/docs/ui-glossary/elements/context-menu-item/">`ContextMenuItem`</a> or <a class="ref" href="/docs/ui-glossary/elements/separator/">`Separator`</a> is added as is, another element is put in an item. Does nothing while an <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#itemssource">`ItemsSource`</a> is set. |
-| <a class="ref method" href="/docs/ui-glossary/elements/context-menu/#additemat">`AddItemAt(BaseElement item, int index)`</a> | Inserts an item at the index. |
-| <a class="ref method" href="/docs/ui-glossary/elements/context-menu/#additemsrange">`AddItemsRange(IEnumerable<BaseElement> items)`</a> | Adds items at the end. |
-| <a class="ref method" href="/docs/ui-glossary/elements/context-menu/#additemsrangeat">`AddItemsRangeAt(IEnumerable<BaseElement> items, int index)`</a> | Inserts items at the index. |
-| <a class="ref method" href="/docs/ui-glossary/elements/context-menu/#removeitem">`RemoveItem(BaseElement item)`</a> | Removes the item, or the item made around the element. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/context-menu/#additem">AddItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> | Adds an item at the end. A <a class="ref" href="/docs/ui-glossary/elements/context-menu-item/">`ContextMenuItem`</a> or <a class="ref" href="/docs/ui-glossary/elements/separator/">`Separator`</a> is added as is, another element is put in an item. Does nothing while an <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#itemssource">`ItemsSource`</a> is set. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/context-menu/#additemat">AddItemAt</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item, int index)</code></span> | Inserts an item at the index. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/context-menu/#additemsrange">AddItemsRange</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items)</code></span> | Adds items at the end. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/context-menu/#additemsrangeat">AddItemsRangeAt</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items, int index)</code></span> | Inserts items at the index. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/context-menu/#removeitem">RemoveItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> | Removes the item, or the item made around the element. |
 | <a class="ref method" href="/docs/ui-glossary/elements/context-menu/#removeitemat">`RemoveItemAt(int index)`</a> | Removes the item at the index. |
 | <a class="ref method" href="/docs/ui-glossary/elements/context-menu/#removeitemsrangeat">`RemoveItemsRangeAt(int index, int count)`</a> | Removes `count` items from the index on. |
 | <a class="ref method" href="/docs/ui-glossary/elements/context-menu/#clearitems">`ClearItems()`</a> | Removes every item. |
@@ -653,4 +653,4 @@ state. Choosing it, with a click or the keyboard, raises its `OnClick` and the m
 | Method | Description |
 | --- | --- |
 | <a class="ref method" href="/docs/ui-glossary/elements/context-menu-item/#contextmenuitem">`ContextMenuItem(string text, string name = null)`</a> | Creates an item showing the text in a label. |
-| <a class="ref method" href="/docs/ui-glossary/elements/context-menu-item/#contextmenuitem">`ContextMenuItem(BaseElement content, string name = null)`</a> | Creates an item showing any element. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/context-menu-item/#contextmenuitem">ContextMenuItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> content, string name = null)</code></span> | Creates an item showing any element. |

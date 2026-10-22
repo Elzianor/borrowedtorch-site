@@ -4,7 +4,7 @@ title: "Glossary: RunBoundaryValues&lt;T&gt;"
 description: "The members of RunBoundaryValues<T>, in alphabetical order."
 ---
 
-Values set on the animated properties outside the frames: <a class="ref prop" href="/docs/ui-glossary/types/run-boundary-values/#startvalue">`StartValue`</a> when the animation first starts, <a class="ref prop" href="/docs/ui-glossary/types/run-boundary-values/#endvalue">`EndValue`</a> when it completes. Pass it to the `Animation<T>` constructor.
+Values set on the animated properties outside the frames: <a class="ref prop" href="/docs/ui-glossary/types/run-boundary-values/#startvalue">`StartValue`</a> when the animation first starts, <a class="ref prop" href="/docs/ui-glossary/types/run-boundary-values/#endvalue">`EndValue`</a> when it completes. Pass it to the <code><a href="/docs/ui-glossary/types/animation/">Animation</a>&lt;T&gt;</code> constructor.
 
 A class. The [styles page](/docs/ui-styles/#runboundaryvaluest) shows it in context.
 

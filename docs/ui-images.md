@@ -43,7 +43,7 @@ ui.AddElementToRoot(Framed(mark, ImageFill.Tile, 356));
 ```
 
 <a class="ref dp" href="/docs/ui-glossary/elements/image/#source">`Source`</a> takes a `Texture2D` or a content path: both convert to a [`SourceData`](#sourcedata) by themselves. A path is
-loaded through the `ContentManager` you gave <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-u-i/">`BorrowedTorchUI`</a>, so it names a compiled `.xnb` asset, without the
+loaded through the `ContentManager` you gave <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-ui/">`BorrowedTorchUI`</a>, so it names a compiled `.xnb` asset, without the
 extension. A PNG file that is not a compiled asset can't be read that way: load it with `Texture2D.FromStream` and give
 the image the texture.
 
@@ -110,9 +110,9 @@ instance.
 | Method | Description |
 | --- | --- |
 | <a class="ref method" href="/docs/ui-glossary/types/source-data/#sourcedata">`SourceData(Texture2D texture)`</a> | Wraps the texture. |
-| <a class="ref method" href="/docs/ui-glossary/types/source-data/#sourcedata">`implicit operator SourceData(Texture2D texture)`</a> | Lets you assign a texture where a `SourceData` is expected. |
-| <a class="ref method" href="/docs/ui-glossary/types/source-data/#sourcedata">`implicit operator SourceData(string path)`</a> | Loads the content path as a <a class="ref method" href="/docs/ui-glossary/types/source-data/#texture2d">`Texture2D`</a> through the UI's `ContentManager` and wraps it. |
-| <a class="ref method" href="/docs/ui-glossary/types/source-data/#texture2d">`implicit operator Texture2D(SourceData data)`</a> | Gives back the wrapped texture (`null` when it wraps none). |
+| <span class="method"><code>implicit <a href="/docs/ui-glossary/types/source-data/#sourcedata">operator</a> <a href="/docs/ui-glossary/types/source-data/">SourceData</a>(Texture2D texture)</code></span> | Lets you assign a texture where a `SourceData` is expected. |
+| <span class="method"><code>implicit <a href="/docs/ui-glossary/types/source-data/#sourcedata">operator</a> <a href="/docs/ui-glossary/types/source-data/">SourceData</a>(string path)</code></span> | Loads the content path as a <a class="ref method" href="/docs/ui-glossary/types/source-data/#texture2d">`Texture2D`</a> through the UI's `ContentManager` and wraps it. |
+| <span class="method"><code>implicit <a href="/docs/ui-glossary/types/source-data/#texture2d">operator</a> Texture2D(<a href="/docs/ui-glossary/types/source-data/">SourceData</a> data)</code></span> | Gives back the wrapped texture (`null` when it wraps none). |
 | <a class="ref method" href="/docs/ui-glossary/types/source-data/#section-1">`operator ==`</a> / <a class="ref method" href="/docs/ui-glossary/types/source-data/#section">`operator !=`</a> | Compare a `SourceData` with another `SourceData`, a <a class="ref method" href="/docs/ui-glossary/types/source-data/#texture2d">`Texture2D`</a> or a content path, in either order, by texture instance. Comparing with a path loads that path through the `ContentManager`. |
 | <a class="ref method" href="/docs/ui-glossary/types/source-data/#equals">`Equals(object obj)`</a> | Whether `obj` is a `SourceData` wrapping the same texture instance. |
 | <a class="ref method" href="/docs/ui-glossary/types/source-data/#gethashcode">`GetHashCode()`</a> | The hash code of the wrapped texture, `0` without one. |

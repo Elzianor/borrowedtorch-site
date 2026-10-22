@@ -6,4 +6,4 @@ description: "The signature of DependencyProperty<T>.OwnerPreActionDelegate and 
 
 A delegate: the handler type of an event.
 
-Signature: `void OwnerPreActionDelegate(BaseElement owner, T& value, Boolean& canProceed, ValueSources valueSource)`
+Signature: <code>void OwnerPreActionDelegate(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> owner, T&amp; value, Boolean&amp; canProceed, <a href="/docs/ui-glossary/types/value-sources/">ValueSources</a> valueSource)</code>

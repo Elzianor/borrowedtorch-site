@@ -6,6 +6,6 @@ description: "The signature of BaseElement.Drop and the events it handles."
 
 A delegate: the handler type of an event.
 
-Signature: `void Drop(BaseElement draggedElement, BaseElement dragAndDropDestination)`
+Signature: <code>void Drop(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> draggedElement, <a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> dragAndDropDestination)</code>
 
 Handles [`BaseElement.OnDrop`](/docs/ui-glossary/elements/base-element/#ondrop).

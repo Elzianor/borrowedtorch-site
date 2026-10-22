@@ -6,4 +6,4 @@ description: "The signature of BaseElement.IfDropAllowed and the events it handl
 
 A delegate: the handler type of an event.
 
-Signature: `bool IfDropAllowed(BaseElement draggedElement)`
+Signature: <code>bool IfDropAllowed(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> draggedElement)</code>

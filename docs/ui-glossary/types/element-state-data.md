@@ -34,7 +34,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 <h3 id="elementstatedata"><span class="method"><code>ElementStateData()</code></span> <a class="ctx" href="/docs/ui-base-element/#elementstatedata" title="ElementStateData() in context on the base element page" aria-label="ElementStateData() in context on the base element page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/types/element-state-data/#elementstatedata">`ElementStateData(ElementState state, StateSource source)`</a> · Creates a state, for example to compare with <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#statedata">`StateData`</a>.
+<span class="method"><code><a href="/docs/ui-glossary/types/element-state-data/#elementstatedata">ElementStateData</a>(<a href="/docs/ui-glossary/types/element-state/">ElementState</a> state, <a href="/docs/ui-glossary/types/state-source/">StateSource</a> source)</code></span> · Creates a state, for example to compare with <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#statedata">`StateData`</a>.
 
 <h3 id="section"><span class="method"><code>==()</code></span> <a class="ctx" href="/docs/ui-base-element/#elementstatedata" title="==() in context on the base element page" aria-label="==() in context on the base element page">→</a></h3>
 

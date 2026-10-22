@@ -81,16 +81,16 @@ An item that is disposed leaves the panel by itself.
 | Property | Type | Description |
 | --- | --- | --- |
 | <a class="ref dp" href="/docs/ui-glossary/elements/stack-panel/#orientation">`Orientation`</a> | <a class="ref" href="/docs/ui-glossary/types/orientation/">`Orientation`</a> | `Vertical` stacks the items top to bottom, `Horizontal` left to right. The default is `Horizontal`. |
-| <a class="ref prop" href="/docs/ui-glossary/elements/stack-panel/#items">`Items`</a> | `IReadOnlyList<BaseElement>` | Read-only. The items in the order they are stacked: the elements you added, not the panel's wrappers. A live view, nothing is copied. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/stack-panel/#items">`Items`</a> | <code>IReadOnlyList&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt;</code> | Read-only. The items in the order they are stacked: the elements you added, not the panel's wrappers. A live view, nothing is copied. |
 
 ### StackPanel methods
 
 | Method | Description |
 | --- | --- |
 | <a class="ref method" href="/docs/ui-glossary/elements/stack-panel/#stackpanel">`StackPanel(string name = null)`</a> | Creates a stack panel. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>. |
-| <a class="ref method" href="/docs/ui-glossary/elements/stack-panel/#additem">`AddItem(BaseElement item)`</a> | Adds the item at the end. A null item is ignored. |
-| <a class="ref method" href="/docs/ui-glossary/elements/stack-panel/#additemat">`AddItemAt(BaseElement item, int index)`</a> | Inserts the item at the index (0 to the item count). |
-| <a class="ref method" href="/docs/ui-glossary/elements/stack-panel/#removeitem">`RemoveItem(BaseElement item)`</a> | Removes the item. It is detached, not disposed. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/stack-panel/#additem">AddItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> | Adds the item at the end. A null item is ignored. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/stack-panel/#additemat">AddItemAt</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item, int index)</code></span> | Inserts the item at the index (0 to the item count). |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/stack-panel/#removeitem">RemoveItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> | Removes the item. It is detached, not disposed. |
 | <a class="ref method" href="/docs/ui-glossary/elements/stack-panel/#removeitemat">`RemoveItemAt(int index)`</a> | Removes the item at the index. It is detached, not disposed. |
 | <a class="ref method" href="/docs/ui-glossary/elements/stack-panel/#clearitems">`ClearItems()`</a> | Removes every item. The items are detached, not disposed. |
 
@@ -188,9 +188,9 @@ clips its items, and it is removed once its last item is. The grid's <a class="r
 | <a class="ref method" href="/docs/ui-glossary/elements/grid/#addrowdefinition">`AddRowDefinition(int desiredSize)`</a> | Adds a row of a fixed height in units (at least 1). |
 | <a class="ref method" href="/docs/ui-glossary/elements/grid/#addrowdefinition">`AddRowDefinition()`</a> | Adds an auto row, as tall as the tallest content of its cells. |
 | <a class="ref method" href="/docs/ui-glossary/elements/grid/#addrowdefinition">`AddRowDefinition(float proportion)`</a> | Adds a proportional row, a share of the height left. Negative values count as 0. |
-| <a class="ref method" href="/docs/ui-glossary/elements/grid/#additem">`AddItem(BaseElement item)`</a> | Puts the item in the cell its <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#gridcolumn">`GridColumn`</a>, <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#gridrow">`GridRow`</a> and spans name, making the cell if needed. Ignored when the column or row doesn't exist. |
-| <a class="ref method" href="/docs/ui-glossary/elements/grid/#additemat">`AddItemAt(BaseElement item, int index)`</a> | Does nothing: a grid places items by column and row. Use <a class="ref method" href="/docs/ui-glossary/elements/grid/#additem">`AddItem`</a>. |
-| <a class="ref method" href="/docs/ui-glossary/elements/grid/#removeitem">`RemoveItem(BaseElement item)`</a> | Takes the item out of its cell. It is detached, not disposed. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/grid/#additem">AddItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> | Puts the item in the cell its <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#gridcolumn">`GridColumn`</a>, <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#gridrow">`GridRow`</a> and spans name, making the cell if needed. Ignored when the column or row doesn't exist. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/grid/#additemat">AddItemAt</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item, int index)</code></span> | Does nothing: a grid places items by column and row. Use <a class="ref method" href="/docs/ui-glossary/elements/grid/#additem">`AddItem`</a>. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/grid/#removeitem">RemoveItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> | Takes the item out of its cell. It is detached, not disposed. |
 | <a class="ref method" href="/docs/ui-glossary/elements/grid/#removeitemat">`RemoveItemAt(int index)`</a> | Removes an item by its index in the items of all cells, cell by cell. |
 | <a class="ref method" href="/docs/ui-glossary/elements/grid/#removeitemsrangeat">`RemoveItemsRangeAt(int index, int count)`</a> | Removes `count` items from the index on, counted as in <a class="ref method" href="/docs/ui-glossary/elements/grid/#removeitemat">`RemoveItemAt`</a>. |
 | <a class="ref method" href="/docs/ui-glossary/elements/grid/#clearitems">`ClearItems()`</a> | Removes every item and the emptied cells. The items are detached, not disposed; the definitions stay. |
@@ -209,7 +209,7 @@ A cell is aligned `Left` / `Top`, doesn't take the mouse, and clips its items. I
 | <a class="ref prop" href="/docs/ui-glossary/elements/grid-cell/#isspancell">`IsSpanCell`</a> | `bool` | Read-only. Whether the cell spans more than one column or row. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/grid-cell/#contentwidth">`ContentWidth`</a> | `int` | Read-only. The width the cell's items need; auto columns are sized by it. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/grid-cell/#contentheight">`ContentHeight`</a> | `int` | Read-only. The height the cell's items need; auto rows are sized by it. |
-| <a class="ref prop" href="/docs/ui-glossary/elements/grid-cell/#items">`Items`</a> | `IReadOnlyList<BaseElement>` | Read-only. The items in the cell. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/grid-cell/#items">`Items`</a> | <code>IReadOnlyList&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt;</code> | Read-only. The items in the cell. |
 
 The grid has no style class; its properties are set in code.
 
@@ -276,7 +276,7 @@ The container's `Children` are its view and scroll bars; the item methods act on
 | <a class="ref dp" href="/docs/ui-glossary/elements/scrollable-container/#scrollbarsstyle">`ScrollBarsStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/slider-style/">`SliderStyle`</a> | The style of the scroll bars (see [sliders](/docs/ui-controls/#slider)). The vertical bar gets a copy with the colours of its two line halves swapped. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/scrollable-container/#horizontalscrollingvalue">`HorizontalScrollingValue`</a> | `float` | How far the content is scrolled sideways, from 0 (the left) to 1 (the right). |
 | <a class="ref dp" href="/docs/ui-glossary/elements/scrollable-container/#verticalscrollingvalue">`VerticalScrollingValue`</a> | `float` | How far the content is scrolled down, from 0 (the top) to 1 (the bottom). |
-| <a class="ref prop" href="/docs/ui-glossary/elements/scrollable-container/#items">`Items`</a> | `IReadOnlyList<BaseElement>` | Read-only. The items that scroll: the elements you added. The container's `Children` are its view and scroll bars. A live view. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/scrollable-container/#items">`Items`</a> | <code>IReadOnlyList&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt;</code> | Read-only. The items that scroll: the elements you added. The container's `Children` are its view and scroll bars. A live view. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/scrollable-container/#contentmargin">`ContentMargin`</a> | <a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> | Read-only. The current offset of the content in the view: `Left` and `Top` are 0 or negative while it is scrolled. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/scrollable-container/#scrollareawidth">`ScrollAreaWidth`</a> | `float` | Read-only. How far the content can scroll sideways, in units: its width less the view's width (0 or less while it fits). |
 | <a class="ref prop" href="/docs/ui-glossary/elements/scrollable-container/#scrollareaheight">`ScrollAreaHeight`</a> | `float` | Read-only. How far the content can scroll down, in units: its height less the view's height (0 or less while it fits). |
@@ -286,11 +286,11 @@ The container's `Children` are its view and scroll bars; the item methods act on
 | Method | Description |
 | --- | --- |
 | <a class="ref method" href="/docs/ui-glossary/elements/scrollable-container/#scrollablecontainer">`ScrollableContainer(string name = null)`</a> | Creates a scrollable container. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>. |
-| <a class="ref method" href="/docs/ui-glossary/elements/scrollable-container/#additem">`AddItem(BaseElement item)`</a> | Adds the item to the view. |
-| <a class="ref method" href="/docs/ui-glossary/elements/scrollable-container/#additemat">`AddItemAt(BaseElement item, int index)`</a> | Inserts the item at the index. |
-| <a class="ref method" href="/docs/ui-glossary/elements/scrollable-container/#additemsrange">`AddItemsRange(IEnumerable<BaseElement> items)`</a> | Adds the items at the end. |
-| <a class="ref method" href="/docs/ui-glossary/elements/scrollable-container/#additemsrangeat">`AddItemsRangeAt(IEnumerable<BaseElement> items, int index)`</a> | Inserts the items from the index on. |
-| <a class="ref method" href="/docs/ui-glossary/elements/scrollable-container/#removeitem">`RemoveItem(BaseElement item)`</a> | Removes the item. It is detached, not disposed. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/scrollable-container/#additem">AddItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> | Adds the item to the view. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/scrollable-container/#additemat">AddItemAt</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item, int index)</code></span> | Inserts the item at the index. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/scrollable-container/#additemsrange">AddItemsRange</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items)</code></span> | Adds the items at the end. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/scrollable-container/#additemsrangeat">AddItemsRangeAt</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items, int index)</code></span> | Inserts the items from the index on. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/scrollable-container/#removeitem">RemoveItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> | Removes the item. It is detached, not disposed. |
 | <a class="ref method" href="/docs/ui-glossary/elements/scrollable-container/#removeitemat">`RemoveItemAt(int index)`</a> | Removes the item at the index. |
 | <a class="ref method" href="/docs/ui-glossary/elements/scrollable-container/#removeitemsrangeat">`RemoveItemsRangeAt(int index, int count)`</a> | Removes `count` items from the index on. |
 | <a class="ref method" href="/docs/ui-glossary/elements/scrollable-container/#clearitems">`ClearItems()`</a> | Removes every item. |
@@ -358,7 +358,7 @@ is one and inside the <a class="ref dp" href="/docs/ui-glossary/elements/border/
 frame. A border without a size fits its content plus that inset.
 
 Without textures the frame is drawn in <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#foregroundcolor">`ForegroundColor`</a>. <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> fills only the content area, not the frame.
-With <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> set (e.g. `"UITextures/Border/"`), the parts are drawn from the textures `LeftTop`, `RightTop`,
+With <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> set (e.g. <code>"UITextures/<a href="/docs/ui-glossary/elements/border/">Border</a>/"</code>), the parts are drawn from the textures `LeftTop`, `RightTop`,
 `LeftBottom`, `RightBottom` (the corners) and `Left`, `Right`, `Top`, `Bottom` (the sides) in that folder, each
 stretched over its part.
 
@@ -371,7 +371,7 @@ content that is disposed is cleared from <a class="ref dp" href="/docs/ui-glossa
 | --- | --- | --- |
 | <a class="ref dp" href="/docs/ui-glossary/elements/border/#content">`Content`</a> | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element inside the frame. A style can't set it. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/border/#thickness">`Thickness`</a> | <a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> | The width of the frame per side (`Left`, `Top`, `Right`, `Bottom`), in units. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/border/#padding">`Padding`</a> | `Margin?` | The inset of the content from the border's edges, used instead of <a class="ref dp" href="/docs/ui-glossary/elements/border/#thickness">`Thickness`</a>. Null (the default) insets the content by the thickness. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/border/#padding">`Padding`</a> | <code><a href="/docs/ui-glossary/types/margin/">Margin</a>?</code> | The inset of the content from the border's edges, used instead of <a class="ref dp" href="/docs/ui-glossary/elements/border/#thickness">`Thickness`</a>. Null (the default) insets the content by the thickness. |
 
 ### Border methods
 
@@ -637,15 +637,15 @@ None of these are dependency properties.
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| <a class="ref event" href="/docs/ui-glossary/types/tab-control/#ontabopened">`OnTabOpened`</a> | `(TabControl sender, BaseElement tab)` | Another tab opens: pressed, opened with <a class="ref method" href="/docs/ui-glossary/types/tab-control/#opentab">`OpenTab`</a>, the first one added, or the neighbour of a removed open tab. `tab` is null when the last tab was removed. |
+| <a class="ref event" href="/docs/ui-glossary/types/tab-control/#ontabopened">`OnTabOpened`</a> | <code>(<a href="/docs/ui-glossary/types/tab-control/">TabControl</a> sender, <a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> tab)</code> | Another tab opens: pressed, opened with <a class="ref method" href="/docs/ui-glossary/types/tab-control/#opentab">`OpenTab`</a>, the first one added, or the neighbour of a removed open tab. `tab` is null when the last tab was removed. |
 
 ### TabControl methods
 
 | Method | Description |
 | --- | --- |
 | <a class="ref method" href="/docs/ui-glossary/types/tab-control/#tabcontrol">`TabControl()`</a> | Creates a tab control without tabs. |
-| <a class="ref method" href="/docs/ui-glossary/types/tab-control/#addtab">`AddTab(BaseElement tab, BaseElement content)`</a> | Adds a tab and its content; the content is hidden unless this is the first tab. Adding a tab again replaces its content. Null arguments are ignored. |
-| <a class="ref method" href="/docs/ui-glossary/types/tab-control/#removetab">`RemoveTab(BaseElement tab)`</a> | Removes the tab. When it was open, its neighbour opens. Its content is visible again. |
-| <a class="ref method" href="/docs/ui-glossary/types/tab-control/#opentab">`OpenTab(BaseElement tab)`</a> | Opens the tab, showing its content and hiding the open one. Does nothing for an element that isn't a tab of this control. |
+| <span class="method"><code><a href="/docs/ui-glossary/types/tab-control/#addtab">AddTab</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> tab, <a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> content)</code></span> | Adds a tab and its content; the content is hidden unless this is the first tab. Adding a tab again replaces its content. Null arguments are ignored. |
+| <span class="method"><code><a href="/docs/ui-glossary/types/tab-control/#removetab">RemoveTab</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> tab)</code></span> | Removes the tab. When it was open, its neighbour opens. Its content is visible again. |
+| <span class="method"><code><a href="/docs/ui-glossary/types/tab-control/#opentab">OpenTab</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> tab)</code></span> | Opens the tab, showing its content and hiding the open one. Does nothing for an element that isn't a tab of this control. |
 
 The tab control has no style class.

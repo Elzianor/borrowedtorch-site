@@ -82,4 +82,4 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="ontoggled"><span class="event"><code>OnToggled</code></span> <a class="ctx" href="/docs/ui-controls/#button-events" title="OnToggled in context on the controls page" aria-label="OnToggled in context on the controls page">→</a></h3>
 
-`(BaseElement sender, bool isToggledOn)` · A `Toggle` button turns on or off, by a click or from code.
+<code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, bool isToggledOn)</code> · A `Toggle` button turns on or off, by a click or from code.

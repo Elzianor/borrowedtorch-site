@@ -50,4 +50,4 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <a class="ref method" href="/docs/ui-glossary/elements/context-menu-item/#contextmenuitem">`ContextMenuItem(string text, string name = null)`</a> · Creates an item showing the text in a label.
 
-<a class="ref method" href="/docs/ui-glossary/elements/context-menu-item/#contextmenuitem">`ContextMenuItem(BaseElement content, string name = null)`</a> · Creates an item showing any element.
+<span class="method"><code><a href="/docs/ui-glossary/elements/context-menu-item/#contextmenuitem">ContextMenuItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> content, string name = null)</code></span> · Creates an item showing any element.

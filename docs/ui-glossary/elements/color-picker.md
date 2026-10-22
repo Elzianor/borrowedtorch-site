@@ -50,4 +50,4 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="onselectedcolorchanged"><span class="event"><code>OnSelectedColorChanged</code></span> <a class="ctx" href="/docs/ui-controls/#colorpicker-events" title="OnSelectedColorChanged in context on the controls page" aria-label="OnSelectedColorChanged in context on the controls page">→</a></h3>
 
-`(BaseElement sender, Color color)` · <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#selectedcolor">`SelectedColor`</a> changes: by a pick, a <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#brightness">`Brightness`</a> change, or from code.
+<code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, Color color)</code> · <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#selectedcolor">`SelectedColor`</a> changes: by a pick, a <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#brightness">`Brightness`</a> change, or from code.

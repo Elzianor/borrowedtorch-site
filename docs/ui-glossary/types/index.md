@@ -12,12 +12,12 @@ Every public type of the UI that isn't an element has a page with its members: t
 | --- | --- |
 | [`Animation<T>`](/docs/ui-glossary/types/animation/) | An animation of properties of type `T`. |
 | [`BaseAnimation`](/docs/ui-glossary/types/base-animation/) | The abstract base of animations, the type `AddAnimation` takes. |
-| [`BaseAnimationFrame<T>`](/docs/ui-glossary/types/base-animation-frame/) | The abstract base of the frames an `Animation<T>` takes. |
+| [`BaseAnimationFrame<T>`](/docs/ui-glossary/types/base-animation-frame/) | The abstract base of the frames an <code><a href="/docs/ui-glossary/types/animation/">Animation</a>&lt;T&gt;</code> takes. |
 | [`BaseStyle`](/docs/ui-glossary/types/base-style/) | The abstract base of every style class. |
 | [`Bindable`](/docs/ui-glossary/types/bindable/) | The abstract base of a view model. |
 | [`BindableCollection<T>`](/docs/ui-glossary/types/bindable-collection/) | A list that raises <a class="ref event" href="/docs/ui-glossary/types/bindable-collection/#oncollectionchanged">`OnCollectionChanged`</a> for every change, so a bound <a class="ref" href="/docs/ui-glossary/elements/list-box/">`ListBox`</a>, <a class="ref" href="/docs/ui-glossary/elements/combo-box/">`ComboBox`</a>, <a class="ref" href="/docs/ui-glossary/elements/tree-view/">`TreeView`</a> or |
 | [`BorderStyle`](/docs/ui-glossary/types/border-style/) | The style class of [`Border`](/docs/ui-layout/#border): the properties a style can set on it. |
-| [`BorrowedTorchUI`](/docs/ui-glossary/types/borrowed-torch-u-i/) | Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>. |
+| [`BorrowedTorchUI`](/docs/ui-glossary/types/borrowed-torch-ui/) | Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>. |
 | [`ButtonStyle`](/docs/ui-glossary/types/button-style/) | The style class of [`Button`](/docs/ui-controls/#button): the properties a style can set on it. |
 | [`CheckBoxStyle`](/docs/ui-glossary/types/check-box-style/) | The style class of [`CheckBox`](/docs/ui-controls/#checkbox): the properties a style can set on it. |
 | [`ColorPickerStyle`](/docs/ui-glossary/types/color-picker-style/) | The style class of [`ColorPicker`](/docs/ui-controls/#colorpicker): the properties a style can set on it. |

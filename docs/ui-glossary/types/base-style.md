@@ -118,7 +118,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 <h3 id="texturespath"><span class="prop"><code>TexturesPath</code></span> <a class="ctx" href="/docs/ui-base-element/#appearance-properties" title="TexturesPath in context on the base element page" aria-label="TexturesPath in context on the base element page">→</a></h3>
 
-`string` · A content folder with the element's textures, for example `UITextures/Button/`. A missing trailing path separator is added.
+`string` · A content folder with the element's textures, for example <code>UITextures/<a href="/docs/ui-glossary/elements/button/">Button</a>/</code>. A missing trailing path separator is added.
 
 <h3 id="timebeforerepeatstartsms"><span class="prop"><code>TimeBeforeRepeatStartsMs</code></span> <a class="ctx" href="/docs/ui-base-element/#click-timing" title="TimeBeforeRepeatStartsMs in context on the base element page" aria-label="TimeBeforeRepeatStartsMs in context on the base element page">→</a></h3>
 

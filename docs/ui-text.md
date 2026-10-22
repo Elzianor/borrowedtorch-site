@@ -71,7 +71,7 @@ ui.AddElementToRoot(Turned("Upside down", TextRotation.UpsideDown, 400));
 A label without a size of its own fits its text: its width is the longest line plus <a class="ref dp" href="/docs/ui-glossary/elements/label/#textmargin">`TextMargin`</a>, its height the lines
 plus <a class="ref dp" href="/docs/ui-glossary/elements/label/#textmargin">`TextMargin`</a>. Line breaks always start a new line (`\r\n` and `\r` are turned into `\n`, tabs into spaces).
 
-**Wrapping.** `WrapType = TextWrap.Wrap` breaks the lines at spaces to fit the label's width, but only when the label
+**Wrapping.** <code>WrapType = <a href="/docs/ui-glossary/types/text-wrap/#wrap">TextWrap.Wrap</a></code> breaks the lines at spaces to fit the label's width, but only when the label
 has a width to wrap at: a fixed <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#desiredwidth">`DesiredWidth`</a>, a width stretched by its parent, or a <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#maxwidth">`MaxWidth`</a> when it fits its text.
 A label sized to its text without a <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#maxwidth">`MaxWidth`</a> never wraps. Stretched in a parent that fits its content, a wrapping
 label wraps at the width the parent's other content gives; alone there, it keeps one line unless the parent has a
@@ -194,15 +194,15 @@ var hint = new RichTextBox("hint")
 ui.AddElementToRoot(hint);
 ```
 
-With `Formatting = RichTextBoxFormatting.Rich` a read-only box reads tags out of its text. A tag in square brackets
+With <code>Formatting = <a href="/docs/ui-glossary/types/rich-text-box-formatting/#rich">RichTextBoxFormatting.Rich</a></code> a read-only box reads tags out of its text. A tag in square brackets
 holds one or more instructions separated by commas, each a letter and an index into one of three static lists shared by
 every box:
 
 | Tag | Effect |
 | --- | --- |
-| `[c=n]` | The following text is drawn in `RichTextBox.RichColors[n]`. |
-| `[a=n]` | The following text is a link: pressing it runs `RichTextBox.RichActions[n]`. |
-| `[i=n]` | The word is replaced by `RichTextBox.RichImages[n]`, drawn as a square one line high. A `c` instruction tints it. |
+| `[c=n]` | The following text is drawn in <code><a href="/docs/ui-glossary/elements/rich-text-box/#richcolors">RichTextBox.RichColors</a>[n]</code>. |
+| `[a=n]` | The following text is a link: pressing it runs <code><a href="/docs/ui-glossary/elements/rich-text-box/#richactions">RichTextBox.RichActions</a>[n]</code>. |
+| `[i=n]` | The word is replaced by <code><a href="/docs/ui-glossary/elements/rich-text-box/#richimages">RichTextBox.RichImages</a>[n]</code>, drawn as a square one line high. A `c` instruction tints it. |
 | `[/]` | Ends all formatting. |
 
 Instructions combine, as in `[c=0,a=1]help[/]`. The formatting goes on over the following words until `[/]`, so
@@ -258,7 +258,7 @@ ui.AddElementToRoot(name);
 ui.AddElementToRoot(notes);
 ```
 
-Set `Type = RichTextBoxType.ReadWrite` to make the box editable. A press in it takes the keyboard and places the caret;
+Set <code>Type = <a href="/docs/ui-glossary/types/rich-text-box-type/#readwrite">RichTextBoxType.ReadWrite</a></code> to make the box editable. A press in it takes the keyboard and places the caret;
 Shift+press extends the selection, dragging selects, and a double click selects the word (letters and digits) under the
 caret. The caret blinks every <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaulttextcursorblinktimems">`DefaultSettings.DefaultTextCursorBlinkTimeMs`</a> (500 ms). With `InputType = Insert` it is
 a vertical bar; with `Overwrite` it is a line under the character that typing replaces (a line break is never
@@ -387,8 +387,8 @@ With <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#character
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| <a class="ref event" href="/docs/ui-glossary/elements/rich-text-box/#onapply">`OnApply`</a> | `(BaseElement sender, string text)` | A read-write box ends its editing: Enter, a press elsewhere or another element focused. Not when it is hidden, disabled or removed. Raised even if the text did not change. |
-| <a class="ref event" href="/docs/ui-glossary/elements/rich-text-box/#ontextchanged">`OnTextChanged`</a> | `(BaseElement sender, string text)` | <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#text">`Text`</a> changed, by typing, deleting, pasting, undo or redo, code, a binding, a style or the end of a text animation. The new lines are already laid out. |
+| <a class="ref event" href="/docs/ui-glossary/elements/rich-text-box/#onapply">`OnApply`</a> | <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, string text)</code> | A read-write box ends its editing: Enter, a press elsewhere or another element focused. Not when it is hidden, disabled or removed. Raised even if the text did not change. |
+| <a class="ref event" href="/docs/ui-glossary/elements/rich-text-box/#ontextchanged">`OnTextChanged`</a> | <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, string text)</code> | <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#text">`Text`</a> changed, by typing, deleting, pasting, undo or redo, code, a binding, a style or the end of a text animation. The new lines are already laid out. |
 
 ### RichTextBox methods
 
@@ -473,7 +473,7 @@ var title = new Label("title")
 
 **Display scale.** The framework's own font systems (the bundled one and those loaded from a <span class="dp">`FontPath`</span>) rasterise their
 glyphs at twice the UI scale (a resolution factor between 2 and 8), so text is as sharp at 150 % as at 100 %. When
-<a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-u-i/#scale">`BorrowedTorchUI.Scale`</a> changes they are made again for the new scale, and the elements take them. A font system you
+<a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#scale">`BorrowedTorchUI.Scale`</a> changes they are made again for the new scale, and the elements take them. A font system you
 give by hand keeps the resolution it was created with, so it may look soft at a large scale (see
 [display scaling](/docs/ui/)).
 

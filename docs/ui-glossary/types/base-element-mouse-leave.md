@@ -6,6 +6,6 @@ description: "The signature of BaseElement.MouseLeave and the events it handles.
 
 A delegate: the handler type of an event.
 
-Signature: `void MouseLeave(BaseElement sender)`
+Signature: <code>void MouseLeave(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender)</code>
 
 Handles [`BaseElement.OnMouseLeave`](/docs/ui-glossary/elements/base-element/#onmouseleave).

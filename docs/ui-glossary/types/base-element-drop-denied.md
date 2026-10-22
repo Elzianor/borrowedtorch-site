@@ -6,6 +6,6 @@ description: "The signature of BaseElement.DropDenied and the events it handles.
 
 A delegate: the handler type of an event.
 
-Signature: `void DropDenied(BaseElement draggedElement, BaseElement dragAndDropDestination)`
+Signature: <code>void DropDenied(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> draggedElement, <a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> dragAndDropDestination)</code>
 
 Handles [`BaseElement.OnDropDenied`](/docs/ui-glossary/elements/base-element/#ondropdenied).

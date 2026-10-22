@@ -44,11 +44,11 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="additem"><span class="method"><code>AddItem()</code></span> <a class="ctx" href="/docs/ui-layout/#grid-methods" title="AddItem() in context on the layout page" aria-label="AddItem() in context on the layout page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/grid/#additem">`AddItem(BaseElement item)`</a> · Puts the item in the cell its <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#gridcolumn">`GridColumn`</a>, <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#gridrow">`GridRow`</a> and spans name, making the cell if needed. Ignored when the column or row doesn't exist.
+<span class="method"><code><a href="/docs/ui-glossary/elements/grid/#additem">AddItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Puts the item in the cell its <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#gridcolumn">`GridColumn`</a>, <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#gridrow">`GridRow`</a> and spans name, making the cell if needed. Ignored when the column or row doesn't exist.
 
 <h3 id="additemat"><span class="method"><code>AddItemAt()</code></span> <a class="ctx" href="/docs/ui-layout/#grid-methods" title="AddItemAt() in context on the layout page" aria-label="AddItemAt() in context on the layout page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/grid/#additemat">`AddItemAt(BaseElement item, int index)`</a> · Does nothing: a grid places items by column and row. Use <a class="ref method" href="/docs/ui-glossary/elements/grid/#additem">`AddItem`</a>.
+<span class="method"><code><a href="/docs/ui-glossary/elements/grid/#additemat">AddItemAt</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item, int index)</code></span> · Does nothing: a grid places items by column and row. Use <a class="ref method" href="/docs/ui-glossary/elements/grid/#additem">`AddItem`</a>.
 
 <h3 id="addrowdefinition"><span class="method"><code>AddRowDefinition()</code></span> <a class="ctx" href="/docs/ui-layout/#grid-methods" title="AddRowDefinition() in context on the layout page" aria-label="AddRowDefinition() in context on the layout page">→</a></h3>
 
@@ -72,7 +72,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="removeitem"><span class="method"><code>RemoveItem()</code></span> <a class="ctx" href="/docs/ui-layout/#grid-methods" title="RemoveItem() in context on the layout page" aria-label="RemoveItem() in context on the layout page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/grid/#removeitem">`RemoveItem(BaseElement item)`</a> · Takes the item out of its cell. It is detached, not disposed.
+<span class="method"><code><a href="/docs/ui-glossary/elements/grid/#removeitem">RemoveItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Takes the item out of its cell. It is detached, not disposed.
 
 <h3 id="removeitemat"><span class="method"><code>RemoveItemAt()</code></span> <a class="ctx" href="/docs/ui-layout/#grid-methods" title="RemoveItemAt() in context on the layout page" aria-label="RemoveItemAt() in context on the layout page">→</a></h3>
 

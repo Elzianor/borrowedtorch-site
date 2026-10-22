@@ -44,4 +44,4 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="listboxitem"><span class="method"><code>ListBoxItem()</code></span> <a class="ctx" href="/docs/ui-lists/#listboxitem" title="ListBoxItem() in context on the lists and menus page" aria-label="ListBoxItem() in context on the lists and menus page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/list-box-item/#listboxitem">`ListBoxItem(BaseElement content, ListBox parentListBox, string name = null)`</a> · Creates a row showing the content. `parentListBox` gives the row its colours until it is in a list; from then on the list it is in counts.
+<span class="method"><code><a href="/docs/ui-glossary/elements/list-box-item/#listboxitem">ListBoxItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> content, <a href="/docs/ui-glossary/elements/list-box/">ListBox</a> parentListBox, string name = null)</code></span> · Creates a row showing the content. `parentListBox` gives the row its colours until it is in a list; from then on the list it is in counts.

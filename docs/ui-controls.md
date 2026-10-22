@@ -79,7 +79,7 @@ Without textures the button is drawn in the solid colour of its state. With <a c
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| <a class="ref event" href="/docs/ui-glossary/elements/button/#ontoggled">`OnToggled`</a> | `(BaseElement sender, bool isToggledOn)` | A `Toggle` button turns on or off, by a click or from code. |
+| <a class="ref event" href="/docs/ui-glossary/elements/button/#ontoggled">`OnToggled`</a> | <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, bool isToggledOn)</code> | A `Toggle` button turns on or off, by a click or from code. |
 
 Clicks come through the inherited `OnClick`.
 
@@ -209,7 +209,7 @@ colour, so give them in a style or on the element. With <a class="ref dp" href="
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| <a class="ref event" href="/docs/ui-glossary/elements/check-box/#oncheckedunchecked">`OnCheckedUnchecked`</a> | `(BaseElement sender, bool isChecked)` | <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#checked">`Checked`</a> changes: by a click, from code, by a binding, or because another box of the group was checked. |
+| <a class="ref event" href="/docs/ui-glossary/elements/check-box/#oncheckedunchecked">`OnCheckedUnchecked`</a> | <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, bool isChecked)</code> | <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#checked">`Checked`</a> changes: by a click, from code, by a binding, or because another box of the group was checked. |
 
 ### CheckBox methods
 
@@ -383,7 +383,7 @@ marks are drawn in their colours with or without textures.
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| <a class="ref event" href="/docs/ui-glossary/elements/slider/#onvaluechanged">`OnValueChanged`</a> | `(BaseElement sender, float value)` | <a class="ref dp" href="/docs/ui-glossary/elements/slider/#value">`Value`</a> changes: by a drag, a click, from code, or when a new range, tick, <a class="ref prop" href="/docs/ui-glossary/elements/slider/#contentsize">`ContentSize`</a> or <a class="ref prop" href="/docs/ui-glossary/elements/slider/#viewsize">`ViewSize`</a> moves it. The value is already clamped and snapped. |
+| <a class="ref event" href="/docs/ui-glossary/elements/slider/#onvaluechanged">`OnValueChanged`</a> | <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, float value)</code> | <a class="ref dp" href="/docs/ui-glossary/elements/slider/#value">`Value`</a> changes: by a drag, a click, from code, or when a new range, tick, <a class="ref prop" href="/docs/ui-glossary/elements/slider/#contentsize">`ContentSize`</a> or <a class="ref prop" href="/docs/ui-glossary/elements/slider/#viewsize">`ViewSize`</a> moves it. The value is already clamped and snapped. |
 
 ### Slider methods
 
@@ -601,7 +601,7 @@ The picker has no content size of its own, so give it a size. Its <a class="ref 
 drawn palette; it does not change <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#selectedcolor">`SelectedColor`</a>.
 
 The pointer is the texture `Textures/SelectedColorPointer`, loaded through the `ContentManager` you give
-<a class="ref" href="/docs/ui-glossary/types/borrowed-torch-u-i/">`BorrowedTorchUI`</a>. The package copies `Content/Textures/SelectedColorPointer.xnb` next to your game, so it is found
+<a class="ref" href="/docs/ui-glossary/types/borrowed-torch-ui/">`BorrowedTorchUI`</a>. The package copies `Content/Textures/SelectedColorPointer.xnb` next to your game, so it is found
 when the content manager's root is `Content`. Without a content manager the picker works but shows no pointer.
 
 ### ColorPicker properties
@@ -617,7 +617,7 @@ Before anything is picked, changing <a class="ref dp" href="/docs/ui-glossary/el
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| <a class="ref event" href="/docs/ui-glossary/elements/color-picker/#onselectedcolorchanged">`OnSelectedColorChanged`</a> | `(BaseElement sender, Color color)` | <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#selectedcolor">`SelectedColor`</a> changes: by a pick, a <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#brightness">`Brightness`</a> change, or from code. |
+| <a class="ref event" href="/docs/ui-glossary/elements/color-picker/#onselectedcolorchanged">`OnSelectedColorChanged`</a> | <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, Color color)</code> | <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#selectedcolor">`SelectedColor`</a> changes: by a pick, a <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#brightness">`Brightness`</a> change, or from code. |
 
 ### ColorPicker methods
 

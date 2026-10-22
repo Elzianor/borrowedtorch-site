@@ -46,11 +46,11 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="items"><span class="prop"><code>Items</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-properties" title="Items in context on the lists and menus page" aria-label="Items in context on the lists and menus page">→</a></h3>
 
-`IReadOnlyList<ListBoxItem>` · Read-only. The rows that have an element, in order: every row in `None` mode, the rows around the view and the primary selected row in `Fixed` mode. A live view, don't keep it across changes.
+<code>IReadOnlyList&lt;<a href="/docs/ui-glossary/elements/list-box-item/">ListBoxItem</a>&gt;</code> · Read-only. The rows that have an element, in order: every row in `None` mode, the rows around the view and the primary selected row in `Fixed` mode. A live view, don't keep it across changes.
 
 <h3 id="itemssource"><span class="dp"><code>ItemsSource</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-properties" title="ItemsSource in context on the lists and menus page" aria-label="ItemsSource in context on the lists and menus page">→</a></h3>
 
-`IEnumerable` · The objects to show, one row each. A `BindableCollection<T>` is followed.
+`IEnumerable` · The objects to show, one row each. A <code><a href="/docs/ui-glossary/types/bindable-collection/">BindableCollection</a>&lt;T&gt;</code> is followed.
 
 <h3 id="itemstemplate"><span class="prop"><code>ItemsTemplate</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-properties" title="ItemsTemplate in context on the lists and menus page" aria-label="ItemsTemplate in context on the lists and menus page">→</a></h3>
 
@@ -98,7 +98,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="selecteditems"><span class="prop"><code>SelectedItems</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-properties" title="SelectedItems in context on the lists and menus page" aria-label="SelectedItems in context on the lists and menus page">→</a></h3>
 
-`IReadOnlyList<ListBoxItem>` · Read-only. The selected rows that have an element (see <a class="ref prop" href="/docs/ui-glossary/elements/list-box/#items">`Items`</a>).
+<code>IReadOnlyList&lt;<a href="/docs/ui-glossary/elements/list-box-item/">ListBoxItem</a>&gt;</code> · Read-only. The selected rows that have an element (see <a class="ref prop" href="/docs/ui-glossary/elements/list-box/#items">`Items`</a>).
 
 <h3 id="selectedsources"><span class="prop"><code>SelectedSources</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-properties" title="SelectedSources in context on the lists and menus page" aria-label="SelectedSources in context on the lists and menus page">→</a></h3>
 
@@ -128,19 +128,19 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="additem"><span class="method"><code>AddItem()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="AddItem() in context on the lists and menus page" aria-label="AddItem() in context on the lists and menus page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/list-box/#additem">`AddItem(BaseElement item)`</a> · Adds a row at the end. A <a class="ref" href="/docs/ui-glossary/elements/list-box-item/">`ListBoxItem`</a> is the row itself, any other element is shown in a row the list makes.
+<span class="method"><code><a href="/docs/ui-glossary/elements/list-box/#additem">AddItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Adds a row at the end. A <a class="ref" href="/docs/ui-glossary/elements/list-box-item/">`ListBoxItem`</a> is the row itself, any other element is shown in a row the list makes.
 
 <h3 id="additemat"><span class="method"><code>AddItemAt()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="AddItemAt() in context on the lists and menus page" aria-label="AddItemAt() in context on the lists and menus page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/list-box/#additemat">`AddItemAt(BaseElement item, int index)`</a> · Inserts a row at the index (0 to <a class="ref prop" href="/docs/ui-glossary/elements/list-box/#count">`Count`</a>); another index is ignored.
+<span class="method"><code><a href="/docs/ui-glossary/elements/list-box/#additemat">AddItemAt</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item, int index)</code></span> · Inserts a row at the index (0 to <a class="ref prop" href="/docs/ui-glossary/elements/list-box/#count">`Count`</a>); another index is ignored.
 
 <h3 id="additemsrange"><span class="method"><code>AddItemsRange()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="AddItemsRange() in context on the lists and menus page" aria-label="AddItemsRange() in context on the lists and menus page">→</a></h3>
 
-`AddItemsRange(IEnumerable<BaseElement> items)` · Adds a row per element at the end, in one batch (the rows are indexed and laid out once).
+<span class="method"><code><a href="/docs/ui-glossary/elements/list-box/#additemsrange">AddItemsRange</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items)</code></span> · Adds a row per element at the end, in one batch (the rows are indexed and laid out once).
 
 <h3 id="additemsrangeat"><span class="method"><code>AddItemsRangeAt()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="AddItemsRangeAt() in context on the lists and menus page" aria-label="AddItemsRangeAt() in context on the lists and menus page">→</a></h3>
 
-`AddItemsRangeAt(IEnumerable<BaseElement> items, int index)` · Inserts a row per element at the index, in one batch.
+<span class="method"><code><a href="/docs/ui-glossary/elements/list-box/#additemsrangeat">AddItemsRangeAt</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items, int index)</code></span> · Inserts a row per element at the index, in one batch.
 
 <h3 id="addtextitem"><span class="method"><code>AddTextItem()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="AddTextItem() in context on the lists and menus page" aria-label="AddTextItem() in context on the lists and menus page">→</a></h3>
 
@@ -148,7 +148,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="addtextitems"><span class="method"><code>AddTextItems()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="AddTextItems() in context on the lists and menus page" aria-label="AddTextItems() in context on the lists and menus page">→</a></h3>
 
-`AddTextItems(IEnumerable<string> texts)` · Adds a text row per string, in one batch. Does nothing while an <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#itemssource">`ItemsSource`</a> is set.
+<a class="ref method" href="/docs/ui-glossary/elements/list-box/#addtextitems">`AddTextItems(IEnumerable<string> texts)`</a> · Adds a text row per string, in one batch. Does nothing while an <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#itemssource">`ItemsSource`</a> is set.
 
 <h3 id="clearitems"><span class="method"><code>ClearItems()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="ClearItems() in context on the lists and menus page" aria-label="ClearItems() in context on the lists and menus page">→</a></h3>
 
@@ -156,7 +156,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="deselect"><span class="method"><code>Deselect()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="Deselect() in context on the lists and menus page" aria-label="Deselect() in context on the lists and menus page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/list-box/#deselect">`Deselect(BaseElement item)`</a> · Deselects the row of the item, as <a class="ref method" href="/docs/ui-glossary/elements/list-box/#deselectat">`DeselectAt`</a> does.
+<span class="method"><code><a href="/docs/ui-glossary/elements/list-box/#deselect">Deselect</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Deselects the row of the item, as <a class="ref method" href="/docs/ui-glossary/elements/list-box/#deselectat">`DeselectAt`</a> does.
 
 <h3 id="deselectall"><span class="method"><code>DeselectAll()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="DeselectAll() in context on the lists and menus page" aria-label="DeselectAll() in context on the lists and menus page">→</a></h3>
 
@@ -172,7 +172,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="removeitem"><span class="method"><code>RemoveItem()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="RemoveItem() in context on the lists and menus page" aria-label="RemoveItem() in context on the lists and menus page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/list-box/#removeitem">`RemoveItem(BaseElement item)`</a> · Removes the row of the item (the row itself or the element shown in it).
+<span class="method"><code><a href="/docs/ui-glossary/elements/list-box/#removeitem">RemoveItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Removes the row of the item (the row itself or the element shown in it).
 
 <h3 id="removeitemat"><span class="method"><code>RemoveItemAt()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="RemoveItemAt() in context on the lists and menus page" aria-label="RemoveItemAt() in context on the lists and menus page">→</a></h3>
 
@@ -188,7 +188,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="select"><span class="method"><code>Select()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="Select() in context on the lists and menus page" aria-label="Select() in context on the lists and menus page">→</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/list-box/#select">`Select(BaseElement item)`</a> · Selects the row of the item (the row itself or the element shown in it), as <a class="ref method" href="/docs/ui-glossary/elements/list-box/#selectat">`SelectAt`</a> does.
+<span class="method"><code><a href="/docs/ui-glossary/elements/list-box/#select">Select</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Selects the row of the item (the row itself or the element shown in it), as <a class="ref method" href="/docs/ui-glossary/elements/list-box/#selectat">`SelectAt`</a> does.
 
 <h3 id="selectall"><span class="method"><code>SelectAll()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="SelectAll() in context on the lists and menus page" aria-label="SelectAll() in context on the lists and menus page">→</a></h3>
 
@@ -214,8 +214,8 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="onitemselect"><span class="event"><code>OnItemSelect</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-events" title="OnItemSelect in context on the lists and menus page" aria-label="OnItemSelect in context on the lists and menus page">→</a></h3>
 
-`(BaseElement sender, ListBoxItem item)` · The primary selection is set, by the user or from code. `item` is `null` when nothing is selected any more.
+<code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, <a href="/docs/ui-glossary/elements/list-box-item/">ListBoxItem</a> item)</code> · The primary selection is set, by the user or from code. `item` is `null` when nothing is selected any more.
 
 <h3 id="onitemsselect"><span class="event"><code>OnItemsSelect</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-events" title="OnItemsSelect in context on the lists and menus page" aria-label="OnItemsSelect in context on the lists and menus page">→</a></h3>
 
-`(BaseElement sender, IReadOnlyList<ListBoxItem> items)` · The set of selected rows changes. `items` is `SelectedItems`, the selected rows that have an element.
+<code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, IReadOnlyList&lt;<a href="/docs/ui-glossary/elements/list-box-item/">ListBoxItem</a>&gt; items)</code> · The set of selected rows changes. `items` is <a class="ref prop" href="/docs/ui-glossary/elements/list-box/#selecteditems">`SelectedItems`</a>, the selected rows that have an element.
