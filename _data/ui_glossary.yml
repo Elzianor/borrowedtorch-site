@@ -1904,24 +1904,12 @@
 - title: "Types"
   url: /docs/ui-glossary/types/
   groups:
-    - title: "Classes"
+    - title: "Styles"
       entries:
-        - title: "Animation&lt;T&gt;"
-          url: /docs/ui-glossary/types/animation/
-        - title: "Base<wbr>Animation"
-          url: /docs/ui-glossary/types/base-animation/
-        - title: "Base<wbr>Animation<wbr>Frame&lt;T&gt;"
-          url: /docs/ui-glossary/types/base-animation-frame/
         - title: "Base<wbr>Style"
           url: /docs/ui-glossary/types/base-style/
-        - title: "Bindable"
-          url: /docs/ui-glossary/types/bindable/
-        - title: "Bindable<wbr>Collection&lt;T&gt;"
-          url: /docs/ui-glossary/types/bindable-collection/
         - title: "Border<wbr>Style"
           url: /docs/ui-glossary/types/border-style/
-        - title: "Borrowed<wbr>Torch<wbr>UI"
-          url: /docs/ui-glossary/types/borrowed-torch-ui/
         - title: "Button<wbr>Style"
           url: /docs/ui-glossary/types/button-style/
         - title: "Check<wbr>Box<wbr>Style"
@@ -1932,70 +1920,28 @@
           url: /docs/ui-glossary/types/combo-box-style/
         - title: "Context<wbr>Menu<wbr>Style"
           url: /docs/ui-glossary/types/context-menu-style/
-        - title: "Default<wbr>Settings"
-          url: /docs/ui-glossary/types/default-settings/
         - title: "Default<wbr>Window<wbr>Title<wbr>Bar<wbr>Style"
           url: /docs/ui-glossary/types/default-window-title-bar-style/
-        - title: "Dependency<wbr>Property&lt;T&gt;"
-          url: /docs/ui-glossary/types/dependency-property/
-        - title: "Dependency<wbr>Property<wbr>Actions&lt;T&gt;"
-          url: /docs/ui-glossary/types/dependency-property-actions/
-        - title: "Discrete<wbr>Animation<wbr>Frame&lt;T&gt;"
-          url: /docs/ui-glossary/types/discrete-animation-frame/
-        - title: "Display<wbr>Scale"
-          url: /docs/ui-glossary/types/display-scale/
-        - title: "Disposable<wbr>Base"
-          url: /docs/ui-glossary/types/disposable-base/
-        - title: "Drag<wbr>And<wbr>Drop<wbr>Cursors"
-          url: /docs/ui-glossary/types/drag-and-drop-cursors/
-        - title: "Element<wbr>State<wbr>Data"
-          url: /docs/ui-glossary/types/element-state-data/
-        - title: "Game<wbr>Window<wbr>Text<wbr>Input<wbr>Events"
-          url: /docs/ui-glossary/types/game-window-text-input-events/
-        - title: "Generic<wbr>Mouse<wbr>Cursors<wbr>Data&lt;T&gt;"
-          url: /docs/ui-glossary/types/generic-mouse-cursors-data/
-        - title: "Generic<wbr>Style&lt;T&gt;"
-          url: /docs/ui-glossary/types/generic-style/
-        - title: "Generic<wbr>Style<wbr>And<wbr>Mouse<wbr>Cursors<wbr>Data&lt;TStyle&gt;"
-          url: /docs/ui-glossary/types/generic-style-and-mouse-cursors-data/
         - title: "Image<wbr>Style"
           url: /docs/ui-glossary/types/image-style/
-        - title: "Key<wbr>Down<wbr>Event<wbr>Args"
-          url: /docs/ui-glossary/types/key-down-event-args/
         - title: "Label<wbr>Style"
           url: /docs/ui-glossary/types/label-style/
         - title: "List<wbr>Box<wbr>Style"
           url: /docs/ui-glossary/types/list-box-style/
-        - title: "Mouse<wbr>Click<wbr>Event<wbr>Args"
-          url: /docs/ui-glossary/types/mouse-click-event-args/
-        - title: "Mouse<wbr>Cursors<wbr>Set"
-          url: /docs/ui-glossary/types/mouse-cursors-set/
         - title: "Progress<wbr>Bar<wbr>Style"
           url: /docs/ui-glossary/types/progress-bar-style/
-        - title: "Resize<wbr>Cursors"
-          url: /docs/ui-glossary/types/resize-cursors/
         - title: "Rich<wbr>Text<wbr>Box<wbr>Style"
           url: /docs/ui-glossary/types/rich-text-box-style/
-        - title: "Rich<wbr>Text<wbr>Cursors"
-          url: /docs/ui-glossary/types/rich-text-cursors/
         - title: "Root<wbr>Element<wbr>Style"
           url: /docs/ui-glossary/types/root-element-style/
-        - title: "Run<wbr>Boundary<wbr>Values&lt;T&gt;"
-          url: /docs/ui-glossary/types/run-boundary-values/
         - title: "Scrollable<wbr>Container<wbr>Style"
           url: /docs/ui-glossary/types/scrollable-container-style/
         - title: "Slider<wbr>Style"
           url: /docs/ui-glossary/types/slider-style/
-        - title: "Smooth<wbr>Animation<wbr>Frame&lt;T&gt;"
-          url: /docs/ui-glossary/types/smooth-animation-frame/
-        - title: "Source<wbr>Data"
-          url: /docs/ui-glossary/types/source-data/
         - title: "Stack<wbr>Panel<wbr>Style"
           url: /docs/ui-glossary/types/stack-panel-style/
         - title: "Stencil<wbr>Style"
           url: /docs/ui-glossary/types/stencil-style/
-        - title: "Tab<wbr>Control"
-          url: /docs/ui-glossary/types/tab-control/
         - title: "Tool<wbr>Tip<wbr>Style"
           url: /docs/ui-glossary/types/tool-tip-style/
         - title: "Tree<wbr>View<wbr>Style"
@@ -2004,151 +1950,209 @@
           url: /docs/ui-glossary/types/view-port-style/
         - title: "Window<wbr>Style"
           url: /docs/ui-glossary/types/window-style/
-    - title: "Structs"
-      entries:
-        - title: "Margin"
-          url: /docs/ui-glossary/types/margin/
-    - title: "Interfaces"
-      entries:
-        - title: "IBindable<wbr>Collection"
-          url: /docs/ui-glossary/types/i-bindable-collection/
-        - title: "IConverter"
-          url: /docs/ui-glossary/types/i-converter/
-        - title: "IItems<wbr>Template"
-          url: /docs/ui-glossary/types/i-items-template/
-        - title: "IRecycling<wbr>Items<wbr>Template"
-          url: /docs/ui-glossary/types/i-recycling-items-template/
-        - title: "IText<wbr>Input<wbr>Events"
-          url: /docs/ui-glossary/types/i-text-input-events/
-    - title: "Enums"
-      entries:
-        - title: "Animation<wbr>Repeat<wbr>Type"
-          url: /docs/ui-glossary/types/animation-repeat-type/
-        - title: "Animation<wbr>State"
-          url: /docs/ui-glossary/types/animation-state/
-        - title: "Binding<wbr>Mode"
-          url: /docs/ui-glossary/types/binding-mode/
-        - title: "Button<wbr>Type"
-          url: /docs/ui-glossary/types/button-type/
-        - title: "Check<wbr>Box<wbr>Direction"
-          url: /docs/ui-glossary/types/check-box-direction/
-        - title: "Check<wbr>Box<wbr>Type"
-          url: /docs/ui-glossary/types/check-box-type/
-        - title: "Collection<wbr>Change<wbr>Type"
-          url: /docs/ui-glossary/types/collection-change-type/
-        - title: "Context<wbr>Menu<wbr>Placement"
-          url: /docs/ui-glossary/types/context-menu-placement/
-        - title: "Context<wbr>Menu<wbr>Sub<wbr>Menus<wbr>Open<wbr>Type"
-          url: /docs/ui-glossary/types/context-menu-sub-menus-open-type/
-        - title: "Drag<wbr>Type"
-          url: /docs/ui-glossary/types/drag-type/
-        - title: "Element<wbr>State"
-          url: /docs/ui-glossary/types/element-state/
-        - title: "Horizontal<wbr>Alignment"
-          url: /docs/ui-glossary/types/horizontal-alignment/
-        - title: "Image<wbr>Fill"
-          url: /docs/ui-glossary/types/image-fill/
-        - title: "Inherit<wbr>State"
-          url: /docs/ui-glossary/types/inherit-state/
-        - title: "List<wbr>Box<wbr>Selection<wbr>Mode"
-          url: /docs/ui-glossary/types/list-box-selection-mode/
-        - title: "List<wbr>Box<wbr>Virtualization<wbr>Mode"
-          url: /docs/ui-glossary/types/list-box-virtualization-mode/
-        - title: "Orientation"
-          url: /docs/ui-glossary/types/orientation/
-        - title: "Resize<wbr>State"
-          url: /docs/ui-glossary/types/resize-state/
-        - title: "Rich<wbr>Text<wbr>Box<wbr>Formatting"
-          url: /docs/ui-glossary/types/rich-text-box-formatting/
-        - title: "Rich<wbr>Text<wbr>Box<wbr>Input<wbr>Type"
-          url: /docs/ui-glossary/types/rich-text-box-input-type/
-        - title: "Rich<wbr>Text<wbr>Box<wbr>Type"
-          url: /docs/ui-glossary/types/rich-text-box-type/
-        - title: "Scroll<wbr>Bars"
-          url: /docs/ui-glossary/types/scroll-bars/
-        - title: "Slider<wbr>Type"
-          url: /docs/ui-glossary/types/slider-type/
-        - title: "State<wbr>Source"
-          url: /docs/ui-glossary/types/state-source/
-        - title: "Text<wbr>Alignment"
-          url: /docs/ui-glossary/types/text-alignment/
-        - title: "Text<wbr>Rotation"
-          url: /docs/ui-glossary/types/text-rotation/
-        - title: "Text<wbr>Wrap"
-          url: /docs/ui-glossary/types/text-wrap/
-        - title: "Tick<wbr>Placement"
-          url: /docs/ui-glossary/types/tick-placement/
-        - title: "Tool<wbr>Tip<wbr>Placement"
-          url: /docs/ui-glossary/types/tool-tip-placement/
-        - title: "Value<wbr>Sources"
-          url: /docs/ui-glossary/types/value-sources/
-        - title: "Vertical<wbr>Alignment"
-          url: /docs/ui-glossary/types/vertical-alignment/
-        - title: "Vertical<wbr>Text<wbr>Alignment"
-          url: /docs/ui-glossary/types/vertical-text-alignment/
-        - title: "Visibility"
-          url: /docs/ui-glossary/types/visibility/
-    - title: "Delegates"
-      entries:
-        - title: "Base<wbr>Element.Click"
-          url: /docs/ui-glossary/types/base-element-click/
-        - title: "Base<wbr>Element.Disposed"
-          url: /docs/ui-glossary/types/base-element-disposed/
-        - title: "Base<wbr>Element.Double<wbr>Click"
-          url: /docs/ui-glossary/types/base-element-double-click/
-        - title: "Base<wbr>Element.Drag<wbr>And<wbr>Drop<wbr>Start"
-          url: /docs/ui-glossary/types/base-element-drag-and-drop-start/
-        - title: "Base<wbr>Element.Drop"
-          url: /docs/ui-glossary/types/base-element-drop/
-        - title: "Base<wbr>Element.Drop<wbr>Denied"
-          url: /docs/ui-glossary/types/base-element-drop-denied/
-        - title: "Base<wbr>Element.If<wbr>Drop<wbr>Allowed"
-          url: /docs/ui-glossary/types/base-element-if-drop-allowed/
-        - title: "Base<wbr>Element.Key<wbr>Down"
-          url: /docs/ui-glossary/types/base-element-key-down/
-        - title: "Base<wbr>Element.Mouse<wbr>Enter"
-          url: /docs/ui-glossary/types/base-element-mouse-enter/
-        - title: "Base<wbr>Element.Mouse<wbr>Leave"
-          url: /docs/ui-glossary/types/base-element-mouse-leave/
-        - title: "Base<wbr>Element.State<wbr>Changed"
-          url: /docs/ui-glossary/types/base-element-state-changed/
-        - title: "Bindable.Property<wbr>Changed"
-          url: /docs/ui-glossary/types/bindable-property-changed/
-        - title: "Button.Toggled"
-          url: /docs/ui-glossary/types/button-toggled/
-        - title: "Check<wbr>Box.Checked<wbr>Unchecked"
-          url: /docs/ui-glossary/types/check-box-checked-unchecked/
-        - title: "Color<wbr>Picker.Selected<wbr>Color<wbr>Changed"
-          url: /docs/ui-glossary/types/color-picker-selected-color-changed/
-        - title: "Context<wbr>Menu.Item<wbr>Select"
-          url: /docs/ui-glossary/types/context-menu-item-select/
-        - title: "Dependency<wbr>Property&lt;T&gt;.Owner<wbr>Pre<wbr>Action<wbr>Delegate"
-          url: /docs/ui-glossary/types/dependency-property-owner-pre-action-delegate/
-        - title: "Dependency<wbr>Property&lt;T&gt;.Pre<wbr>Action<wbr>Delegate"
-          url: /docs/ui-glossary/types/dependency-property-pre-action-delegate/
-        - title: "Dependency<wbr>Property&lt;T&gt;.Property<wbr>Changed"
-          url: /docs/ui-glossary/types/dependency-property-property-changed/
-        - title: "Dependency<wbr>Property&lt;T&gt;.Source<wbr>Collection<wbr>Changed"
-          url: /docs/ui-glossary/types/dependency-property-source-collection-changed/
-        - title: "Dependency<wbr>Property&lt;T&gt;.Source<wbr>Property<wbr>Changed"
-          url: /docs/ui-glossary/types/dependency-property-source-property-changed/
-        - title: "Generic<wbr>Mouse<wbr>Cursors<wbr>Data&lt;T&gt;.Mouse<wbr>Cursors<wbr>Changed"
-          url: /docs/ui-glossary/types/generic-mouse-cursors-data-mouse-cursors-changed/
-        - title: "Generic<wbr>Style&lt;T&gt;.Style<wbr>Changed"
-          url: /docs/ui-glossary/types/generic-style-style-changed/
-        - title: "IBindable<wbr>Collection.Collection<wbr>Changed"
-          url: /docs/ui-glossary/types/i-bindable-collection-collection-changed/
-        - title: "List<wbr>Box.Item<wbr>Select"
-          url: /docs/ui-glossary/types/list-box-item-select/
-        - title: "List<wbr>Box.Items<wbr>Select"
-          url: /docs/ui-glossary/types/list-box-items-select/
-        - title: "Rich<wbr>Text<wbr>Box.Apply"
-          url: /docs/ui-glossary/types/rich-text-box-apply/
-        - title: "Rich<wbr>Text<wbr>Box.Text<wbr>Changed"
-          url: /docs/ui-glossary/types/rich-text-box-text-changed/
-        - title: "Slider.Value<wbr>Changed"
-          url: /docs/ui-glossary/types/slider-value-changed/
-        - title: "Tab<wbr>Control.Tab<wbr>Opened"
-          url: /docs/ui-glossary/types/tab-control-tab-opened/
-        - title: "Tree<wbr>View.Item<wbr>Select"
-          url: /docs/ui-glossary/types/tree-view-item-select/
+    - title: "Others"
+      groups:
+        - title: "Classes"
+          entries:
+            - title: "Animation&lt;T&gt;"
+              url: /docs/ui-glossary/types/animation/
+            - title: "Base<wbr>Animation"
+              url: /docs/ui-glossary/types/base-animation/
+            - title: "Base<wbr>Animation<wbr>Frame&lt;T&gt;"
+              url: /docs/ui-glossary/types/base-animation-frame/
+            - title: "Bindable"
+              url: /docs/ui-glossary/types/bindable/
+            - title: "Bindable<wbr>Collection&lt;T&gt;"
+              url: /docs/ui-glossary/types/bindable-collection/
+            - title: "Borrowed<wbr>Torch<wbr>UI"
+              url: /docs/ui-glossary/types/borrowed-torch-ui/
+            - title: "Default<wbr>Settings"
+              url: /docs/ui-glossary/types/default-settings/
+            - title: "Dependency<wbr>Property&lt;T&gt;"
+              url: /docs/ui-glossary/types/dependency-property/
+            - title: "Dependency<wbr>Property<wbr>Actions&lt;T&gt;"
+              url: /docs/ui-glossary/types/dependency-property-actions/
+            - title: "Discrete<wbr>Animation<wbr>Frame&lt;T&gt;"
+              url: /docs/ui-glossary/types/discrete-animation-frame/
+            - title: "Display<wbr>Scale"
+              url: /docs/ui-glossary/types/display-scale/
+            - title: "Disposable<wbr>Base"
+              url: /docs/ui-glossary/types/disposable-base/
+            - title: "Drag<wbr>And<wbr>Drop<wbr>Cursors"
+              url: /docs/ui-glossary/types/drag-and-drop-cursors/
+            - title: "Element<wbr>State<wbr>Data"
+              url: /docs/ui-glossary/types/element-state-data/
+            - title: "Game<wbr>Window<wbr>Text<wbr>Input<wbr>Events"
+              url: /docs/ui-glossary/types/game-window-text-input-events/
+            - title: "Generic<wbr>Mouse<wbr>Cursors<wbr>Data&lt;T&gt;"
+              url: /docs/ui-glossary/types/generic-mouse-cursors-data/
+            - title: "Generic<wbr>Style&lt;T&gt;"
+              url: /docs/ui-glossary/types/generic-style/
+            - title: "Generic<wbr>Style<wbr>And<wbr>Mouse<wbr>Cursors<wbr>Data&lt;TStyle&gt;"
+              url: /docs/ui-glossary/types/generic-style-and-mouse-cursors-data/
+            - title: "Key<wbr>Down<wbr>Event<wbr>Args"
+              url: /docs/ui-glossary/types/key-down-event-args/
+            - title: "Mouse<wbr>Click<wbr>Event<wbr>Args"
+              url: /docs/ui-glossary/types/mouse-click-event-args/
+            - title: "Mouse<wbr>Cursors<wbr>Set"
+              url: /docs/ui-glossary/types/mouse-cursors-set/
+            - title: "Resize<wbr>Cursors"
+              url: /docs/ui-glossary/types/resize-cursors/
+            - title: "Rich<wbr>Text<wbr>Cursors"
+              url: /docs/ui-glossary/types/rich-text-cursors/
+            - title: "Run<wbr>Boundary<wbr>Values&lt;T&gt;"
+              url: /docs/ui-glossary/types/run-boundary-values/
+            - title: "Smooth<wbr>Animation<wbr>Frame&lt;T&gt;"
+              url: /docs/ui-glossary/types/smooth-animation-frame/
+            - title: "Source<wbr>Data"
+              url: /docs/ui-glossary/types/source-data/
+            - title: "Tab<wbr>Control"
+              url: /docs/ui-glossary/types/tab-control/
+        - title: "Structs"
+          entries:
+            - title: "Margin"
+              url: /docs/ui-glossary/types/margin/
+        - title: "Interfaces"
+          entries:
+            - title: "IBindable<wbr>Collection"
+              url: /docs/ui-glossary/types/i-bindable-collection/
+            - title: "IConverter"
+              url: /docs/ui-glossary/types/i-converter/
+            - title: "IItems<wbr>Template"
+              url: /docs/ui-glossary/types/i-items-template/
+            - title: "IRecycling<wbr>Items<wbr>Template"
+              url: /docs/ui-glossary/types/i-recycling-items-template/
+            - title: "IText<wbr>Input<wbr>Events"
+              url: /docs/ui-glossary/types/i-text-input-events/
+        - title: "Enums"
+          entries:
+            - title: "Animation<wbr>Repeat<wbr>Type"
+              url: /docs/ui-glossary/types/animation-repeat-type/
+            - title: "Animation<wbr>State"
+              url: /docs/ui-glossary/types/animation-state/
+            - title: "Binding<wbr>Mode"
+              url: /docs/ui-glossary/types/binding-mode/
+            - title: "Button<wbr>Type"
+              url: /docs/ui-glossary/types/button-type/
+            - title: "Check<wbr>Box<wbr>Direction"
+              url: /docs/ui-glossary/types/check-box-direction/
+            - title: "Check<wbr>Box<wbr>Type"
+              url: /docs/ui-glossary/types/check-box-type/
+            - title: "Collection<wbr>Change<wbr>Type"
+              url: /docs/ui-glossary/types/collection-change-type/
+            - title: "Context<wbr>Menu<wbr>Placement"
+              url: /docs/ui-glossary/types/context-menu-placement/
+            - title: "Context<wbr>Menu<wbr>Sub<wbr>Menus<wbr>Open<wbr>Type"
+              url: /docs/ui-glossary/types/context-menu-sub-menus-open-type/
+            - title: "Drag<wbr>Type"
+              url: /docs/ui-glossary/types/drag-type/
+            - title: "Element<wbr>State"
+              url: /docs/ui-glossary/types/element-state/
+            - title: "Horizontal<wbr>Alignment"
+              url: /docs/ui-glossary/types/horizontal-alignment/
+            - title: "Image<wbr>Fill"
+              url: /docs/ui-glossary/types/image-fill/
+            - title: "Inherit<wbr>State"
+              url: /docs/ui-glossary/types/inherit-state/
+            - title: "List<wbr>Box<wbr>Selection<wbr>Mode"
+              url: /docs/ui-glossary/types/list-box-selection-mode/
+            - title: "List<wbr>Box<wbr>Virtualization<wbr>Mode"
+              url: /docs/ui-glossary/types/list-box-virtualization-mode/
+            - title: "Orientation"
+              url: /docs/ui-glossary/types/orientation/
+            - title: "Resize<wbr>State"
+              url: /docs/ui-glossary/types/resize-state/
+            - title: "Rich<wbr>Text<wbr>Box<wbr>Formatting"
+              url: /docs/ui-glossary/types/rich-text-box-formatting/
+            - title: "Rich<wbr>Text<wbr>Box<wbr>Input<wbr>Type"
+              url: /docs/ui-glossary/types/rich-text-box-input-type/
+            - title: "Rich<wbr>Text<wbr>Box<wbr>Type"
+              url: /docs/ui-glossary/types/rich-text-box-type/
+            - title: "Scroll<wbr>Bars"
+              url: /docs/ui-glossary/types/scroll-bars/
+            - title: "Slider<wbr>Type"
+              url: /docs/ui-glossary/types/slider-type/
+            - title: "State<wbr>Source"
+              url: /docs/ui-glossary/types/state-source/
+            - title: "Text<wbr>Alignment"
+              url: /docs/ui-glossary/types/text-alignment/
+            - title: "Text<wbr>Rotation"
+              url: /docs/ui-glossary/types/text-rotation/
+            - title: "Text<wbr>Wrap"
+              url: /docs/ui-glossary/types/text-wrap/
+            - title: "Tick<wbr>Placement"
+              url: /docs/ui-glossary/types/tick-placement/
+            - title: "Tool<wbr>Tip<wbr>Placement"
+              url: /docs/ui-glossary/types/tool-tip-placement/
+            - title: "Value<wbr>Sources"
+              url: /docs/ui-glossary/types/value-sources/
+            - title: "Vertical<wbr>Alignment"
+              url: /docs/ui-glossary/types/vertical-alignment/
+            - title: "Vertical<wbr>Text<wbr>Alignment"
+              url: /docs/ui-glossary/types/vertical-text-alignment/
+            - title: "Visibility"
+              url: /docs/ui-glossary/types/visibility/
+        - title: "Delegates"
+          entries:
+            - title: "Base<wbr>Element.Click"
+              url: /docs/ui-glossary/types/base-element-click/
+            - title: "Base<wbr>Element.Disposed"
+              url: /docs/ui-glossary/types/base-element-disposed/
+            - title: "Base<wbr>Element.Double<wbr>Click"
+              url: /docs/ui-glossary/types/base-element-double-click/
+            - title: "Base<wbr>Element.Drag<wbr>And<wbr>Drop<wbr>Start"
+              url: /docs/ui-glossary/types/base-element-drag-and-drop-start/
+            - title: "Base<wbr>Element.Drop"
+              url: /docs/ui-glossary/types/base-element-drop/
+            - title: "Base<wbr>Element.Drop<wbr>Denied"
+              url: /docs/ui-glossary/types/base-element-drop-denied/
+            - title: "Base<wbr>Element.If<wbr>Drop<wbr>Allowed"
+              url: /docs/ui-glossary/types/base-element-if-drop-allowed/
+            - title: "Base<wbr>Element.Key<wbr>Down"
+              url: /docs/ui-glossary/types/base-element-key-down/
+            - title: "Base<wbr>Element.Mouse<wbr>Enter"
+              url: /docs/ui-glossary/types/base-element-mouse-enter/
+            - title: "Base<wbr>Element.Mouse<wbr>Leave"
+              url: /docs/ui-glossary/types/base-element-mouse-leave/
+            - title: "Base<wbr>Element.State<wbr>Changed"
+              url: /docs/ui-glossary/types/base-element-state-changed/
+            - title: "Bindable.Property<wbr>Changed"
+              url: /docs/ui-glossary/types/bindable-property-changed/
+            - title: "Button.Toggled"
+              url: /docs/ui-glossary/types/button-toggled/
+            - title: "Check<wbr>Box.Checked<wbr>Unchecked"
+              url: /docs/ui-glossary/types/check-box-checked-unchecked/
+            - title: "Color<wbr>Picker.Selected<wbr>Color<wbr>Changed"
+              url: /docs/ui-glossary/types/color-picker-selected-color-changed/
+            - title: "Context<wbr>Menu.Item<wbr>Select"
+              url: /docs/ui-glossary/types/context-menu-item-select/
+            - title: "Dependency<wbr>Property&lt;T&gt;.Owner<wbr>Pre<wbr>Action<wbr>Delegate"
+              url: /docs/ui-glossary/types/dependency-property-owner-pre-action-delegate/
+            - title: "Dependency<wbr>Property&lt;T&gt;.Pre<wbr>Action<wbr>Delegate"
+              url: /docs/ui-glossary/types/dependency-property-pre-action-delegate/
+            - title: "Dependency<wbr>Property&lt;T&gt;.Property<wbr>Changed"
+              url: /docs/ui-glossary/types/dependency-property-property-changed/
+            - title: "Dependency<wbr>Property&lt;T&gt;.Source<wbr>Collection<wbr>Changed"
+              url: /docs/ui-glossary/types/dependency-property-source-collection-changed/
+            - title: "Dependency<wbr>Property&lt;T&gt;.Source<wbr>Property<wbr>Changed"
+              url: /docs/ui-glossary/types/dependency-property-source-property-changed/
+            - title: "Generic<wbr>Mouse<wbr>Cursors<wbr>Data&lt;T&gt;.Mouse<wbr>Cursors<wbr>Changed"
+              url: /docs/ui-glossary/types/generic-mouse-cursors-data-mouse-cursors-changed/
+            - title: "Generic<wbr>Style&lt;T&gt;.Style<wbr>Changed"
+              url: /docs/ui-glossary/types/generic-style-style-changed/
+            - title: "IBindable<wbr>Collection.Collection<wbr>Changed"
+              url: /docs/ui-glossary/types/i-bindable-collection-collection-changed/
+            - title: "List<wbr>Box.Item<wbr>Select"
+              url: /docs/ui-glossary/types/list-box-item-select/
+            - title: "List<wbr>Box.Items<wbr>Select"
+              url: /docs/ui-glossary/types/list-box-items-select/
+            - title: "Rich<wbr>Text<wbr>Box.Apply"
+              url: /docs/ui-glossary/types/rich-text-box-apply/
+            - title: "Rich<wbr>Text<wbr>Box.Text<wbr>Changed"
+              url: /docs/ui-glossary/types/rich-text-box-text-changed/
+            - title: "Slider.Value<wbr>Changed"
+              url: /docs/ui-glossary/types/slider-value-changed/
+            - title: "Tab<wbr>Control.Tab<wbr>Opened"
+              url: /docs/ui-glossary/types/tab-control-tab-opened/
+            - title: "Tree<wbr>View.Item<wbr>Select"
+              url: /docs/ui-glossary/types/tree-view-item-select/

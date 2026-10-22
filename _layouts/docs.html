@@ -29,6 +29,14 @@ layout: base
             {%- assign doc_titles = doc_titles | push: entry_title -%}
             {%- assign doc_groups = doc_groups | push: g.group -%}
           {%- endfor -%}
+          {%- for sub in gr.groups -%}
+            {%- for e in sub.entries -%}
+              {%- assign entry_title = a.title | append: ": " | append: e.title -%}
+              {%- assign doc_urls = doc_urls | push: e.url -%}
+              {%- assign doc_titles = doc_titles | push: entry_title -%}
+              {%- assign doc_groups = doc_groups | push: g.group -%}
+            {%- endfor -%}
+          {%- endfor -%}
         {%- endfor -%}
       {%- endfor -%}
     {%- endif -%}
@@ -84,12 +92,27 @@ layout: base
                           {%- for gr in s.groups %}
                           {%- assign group_open = false %}
                           {%- for e in gr.entries %}{% if e.url == page.url %}{% assign group_open = true %}{% endif %}{% endfor %}
+                          {%- for sub in gr.groups %}{% for e in sub.entries %}{% if e.url == page.url %}{% assign group_open = true %}{% endif %}{% endfor %}{% endfor %}
                           <li>
                             <details class="docs-node"{% if group_open %} open{% endif %}>
                               <summary><span class="docs-node-label">{{ gr.title }}</span></summary>
                               <ul class="docs-types">
                                 {%- for e in gr.entries %}
                                 <li><a href="{{ e.url | relative_url }}"{% if e.url == page.url %} aria-current="page"{% endif %}>{{ e.title }}</a></li>
+                                {%- endfor %}
+                                {%- for sub in gr.groups %}
+                                {%- assign sub_open = false %}
+                                {%- for e in sub.entries %}{% if e.url == page.url %}{% assign sub_open = true %}{% endif %}{% endfor %}
+                                <li>
+                                  <details class="docs-node"{% if sub_open %} open{% endif %}>
+                                    <summary><span class="docs-node-label">{{ sub.title }}</span></summary>
+                                    <ul class="docs-types">
+                                      {%- for e in sub.entries %}
+                                      <li><a href="{{ e.url | relative_url }}"{% if e.url == page.url %} aria-current="page"{% endif %}>{{ e.title }}</a></li>
+                                      {%- endfor %}
+                                    </ul>
+                                  </details>
+                                </li>
                                 {%- endfor %}
                               </ul>
                             </details>
