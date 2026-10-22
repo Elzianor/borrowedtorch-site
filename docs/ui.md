@@ -139,7 +139,6 @@ Two cases need more than the window:
 | `Draw()` | Draws the whole tree with the sprite batch, beginning and ending it itself. |
 | `FollowsBackBuffer` | Whether the UI takes the back buffer's size by itself, at the start of every `Update`. On by default. Turn it off for a UI drawn into a render target of its own size. Turned on again, it takes the back buffer's size at the next update. |
 | `ApplyGameWindowSize(int width, int height)` | Lays the UI out over a screen size in device pixels. A size of 0, such as a minimised window's, is ignored. With `FollowsBackBuffer` on, the size stays until the back buffer changes. |
-| `ApplyNewGameWindowSizeHandler(int width, int height)` | Obsolete: use `ApplyGameWindowSize`, or leave the size to `FollowsBackBuffer`. |
 | `Scale` | How large one logical unit is on screen, see [display scaling](#display-scaling). Between `MinScale` (0.25) and `MaxScale` (8). |
 | `DrawTransform` | Read-only. The matrix the UI draws with. Draw code that begins its own sprite batch inside the UI passes it to draw in logical units. |
 | `ExceptionHandler` | Gets the exceptions thrown inside `Update`, `Draw` and the handling of text input. Without a handler they are rethrown. |
