@@ -313,6 +313,10 @@ a.card:hover { border-color: var(--line-strong); background: var(--surface-2); c
 .docs-node > summary:hover::before { color: var(--gold); }
 .docs-node ul { margin-left: 14px; border-left: 1px solid var(--line); }
 .docs-node > ul > li > a { padding-left: 16px; }
+/* a group of the tree that is no page (the kinds of the glossary's types) */
+.docs-node-label { flex: 1; padding: 7px 12px 7px 4px; color: var(--text); font-size: .93rem; }
+.docs-node > summary:hover .docs-node-label { color: var(--gold); }
+.docs-types a { padding-top: 4px; padding-bottom: 4px; font-family: var(--mono); font-size: .8rem; font-variant-ligatures: none; overflow-wrap: anywhere; }
 .docs-members a { padding-top: 4px; padding-bottom: 4px; font-family: var(--mono); font-size: .8rem; font-variant-ligatures: none; overflow-wrap: anywhere; }
 .docs-members a[aria-current="location"] { border-left-color: var(--kind, var(--gold)); background: color-mix(in srgb, var(--kind, #e9c27a) 16%, transparent); }
 /* a sidebar taller than the window scrolls on its own */
@@ -401,7 +405,7 @@ a.card:hover { border-color: var(--line-strong); background: var(--surface-2); c
 .dp, .kb-dp, .kind-dp { --kind: #f2a65a; }
 .method, .kb-method, .kind-method { --kind: #b5c77a; }
 .event, .kb-event, .kind-event { --kind: #8ab4d8; }
-.prose .prop > code, .prose .dp > code, .prose .method > code, .prose .event > code, .prose .kb {
+.prose .prop code, .prose .dp code, .prose .method code, .prose .event code, .prose .kb {
   color: var(--kind);
   border-color: color-mix(in srgb, var(--kind) 55%, transparent);
   background: color-mix(in srgb, var(--kind) 13%, transparent);
@@ -418,6 +422,13 @@ a.card:hover { border-color: var(--line-strong); background: var(--surface-2); c
 .docs-members a[class*="kind-"] { color: var(--kind); border-left-color: color-mix(in srgb, var(--kind) 45%, transparent); }
 .docs-members a[class*="kind-"]:hover { background: color-mix(in srgb, var(--kind) 10%, transparent); border-left-color: var(--kind); }
 .docs-members a[class*="kind-"][aria-current="location"] { border-left-color: var(--kind); background: color-mix(in srgb, var(--kind) 18%, transparent); }
+/* a name that links to its glossary entry: the chip itself is the link */
+.prose a.ref { text-decoration: none; white-space: nowrap; }
+.prose a.ref code { transition: border-color .15s, background .15s; }
+.prose a.ref:hover code, .prose a.ref:focus-visible code {
+  border-color: var(--kind, var(--gold-dim));
+  background: color-mix(in srgb, var(--kind, #e9c27a) 24%, transparent);
+}
 /* the arrow after a name in a glossary heading: the member's table on its topic page */
 .prose .ctx {
   display: inline-block;

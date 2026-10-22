@@ -10,19 +10,19 @@ set (see [styles, bindings and animation](/docs/ui-styles/)), and the class has 
 property's shared actions and default. Screenshots use the theme from
 [styles](/docs/ui-styles/#the-theme-of-these-pages).
 
-The event handler types are delegates nested in `BaseElement` (`BaseElement.Click`, `BaseElement.KeyDown` and so on);
+The event handler types are delegates nested in `BaseElement` (<a class="ref" href="/docs/ui-glossary/types/base-element-click/">`BaseElement.Click`</a>, <a class="ref" href="/docs/ui-glossary/types/base-element-key-down/">`BaseElement.KeyDown`</a> and so on);
 the tables give their signatures.
 
 ## Size and position
 
 An element's size along each side comes from its own settings and its parent:
 
-- With a `DesiredWidth` (or `DesiredHeight`) above 0 it has that size.
+- With a <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#desiredwidth">`DesiredWidth`</a> (or <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#desiredheight">`DesiredHeight`</a>) above 0 it has that size.
 - With 0 and `Stretch` alignment it takes the slot its parent gives it, less its margins.
 - With 0 and any other alignment it fits its content.
 
-`MinWidth`, `MinHeight`, `MaxWidth` and `MaxHeight` then limit the result (0 means no limit). The layout hands the
-result back as `ActualWidth` and `ActualHeight`, and the position as `Location`, in screen coordinates. All of these
+<a class="ref dp" href="/docs/ui-glossary/elements/base-element/#minwidth">`MinWidth`</a>, <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#minheight">`MinHeight`</a>, <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#maxwidth">`MaxWidth`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#maxheight">`MaxHeight`</a> then limit the result (0 means no limit). The layout hands the
+result back as <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#actualwidth">`ActualWidth`</a> and <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#actualheight">`ActualHeight`</a>, and the position as <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#location">`Location`</a>, in screen coordinates. All of these
 are logical units: one unit is one pixel at 100 % display scale (see the [quick start guide](/docs/ui/#display-scaling)).
 
 In its slot an element is placed by its alignment and margins: `Left` / `Top` at its left / top margin, `Right` /
@@ -32,68 +32,68 @@ margins. A `Stretch` element that has a desired size is placed at its left / top
 A child's margin counts toward the content size of a parent that fits its content only on the side the child is
 aligned to: the left / top margin for `Left` / `Top`, the right / bottom margin for `Right` / `Bottom`, both for
 `Center`, and both for a `Stretch` child without a desired size (with one, only the left / top margin). The margin on
-the other side is not counted. So in a horizontal `StackPanel`, the `Margin.Right` of a `Left` aligned item adds no
+the other side is not counted. So in a horizontal <a class="ref" href="/docs/ui-glossary/elements/stack-panel/">`StackPanel`</a>, the <a class="ref" href="/docs/ui-glossary/types/margin/#right-1">`Margin.Right`</a> of a `Left` aligned item adds no
 gap: put the gap on the left (or top) margin of the next item. A stretched child in a parent that fits its content
 counts with the size of its own content, as in WPF, except wrapping text along the width: it takes the width the rest
-of the content decides and wraps there. When nothing else gives a width, it keeps its one line, and a `MaxWidth` on the
+of the content decides and wraps there. When nothing else gives a width, it keeps its one line, and a <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#maxwidth">`MaxWidth`</a> on the
 parent makes it wrap (see [sizes and alignment](/docs/ui/#sizes-and-alignment)).
 
 ### Size and position properties
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="dp">`DesiredWidth`</span> | `int` | The width in units. 0 (the default) fits the content, or stretches over the slot when `HorizontalAlignment` is `Stretch`. |
-| <span class="dp">`DesiredHeight`</span> | `int` | The height in units. 0 (the default) fits the content, or stretches over the slot when `VerticalAlignment` is `Stretch`. |
-| <span class="dp">`MinWidth`</span> | `int` | The smallest width the layout (and a resize) gives the element. 0 is no limit. |
-| <span class="dp">`MinHeight`</span> | `int` | The smallest height the layout (and a resize) gives the element. 0 is no limit. |
-| <span class="dp">`MaxWidth`</span> | `int` | The largest width the layout (and a resize) gives the element. 0 is no limit. |
-| <span class="dp">`MaxHeight`</span> | `int` | The largest height the layout (and a resize) gives the element. 0 is no limit. |
-| <span class="dp">`HorizontalAlignment`</span> | `HorizontalAlignment` | Where the element sits in its slot horizontally, and whether it stretches over it. The default is `Stretch`. |
-| <span class="dp">`VerticalAlignment`</span> | `VerticalAlignment` | Where the element sits in its slot vertically, and whether it stretches over it. The default is `Stretch`. |
-| <span class="dp">`Margin`</span> | `Margin` | The space between the element and the edges of its slot. Which sides count is described above. |
-| <span class="prop">`ActualWidth`</span> | `int` | Read-only. The width the last layout gave the element, within its size limits. |
-| <span class="prop">`ActualHeight`</span> | `int` | Read-only. The height the last layout gave the element, within its size limits. |
-| <span class="prop">`Location`</span> | `Point` | Read-only. The top left corner of the element on the screen. |
-| <span class="prop">`Left`</span> | `int` | Read-only. `Location.X`. |
-| <span class="prop">`Top`</span> | `int` | Read-only. `Location.Y`. |
-| <span class="prop">`Right`</span> | `int` | Read-only. `Left + ActualWidth`. |
-| <span class="prop">`Bottom`</span> | `int` | Read-only. `Top + ActualHeight`. |
-| <span class="prop">`Bounds`</span> | `Rectangle` | Read-only. `Location` and the actual size as one rectangle. |
-| <span class="prop">`MeasuredWidth`</span> | `int` | Read-only. The width the last measure found: fixed, stretched over the slot or fitted to the content. |
-| <span class="prop">`MeasuredHeight`</span> | `int` | Read-only. The height the last measure found. |
-| <span class="prop">`MeasuredContentWidth`</span> | `int` | Read-only. The width the content needed at the last measure, whatever width the element was given. |
-| <span class="prop">`MeasuredContentHeight`</span> | `int` | Read-only. The height the content needed at the last measure. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#desiredwidth">`DesiredWidth`</a> | `int` | The width in units. 0 (the default) fits the content, or stretches over the slot when <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#horizontalalignment">`HorizontalAlignment`</a> is `Stretch`. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#desiredheight">`DesiredHeight`</a> | `int` | The height in units. 0 (the default) fits the content, or stretches over the slot when <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#verticalalignment">`VerticalAlignment`</a> is `Stretch`. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#minwidth">`MinWidth`</a> | `int` | The smallest width the layout (and a resize) gives the element. 0 is no limit. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#minheight">`MinHeight`</a> | `int` | The smallest height the layout (and a resize) gives the element. 0 is no limit. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#maxwidth">`MaxWidth`</a> | `int` | The largest width the layout (and a resize) gives the element. 0 is no limit. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#maxheight">`MaxHeight`</a> | `int` | The largest height the layout (and a resize) gives the element. 0 is no limit. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#horizontalalignment">`HorizontalAlignment`</a> | <a class="ref" href="/docs/ui-glossary/types/horizontal-alignment/">`HorizontalAlignment`</a> | Where the element sits in its slot horizontally, and whether it stretches over it. The default is `Stretch`. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#verticalalignment">`VerticalAlignment`</a> | <a class="ref" href="/docs/ui-glossary/types/vertical-alignment/">`VerticalAlignment`</a> | Where the element sits in its slot vertically, and whether it stretches over it. The default is `Stretch`. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#margin">`Margin`</a> | <a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> | The space between the element and the edges of its slot. Which sides count is described above. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#actualwidth">`ActualWidth`</a> | `int` | Read-only. The width the last layout gave the element, within its size limits. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#actualheight">`ActualHeight`</a> | `int` | Read-only. The height the last layout gave the element, within its size limits. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#location">`Location`</a> | `Point` | Read-only. The top left corner of the element on the screen. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#left">`Left`</a> | `int` | Read-only. `Location.X`. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#top">`Top`</a> | `int` | Read-only. `Location.Y`. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#right">`Right`</a> | `int` | Read-only. `Left + ActualWidth`. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#bottom">`Bottom`</a> | `int` | Read-only. `Top + ActualHeight`. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#bounds">`Bounds`</a> | `Rectangle` | Read-only. <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#location">`Location`</a> and the actual size as one rectangle. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#measuredwidth">`MeasuredWidth`</a> | `int` | Read-only. The width the last measure found: fixed, stretched over the slot or fitted to the content. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#measuredheight">`MeasuredHeight`</a> | `int` | Read-only. The height the last measure found. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#measuredcontentwidth">`MeasuredContentWidth`</a> | `int` | Read-only. The width the content needed at the last measure, whatever width the element was given. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#measuredcontentheight">`MeasuredContentHeight`</a> | `int` | Read-only. The height the content needed at the last measure. |
 
-The measure and arrange methods (`Measure`, `MeasureAt`, `Arrange`, `ArrangeAt`, `InvalidateMeasure`,
-`InvalidateArrange`) are public, but you only need them in your own elements: see
+The measure and arrange methods (<a class="ref method" href="/docs/ui-glossary/elements/base-element/#measure">`Measure`</a>, <a class="ref method" href="/docs/ui-glossary/elements/base-element/#measureat">`MeasureAt`</a>, <a class="ref method" href="/docs/ui-glossary/elements/base-element/#arrange">`Arrange`</a>, <a class="ref method" href="/docs/ui-glossary/elements/base-element/#arrangeat">`ArrangeAt`</a>, <a class="ref method" href="/docs/ui-glossary/elements/base-element/#invalidatemeasure">`InvalidateMeasure`</a>,
+<a class="ref method" href="/docs/ui-glossary/elements/base-element/#invalidatearrange">`InvalidateArrange`</a>) are public, but you only need them in your own elements: see
 [writing your own element](#writing-your-own-element).
 
 #### `HorizontalAlignment`
 
 | Value | Meaning |
 | --- | --- |
-| `Stretch` | Fills the slot less both margins when the element has no `DesiredWidth`, otherwise sits at the left margin. |
-| `Left` | At the left margin. |
-| `Center` | Centred between the left and the right margin. |
-| `Right` | At the right margin. |
+| <a class="ref" href="/docs/ui-glossary/types/horizontal-alignment/#stretch">`Stretch`</a> | Fills the slot less both margins when the element has no <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#desiredwidth">`DesiredWidth`</a>, otherwise sits at the left margin. |
+| <a class="ref" href="/docs/ui-glossary/types/horizontal-alignment/#left">`Left`</a> | At the left margin. |
+| <a class="ref" href="/docs/ui-glossary/types/horizontal-alignment/#center">`Center`</a> | Centred between the left and the right margin. |
+| <a class="ref" href="/docs/ui-glossary/types/horizontal-alignment/#right">`Right`</a> | At the right margin. |
 
 #### `VerticalAlignment`
 
 | Value | Meaning |
 | --- | --- |
-| `Stretch` | Fills the slot less both margins when the element has no `DesiredHeight`, otherwise sits at the top margin. |
-| `Top` | At the top margin. |
-| `Center` | Centred between the top and the bottom margin. |
-| `Bottom` | At the bottom margin. |
+| <a class="ref" href="/docs/ui-glossary/types/vertical-alignment/#stretch">`Stretch`</a> | Fills the slot less both margins when the element has no <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#desiredheight">`DesiredHeight`</a>, otherwise sits at the top margin. |
+| <a class="ref" href="/docs/ui-glossary/types/vertical-alignment/#top">`Top`</a> | At the top margin. |
+| <a class="ref" href="/docs/ui-glossary/types/vertical-alignment/#center">`Center`</a> | Centred between the top and the bottom margin. |
+| <a class="ref" href="/docs/ui-glossary/types/vertical-alignment/#bottom">`Bottom`</a> | At the bottom margin. |
 
 #### `Orientation`
 
-Used by `StackPanel`, `Slider` and `ProgressBar`, see [layout](/docs/ui-layout/) and [controls](/docs/ui-controls/).
+Used by <a class="ref" href="/docs/ui-glossary/elements/stack-panel/">`StackPanel`</a>, <a class="ref" href="/docs/ui-glossary/elements/slider/">`Slider`</a> and <a class="ref" href="/docs/ui-glossary/elements/progress-bar/">`ProgressBar`</a>, see [layout](/docs/ui-layout/) and [controls](/docs/ui-controls/).
 
 | Value | Meaning |
 | --- | --- |
-| `Horizontal` | From left to right. |
-| `Vertical` | From top to bottom. |
+| <a class="ref" href="/docs/ui-glossary/types/orientation/#horizontal">`Horizontal`</a> | From left to right. |
+| <a class="ref" href="/docs/ui-glossary/types/orientation/#vertical">`Vertical`</a> | From top to bottom. |
 
 ### Margin
 
@@ -109,34 +109,34 @@ element.Margin = (10, 20, 30, 40);  // left, top, right, bottom
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="prop">`Left`</span> | `int` | Read-only field. The left margin. |
-| <span class="prop">`Top`</span> | `int` | Read-only field. The top margin. |
-| <span class="prop">`Right`</span> | `int` | Read-only field. The right margin. |
-| <span class="prop">`Bottom`</span> | `int` | Read-only field. The bottom margin. |
-| <span class="prop">`Zero`</span> | `Margin` | Static, read-only. A margin of 0 on every side. |
+| <a class="ref prop" href="/docs/ui-glossary/types/margin/#left-1">`Left`</a> | `int` | Read-only field. The left margin. |
+| <a class="ref prop" href="/docs/ui-glossary/types/margin/#top-1">`Top`</a> | `int` | Read-only field. The top margin. |
+| <a class="ref prop" href="/docs/ui-glossary/types/margin/#right-1">`Right`</a> | `int` | Read-only field. The right margin. |
+| <a class="ref prop" href="/docs/ui-glossary/types/margin/#bottom-1">`Bottom`</a> | `int` | Read-only field. The bottom margin. |
+| <a class="ref prop" href="/docs/ui-glossary/types/margin/#zero">`Zero`</a> | `Margin` | Static, read-only. A margin of 0 on every side. |
 
 | Method | Description |
 | --- | --- |
-| <span class="method">`Margin()`</span> | A margin of 0 on every side. |
-| <span class="method">`Margin(int all)`</span> | The same margin on every side. |
-| <span class="method">`Margin(int left = 0, int top = 0, int right = 0, int bottom = 0)`</span> | A margin per side; the sides left out are 0. |
-| <span class="method">`implicit operator Margin(int all)`</span> | `element.Margin = 5` sets 5 on every side. |
-| <span class="method">`implicit operator Margin((int left, int top) tuple)`</span> | Left and top; right and bottom are 0. |
-| <span class="method">`implicit operator Margin((int left, int top, int right) tuple)`</span> | Left, top and right; bottom is 0. |
-| <span class="method">`implicit operator Margin((int left, int top, int right, int bottom) tuple)`</span> | All four sides. |
-| <span class="method">`operator -(Margin margin)`</span> | The margin with every side negated. |
-| <span class="method">`operator +(Margin margin1, Margin margin2)`</span> | Adds the margins side by side. |
-| <span class="method">`operator -(Margin margin1, Margin margin2)`</span> | Subtracts the second margin from the first, side by side. |
-| <span class="method">`operator ==(Margin margin1, Margin margin2)`</span> | True when all four sides are equal. `!=` is the opposite. |
-| <span class="method">`Equals(Margin other)`</span> | True when all four sides are equal (`Equals(object)` as well, for another `Margin`). |
-| <span class="method">`GetHashCode()`</span> | A hash of the four sides. |
-| <span class="method">`ToString()`</span> | The sides as text, for example `L: 10 R: 30 T: 20 B: 40`. |
+| <a class="ref method" href="/docs/ui-glossary/types/margin/#margin">`Margin()`</a> | A margin of 0 on every side. |
+| <a class="ref method" href="/docs/ui-glossary/types/margin/#margin">`Margin(int all)`</a> | The same margin on every side. |
+| <a class="ref method" href="/docs/ui-glossary/types/margin/#margin">`Margin(int left = 0, int top = 0, int right = 0, int bottom = 0)`</a> | A margin per side; the sides left out are 0. |
+| <a class="ref method" href="/docs/ui-glossary/types/margin/#margin">`implicit operator Margin(int all)`</a> | `element.Margin = 5` sets 5 on every side. |
+| <a class="ref method" href="/docs/ui-glossary/types/margin/#margin">`implicit operator Margin((int left, int top) tuple)`</a> | Left and top; right and bottom are 0. |
+| <a class="ref method" href="/docs/ui-glossary/types/margin/#margin">`implicit operator Margin((int left, int top, int right) tuple)`</a> | Left, top and right; bottom is 0. |
+| <a class="ref method" href="/docs/ui-glossary/types/margin/#margin">`implicit operator Margin((int left, int top, int right, int bottom) tuple)`</a> | All four sides. |
+| <a class="ref method" href="/docs/ui-glossary/types/margin/#section-1">`operator -(Margin margin)`</a> | The margin with every side negated. |
+| <a class="ref method" href="/docs/ui-glossary/types/margin/#section">`operator +(Margin margin1, Margin margin2)`</a> | Adds the margins side by side. |
+| <a class="ref method" href="/docs/ui-glossary/types/margin/#section-1">`operator -(Margin margin1, Margin margin2)`</a> | Subtracts the second margin from the first, side by side. |
+| <a class="ref method" href="/docs/ui-glossary/types/margin/#section-1-1">`operator ==(Margin margin1, Margin margin2)`</a> | True when all four sides are equal. `!=` is the opposite. |
+| <a class="ref method" href="/docs/ui-glossary/types/margin/#equals">`Equals(Margin other)`</a> | True when all four sides are equal (<a class="ref method" href="/docs/ui-glossary/types/margin/#equals">`Equals(object)`</a> as well, for another `Margin`). |
+| <a class="ref method" href="/docs/ui-glossary/types/margin/#gethashcode">`GetHashCode()`</a> | A hash of the four sides. |
+| <a class="ref method" href="/docs/ui-glossary/types/margin/#tostring">`ToString()`</a> | The sides as text, for example `L: 10 R: 30 T: 20 B: 40`. |
 
 ## Appearance
 
-Without textures an element fills its bounds with `BackgroundColor`. With `TexturesPath` set, the elements that use
+Without textures an element fills its bounds with <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a>. With <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> set, the elements that use
 textures draw them from that folder instead (each element's section says which textures it reads). A disabled element
-is drawn darker, and `Transparency` fades the element together with everything inside it.
+is drawn darker, and <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#transparency">`Transparency`</a> fades the element together with everything inside it.
 
 <figure class="shot">
   <img src="{{ '/assets/img/ui/base-transparency.png' | relative_url }}" width="494" height="98" alt="Four sand coloured labels reading 0.00, 0.25, 0.50 and 0.75, each one more faded into the dark background than the one before">
@@ -164,7 +164,7 @@ ui.AddElementToRoot(row);
 ```
 
 Transparency is inherited: an element's own transparency combines with its parent's (their opacities multiply), so a
-child is never more opaque than the panel it is in. `Visibility` and `Disabled` are inherited the same way: the
+child is never more opaque than the panel it is in. <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#visibility">`Visibility`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#disabled">`Disabled`</a> are inherited the same way: the
 children of a hidden or disabled element are hidden or disabled with it, while their own properties keep their values.
 
 `Hidden` keeps the element's space in the layout but draws nothing and takes no input; `Collapsed` also gives it no
@@ -174,40 +174,40 @@ size, so the elements around it move up.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="dp">`Visibility`</span> | `Visibility` | Whether the element is shown, hidden in its space or collapsed. The default is `Visible`. A hidden element loses the keyboard focus and any mouse state. |
-| <span class="dp">`BackgroundColor`</span> | `Color` | The colour the element's background is filled with. `Transparent` (the default) fills nothing. |
-| <span class="dp">`ForegroundColor`</span> | `Color` | The colour of what the element draws over its background, such as a label's text. An element drawn from textures tints them with it when it is not `Transparent`. |
-| <span class="dp">`TexturesPath`</span> | `string` | A content folder with the element's textures, for example `UITextures/Button/`. A missing trailing path separator is added. |
-| <span class="prop">`TexturesPresent`</span> | `bool` | Read-only. True when `TexturesPath` is set. |
-| <span class="dp">`Transparency`</span> | `float` | From 0 (opaque, the default) to 1 (invisible); values outside are clamped. Applies to the element and its subtree, combined with the parents' transparency. |
-| <span class="dp">`CropOutsideOfParentBorder`</span> | `bool` | Clips the element to its parent's bounds. Without it the element may overflow its parent but is still clipped by whatever clips the parent (a scroll view, a window's content area). On by default for every element with a style. |
-| <span class="dp">`CustomEffect`</span> | `Effect` | A shader the element draws its background (or texture, an image's picture) with. Setting it sets it on the children as well, and a child added later takes it. An effect with a `ModulationColor` parameter gets the draw colour there. |
-| <span class="prop">`PreDrawAction`</span> | `Action` | Runs before the element and its subtree are drawn, for example to change the sprite batch state. |
-| <span class="prop">`PostDrawAction`</span> | `Action` | Runs after the element and its subtree are drawn, for example to restore what `PreDrawAction` changed. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#visibility">`Visibility`</a> | <a class="ref" href="/docs/ui-glossary/types/visibility/">`Visibility`</a> | Whether the element is shown, hidden in its space or collapsed. The default is `Visible`. A hidden element loses the keyboard focus and any mouse state. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> | `Color` | The colour the element's background is filled with. `Transparent` (the default) fills nothing. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#foregroundcolor">`ForegroundColor`</a> | `Color` | The colour of what the element draws over its background, such as a label's text. An element drawn from textures tints them with it when it is not `Transparent`. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> | `string` | A content folder with the element's textures, for example `UITextures/Button/`. A missing trailing path separator is added. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#texturespresent">`TexturesPresent`</a> | `bool` | Read-only. True when <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> is set. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#transparency">`Transparency`</a> | `float` | From 0 (opaque, the default) to 1 (invisible); values outside are clamped. Applies to the element and its subtree, combined with the parents' transparency. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#cropoutsideofparentborder">`CropOutsideOfParentBorder`</a> | `bool` | Clips the element to its parent's bounds. Without it the element may overflow its parent but is still clipped by whatever clips the parent (a scroll view, a window's content area). On by default for every element with a style. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#customeffect">`CustomEffect`</a> | `Effect` | A shader the element draws its background (or texture, an image's picture) with. Setting it sets it on the children as well, and a child added later takes it. An effect with a `ModulationColor` parameter gets the draw colour there. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#predrawaction">`PreDrawAction`</a> | `Action` | Runs before the element and its subtree are drawn, for example to change the sprite batch state. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#postdrawaction">`PostDrawAction`</a> | `Action` | Runs after the element and its subtree are drawn, for example to restore what <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#predrawaction">`PreDrawAction`</a> changed. |
 
 Tooltips, context menus, drop-downs and modal windows are never clipped by the elements they open from.
-`PreDrawAction` and `PostDrawAction` come in pairs: a hidden element runs neither of them.
+<a class="ref prop" href="/docs/ui-glossary/elements/base-element/#predrawaction">`PreDrawAction`</a> and <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#postdrawaction">`PostDrawAction`</a> come in pairs: a hidden element runs neither of them.
 
 ### Appearance methods
 
 | Method | Description |
 | --- | --- |
-| <span class="method">`Draw()`</span> | Draws the element, its children and the popups above them. The UI calls it on the root every frame, you don't call it yourself. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#draw">`Draw()`</a> | Draws the element, its children and the popups above them. The UI calls it on the root every frame, you don't call it yourself. |
 
 #### `Visibility`
 
 | Value | Meaning |
 | --- | --- |
-| `Visible` | Drawn and takes input. |
-| `Hidden` | Not drawn, takes no input, keeps its space in the layout. |
-| `Collapsed` | Not drawn, takes no input, has no size. |
+| <a class="ref" href="/docs/ui-glossary/types/visibility/#visible">`Visible`</a> | Drawn and takes input. |
+| <a class="ref" href="/docs/ui-glossary/types/visibility/#hidden">`Hidden`</a> | Not drawn, takes no input, keeps its space in the layout. |
+| <a class="ref" href="/docs/ui-glossary/types/visibility/#collapsed">`Collapsed`</a> | Not drawn, takes no input, has no size. |
 
 ## Items and content
 
-The elements you put into another element are its items. `AddItem` and the other item methods act on them only, never
+The elements you put into another element are its items. <a class="ref method" href="/docs/ui-glossary/elements/base-element/#additem">`AddItem`</a> and the other item methods act on them only, never
 on the parts an element made itself (a slider's buttons, a window's title bar). Containers override them: a stack
 panel, for example, wraps each item (see its section). Elements that host a single child give it through a `Content`
-or `Text` property instead, and they and the other elements without items (sliders, progress bars, text elements)
+or <span class="dp">`Text`</span> property instead, and they and the other elements without items (sliders, progress bars, text elements)
 ignore the item methods.
 
 An element has one parent. Adding an element that is already in another one throws an `InvalidOperationException`
@@ -216,72 +216,72 @@ nothing. Null items are ignored.
 
 Ownership decides what is disposed:
 
-- Removing an item (`RemoveItem`, `ClearItems` and so on) only detaches it: it is yours, dispose or reuse it.
-- `Dispose()` takes the element out of its parent, disposes what it made itself (its parts, the text content of a
+- Removing an item (<a class="ref method" href="/docs/ui-glossary/elements/base-element/#removeitem">`RemoveItem`</a>, <a class="ref method" href="/docs/ui-glossary/elements/base-element/#clearitems">`ClearItems`</a> and so on) only detaches it: it is yours, dispose or reuse it.
+- <a class="ref method" href="/docs/ui-glossary/elements/base-element/#dispose">`Dispose()`</a> takes the element out of its parent, disposes what it made itself (its parts, the text content of a
   button, its resize areas), detaches what you gave it (items, content, tooltip, context menu, drag representation) and
-  raises `OnDisposed`. A second call does nothing.
+  raises <a class="ref event" href="/docs/ui-glossary/elements/base-element/#ondisposed">`OnDisposed`</a>. A second call does nothing.
 - A disposed element can't be added anywhere again: that throws an `ObjectDisposedException`.
 
 ### Items and content properties
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="prop">`Id`</span> | `Guid` | Read-only field. A unique id made when the element is created. |
-| <span class="prop">`Name`</span> | `string` | Read-only. The name given to the constructor, used by `GetElementByName`. |
-| <span class="prop">`Parent`</span> | `BaseElement` | Read-only. The element this one is in, null when it is not in one. |
-| <span class="prop">`Children`</span> | `IReadOnlyList<BaseElement>` | Read-only. The element's children: its items and the parts it made itself. |
-| <span class="prop">`IsDisposed`</span> | `bool` | Read-only. True once `Dispose()` was called. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#id-1">`Id`</a> | `Guid` | Read-only field. A unique id made when the element is created. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a> | `string` | Read-only. The name given to the constructor, used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#parent">`Parent`</a> | `BaseElement` | Read-only. The element this one is in, null when it is not in one. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#children">`Children`</a> | `IReadOnlyList<BaseElement>` | Read-only. The element's children: its items and the parts it made itself. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#isdisposed">`IsDisposed`</a> | `bool` | Read-only. True once <a class="ref method" href="/docs/ui-glossary/elements/base-element/#dispose">`Dispose()`</a> was called. |
 
 ### Items and content events
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| <span class="event">`OnDisposed`</span> | `(BaseElement sender)` | The element was disposed. Raised once, at the end of `Dispose()`; the handlers are let go afterwards. |
+| <a class="ref event" href="/docs/ui-glossary/elements/base-element/#ondisposed">`OnDisposed`</a> | `(BaseElement sender)` | The element was disposed. Raised once, at the end of <a class="ref method" href="/docs/ui-glossary/elements/base-element/#dispose">`Dispose()`</a>; the handlers are let go afterwards. |
 
 ### Items and content methods
 
 | Method | Description |
 | --- | --- |
-| <span class="method">`AddItem(BaseElement item)`</span> | Adds the item after the other children. |
-| <span class="method">`AddItemAt(BaseElement item, int index)`</span> | Inserts the item at the index in `Children`. An index below 0 or above the count is ignored. |
-| <span class="method">`AddItemsRange(IEnumerable<BaseElement> items)`</span> | Adds the items in order after the other children. |
-| <span class="method">`AddItemsRangeAt(IEnumerable<BaseElement> items, int index)`</span> | Inserts the items in order from the index; a null item takes no place. |
-| <span class="method">`RemoveItem(BaseElement item)`</span> | Takes the item out without disposing it. Does nothing for a part of the element. |
-| <span class="method">`RemoveItemAt(int index)`</span> | Takes the item at the index out without disposing it. |
-| <span class="method">`RemoveItemsRangeAt(int index, int count)`</span> | Takes `count` items out from the index on (fewer when the children end first), without disposing them. |
-| <span class="method">`ClearItems()`</span> | Takes every item out without disposing them; the element's own parts stay. |
-| <span class="method">`GetElementByName(string name)`</span> | Finds an element by name below this one (its children first, then deeper, popups such as its tooltip included). Null when there is none. |
-| <span class="method">`Dispose()`</span> | Disposes the element as described above. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#additem">`AddItem(BaseElement item)`</a> | Adds the item after the other children. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#additemat">`AddItemAt(BaseElement item, int index)`</a> | Inserts the item at the index in `Children`. An index below 0 or above the count is ignored. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#additemsrange">`AddItemsRange(IEnumerable<BaseElement> items)`</a> | Adds the items in order after the other children. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#additemsrangeat">`AddItemsRangeAt(IEnumerable<BaseElement> items, int index)`</a> | Inserts the items in order from the index; a null item takes no place. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#removeitem">`RemoveItem(BaseElement item)`</a> | Takes the item out without disposing it. Does nothing for a part of the element. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#removeitemat">`RemoveItemAt(int index)`</a> | Takes the item at the index out without disposing it. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#removeitemsrangeat">`RemoveItemsRangeAt(int index, int count)`</a> | Takes `count` items out from the index on (fewer when the children end first), without disposing them. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#clearitems">`ClearItems()`</a> | Takes every item out without disposing them; the element's own parts stay. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName(string name)`</a> | Finds an element by name below this one (its children first, then deeper, popups such as its tooltip included). Null when there is none. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#dispose">`Dispose()`</a> | Disposes the element as described above. |
 
-`BorrowedTorchUI` has a `GetElementByName<T>(string name)` that searches from the root and casts the result (see the
+<a class="ref" href="/docs/ui-glossary/types/borrowed-torch-u-i/">`BorrowedTorchUI`</a> has a `GetElementByName<T>(string name)` that searches from the root and casts the result (see the
 [quick start guide](/docs/ui/)).
 
 ### DisposableBase
 
-The base class of `BaseElement`, with the dispose pattern every element uses.
+The base class of <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a>, with the dispose pattern every element uses.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="prop">`IsDisposed`</span> | `bool` | Read-only. True once `Dispose()` was called. |
+| <a class="ref prop" href="/docs/ui-glossary/types/disposable-base/#isdisposed">`IsDisposed`</a> | `bool` | Read-only. True once <a class="ref method" href="/docs/ui-glossary/types/disposable-base/#dispose">`Dispose()`</a> was called. |
 
 | Method | Description |
 | --- | --- |
-| <span class="method">`Dispose()`</span> | Marks the object disposed and runs `DisposeHandler` once; later calls do nothing. |
-| <span class="method">`DisposeHandler()`</span> | Protected, abstract. The clean-up of the derived class; `BaseElement` implements it as described above. |
+| <a class="ref method" href="/docs/ui-glossary/types/disposable-base/#dispose">`Dispose()`</a> | Marks the object disposed and runs <a class="ref method" href="/docs/ui-glossary/types/disposable-base/#disposehandler">`DisposeHandler`</a> once; later calls do nothing. |
+| <a class="ref method" href="/docs/ui-glossary/types/disposable-base/#disposehandler">`DisposeHandler()`</a> | Protected, abstract. The clean-up of the derived class; <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> implements it as described above. |
 
 ## Mouse and states
 
 The mouse goes to one element at a time. The UI checks the children before their parent, and the later children
-before the earlier ones (the ones drawn on top); the first element with `HitTest` on whose hit rectangle (its bounds,
-cropped by whatever clips it) contains the mouse takes it, and nothing below it is hovered. An element with `HitTest`
+before the earlier ones (the ones drawn on top); the first element with <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#hittest">`HitTest`</a> on whose hit rectangle (its bounds,
+cropped by whatever clips it) contains the mouse takes it, and nothing below it is hovered. An element with <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#hittest">`HitTest`</a>
 off is passed over, so the element behind it gets the mouse. A hidden element takes no mouse. A disabled element
 still takes it (the element behind it is not hovered) but shows no state and raises no mouse events. While a modal
 window is shown, only its subtree gets the mouse.
 
 An element's own state is `Hover` while it takes the mouse, `MouseButtonsActivity` while a button pressed on it is
-held, and `DropAllowed` or `DropDenied` while a dragged element is over it. `StateData` holds the state it shows,
-which can also come from its parent or its children through `InheritState`: the element shows the highest of its own
-state and the ones it takes (in the order of the `ElementState` values; its own state wins a tie). It passes its own
+held, and `DropAllowed` or `DropDenied` while a dragged element is over it. <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#statedata">`StateData`</a> holds the state it shows,
+which can also come from its parent or its children through <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#inheritstate">`InheritState`</a>: the element shows the highest of its own
+state and the ones it takes (in the order of the <a class="ref" href="/docs/ui-glossary/types/element-state/">`ElementState`</a> values; its own state wins a tie). It passes its own
 and its children's state up, and its own and its parent's state down, so a state never comes back to where it came
 from: a list lit by a hovered row does not light its other rows. A title bar with `FromChildren` lights up while its
 label is hovered; the label with `FromParent` lights up with the title bar. The hidden parts of a control pass states
@@ -316,20 +316,20 @@ ui.AddElementToRoot(row);
 ```
 
 The element the mouse buttons were pressed on holds the mouse capture until they are released: no other element is
-hovered or pressed meanwhile. Moving off it ends its pressed state (`OnMouseLeave` is raised and repeated clicks stop),
+hovered or pressed meanwhile. Moving off it ends its pressed state (<a class="ref event" href="/docs/ui-glossary/elements/base-element/#onmouseleave">`OnMouseLeave`</a> is raised and repeated clicks stop),
 moving back onto it while the button is still held presses it again.
 
 `OnClick` is raised when a mouse button is released over the element it was pressed on, so moving off before releasing
 cancels the click. Any button clicks: `e.ButtonsStates` tells which one. A right click also opens the element's
-`ContextMenu`. `OnDoubleClick` is raised on the second left press within `DoubleClickIntervalMs` of the first; both
+<a class="ref prop" href="/docs/ui-glossary/elements/base-element/#contextmenu">`ContextMenu`</a>. <a class="ref event" href="/docs/ui-glossary/elements/base-element/#ondoubleclick">`OnDoubleClick`</a> is raised on the second left press within <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#doubleclickintervalms">`DoubleClickIntervalMs`</a> of the first; both
 releases still raise `OnClick`. For repeated clicks see [click timing](#click-timing).
 
-`OnMouseEnter` and `OnMouseLeave` are about the element taking the mouse itself, and they always come in pairs. Moving
-from a panel onto a child that takes the mouse raises `OnMouseLeave` on the panel. To follow a whole area, give it
-`InheritState.FromChildren` and watch `OnStateChanged` instead. An element that gets disabled or hidden under the mouse
-raises `OnMouseLeave` too. Entering a drop target during a drag and drop raises no `OnMouseEnter`.
+<a class="ref event" href="/docs/ui-glossary/elements/base-element/#onmouseenter">`OnMouseEnter`</a> and <a class="ref event" href="/docs/ui-glossary/elements/base-element/#onmouseleave">`OnMouseLeave`</a> are about the element taking the mouse itself, and they always come in pairs. Moving
+from a panel onto a child that takes the mouse raises <a class="ref event" href="/docs/ui-glossary/elements/base-element/#onmouseleave">`OnMouseLeave`</a> on the panel. To follow a whole area, give it
+<a class="ref" href="/docs/ui-glossary/types/inherit-state/#fromchildren">`InheritState.FromChildren`</a> and watch <a class="ref event" href="/docs/ui-glossary/elements/base-element/#onstatechanged">`OnStateChanged`</a> instead. An element that gets disabled or hidden under the mouse
+raises <a class="ref event" href="/docs/ui-glossary/elements/base-element/#onmouseleave">`OnMouseLeave`</a> too. Entering a drop target during a drag and drop raises no <a class="ref event" href="/docs/ui-glossary/elements/base-element/#onmouseenter">`OnMouseEnter`</a>.
 
-Where a part of a control has no `ToolTip`, `DragType` or drop settings of its own, the control's apply: a text box's
+Where a part of a control has no <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#tooltip">`ToolTip`</a>, <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#dragtype">`DragType`</a> or drop settings of its own, the control's apply: a text box's
 tooltip shows over its text, and a drop on a list's row is decided and taken by the list. Clicks stay with the part;
 the controls raise their own events for them (a selection, a value change).
 
@@ -337,20 +337,20 @@ the controls raise their own events for them (a selection, a value change).
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="dp">`HitTest`</span> | `bool` | Whether the element itself takes the mouse. On by default for every element with a style; off for an element deriving from `BaseElement` directly. |
-| <span class="dp">`Disabled`</span> | `bool` | Stops the element and its subtree from showing states, raising mouse events and taking the keyboard, and draws them darker. |
-| <span class="dp">`InheritState`</span> | `InheritState` | Which states the element shows besides its own: its parent's, its children's, both or none (the default). |
-| <span class="prop">`StateData`</span> | `ElementStateData` | Read-only. The state the element shows now and where it comes from. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#hittest">`HitTest`</a> | `bool` | Whether the element itself takes the mouse. On by default for every element with a style; off for an element deriving from `BaseElement` directly. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#disabled">`Disabled`</a> | `bool` | Stops the element and its subtree from showing states, raising mouse events and taking the keyboard, and draws them darker. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#inheritstate">`InheritState`</a> | <a class="ref" href="/docs/ui-glossary/types/inherit-state/">`InheritState`</a> | Which states the element shows besides its own: its parent's, its children's, both or none (the default). |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#statedata">`StateData`</a> | <a class="ref" href="/docs/ui-glossary/types/element-state-data/">`ElementStateData`</a> | Read-only. The state the element shows now and where it comes from. |
 
 ### Mouse and states events
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| <span class="event">`OnStateChanged`</span> | `(BaseElement sender, ElementStateData e)` | The state the element shows changes, its own or one it takes. Raised again for every change of the mouse buttons while the element is pressed. |
-| <span class="event">`OnMouseEnter`</span> | `(BaseElement sender)` | The element starts taking the mouse. |
-| <span class="event">`OnMouseLeave`</span> | `(BaseElement sender)` | The element stops taking the mouse: the mouse left, moved onto a child that takes it, or the element got disabled or hidden. |
-| <span class="event">`OnClick`</span> | `(BaseElement sender, MouseClickEventArgs e)` | A mouse button pressed on the element is released over it (with `RepeatClicks`: on the press and while it is held). |
-| <span class="event">`OnDoubleClick`</span> | `(BaseElement sender, MouseClickEventArgs e)` | The left button is pressed a second time within `DoubleClickIntervalMs`. Not raised by an element with `RepeatClicks`. |
+| <a class="ref event" href="/docs/ui-glossary/elements/base-element/#onstatechanged">`OnStateChanged`</a> | `(BaseElement sender, ElementStateData e)` | The state the element shows changes, its own or one it takes. Raised again for every change of the mouse buttons while the element is pressed. |
+| <a class="ref event" href="/docs/ui-glossary/elements/base-element/#onmouseenter">`OnMouseEnter`</a> | `(BaseElement sender)` | The element starts taking the mouse. |
+| <a class="ref event" href="/docs/ui-glossary/elements/base-element/#onmouseleave">`OnMouseLeave`</a> | `(BaseElement sender)` | The element stops taking the mouse: the mouse left, moved onto a child that takes it, or the element got disabled or hidden. |
+| <a class="ref event" href="/docs/ui-glossary/elements/base-element/#onclick">`OnClick`</a> | `(BaseElement sender, MouseClickEventArgs e)` | A mouse button pressed on the element is released over it (with <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#repeatclicks">`RepeatClicks`</a>: on the press and while it is held). |
+| <a class="ref event" href="/docs/ui-glossary/elements/base-element/#ondoubleclick">`OnDoubleClick`</a> | `(BaseElement sender, MouseClickEventArgs e)` | The left button is pressed a second time within <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#doubleclickintervalms">`DoubleClickIntervalMs`</a>. Not raised by an element with <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#repeatclicks">`RepeatClicks`</a>. |
 
 #### `InheritState`
 
@@ -358,10 +358,10 @@ A set of flags: the values combine.
 
 | Value | Meaning |
 | --- | --- |
-| `None` | Shows its own state only. |
-| `FromParent` | Also shows its parent's state (its own and what the parent took from above). |
-| `FromChildren` | Also shows the highest state of its children. |
-| `Both` | `FromParent` and `FromChildren`. |
+| <a class="ref" href="/docs/ui-glossary/types/inherit-state/#none">`None`</a> | Shows its own state only. |
+| <a class="ref" href="/docs/ui-glossary/types/inherit-state/#fromparent">`FromParent`</a> | Also shows its parent's state (its own and what the parent took from above). |
+| <a class="ref" href="/docs/ui-glossary/types/inherit-state/#fromchildren">`FromChildren`</a> | Also shows the highest state of its children. |
+| <a class="ref" href="/docs/ui-glossary/types/inherit-state/#both">`Both`</a> | <a class="ref" href="/docs/ui-glossary/types/inherit-state/#fromparent">`FromParent`</a> and <a class="ref" href="/docs/ui-glossary/types/inherit-state/#fromchildren">`FromChildren`</a>. |
 
 #### `ElementState`
 
@@ -369,81 +369,81 @@ From the lowest to the highest.
 
 | Value | Meaning |
 | --- | --- |
-| `Normal` | Nothing is happening to the element. |
-| `Hover` | The element takes the mouse. |
-| `MouseButtonsActivity` | A mouse button pressed on the element is held. |
-| `DropDenied` | A dragged element is over the element and it does not take the drop. |
-| `DropAllowed` | A dragged element is over the element and it takes the drop. |
+| <a class="ref" href="/docs/ui-glossary/types/element-state/#normal">`Normal`</a> | Nothing is happening to the element. |
+| <a class="ref" href="/docs/ui-glossary/types/element-state/#hover">`Hover`</a> | The element takes the mouse. |
+| <a class="ref" href="/docs/ui-glossary/types/element-state/#mousebuttonsactivity">`MouseButtonsActivity`</a> | A mouse button pressed on the element is held. |
+| <a class="ref" href="/docs/ui-glossary/types/element-state/#dropdenied">`DropDenied`</a> | A dragged element is over the element and it does not take the drop. |
+| <a class="ref" href="/docs/ui-glossary/types/element-state/#dropallowed">`DropAllowed`</a> | A dragged element is over the element and it takes the drop. |
 
 #### `StateSource`
 
 | Value | Meaning |
 | --- | --- |
-| `Own` | The element's own state. |
-| `Parent` | Taken from the parent (`InheritState.FromParent`). |
-| `Children` | Taken from the children (`InheritState.FromChildren`). |
+| <a class="ref" href="/docs/ui-glossary/types/state-source/#own">`Own`</a> | The element's own state. |
+| <a class="ref" href="/docs/ui-glossary/types/state-source/#parent">`Parent`</a> | Taken from the parent (<a class="ref" href="/docs/ui-glossary/types/inherit-state/#fromparent">`InheritState.FromParent`</a>). |
+| <a class="ref" href="/docs/ui-glossary/types/state-source/#children">`Children`</a> | Taken from the children (<a class="ref" href="/docs/ui-glossary/types/inherit-state/#fromchildren">`InheritState.FromChildren`</a>). |
 
 ### ElementStateData
 
-The state an element shows, passed to `OnStateChanged`. The UI shares one immutable instance per state and source.
+The state an element shows, passed to <a class="ref event" href="/docs/ui-glossary/elements/base-element/#onstatechanged">`OnStateChanged`</a>. The UI shares one immutable instance per state and source.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="prop">`State`</span> | `ElementState` | Read-only. The state shown. |
-| <span class="prop">`Source`</span> | `StateSource` | Read-only. Where the state comes from. |
-| <span class="prop">`MouseButtonsStates`</span> | `MouseButtonsStates` | Read-only. The current states of the mouse buttons (read when you read it, not stored with the state). |
-| <span class="prop">`NormalOwn`</span> | `ElementStateData` | Static, read-only field. The `Normal` / `Own` state every element starts with. |
+| <a class="ref prop" href="/docs/ui-glossary/types/element-state-data/#state">`State`</a> | <a class="ref" href="/docs/ui-glossary/types/element-state/">`ElementState`</a> | Read-only. The state shown. |
+| <a class="ref prop" href="/docs/ui-glossary/types/element-state-data/#source">`Source`</a> | <a class="ref" href="/docs/ui-glossary/types/state-source/">`StateSource`</a> | Read-only. Where the state comes from. |
+| <a class="ref prop" href="/docs/ui-glossary/types/element-state-data/#mousebuttonsstates">`MouseButtonsStates`</a> | <a class="ref prop" href="/docs/ui-glossary/types/element-state-data/#mousebuttonsstates">`MouseButtonsStates`</a> | Read-only. The current states of the mouse buttons (read when you read it, not stored with the state). |
+| <a class="ref prop" href="/docs/ui-glossary/types/element-state-data/#normalown-1">`NormalOwn`</a> | `ElementStateData` | Static, read-only field. The `Normal` / `Own` state every element starts with. |
 
 | Method | Description |
 | --- | --- |
-| <span class="method">`ElementStateData(ElementState state, StateSource source)`</span> | Creates a state, for example to compare with `StateData`. |
-| <span class="method">`operator ==(ElementStateData state1, ElementStateData state2)`</span> | True when the state and the source are equal. `!=` and `Equals` compare the same way. |
-| <span class="method">`GetHashCode()`</span> | A hash of the state and the source. |
-| <span class="method">`ToString()`</span> | The state and the source as text, separated by a vertical bar. |
+| <a class="ref method" href="/docs/ui-glossary/types/element-state-data/#elementstatedata">`ElementStateData(ElementState state, StateSource source)`</a> | Creates a state, for example to compare with <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#statedata">`StateData`</a>. |
+| <a class="ref method" href="/docs/ui-glossary/types/element-state-data/#section">`operator ==(ElementStateData state1, ElementStateData state2)`</a> | True when the state and the source are equal. `!=` and `Equals` compare the same way. |
+| <a class="ref method" href="/docs/ui-glossary/types/element-state-data/#gethashcode">`GetHashCode()`</a> | A hash of the state and the source. |
+| <a class="ref method" href="/docs/ui-glossary/types/element-state-data/#tostring">`ToString()`</a> | The state and the source as text, separated by a vertical bar. |
 
 ### MouseClickEventArgs
 
-What `OnClick` and `OnDoubleClick` get, taken when the click happens.
+What `OnClick` and <a class="ref event" href="/docs/ui-glossary/elements/base-element/#ondoubleclick">`OnDoubleClick`</a> get, taken when the click happens.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="prop">`MousePosition`</span> | `Point` | Read-only. The mouse position in units, like the element positions. |
-| <span class="prop">`ButtonsStates`</span> | `MouseButtonsStates` | Read-only. The states of the mouse buttons, to tell which button clicked. |
+| <a class="ref prop" href="/docs/ui-glossary/types/mouse-click-event-args/#mouseposition">`MousePosition`</a> | `Point` | Read-only. The mouse position in units, like the element positions. |
+| <a class="ref prop" href="/docs/ui-glossary/types/mouse-click-event-args/#buttonsstates">`ButtonsStates`</a> | `MouseButtonsStates` | Read-only. The states of the mouse buttons, to tell which button clicked. |
 
 | Method | Description |
 | --- | --- |
-| <span class="method">`MouseClickEventArgs()`</span> | Takes the current mouse position and buttons states. |
+| <a class="ref method" href="/docs/ui-glossary/types/mouse-click-event-args/#mouseclickeventargs">`MouseClickEventArgs()`</a> | Takes the current mouse position and buttons states. |
 
 ## Click timing
 
-Four properties set how an element turns presses into clicks. Their defaults come from `DefaultSettings`
+Four properties set how an element turns presses into clicks. Their defaults come from <a class="ref" href="/docs/ui-glossary/types/default-settings/">`DefaultSettings`</a>
 (`DefaultTimeBeforeRepeatStartsMs`, `DefaultTimeBetweenRepeatsMs`, `DefaultDoubleClickIntervalMs`); change those before
 you create the elements to change them everywhere (see [styles](/docs/ui-styles/)).
 
-With `RepeatClicks` on, `OnClick` is raised as soon as the left button is pressed, again after
-`TimeBeforeRepeatStartsMs`, then every `TimeBetweenRepeatsMs` while the button is held over the element. The repeats
+With <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#repeatclicks">`RepeatClicks`</a> on, `OnClick` is raised as soon as the left button is pressed, again after
+<a class="ref dp" href="/docs/ui-glossary/elements/base-element/#timebeforerepeatstartsms">`TimeBeforeRepeatStartsMs`</a>, then every <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#timebetweenrepeatsms">`TimeBetweenRepeatsMs`</a> while the button is held over the element. The repeats
 stop when the button is released, when the mouse leaves the element, and when the element is disabled, hidden or
-removed. A repeating element raises no `OnClick` on release and no `OnDoubleClick`, and only the left button clicks it.
+removed. A repeating element raises no `OnClick` on release and no <a class="ref event" href="/docs/ui-glossary/elements/base-element/#ondoubleclick">`OnDoubleClick`</a>, and only the left button clicks it.
 
-A control passes its timings to its own parts: setting `TimeBeforeRepeatStartsMs`, `TimeBetweenRepeatsMs` or
-`DoubleClickIntervalMs` on a list sets them on its scroll bars too (also on parts added later, such as a scroll bar
-shown for the first time). Your own elements inside a control keep theirs. `RepeatClicks` is not passed on.
+A control passes its timings to its own parts: setting <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#timebeforerepeatstartsms">`TimeBeforeRepeatStartsMs`</a>, <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#timebetweenrepeatsms">`TimeBetweenRepeatsMs`</a> or
+<a class="ref dp" href="/docs/ui-glossary/elements/base-element/#doubleclickintervalms">`DoubleClickIntervalMs`</a> on a list sets them on its scroll bars too (also on parts added later, such as a scroll bar
+shown for the first time). Your own elements inside a control keep theirs. <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#repeatclicks">`RepeatClicks`</a> is not passed on.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="dp">`RepeatClicks`</span> | `bool` | Raises `OnClick` on the press and repeatedly while the left button is held, instead of once on release. Off by default. |
-| <span class="dp">`TimeBeforeRepeatStartsMs`</span> | `int` | Milliseconds from the press to the first repeated click. 1000 by default; negative values are taken as 0. |
-| <span class="dp">`TimeBetweenRepeatsMs`</span> | `int` | Milliseconds between the repeated clicks after the first one. 300 by default; negative values are taken as 0. |
-| <span class="dp">`DoubleClickIntervalMs`</span> | `int` | The longest time in milliseconds between two left presses that make a double click. 300 by default; negative values are taken as 0. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#repeatclicks">`RepeatClicks`</a> | `bool` | Raises `OnClick` on the press and repeatedly while the left button is held, instead of once on release. Off by default. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#timebeforerepeatstartsms">`TimeBeforeRepeatStartsMs`</a> | `int` | Milliseconds from the press to the first repeated click. 1000 by default; negative values are taken as 0. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#timebetweenrepeatsms">`TimeBetweenRepeatsMs`</a> | `int` | Milliseconds between the repeated clicks after the first one. 300 by default; negative values are taken as 0. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#doubleclickintervalms">`DoubleClickIntervalMs`</a> | `int` | The longest time in milliseconds between two left presses that make a double click. 300 by default; negative values are taken as 0. |
 
 ## Keyboard and focus
 
-One element at a time has the keyboard. `Focus()` gives it to an element; the keys and the typed text then go to that
+One element at a time has the keyboard. <a class="ref method" href="/docs/ui-glossary/elements/base-element/#focus">`Focus()`</a> gives it to an element; the keys and the typed text then go to that
 element only, until another element is focused, a mouse press lands outside of it, or it is hidden, disabled or taken
 out of the tree. Without a focused element no element gets keys.
 
 A key goes to the focused element first, then up through its parents until one sets `Handled`. On each element the
-element's own use of the key comes first, then its `OnKeyDown`. The built-in controls handle the keys they use (a list
+element's own use of the key comes first, then its <a class="ref event" href="/docs/ui-glossary/elements/base-element/#onkeydown">`OnKeyDown`</a>. The built-in controls handle the keys they use (a list
 its navigation keys, a text box its caret keys, an open context menu every key), so a window or a panel around them
 gets the others, such as Escape or a shortcut:
 
@@ -457,36 +457,36 @@ window.OnKeyDown += (_, e) =>
 };
 ```
 
-The focused element's own `OnKeyDown` is raised even for a key its control used; `Handled` is already true then.
+The focused element's own <a class="ref event" href="/docs/ui-glossary/elements/base-element/#onkeydown">`OnKeyDown`</a> is raised even for a key its control used; `Handled` is already true then.
 
 ### Keyboard and focus properties
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="prop">`IsFocused`</span> | `bool` | Read-only. True while the element has the keyboard. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#isfocused">`IsFocused`</a> | `bool` | Read-only. True while the element has the keyboard. |
 
 ### Keyboard and focus events
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| <span class="event">`OnKeyDown`</span> | `(BaseElement sender, KeyDownEventArgs e)` | A key is pressed while the element, or an element inside it that left the key unhandled, has the keyboard. |
+| <a class="ref event" href="/docs/ui-glossary/elements/base-element/#onkeydown">`OnKeyDown`</a> | `(BaseElement sender, KeyDownEventArgs e)` | A key is pressed while the element, or an element inside it that left the key unhandled, has the keyboard. |
 
 ### Keyboard and focus methods
 
 | Method | Description |
 | --- | --- |
-| <span class="method">`Focus()`</span> | Gives the element the keyboard. Returns false when it can't take it: it is not in the tree, hidden or disabled. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#focus">`Focus()`</a> | Gives the element the keyboard. Returns false when it can't take it: it is not in the tree, hidden or disabled. |
 
 ### KeyDownEventArgs
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="prop">`Key`</span> | `Keys` | Read-only. The key pressed. |
-| <span class="prop">`Handled`</span> | `bool` | Set it to true to stop the key from going on to the parents. |
+| <a class="ref prop" href="/docs/ui-glossary/types/key-down-event-args/#key">`Key`</a> | `Keys` | Read-only. The key pressed. |
+| <a class="ref prop" href="/docs/ui-glossary/types/key-down-event-args/#handled">`Handled`</a> | `bool` | Set it to true to stop the key from going on to the parents. |
 
 | Method | Description |
 | --- | --- |
-| <span class="method">`KeyDownEventArgs(Keys key)`</span> | Creates the arguments for a key. |
+| <a class="ref method" href="/docs/ui-glossary/types/key-down-event-args/#keydowneventargs">`KeyDownEventArgs(Keys key)`</a> | Creates the arguments for a key. |
 
 ## Tooltips and context menus
 
@@ -496,19 +496,19 @@ tooltip or menu belongs to one element at a time: giving it to another element t
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="prop">`ToolTip`</span> | `ToolTip` | Shown while the element is hovered, after the tooltip's delay. See [ToolTip](/docs/ui-controls/#tooltip). |
-| <span class="prop">`ContextMenu`</span> | `ContextMenu` | Opened at the mouse by a right click on the element, or on an element inside it without a menu of its own. See [ContextMenu](/docs/ui-lists/#contextmenu). |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#tooltip">`ToolTip`</a> | <a class="ref" href="/docs/ui-glossary/elements/tool-tip/">`ToolTip`</a> | Shown while the element is hovered, after the tooltip's delay. See [ToolTip](/docs/ui-controls/#tooltip). |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#contextmenu">`ContextMenu`</a> | <a class="ref" href="/docs/ui-glossary/elements/context-menu/">`ContextMenu`</a> | Opened at the mouse by a right click on the element, or on an element inside it without a menu of its own. See [ContextMenu](/docs/ui-lists/#contextmenu). |
 
 ## Resizing
 
-Set `IsResizable` to let the user resize an element with the mouse. It gets resize areas over its edges and corners,
-reaching `ResizeAreaHalfWidth` units to each side of the edge, with the resize cursors of its `MouseCursorsSet`.
-Dragging an area changes `DesiredWidth` / `DesiredHeight` (or the margins of a stretched element without a desired
+Set <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#isresizable">`IsResizable`</a> to let the user resize an element with the mouse. It gets resize areas over its edges and corners,
+reaching <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#resizeareahalfwidth">`ResizeAreaHalfWidth`</a> units to each side of the edge, with the resize cursors of its <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#mousecursorsset">`MouseCursorsSet`</a>.
+Dragging an area changes <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#desiredwidth">`DesiredWidth`</a> / <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#desiredheight">`DesiredHeight`</a> (or the margins of a stretched element without a desired
 size) so that the opposite edge stays where it was; a centred element grows on both sides. The size stays within
-`MinWidth` ... `MaxHeight`; without a minimum it is at least two resize areas wide. The element needs a parent; the root can't be made
+<a class="ref dp" href="/docs/ui-glossary/elements/base-element/#minwidth">`MinWidth`</a> ... <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#maxheight">`MaxHeight`</a>; without a minimum it is at least two resize areas wide. The element needs a parent; the root can't be made
 resizable.
 
-With `ResizeWithElementContour` the element stays as it is while you drag: a contour, drawn above everything, shows
+With <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#resizewithelementcontour">`ResizeWithElementContour`</a> the element stays as it is while you drag: a contour, drawn above everything, shows
 the new bounds, and the element is resized there once when the button is released.
 
 <figure class="shot">
@@ -539,12 +539,12 @@ ui.AddElementToRoot(panel);
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="dp">`IsResizable`</span> | `bool` | Lets the user resize the element by dragging its edges and corners. |
-| <span class="dp">`ResizeAreaHalfWidth`</span> | `int` | How far the resize areas reach to each side of the edges, in units. 3 by default (`DefaultSettings.DefaultResizeAreaHalfWidth`); negative values are taken as 0. |
-| <span class="dp">`ResizeWithElementContour`</span> | `bool` | Shows a contour while dragging and resizes the element once on release, instead of resizing it as the mouse moves. |
-| <span class="dp">`ResizeContourColor`</span> | `Color` | The colour of the contour. `(50, 50, 50, 190)` by default (`DefaultSettings.DefaultResizeContourColor`); it fades and darkens with the element. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#isresizable">`IsResizable`</a> | `bool` | Lets the user resize the element by dragging its edges and corners. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#resizeareahalfwidth">`ResizeAreaHalfWidth`</a> | `int` | How far the resize areas reach to each side of the edges, in units. 3 by default (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultresizeareahalfwidth">`DefaultSettings.DefaultResizeAreaHalfWidth`</a>); negative values are taken as 0. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#resizewithelementcontour">`ResizeWithElementContour`</a> | `bool` | Shows a contour while dragging and resizes the element once on release, instead of resizing it as the mouse moves. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#resizecontourcolor">`ResizeContourColor`</a> | `Color` | The colour of the contour. `(50, 50, 50, 190)` by default (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultresizecontourcolor">`DefaultSettings.DefaultResizeContourColor`</a>); it fades and darkens with the element. |
 
-`ResizeState` names the edge or corner a resize drags; `ResizeCursors` has a cursor set for each one (see
+<a class="ref" href="/docs/ui-glossary/types/resize-state/">`ResizeState`</a> names the edge or corner a resize drags; <a class="ref" href="/docs/ui-glossary/types/resize-cursors/">`ResizeCursors`</a> has a cursor set for each one (see
 [styles](/docs/ui-styles/)).
 
 | Value | Meaning |
@@ -561,31 +561,31 @@ ui.AddElementToRoot(panel);
 
 ## Drag and drop properties
 
-An element with a `DragType` is dragged with the left button. `DragOnly` moves its `DragTarget` with the mouse by
+An element with a <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#dragtype">`DragType`</a> is dragged with the left button. `DragOnly` moves its <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#dragtarget">`DragTarget`</a> with the mouse by
 changing its margins (a window's title bar moves the window this way). `DragAndDrop` shows the target's
-`DragAndDropRepresentation` under the mouse and asks each element it passes over whether it takes the drop. The full
+<a class="ref prop" href="/docs/ui-glossary/elements/base-element/#draganddroprepresentation">`DragAndDropRepresentation`</a> under the mouse and asks each element it passes over whether it takes the drop. The full
 walk-through with a screenshot is on the [images page](/docs/ui-images/#drag-and-drop).
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="dp">`DragType`</span> | `DragType` | Whether a press on the element drags something: nothing (the default), the element itself, or a drag and drop. |
-| <span class="prop">`DragTarget`</span> | `BaseElement` | The element that is dragged; the element itself by default. |
-| <span class="prop">`DragAndDropRepresentation`</span> | `DragAndDropRepresentation` | What is drawn under the mouse while the element is the dragged one. Detached, not disposed, with the element. |
-| <span class="prop">`IsDropAllowedPredicate`</span> | `IfDropAllowed` | Decides whether a dragged element can be dropped here: `bool (BaseElement draggedElement)`. Without one every drop is denied. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#dragtype">`DragType`</a> | <a class="ref" href="/docs/ui-glossary/types/drag-type/">`DragType`</a> | Whether a press on the element drags something: nothing (the default), the element itself, or a drag and drop. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#dragtarget">`DragTarget`</a> | `BaseElement` | The element that is dragged; the element itself by default. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#draganddroprepresentation">`DragAndDropRepresentation`</a> | <a class="ref" href="/docs/ui-glossary/elements/drag-and-drop-representation/">`DragAndDropRepresentation`</a> | What is drawn under the mouse while the element is the dragged one. Detached, not disposed, with the element. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#isdropallowedpredicate">`IsDropAllowedPredicate`</a> | `IfDropAllowed` | Decides whether a dragged element can be dropped here: `bool (BaseElement draggedElement)`. Without one every drop is denied. |
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| <span class="event">`OnDragAndDropStart`</span> | `(BaseElement draggedElement)` | A drag and drop of this element (as the `DragTarget`) starts; the argument is the element whose `DragType` started it. |
-| <span class="event">`OnDrop`</span> | `(BaseElement draggedElement, BaseElement dragAndDropDestination)` | A dragged element is released over this element and its predicate allowed it. |
-| <span class="event">`OnDropDenied`</span> | `(BaseElement draggedElement, BaseElement dragAndDropDestination)` | A dragged element is released over this element and the drop is denied. |
+| <a class="ref event" href="/docs/ui-glossary/elements/base-element/#ondraganddropstart">`OnDragAndDropStart`</a> | `(BaseElement draggedElement)` | A drag and drop of this element (as the <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#dragtarget">`DragTarget`</a>) starts; the argument is the element whose <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#dragtype">`DragType`</a> started it. |
+| <a class="ref event" href="/docs/ui-glossary/elements/base-element/#ondrop">`OnDrop`</a> | `(BaseElement draggedElement, BaseElement dragAndDropDestination)` | A dragged element is released over this element and its predicate allowed it. |
+| <a class="ref event" href="/docs/ui-glossary/elements/base-element/#ondropdenied">`OnDropDenied`</a> | `(BaseElement draggedElement, BaseElement dragAndDropDestination)` | A dragged element is released over this element and the drop is denied. |
 
 #### `DragType`
 
 | Value | Meaning |
 | --- | --- |
-| `None` | A press drags nothing. |
-| `DragOnly` | A press moves the `DragTarget` with the mouse. |
-| `DragAndDrop` | A press starts a drag and drop of the `DragTarget`. |
+| <a class="ref" href="/docs/ui-glossary/types/drag-type/#none">`None`</a> | A press drags nothing. |
+| <a class="ref" href="/docs/ui-glossary/types/drag-type/#dragonly">`DragOnly`</a> | A press moves the <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#dragtarget">`DragTarget`</a> with the mouse. |
+| <a class="ref" href="/docs/ui-glossary/types/drag-type/#draganddrop">`DragAndDrop`</a> | A press starts a drag and drop of the <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#dragtarget">`DragTarget`</a>. |
 
 ## Grid placement
 
@@ -593,112 +593,112 @@ These properties place an element inside a [`Grid`](/docs/ui-layout/#grid); othe
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="dp">`GridRow`</span> | `int` | The row the element starts in, from 0. |
-| <span class="dp">`GridColumn`</span> | `int` | The column the element starts in, from 0. |
-| <span class="dp">`GridRowSpan`</span> | `int` | How many rows the element covers; values below 1 are taken as 1. |
-| <span class="dp">`GridColumnSpan`</span> | `int` | How many columns the element covers; values below 1 are taken as 1. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#gridrow">`GridRow`</a> | `int` | The row the element starts in, from 0. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#gridcolumn">`GridColumn`</a> | `int` | The column the element starts in, from 0. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#gridrowspan">`GridRowSpan`</a> | `int` | How many rows the element covers; values below 1 are taken as 1. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#gridcolumnspan">`GridColumnSpan`</a> | `int` | How many columns the element covers; values below 1 are taken as 1. |
 
 ## Debug helpers
 
 `BaseElement.ShowStateTint = true` tints every element whose own state is not `Normal`: hovered, pressed (with the
-left button), or a drop target. Per element, `ShowHitRectangle` and `ShowActualSizeRectangle` outline where the element
-takes the mouse and where the layout put it. None of these are dependency properties. `Grid.ShowLayout` draws a grid's
+left button), or a drop target. Per element, <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#showhitrectangle">`ShowHitRectangle`</a> and <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#showactualsizerectangle">`ShowActualSizeRectangle`</a> outline where the element
+takes the mouse and where the layout put it. None of these are dependency properties. <a class="ref prop" href="/docs/ui-glossary/elements/grid/#showlayout">`Grid.ShowLayout`</a> draws a grid's
 cells (see [Grid](/docs/ui-layout/#grid)).
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="prop">`ShowStateTint`</span> | `bool` | Static. Draws the state tints below over the elements. Off by default. |
-| <span class="prop">`HoverTint`</span> | `Color` | Static. The tint of a hovered element, `(0, 10, 60, 10)` by default. |
-| <span class="prop">`PressedTint`</span> | `Color` | Static. The tint of a pressed element, `(128, 128, 0, 10)` by default. |
-| <span class="prop">`DropAllowedTint`</span> | `Color` | Static. The tint of a drop target that takes the dragged element, `(0, 100, 0, 10)` by default. |
-| <span class="prop">`DropDeniedTint`</span> | `Color` | Static. The tint of a drop target that denies it, `(100, 0, 0, 10)` by default. |
-| <span class="prop">`ModalWindowActiveShadeTint`</span> | `Color` | Static. The shade drawn over everything below the top modal window, `(0, 0, 0, 75)` by default. Always drawn, not a debug setting. |
-| <span class="prop">`ShowHitRectangle`</span> | `bool` | Outlines the element's hit rectangle: its bounds as clipped by its parents. |
-| <span class="prop">`ShowHitRectangleDiagonals`</span> | `bool` | Adds the diagonals to the hit rectangle outline. |
-| <span class="prop">`HitRectangleColor`</span> | `Color` | The colour of the hit rectangle outline, `White` by default. |
-| <span class="prop">`ShowActualSizeRectangle`</span> | `bool` | Outlines the element's `Bounds`, without clipping. |
-| <span class="prop">`ShowActualSizeRectangleDiagonals`</span> | `bool` | Adds the diagonals to the bounds outline. |
-| <span class="prop">`ActualSizeRectangleColor`</span> | `Color` | The colour of the bounds outline, `Green` by default. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#showstatetint">`ShowStateTint`</a> | `bool` | Static. Draws the state tints below over the elements. Off by default. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#hovertint">`HoverTint`</a> | `Color` | Static. The tint of a hovered element, `(0, 10, 60, 10)` by default. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#pressedtint">`PressedTint`</a> | `Color` | Static. The tint of a pressed element, `(128, 128, 0, 10)` by default. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#dropallowedtint">`DropAllowedTint`</a> | `Color` | Static. The tint of a drop target that takes the dragged element, `(0, 100, 0, 10)` by default. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#dropdeniedtint">`DropDeniedTint`</a> | `Color` | Static. The tint of a drop target that denies it, `(100, 0, 0, 10)` by default. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#modalwindowactiveshadetint">`ModalWindowActiveShadeTint`</a> | `Color` | Static. The shade drawn over everything below the top modal window, `(0, 0, 0, 75)` by default. Always drawn, not a debug setting. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#showhitrectangle">`ShowHitRectangle`</a> | `bool` | Outlines the element's hit rectangle: its bounds as clipped by its parents. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#showhitrectanglediagonals">`ShowHitRectangleDiagonals`</a> | `bool` | Adds the diagonals to the hit rectangle outline. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#hitrectanglecolor">`HitRectangleColor`</a> | `Color` | The colour of the hit rectangle outline, `White` by default. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#showactualsizerectangle">`ShowActualSizeRectangle`</a> | `bool` | Outlines the element's <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#bounds">`Bounds`</a>, without clipping. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#showactualsizerectanglediagonals">`ShowActualSizeRectangleDiagonals`</a> | `bool` | Adds the diagonals to the bounds outline. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#actualsizerectanglecolor">`ActualSizeRectangleColor`</a> | `Color` | The colour of the bounds outline, `Green` by default. |
 
 ## Styles and cursors
 
 Almost every element derives from `GenericStyleAndMouseCursorsData<TStyle>`, which ties it to a style class: a `Button`
 is a `GenericStyleAndMouseCursorsData<ButtonStyle>`, so `Button.GeneralStyle` styles every button and
-`button.StyleOverride` one button. A value you set on the element itself wins over both. `Grid`, `Separator` and the
+<span class="prop">`button.StyleOverride`</span> one button. A value you set on the element itself wins over both. <a class="ref" href="/docs/ui-glossary/elements/grid/">`Grid`</a>, <a class="ref" href="/docs/ui-glossary/elements/separator/">`Separator`</a> and the
 parts made for other elements (rows, cells, title bars) derive from `BaseElement` directly and have no style. Styles
 and cursor sets are explained on the [styles page](/docs/ui-styles/).
 
-The cursors work the same way, from the most general to the most specific: `BaseElement.DefaultMouseCursorsSet` for
-every element, `GeneralMouseCursorsSet` per element type, `MouseCursorsSetOverride` per element. A set given to a
+The cursors work the same way, from the most general to the most specific: <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#defaultmousecursorsset">`BaseElement.DefaultMouseCursorsSet`</a> for
+every element, <span class="prop">`GeneralMouseCursorsSet`</span> per element type, <span class="prop">`MouseCursorsSetOverride`</span> per element. A set given to a
 control reaches its parts (the scroll bars of a list, the title bar of a window) unless they have one of their own.
 
 ### GenericStyleAndMouseCursorsData properties
 
-`TStyle` is a style class (deriving from `BaseStyle`, with a parameterless constructor).
+`TStyle` is a style class (deriving from <a class="ref" href="/docs/ui-glossary/types/base-style/">`BaseStyle`</a>, with a parameterless constructor).
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="prop">`GeneralStyle`</span> | `TStyle` | Static. The style of every element of this style type. It starts as a copy of the framework defaults; changing one of its properties updates every such element, a property it leaves unset takes its default. |
-| <span class="prop">`StyleOverride`</span> | `TStyle` | A style for this element only, applied over the general style. Setting it to null takes its values back out. |
-| <span class="prop">`GeneralMouseCursorsSet`</span> | `MouseCursorsSet` | Static. The cursors of every element of this style type; null (the default) falls back to `DefaultMouseCursorsSet`. |
-| <span class="prop">`MouseCursorsSetOverride`</span> | `MouseCursorsSet` | The cursors of this element only, passed on to its parts that have none of their own. |
-| <span class="prop">`MouseCursorsSet`</span> | `MouseCursorsSet` | Read-only. The cursors the element shows: its override, else the set given to the control it is a part of, else its type's general set, else `DefaultMouseCursorsSet`. |
+| <a class="ref prop" href="/docs/ui-glossary/types/generic-style-and-mouse-cursors-data/#generalstyle">`GeneralStyle`</a> | `TStyle` | Static. The style of every element of this style type. It starts as a copy of the framework defaults; changing one of its properties updates every such element, a property it leaves unset takes its default. |
+| <a class="ref prop" href="/docs/ui-glossary/types/generic-style-and-mouse-cursors-data/#styleoverride">`StyleOverride`</a> | `TStyle` | A style for this element only, applied over the general style. Setting it to null takes its values back out. |
+| <a class="ref prop" href="/docs/ui-glossary/types/generic-style-and-mouse-cursors-data/#generalmousecursorsset">`GeneralMouseCursorsSet`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | Static. The cursors of every element of this style type; null (the default) falls back to <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#defaultmousecursorsset">`DefaultMouseCursorsSet`</a>. |
+| <a class="ref prop" href="/docs/ui-glossary/types/generic-style-and-mouse-cursors-data/#mousecursorssetoverride">`MouseCursorsSetOverride`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | The cursors of this element only, passed on to its parts that have none of their own. |
+| <a class="ref prop" href="/docs/ui-glossary/types/generic-style-and-mouse-cursors-data/#mousecursorsset">`MouseCursorsSet`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | Read-only. The cursors the element shows: its override, else the set given to the control it is a part of, else its type's general set, else <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#defaultmousecursorsset">`DefaultMouseCursorsSet`</a>. |
 
 ### BaseElement cursor properties
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="prop">`DefaultMouseCursorsSet`</span> | `MouseCursorsSet` | Static. The cursors of every element without a more specific set: an arrow on hover, a hand over an element that can be dragged, a "no" cursor over a denied drop, and the sizing arrows over resize areas. `BorrowedTorchUI.SetDefaultMouseCursorsSet` sets it too. |
-| <span class="prop">`MouseCursorsSet`</span> | `MouseCursorsSet` | Read-only. The cursors the element shows. On an element without a style: its control's cursors when it is a part of one, otherwise `DefaultMouseCursorsSet`. |
+| <span class="prop">`DefaultMouseCursorsSet`</span> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | Static. The cursors of every element without a more specific set: an arrow on hover, a hand over an element that can be dragged, a "no" cursor over a denied drop, and the sizing arrows over resize areas. <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-u-i/#setdefaultmousecursorsset">`BorrowedTorchUI.SetDefaultMouseCursorsSet`</a> sets it too. |
+| <a class="ref prop" href="/docs/ui-glossary/types/generic-style-and-mouse-cursors-data/#mousecursorsset">`MouseCursorsSet`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | Read-only. The cursors the element shows. On an element without a style: its control's cursors when it is a part of one, otherwise <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#defaultmousecursorsset">`DefaultMouseCursorsSet`</a>. |
 
 ## The root element
 
-`RootElement` is the top of the element tree. `BorrowedTorchUI` creates it (you can't create one yourself) and gives
+<a class="ref" href="/docs/ui-glossary/elements/root-element/">`RootElement`</a> is the top of the element tree. <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-u-i/">`BorrowedTorchUI`</a> creates it (you can't create one yourself) and gives
 it as `ui.RootElement`; `ui.AddElementToRoot(element)` adds an item to it. It has the size of the game window in
 units (the back buffer size divided by the display scale) and follows the back buffer when the window is resized,
 or takes the size given to `ApplyGameWindowSize`. It can't be resizable and it draws no background of its own, so give a full-screen panel your background
 colour instead.
 
-Above the tree the root draws the popups: the modal windows (with `ModalWindowActiveShadeTint` under the top one), the
+Above the tree the root draws the popups: the modal windows (with <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#modalwindowactiveshadetint">`ModalWindowActiveShadeTint`</a> under the top one), the
 open drop-down, the open context menu, the tooltip, the dragged representation and the resize contour, in that order
-from the bottom. A drag and drop released where no element takes it is denied by the root (its `OnDropDenied` is
+from the bottom. A drag and drop released where no element takes it is denied by the root (its <a class="ref event" href="/docs/ui-glossary/elements/base-element/#ondropdenied">`OnDropDenied`</a> is
 raised).
 
-`ui.Dispose()` disposes the root. The elements you added to it are detached, not disposed: dispose the ones that hold
+<a class="ref method" href="/docs/ui-glossary/elements/base-element/#dispose">`ui.Dispose()`</a> disposes the root. The elements you added to it are detached, not disposed: dispose the ones that hold
 resources yourself.
 
-`RootElement` adds no public members to `GenericStyleAndMouseCursorsData<RootElementStyle>`. Style class:
-`RootElementStyle` (the base element properties only, see [styles](/docs/ui-styles/)).
+<a class="ref" href="/docs/ui-glossary/elements/root-element/">`RootElement`</a> adds no public members to `GenericStyleAndMouseCursorsData<RootElementStyle>`. Style class:
+<a class="ref" href="/docs/ui-glossary/types/root-element-style/">`RootElementStyle`</a> (the base element properties only, see [styles](/docs/ui-styles/)).
 
 ## Writing your own element
 
 The layout runs when something changed, in two walks down the tree. **Measure** finds every element's size from its
 own settings, the slot its parent gives it and its content. **Arrange** then gives every element its final size
-(`ActualWidth`, `ActualHeight`) and position (`Location`). One measure and one arrange settle a change, and nothing
+(<a class="ref prop" href="/docs/ui-glossary/elements/base-element/#actualwidth">`ActualWidth`</a>, <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#actualheight">`ActualHeight`</a>) and position (<a class="ref prop" href="/docs/ui-glossary/elements/base-element/#location">`Location`</a>). One measure and one arrange settle a change, and nothing
 reacts to a size while they run.
 
 A custom element derives from `BaseElement` (or from `GenericStyleAndMouseCursorsData<TStyle>` to have a general
 style) and overrides two methods:
 
-- `MeasureContent(int width, int height)` measures the children and returns the size of the content. `width` and
+- <a class="ref method" href="/docs/ui-glossary/elements/base-element/#measurecontent">`MeasureContent(int width, int height)`</a> measures the children and returns the size of the content. `width` and
   `height` are the element's own size where it is known (fixed or stretched, already within its size limits) and `-1`
   where the element fits its content: along such a side it takes the size you return. Measure a child with
-  `child.Measure(slotWidth, slotHeight)` (the space you give it, `-1` for a size you don't know yet) or
-  `child.MeasureAt(width, height)` (a size of your choice, `-1` for its own size), then read `child.MeasuredWidth` /
-  `MeasuredHeight` (and `MeasuredContentWidth` / `MeasuredContentHeight`, what its content needs whatever size it got).
+  <a class="ref method" href="/docs/ui-glossary/elements/base-element/#measure">`child.Measure(slotWidth, slotHeight)`</a> (the space you give it, `-1` for a size you don't know yet) or
+  <a class="ref method" href="/docs/ui-glossary/elements/base-element/#measureat">`child.MeasureAt(width, height)`</a> (a size of your choice, `-1` for its own size), then read <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#measuredwidth">`child.MeasuredWidth`</a> /
+  <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#measuredheight">`MeasuredHeight`</a> (and <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#measuredcontentwidth">`MeasuredContentWidth`</a> / <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#measuredcontentheight">`MeasuredContentHeight`</a>, what its content needs whatever size it got).
   The default lays the children over each other, each placed by its margins and alignment.
-- `ArrangeContent()` places the children inside the element's final `Bounds`: `child.Arrange(slot)` places a child in
-  a slot by its own margins and alignment, `child.ArrangeAt(bounds)` or `child.ArrangeAt(position)` puts it exactly
+- <a class="ref method" href="/docs/ui-glossary/elements/base-element/#arrangecontent">`ArrangeContent()`</a> places the children inside the element's final <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#bounds">`Bounds`</a>: <a class="ref method" href="/docs/ui-glossary/elements/base-element/#arrange">`child.Arrange(slot)`</a> places a child in
+  a slot by its own margins and alignment, <a class="ref method" href="/docs/ui-glossary/elements/base-element/#arrangeat">`child.ArrangeAt(bounds)`</a> or <a class="ref method" href="/docs/ui-glossary/elements/base-element/#arrangeat">`child.ArrangeAt(position)`</a> puts it exactly
   there (in screen coordinates). The default arranges every child in the element's bounds.
 
 Measure and arrange every child, or it keeps its old size and place. An element whose final size differs from the
-measured one is measured again at it before it is arranged. `ActualWidthChangedHandlerOverride` and the other size
+measured one is measured again at it before it is arranged. <a class="ref method" href="/docs/ui-glossary/elements/base-element/#actualwidthchangedhandleroverride">`ActualWidthChangedHandlerOverride`</a> and the other size
 handlers run after a size was given, so laying out parts there is too late.
 
-A setting of your element that changes its size or its content's calls `InvalidateMeasure()`; the layout properties
+A setting of your element that changes its size or its content's calls <a class="ref method" href="/docs/ui-glossary/elements/base-element/#invalidatemeasure">`InvalidateMeasure()`</a>; the layout properties
 of `BaseElement` do this themselves. The arrange is incremental: an element in the same slot that was not measured
-again is not arranged again. So any state your `ArrangeContent` reads that can change outside a measure (an offset, a
-scroll position) must call `InvalidateArrange()` when it changes, or the children stay where they were.
+again is not arranged again. So any state your <a class="ref method" href="/docs/ui-glossary/elements/base-element/#arrangecontent">`ArrangeContent`</a> reads that can change outside a measure (an offset, a
+scroll position) must call <a class="ref method" href="/docs/ui-glossary/elements/base-element/#invalidatearrange">`InvalidateArrange()`</a> when it changes, or the children stay where they were.
 
 Here is a row that lays its items side by side, each at its own width and at the row's height, with a gap:
 
@@ -783,10 +783,10 @@ foreach (var width in new[] { 60, 100, 40, 140 })
 ui.AddElementToRoot(row);
 ```
 
-`MeasureAt(-1, height)` lets each label keep its own width and gives it the row's height (or its own height where the
-row fits its content). `ArrangeAt` then places each label exactly, so the labels' margins and alignment don't apply.
+<a class="ref method" href="/docs/ui-glossary/elements/base-element/#measureat">`MeasureAt(-1, height)`</a> lets each label keep its own width and gives it the row's height (or its own height where the
+row fits its content). <a class="ref method" href="/docs/ui-glossary/elements/base-element/#arrangeat">`ArrangeAt`</a> then places each label exactly, so the labels' margins and alignment don't apply.
 
-An element deriving from `BaseElement` directly has no style, so `HitTest` and `CropOutsideOfParentBorder` start off
+An element deriving from `BaseElement` directly has no style, so <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#hittest">`HitTest`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#cropoutsideofparentborder">`CropOutsideOfParentBorder`</a> start off
 (the styles turn them on): set them in your constructor if the element should take the mouse or be clipped to its
 parent. An element deriving from `GenericStyleAndMouseCursorsData<TStyle>` should call `ApplyGeneralStyle()` at the end
 of its constructor to take its general style. A derived element opts out of items with
@@ -796,38 +796,38 @@ of its constructor to take its general style. A derived element opts out of item
 
 | Method | Description |
 | --- | --- |
-| <span class="method">`MeasureContent(int width, int height)`</span> | Protected virtual, returns `Point`. Measures the children and returns the content size, as described above. |
-| <span class="method">`ArrangeContent()`</span> | Protected virtual. Arranges the children inside `Bounds`, as described above. |
-| <span class="method">`Measure(int slotWidth, int slotHeight)`</span> | Measures the element for the slot its parent gives it (`-1`: a size the parent does not know yet): a stretched element takes the slot less its margins, a fixed one its desired size, the others fit their content. |
-| <span class="method">`MeasureAt(int width, int height)`</span> | Measures the element at a size its container chose for it; along a side given as `-1` it has its own size (fixed, or fitted to its content). |
-| <span class="method">`Arrange(Rectangle slot)`</span> | Gives the element its size and position in the slot: a stretched element takes the slot less its margins, the others keep their measured size and are placed by their margins and alignment. |
-| <span class="method">`ArrangeAt(Point position)`</span> | Places the element at a position its container chose, at its measured size; its margins and alignment are not applied. |
-| <span class="method">`ArrangeAt(Rectangle bounds)`</span> | Places the element at a position and size its container chose. |
-| <span class="method">`InvalidateMeasure()`</span> | Asks for a new measure and arrange of the element: a setting of its own changed its size or its content's. |
-| <span class="method">`InvalidateArrange()`</span> | Asks for the element's children to be placed again; its size stays. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#measurecontent">`MeasureContent(int width, int height)`</a> | Protected virtual, returns `Point`. Measures the children and returns the content size, as described above. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#arrangecontent">`ArrangeContent()`</a> | Protected virtual. Arranges the children inside <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#bounds">`Bounds`</a>, as described above. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#measure">`Measure(int slotWidth, int slotHeight)`</a> | Measures the element for the slot its parent gives it (`-1`: a size the parent does not know yet): a stretched element takes the slot less its margins, a fixed one its desired size, the others fit their content. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#measureat">`MeasureAt(int width, int height)`</a> | Measures the element at a size its container chose for it; along a side given as `-1` it has its own size (fixed, or fitted to its content). |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#arrange">`Arrange(Rectangle slot)`</a> | Gives the element its size and position in the slot: a stretched element takes the slot less its margins, the others keep their measured size and are placed by their margins and alignment. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#arrangeat">`ArrangeAt(Point position)`</a> | Places the element at a position its container chose, at its measured size; its margins and alignment are not applied. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#arrangeat">`ArrangeAt(Rectangle bounds)`</a> | Places the element at a position and size its container chose. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#invalidatemeasure">`InvalidateMeasure()`</a> | Asks for a new measure and arrange of the element: a setting of its own changed its size or its content's. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#invalidatearrange">`InvalidateArrange()`</a> | Asks for the element's children to be placed again; its size stays. |
 
 ### Members for derived elements
 
 | Method | Description |
 | --- | --- |
-| <span class="method">`BaseElement(string name = null)`</span> | Protected. Sets the name `GetElementByName` finds the element by. |
-| <span class="method">`GenericStyleAndMouseCursorsData(string name = null)`</span> | Protected. The same, for an element with a style. |
-| <span class="method">`AcceptsItems`</span> | Protected virtual property, `true` by default. Return false and the item methods do nothing on the element. |
-| <span class="method">`AddChild(BaseElement child, bool isSole = false, int insertIndex = -1, bool isVisualComponent = true)`</span> | Protected. Adds a child; by default an own part, which the item methods leave alone and which is disposed when it is removed. `isSole` removes the other items first. |
-| <span class="method">`RemoveChild(BaseElement child)`</span> | Protected. Takes a child out: an own part is disposed, an item only detached. |
-| <span class="method">`RemoveChildAt(int index)`</span> | Protected. The same, by index in `Children`. |
-| <span class="method">`DetachChild(BaseElement child)`</span> | Protected. Takes a child out without disposing it, to add it again later. |
-| <span class="method">`DetachChildren()`</span> | Protected. Takes every child out without disposing them. |
-| <span class="method">`DetachChildren(Predicate<BaseElement> match)`</span> | Protected. Takes the matching children out without disposing them. |
-| <span class="method">`ActualWidth`</span>, <span class="method">`ActualHeight`</span> | Their setters are protected; the layout sets them, you normally don't. |
-| <span class="method">`LoadTextures()`</span> | Protected virtual. Called when `TexturesPath` changes; load the element's textures from the folder here and call the base. |
-| <span class="method">`UnsubscribeSelf()`</span> | Protected virtual. Called on dispose: release the element's subscriptions to other objects here. |
-| <span class="method">`DisposeHandler()`</span> | Protected override. The element's dispose (see [items and content](#items-and-content)); call the base when you override it. |
-| <span class="method">`CursorsPropertyChangedHandler()`</span> | Protected. Shows the element's current cursors again, after its cursor set changed. |
-| <span class="method">`ApplyStyle(BaseStyle style, ValueSources valueSource)`</span> | Protected. Applies the style's assigned properties to the element as the given value source. |
-| <span class="method">`Style`</span> | Protected property of `GenericStyleAndMouseCursorsData<TStyle>`: the style override, or the general style. |
-| <span class="method">`ApplyGeneralStyle()`</span> | Protected, of `GenericStyleAndMouseCursorsData<TStyle>`. Applies the general style over the framework defaults. |
-| <span class="method">`ApplyStyleOverride()`</span> | Protected, of `GenericStyleAndMouseCursorsData<TStyle>`. Applies the style override again. |
+| <span class="method">`BaseElement(string name = null)`</span> | Protected. Sets the name <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a> finds the element by. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#genericstyleandmousecursorsdata">`GenericStyleAndMouseCursorsData(string name = null)`</a> | Protected. The same, for an element with a style. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#acceptsitems">`AcceptsItems`</a> | Protected virtual property, `true` by default. Return false and the item methods do nothing on the element. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#addchild">`AddChild(BaseElement child, bool isSole = false, int insertIndex = -1, bool isVisualComponent = true)`</a> | Protected. Adds a child; by default an own part, which the item methods leave alone and which is disposed when it is removed. `isSole` removes the other items first. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#removechild">`RemoveChild(BaseElement child)`</a> | Protected. Takes a child out: an own part is disposed, an item only detached. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#removechildat">`RemoveChildAt(int index)`</a> | Protected. The same, by index in `Children`. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#detachchild">`DetachChild(BaseElement child)`</a> | Protected. Takes a child out without disposing it, to add it again later. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#detachchildren">`DetachChildren()`</a> | Protected. Takes every child out without disposing them. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#detachchildren">`DetachChildren(Predicate<BaseElement> match)`</a> | Protected. Takes the matching children out without disposing them. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#actualwidth">`ActualWidth`</a>, <a class="ref method" href="/docs/ui-glossary/elements/base-element/#actualheight">`ActualHeight`</a> | Their setters are protected; the layout sets them, you normally don't. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#loadtextures">`LoadTextures()`</a> | Protected virtual. Called when <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> changes; load the element's textures from the folder here and call the base. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#unsubscribeself">`UnsubscribeSelf()`</a> | Protected virtual. Called on dispose: release the element's subscriptions to other objects here. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#disposehandler">`DisposeHandler()`</a> | Protected override. The element's dispose (see [items and content](#items-and-content)); call the base when you override it. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#cursorspropertychangedhandler">`CursorsPropertyChangedHandler()`</a> | Protected. Shows the element's current cursors again, after its cursor set changed. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#applystyle">`ApplyStyle(BaseStyle style, ValueSources valueSource)`</a> | Protected. Applies the style's assigned properties to the element as the given value source. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#style">`Style`</a> | Protected property of `GenericStyleAndMouseCursorsData<TStyle>`: the style override, or the general style. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#applygeneralstyle">`ApplyGeneralStyle()`</a> | Protected, of `GenericStyleAndMouseCursorsData<TStyle>`. Applies the general style over the framework defaults. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#applystyleoverride">`ApplyStyleOverride()`</a> | Protected, of `GenericStyleAndMouseCursorsData<TStyle>`. Applies the style override again. |
 
 ### Handler overrides
 
@@ -836,23 +836,23 @@ before the matching public event (if any) is raised.
 
 | Method | Description |
 | --- | --- |
-| <span class="method">`LocationChangedHandlerOverride(Point location)`</span> | The element moved. |
-| <span class="method">`ActualWidthChangedHandlerOverride(int width)`</span> | The layout gave the element another width. |
-| <span class="method">`ActualHeightChangedHandlerOverride(int height)`</span> | The layout gave the element another height. |
-| <span class="method">`VisibilityChangedHandlerOverride(Visibility visibility)`</span> | `Visibility` changed; called before the children hear of it. |
-| <span class="method">`VisibilityPropertyChangedHandlerOverride(Visibility value)`</span> | `Visibility` changed; called after the children heard of it. |
-| <span class="method">`StateChangedHandlerOverride(BaseElement sender, ElementStateData stateData)`</span> | The shown state changed, before `OnStateChanged`. |
-| <span class="method">`MouseEnterHandlerOverride()`</span> | Before `OnMouseEnter`. |
-| <span class="method">`MouseLeaveHandlerOverride()`</span> | Before `OnMouseLeave`. |
-| <span class="method">`ClickHandlerOverride(BaseElement sender, MouseClickEventArgs e)`</span> | Before `OnClick`. |
-| <span class="method">`DoubleClickHandlerOverride(BaseElement sender, MouseClickEventArgs e)`</span> | Before `OnDoubleClick`. |
-| <span class="method">`GotFocusHandlerOverride()`</span> | The element got the keyboard. |
-| <span class="method">`LostFocusHandlerOverride()`</span> | The element lost the keyboard. Focusing another element here (the next field of a form) works. |
-| <span class="method">`KeyDownHandlerOverride(KeyDownEventArgs e)`</span> | A key reached the element, before `OnKeyDown`; set `e.Handled` for a key the element uses. |
-| <span class="method">`TextInputHandlerOverride(TextInputEventArgs e)`</span> | Typed text reached the focused element. |
-| <span class="method">`InheritStatePropertyChangedHandlerOverride(InheritState value)`</span> | `InheritState` changed. |
-| <span class="method">`ForegroundColorPropertyChangedHandlerOverride(Color value)`</span> | `ForegroundColor` changed. |
-| <span class="method">`HitTestPropertyChangedHandlerOverride(bool value)`</span> | `HitTest` changed. |
-| <span class="method">`TimeBeforeRepeatStartsMsPropertyChangedHandlerOverride(int value)`</span> | `TimeBeforeRepeatStartsMs` changed (after it was passed to the parts). |
-| <span class="method">`TimeBetweenRepeatsMsPropertyChangedHandlerOverride(int value)`</span> | `TimeBetweenRepeatsMs` changed (after it was passed to the parts). |
-| <span class="method">`DoubleClickIntervalMsPropertyChangedHandlerOverride(int value)`</span> | `DoubleClickIntervalMs` changed (after it was passed to the parts). |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#locationchangedhandleroverride">`LocationChangedHandlerOverride(Point location)`</a> | The element moved. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#actualwidthchangedhandleroverride">`ActualWidthChangedHandlerOverride(int width)`</a> | The layout gave the element another width. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#actualheightchangedhandleroverride">`ActualHeightChangedHandlerOverride(int height)`</a> | The layout gave the element another height. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#visibilitychangedhandleroverride">`VisibilityChangedHandlerOverride(Visibility visibility)`</a> | <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#visibility">`Visibility`</a> changed; called before the children hear of it. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#visibilitypropertychangedhandleroverride">`VisibilityPropertyChangedHandlerOverride(Visibility value)`</a> | <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#visibility">`Visibility`</a> changed; called after the children heard of it. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#statechangedhandleroverride">`StateChangedHandlerOverride(BaseElement sender, ElementStateData stateData)`</a> | The shown state changed, before <a class="ref event" href="/docs/ui-glossary/elements/base-element/#onstatechanged">`OnStateChanged`</a>. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#mouseenterhandleroverride">`MouseEnterHandlerOverride()`</a> | Before <a class="ref event" href="/docs/ui-glossary/elements/base-element/#onmouseenter">`OnMouseEnter`</a>. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#mouseleavehandleroverride">`MouseLeaveHandlerOverride()`</a> | Before <a class="ref event" href="/docs/ui-glossary/elements/base-element/#onmouseleave">`OnMouseLeave`</a>. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#clickhandleroverride">`ClickHandlerOverride(BaseElement sender, MouseClickEventArgs e)`</a> | Before `OnClick`. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#doubleclickhandleroverride">`DoubleClickHandlerOverride(BaseElement sender, MouseClickEventArgs e)`</a> | Before <a class="ref event" href="/docs/ui-glossary/elements/base-element/#ondoubleclick">`OnDoubleClick`</a>. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#gotfocushandleroverride">`GotFocusHandlerOverride()`</a> | The element got the keyboard. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#lostfocushandleroverride">`LostFocusHandlerOverride()`</a> | The element lost the keyboard. Focusing another element here (the next field of a form) works. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#keydownhandleroverride">`KeyDownHandlerOverride(KeyDownEventArgs e)`</a> | A key reached the element, before <a class="ref event" href="/docs/ui-glossary/elements/base-element/#onkeydown">`OnKeyDown`</a>; set `e.Handled` for a key the element uses. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#textinputhandleroverride">`TextInputHandlerOverride(TextInputEventArgs e)`</a> | Typed text reached the focused element. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#inheritstatepropertychangedhandleroverride">`InheritStatePropertyChangedHandlerOverride(InheritState value)`</a> | <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#inheritstate">`InheritState`</a> changed. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#foregroundcolorpropertychangedhandleroverride">`ForegroundColorPropertyChangedHandlerOverride(Color value)`</a> | <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#foregroundcolor">`ForegroundColor`</a> changed. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#hittestpropertychangedhandleroverride">`HitTestPropertyChangedHandlerOverride(bool value)`</a> | <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#hittest">`HitTest`</a> changed. |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#timebeforerepeatstartsmspropertychangedhandleroverride">`TimeBeforeRepeatStartsMsPropertyChangedHandlerOverride(int value)`</a> | <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#timebeforerepeatstartsms">`TimeBeforeRepeatStartsMs`</a> changed (after it was passed to the parts). |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#timebetweenrepeatsmspropertychangedhandleroverride">`TimeBetweenRepeatsMsPropertyChangedHandlerOverride(int value)`</a> | <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#timebetweenrepeatsms">`TimeBetweenRepeatsMs`</a> changed (after it was passed to the parts). |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#doubleclickintervalmspropertychangedhandleroverride">`DoubleClickIntervalMsPropertyChangedHandlerOverride(int value)`</a> | <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#doubleclickintervalms">`DoubleClickIntervalMs`</a> changed (after it was passed to the parts). |

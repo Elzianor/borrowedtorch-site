@@ -46,7 +46,7 @@ The package also brings the default font (UbuntuMono) and the colour picker's po
 
 ## Setting up the UI
 
-Create the UI once the `GraphicsDevice` exists, give it the game window, and call `Update` and `Draw` every frame. The
+Create the UI once the `GraphicsDevice` exists, give it the game window, and call `Update` and <a class="ref method" href="/docs/ui-glossary/elements/base-element/#draw">`Draw`</a> every frame. The
 UI takes care of the window by itself:
 
 - **Text and keys.** Typed text and key presses come from the window's `TextInput` and `KeyDown` events.
@@ -115,7 +115,7 @@ public class MyGame : Game
 }
 ```
 
-The framework keeps its state in static fields, so only one `BorrowedTorchUI` exists at a time. Creating a second one
+The framework keeps its state in static fields, so only one <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-u-i/">`BorrowedTorchUI`</a> exists at a time. Creating a second one
 throws: dispose the first one before. Disposing the UI detaches the elements you added to the root but doesn't
 dispose them, so dispose the ones that hold resources yourself.
 
@@ -123,8 +123,8 @@ Two cases need more than the window:
 
 - **A UI drawn into a render target of its own size.** Set `FollowsBackBuffer` to `false` and give the size with
   `ApplyGameWindowSize`. With following on, a size you give stays until the back buffer changes.
-- **A UI hosted outside a game window**, such as a WPF editor or a test. Pass your own `ITextInputEvents` instead of
-  the window. `GameWindowTextInputEvents` is the adapter the window constructor uses, if you need one by hand.
+- **A UI hosted outside a game window**, such as a WPF editor or a test. Pass your own <a class="ref" href="/docs/ui-glossary/types/i-text-input-events/">`ITextInputEvents`</a> instead of
+  the window. <a class="ref" href="/docs/ui-glossary/types/game-window-text-input-events/">`GameWindowTextInputEvents`</a> is the adapter the window constructor uses, if you need one by hand.
 
 ### BorrowedTorchUI
 
@@ -132,7 +132,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 | Member | Description |
 | --- | --- |
-| <span class="method">`BorrowedTorchUI(GraphicsDevice graphicsDevice, ContentManager contentManager, SpriteBatch spriteBatch, GameWindow window)`</span> | Creates the UI over the back buffer's size, with the text and keys of the window. The sprite batch is the one the UI draws with; the content manager loads the colour picker's pointer and the textures named by `TexturesPath`. Disposing the UI unsubscribes from the window. |
+| <span class="method">`BorrowedTorchUI(GraphicsDevice graphicsDevice, ContentManager contentManager, SpriteBatch spriteBatch, GameWindow window)`</span> | Creates the UI over the back buffer's size, with the text and keys of the window. The sprite batch is the one the UI draws with; the content manager loads the colour picker's pointer and the textures named by <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a>. Disposing the UI unsubscribes from the window. |
 | <span class="method">`BorrowedTorchUI(GraphicsDevice graphicsDevice, ContentManager contentManager, SpriteBatch spriteBatch, ITextInputEvents textInputEvents)`</span> | The same, with the text and keys of a source of your own, for a UI hosted outside a game window. The UI doesn't dispose the source. |
 | <span class="prop">`RootElement`</span> | Read-only. The element at the top of the tree, the size of the screen. See [the root element](/docs/ui-base-element/#the-root-element). |
 | <span class="method">`AddElementToRoot(BaseElement element)`</span> | Adds an element to the root. |
@@ -140,13 +140,13 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 | <span class="method">`GetElementByName<T>(string name)`</span> | The same, `null` also when the element is not a `T`. |
 | <span class="method">`Update(GameTime gameTime)`</span> | Runs timers and animations, lays out what changed, and handles the mouse. Poll the input before it. |
 | <span class="method">`Draw()`</span> | Draws the whole tree with the sprite batch, beginning and ending it itself. |
-| <span class="prop">`FollowsBackBuffer`</span> | Whether the UI takes the back buffer's size by itself, at the start of every `Update`. On by default. Turn it off for a UI drawn into a render target of its own size. Turned on again, it takes the back buffer's size at the next update. |
-| <span class="method">`ApplyGameWindowSize(int width, int height)`</span> | Lays the UI out over a screen size in device pixels. A size of 0, such as a minimised window's, is ignored. With `FollowsBackBuffer` on, the size stays until the back buffer changes. |
-| <span class="prop">`Scale`</span> | How large one logical unit is on screen, see [display scaling](#display-scaling). Between `MinScale` (0.25) and `MaxScale` (8). |
-| <span class="prop">`FollowsDisplayScale`</span> | Whether `Scale` follows the display scale of the window's monitor, times `DisplayScaleFactor`. Turned on, it sets the scale at once and then follows the window to other monitors. A scale set by hand stays until the DPI changes. Off by default. Needs the window constructor, otherwise turning it on throws. |
+| <span class="prop">`FollowsBackBuffer`</span> | Whether the UI takes the back buffer's size by itself, at the start of every <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-u-i/#update">`Update`</a>. On by default. Turn it off for a UI drawn into a render target of its own size. Turned on again, it takes the back buffer's size at the next update. |
+| <span class="method">`ApplyGameWindowSize(int width, int height)`</span> | Lays the UI out over a screen size in device pixels. A size of 0, such as a minimised window's, is ignored. With <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-u-i/#followsbackbuffer">`FollowsBackBuffer`</a> on, the size stays until the back buffer changes. |
+| <span class="prop">`Scale`</span> | How large one logical unit is on screen, see [display scaling](#display-scaling). Between <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-u-i/#minscale">`MinScale`</a> (0.25) and <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-u-i/#maxscale">`MaxScale`</a> (8). |
+| <span class="prop">`FollowsDisplayScale`</span> | Whether <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-u-i/#scale">`Scale`</a> follows the display scale of the window's monitor, times <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-u-i/#displayscalefactor">`DisplayScaleFactor`</a>. Turned on, it sets the scale at once and then follows the window to other monitors. A scale set by hand stays until the DPI changes. Off by default. Needs the window constructor, otherwise turning it on throws. |
 | <span class="prop">`DisplayScaleFactor`</span> | What the display scale is multiplied with while following: a UI size setting of the game. 1 by default, a positive number. Set while following, it applies at once. |
 | <span class="prop">`DrawTransform`</span> | Read-only. The matrix the UI draws with. Draw code that begins its own sprite batch inside the UI passes it to draw in logical units. |
-| <span class="prop">`ExceptionHandler`</span> | Gets the exceptions thrown inside `Update`, `Draw` and the handling of text input. Without a handler they are rethrown. |
+| <span class="prop">`ExceptionHandler`</span> | Gets the exceptions thrown inside <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-u-i/#update">`Update`</a>, <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-u-i/#draw">`Draw`</a> and the handling of text input. Without a handler they are rethrown. |
 | <span class="method">`AddAnimation(BaseAnimation animation)`</span> | Starts updating an animation, see [animations](/docs/ui-styles/#animations). |
 | <span class="method">`RemoveAnimation(BaseAnimation animation)`</span> | Stops updating an animation. It keeps its state, and adding it again continues it. |
 | <span class="method">`SetDefaultMouseCursorsSet(MouseCursorsSet mouseCursorsSet)`</span> | Sets the cursors every element uses unless it has its own, see [mouse cursors](/docs/ui-styles/#mouse-cursors). |
@@ -158,12 +158,12 @@ The source of typed text and key presses, for a UI hosted outside a game window.
 
 | Event | Description |
 | --- | --- |
-| <span class="event">`OnTextInput`</span> | `EventHandler<TextInputEventArgs>`: a typed character, sent to the element that has the keyboard. |
-| <span class="event">`OnKeyDown`</span> | `EventHandler<InputKeyEventArgs>`: a pressed key, sent to the element that has the keyboard and then up to its parents until one handles it. |
+| <a class="ref event" href="/docs/ui-glossary/types/i-text-input-events/#ontextinput">`OnTextInput`</a> | `EventHandler<TextInputEventArgs>`: a typed character, sent to the element that has the keyboard. |
+| <a class="ref event" href="/docs/ui-glossary/types/i-text-input-events/#onkeydown">`OnKeyDown`</a> | `EventHandler<InputKeyEventArgs>`: a pressed key, sent to the element that has the keyboard and then up to its parents until one handles it. |
 
 ### GameWindowTextInputEvents
 
-An `ITextInputEvents` that forwards a MonoGame window's events. The window constructor of `BorrowedTorchUI` creates and
+An <a class="ref" href="/docs/ui-glossary/types/i-text-input-events/">`ITextInputEvents`</a> that forwards a MonoGame window's events. The window constructor of <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-u-i/">`BorrowedTorchUI`</a> creates and
 disposes one itself.
 
 | Member | Description |
@@ -208,19 +208,19 @@ ui.AddElementToRoot(play);
 
 An element's size along each side comes from three settings:
 
-- **A fixed size.** `DesiredWidth` and `DesiredHeight` above 0 fix it.
-- **Stretched.** Without a size, an element whose `HorizontalAlignment` or `VerticalAlignment` is `Stretch` takes the
+- **A fixed size.** <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#desiredwidth">`DesiredWidth`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#desiredheight">`DesiredHeight`</a> above 0 fix it.
+- **Stretched.** Without a size, an element whose <a class="ref" href="/docs/ui-glossary/types/horizontal-alignment/">`HorizontalAlignment`</a> or <a class="ref" href="/docs/ui-glossary/types/vertical-alignment/">`VerticalAlignment`</a> is `Stretch` takes the
   space its parent gives it, less its margins. `Stretch` is the default alignment of most elements.
 - **Fitted to its content.** Without a size and with any other alignment, the element is as large as its content.
 
-`MinWidth`, `MinHeight`, `MaxWidth` and `MaxHeight` limit the result, with 0 meaning no limit.
+<a class="ref dp" href="/docs/ui-glossary/elements/base-element/#minwidth">`MinWidth`</a>, <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#minheight">`MinHeight`</a>, <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#maxwidth">`MaxWidth`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#maxheight">`MaxHeight`</a> limit the result, with 0 meaning no limit.
 
 In a parent that fits its content, such as a stack panel, an auto-sized grid row or a fitted window body, a stretched
 child counts with the size of its own content, as in WPF. A label left at the default `Stretch` has its text's height
 in a stack panel, and an unwrapped label widens a fitted panel to its line. Wrapping text is the exception along the
 width: it takes the width the rest of the content decides and wraps there, instead of widening the parent to one long
 line. When nothing else gives a width, as for a label alone in a fitted panel, the text keeps its one line, as in WPF.
-Give the parent a `MaxWidth` to make it wrap.
+Give the parent a <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#maxwidth">`MaxWidth`</a> to make it wrap.
 
 <figure class="shot">
   <img src="{{ '/assets/img/ui/ui-sizes.png' | relative_url }}" width="522" height="222" alt="Four identical framed areas, each with one label: a fixed size at the top left, one fitted to its text, one stretched across the width and one filling its area">
@@ -311,7 +311,7 @@ ui.AddElementToRoot(Badge("Right, Bottom",
 
 ### Margins
 
-`Margin` keeps an element away from the edges of its slot. It converts from an int and from tuples:
+<a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> keeps an element away from the edges of its slot. It converts from an int and from tuples:
 
 ```csharp
 element.Margin = 5;                 // all sides
@@ -329,7 +329,7 @@ second one, not on the right margin of the first.
 
 Sizes, margins, positions and font sizes are in logical units: one unit is one pixel at a display scale of 100 %. The
 layout runs in two passes whenever something changed: measure finds every element's size, then arrange gives each its
-final size (`ActualWidth`, `ActualHeight`) and position (`Location`, in screen units). The
+final size (<a class="ref prop" href="/docs/ui-glossary/elements/base-element/#actualwidth">`ActualWidth`</a>, <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#actualheight">`ActualHeight`</a>) and position (<a class="ref prop" href="/docs/ui-glossary/elements/base-element/#location">`Location`</a>, in screen units). The
 [base element page](/docs/ui-base-element/#writing-your-own-element) explains the passes for custom elements.
 
 ## Display scaling
@@ -369,7 +369,7 @@ Reads the Windows display scale of the monitor a window is on. Without the aware
 
 | Member | Description |
 | --- | --- |
-| `DefaultDpi` | 96, the DPI of a monitor at 100 %. |
+| <a class="ref" href="/docs/ui-glossary/types/display-scale/#defaultdpi">`DefaultDpi`</a> | 96, the DPI of a monitor at 100 %. |
 | <span class="method">`DeclarePerMonitorAwareness()`</span> | Declares the process per-monitor DPI aware. Call it before the game creates its window. Returns `false` when Windows doesn't accept it: the awareness was declared already, by an application manifest or an earlier call, or Windows is older than Windows 10 1703. |
 | <span class="method">`DpiOf(GameWindow window)`</span> | The DPI of the monitor under the middle of the window's client area. 96 when it can't be read. |
 | <span class="method">`DpiOf(Rectangle screenBounds)`</span> | The same for a rectangle in screen coordinates, using the nearest monitor when none is under it. |
@@ -380,7 +380,7 @@ Some limits come with scaling:
 - A one-unit line covers one or two device pixels at scales like 125 %.
 - Textures are resampled to the scale. Give sharper sources for crisp images.
 - Custom mouse cursors made from textures are not scaled.
-- A `FontSystem` given by hand keeps the resolution it was created with.
+- A <span class="prop">`FontSystem`</span> given by hand keeps the resolution it was created with.
 - Draw code that begins its own sprite batch inside the UI passes `DrawTransform`. A [view port](/docs/ui-images/#viewport)
   draws in device pixels.
 

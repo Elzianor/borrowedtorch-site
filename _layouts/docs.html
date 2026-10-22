@@ -11,11 +11,25 @@ layout: base
     {%- assign doc_titles = doc_titles | push: a.title -%}
     {%- assign doc_groups = doc_groups | push: g.group -%}
     {%- if a.glossary -%}
-      {%- for e in site.data[a.glossary] -%}
-        {%- assign entry_title = a.title | append: ": " | append: e.title -%}
-        {%- assign doc_urls = doc_urls | push: e.url -%}
+      {%- for s in site.data[a.glossary] -%}
+        {%- assign entry_title = a.title | append: ": " | append: s.title -%}
+        {%- assign doc_urls = doc_urls | push: s.url -%}
         {%- assign doc_titles = doc_titles | push: entry_title -%}
         {%- assign doc_groups = doc_groups | push: g.group -%}
+        {%- for e in s.entries -%}
+          {%- assign entry_title = a.title | append: ": " | append: e.title -%}
+          {%- assign doc_urls = doc_urls | push: e.url -%}
+          {%- assign doc_titles = doc_titles | push: entry_title -%}
+          {%- assign doc_groups = doc_groups | push: g.group -%}
+        {%- endfor -%}
+        {%- for gr in s.groups -%}
+          {%- for e in gr.entries -%}
+            {%- assign entry_title = a.title | append: ": " | append: e.title -%}
+            {%- assign doc_urls = doc_urls | push: e.url -%}
+            {%- assign doc_titles = doc_titles | push: entry_title -%}
+            {%- assign doc_groups = doc_groups | push: g.group -%}
+          {%- endfor -%}
+        {%- endfor -%}
       {%- endfor -%}
     {%- endif -%}
   {%- endfor -%}
@@ -46,20 +60,43 @@ layout: base
                 <details class="docs-node"{% if page.url contains a.url %} open{% endif %}>
                   <summary><a href="{{ a.url | relative_url }}"{% if a.url == page.url %} aria-current="page"{% endif %}>{{ a.title }}</a></summary>
                   <ul>
-                    {%- for e in site.data[a.glossary] %}
+                    {%- for s in site.data[a.glossary] %}
                     <li>
-                      {%- if e.members.size > 0 %}
-                      <details class="docs-node"{% if e.url == page.url %} open{% endif %}>
-                        <summary><a href="{{ e.url | relative_url }}"{% if e.url == page.url %} aria-current="page"{% endif %}>{{ e.title }}</a></summary>
-                        <ul class="docs-members">
-                          {%- for m in e.members %}
-                          <li><a class="kind-{{ m.kind }}" href="{{ e.url | relative_url }}#{{ m.anchor }}">{{ m.title }}</a></li>
+                      <details class="docs-node"{% if page.url contains s.url %} open{% endif %}>
+                        <summary><a href="{{ s.url | relative_url }}"{% if s.url == page.url %} aria-current="page"{% endif %}>{{ s.title }}</a></summary>
+                        <ul>
+                          {%- for e in s.entries %}
+                          <li>
+                            {%- if e.members.size > 0 %}
+                            <details class="docs-node"{% if e.url == page.url %} open{% endif %}>
+                              <summary><a href="{{ e.url | relative_url }}"{% if e.url == page.url %} aria-current="page"{% endif %}>{{ e.title }}</a></summary>
+                              <ul class="docs-members">
+                                {%- for m in e.members %}
+                                <li><a class="kind-{{ m.kind }}" href="{{ e.url | relative_url }}#{{ m.anchor }}">{{ m.title }}</a></li>
+                                {%- endfor %}
+                              </ul>
+                            </details>
+                            {%- else %}
+                            <a href="{{ e.url | relative_url }}"{% if e.url == page.url %} aria-current="page"{% endif %}>{{ e.title }}</a>
+                            {%- endif %}
+                          </li>
+                          {%- endfor %}
+                          {%- for gr in s.groups %}
+                          {%- assign group_open = false %}
+                          {%- for e in gr.entries %}{% if e.url == page.url %}{% assign group_open = true %}{% endif %}{% endfor %}
+                          <li>
+                            <details class="docs-node"{% if group_open %} open{% endif %}>
+                              <summary><span class="docs-node-label">{{ gr.title }}</span></summary>
+                              <ul class="docs-types">
+                                {%- for e in gr.entries %}
+                                <li><a href="{{ e.url | relative_url }}"{% if e.url == page.url %} aria-current="page"{% endif %}>{{ e.title }}</a></li>
+                                {%- endfor %}
+                              </ul>
+                            </details>
+                          </li>
                           {%- endfor %}
                         </ul>
                       </details>
-                      {%- else %}
-                      <a href="{{ e.url | relative_url }}"{% if e.url == page.url %} aria-current="page"{% endif %}>{{ e.title }}</a>
-                      {%- endif %}
                     </li>
                     {%- endfor %}
                   </ul>

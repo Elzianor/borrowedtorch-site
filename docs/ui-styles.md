@@ -152,7 +152,7 @@ public static void Apply()
 }
 ```
 
-Set `DefaultSettings` first: the framework defaults of a style type read `DefaultSettings` once, the first time that
+Set <a class="ref" href="/docs/ui-glossary/types/default-settings/">`DefaultSettings`</a> first: the framework defaults of a style type read <a class="ref" href="/docs/ui-glossary/types/default-settings/">`DefaultSettings`</a> once, the first time that
 style type is used (see [default settings](#default-settings)).
 
 ## Styles
@@ -204,11 +204,11 @@ ui.AddElementToRoot(row);
 A style applies only the properties assigned to it, also when a property is assigned its type's default value. A new
 style has none assigned, so `new ButtonStyle { NormalColor = Color.Red }` changes the colour and leaves everything else
 to the level below. The "Delete save" button above takes its colours from `danger` and its size from code; anything
-`danger` doesn't assign comes from `Button.GeneralStyle`.
+`danger` doesn't assign comes from <a class="ref prop" href="/docs/ui-glossary/elements/button/#generalstyle">`Button.GeneralStyle`</a>.
 
 - **General style.** `X.GeneralStyle` (static) lies over the framework defaults of the type: a property it leaves
   unassigned takes the framework default (listed in the [style classes](#style-classes) table), or the property's own
-  default when the type has none. It starts as a copy of the framework defaults, so reading `Button.GeneralStyle` gives
+  default when the type has none. It starts as a copy of the framework defaults, so reading <a class="ref prop" href="/docs/ui-glossary/elements/button/#generalstyle">`Button.GeneralStyle`</a> gives
   the defaults and changing one of its properties in place keeps the others. Assigning a new style replaces it as a
   whole; setting it to `null` leaves only the framework defaults.
 - **Style override.** `element.StyleOverride` applies to one element. Its unassigned properties fall through to the
@@ -216,12 +216,12 @@ to the level below. The "Delete save" button above takes its colours from `dange
 - **Live changes.** Changing a property of a style in use, or replacing a general style, updates every element that
   uses it. Changes are delivered by walking the element tree; an element that is not in the tree at that moment (created
   but not added yet, or removed) catches up when it is attached.
-- **Part styles.** Properties such as `ButtonStyle.TextStyle` or `ListBoxStyle.ScrollableContainerStyle` hold the
+- **Part styles.** Properties such as <a class="ref prop" href="/docs/ui-glossary/types/button-style/#textstyle">`ButtonStyle.TextStyle`</a> or <a class="ref prop" href="/docs/ui-glossary/types/list-box-style/#scrollablecontainerstyle">`ListBoxStyle.ScrollableContainerStyle`</a> hold the
   style of a part inside the control. The part takes it as its own `StyleOverride`, so it lies over the part type's
   general style: `TextStyle = new RichTextBoxStyle { ForegroundColor = ... }` changes the text colour and keeps the
-  rest of `RichTextBox.GeneralStyle`.
-- **No style class.** `Grid`, `Separator`, `TabControl` and the parts that only exist inside an element
-  (`ListBoxItem`, `TreeViewItem`, `ContextMenuItem`, `GridCell`, `ContentContainer`, `DefaultWindowTitleBar`) have no
+  rest of <a class="ref prop" href="/docs/ui-glossary/elements/rich-text-box/#generalstyle">`RichTextBox.GeneralStyle`</a>.
+- **No style class.** <a class="ref" href="/docs/ui-glossary/elements/grid/">`Grid`</a>, <a class="ref" href="/docs/ui-glossary/elements/separator/">`Separator`</a>, <a class="ref" href="/docs/ui-glossary/types/tab-control/">`TabControl`</a> and the parts that only exist inside an element
+  (<a class="ref" href="/docs/ui-glossary/elements/list-box-item/">`ListBoxItem`</a>, <a class="ref" href="/docs/ui-glossary/elements/tree-view-item/">`TreeViewItem`</a>, <a class="ref" href="/docs/ui-glossary/elements/context-menu-item/">`ContextMenuItem`</a>, <a class="ref" href="/docs/ui-glossary/elements/grid-cell/">`GridCell`</a>, <a class="ref" href="/docs/ui-glossary/elements/content-container/">`ContentContainer`</a>, <a class="ref" href="/docs/ui-glossary/elements/default-window-title-bar/">`DefaultWindowTitleBar`</a>) have no
   style. They are set in code; their double click interval, repeat timings and resize area come from
   [`DefaultSettings`](#default-settings) like every element's.
 
@@ -242,28 +242,28 @@ button.NormalColorDP.ClearValue(ValueSources.ManualAssign); // the style's color
 
 | Value | Meaning |
 | --- | --- |
-| `ManualAssign` | A value set in code (`element.Foo = ...` or `FooDP.SetValue`), by a binding or by an animation. Highest priority. |
-| `StyleOverride` | A value from the element's `StyleOverride`. |
-| `GeneralStyle` | A value from the general style of the type, or from the framework defaults under it. Lowest priority. |
-| `None` | No source has a value: the property reads its default. Returned by `ValueSource`; setting or clearing with it does nothing. |
+| <a class="ref" href="/docs/ui-glossary/types/value-sources/#manualassign">`ManualAssign`</a> | A value set in code (`element.Foo = ...` or `FooDP.SetValue`), by a binding or by an animation. Highest priority. |
+| <a class="ref" href="/docs/ui-glossary/types/value-sources/#styleoverride">`StyleOverride`</a> | A value from the element's <a class="ref" href="/docs/ui-glossary/types/value-sources/#styleoverride">`StyleOverride`</a>. |
+| <a class="ref" href="/docs/ui-glossary/types/value-sources/#generalstyle">`GeneralStyle`</a> | A value from the general style of the type, or from the framework defaults under it. Lowest priority. |
+| <a class="ref" href="/docs/ui-glossary/types/value-sources/#none">`None`</a> | No source has a value: the property reads its default. Returned by `ValueSource`; setting or clearing with it does nothing. |
 
 ### BaseStyle
 
 The abstract base of every style class. It has one property for each dependency property of
-[`BaseElement`](/docs/ui-base-element/) (`Margin`, `DesiredWidth`, `DesiredHeight`, `MinWidth`, `MinHeight`,
-`MaxWidth`, `MaxHeight`, `HorizontalAlignment`, `VerticalAlignment`, `Visibility`, `Disabled`, `BackgroundColor`,
-`ForegroundColor`, `TexturesPath`, `Transparency`, `InheritState`, `HitTest`, `GridRow`, `GridColumn`, `GridRowSpan`,
-`GridColumnSpan`, `RepeatClicks`, `TimeBeforeRepeatStartsMs`, `TimeBetweenRepeatsMs`, `DoubleClickIntervalMs`,
-`CropOutsideOfParentBorder`, `IsResizable`, `ResizeWithElementContour`, `ResizeContourColor`, `ResizeAreaHalfWidth`,
-`DragType`, `CustomEffect`), with the same names and types, so every style class has them too. Setting a property
+[`BaseElement`](/docs/ui-base-element/) (<a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a>, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#desiredwidth">`DesiredWidth`</a>, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#desiredheight">`DesiredHeight`</a>, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#minwidth">`MinWidth`</a>, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#minheight">`MinHeight`</a>,
+<a class="ref prop" href="/docs/ui-glossary/types/base-style/#maxwidth">`MaxWidth`</a>, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#maxheight">`MaxHeight`</a>, <a class="ref" href="/docs/ui-glossary/types/horizontal-alignment/">`HorizontalAlignment`</a>, <a class="ref" href="/docs/ui-glossary/types/vertical-alignment/">`VerticalAlignment`</a>, <a class="ref" href="/docs/ui-glossary/types/visibility/">`Visibility`</a>, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#disabled">`Disabled`</a>, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#backgroundcolor">`BackgroundColor`</a>,
+<a class="ref prop" href="/docs/ui-glossary/types/base-style/#foregroundcolor">`ForegroundColor`</a>, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#texturespath">`TexturesPath`</a>, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#transparency">`Transparency`</a>, <a class="ref" href="/docs/ui-glossary/types/inherit-state/">`InheritState`</a>, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#hittest">`HitTest`</a>, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#gridrow">`GridRow`</a>, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#gridcolumn">`GridColumn`</a>, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#gridrowspan">`GridRowSpan`</a>,
+<a class="ref prop" href="/docs/ui-glossary/types/base-style/#gridcolumnspan">`GridColumnSpan`</a>, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#repeatclicks">`RepeatClicks`</a>, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#timebeforerepeatstartsms">`TimeBeforeRepeatStartsMs`</a>, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#timebetweenrepeatsms">`TimeBetweenRepeatsMs`</a>, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#doubleclickintervalms">`DoubleClickIntervalMs`</a>,
+<a class="ref prop" href="/docs/ui-glossary/types/base-style/#cropoutsideofparentborder">`CropOutsideOfParentBorder`</a>, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#isresizable">`IsResizable`</a>, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#resizewithelementcontour">`ResizeWithElementContour`</a>, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#resizecontourcolor">`ResizeContourColor`</a>, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#resizeareahalfwidth">`ResizeAreaHalfWidth`</a>,
+<a class="ref" href="/docs/ui-glossary/types/drag-type/">`DragType`</a>, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#customeffect">`CustomEffect`</a>), with the same names and types, so every style class has them too. Setting a property
 assigns it, even to the value it already has. The framework defaults of every style type include `HitTest = true` and
 `CropOutsideOfParentBorder = true`.
 
 | Method | Description |
 | --- | --- |
-| <span class="method">`IsSet(string propertyName)`</span> | Whether the property is assigned to this style, so the style applies it. Pass the name with `nameof`; an unknown name gives `false`. |
-| <span class="method">`Unset(string propertyName)`</span> | Takes the property back out of the style: the style stops applying it, it reads its type's default again, and the elements using the style update. |
-| <span class="method">`Clone()`</span> | Returns a copy (as `object`) with the same properties assigned. Part styles in it are copied too. |
+| <a class="ref method" href="/docs/ui-glossary/types/base-style/#isset">`IsSet(string propertyName)`</a> | Whether the property is assigned to this style, so the style applies it. Pass the name with `nameof`; an unknown name gives `false`. |
+| <a class="ref method" href="/docs/ui-glossary/types/base-style/#unset">`Unset(string propertyName)`</a> | Takes the property back out of the style: the style stops applying it, it reads its type's default again, and the elements using the style update. |
+| <a class="ref method" href="/docs/ui-glossary/types/base-style/#clone">`Clone()`</a> | Returns a copy (as `object`) with the same properties assigned. Part styles in it are copied too. |
 
 ### Style classes
 
@@ -274,43 +274,43 @@ None has properties beyond its element's. The last column lists the framework de
 
 | Style class | Element | Part styles, and element properties left out | Framework defaults |
 | --- | --- | --- | --- |
-| `BorderStyle` | [`Border`](/docs/ui-layout/#border) | Leaves out `Content`. | None beyond the base ones. |
-| `ButtonStyle` | [`Button`](/docs/ui-controls/#button) | Part styles `TextStyle` (`RichTextBoxStyle`) and `BackgroundStyle` (`ImageStyle`). Leaves out `Content`. | None beyond the base ones. |
-| `CheckBoxStyle` | [`CheckBox`](/docs/ui-controls/#checkbox) | Part styles `TextStyle` (`RichTextBoxStyle`) and `ImageStyle` (`ImageStyle`). Leaves out `Content`. | None beyond the base ones. |
-| `ColorPickerStyle` | [`ColorPicker`](/docs/ui-controls/#colorpicker) | Leaves out `Brightness` and `SelectedColor`, so it has only the `BaseStyle` properties. | `ForegroundColor` white. |
-| `ComboBoxStyle` | [`ComboBox`](/docs/ui-lists/#combobox) | Part styles `SelectionStyle` (`ImageStyle`), `ToggleButtonStyle` (`ButtonStyle`) and `ListBoxStyle` (`ListBoxStyle`). | Aligned left and top, `InheritState.FromChildren`. |
-| `ContextMenuStyle` | [`ContextMenu`](/docs/ui-lists/#contextmenu) | Part styles `BorderStyle`, `ListBoxStyle`, `CheckIconStyle` and `ExpandIconStyle` (`ImageStyle`). Leaves out `ItemsSource`. | Aligned left and top, `HitTest` off, `Placement` `BottomRight`. A border 1 unit thick in the context menu colours of `DefaultSettings`; a transparent list without dual colours whose hover and selected rows use `DefaultContextMenuHighlightColor`; an 8 by 8 check icon and a 6 by 8 expand icon in `DefaultContextMenuIconColor`. |
-| `ImageStyle` | [`Image`](/docs/ui-images/#image) | None. | `ForegroundColor` white. |
-| `LabelStyle` | [`Label`](/docs/ui-text/#label) | None. | `Text` empty, `FontSize` `DefaultFontSize`, `ForegroundColor` `DefaultTextColor`, `HitTest` off, `InheritState.FromParent`. |
-| `ListBoxStyle` | [`ListBox`](/docs/ui-lists/#listbox) | Part style `ScrollableContainerStyle`. Leaves out `SelectedItem`, `SelectedIndex` and `ItemsSource`. | `InheritState.FromChildren`. |
-| `ProgressBarStyle` | [`ProgressBar`](/docs/ui-controls/#progressbar) | None. | None beyond the base ones. |
-| `RichTextBoxStyle` | [`RichTextBox`](/docs/ui-text/#richtextbox) | Part styles `ScrollBarsStyle` (`SliderStyle`) and `BackgroundStyle` (`ImageStyle`). | `Text` empty, `InheritState.FromChildren`, and `FontSize`, `ForegroundColor`, `TextCursorThickness`, `TextCursorColor`, `TextSelectionColor` from `DefaultSettings`. |
-| `RootElementStyle` | [`RootElement`](/docs/ui-base-element/#the-root-element) | Only the `BaseStyle` properties. | None beyond the base ones. |
-| `ScrollableContainerStyle` | [`ScrollableContainer`](/docs/ui-layout/#scrollablecontainer) | Part style `ScrollBarsStyle` (`SliderStyle`), used by both scroll bars (the vertical one with its two line colours swapped). | `InheritState.FromChildren`. |
-| `SliderStyle` | [`Slider`](/docs/ui-controls/#slider) | None. | `InheritState.FromChildren`, `ThumbScale` (1, 1). |
-| `StackPanelStyle` | [`StackPanel`](/docs/ui-layout/#stackpanel) | None. | Aligned left and top, `HitTest` off, `InheritState.FromChildren`. |
-| `StencilStyle` | [`Stencil`](/docs/ui-images/#stencil) | Leaves out `SourceTexture` and `StencilTexture`. | None beyond the base ones. |
-| `ToolTipStyle` | [`ToolTip`](/docs/ui-controls/#tooltip) | Part style `TextStyle` (`RichTextBoxStyle`). Leaves out `Content`. | Aligned left and top, `HitTest` off, `TimeBeforeShowMs` `DefaultTimeBeforeShowToolTipMs`. |
-| `TreeViewStyle` | [`TreeView`](/docs/ui-lists/#treeview) | Part styles `ListBoxStyle` and `ExpandIconStyle` (`ImageStyle`). Leaves out `SelectedItem` and `ItemsSource`. | An `ExpandIconStyle` of an 8 by 8 block, centred, `MinimizedIconColor` (150, 150, 160), `ExpandedIconColor` (90, 90, 100). |
-| `ViewPortStyle` | [`ViewPort`](/docs/ui-images/#viewport) | None. | `HitTest` off, `MinDepth` and `MaxDepth` from `DefaultSettings`. |
-| `WindowStyle` | [`Window`](/docs/ui-layout/#window) | Part style `BorderStyle`. Leaves out `TitleBar` and `Content`. | A border `DefaultWindowBorderThickness` thick, filled with `DefaultWindowBackgroundColor`, in `DefaultWindowBorderColor`. |
+| <a class="ref" href="/docs/ui-glossary/types/border-style/">`BorderStyle`</a> | [`Border`](/docs/ui-layout/#border) | Leaves out `Content`. | None beyond the base ones. |
+| <a class="ref" href="/docs/ui-glossary/types/button-style/">`ButtonStyle`</a> | [`Button`](/docs/ui-controls/#button) | Part styles `TextStyle` (<a class="ref" href="/docs/ui-glossary/types/rich-text-box-style/">`RichTextBoxStyle`</a>) and `BackgroundStyle` (<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a>). Leaves out `Content`. | None beyond the base ones. |
+| <a class="ref" href="/docs/ui-glossary/types/check-box-style/">`CheckBoxStyle`</a> | [`CheckBox`](/docs/ui-controls/#checkbox) | Part styles `TextStyle` (<a class="ref" href="/docs/ui-glossary/types/rich-text-box-style/">`RichTextBoxStyle`</a>) and <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> (<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a>). Leaves out `Content`. | None beyond the base ones. |
+| <a class="ref" href="/docs/ui-glossary/types/color-picker-style/">`ColorPickerStyle`</a> | [`ColorPicker`](/docs/ui-controls/#colorpicker) | Leaves out `Brightness` and `SelectedColor`, so it has only the `BaseStyle` properties. | <a class="ref prop" href="/docs/ui-glossary/types/base-style/#foregroundcolor">`ForegroundColor`</a> white. |
+| <a class="ref" href="/docs/ui-glossary/types/combo-box-style/">`ComboBoxStyle`</a> | [`ComboBox`](/docs/ui-lists/#combobox) | Part styles `SelectionStyle` (<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a>), `ToggleButtonStyle` (<a class="ref" href="/docs/ui-glossary/types/button-style/">`ButtonStyle`</a>) and <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> (<a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a>). | Aligned left and top, <a class="ref" href="/docs/ui-glossary/types/inherit-state/#fromchildren">`InheritState.FromChildren`</a>. |
+| <a class="ref" href="/docs/ui-glossary/types/context-menu-style/">`ContextMenuStyle`</a> | [`ContextMenu`](/docs/ui-lists/#contextmenu) | Part styles <a class="ref" href="/docs/ui-glossary/types/border-style/">`BorderStyle`</a>, <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a>, `CheckIconStyle` and `ExpandIconStyle` (<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a>). Leaves out `ItemsSource`. | Aligned left and top, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#hittest">`HitTest`</a> off, `Placement` `BottomRight`. A border 1 unit thick in the context menu colours of <a class="ref" href="/docs/ui-glossary/types/default-settings/">`DefaultSettings`</a>; a transparent list without dual colours whose hover and selected rows use `DefaultContextMenuHighlightColor`; an 8 by 8 check icon and a 6 by 8 expand icon in `DefaultContextMenuIconColor`. |
+| <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> | [`Image`](/docs/ui-images/#image) | None. | <a class="ref prop" href="/docs/ui-glossary/types/base-style/#foregroundcolor">`ForegroundColor`</a> white. |
+| <a class="ref" href="/docs/ui-glossary/types/label-style/">`LabelStyle`</a> | [`Label`](/docs/ui-text/#label) | None. | `Text` empty, `FontSize` `DefaultFontSize`, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#foregroundcolor">`ForegroundColor`</a> `DefaultTextColor`, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#hittest">`HitTest`</a> off, <a class="ref" href="/docs/ui-glossary/types/inherit-state/#fromparent">`InheritState.FromParent`</a>. |
+| <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> | [`ListBox`](/docs/ui-lists/#listbox) | Part style <a class="ref" href="/docs/ui-glossary/types/scrollable-container-style/">`ScrollableContainerStyle`</a>. Leaves out `SelectedItem`, `SelectedIndex` and `ItemsSource`. | <a class="ref" href="/docs/ui-glossary/types/inherit-state/#fromchildren">`InheritState.FromChildren`</a>. |
+| <a class="ref" href="/docs/ui-glossary/types/progress-bar-style/">`ProgressBarStyle`</a> | [`ProgressBar`](/docs/ui-controls/#progressbar) | None. | None beyond the base ones. |
+| <a class="ref" href="/docs/ui-glossary/types/rich-text-box-style/">`RichTextBoxStyle`</a> | [`RichTextBox`](/docs/ui-text/#richtextbox) | Part styles `ScrollBarsStyle` (<a class="ref" href="/docs/ui-glossary/types/slider-style/">`SliderStyle`</a>) and `BackgroundStyle` (<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a>). | `Text` empty, <a class="ref" href="/docs/ui-glossary/types/inherit-state/#fromchildren">`InheritState.FromChildren`</a>, and `FontSize`, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#foregroundcolor">`ForegroundColor`</a>, `TextCursorThickness`, `TextCursorColor`, `TextSelectionColor` from <a class="ref" href="/docs/ui-glossary/types/default-settings/">`DefaultSettings`</a>. |
+| <a class="ref" href="/docs/ui-glossary/types/root-element-style/">`RootElementStyle`</a> | [`RootElement`](/docs/ui-base-element/#the-root-element) | Only the `BaseStyle` properties. | None beyond the base ones. |
+| <a class="ref" href="/docs/ui-glossary/types/scrollable-container-style/">`ScrollableContainerStyle`</a> | [`ScrollableContainer`](/docs/ui-layout/#scrollablecontainer) | Part style `ScrollBarsStyle` (<a class="ref" href="/docs/ui-glossary/types/slider-style/">`SliderStyle`</a>), used by both scroll bars (the vertical one with its two line colours swapped). | <a class="ref" href="/docs/ui-glossary/types/inherit-state/#fromchildren">`InheritState.FromChildren`</a>. |
+| <a class="ref" href="/docs/ui-glossary/types/slider-style/">`SliderStyle`</a> | [`Slider`](/docs/ui-controls/#slider) | None. | <a class="ref" href="/docs/ui-glossary/types/inherit-state/#fromchildren">`InheritState.FromChildren`</a>, `ThumbScale` (1, 1). |
+| <a class="ref" href="/docs/ui-glossary/types/stack-panel-style/">`StackPanelStyle`</a> | [`StackPanel`](/docs/ui-layout/#stackpanel) | None. | Aligned left and top, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#hittest">`HitTest`</a> off, <a class="ref" href="/docs/ui-glossary/types/inherit-state/#fromchildren">`InheritState.FromChildren`</a>. |
+| <a class="ref" href="/docs/ui-glossary/types/stencil-style/">`StencilStyle`</a> | [`Stencil`](/docs/ui-images/#stencil) | Leaves out `SourceTexture` and `StencilTexture`. | None beyond the base ones. |
+| <a class="ref" href="/docs/ui-glossary/types/tool-tip-style/">`ToolTipStyle`</a> | [`ToolTip`](/docs/ui-controls/#tooltip) | Part style `TextStyle` (<a class="ref" href="/docs/ui-glossary/types/rich-text-box-style/">`RichTextBoxStyle`</a>). Leaves out `Content`. | Aligned left and top, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#hittest">`HitTest`</a> off, `TimeBeforeShowMs` `DefaultTimeBeforeShowToolTipMs`. |
+| <a class="ref" href="/docs/ui-glossary/types/tree-view-style/">`TreeViewStyle`</a> | [`TreeView`](/docs/ui-lists/#treeview) | Part styles <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> and `ExpandIconStyle` (<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a>). Leaves out `SelectedItem` and `ItemsSource`. | An `ExpandIconStyle` of an 8 by 8 block, centred, `MinimizedIconColor` (150, 150, 160), `ExpandedIconColor` (90, 90, 100). |
+| <a class="ref" href="/docs/ui-glossary/types/view-port-style/">`ViewPortStyle`</a> | [`ViewPort`](/docs/ui-images/#viewport) | None. | <a class="ref prop" href="/docs/ui-glossary/types/base-style/#hittest">`HitTest`</a> off, `MinDepth` and `MaxDepth` from <a class="ref" href="/docs/ui-glossary/types/default-settings/">`DefaultSettings`</a>. |
+| <a class="ref" href="/docs/ui-glossary/types/window-style/">`WindowStyle`</a> | [`Window`](/docs/ui-layout/#window) | Part style <a class="ref" href="/docs/ui-glossary/types/border-style/">`BorderStyle`</a>. Leaves out `TitleBar` and `Content`. | A border `DefaultWindowBorderThickness` thick, filled with `DefaultWindowBackgroundColor`, in `DefaultWindowBorderColor`. |
 
-`DefaultWindowTitleBarStyle` is an empty class that does not derive from `BaseStyle`; nothing uses it, and
-`DefaultWindowTitleBar` has no style.
+<a class="ref" href="/docs/ui-glossary/types/default-window-title-bar-style/">`DefaultWindowTitleBarStyle`</a> is an empty class that does not derive from `BaseStyle`; nothing uses it, and
+<a class="ref" href="/docs/ui-glossary/elements/default-window-title-bar/">`DefaultWindowTitleBar`</a> has no style.
 
 ### GenericStyle&lt;T&gt;
 
-The static holder of the general style of one style type, where `T` is the style class. `Button.GeneralStyle` reads
+The static holder of the general style of one style type, where `T` is the style class. <a class="ref prop" href="/docs/ui-glossary/elements/button/#generalstyle">`Button.GeneralStyle`</a> reads
 and writes `GenericStyle<ButtonStyle>.GeneralStyle`. It also keeps the framework defaults of the type, built the first
 time the type is used from the class's defaults (internal, not reachable from your code).
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="prop">`GeneralStyle`</span> | `T` | Static. The style every element of the type takes, over the framework defaults. Starts as a copy of the defaults; `null` leaves only the defaults. |
+| <a class="ref prop" href="/docs/ui-glossary/types/generic-style/#generalstyle">`GeneralStyle`</a> | `T` | Static. The style every element of the type takes, over the framework defaults. Starts as a copy of the defaults; `null` leaves only the defaults. |
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| <span class="event">`OnGeneralStyleChanged`</span> | `(T prevStyle)` | Static. `GeneralStyle` is replaced by another style; the handler gets the previous one. Not raised when a property of the style changes. |
+| <a class="ref event" href="/docs/ui-glossary/types/generic-style/#ongeneralstylechanged">`OnGeneralStyleChanged`</a> | `(T prevStyle)` | Static. <a class="ref prop" href="/docs/ui-glossary/types/generic-style/#generalstyle">`GeneralStyle`</a> is replaced by another style; the handler gets the previous one. Not raised when a property of the style changes. |
 
 ## Mouse cursors
 
@@ -320,11 +320,11 @@ priority:
 1. its own set, `element.MouseCursorsSetOverride`;
 2. the set given by hand (`MouseCursorsSetOverride`) to the control it is a part of;
 3. the general set of its type, `X.GeneralMouseCursorsSet` (`null` at start);
-4. `BaseElement.DefaultMouseCursorsSet`, which `BorrowedTorchUI.SetDefaultMouseCursorsSet` also sets.
+4. <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#defaultmousecursorsset">`BaseElement.DefaultMouseCursorsSet`</a>, which <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-u-i/#setdefaultmousecursorsset">`BorrowedTorchUI.SetDefaultMouseCursorsSet`</a> also sets.
 
 So a set given to a control reaches the controls inside it (the scroll bars of a list, the list of a tree view or
 combo box, the title bar of a window) unless they have a set of their own. Without one on the control, those parts
-keep their own type's `GeneralMouseCursorsSet` (a list's scroll bars use `Slider.GeneralMouseCursorsSet`). A part
+keep their own type's `GeneralMouseCursorsSet` (a list's scroll bars use <a class="ref prop" href="/docs/ui-glossary/elements/slider/#generalmousecursorsset">`Slider.GeneralMouseCursorsSet`</a>). A part
 without a style class shows its owner's cursors. Your own elements placed in a control keep their own cursors.
 Changing a property of a set in use, or replacing a general or default set, updates the elements.
 
@@ -345,90 +345,90 @@ corners of a resizable element; it has no pressed, drag pressed or drop allowed 
 
 ### MouseCursorsSet
 
-The cursors an element shows. It is disposable: disposing it disposes its `DragAndDropCursors`, `ResizeCursors` and
-`RichTextCursors`, and a disposed set ignores new values.
+The cursors an element shows. It is disposable: disposing it disposes its <a class="ref" href="/docs/ui-glossary/types/drag-and-drop-cursors/">`DragAndDropCursors`</a>, <a class="ref" href="/docs/ui-glossary/types/resize-cursors/">`ResizeCursors`</a> and
+<a class="ref" href="/docs/ui-glossary/types/rich-text-cursors/">`RichTextCursors`</a>, and a disposed set ignores new values.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="prop">`HoverCursor`</span> | `MouseCursor` | The cursor while the mouse is over the element. |
-| <span class="prop">`PressedCursor`</span> | `MouseCursor` | The cursor while the left button is held on the element. |
-| <span class="prop">`DragAndDropCursors`</span> | `DragAndDropCursors` | The cursors of a draggable element and of drop targets. |
-| <span class="prop">`ResizeCursors`</span> | `ResizeCursors` | The cursors on the edges and corners of a resizable element. |
-| <span class="prop">`RichTextCursors`</span> | `RichTextCursors` | The cursors over the text of a rich text box. |
+| <a class="ref prop" href="/docs/ui-glossary/types/mouse-cursors-set/#hovercursor">`HoverCursor`</a> | `MouseCursor` | The cursor while the mouse is over the element. |
+| <a class="ref prop" href="/docs/ui-glossary/types/mouse-cursors-set/#pressedcursor">`PressedCursor`</a> | `MouseCursor` | The cursor while the left button is held on the element. |
+| <a class="ref prop" href="/docs/ui-glossary/types/mouse-cursors-set/#draganddropcursors">`DragAndDropCursors`</a> | <a class="ref" href="/docs/ui-glossary/types/drag-and-drop-cursors/">`DragAndDropCursors`</a> | The cursors of a draggable element and of drop targets. |
+| <a class="ref prop" href="/docs/ui-glossary/types/mouse-cursors-set/#resizecursors">`ResizeCursors`</a> | <a class="ref" href="/docs/ui-glossary/types/resize-cursors/">`ResizeCursors`</a> | The cursors on the edges and corners of a resizable element. |
+| <a class="ref prop" href="/docs/ui-glossary/types/mouse-cursors-set/#richtextcursors">`RichTextCursors`</a> | <a class="ref" href="/docs/ui-glossary/types/rich-text-cursors/">`RichTextCursors`</a> | The cursors over the text of a rich text box. |
 
 | Method | Description |
 | --- | --- |
-| <span class="method">`MouseCursorsSet()`</span> | Creates an empty set. |
-| <span class="method">`Clone()`</span> | Returns a copy (as `object`), with copies of the three nested sets; the `MouseCursor` objects are shared. Returns `null` for a disposed set. |
+| <a class="ref method" href="/docs/ui-glossary/types/mouse-cursors-set/#mousecursorsset">`MouseCursorsSet()`</a> | Creates an empty set. |
+| <a class="ref method" href="/docs/ui-glossary/types/mouse-cursors-set/#clone">`Clone()`</a> | Returns a copy (as `object`), with copies of the three nested sets; the `MouseCursor` objects are shared. Returns `null` for a disposed set. |
 
 ### DragAndDropCursors
 
-The cursors of [drag and drop](/docs/ui-images/#drag-and-drop). Disposable like `MouseCursorsSet`.
+The cursors of [drag and drop](/docs/ui-images/#drag-and-drop). Disposable like <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a>.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="prop">`DragHoverCursor`</span> | `MouseCursor` | Shown instead of `HoverCursor` over an element that can be dragged. |
-| <span class="prop">`DragPressedCursor`</span> | `MouseCursor` | Shown instead of `PressedCursor` while the left button is held on an element that can be dragged. |
-| <span class="prop">`DropAllowedCursor`</span> | `MouseCursor` | Shown over a drop target that accepts what is dragged. |
-| <span class="prop">`DropDeniedCursor`</span> | `MouseCursor` | Shown over a drop target that refuses what is dragged. |
+| <a class="ref prop" href="/docs/ui-glossary/types/drag-and-drop-cursors/#draghovercursor">`DragHoverCursor`</a> | `MouseCursor` | Shown instead of `HoverCursor` over an element that can be dragged. |
+| <a class="ref prop" href="/docs/ui-glossary/types/drag-and-drop-cursors/#dragpressedcursor">`DragPressedCursor`</a> | `MouseCursor` | Shown instead of `PressedCursor` while the left button is held on an element that can be dragged. |
+| <a class="ref prop" href="/docs/ui-glossary/types/drag-and-drop-cursors/#dropallowedcursor">`DropAllowedCursor`</a> | `MouseCursor` | Shown over a drop target that accepts what is dragged. |
+| <a class="ref prop" href="/docs/ui-glossary/types/drag-and-drop-cursors/#dropdeniedcursor">`DropDeniedCursor`</a> | `MouseCursor` | Shown over a drop target that refuses what is dragged. |
 
 | Method | Description |
 | --- | --- |
-| <span class="method">`DragAndDropCursors()`</span> | Creates an empty set. |
-| <span class="method">`Clone()`</span> | Returns a copy (as `object`), or `null` when disposed. |
+| <a class="ref method" href="/docs/ui-glossary/types/drag-and-drop-cursors/#draganddropcursors">`DragAndDropCursors()`</a> | Creates an empty set. |
+| <a class="ref method" href="/docs/ui-glossary/types/drag-and-drop-cursors/#clone">`Clone()`</a> | Returns a copy (as `object`), or `null` when disposed. |
 
 ### ResizeCursors
 
 The cursors of the eight grips around a [resizable](/docs/ui-base-element/#resizing) element. Each grip is a
-`MouseCursorsSet`, so it can have a hover and a pressed cursor. A sealed, disposable class.
+<a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a>, so it can have a hover and a pressed cursor. A sealed, disposable class.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="prop">`LeftTop`</span> | `MouseCursorsSet` | The top left corner. |
-| <span class="prop">`RightTop`</span> | `MouseCursorsSet` | The top right corner. |
-| <span class="prop">`LeftBottom`</span> | `MouseCursorsSet` | The bottom left corner. |
-| <span class="prop">`RightBottom`</span> | `MouseCursorsSet` | The bottom right corner. |
-| <span class="prop">`Left`</span> | `MouseCursorsSet` | The left edge. |
-| <span class="prop">`Right`</span> | `MouseCursorsSet` | The right edge. |
-| <span class="prop">`Top`</span> | `MouseCursorsSet` | The top edge. |
-| <span class="prop">`Bottom`</span> | `MouseCursorsSet` | The bottom edge. |
+| <a class="ref prop" href="/docs/ui-glossary/types/resize-cursors/#lefttop">`LeftTop`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | The top left corner. |
+| <a class="ref prop" href="/docs/ui-glossary/types/resize-cursors/#righttop">`RightTop`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | The top right corner. |
+| <a class="ref prop" href="/docs/ui-glossary/types/resize-cursors/#leftbottom">`LeftBottom`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | The bottom left corner. |
+| <a class="ref prop" href="/docs/ui-glossary/types/resize-cursors/#rightbottom">`RightBottom`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | The bottom right corner. |
+| <a class="ref prop" href="/docs/ui-glossary/types/resize-cursors/#left">`Left`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | The left edge. |
+| <a class="ref prop" href="/docs/ui-glossary/types/resize-cursors/#right">`Right`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | The right edge. |
+| <a class="ref prop" href="/docs/ui-glossary/types/resize-cursors/#top">`Top`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | The top edge. |
+| <a class="ref prop" href="/docs/ui-glossary/types/resize-cursors/#bottom">`Bottom`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | The bottom edge. |
 
 | Method | Description |
 | --- | --- |
-| <span class="method">`ResizeCursors()`</span> | Creates an empty set. |
-| <span class="method">`Clone()`</span> | Returns a copy (as `object`) that shares the eight sets, or `null` when disposed. |
+| <a class="ref method" href="/docs/ui-glossary/types/resize-cursors/#resizecursors">`ResizeCursors()`</a> | Creates an empty set. |
+| <a class="ref method" href="/docs/ui-glossary/types/resize-cursors/#clone">`Clone()`</a> | Returns a copy (as `object`) that shares the eight sets, or `null` when disposed. |
 
 ### RichTextCursors
 
 The cursors over the text of a [`RichTextBox`](/docs/ui-text/#richtextbox). They replace the hover and pressed cursors
-of the box's set. Disposable like `MouseCursorsSet`.
+of the box's set. Disposable like <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a>.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="prop">`WriteCursor`</span> | `MouseCursorsSet` | Its hover and pressed cursors are shown over the text of an editable (`ReadWrite`) box. |
-| <span class="prop">`LinkCursor`</span> | `MouseCursorsSet` | Its hover and pressed cursors are shown over a link in a box that is not editable. |
+| <a class="ref prop" href="/docs/ui-glossary/types/rich-text-cursors/#writecursor">`WriteCursor`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | Its hover and pressed cursors are shown over the text of an editable (`ReadWrite`) box. |
+| <a class="ref prop" href="/docs/ui-glossary/types/rich-text-cursors/#linkcursor">`LinkCursor`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | Its hover and pressed cursors are shown over a link in a box that is not editable. |
 
 | Method | Description |
 | --- | --- |
-| <span class="method">`RichTextCursors()`</span> | Creates an empty set. |
-| <span class="method">`Clone()`</span> | Returns a copy (as `object`) that shares the two sets, or `null` when disposed. |
+| <a class="ref method" href="/docs/ui-glossary/types/rich-text-cursors/#richtextcursors">`RichTextCursors()`</a> | Creates an empty set. |
+| <a class="ref method" href="/docs/ui-glossary/types/rich-text-cursors/#clone">`Clone()`</a> | Returns a copy (as `object`) that shares the two sets, or `null` when disposed. |
 
 ### GenericMouseCursorsData&lt;T&gt;
 
 The static holder of the general mouse cursors set of one element type, keyed by its style class `T`.
-`Button.GeneralMouseCursorsSet` reads and writes `GenericMouseCursorsData<ButtonStyle>.GeneralMouseCursorsSet`.
+<a class="ref prop" href="/docs/ui-glossary/elements/button/#generalmousecursorsset">`Button.GeneralMouseCursorsSet`</a> reads and writes `GenericMouseCursorsData<ButtonStyle>.GeneralMouseCursorsSet`.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="prop">`GeneralMouseCursorsSet`</span> | `MouseCursorsSet` | Static. The set of every element of the type that has none of its own. `null` at start, which means the default set. |
+| <a class="ref prop" href="/docs/ui-glossary/types/generic-mouse-cursors-data/#generalmousecursorsset">`GeneralMouseCursorsSet`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | Static. The set of every element of the type that has none of its own. `null` at start, which means the default set. |
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| <span class="event">`OnGeneralMouseCursorsSetChanged`</span> | `(MouseCursorsSet prevMouseCursorsSet)` | Static. `GeneralMouseCursorsSet` is replaced; the handler gets the previous set. Not raised when a property of the set changes. |
+| <a class="ref event" href="/docs/ui-glossary/types/generic-mouse-cursors-data/#ongeneralmousecursorssetchanged">`OnGeneralMouseCursorsSetChanged`</a> | `(MouseCursorsSet prevMouseCursorsSet)` | Static. <a class="ref prop" href="/docs/ui-glossary/types/generic-mouse-cursors-data/#generalmousecursorsset">`GeneralMouseCursorsSet`</a> is replaced; the handler gets the previous set. Not raised when a property of the set changes. |
 
 ## Default settings
 
-`DefaultSettings` (namespace `BorrowedTorch.UI.Settings`) is a static class of public fields that hold framework-wide
+<a class="ref" href="/docs/ui-glossary/types/default-settings/">`DefaultSettings`</a> (namespace `BorrowedTorch.UI.Settings`) is a static class of public fields that hold framework-wide
 defaults. Set them at start, before you create elements. Most are read when the framework defaults of a style type are
 built, which happens once, the first time that style type is used (normally when the first element of the type is
 created, or when you touch `X.GeneralStyle`); changing them later doesn't reach that type. The ones marked "on use" are
@@ -436,33 +436,33 @@ read each time they are needed.
 
 | Field | Type | Default | Description |
 | --- | --- | --- | --- |
-| `DefaultFontSize` | `int` | `14` | The `FontSize` default of `LabelStyle` and `RichTextBoxStyle`. |
-| `DefaultTextColor` | `Color` | `Color.Black` | The `ForegroundColor` default of `LabelStyle` and `RichTextBoxStyle`. |
-| `DefaultTextCursorThickness` | `int` | `1` | The `TextCursorThickness` default of `RichTextBoxStyle`, in units. |
-| `DefaultTextCursorColor` | `Color` | `Color.Black` | The `TextCursorColor` default of `RichTextBoxStyle`. |
-| `DefaultTextSelectionColor` | `Color` | `Color.LightBlue` | The `TextSelectionColor` default of `RichTextBoxStyle`. |
+| `DefaultFontSize` | `int` | `14` | The `FontSize` default of <a class="ref" href="/docs/ui-glossary/types/label-style/">`LabelStyle`</a> and <a class="ref" href="/docs/ui-glossary/types/rich-text-box-style/">`RichTextBoxStyle`</a>. |
+| `DefaultTextColor` | `Color` | `Color.Black` | The <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#foregroundcolor">`ForegroundColor`</a> default of <a class="ref" href="/docs/ui-glossary/types/label-style/">`LabelStyle`</a> and <a class="ref" href="/docs/ui-glossary/types/rich-text-box-style/">`RichTextBoxStyle`</a>. |
+| `DefaultTextCursorThickness` | `int` | `1` | The `TextCursorThickness` default of <a class="ref" href="/docs/ui-glossary/types/rich-text-box-style/">`RichTextBoxStyle`</a>, in units. |
+| `DefaultTextCursorColor` | `Color` | `Color.Black` | The `TextCursorColor` default of <a class="ref" href="/docs/ui-glossary/types/rich-text-box-style/">`RichTextBoxStyle`</a>. |
+| `DefaultTextSelectionColor` | `Color` | `Color.LightBlue` | The `TextSelectionColor` default of <a class="ref" href="/docs/ui-glossary/types/rich-text-box-style/">`RichTextBoxStyle`</a>. |
 | `DefaultTextCursorBlinkTimeMs` | `int` | `500` | How long the text cursor stays on and off, in milliseconds. Read when a text cursor starts blinking. |
-| `DefaultResizeAreaHalfWidth` | `int` | `3` | On use. The `ResizeAreaHalfWidth` default of every element: half the width of the grips of a resizable element, in units. |
+| `DefaultResizeAreaHalfWidth` | `int` | `3` | On use. The <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#resizeareahalfwidth">`ResizeAreaHalfWidth`</a> default of every element: half the width of the grips of a resizable element, in units. |
 | `DefaultResizeContourHalfWidth` | `int` | `1` | On use. Half the width of the contour drawn while an element is resized, in units. |
-| `DefaultResizeContourColor` | `Color` | `new(50, 50, 50, 190)` | On use. The `ResizeContourColor` default of every element. |
+| `DefaultResizeContourColor` | `Color` | `new(50, 50, 50, 190)` | On use. The <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#resizecontourcolor">`ResizeContourColor`</a> default of every element. |
 | `DefaultWindowTitleThickness` | `int` | `30` | The height of a window's default title bar (its close button is 4 units smaller). Read when a window is created, and for the close button when the title bar is measured. |
-| `DefaultWindowBorderThickness` | `int` | `2` | The border thickness of `WindowStyle`'s default border. |
-| `DefaultWindowBackgroundColor` | `Color` | `Color.Wheat` | The background colour of `WindowStyle`'s default border. |
+| `DefaultWindowBorderThickness` | `int` | `2` | The border thickness of <a class="ref" href="/docs/ui-glossary/types/window-style/">`WindowStyle`</a>'s default border. |
+| `DefaultWindowBackgroundColor` | `Color` | `Color.Wheat` | The background colour of <a class="ref" href="/docs/ui-glossary/types/window-style/">`WindowStyle`</a>'s default border. |
 | `DefaultWindowTitleBarColor` | `Color` | `Color.LightBlue` | The background colour of a window's default title bar, read when the title bar is created. |
-| `DefaultWindowBorderColor` | `Color` | `new(80, 80, 80, 255)` | The border colour of `WindowStyle`'s default border. |
-| `DefaultTimeBeforeShowToolTipMs` | `int` | `500` | The `TimeBeforeShowMs` default of `ToolTipStyle`. |
-| `DefaultContextMenuBackgroundColor` | `Color` | `Color.White` | The background colour of `ContextMenuStyle`'s default border. |
-| `DefaultContextMenuBorderColor` | `Color` | `new(80, 80, 80, 255)` | The border colour of `ContextMenuStyle`'s default border. |
-| `DefaultContextMenuHighlightColor` | `Color` | `new(200, 220, 240, 255)` | The colour of the hovered and selected rows of `ContextMenuStyle`'s default list style. |
-| `DefaultContextMenuIconColor` | `Color` | `new(80, 80, 80, 255)` | The colour of the check and expand icons of `ContextMenuStyle`. |
-| `DefaultDoubleClickIntervalMs` | `int` | `300` | On use. The `DoubleClickIntervalMs` default of every element. |
-| `DefaultTimeBeforeRepeatStartsMs` | `int` | `1000` | On use. The `TimeBeforeRepeatStartsMs` default of every element. |
-| `DefaultTimeBetweenRepeatsMs` | `int` | `300` | On use. The `TimeBetweenRepeatsMs` default of every element. |
-| `DefaultMinDepth` | `float` | `0` | The `MinDepth` default of `ViewPortStyle`. |
-| `DefaultMaxDepth` | `float` | `1` | The `MaxDepth` default of `ViewPortStyle`. |
+| `DefaultWindowBorderColor` | `Color` | `new(80, 80, 80, 255)` | The border colour of <a class="ref" href="/docs/ui-glossary/types/window-style/">`WindowStyle`</a>'s default border. |
+| `DefaultTimeBeforeShowToolTipMs` | `int` | `500` | The `TimeBeforeShowMs` default of <a class="ref" href="/docs/ui-glossary/types/tool-tip-style/">`ToolTipStyle`</a>. |
+| `DefaultContextMenuBackgroundColor` | `Color` | `Color.White` | The background colour of <a class="ref" href="/docs/ui-glossary/types/context-menu-style/">`ContextMenuStyle`</a>'s default border. |
+| `DefaultContextMenuBorderColor` | `Color` | `new(80, 80, 80, 255)` | The border colour of <a class="ref" href="/docs/ui-glossary/types/context-menu-style/">`ContextMenuStyle`</a>'s default border. |
+| `DefaultContextMenuHighlightColor` | `Color` | `new(200, 220, 240, 255)` | The colour of the hovered and selected rows of <a class="ref" href="/docs/ui-glossary/types/context-menu-style/">`ContextMenuStyle`</a>'s default list style. |
+| `DefaultContextMenuIconColor` | `Color` | `new(80, 80, 80, 255)` | The colour of the check and expand icons of <a class="ref" href="/docs/ui-glossary/types/context-menu-style/">`ContextMenuStyle`</a>. |
+| `DefaultDoubleClickIntervalMs` | `int` | `300` | On use. The <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#doubleclickintervalms">`DoubleClickIntervalMs`</a> default of every element. |
+| `DefaultTimeBeforeRepeatStartsMs` | `int` | `1000` | On use. The <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#timebeforerepeatstartsms">`TimeBeforeRepeatStartsMs`</a> default of every element. |
+| `DefaultTimeBetweenRepeatsMs` | `int` | `300` | On use. The <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#timebetweenrepeatsms">`TimeBetweenRepeatsMs`</a> default of every element. |
+| `DefaultMinDepth` | `float` | `0` | The `MinDepth` default of <a class="ref" href="/docs/ui-glossary/types/view-port-style/">`ViewPortStyle`</a>. |
+| `DefaultMaxDepth` | `float` | `1` | The `MaxDepth` default of <a class="ref" href="/docs/ui-glossary/types/view-port-style/">`ViewPortStyle`</a>. |
 
 The "on use" defaults apply to every element whose property has no value from code or a style, also to elements
-without a style class such as `Grid`.
+without a style class such as <a class="ref" href="/docs/ui-glossary/elements/grid/">`Grid`</a>.
 
 ## Dependency properties
 
@@ -497,29 +497,29 @@ of your own is on the [base element](/docs/ui-base-element/) page.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="prop">`Value`</span> | `T` | Read-only. The value in effect: the one of the highest priority source, or the default when no source has one. |
-| <span class="prop">`ValueSource`</span> | `ValueSources` | Read-only. The source the value in effect comes from, `None` when the property reads its default. |
-| <span class="prop">`PreAction`</span> | `PreActionDelegate` | Called with `(ref T value, ref bool canProceed)` before every value is stored, from any source: change `value` to correct it, or set `canProceed` to `false` to reject it. Runs after the element's own pre-action. |
-| <span class="prop">`PostAction`</span> | `Action<T>` | Called with the new value in effect after the element's own reaction, before `OnPropertyChanged`. |
+| <a class="ref prop" href="/docs/ui-glossary/types/dependency-property/#value">`Value`</a> | `T` | Read-only. The value in effect: the one of the highest priority source, or the default when no source has one. |
+| <a class="ref prop" href="/docs/ui-glossary/types/dependency-property/#valuesource">`ValueSource`</a> | <a class="ref" href="/docs/ui-glossary/types/value-sources/">`ValueSources`</a> | Read-only. The source the value in effect comes from, `None` when the property reads its default. |
+| <a class="ref prop" href="/docs/ui-glossary/types/dependency-property/#preaction">`PreAction`</a> | `PreActionDelegate` | Called with `(ref T value, ref bool canProceed)` before every value is stored, from any source: change `value` to correct it, or set `canProceed` to `false` to reject it. Runs after the element's own pre-action. |
+| <a class="ref prop" href="/docs/ui-glossary/types/dependency-property/#postaction">`PostAction`</a> | `Action<T>` | Called with the new value in effect after the element's own reaction, before <a class="ref event" href="/docs/ui-glossary/types/dependency-property/#onpropertychanged">`OnPropertyChanged`</a>. |
 
 ### DependencyProperty&lt;T&gt; events
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| <span class="event">`OnPropertyChanged`</span> | `(T value)` | The value in effect changes. The handler gets the new value. |
-| <span class="event">`OnSourcePropertyChanged`</span> | `(object propertyValue)` | The bound `Bindable` source reports a change of the bound property (or of all properties, with an empty name). The handler gets the source property's value, before conversion. Not raised for the echo of the property's own write, nor in `OneWayToSource` mode. |
-| <span class="event">`OnSourceCollectionChanged`</span> | `(CollectionChangeType changeType, int startIndex, int count)` | The `IBindableCollection` held by the bound source property adds (`Add`) or removes (`Remove`) items. Not raised in `OneWayToSource` mode. |
+| <a class="ref event" href="/docs/ui-glossary/types/dependency-property/#onpropertychanged">`OnPropertyChanged`</a> | `(T value)` | The value in effect changes. The handler gets the new value. |
+| <a class="ref event" href="/docs/ui-glossary/types/dependency-property/#onsourcepropertychanged">`OnSourcePropertyChanged`</a> | `(object propertyValue)` | The bound <a class="ref" href="/docs/ui-glossary/types/bindable/">`Bindable`</a> source reports a change of the bound property (or of all properties, with an empty name). The handler gets the source property's value, before conversion. Not raised for the echo of the property's own write, nor in `OneWayToSource` mode. |
+| <a class="ref event" href="/docs/ui-glossary/types/dependency-property/#onsourcecollectionchanged">`OnSourceCollectionChanged`</a> | `(CollectionChangeType changeType, int startIndex, int count)` | The <a class="ref" href="/docs/ui-glossary/types/i-bindable-collection/">`IBindableCollection`</a> held by the bound source property adds (`Add`) or removes (`Remove`) items. Not raised in `OneWayToSource` mode. |
 
 ### DependencyProperty&lt;T&gt; methods
 
 | Method | Description |
 | --- | --- |
-| <span class="method">`DependencyProperty(BaseElement owner, Action<T> postAction = null, PreActionDelegate preAction = null)`</span> | Creates a stand-alone property owned by an element, with an optional post- and pre-action. Its default is `default(T)`. |
-| <span class="method">`DependencyProperty(BaseElement owner, DependencyPropertyActions<T> actions)`</span> | Creates a property that shares the element class's actions and default; the generated `FooDP` properties use it. |
-| <span class="method">`SetValue(T value, bool checkForEquality = true, bool setSourceValue = true, ValueSources valueSource = ValueSources.ManualAssign)`</span> | Stores the value for the source. With `checkForEquality` off, the same value raises the change again. With `setSourceValue` off, a bound source is not written. |
-| <span class="method">`ClearValue(ValueSources valueSource)`</span> | Removes the value of that source. If it was the value in effect, the next source (or the default) takes over and the change is raised when the value differs. |
-| <span class="method">`Bind(object dataContext, string sourcePropertyName, BindingMode mode, IConverter converter = null)`</span> | Binds the property to a public property of `dataContext`, replacing any earlier binding. See [bindings](#bindings). |
-| <span class="method">`Dispose()`</span> | Removes the binding and the event handlers. The element calls it when it is disposed. |
+| <a class="ref method" href="/docs/ui-glossary/types/dependency-property/#dependencyproperty">`DependencyProperty(BaseElement owner, Action<T> postAction = null, PreActionDelegate preAction = null)`</a> | Creates a stand-alone property owned by an element, with an optional post- and pre-action. Its default is `default(T)`. |
+| <a class="ref method" href="/docs/ui-glossary/types/dependency-property/#dependencyproperty">`DependencyProperty(BaseElement owner, DependencyPropertyActions<T> actions)`</a> | Creates a property that shares the element class's actions and default; the generated `FooDP` properties use it. |
+| <a class="ref method" href="/docs/ui-glossary/types/dependency-property/#setvalue">`SetValue(T value, bool checkForEquality = true, bool setSourceValue = true, ValueSources valueSource = ValueSources.ManualAssign)`</a> | Stores the value for the source. With `checkForEquality` off, the same value raises the change again. With `setSourceValue` off, a bound source is not written. |
+| <a class="ref method" href="/docs/ui-glossary/types/dependency-property/#clearvalue">`ClearValue(ValueSources valueSource)`</a> | Removes the value of that source. If it was the value in effect, the next source (or the default) takes over and the change is raised when the value differs. |
+| <a class="ref method" href="/docs/ui-glossary/types/dependency-property/#bind">`Bind(object dataContext, string sourcePropertyName, BindingMode mode, IConverter converter = null)`</a> | Binds the property to a public property of `dataContext`, replacing any earlier binding. See [bindings](#bindings). |
+| <a class="ref method" href="/docs/ui-glossary/types/dependency-property/#dispose">`Dispose()`</a> | Removes the binding and the event handlers. The element calls it when it is disposed. |
 
 `OwnerPreActionDelegate`, with the signature `(BaseElement owner, ref T value, ref bool canProceed, ValueSources
 valueSource)`, is the type of the element class's own pre-action. It is assigned inside the library; you can't set one
@@ -533,16 +533,16 @@ the static `FooDPActions` field of the element class.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="prop">`DefaultValue`</span> | `T` | Read-only. The value read while no source has one. Some defaults are read from `DefaultSettings` each time (see [default settings](#default-settings)). |
+| <a class="ref prop" href="/docs/ui-glossary/types/dependency-property-actions/#defaultvalue">`DefaultValue`</a> | `T` | Read-only. The value read while no source has one. Some defaults are read from <a class="ref" href="/docs/ui-glossary/types/default-settings/">`DefaultSettings`</a> each time (see [default settings](#default-settings)). |
 
 | Method | Description |
 | --- | --- |
-| <span class="method">`DependencyPropertyActions()`</span> | Creates an empty set of actions with the default `default(T)`. |
+| <a class="ref method" href="/docs/ui-glossary/types/dependency-property-actions/#dependencypropertyactions">`DependencyPropertyActions()`</a> | Creates an empty set of actions with the default `default(T)`. |
 
 ## Bindings
 
 A dependency property can be bound to a public property of any object, the view model. When the object derives
-from `Bindable` and calls `PropertyChangedInvoke`, the element follows its changes. `BindableCollection<T>` is a list
+from <a class="ref" href="/docs/ui-glossary/types/bindable/">`Bindable`</a> and calls `PropertyChangedInvoke`, the element follows its changes. `BindableCollection<T>` is a list
 that tells a bound list box about added and removed items. This view model and converter are used by the example
 below:
 
@@ -671,9 +671,9 @@ How a binding behaves:
 
 | Value | Meaning |
 | --- | --- |
-| `OneWay` | Source to element. |
-| `OneWayToSource` | Element to source. |
-| `TwoWay` | Both ways. |
+| <a class="ref" href="/docs/ui-glossary/types/binding-mode/#oneway">`OneWay`</a> | Source to element. |
+| <a class="ref" href="/docs/ui-glossary/types/binding-mode/#onewaytosource">`OneWayToSource`</a> | Element to source. |
+| <a class="ref" href="/docs/ui-glossary/types/binding-mode/#twoway">`TwoWay`</a> | Both ways. |
 
 ### Bindable
 
@@ -681,43 +681,43 @@ The abstract base of a view model.
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| <span class="event">`OnPropertyChanged`</span> | `(string propertyName)` | The view model calls `PropertyChangedInvoke`. An empty name means every property changed. |
+| <a class="ref event" href="/docs/ui-glossary/types/bindable/#onpropertychanged">`OnPropertyChanged`</a> | `(string propertyName)` | The view model calls <a class="ref method" href="/docs/ui-glossary/types/bindable/#propertychangedinvoke">`PropertyChangedInvoke`</a>. An empty name means every property changed. |
 
 | Method | Description |
 | --- | --- |
-| <span class="method">`PropertyChangedInvoke(string propertyName)`</span> | Protected. Raises `OnPropertyChanged`; call it from a property setter with `nameof` the property. |
+| <a class="ref method" href="/docs/ui-glossary/types/bindable/#propertychangedinvoke">`PropertyChangedInvoke(string propertyName)`</a> | Protected. Raises <a class="ref event" href="/docs/ui-glossary/types/bindable/#onpropertychanged">`OnPropertyChanged`</a>; call it from a property setter with `nameof` the property. |
 
 ### BindableCollection&lt;T&gt;
 
-A list that raises `OnCollectionChanged` for every change, so a bound `ListBox`, `ComboBox`, `TreeView` or
-`ContextMenu` updates only the changed rows. It implements `IBindableCollection` and `IReadOnlyList<T>`, and can be
+A list that raises <a class="ref event" href="/docs/ui-glossary/types/bindable-collection/#oncollectionchanged">`OnCollectionChanged`</a> for every change, so a bound <a class="ref" href="/docs/ui-glossary/elements/list-box/">`ListBox`</a>, <a class="ref" href="/docs/ui-glossary/elements/combo-box/">`ComboBox`</a>, <a class="ref" href="/docs/ui-glossary/elements/tree-view/">`TreeView`</a> or
+<a class="ref" href="/docs/ui-glossary/elements/context-menu/">`ContextMenu`</a> updates only the changed rows. It implements <a class="ref" href="/docs/ui-glossary/types/i-bindable-collection/">`IBindableCollection`</a> and `IReadOnlyList<T>`, and can be
 filled with a collection initializer or `[]`.
 
 | Property | Type | Description |
 | --- | --- | --- |
 | <span class="prop">`this[int index]`</span> | `T` | The item at the index. Setting it is reported as the old item removed and the new one added at that index. |
-| <span class="prop">`Count`</span> | `int` | Read-only. The number of items. |
-| <span class="prop">`IsReadOnly`</span> | `bool` | Read-only. Always `false`. |
+| <a class="ref prop" href="/docs/ui-glossary/types/bindable-collection/#count">`Count`</a> | `int` | Read-only. The number of items. |
+| <a class="ref prop" href="/docs/ui-glossary/types/bindable-collection/#isreadonly">`IsReadOnly`</a> | `bool` | Read-only. Always `false`. |
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| <span class="event">`OnCollectionChanged`</span> | `(bool isItemsAdded, int startIndex, int count)` | Items are added (`isItemsAdded` is `true`) or removed, starting at `startIndex`. |
+| <a class="ref event" href="/docs/ui-glossary/types/bindable-collection/#oncollectionchanged">`OnCollectionChanged`</a> | `(bool isItemsAdded, int startIndex, int count)` | Items are added (`isItemsAdded` is `true`) or removed, starting at `startIndex`. |
 
 | Method | Description |
 | --- | --- |
-| <span class="method">`BindableCollection()`</span> | Creates an empty collection. |
-| <span class="method">`Add(T item)`</span> | Adds the item at the end. |
-| <span class="method">`AddRange(IEnumerable<T> collection)`</span> | Adds the items at the end, reported as one change. Does nothing for `null` or an empty collection. |
-| <span class="method">`Insert(int index, T item)`</span> | Inserts the item at the index. An index outside `0..Count` is ignored. |
-| <span class="method">`InsertRange(int index, IEnumerable<T> collection)`</span> | Inserts the items at the index, reported as one change. An index outside `0..Count` is ignored. |
-| <span class="method">`Remove(T item)`</span> | Removes the first occurrence of the item. Returns `false` when it is not in the collection. |
-| <span class="method">`RemoveAt(int index)`</span> | Removes the item at the index. An index out of range is ignored. |
-| <span class="method">`RemoveRange(int index, int count)`</span> | Removes up to `count` items from the index, reported as one change. |
-| <span class="method">`Clear()`</span> | Removes every item, reported as one change. |
-| <span class="method">`TryGetElementAt(int index)`</span> | Returns the item at the index, or `default` when the index is out of range. |
-| <span class="method">`Contains(T item)`</span> | Whether the item is in the collection. |
-| <span class="method">`CopyTo(T[] array, int arrayIndex)`</span> | Copies the items into the array from the index. |
-| <span class="method">`GetEnumerator()`</span> | Enumerates the items. |
+| <a class="ref method" href="/docs/ui-glossary/types/bindable-collection/#bindablecollection">`BindableCollection()`</a> | Creates an empty collection. |
+| <a class="ref method" href="/docs/ui-glossary/types/bindable-collection/#add">`Add(T item)`</a> | Adds the item at the end. |
+| <a class="ref method" href="/docs/ui-glossary/types/bindable-collection/#addrange">`AddRange(IEnumerable<T> collection)`</a> | Adds the items at the end, reported as one change. Does nothing for `null` or an empty collection. |
+| <a class="ref method" href="/docs/ui-glossary/types/bindable-collection/#insert">`Insert(int index, T item)`</a> | Inserts the item at the index. An index outside `0..Count` is ignored. |
+| <a class="ref method" href="/docs/ui-glossary/types/bindable-collection/#insertrange">`InsertRange(int index, IEnumerable<T> collection)`</a> | Inserts the items at the index, reported as one change. An index outside `0..Count` is ignored. |
+| <a class="ref method" href="/docs/ui-glossary/types/bindable-collection/#remove">`Remove(T item)`</a> | Removes the first occurrence of the item. Returns `false` when it is not in the collection. |
+| <a class="ref method" href="/docs/ui-glossary/types/bindable-collection/#removeat">`RemoveAt(int index)`</a> | Removes the item at the index. An index out of range is ignored. |
+| <a class="ref method" href="/docs/ui-glossary/types/bindable-collection/#removerange">`RemoveRange(int index, int count)`</a> | Removes up to `count` items from the index, reported as one change. |
+| <a class="ref method" href="/docs/ui-glossary/types/bindable-collection/#clear">`Clear()`</a> | Removes every item, reported as one change. |
+| <a class="ref method" href="/docs/ui-glossary/types/bindable-collection/#trygetelementat">`TryGetElementAt(int index)`</a> | Returns the item at the index, or `default` when the index is out of range. |
+| <a class="ref method" href="/docs/ui-glossary/types/bindable-collection/#contains">`Contains(T item)`</a> | Whether the item is in the collection. |
+| <a class="ref method" href="/docs/ui-glossary/types/bindable-collection/#copyto">`CopyTo(T[] array, int arrayIndex)`</a> | Copies the items into the array from the index. |
+| <a class="ref method" href="/docs/ui-glossary/types/bindable-collection/#getenumerator">`GetEnumerator()`</a> | Enumerates the items. |
 
 ### IBindableCollection
 
@@ -726,7 +726,7 @@ source.
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| <span class="event">`OnCollectionChanged`</span> | `(bool isItemsAdded, int startIndex, int count)` | Items were added (`true`) or removed (`false`), `count` of them from `startIndex`. |
+| <a class="ref event" href="/docs/ui-glossary/types/i-bindable-collection/#oncollectionchanged">`OnCollectionChanged`</a> | `(bool isItemsAdded, int startIndex, int count)` | Items were added (`true`) or removed (`false`), `count` of them from `startIndex`. |
 
 #### `CollectionChangeType`
 
@@ -734,9 +734,9 @@ Passed to `OnSourceCollectionChanged`.
 
 | Value | Meaning |
 | --- | --- |
-| `Initialize` | The whole source is taken again. Used by the list box when it rebuilds its rows; `OnSourceCollectionChanged` doesn't raise it. |
-| `Add` | Items were added. |
-| `Remove` | Items were removed. |
+| <a class="ref" href="/docs/ui-glossary/types/collection-change-type/#initialize">`Initialize`</a> | The whole source is taken again. Used by the list box when it rebuilds its rows; `OnSourceCollectionChanged` doesn't raise it. |
+| <a class="ref" href="/docs/ui-glossary/types/collection-change-type/#add">`Add`</a> | Items were added. |
+| <a class="ref" href="/docs/ui-glossary/types/collection-change-type/#remove">`Remove`</a> | Items were removed. |
 
 ### IConverter
 
@@ -744,14 +744,14 @@ Translates between the source's type and the property's type.
 
 | Method | Description |
 | --- | --- |
-| <span class="method">`Convert(object value)`</span> | Turns a source value into the property's value. Used in `OneWay` and `TwoWay` mode. |
-| <span class="method">`ConvertBack(object value)`</span> | Turns the property's value into a source value. Used in `OneWayToSource` and `TwoWay` mode. |
+| <a class="ref method" href="/docs/ui-glossary/types/i-converter/#convert">`Convert(object value)`</a> | Turns a source value into the property's value. Used in `OneWay` and `TwoWay` mode. |
+| <a class="ref method" href="/docs/ui-glossary/types/i-converter/#convertback">`ConvertBack(object value)`</a> | Turns the property's value into a source value. Used in `OneWayToSource` and `TwoWay` mode. |
 
 ## Items templates
 
 A list box, combo box, tree view or context menu with an `ItemsSource` makes one row per source object. Its
 `ItemsTemplate` makes the element shown in each row; without one, the row shows the object's `ToString()` in a
-`Label`. The elements a template makes belong to the list, which may dispose or reuse them, so don't keep or move
+<a class="ref" href="/docs/ui-glossary/elements/label/">`Label`</a>. The elements a template makes belong to the list, which may dispose or reuse them, so don't keep or move
 them. Setting another
 template on a list box with an items source rebuilds its rows. This template and record are used by the example
 below:
@@ -810,17 +810,17 @@ ui.AddElementToRoot(list);
 
 | Method | Description |
 | --- | --- |
-| <span class="method">`GenerateItemElement(object data)`</span> | Returns a new element that shows the source object. |
+| <a class="ref method" href="/docs/ui-glossary/types/i-items-template/#generateitemelement">`GenerateItemElement(object data)`</a> | Returns a new element that shows the source object. |
 
 ### IRecyclingItemsTemplate
 
-An `IItemsTemplate` whose elements can be re-bound to another source object. A virtualized
+An <a class="ref" href="/docs/ui-glossary/types/i-items-template/">`IItemsTemplate`</a> whose elements can be re-bound to another source object. A virtualized
 [`ListBox`](/docs/ui-lists/#listbox) (`VirtualizationMode` `Fixed`) then reuses the row elements that scroll out of
 view instead of generating new ones.
 
 | Method | Description |
 | --- | --- |
-| <span class="method">`UpdateItemElement(BaseElement element, object data)`</span> | Shows `data` in an element that `GenerateItemElement` of this template made earlier. |
+| <a class="ref method" href="/docs/ui-glossary/types/i-recycling-items-template/#updateitemelement">`UpdateItemElement(BaseElement element, object data)`</a> | Shows `data` in an element that `GenerateItemElement` of this template made earlier. |
 
 ```csharp
 public class LevelTemplate : IRecyclingItemsTemplate
@@ -894,14 +894,14 @@ pulse.Start();
 The UI advances its running animations on every `Update`, by the frame's elapsed game time. A long
 frame doesn't skip boundaries: the animation still turns around, ends its runs and lands on the exact end values.
 
-- A run goes once along the time line, or forth and back with `autoReverse`. `AnimationRepeatType.None` plays one run,
+- A run goes once along the time line, or forth and back with `autoReverse`. <a class="ref" href="/docs/ui-glossary/types/animation-repeat-type/#none">`AnimationRepeatType.None`</a> plays one run,
   `NumberOfTimes` plays `repeatsNumber` runs, `Infinite` repeats until you pause or remove it.
 - When it completes, the animation applies the values of the end of its time line (its start, with `autoReverse`),
-  then `RunBoundaryValues.EndValue` if it has one. With `deleteOnComplete` (the default) it is then removed from the
+  then <a class="ref prop" href="/docs/ui-glossary/types/run-boundary-values/#endvalue">`RunBoundaryValues.EndValue`</a> if it has one. With `deleteOnComplete` (the default) it is then removed from the
   UI; add it again to play it after a `Reset`.
 - Animated values are `ManualAssign` values: they win over styles and stay after the animation. Clear them with
   `FooDP.ClearValue(ValueSources.ManualAssign)` to give the property back to its style.
-- `int`, `float`, `Margin` and `Color` are interpolated. A smooth frame of any other type keeps `From` until the end of
+- `int`, `float`, <a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> and `Color` are interpolated. A smooth frame of any other type keeps `From` until the end of
   the frame, then switches to `To`.
 - An animation whose properties all belong to disposed elements is removed automatically.
 
@@ -911,17 +911,17 @@ An animation of properties of type `T`. It has the properties of [`BaseAnimation
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="prop">`State`</span> | `AnimationState` | Read-only. Where the animation is: not started, running, paused or completed. |
-| <span class="prop">`RunBoundaryValues`</span> | `RunBoundaryValues<T>` | Read-only. The values applied when the animation starts and when it completes, or `null`. |
+| <a class="ref prop" href="/docs/ui-glossary/types/animation/#state">`State`</a> | <a class="ref" href="/docs/ui-glossary/types/animation-state/">`AnimationState`</a> | Read-only. Where the animation is: not started, running, paused or completed. |
+| <a class="ref prop" href="/docs/ui-glossary/types/animation/#runboundaryvalues">`RunBoundaryValues`</a> | `RunBoundaryValues<T>` | Read-only. The values applied when the animation starts and when it completes, or `null`. |
 
 | Method | Description |
 | --- | --- |
-| <span class="method">`Animation(int durationMs, AnimationRepeatType repeatType = AnimationRepeatType.None, bool autoReverse = false, bool deleteOnComplete = true, RunBoundaryValues<T> runBoundaryValues = null, uint repeatsNumber = 1)`</span> | Creates an animation with a time line of `durationMs` milliseconds. `repeatsNumber` counts the runs of a `NumberOfTimes` animation. A duration of 0 or less completes at once with the end values. |
-| <span class="method">`AddFrame(BaseAnimationFrame<T> frame)`</span> | Adds a smooth or discrete frame. |
-| <span class="method">`AddDependencyProperty(DependencyProperty<T> property)`</span> | Adds a property the animation drives. One animation can drive several properties. |
-| <span class="method">`Start()`</span> | Runs a not started or paused animation. On the first start it applies `RunBoundaryValues.StartValue` and the values of the time line's start. Does nothing on a completed animation (call `Reset` first) or on a `NumberOfTimes` animation with 0 repeats. |
-| <span class="method">`Pause()`</span> | Pauses a running animation; `Start` continues it. |
-| <span class="method">`Reset()`</span> | Puts the animation back to not started, at the start of its time line with its repeats restored. The properties keep their current values. |
+| <a class="ref method" href="/docs/ui-glossary/types/animation/#animation">`Animation(int durationMs, AnimationRepeatType repeatType = AnimationRepeatType.None, bool autoReverse = false, bool deleteOnComplete = true, RunBoundaryValues<T> runBoundaryValues = null, uint repeatsNumber = 1)`</a> | Creates an animation with a time line of `durationMs` milliseconds. `repeatsNumber` counts the runs of a `NumberOfTimes` animation. A duration of 0 or less completes at once with the end values. |
+| <a class="ref method" href="/docs/ui-glossary/types/animation/#addframe">`AddFrame(BaseAnimationFrame<T> frame)`</a> | Adds a smooth or discrete frame. |
+| <a class="ref method" href="/docs/ui-glossary/types/animation/#adddependencyproperty">`AddDependencyProperty(DependencyProperty<T> property)`</a> | Adds a property the animation drives. One animation can drive several properties. |
+| <a class="ref method" href="/docs/ui-glossary/types/animation/#start">`Start()`</a> | Runs a not started or paused animation. On the first start it applies <a class="ref prop" href="/docs/ui-glossary/types/run-boundary-values/#startvalue">`RunBoundaryValues.StartValue`</a> and the values of the time line's start. Does nothing on a completed animation (call <a class="ref method" href="/docs/ui-glossary/types/animation/#reset">`Reset`</a> first) or on a `NumberOfTimes` animation with 0 repeats. |
+| <a class="ref method" href="/docs/ui-glossary/types/animation/#pause">`Pause()`</a> | Pauses a running animation; <a class="ref method" href="/docs/ui-glossary/types/animation/#start">`Start`</a> continues it. |
+| <a class="ref method" href="/docs/ui-glossary/types/animation/#reset">`Reset()`</a> | Puts the animation back to not started, at the start of its time line with its repeats restored. The properties keep their current values. |
 
 ### BaseAnimation
 
@@ -929,29 +929,29 @@ The abstract base of animations, the type `AddAnimation` takes. Its properties a
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="prop">`State`</span> | `AnimationState` | Read-only. The state of the animation. |
-| <span class="prop">`DurationMs`</span> | `int` | Read-only. The length of the time line in milliseconds. |
-| <span class="prop">`RepeatType`</span> | `AnimationRepeatType` | Read-only. How the runs repeat. |
-| <span class="prop">`RepeatsNumber`</span> | `uint` | Read-only. The number of runs of a `NumberOfTimes` animation. |
-| <span class="prop">`AutoReverse`</span> | `bool` | Read-only. Whether a run goes forth and back along the time line. |
-| <span class="prop">`DeleteOnComplete`</span> | `bool` | Read-only. Whether the UI removes the animation when it completes. |
+| <a class="ref prop" href="/docs/ui-glossary/types/base-animation/#state">`State`</a> | <a class="ref" href="/docs/ui-glossary/types/animation-state/">`AnimationState`</a> | Read-only. The state of the animation. |
+| <a class="ref prop" href="/docs/ui-glossary/types/base-animation/#durationms">`DurationMs`</a> | `int` | Read-only. The length of the time line in milliseconds. |
+| <a class="ref prop" href="/docs/ui-glossary/types/base-animation/#repeattype">`RepeatType`</a> | <a class="ref" href="/docs/ui-glossary/types/animation-repeat-type/">`AnimationRepeatType`</a> | Read-only. How the runs repeat. |
+| <a class="ref prop" href="/docs/ui-glossary/types/base-animation/#repeatsnumber">`RepeatsNumber`</a> | `uint` | Read-only. The number of runs of a `NumberOfTimes` animation. |
+| <a class="ref prop" href="/docs/ui-glossary/types/base-animation/#autoreverse">`AutoReverse`</a> | `bool` | Read-only. Whether a run goes forth and back along the time line. |
+| <a class="ref prop" href="/docs/ui-glossary/types/base-animation/#deleteoncomplete">`DeleteOnComplete`</a> | `bool` | Read-only. Whether the UI removes the animation when it completes. |
 
 #### `AnimationState`
 
 | Value | Meaning |
 | --- | --- |
-| `NotStarted` | Created or reset, not started yet. |
-| `Running` | Advancing with every update. |
-| `Paused` | Stopped where it was; `Start` continues it. |
-| `Completed` | All runs are done; `Reset` makes it playable again. |
+| <a class="ref" href="/docs/ui-glossary/types/animation-state/#notstarted">`NotStarted`</a> | Created or reset, not started yet. |
+| <a class="ref" href="/docs/ui-glossary/types/animation-state/#running">`Running`</a> | Advancing with every update. |
+| <a class="ref" href="/docs/ui-glossary/types/animation-state/#paused">`Paused`</a> | Stopped where it was; `Start` continues it. |
+| <a class="ref" href="/docs/ui-glossary/types/animation-state/#completed">`Completed`</a> | All runs are done; `Reset` makes it playable again. |
 
 #### `AnimationRepeatType`
 
 | Value | Meaning |
 | --- | --- |
-| `None` | One run. |
-| `NumberOfTimes` | `RepeatsNumber` runs. |
-| `Infinite` | Runs until paused or removed. |
+| <a class="ref" href="/docs/ui-glossary/types/animation-repeat-type/#none">`None`</a> | One run. |
+| <a class="ref" href="/docs/ui-glossary/types/animation-repeat-type/#numberoftimes">`NumberOfTimes`</a> | `RepeatsNumber` runs. |
+| <a class="ref" href="/docs/ui-glossary/types/animation-repeat-type/#infinite">`Infinite`</a> | Runs until paused or removed. |
 
 ### BaseAnimationFrame&lt;T&gt;
 
@@ -960,51 +960,51 @@ The abstract base of the frames an `Animation<T>` takes. It has no public member
 
 ### SmoothAnimationFrame&lt;T&gt;
 
-Goes from `From` to `To` between `StartAtMs` and `StartAtMs + DurationMs` of the time line, and goes back the same way
+Goes from <a class="ref prop" href="/docs/ui-glossary/types/smooth-animation-frame/#from">`From`</a> to <a class="ref prop" href="/docs/ui-glossary/types/smooth-animation-frame/#to">`To`</a> between <a class="ref prop" href="/docs/ui-glossary/types/smooth-animation-frame/#startatms">`StartAtMs`</a> and `StartAtMs + DurationMs` of the time line, and goes back the same way
 when the time line reverses. Before its start it sets nothing. A shaping function bends the progress: pass any
 `BaseShapingFunction` from the `BorrowedTorch.ShapingFunctions` package, such as `new CubicEaseOut()`, or create one
 with `ShapingFunctionFactory.Create(ShapingFunctionId.CubicEaseInOut)`.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="prop">`From`</span> | `T` | Read-only. The value at the start of the frame. |
-| <span class="prop">`To`</span> | `T` | Read-only. The value at the end of the frame. |
-| <span class="prop">`DurationMs`</span> | `int` | Read-only. The length of the frame in milliseconds. |
-| <span class="prop">`StartAtMs`</span> | `int` | Read-only. Where the frame starts on the time line, in milliseconds. |
-| <span class="prop">`ShapingFunction`</span> | `BaseShapingFunction` | Read-only. The function that maps the frame's progress (0 to 1) to the share of the way from `From` to `To`. `Linear` when none is given. |
+| <a class="ref prop" href="/docs/ui-glossary/types/smooth-animation-frame/#from">`From`</a> | `T` | Read-only. The value at the start of the frame. |
+| <a class="ref prop" href="/docs/ui-glossary/types/smooth-animation-frame/#to">`To`</a> | `T` | Read-only. The value at the end of the frame. |
+| <a class="ref prop" href="/docs/ui-glossary/types/smooth-animation-frame/#durationms">`DurationMs`</a> | `int` | Read-only. The length of the frame in milliseconds. |
+| <a class="ref prop" href="/docs/ui-glossary/types/smooth-animation-frame/#startatms">`StartAtMs`</a> | `int` | Read-only. Where the frame starts on the time line, in milliseconds. |
+| <a class="ref prop" href="/docs/ui-glossary/types/smooth-animation-frame/#shapingfunction">`ShapingFunction`</a> | `BaseShapingFunction` | Read-only. The function that maps the frame's progress (0 to 1) to the share of the way from <a class="ref prop" href="/docs/ui-glossary/types/smooth-animation-frame/#from">`From`</a> to <a class="ref prop" href="/docs/ui-glossary/types/smooth-animation-frame/#to">`To`</a>. `Linear` when none is given. |
 
 | Method | Description |
 | --- | --- |
-| <span class="method">`SmoothAnimationFrame(T from, T to, int durationMs, int startAtMs = 0, BaseShapingFunction shapingFunction = null)`</span> | Creates the frame. |
+| <a class="ref method" href="/docs/ui-glossary/types/smooth-animation-frame/#smoothanimationframe">`SmoothAnimationFrame(T from, T to, int durationMs, int startAtMs = 0, BaseShapingFunction shapingFunction = null)`</a> | Creates the frame. |
 
 ### DiscreteAnimationFrame&lt;T&gt;
 
-Sets `Value` when the time line reaches `ApplyAtMs`. The discrete frames of an animation form one track: the value in
+Sets <a class="ref prop" href="/docs/ui-glossary/types/discrete-animation-frame/#value">`Value`</a> when the time line reaches <a class="ref prop" href="/docs/ui-glossary/types/discrete-animation-frame/#applyatms">`ApplyAtMs`</a>. The discrete frames of an animation form one track: the value in
 effect is the one of the latest frame at or before the time line's position, going forth and back alike. Of frames at
 the same time, the one added last wins.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="prop">`Value`</span> | `T` | Read-only. The value the frame sets. |
-| <span class="prop">`ApplyAtMs`</span> | `int` | Read-only. The point of the time line where it is set, in milliseconds. |
+| <a class="ref prop" href="/docs/ui-glossary/types/discrete-animation-frame/#value">`Value`</a> | `T` | Read-only. The value the frame sets. |
+| <a class="ref prop" href="/docs/ui-glossary/types/discrete-animation-frame/#applyatms">`ApplyAtMs`</a> | `int` | Read-only. The point of the time line where it is set, in milliseconds. |
 
 | Method | Description |
 | --- | --- |
-| <span class="method">`DiscreteAnimationFrame(T value, int applyAtMs)`</span> | Creates the frame. |
+| <a class="ref method" href="/docs/ui-glossary/types/discrete-animation-frame/#discreteanimationframe">`DiscreteAnimationFrame(T value, int applyAtMs)`</a> | Creates the frame. |
 
 ### RunBoundaryValues&lt;T&gt;
 
-Values set on the animated properties outside the frames: `StartValue` when the animation first starts, `EndValue`
+Values set on the animated properties outside the frames: <a class="ref prop" href="/docs/ui-glossary/types/run-boundary-values/#startvalue">`StartValue`</a> when the animation first starts, <a class="ref prop" href="/docs/ui-glossary/types/run-boundary-values/#endvalue">`EndValue`</a>
 when it completes. Pass it to the `Animation<T>` constructor.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="prop">`StartValue`</span> | `T` | The value set when the animation starts from not started. |
-| <span class="prop">`EndValue`</span> | `T` | The value set after the end values of the frames when the animation completes. |
+| <a class="ref prop" href="/docs/ui-glossary/types/run-boundary-values/#startvalue">`StartValue`</a> | `T` | The value set when the animation starts from not started. |
+| <a class="ref prop" href="/docs/ui-glossary/types/run-boundary-values/#endvalue">`EndValue`</a> | `T` | The value set after the end values of the frames when the animation completes. |
 
 | Method | Description |
 | --- | --- |
-| <span class="method">`RunBoundaryValues()`</span> | Creates the values, both `default(T)`. |
+| <a class="ref method" href="/docs/ui-glossary/types/run-boundary-values/#runboundaryvalues">`RunBoundaryValues()`</a> | Creates the values, both `default(T)`. |
 
 ### BorrowedTorchUI animation methods
 
