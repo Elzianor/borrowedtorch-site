@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, event]
 title: "Glossary: IAudioEmitter"
 description: "The members of IAudioEmitter, in alphabetical order."
 ---

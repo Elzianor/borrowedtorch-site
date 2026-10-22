@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop]
 title: "Glossary: TimePositionAudioEffect"
 description: "The properties of TimePositionAudioEffect, in alphabetical order."
 ---

@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop]
 title: "Glossary: DopplerAudioEffect"
 description: "The properties of DopplerAudioEffect, in alphabetical order."
 ---

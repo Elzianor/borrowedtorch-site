@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop]
 title: "Glossary: DistanceAudioEffect"
 description: "The properties of DistanceAudioEffect, in alphabetical order."
 ---

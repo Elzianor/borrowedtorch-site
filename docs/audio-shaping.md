@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method]
 title: "Audio: volume, tone and time"
 description: The volume, three-band equaliser, pitch, delay, fade and time position effects.
 ---

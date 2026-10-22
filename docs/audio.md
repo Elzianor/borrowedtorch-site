@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method]
 title: "Audio: quick start guide"
 description: Set up BorrowedTorch.Audio in a game, place the listener and a first sound, and find your way around the audio pages.
 ---

@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop]
 title: "Glossary: ReverbAudioEffect"
 description: "The properties of ReverbAudioEffect, in alphabetical order."
 ---

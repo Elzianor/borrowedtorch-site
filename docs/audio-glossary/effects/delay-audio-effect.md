@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop]
 title: "Glossary: DelayAudioEffect"
 description: "The properties of DelayAudioEffect, in alphabetical order."
 ---

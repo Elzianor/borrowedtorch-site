@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method]
 title: "Audio: effect chains"
 description: Wiring effects between an emitter's send and return, bypassing and removing them, and the order of effects.
 ---

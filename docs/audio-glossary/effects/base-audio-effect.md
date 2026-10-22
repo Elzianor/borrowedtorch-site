@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method]
 title: "Glossary: base effect"
 description: "The properties and methods of BaseAudioEffect, in alphabetical order."
 ---

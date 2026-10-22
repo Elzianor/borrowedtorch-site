@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, event]
 title: "Audio: mixing, reverb and output"
 description: The signal path, the master volume, the reverb bus, the output device and threading.
 ---

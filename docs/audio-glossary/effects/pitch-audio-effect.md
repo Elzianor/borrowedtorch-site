@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop]
 title: "Glossary: PitchAudioEffect"
 description: "The properties of PitchAudioEffect, in alphabetical order."
 ---

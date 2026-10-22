@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [method]
 title: "Glossary: AudioEmitterPlayingStates"
 description: "The values of AudioEmitterPlayingStates."
 ---

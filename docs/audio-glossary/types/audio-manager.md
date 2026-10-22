@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, event]
 title: "Glossary: AudioManager"
 description: "The members of AudioManager, in alphabetical order."
 ---

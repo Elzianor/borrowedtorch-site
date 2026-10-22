@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method, event]
 title: "Audio: emitters"
 description: Cached and streaming emitters, clips and file formats, playing, looping, states and events.
 ---

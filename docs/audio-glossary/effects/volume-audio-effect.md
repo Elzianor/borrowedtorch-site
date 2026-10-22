@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop]
 title: "Glossary: VolumeAudioEffect"
 description: "The properties of VolumeAudioEffect, in alphabetical order."
 ---

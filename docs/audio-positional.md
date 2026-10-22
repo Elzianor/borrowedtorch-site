@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop, method]
 title: "Audio: positional sound"
 description: Distance attenuation and air absorption, Doppler, HRTF spatialisation, HRTF data sets and demo mode.
 ---

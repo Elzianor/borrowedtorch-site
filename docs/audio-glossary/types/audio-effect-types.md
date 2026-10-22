@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [method]
 title: "Glossary: AudioEffectTypes"
 description: "The values of AudioEffectTypes."
 ---

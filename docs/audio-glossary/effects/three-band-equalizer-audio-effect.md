@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop]
 title: "Glossary: ThreeBandEqualizerAudioEffect"
 description: "The properties of ThreeBandEqualizerAudioEffect, in alphabetical order."
 ---

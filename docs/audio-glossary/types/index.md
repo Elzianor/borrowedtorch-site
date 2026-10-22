@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [method, event]
 title: "Audio glossary: types"
 description: "Every other type of the audio library: classes, interfaces, enums and delegates, one page per type."
 ---

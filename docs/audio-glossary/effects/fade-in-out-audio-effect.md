@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop]
 title: "Glossary: FadeInOutAudioEffect"
 description: "The properties of FadeInOutAudioEffect, in alphabetical order."
 ---

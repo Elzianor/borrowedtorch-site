@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [prop]
 title: "Glossary: SpatialAudioEffect"
 description: "The properties of SpatialAudioEffect, in alphabetical order."
 ---

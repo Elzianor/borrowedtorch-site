@@ -1,5 +1,6 @@
 ---
 layout: docs
+legend: [method]
 title: "Glossary: MmNotificationClient"
 description: "The members of MmNotificationClient, in alphabetical order."
 ---
