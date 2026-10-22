@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 200" width="640" height="200" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="13" text-anchor="middle">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#a8834a"/>
+    </marker>
+  </defs>
+
+  <!-- emitters, each with its effect chain -->
+  <g fill="#15100c" stroke="#e9c27a" stroke-opacity=".45">
+    <rect x="12" y="24" width="118" height="44" rx="8"/>
+    <rect x="12" y="78" width="118" height="44" rx="8"/>
+    <rect x="12" y="132" width="118" height="44" rx="8"/>
+  </g>
+  <g fill="#d9cbb4">
+    <text x="71" y="43">campfire</text>
+    <text x="71" y="97">footsteps</text>
+    <text x="71" y="151">music</text>
+  </g>
+  <g fill="#8a7a63" font-size="11">
+    <text x="71" y="60">effect chain</text>
+    <text x="71" y="114">effect chain</text>
+    <text x="71" y="168">effect chain</text>
+  </g>
+
+  <!-- the main path -->
+  <g fill="#15100c" stroke="#e9c27a">
+    <rect x="170" y="78" width="90" height="44" rx="8"/>
+    <rect x="300" y="78" width="100" height="44" rx="8"/>
+    <rect x="432" y="78" width="100" height="44" rx="8"/>
+    <rect x="566" y="78" width="66" height="44" rx="8"/>
+  </g>
+  <g fill="#e9c27a">
+    <text x="215" y="105">Mixer</text>
+    <text x="350" y="97">Reverb bus</text>
+    <text x="482" y="105">Master volume</text>
+    <text x="599" y="97">Output</text>
+    <text x="599" y="113">device</text>
+  </g>
+  <text x="350" y="113" fill="#8a7a63" font-size="11">dry + reverb</text>
+
+  <g stroke="#a8834a" stroke-width="1.5" fill="none" marker-end="url(#arrow)">
+    <path d="M130 46 C 150 46, 150 92, 168 94"/>
+    <line x1="130" y1="100" x2="168" y2="100"/>
+    <path d="M130 154 C 150 154, 150 108, 168 106"/>
+    <line x1="260" y1="100" x2="298" y2="100"/>
+    <line x1="400" y1="100" x2="430" y2="100"/>
+    <line x1="532" y1="100" x2="564" y2="100"/>
+  </g>
+
+  <!-- reverb sends -->
+  <g stroke="#a8834a" stroke-width="1.5" fill="none" stroke-dasharray="4 3" marker-end="url(#arrow)">
+    <path d="M130 34 C 230 6, 330 20, 342 76"/>
+    <path d="M130 166 C 230 194, 330 180, 342 124"/>
+  </g>
+  <text x="236" y="16" fill="#8a7a63" font-size="11">reverb sends</text>
+</svg>

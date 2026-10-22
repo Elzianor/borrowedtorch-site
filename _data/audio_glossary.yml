@@ -1,0 +1,238 @@
+# The audio glossary in the docs sidebar: generated with the glossary pages, don't edit by hand.
+- title: "Effects"
+  url: /docs/audio-glossary/effects/
+  entries:
+    - title: "Base effect"
+      url: /docs/audio-glossary/effects/base-audio-effect/
+      members:
+        - title: "Id"
+          anchor: id
+          kind: prop
+        - title: "Input"
+          anchor: input
+          kind: prop
+        - title: "Is<wbr>Bypass"
+          anchor: isbypass
+          kind: prop
+        - title: "Output"
+          anchor: output
+          kind: prop
+        - title: "Type"
+          anchor: type
+          kind: prop
+        - title: "Dispose()"
+          anchor: dispose
+          kind: method
+    - title: "DelayAudioEffect"
+      url: /docs/audio-glossary/effects/delay-audio-effect/
+      members:
+        - title: "Delay<wbr>Ms"
+          anchor: delayms
+          kind: prop
+        - title: "Feedback"
+          anchor: feedback
+          kind: prop
+        - title: "Max<wbr>Delay<wbr>Ms"
+          anchor: maxdelayms
+          kind: prop
+        - title: "Mix"
+          anchor: mix
+          kind: prop
+    - title: "DistanceAudioEffect"
+      url: /docs/audio-glossary/effects/distance-audio-effect/
+      members:
+        - title: "Demo<wbr>Emitter<wbr>Position"
+          anchor: demoemitterposition
+          kind: prop
+        - title: "Distance<wbr>Cutoff<wbr>Attenuation<wbr>Function"
+          anchor: distancecutoffattenuationfunction
+          kind: prop
+        - title: "Distance<wbr>Maximum<wbr>Cutoff<wbr>Hz"
+          anchor: distancemaximumcutoffhz
+          kind: prop
+        - title: "Distance<wbr>Minimum<wbr>Cutoff<wbr>Hz"
+          anchor: distanceminimumcutoffhz
+          kind: prop
+        - title: "Distance<wbr>Volume<wbr>Attenuation<wbr>Function"
+          anchor: distancevolumeattenuationfunction
+          kind: prop
+        - title: "Is<wbr>Demo<wbr>Mode"
+          anchor: isdemomode
+          kind: prop
+        - title: "Loudness<wbr>Db"
+          anchor: loudnessdb
+          kind: prop
+        - title: "Max<wbr>Audible<wbr>Distance<wbr>Meters"
+          anchor: maxaudibledistancemeters
+          kind: prop
+    - title: "DopplerAudioEffect"
+      url: /docs/audio-glossary/effects/doppler-audio-effect/
+      members:
+        - title: "Demo<wbr>Emitter<wbr>Position"
+          anchor: demoemitterposition
+          kind: prop
+        - title: "Is<wbr>Demo<wbr>Mode"
+          anchor: isdemomode
+          kind: prop
+    - title: "EmitterReturnEffect"
+      url: /docs/audio-glossary/effects/emitter-return-effect/
+      members: []
+    - title: "EmitterSendEffect"
+      url: /docs/audio-glossary/effects/emitter-send-effect/
+      members: []
+    - title: "FadeInOutAudioEffect"
+      url: /docs/audio-glossary/effects/fade-in-out-audio-effect/
+      members:
+        - title: "Fade<wbr>In<wbr>Duration<wbr>Ms"
+          anchor: fadeindurationms
+          kind: prop
+        - title: "Fade<wbr>In<wbr>Function"
+          anchor: fadeinfunction
+          kind: prop
+        - title: "Fade<wbr>Out<wbr>Duration<wbr>Ms"
+          anchor: fadeoutdurationms
+          kind: prop
+        - title: "Fade<wbr>Out<wbr>Function"
+          anchor: fadeoutfunction
+          kind: prop
+        - title: "Fading<wbr>State"
+          anchor: fadingstate
+          kind: prop
+    - title: "PitchAudioEffect"
+      url: /docs/audio-glossary/effects/pitch-audio-effect/
+      members:
+        - title: "Pitch"
+          anchor: pitch
+          kind: prop
+    - title: "ReverbAudioEffect"
+      url: /docs/audio-glossary/effects/reverb-audio-effect/
+      members:
+        - title: "Reverb<wbr>Send"
+          anchor: reverbsend
+          kind: prop
+    - title: "SpatialAudioEffect"
+      url: /docs/audio-glossary/effects/spatial-audio-effect/
+      members:
+        - title: "Audio<wbr>Spread"
+          anchor: audiospread
+          kind: prop
+        - title: "Demo<wbr>Emitter<wbr>Position"
+          anchor: demoemitterposition
+          kind: prop
+        - title: "Is<wbr>Demo<wbr>Mode"
+          anchor: isdemomode
+          kind: prop
+    - title: "ThreeBandEqualizerAudioEffect"
+      url: /docs/audio-glossary/effects/three-band-equalizer-audio-effect/
+      members:
+        - title: "High<wbr>Freq<wbr>Hz"
+          anchor: highfreqhz
+          kind: prop
+        - title: "High<wbr>Gain<wbr>Db"
+          anchor: highgaindb
+          kind: prop
+        - title: "High<wbr>Slope"
+          anchor: highslope
+          kind: prop
+        - title: "Low<wbr>Freq<wbr>Hz"
+          anchor: lowfreqhz
+          kind: prop
+        - title: "Low<wbr>Gain<wbr>Db"
+          anchor: lowgaindb
+          kind: prop
+        - title: "Low<wbr>Slope"
+          anchor: lowslope
+          kind: prop
+        - title: "Max<wbr>Gain<wbr>Db"
+          anchor: maxgaindb
+          kind: prop
+        - title: "Max<wbr>High<wbr>Freq<wbr>Hz"
+          anchor: maxhighfreqhz
+          kind: prop
+        - title: "Max<wbr>Low<wbr>Freq<wbr>Hz"
+          anchor: maxlowfreqhz
+          kind: prop
+        - title: "Max<wbr>Mid<wbr>Freq<wbr>Hz"
+          anchor: maxmidfreqhz
+          kind: prop
+        - title: "Max<wbr>Q"
+          anchor: maxq
+          kind: prop
+        - title: "Max<wbr>Slope"
+          anchor: maxslope
+          kind: prop
+        - title: "Mid<wbr>Freq<wbr>Hz"
+          anchor: midfreqhz
+          kind: prop
+        - title: "Mid<wbr>Gain<wbr>Db"
+          anchor: midgaindb
+          kind: prop
+        - title: "Mid<wbr>Q"
+          anchor: midq
+          kind: prop
+        - title: "Min<wbr>Gain<wbr>Db"
+          anchor: mingaindb
+          kind: prop
+        - title: "Min<wbr>High<wbr>Freq<wbr>Hz"
+          anchor: minhighfreqhz
+          kind: prop
+        - title: "Min<wbr>Low<wbr>Freq<wbr>Hz"
+          anchor: minlowfreqhz
+          kind: prop
+        - title: "Min<wbr>Mid<wbr>Freq<wbr>Hz"
+          anchor: minmidfreqhz
+          kind: prop
+        - title: "Min<wbr>Q"
+          anchor: minq
+          kind: prop
+        - title: "Min<wbr>Slope"
+          anchor: minslope
+          kind: prop
+    - title: "TimePositionAudioEffect"
+      url: /docs/audio-glossary/effects/time-position-audio-effect/
+      members:
+        - title: "Time<wbr>Position"
+          anchor: timeposition
+          kind: prop
+    - title: "VolumeAudioEffect"
+      url: /docs/audio-glossary/effects/volume-audio-effect/
+      members:
+        - title: "Volume"
+          anchor: volume
+          kind: prop
+        - title: "Volume<wbr>Range"
+          anchor: volumerange
+          kind: prop
+- title: "Types"
+  url: /docs/audio-glossary/types/
+  groups:
+    - title: "Classes"
+      entries:
+        - title: "Audio<wbr>Manager"
+          url: /docs/audio-glossary/types/audio-manager/
+        - title: "Mm<wbr>Notification<wbr>Client"
+          url: /docs/audio-glossary/types/mm-notification-client/
+    - title: "Interfaces"
+      entries:
+        - title: "IAudio<wbr>Emitter"
+          url: /docs/audio-glossary/types/i-audio-emitter/
+    - title: "Enums"
+      entries:
+        - title: "Audio<wbr>Effect<wbr>Types"
+          url: /docs/audio-glossary/types/audio-effect-types/
+        - title: "Audio<wbr>Emitter<wbr>Playing<wbr>States"
+          url: /docs/audio-glossary/types/audio-emitter-playing-states/
+        - title: "Audio<wbr>Emitter<wbr>Types"
+          url: /docs/audio-glossary/types/audio-emitter-types/
+        - title: "Fading<wbr>States"
+          url: /docs/audio-glossary/types/fading-states/
+        - title: "Playing<wbr>States"
+          url: /docs/audio-glossary/types/playing-states/
+    - title: "Delegates"
+      entries:
+        - title: "Audio<wbr>Manager.Mm<wbr>Device<wbr>Changed"
+          url: /docs/audio-glossary/types/audio-manager-mm-device-changed/
+        - title: "IAudio<wbr>Emitter.Current<wbr>Audio<wbr>Changed"
+          url: /docs/audio-glossary/types/i-audio-emitter-current-audio-changed/
+        - title: "IAudio<wbr>Emitter.State<wbr>Changed"
+          url: /docs/audio-glossary/types/i-audio-emitter-state-changed/

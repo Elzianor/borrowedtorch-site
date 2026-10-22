@@ -40,6 +40,26 @@
       url: /docs/ui-glossary/
       glossary: ui_glossary
 
+# _data/audio_glossary.yml is generated with the audio glossary pages.
+- group: Audio
+  tree: true
+  articles:
+    - title: Quick start guide
+      url: /docs/audio/
+    - title: Emitters
+      url: /docs/audio-emitters/
+    - title: Effect chains
+      url: /docs/audio-effects/
+    - title: Positional sound
+      url: /docs/audio-positional/
+    - title: Volume, tone and time
+      url: /docs/audio-shaping/
+    - title: Mixing, reverb and output
+      url: /docs/audio-mixing/
+    - title: Glossary
+      url: /docs/audio-glossary/
+      glossary: audio_glossary
+
 - group: Systems
   articles:
     - title: Camera
