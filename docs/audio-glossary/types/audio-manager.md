@@ -116,11 +116,11 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 <h3 id="tryaddeffecttoemitter"><span class="method"><code>TryAddEffectToEmitter()</code></span> <a class="ctx" href="/docs/audio-effects/#audiomanager-effect-methods" title="TryAddEffectToEmitter() in context on the effect chains page" aria-label="TryAddEffectToEmitter() in context on the effect chains page">→</a></h3>
 
-<a class="ref method" href="/docs/audio-glossary/types/audio-manager/#tryaddeffecttoemitter">`TryAddEffectToEmitter(string emitterName, AudioEffectTypes type, out BaseAudioEffect effect)`</a> · <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#tryaddaudioeffect">`TryAddAudioEffect`</a> on the emitter of that name.
+<span class="method"><code><a href="/docs/audio-glossary/types/audio-manager/#tryaddeffecttoemitter">TryAddEffectToEmitter</a>(string emitterName, <a href="/docs/audio-glossary/types/audio-effect-types/">AudioEffectTypes</a> type, out <a href="/docs/audio-glossary/effects/base-audio-effect/">BaseAudioEffect</a> effect)</code></span> · <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#tryaddaudioeffect">`TryAddAudioEffect`</a> on the emitter of that name.
 
 <h3 id="tryaddemitter"><span class="method"><code>TryAddEmitter()</code></span> <a class="ctx" href="/docs/audio-emitters/#audiomanager-emitter-methods" title="TryAddEmitter() in context on the emitters page" aria-label="TryAddEmitter() in context on the emitters page">→</a></h3>
 
-<a class="ref method" href="/docs/audio-glossary/types/audio-manager/#tryaddemitter">`TryAddEmitter(string name, AudioEmitterTypes type, out IAudioEmitter emitter)`</a> · Creates an emitter under a name, starting from the current listener pose. `false` for an empty name or one that is taken.
+<span class="method"><code><a href="/docs/audio-glossary/types/audio-manager/#tryaddemitter">TryAddEmitter</a>(string name, <a href="/docs/audio-glossary/types/audio-emitter-types/">AudioEmitterTypes</a> type, out <a href="/docs/audio-glossary/types/i-audio-emitter/">IAudioEmitter</a> emitter)</code></span> · Creates an emitter under a name, starting from the current listener pose. `false` for an empty name or one that is taken.
 
 <h3 id="tryclearemitteraudios"><span class="method"><code>TryClearEmitterAudios()</code></span> <a class="ctx" href="/docs/audio-emitters/#audiomanager-emitter-methods" title="TryClearEmitterAudios() in context on the emitters page" aria-label="TryClearEmitterAudios() in context on the emitters page">→</a></h3>
 
@@ -132,11 +132,11 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 <h3 id="trygeteffectbyid"><span class="method"><code>TryGetEffectById()</code></span> <a class="ctx" href="/docs/audio-effects/#audiomanager-effect-methods" title="TryGetEffectById() in context on the effect chains page" aria-label="TryGetEffectById() in context on the effect chains page">→</a></h3>
 
-<a class="ref method" href="/docs/audio-glossary/types/audio-manager/#trygeteffectbyid">`TryGetEffectById(string emitterName, Guid effectId, out BaseAudioEffect effect)`</a> · <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#trygetaudioeffect">`TryGetAudioEffect`</a> on the emitter of that name.
+<span class="method"><code><a href="/docs/audio-glossary/types/audio-manager/#trygeteffectbyid">TryGetEffectById</a>(string emitterName, Guid effectId, out <a href="/docs/audio-glossary/effects/base-audio-effect/">BaseAudioEffect</a> effect)</code></span> · <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#trygetaudioeffect">`TryGetAudioEffect`</a> on the emitter of that name.
 
 <h3 id="trygetemitterbyname"><span class="method"><code>TryGetEmitterByName()</code></span> <a class="ctx" href="/docs/audio-emitters/#audiomanager-emitter-methods" title="TryGetEmitterByName() in context on the emitters page" aria-label="TryGetEmitterByName() in context on the emitters page">→</a></h3>
 
-<a class="ref method" href="/docs/audio-glossary/types/audio-manager/#trygetemitterbyname">`TryGetEmitterByName(string name, out IAudioEmitter emitter)`</a> · Finds an emitter by its name.
+<span class="method"><code><a href="/docs/audio-glossary/types/audio-manager/#trygetemitterbyname">TryGetEmitterByName</a>(string name, out <a href="/docs/audio-glossary/types/i-audio-emitter/">IAudioEmitter</a> emitter)</code></span> · Finds an emitter by its name.
 
 <h3 id="tryloadmhrfile"><span class="method"><code>TryLoadMhrFile()</code></span> <a class="ctx" href="/docs/audio-positional/#audiomanager-hrtf-methods" title="TryLoadMhrFile() in context on the positional sound page" aria-label="TryLoadMhrFile() in context on the positional sound page">→</a></h3>
 
@@ -156,7 +156,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 <h3 id="tryremoveeffectfromemitter"><span class="method"><code>TryRemoveEffectFromEmitter()</code></span> <a class="ctx" href="/docs/audio-effects/#audiomanager-effect-methods" title="TryRemoveEffectFromEmitter() in context on the effect chains page" aria-label="TryRemoveEffectFromEmitter() in context on the effect chains page">→</a></h3>
 
-<a class="ref method" href="/docs/audio-glossary/types/audio-manager/#tryremoveeffectfromemitter">`TryRemoveEffectFromEmitter(string emitterName, BaseAudioEffect effect)`</a> · <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#tryremoveaudioeffect">`TryRemoveAudioEffect`</a> on the emitter of that name.
+<span class="method"><code><a href="/docs/audio-glossary/types/audio-manager/#tryremoveeffectfromemitter">TryRemoveEffectFromEmitter</a>(string emitterName, <a href="/docs/audio-glossary/effects/base-audio-effect/">BaseAudioEffect</a> effect)</code></span> · <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#tryremoveaudioeffect">`TryRemoveAudioEffect`</a> on the emitter of that name.
 
 <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#tryremoveeffectfromemitter">`TryRemoveEffectFromEmitter(string emitterName, Guid effectId)`</a> · The same, by the effect's <a class="ref prop" href="/docs/audio-glossary/effects/base-audio-effect/#id">`Id`</a>.
 

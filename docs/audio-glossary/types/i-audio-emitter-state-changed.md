@@ -6,6 +6,6 @@ description: "The signature of IAudioEmitter.StateChanged and the events it hand
 
 A delegate: the handler type of an event.
 
-Signature: `void StateChanged(IAudioEmitter sender)`
+Signature: <code>void StateChanged(<a href="/docs/audio-glossary/types/i-audio-emitter/">IAudioEmitter</a> sender)</code>
 
 Handles [`IAudioEmitter.OnStateChanged`](/docs/audio-glossary/types/i-audio-emitter/#onstatechanged).

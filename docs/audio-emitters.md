@@ -154,8 +154,8 @@ once. Without positional effects in its chain, the position changes nothing; the
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| <a class="ref event" href="/docs/audio-glossary/types/i-audio-emitter/#onstatechanged">`OnStateChanged`</a> | `(IAudioEmitter sender)` | <a class="ref prop" href="/docs/audio-glossary/types/i-audio-emitter/#state">`State`</a> changes. From <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#update">`AudioManager.Update`</a> on the game thread, or from the thread that rewires the chain. |
-| <a class="ref event" href="/docs/audio-glossary/types/i-audio-emitter/#oncurrentaudiochanged">`OnCurrentAudioChanged`</a> | `(IAudioEmitter sender)` | The emitter takes a clip or lets one go: on play, at every loop, on stop, and when the clip playing is removed. |
+| <a class="ref event" href="/docs/audio-glossary/types/i-audio-emitter/#onstatechanged">`OnStateChanged`</a> | <code>(<a href="/docs/audio-glossary/types/i-audio-emitter/">IAudioEmitter</a> sender)</code> | <a class="ref prop" href="/docs/audio-glossary/types/i-audio-emitter/#state">`State`</a> changes. From <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#update">`AudioManager.Update`</a> on the game thread, or from the thread that rewires the chain. |
+| <a class="ref event" href="/docs/audio-glossary/types/i-audio-emitter/#oncurrentaudiochanged">`OnCurrentAudioChanged`</a> | <code>(<a href="/docs/audio-glossary/types/i-audio-emitter/">IAudioEmitter</a> sender)</code> | The emitter takes a clip or lets one go: on play, at every loop, on stop, and when the clip playing is removed. |
 
 ### IAudioEmitter methods
 
@@ -182,8 +182,8 @@ The effect methods of an emitter are on the [effect chains page](/docs/audio-eff
 
 | Method | Description |
 | --- | --- |
-| <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#tryaddemitter">`TryAddEmitter(string name, AudioEmitterTypes type, out IAudioEmitter emitter)`</a> | Creates an emitter under a name, starting from the current listener pose. `false` for an empty name or one that is taken. |
-| <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#trygetemitterbyname">`TryGetEmitterByName(string name, out IAudioEmitter emitter)`</a> | Finds an emitter by its name. |
+| <span class="method"><code><a href="/docs/audio-glossary/types/audio-manager/#tryaddemitter">TryAddEmitter</a>(string name, <a href="/docs/audio-glossary/types/audio-emitter-types/">AudioEmitterTypes</a> type, out <a href="/docs/audio-glossary/types/i-audio-emitter/">IAudioEmitter</a> emitter)</code></span> | Creates an emitter under a name, starting from the current listener pose. `false` for an empty name or one that is taken. |
+| <span class="method"><code><a href="/docs/audio-glossary/types/audio-manager/#trygetemitterbyname">TryGetEmitterByName</a>(string name, out <a href="/docs/audio-glossary/types/i-audio-emitter/">IAudioEmitter</a> emitter)</code></span> | Finds an emitter by its name. |
 | <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#tryremoveemitter">`TryRemoveEmitter(string name)`</a> | Takes an emitter out of the mix and disposes it. |
 | <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#clearemitters">`ClearEmitters()`</a> | Removes and disposes every emitter. |
 | <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#tryaddaudiotoemitter">`TryAddAudioToEmitter(string emitterName, string pathToAudio)`</a> | <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#tryaddaudio">`TryAddAudio`</a> on the emitter of that name. |
