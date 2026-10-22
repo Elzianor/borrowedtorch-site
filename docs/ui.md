@@ -217,56 +217,56 @@ width: it takes the width the rest of the content decides and wraps there, inste
 line.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/ui-sizes.png' | relative_url }}" width="520" height="160" alt="Four labels: a fixed one, one fitted to its text, one stretched across the width and one stretched both ways">
-  <figcaption>Fixed, fitted and stretched.</figcaption>
+  <img src="{{ '/assets/img/ui/ui-sizes.png' | relative_url }}" width="520" height="220" alt="Four identical framed areas, each with one label: a fixed size at the top left, one fitted to its text, one stretched across the width and one filling its area">
+  <figcaption>The same label in four identical areas: fixed, fitted, stretched across, stretched both ways.</figcaption>
 </figure>
 
 ```csharp
-// a fixed size
-ui.AddElementToRoot(new Label
+// one look for every label: centred text on a brown fill
+Label Swatch(string text) => new()
 {
-    Text = "160 x 36",
-    DesiredWidth = 160,
-    DesiredHeight = 36,
+    Text = text,
+    TextMargin = (10, 6, 10, 6),
     TextAlignment = TextAlignment.Center,
     VerticalTextAlignment = VerticalTextAlignment.Center,
-    BackgroundColor = new Color(58, 44, 30),
-    Margin = (16, 16)
-});
+    BackgroundColor = new Color(110, 82, 48)
+};
 
-// fitted to its content (no size, not stretched)
-ui.AddElementToRoot(new Label
+// four identical framed areas of 240 x 90, each holding one label inside its frame
+void Area(int left, int top, Label label) => ui.AddElementToRoot(new Border
 {
-    Text = "Fits its text",
-    TextMargin = (10, 8, 10, 8),
+    DesiredWidth = 240,
+    DesiredHeight = 90,
     HorizontalAlignment = HorizontalAlignment.Left,
     VerticalAlignment = VerticalAlignment.Top,
-    BackgroundColor = new Color(58, 44, 30),
-    Margin = (192, 16)
+    Margin = (left, top),
+    Thickness = 1,
+    ForegroundColor = new Color(90, 70, 48),
+    BackgroundColor = new Color(30, 24, 18),
+    Content = label
 });
 
-// stretched across its parent (the screen here), less its margins
-ui.AddElementToRoot(new Label
-{
-    Text = "Stretched across the width",
-    DesiredHeight = 36,
-    TextAlignment = TextAlignment.Center,
-    VerticalTextAlignment = VerticalTextAlignment.Center,
-    HorizontalAlignment = HorizontalAlignment.Stretch,
-    VerticalAlignment = VerticalAlignment.Top,
-    BackgroundColor = new Color(110, 82, 48),
-    Margin = (16, 70, 16, 0)
-});
+// a fixed size, at the top left of its area
+var fixedSize = Swatch("120 x 40");
+fixedSize.DesiredWidth = 120;
+fixedSize.DesiredHeight = 40;
+fixedSize.HorizontalAlignment = HorizontalAlignment.Left;
+fixedSize.VerticalAlignment = VerticalAlignment.Top;
+Area(12, 12, fixedSize);
 
-// stretched both ways inside the space its margins leave
-ui.AddElementToRoot(new Label
-{
-    Text = "Stretched both ways",
-    TextAlignment = TextAlignment.Center,
-    VerticalTextAlignment = VerticalTextAlignment.Center,
-    BackgroundColor = new Color(40, 31, 23),
-    Margin = (16, 116, 16, 12)
-});
+// fitted to its text: no size, not stretched
+var fitted = Swatch("Fits its text");
+fitted.HorizontalAlignment = HorizontalAlignment.Left;
+fitted.VerticalAlignment = VerticalAlignment.Top;
+Area(268, 12, fitted);
+
+// stretched across the width, as high as its text
+var across = Swatch("Stretched across");
+across.VerticalAlignment = VerticalAlignment.Top;
+Area(12, 118, across);
+
+// stretched both ways: no size and the default alignments
+Area(268, 118, Swatch("Stretched both ways"));
 ```
 
 The alignments place an element inside the space its parent gives it: `Left`, `Center`, `Right` or `Stretch`
