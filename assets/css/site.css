@@ -354,6 +354,18 @@ a.card:hover { border-color: var(--line-strong); background: var(--surface-2); c
 .prose pre code { padding: 0; border: 0; background: none; color: #e6d8c2; font-size: .86rem; }
 .prose .highlighter-rouge + .highlighter-rouge, .prose div.highlight { margin-top: 1em; }
 .prose table { width: 100%; border-collapse: collapse; font-size: .93rem; display: block; overflow-x: auto; }
+/* the scroll bars of wide code blocks and tables, in the site's colours instead of the browser's */
+.prose pre, .prose table {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+.prose pre:hover, .prose table:hover { scrollbar-color: var(--gold-dim) transparent; }
+@supports not (scrollbar-color: auto) {
+  .prose pre::-webkit-scrollbar, .prose table::-webkit-scrollbar { height: 8px; }
+  .prose pre::-webkit-scrollbar-track, .prose table::-webkit-scrollbar-track { background: transparent; }
+  .prose pre::-webkit-scrollbar-thumb, .prose table::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 8px; }
+  .prose pre:hover::-webkit-scrollbar-thumb, .prose table:hover::-webkit-scrollbar-thumb { background: var(--gold-dim); }
+}
 .prose th, .prose td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
 .prose th { color: var(--gold); font-weight: 600; }
 .prose hr { border: 0; border-top: 1px solid var(--line); margin: 2em 0; }

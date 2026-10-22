@@ -223,7 +223,8 @@ Give the parent a `MaxWidth` to make it wrap.
 </figure>
 
 ```csharp
-// one look for every label: centred text on a brown fill, no text margin, so a fitted label hugs its text
+// one look for every label: centred text on a brown fill; no text margin,
+// so a fitted label hugs its text
 Label Swatch(string text) => new()
 {
     Text = text,
