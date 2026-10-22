@@ -208,14 +208,14 @@ Ctrl and Shift held with these keys work as with clicks in `Multiple` mode.
 | <span class="method">`MoveSelection(int delta)`</span> | Moves the selection by `delta` rows (clamped to the list, separators and collapsed rows passed over) and scrolls it into view. With no selection it selects the first row (`delta` above 0) or the last. |
 | <span class="method">`ScrollIntoView(int index)`</span> | Scrolls the list so the row at the index is entirely in view. Needs the list laid out; nothing happens for a row that is in view already. |
 
-`ListBoxSelectionMode`:
+#### `ListBoxSelectionMode`
 
 | Value | Meaning |
 | --- | --- |
 | `Single` | One row at most is selected. |
 | `Multiple` | Several rows can be selected, with Ctrl and Shift clicks or from code. |
 
-`ListBoxVirtualizationMode`:
+#### `ListBoxVirtualizationMode`
 
 | Value | Meaning |
 | --- | --- |
@@ -615,7 +615,7 @@ makes; such items are disposed when they are removed, your own items are only le
 | <span class="method">`RemoveItemsRangeAt(int index, int count)`</span> | Removes `count` items from the index on. |
 | <span class="method">`ClearItems()`</span> | Removes every item. |
 
-`ContextMenuPlacement`:
+#### `ContextMenuPlacement`
 
 | Value | Meaning |
 | --- | --- |
@@ -624,7 +624,7 @@ makes; such items are disposed when they are removed, your own items are only le
 | `BottomLeft` | The menu opens below the point and to its left. |
 | `BottomRight` | The menu opens below the point and to its right (its top left corner at the point). |
 
-`ContextMenuSubMenusOpenType`:
+#### `ContextMenuSubMenusOpenType`
 
 | Value | Meaning |
 | --- | --- |

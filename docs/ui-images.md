@@ -72,7 +72,7 @@ source lays it out again. With the default `Stretch` alignment it fills its pare
 `ForegroundColor`, which is white by default (no change), and follows `Transparency` and the disabled shading like any
 element.
 
-`ImageFill`:
+#### `ImageFill`
 
 | Value | Meaning |
 | --- | --- |
@@ -356,7 +356,7 @@ outside the window, is denied: the root element raises `OnDropDenied`.
 A part inside a control (a list row, the text of a text box) uses the drag and drop settings of its control when it has
 none of its own, so pressing on the text of a draggable control drags the control.
 
-`DragType`:
+#### `DragType`
 
 | Value | Meaning |
 | --- | --- |

@@ -114,7 +114,9 @@ its parent (`InheritState.FromParent`), so a label inside a button follows the b
 | `Label(string name = null)` | Creates a label. The name is used by `GetElementByName`. |
 | <span class="method">`Draw()`</span> | Draws the label's background, then its lines straight from the font atlas. The framework calls it; you don't need to. |
 
-`TextAlignment` (also used by `RichTextBox`):
+#### `TextAlignment`
+
+Also used by `RichTextBox`.
 
 | Value | Meaning |
 | --- | --- |
@@ -123,7 +125,9 @@ its parent (`InheritState.FromParent`), so a label inside a button follows the b
 | `Right` | Lines end at the right margin. |
 | `Justify` | In a wrapping `RichTextBox`, the spaces of each line are widened so the line fills the width (not the last line of a paragraph). A label draws it like `Left`. |
 
-`VerticalTextAlignment` (also used by `RichTextBox`):
+#### `VerticalTextAlignment`
+
+Also used by `RichTextBox`.
 
 | Value | Meaning |
 | --- | --- |
@@ -131,14 +135,16 @@ its parent (`InheritState.FromParent`), so a label inside a button follows the b
 | `Center` | The lines are centred in the free height. |
 | `Bottom` | The lines end at the bottom margin. |
 
-`TextWrap` (also used by `RichTextBox`):
+#### `TextWrap`
+
+Also used by `RichTextBox`.
 
 | Value | Meaning |
 | --- | --- |
 | `NoWrap` | Every paragraph is one line, however long. |
 | `Wrap` | Lines break to fit the width. |
 
-`TextRotation`:
+#### `TextRotation`
 
 | Value | Meaning |
 | --- | --- |
@@ -400,21 +406,21 @@ With `CharacterPrintDelayMs` at 0 (its default) `AnimateText` sets the text at o
 Positions count the characters of `Text`. In a read-only box with `Rich` formatting the shown text differs from `Text`
 (the tags are removed), so the selection and caret methods do nothing there.
 
-`RichTextBoxType`:
+#### `RichTextBoxType`
 
 | Value | Meaning |
 | --- | --- |
 | `ReadOnly` | The text is shown, scrolled and copied, not edited. Links and rich formatting work. |
 | `ReadWrite` | The text can be edited with the mouse and the keyboard. Tags are shown as typed. |
 
-`RichTextBoxInputType`:
+#### `RichTextBoxInputType`
 
 | Value | Meaning |
 | --- | --- |
 | `Insert` | Typed characters go in at the caret. |
 | `Overwrite` | A typed character replaces the one at the caret. |
 
-`RichTextBoxFormatting`:
+#### `RichTextBoxFormatting`
 
 | Value | Meaning |
 | --- | --- |

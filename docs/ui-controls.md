@@ -89,7 +89,7 @@ Clicks come through the inherited `OnClick`.
 | --- | --- |
 | `Button(string name = null)` | Creates a button. The name is used by `GetElementByName`. |
 
-`ButtonType`:
+#### `ButtonType`
 
 | Value | Meaning |
 | --- | --- |
@@ -217,14 +217,14 @@ colour, so give them in a style or on the element. With `TexturesPath` set, the 
 | --- | --- |
 | `CheckBox(string name = null)` | Creates a check box. The name is used by `GetElementByName`. |
 
-`CheckBoxType`:
+#### `CheckBoxType`
 
 | Value | Meaning |
 | --- | --- |
 | `CheckBox` | Each click switches `Checked` on or off. |
 | `RadioButton` | A click checks the box; checking it unchecks the other boxes of its `GroupId`. |
 
-`CheckBoxDirection`:
+#### `CheckBoxDirection`
 
 | Value | Meaning |
 | --- | --- |
@@ -397,7 +397,7 @@ marks are drawn in their colours with or without textures.
 Without `Tick`, set `ContentSize` and `ViewSize` along the slider's orientation before paging: the page size comes
 from them.
 
-`SliderType`:
+#### `SliderType`
 
 | Value | Meaning |
 | --- | --- |
@@ -406,7 +406,7 @@ from them.
 | `ScrollBar` | Square buttons at both ends that make a plain step; track clicks page when `ContentSize` and `ViewSize` are set. |
 | `ScrollBarNoButtons` | A scroll bar without the end buttons. |
 
-`TickPlacement`:
+#### `TickPlacement`
 
 | Value | Meaning |
 | --- | --- |
@@ -545,7 +545,7 @@ which does not wrap; the tooltip's own `BackgroundColor` is drawn behind it.
 | `ToolTip(string name = null)` | Creates a tooltip. The name is used by `GetElementByName`. |
 | <span class="method">`Show()`</span> | Places the tooltip at the mouse cursor and shows it after the next layout pass. The element it is attached to calls this; it does nothing for a tooltip not attached to an element. |
 
-`ToolTipPlacement`:
+#### `ToolTipPlacement`
 
 | Value | Meaning |
 | --- | --- |

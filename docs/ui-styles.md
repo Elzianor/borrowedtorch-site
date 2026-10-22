@@ -238,7 +238,7 @@ write `ManualAssign` values like code does. To give a property set in code back 
 button.NormalColorDP.ClearValue(ValueSources.ManualAssign); // the style's color again
 ```
 
-`ValueSources`:
+#### `ValueSources`
 
 | Value | Meaning |
 | --- | --- |
@@ -667,7 +667,7 @@ How a binding behaves:
 - The view model and the bound collection reference the binding weakly: a bound element that is dropped without being
   disposed doesn't stay alive because its view model does.
 
-`BindingMode`:
+#### `BindingMode`
 
 | Value | Meaning |
 | --- | --- |
@@ -728,7 +728,9 @@ source.
 | --- | --- | --- |
 | <span class="event">`OnCollectionChanged`</span> | `(bool isItemsAdded, int startIndex, int count)` | Items were added (`true`) or removed (`false`), `count` of them from `startIndex`. |
 
-`CollectionChangeType` (in `OnSourceCollectionChanged`):
+#### `CollectionChangeType`
+
+Passed to `OnSourceCollectionChanged`.
 
 | Value | Meaning |
 | --- | --- |
@@ -934,7 +936,7 @@ The abstract base of animations, the type `AddAnimation` takes. Its properties a
 | <span class="prop">`AutoReverse`</span> | `bool` | Read-only. Whether a run goes forth and back along the time line. |
 | <span class="prop">`DeleteOnComplete`</span> | `bool` | Read-only. Whether the UI removes the animation when it completes. |
 
-`AnimationState`:
+#### `AnimationState`
 
 | Value | Meaning |
 | --- | --- |
@@ -943,7 +945,7 @@ The abstract base of animations, the type `AddAnimation` takes. Its properties a
 | `Paused` | Stopped where it was; `Start` continues it. |
 | `Completed` | All runs are done; `Reset` makes it playable again. |
 
-`AnimationRepeatType`:
+#### `AnimationRepeatType`
 
 | Value | Meaning |
 | --- | --- |

@@ -301,7 +301,7 @@ The container's `Children` are its view and scroll bars; the item methods act on
 | <span class="method">`HorizontalPageIncrease()`</span>, <span class="method">`HorizontalPageDecrease()`</span> | Obsolete: use `PageRight` and `PageLeft`. |
 | <span class="method">`VerticalPageIncrease()`</span>, <span class="method">`VerticalPageDecrease()`</span> | Obsolete: use `PageUp` and `PageDown`. The old names followed the vertical scroll bar's value, which grows upwards, so "increase" scrolled up. |
 
-`ScrollBars`:
+#### `ScrollBars`
 
 | Value | Meaning |
 | --- | --- |

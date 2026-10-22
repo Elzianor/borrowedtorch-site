@@ -356,6 +356,18 @@ a.card:hover { border-color: var(--line-strong); background: var(--surface-2); c
   letter-spacing: .02em;
 }
 .prose h3 { margin-top: 1.8em; font-size: 1.1rem; font-weight: 600; color: #ecdcc0; }
+/* a sub-heading inside a section: on the UI pages, an enum before the table of its values */
+.prose h4 {
+  margin-top: 1.7em;
+  padding: 2px 0 2px 12px;
+  border-left: 3px solid var(--gold-dim);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--gold);
+}
+.prose h4 code { font-size: .95em; color: var(--gold); border-color: var(--line-strong); background: rgba(233, 194, 122, .1); }
+.prose h4 + p { margin-top: .5em; }
 .prose ul, .prose ol { padding-left: 1.4em; }
 .prose li + li { margin-top: .35em; }
 .prose strong { color: #f0e3cc; }

@@ -68,7 +68,7 @@ The measure and arrange methods (`Measure`, `MeasureAt`, `Arrange`, `ArrangeAt`,
 `InvalidateArrange`) are public, but you only need them in your own elements: see
 [writing your own element](#writing-your-own-element).
 
-`HorizontalAlignment`:
+#### `HorizontalAlignment`
 
 | Value | Meaning |
 | --- | --- |
@@ -77,7 +77,7 @@ The measure and arrange methods (`Measure`, `MeasureAt`, `Arrange`, `ArrangeAt`,
 | `Center` | Centred between the left and the right margin. |
 | `Right` | At the right margin. |
 
-`VerticalAlignment`:
+#### `VerticalAlignment`
 
 | Value | Meaning |
 | --- | --- |
@@ -86,8 +86,9 @@ The measure and arrange methods (`Measure`, `MeasureAt`, `Arrange`, `ArrangeAt`,
 | `Center` | Centred between the top and the bottom margin. |
 | `Bottom` | At the bottom margin. |
 
-`Orientation` (used by `StackPanel`, `Slider` and `ProgressBar`, see [layout](/docs/ui-layout/) and
-[controls](/docs/ui-controls/)):
+#### `Orientation`
+
+Used by `StackPanel`, `Slider` and `ProgressBar`, see [layout](/docs/ui-layout/) and [controls](/docs/ui-controls/).
 
 | Value | Meaning |
 | --- | --- |
@@ -193,7 +194,7 @@ Tooltips, context menus, drop-downs and modal windows are never clipped by the e
 | --- | --- |
 | <span class="method">`Draw()`</span> | Draws the element, its children and the popups above them. The UI calls it on the root every frame, you don't call it yourself. |
 
-`Visibility`:
+#### `Visibility`
 
 | Value | Meaning |
 | --- | --- |
@@ -351,7 +352,9 @@ the controls raise their own events for them (a selection, a value change).
 | <span class="event">`OnClick`</span> | `(BaseElement sender, MouseClickEventArgs e)` | A mouse button pressed on the element is released over it (with `RepeatClicks`: on the press and while it is held). |
 | <span class="event">`OnDoubleClick`</span> | `(BaseElement sender, MouseClickEventArgs e)` | The left button is pressed a second time within `DoubleClickIntervalMs`. Not raised by an element with `RepeatClicks`. |
 
-`InheritState` (flags):
+#### `InheritState`
+
+A set of flags: the values combine.
 
 | Value | Meaning |
 | --- | --- |
@@ -360,7 +363,9 @@ the controls raise their own events for them (a selection, a value change).
 | `FromChildren` | Also shows the highest state of its children. |
 | `Both` | `FromParent` and `FromChildren`. |
 
-`ElementState`, from the lowest to the highest:
+#### `ElementState`
+
+From the lowest to the highest.
 
 | Value | Meaning |
 | --- | --- |
@@ -370,7 +375,7 @@ the controls raise their own events for them (a selection, a value change).
 | `DropDenied` | A dragged element is over the element and it does not take the drop. |
 | `DropAllowed` | A dragged element is over the element and it takes the drop. |
 
-`StateSource`:
+#### `StateSource`
 
 | Value | Meaning |
 | --- | --- |
@@ -574,7 +579,7 @@ walk-through with a screenshot is on the [images page](/docs/ui-images/#drag-and
 | <span class="event">`OnDrop`</span> | `(BaseElement draggedElement, BaseElement dragAndDropDestination)` | A dragged element is released over this element and its predicate allowed it. |
 | <span class="event">`OnDropDenied`</span> | `(BaseElement draggedElement, BaseElement dragAndDropDestination)` | A dragged element is released over this element and the drop is denied. |
 
-`DragType`:
+#### `DragType`
 
 | Value | Meaning |
 | --- | --- |
