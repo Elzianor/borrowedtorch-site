@@ -33,6 +33,12 @@
     - id: BorrowedTorch.SceneGizmo
       summary: A small X / Y / Z orientation widget pinned to a screen corner. It turns with the camera, highlights an axis on hover and lets you click an axis to snap the view.
       needs: Windows · MonoGame compute fork
+
+- group: UI
+  packages:
+    - id: BorrowedTorch.UI
+      summary: UI framework for MonoGame — WPF-style measure and arrange layout, dependency properties set by hand, by styles or bound to view models, and ready-made controls from buttons and sliders to tree views, windows and rich text boxes, all drawn with one SpriteBatch.
+      needs: Windows 10 · .NET 10 · MonoGame DesktopGL or WindowsDX
     - id: BorrowedTorch.UIDPGenerator
       summary: Build tool that generates BorrowedTorch.UI dependency properties and style classes from .dpg files before every build.
       needs: .NET 10 SDK
@@ -41,7 +47,7 @@
   packages:
     - id: BorrowedTorch.MonoInput
       summary: One API for keyboard, mouse, gamepad and MIDI in MonoGame, with a pressed / down / up state for every input, per-frame deltas, gamepad vibration and change events.
-      needs: Windows 10 · MonoGame 3.8.1+
+      needs: Windows 10 · .NET 10 · MonoGame 3.8.1+
     - id: BorrowedTorch.InputBinder
       summary: Binds inputs to game actions — buttons, one-axis and two-axis actions with several bindings each, player rebinding with conflict handling, and modifier keys.
       needs: .NET 8+ · no dependencies
@@ -58,7 +64,7 @@
 - group: Procedural generation
   packages:
     - id: BorrowedTorch.Randomness
-      summary: Seeded random streams that give the same numbers on every platform and .NET version — PCG32 with forkable sub-streams and stable string hashing, so a world seed always rebuilds the same world.
+      summary: Seeded random streams and noise that give the same numbers on every platform and .NET version — PCG32 with forkable sub-streams, stable string hashing, and 2D gradient and fractal noise, so a world seed always rebuilds the same world.
       needs: .NET 8+ · no dependencies
     - id: BorrowedTorch.Architecture
       summary: Procedural level architecture for grid and tile games — footprint masks, layouts whose edges are walls, openings or doors, a seeded maze generator with distance and dead-end queries, and tilers for thick- or thin-wall tile maps.
