@@ -5,9 +5,9 @@ description: What every element has in common, input and states, resizing, the r
 ---
 
 Every element derives from `BaseElement`, so everything on this page applies to all of them: buttons, labels, stack
-panels, windows and your own elements. The other UI pages list only what each element adds. A property marked <span class="dp-badge">DP</span> is a dependency property: `Foo` is backed by `FooDP`, which a style, a binding or an animation can
+panels, windows and your own elements. The other UI pages list only what each element adds. Badges tell what each name is: <span class="kb kb-prop">P</span> a plain property, <span class="kb kb-method">M</span> a method, <span class="kb kb-event">E</span> an event, and <span class="kb kb-dp">DP</span> a dependency property: `Foo` is backed by `FooDP`, which a style, a binding or an animation can
 set (see [styles, bindings and animation](/docs/ui-styles/)), and the class has a static `FooDPActions` with the
-property's shared actions and default. Unmarked properties are plain C# properties. Screenshots use the theme from
+property's shared actions and default. Screenshots use the theme from
 [styles](/docs/ui-styles/#the-theme-of-these-pages).
 
 The event handler types are delegates nested in `BaseElement` (`BaseElement.Click`, `BaseElement.KeyDown` and so on);
@@ -23,7 +23,7 @@ An element's size along each side comes from its own settings and its parent:
 
 `MinWidth`, `MinHeight`, `MaxWidth` and `MaxHeight` then limit the result (0 means no limit). The layout hands the
 result back as `ActualWidth` and `ActualHeight`, and the position as `Location`, in screen coordinates. All of these
-are logical units: one unit is one pixel at 100 % display scale (see [UI](/docs/ui/)).
+are logical units: one unit is one pixel at 100 % display scale (see the [quick start guide](/docs/ui/#display-scaling)).
 
 In its slot an element is placed by its alignment and margins: `Left` / `Top` at its left / top margin, `Right` /
 `Bottom` at its right / bottom margin, `Center` centred between both margins, `Stretch` over the whole slot less both
@@ -51,18 +51,18 @@ parent makes it wrap (see [sizes and alignment](/docs/ui/#sizes-and-alignment)).
 | <span class="dp">`HorizontalAlignment`</span> | `HorizontalAlignment` | Where the element sits in its slot horizontally, and whether it stretches over it. The default is `Stretch`. |
 | <span class="dp">`VerticalAlignment`</span> | `VerticalAlignment` | Where the element sits in its slot vertically, and whether it stretches over it. The default is `Stretch`. |
 | <span class="dp">`Margin`</span> | `Margin` | The space between the element and the edges of its slot. Which sides count is described above. |
-| `ActualWidth` | `int` | Read-only. The width the last layout gave the element, within its size limits. |
-| `ActualHeight` | `int` | Read-only. The height the last layout gave the element, within its size limits. |
-| `Location` | `Point` | Read-only. The top left corner of the element on the screen. |
-| `Left` | `int` | Read-only. `Location.X`. |
-| `Top` | `int` | Read-only. `Location.Y`. |
-| `Right` | `int` | Read-only. `Left + ActualWidth`. |
-| `Bottom` | `int` | Read-only. `Top + ActualHeight`. |
-| `Bounds` | `Rectangle` | Read-only. `Location` and the actual size as one rectangle. |
-| `MeasuredWidth` | `int` | Read-only. The width the last measure found: fixed, stretched over the slot or fitted to the content. |
-| `MeasuredHeight` | `int` | Read-only. The height the last measure found. |
-| `MeasuredContentWidth` | `int` | Read-only. The width the content needed at the last measure, whatever width the element was given. |
-| `MeasuredContentHeight` | `int` | Read-only. The height the content needed at the last measure. |
+| <span class="prop">`ActualWidth`</span> | `int` | Read-only. The width the last layout gave the element, within its size limits. |
+| <span class="prop">`ActualHeight`</span> | `int` | Read-only. The height the last layout gave the element, within its size limits. |
+| <span class="prop">`Location`</span> | `Point` | Read-only. The top left corner of the element on the screen. |
+| <span class="prop">`Left`</span> | `int` | Read-only. `Location.X`. |
+| <span class="prop">`Top`</span> | `int` | Read-only. `Location.Y`. |
+| <span class="prop">`Right`</span> | `int` | Read-only. `Left + ActualWidth`. |
+| <span class="prop">`Bottom`</span> | `int` | Read-only. `Top + ActualHeight`. |
+| <span class="prop">`Bounds`</span> | `Rectangle` | Read-only. `Location` and the actual size as one rectangle. |
+| <span class="prop">`MeasuredWidth`</span> | `int` | Read-only. The width the last measure found: fixed, stretched over the slot or fitted to the content. |
+| <span class="prop">`MeasuredHeight`</span> | `int` | Read-only. The height the last measure found. |
+| <span class="prop">`MeasuredContentWidth`</span> | `int` | Read-only. The width the content needed at the last measure, whatever width the element was given. |
+| <span class="prop">`MeasuredContentHeight`</span> | `int` | Read-only. The height the content needed at the last measure. |
 
 The measure and arrange methods (`Measure`, `MeasureAt`, `Arrange`, `ArrangeAt`, `InvalidateMeasure`,
 `InvalidateArrange`) are public, but you only need them in your own elements: see
@@ -108,28 +108,28 @@ element.Margin = (10, 20, 30, 40);  // left, top, right, bottom
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `Left` | `int` | Read-only field. The left margin. |
-| `Top` | `int` | Read-only field. The top margin. |
-| `Right` | `int` | Read-only field. The right margin. |
-| `Bottom` | `int` | Read-only field. The bottom margin. |
-| `Zero` | `Margin` | Static, read-only. A margin of 0 on every side. |
+| <span class="prop">`Left`</span> | `int` | Read-only field. The left margin. |
+| <span class="prop">`Top`</span> | `int` | Read-only field. The top margin. |
+| <span class="prop">`Right`</span> | `int` | Read-only field. The right margin. |
+| <span class="prop">`Bottom`</span> | `int` | Read-only field. The bottom margin. |
+| <span class="prop">`Zero`</span> | `Margin` | Static, read-only. A margin of 0 on every side. |
 
 | Method | Description |
 | --- | --- |
 | `Margin()` | A margin of 0 on every side. |
 | `Margin(int all)` | The same margin on every side. |
 | `Margin(int left = 0, int top = 0, int right = 0, int bottom = 0)` | A margin per side; the sides left out are 0. |
-| `implicit operator Margin(int all)` | `element.Margin = 5` sets 5 on every side. |
-| `implicit operator Margin((int left, int top) tuple)` | Left and top; right and bottom are 0. |
-| `implicit operator Margin((int left, int top, int right) tuple)` | Left, top and right; bottom is 0. |
-| `implicit operator Margin((int left, int top, int right, int bottom) tuple)` | All four sides. |
-| `operator -(Margin margin)` | The margin with every side negated. |
-| `operator +(Margin margin1, Margin margin2)` | Adds the margins side by side. |
-| `operator -(Margin margin1, Margin margin2)` | Subtracts the second margin from the first, side by side. |
-| `operator ==(Margin margin1, Margin margin2)` | True when all four sides are equal. `!=` is the opposite. |
-| `Equals(Margin other)` | True when all four sides are equal (`Equals(object)` as well, for another `Margin`). |
-| `GetHashCode()` | A hash of the four sides. |
-| `ToString()` | The sides as text, for example `L: 10 R: 30 T: 20 B: 40`. |
+| <span class="method">`implicit operator Margin(int all)`</span> | `element.Margin = 5` sets 5 on every side. |
+| <span class="method">`implicit operator Margin((int left, int top) tuple)`</span> | Left and top; right and bottom are 0. |
+| <span class="method">`implicit operator Margin((int left, int top, int right) tuple)`</span> | Left, top and right; bottom is 0. |
+| <span class="method">`implicit operator Margin((int left, int top, int right, int bottom) tuple)`</span> | All four sides. |
+| <span class="method">`operator -(Margin margin)`</span> | The margin with every side negated. |
+| <span class="method">`operator +(Margin margin1, Margin margin2)`</span> | Adds the margins side by side. |
+| <span class="method">`operator -(Margin margin1, Margin margin2)`</span> | Subtracts the second margin from the first, side by side. |
+| <span class="method">`operator ==(Margin margin1, Margin margin2)`</span> | True when all four sides are equal. `!=` is the opposite. |
+| <span class="method">`Equals(Margin other)`</span> | True when all four sides are equal (`Equals(object)` as well, for another `Margin`). |
+| <span class="method">`GetHashCode()`</span> | A hash of the four sides. |
+| <span class="method">`ToString()`</span> | The sides as text, for example `L: 10 R: 30 T: 20 B: 40`. |
 
 ## Appearance
 
@@ -177,12 +177,12 @@ size, so the elements around it move up.
 | <span class="dp">`BackgroundColor`</span> | `Color` | The colour the element's background is filled with. `Transparent` (the default) fills nothing. |
 | <span class="dp">`ForegroundColor`</span> | `Color` | The colour of what the element draws over its background, such as a label's text. An element drawn from textures tints them with it when it is not `Transparent`. |
 | <span class="dp">`TexturesPath`</span> | `string` | A content folder with the element's textures, for example `UITextures/Button/`. A missing trailing path separator is added. |
-| `TexturesPresent` | `bool` | Read-only. True when `TexturesPath` is set. |
+| <span class="prop">`TexturesPresent`</span> | `bool` | Read-only. True when `TexturesPath` is set. |
 | <span class="dp">`Transparency`</span> | `float` | From 0 (opaque, the default) to 1 (invisible); values outside are clamped. Applies to the element and its subtree, combined with the parents' transparency. |
 | <span class="dp">`CropOutsideOfParentBorder`</span> | `bool` | Clips the element to its parent's bounds. Without it the element may overflow its parent but is still clipped by whatever clips the parent (a scroll view, a window's content area). On by default for every element with a style. |
 | <span class="dp">`CustomEffect`</span> | `Effect` | A shader the element draws its background (or texture, an image's picture) with. Setting it sets it on the children as well, and a child added later takes it. An effect with a `ModulationColor` parameter gets the draw colour there. |
-| `PreDrawAction` | `Action` | Runs before the element and its subtree are drawn, for example to change the sprite batch state. |
-| `PostDrawAction` | `Action` | Runs after the element and its subtree are drawn, for example to restore what `PreDrawAction` changed. |
+| <span class="prop">`PreDrawAction`</span> | `Action` | Runs before the element and its subtree are drawn, for example to change the sprite batch state. |
+| <span class="prop">`PostDrawAction`</span> | `Action` | Runs after the element and its subtree are drawn, for example to restore what `PreDrawAction` changed. |
 
 Tooltips, context menus, drop-downs and modal windows are never clipped by the elements they open from.
 `PreDrawAction` and `PostDrawAction` come in pairs: a hidden element runs neither of them.
@@ -191,7 +191,7 @@ Tooltips, context menus, drop-downs and modal windows are never clipped by the e
 
 | Method | Description |
 | --- | --- |
-| `Draw()` | Draws the element, its children and the popups above them. The UI calls it on the root every frame, you don't call it yourself. |
+| <span class="method">`Draw()`</span> | Draws the element, its children and the popups above them. The UI calls it on the root every frame, you don't call it yourself. |
 
 `Visibility`:
 
@@ -225,35 +225,35 @@ Ownership decides what is disposed:
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `Id` | `Guid` | Read-only field. A unique id made when the element is created. |
-| `Name` | `string` | Read-only. The name given to the constructor, used by `GetElementByName`. |
-| `Parent` | `BaseElement` | Read-only. The element this one is in, null when it is not in one. |
-| `Children` | `IReadOnlyList<BaseElement>` | Read-only. The element's children: its items and the parts it made itself. |
-| `IsDisposed` | `bool` | Read-only. True once `Dispose()` was called. |
+| <span class="prop">`Id`</span> | `Guid` | Read-only field. A unique id made when the element is created. |
+| <span class="prop">`Name`</span> | `string` | Read-only. The name given to the constructor, used by `GetElementByName`. |
+| <span class="prop">`Parent`</span> | `BaseElement` | Read-only. The element this one is in, null when it is not in one. |
+| <span class="prop">`Children`</span> | `IReadOnlyList<BaseElement>` | Read-only. The element's children: its items and the parts it made itself. |
+| <span class="prop">`IsDisposed`</span> | `bool` | Read-only. True once `Dispose()` was called. |
 
 ### Items and content events
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| `OnDisposed` | `(BaseElement sender)` | The element was disposed. Raised once, at the end of `Dispose()`; the handlers are let go afterwards. |
+| <span class="event">`OnDisposed`</span> | `(BaseElement sender)` | The element was disposed. Raised once, at the end of `Dispose()`; the handlers are let go afterwards. |
 
 ### Items and content methods
 
 | Method | Description |
 | --- | --- |
-| `AddItem(BaseElement item)` | Adds the item after the other children. |
-| `AddItemAt(BaseElement item, int index)` | Inserts the item at the index in `Children`. An index below 0 or above the count is ignored. |
-| `AddItemsRange(IEnumerable<BaseElement> items)` | Adds the items in order after the other children. |
-| `AddItemsRangeAt(IEnumerable<BaseElement> items, int index)` | Inserts the items in order from the index; a null item takes no place. |
-| `RemoveItem(BaseElement item)` | Takes the item out without disposing it. Does nothing for a part of the element. |
-| `RemoveItemAt(int index)` | Takes the item at the index out without disposing it. |
-| `RemoveItemsRangeAt(int index, int count)` | Takes `count` items out from the index on (fewer when the children end first), without disposing them. |
-| `ClearItems()` | Takes every item out without disposing them; the element's own parts stay. |
-| `GetElementByName(string name)` | Finds an element by name below this one (its children first, then deeper, popups such as its tooltip included). Null when there is none. |
-| `Dispose()` | Disposes the element as described above. |
+| <span class="method">`AddItem(BaseElement item)`</span> | Adds the item after the other children. |
+| <span class="method">`AddItemAt(BaseElement item, int index)`</span> | Inserts the item at the index in `Children`. An index below 0 or above the count is ignored. |
+| <span class="method">`AddItemsRange(IEnumerable<BaseElement> items)`</span> | Adds the items in order after the other children. |
+| <span class="method">`AddItemsRangeAt(IEnumerable<BaseElement> items, int index)`</span> | Inserts the items in order from the index; a null item takes no place. |
+| <span class="method">`RemoveItem(BaseElement item)`</span> | Takes the item out without disposing it. Does nothing for a part of the element. |
+| <span class="method">`RemoveItemAt(int index)`</span> | Takes the item at the index out without disposing it. |
+| <span class="method">`RemoveItemsRangeAt(int index, int count)`</span> | Takes `count` items out from the index on (fewer when the children end first), without disposing them. |
+| <span class="method">`ClearItems()`</span> | Takes every item out without disposing them; the element's own parts stay. |
+| <span class="method">`GetElementByName(string name)`</span> | Finds an element by name below this one (its children first, then deeper, popups such as its tooltip included). Null when there is none. |
+| <span class="method">`Dispose()`</span> | Disposes the element as described above. |
 
-`BorrowedTorchUI` has a `GetElementByName<T>(string name)` that searches from the root and casts the result (see
-[UI](/docs/ui/)).
+`BorrowedTorchUI` has a `GetElementByName<T>(string name)` that searches from the root and casts the result (see the
+[quick start guide](/docs/ui/)).
 
 ### DisposableBase
 
@@ -261,12 +261,12 @@ The base class of `BaseElement`, with the dispose pattern every element uses.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `IsDisposed` | `bool` | Read-only. True once `Dispose()` was called. |
+| <span class="prop">`IsDisposed`</span> | `bool` | Read-only. True once `Dispose()` was called. |
 
 | Method | Description |
 | --- | --- |
-| `Dispose()` | Marks the object disposed and runs `DisposeHandler` once; later calls do nothing. |
-| `DisposeHandler()` | Protected, abstract. The clean-up of the derived class; `BaseElement` implements it as described above. |
+| <span class="method">`Dispose()`</span> | Marks the object disposed and runs `DisposeHandler` once; later calls do nothing. |
+| <span class="method">`DisposeHandler()`</span> | Protected, abstract. The clean-up of the derived class; `BaseElement` implements it as described above. |
 
 ## Mouse and states
 
@@ -339,17 +339,17 @@ the controls raise their own events for them (a selection, a value change).
 | <span class="dp">`HitTest`</span> | `bool` | Whether the element itself takes the mouse. On by default for every element with a style; off for an element deriving from `BaseElement` directly. |
 | <span class="dp">`Disabled`</span> | `bool` | Stops the element and its subtree from showing states, raising mouse events and taking the keyboard, and draws them darker. |
 | <span class="dp">`InheritState`</span> | `InheritState` | Which states the element shows besides its own: its parent's, its children's, both or none (the default). |
-| `StateData` | `ElementStateData` | Read-only. The state the element shows now and where it comes from. |
+| <span class="prop">`StateData`</span> | `ElementStateData` | Read-only. The state the element shows now and where it comes from. |
 
 ### Mouse and states events
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| `OnStateChanged` | `(BaseElement sender, ElementStateData e)` | The state the element shows changes, its own or one it takes. Raised again for every change of the mouse buttons while the element is pressed. |
-| `OnMouseEnter` | `(BaseElement sender)` | The element starts taking the mouse. |
-| `OnMouseLeave` | `(BaseElement sender)` | The element stops taking the mouse: the mouse left, moved onto a child that takes it, or the element got disabled or hidden. |
-| `OnClick` | `(BaseElement sender, MouseClickEventArgs e)` | A mouse button pressed on the element is released over it (with `RepeatClicks`: on the press and while it is held). |
-| `OnDoubleClick` | `(BaseElement sender, MouseClickEventArgs e)` | The left button is pressed a second time within `DoubleClickIntervalMs`. Not raised by an element with `RepeatClicks`. |
+| <span class="event">`OnStateChanged`</span> | `(BaseElement sender, ElementStateData e)` | The state the element shows changes, its own or one it takes. Raised again for every change of the mouse buttons while the element is pressed. |
+| <span class="event">`OnMouseEnter`</span> | `(BaseElement sender)` | The element starts taking the mouse. |
+| <span class="event">`OnMouseLeave`</span> | `(BaseElement sender)` | The element stops taking the mouse: the mouse left, moved onto a child that takes it, or the element got disabled or hidden. |
+| <span class="event">`OnClick`</span> | `(BaseElement sender, MouseClickEventArgs e)` | A mouse button pressed on the element is released over it (with `RepeatClicks`: on the press and while it is held). |
+| <span class="event">`OnDoubleClick`</span> | `(BaseElement sender, MouseClickEventArgs e)` | The left button is pressed a second time within `DoubleClickIntervalMs`. Not raised by an element with `RepeatClicks`. |
 
 `InheritState` (flags):
 
@@ -384,17 +384,17 @@ The state an element shows, passed to `OnStateChanged`. The UI shares one immuta
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `State` | `ElementState` | Read-only. The state shown. |
-| `Source` | `StateSource` | Read-only. Where the state comes from. |
-| `MouseButtonsStates` | `MouseButtonsStates` | Read-only. The current states of the mouse buttons (read when you read it, not stored with the state). |
-| `NormalOwn` | `ElementStateData` | Static, read-only field. The `Normal` / `Own` state every element starts with. |
+| <span class="prop">`State`</span> | `ElementState` | Read-only. The state shown. |
+| <span class="prop">`Source`</span> | `StateSource` | Read-only. Where the state comes from. |
+| <span class="prop">`MouseButtonsStates`</span> | `MouseButtonsStates` | Read-only. The current states of the mouse buttons (read when you read it, not stored with the state). |
+| <span class="prop">`NormalOwn`</span> | `ElementStateData` | Static, read-only field. The `Normal` / `Own` state every element starts with. |
 
 | Method | Description |
 | --- | --- |
 | `ElementStateData(ElementState state, StateSource source)` | Creates a state, for example to compare with `StateData`. |
-| `operator ==(ElementStateData state1, ElementStateData state2)` | True when the state and the source are equal. `!=` and `Equals` compare the same way. |
-| `GetHashCode()` | A hash of the state and the source. |
-| `ToString()` | The state and the source as text, separated by a vertical bar. |
+| <span class="method">`operator ==(ElementStateData state1, ElementStateData state2)`</span> | True when the state and the source are equal. `!=` and `Equals` compare the same way. |
+| <span class="method">`GetHashCode()`</span> | A hash of the state and the source. |
+| <span class="method">`ToString()`</span> | The state and the source as text, separated by a vertical bar. |
 
 ### MouseClickEventArgs
 
@@ -402,8 +402,8 @@ What `OnClick` and `OnDoubleClick` get, taken when the click happens.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `MousePosition` | `Point` | Read-only. The mouse position in units, like the element positions. |
-| `ButtonsStates` | `MouseButtonsStates` | Read-only. The states of the mouse buttons, to tell which button clicked. |
+| <span class="prop">`MousePosition`</span> | `Point` | Read-only. The mouse position in units, like the element positions. |
+| <span class="prop">`ButtonsStates`</span> | `MouseButtonsStates` | Read-only. The states of the mouse buttons, to tell which button clicked. |
 
 | Method | Description |
 | --- | --- |
@@ -458,26 +458,26 @@ The focused element's own `OnKeyDown` is raised even for a key its control used;
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `IsFocused` | `bool` | Read-only. True while the element has the keyboard. |
+| <span class="prop">`IsFocused`</span> | `bool` | Read-only. True while the element has the keyboard. |
 
 ### Keyboard and focus events
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| `OnKeyDown` | `(BaseElement sender, KeyDownEventArgs e)` | A key is pressed while the element, or an element inside it that left the key unhandled, has the keyboard. |
+| <span class="event">`OnKeyDown`</span> | `(BaseElement sender, KeyDownEventArgs e)` | A key is pressed while the element, or an element inside it that left the key unhandled, has the keyboard. |
 
 ### Keyboard and focus methods
 
 | Method | Description |
 | --- | --- |
-| `Focus()` | Gives the element the keyboard. Returns false when it can't take it: it is not in the tree, hidden or disabled. |
+| <span class="method">`Focus()`</span> | Gives the element the keyboard. Returns false when it can't take it: it is not in the tree, hidden or disabled. |
 
 ### KeyDownEventArgs
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `Key` | `Keys` | Read-only. The key pressed. |
-| `Handled` | `bool` | Set it to true to stop the key from going on to the parents. |
+| <span class="prop">`Key`</span> | `Keys` | Read-only. The key pressed. |
+| <span class="prop">`Handled`</span> | `bool` | Set it to true to stop the key from going on to the parents. |
 
 | Method | Description |
 | --- | --- |
@@ -491,8 +491,8 @@ tooltip or menu belongs to one element at a time: giving it to another element t
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `ToolTip` | `ToolTip` | Shown while the element is hovered, after the tooltip's delay. See [ToolTip](/docs/ui-controls/#tooltip). |
-| `ContextMenu` | `ContextMenu` | Opened at the mouse by a right click on the element, or on an element inside it without a menu of its own. See [ContextMenu](/docs/ui-lists/#contextmenu). |
+| <span class="prop">`ToolTip`</span> | `ToolTip` | Shown while the element is hovered, after the tooltip's delay. See [ToolTip](/docs/ui-controls/#tooltip). |
+| <span class="prop">`ContextMenu`</span> | `ContextMenu` | Opened at the mouse by a right click on the element, or on an element inside it without a menu of its own. See [ContextMenu](/docs/ui-lists/#contextmenu). |
 
 ## Resizing
 
@@ -564,15 +564,15 @@ walk-through with a screenshot is on the [images page](/docs/ui-images/#drag-and
 | Property | Type | Description |
 | --- | --- | --- |
 | <span class="dp">`DragType`</span> | `DragType` | Whether a press on the element drags something: nothing (the default), the element itself, or a drag and drop. |
-| `DragTarget` | `BaseElement` | The element that is dragged; the element itself by default. |
-| `DragAndDropRepresentation` | `DragAndDropRepresentation` | What is drawn under the mouse while the element is the dragged one. Detached, not disposed, with the element. |
-| `IsDropAllowedPredicate` | `IfDropAllowed` | Decides whether a dragged element can be dropped here: `bool (BaseElement draggedElement)`. Without one every drop is denied. |
+| <span class="prop">`DragTarget`</span> | `BaseElement` | The element that is dragged; the element itself by default. |
+| <span class="prop">`DragAndDropRepresentation`</span> | `DragAndDropRepresentation` | What is drawn under the mouse while the element is the dragged one. Detached, not disposed, with the element. |
+| <span class="prop">`IsDropAllowedPredicate`</span> | `IfDropAllowed` | Decides whether a dragged element can be dropped here: `bool (BaseElement draggedElement)`. Without one every drop is denied. |
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| `OnDragAndDropStart` | `(BaseElement draggedElement)` | A drag and drop of this element (as the `DragTarget`) starts; the argument is the element whose `DragType` started it. |
-| `OnDrop` | `(BaseElement draggedElement, BaseElement dragAndDropDestination)` | A dragged element is released over this element and its predicate allowed it. |
-| `OnDropDenied` | `(BaseElement draggedElement, BaseElement dragAndDropDestination)` | A dragged element is released over this element and the drop is denied. |
+| <span class="event">`OnDragAndDropStart`</span> | `(BaseElement draggedElement)` | A drag and drop of this element (as the `DragTarget`) starts; the argument is the element whose `DragType` started it. |
+| <span class="event">`OnDrop`</span> | `(BaseElement draggedElement, BaseElement dragAndDropDestination)` | A dragged element is released over this element and its predicate allowed it. |
+| <span class="event">`OnDropDenied`</span> | `(BaseElement draggedElement, BaseElement dragAndDropDestination)` | A dragged element is released over this element and the drop is denied. |
 
 `DragType`:
 
@@ -602,18 +602,18 @@ cells (see [Grid](/docs/ui-layout/#grid)).
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `ShowStateTint` | `bool` | Static. Draws the state tints below over the elements. Off by default. |
-| `HoverTint` | `Color` | Static. The tint of a hovered element, `(0, 10, 60, 10)` by default. |
-| `PressedTint` | `Color` | Static. The tint of a pressed element, `(128, 128, 0, 10)` by default. |
-| `DropAllowedTint` | `Color` | Static. The tint of a drop target that takes the dragged element, `(0, 100, 0, 10)` by default. |
-| `DropDeniedTint` | `Color` | Static. The tint of a drop target that denies it, `(100, 0, 0, 10)` by default. |
-| `ModalWindowActiveShadeTint` | `Color` | Static. The shade drawn over everything below the top modal window, `(0, 0, 0, 75)` by default. Always drawn, not a debug setting. |
-| `ShowHitRectangle` | `bool` | Outlines the element's hit rectangle: its bounds as clipped by its parents. |
-| `ShowHitRectangleDiagonals` | `bool` | Adds the diagonals to the hit rectangle outline. |
-| `HitRectangleColor` | `Color` | The colour of the hit rectangle outline, `White` by default. |
-| `ShowActualSizeRectangle` | `bool` | Outlines the element's `Bounds`, without clipping. |
-| `ShowActualSizeRectangleDiagonals` | `bool` | Adds the diagonals to the bounds outline. |
-| `ActualSizeRectangleColor` | `Color` | The colour of the bounds outline, `Green` by default. |
+| <span class="prop">`ShowStateTint`</span> | `bool` | Static. Draws the state tints below over the elements. Off by default. |
+| <span class="prop">`HoverTint`</span> | `Color` | Static. The tint of a hovered element, `(0, 10, 60, 10)` by default. |
+| <span class="prop">`PressedTint`</span> | `Color` | Static. The tint of a pressed element, `(128, 128, 0, 10)` by default. |
+| <span class="prop">`DropAllowedTint`</span> | `Color` | Static. The tint of a drop target that takes the dragged element, `(0, 100, 0, 10)` by default. |
+| <span class="prop">`DropDeniedTint`</span> | `Color` | Static. The tint of a drop target that denies it, `(100, 0, 0, 10)` by default. |
+| <span class="prop">`ModalWindowActiveShadeTint`</span> | `Color` | Static. The shade drawn over everything below the top modal window, `(0, 0, 0, 75)` by default. Always drawn, not a debug setting. |
+| <span class="prop">`ShowHitRectangle`</span> | `bool` | Outlines the element's hit rectangle: its bounds as clipped by its parents. |
+| <span class="prop">`ShowHitRectangleDiagonals`</span> | `bool` | Adds the diagonals to the hit rectangle outline. |
+| <span class="prop">`HitRectangleColor`</span> | `Color` | The colour of the hit rectangle outline, `White` by default. |
+| <span class="prop">`ShowActualSizeRectangle`</span> | `bool` | Outlines the element's `Bounds`, without clipping. |
+| <span class="prop">`ShowActualSizeRectangleDiagonals`</span> | `bool` | Adds the diagonals to the bounds outline. |
+| <span class="prop">`ActualSizeRectangleColor`</span> | `Color` | The colour of the bounds outline, `Green` by default. |
 
 ## Styles and cursors
 
@@ -633,18 +633,18 @@ control reaches its parts (the scroll bars of a list, the title bar of a window)
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `GeneralStyle` | `TStyle` | Static. The style of every element of this style type. It starts as a copy of the framework defaults; changing one of its properties updates every such element, a property it leaves unset takes its default. |
-| `StyleOverride` | `TStyle` | A style for this element only, applied over the general style. Setting it to null takes its values back out. |
-| `GeneralMouseCursorsSet` | `MouseCursorsSet` | Static. The cursors of every element of this style type; null (the default) falls back to `DefaultMouseCursorsSet`. |
-| `MouseCursorsSetOverride` | `MouseCursorsSet` | The cursors of this element only, passed on to its parts that have none of their own. |
-| `MouseCursorsSet` | `MouseCursorsSet` | Read-only. The cursors the element shows: its override, else the set given to the control it is a part of, else its type's general set, else `DefaultMouseCursorsSet`. |
+| <span class="prop">`GeneralStyle`</span> | `TStyle` | Static. The style of every element of this style type. It starts as a copy of the framework defaults; changing one of its properties updates every such element, a property it leaves unset takes its default. |
+| <span class="prop">`StyleOverride`</span> | `TStyle` | A style for this element only, applied over the general style. Setting it to null takes its values back out. |
+| <span class="prop">`GeneralMouseCursorsSet`</span> | `MouseCursorsSet` | Static. The cursors of every element of this style type; null (the default) falls back to `DefaultMouseCursorsSet`. |
+| <span class="prop">`MouseCursorsSetOverride`</span> | `MouseCursorsSet` | The cursors of this element only, passed on to its parts that have none of their own. |
+| <span class="prop">`MouseCursorsSet`</span> | `MouseCursorsSet` | Read-only. The cursors the element shows: its override, else the set given to the control it is a part of, else its type's general set, else `DefaultMouseCursorsSet`. |
 
 ### BaseElement cursor properties
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `DefaultMouseCursorsSet` | `MouseCursorsSet` | Static. The cursors of every element without a more specific set: an arrow on hover, a hand over an element that can be dragged, a "no" cursor over a denied drop, and the sizing arrows over resize areas. `BorrowedTorchUI.SetDefaultMouseCursorsSet` sets it too. |
-| `MouseCursorsSet` | `MouseCursorsSet` | Read-only. The cursors the element shows. On an element without a style: its control's cursors when it is a part of one, otherwise `DefaultMouseCursorsSet`. |
+| <span class="prop">`DefaultMouseCursorsSet`</span> | `MouseCursorsSet` | Static. The cursors of every element without a more specific set: an arrow on hover, a hand over an element that can be dragged, a "no" cursor over a denied drop, and the sizing arrows over resize areas. `BorrowedTorchUI.SetDefaultMouseCursorsSet` sets it too. |
+| <span class="prop">`MouseCursorsSet`</span> | `MouseCursorsSet` | Read-only. The cursors the element shows. On an element without a style: its control's cursors when it is a part of one, otherwise `DefaultMouseCursorsSet`. |
 
 ## The root element
 
@@ -791,38 +791,38 @@ of its constructor to take its general style. A derived element opts out of item
 
 | Method | Description |
 | --- | --- |
-| `MeasureContent(int width, int height)` | Protected virtual, returns `Point`. Measures the children and returns the content size, as described above. |
-| `ArrangeContent()` | Protected virtual. Arranges the children inside `Bounds`, as described above. |
-| `Measure(int slotWidth, int slotHeight)` | Measures the element for the slot its parent gives it (`-1`: a size the parent does not know yet): a stretched element takes the slot less its margins, a fixed one its desired size, the others fit their content. |
-| `MeasureAt(int width, int height)` | Measures the element at a size its container chose for it; along a side given as `-1` it has its own size (fixed, or fitted to its content). |
-| `Arrange(Rectangle slot)` | Gives the element its size and position in the slot: a stretched element takes the slot less its margins, the others keep their measured size and are placed by their margins and alignment. |
-| `ArrangeAt(Point position)` | Places the element at a position its container chose, at its measured size; its margins and alignment are not applied. |
-| `ArrangeAt(Rectangle bounds)` | Places the element at a position and size its container chose. |
-| `InvalidateMeasure()` | Asks for a new measure and arrange of the element: a setting of its own changed its size or its content's. |
-| `InvalidateArrange()` | Asks for the element's children to be placed again; its size stays. |
+| <span class="method">`MeasureContent(int width, int height)`</span> | Protected virtual, returns `Point`. Measures the children and returns the content size, as described above. |
+| <span class="method">`ArrangeContent()`</span> | Protected virtual. Arranges the children inside `Bounds`, as described above. |
+| <span class="method">`Measure(int slotWidth, int slotHeight)`</span> | Measures the element for the slot its parent gives it (`-1`: a size the parent does not know yet): a stretched element takes the slot less its margins, a fixed one its desired size, the others fit their content. |
+| <span class="method">`MeasureAt(int width, int height)`</span> | Measures the element at a size its container chose for it; along a side given as `-1` it has its own size (fixed, or fitted to its content). |
+| <span class="method">`Arrange(Rectangle slot)`</span> | Gives the element its size and position in the slot: a stretched element takes the slot less its margins, the others keep their measured size and are placed by their margins and alignment. |
+| <span class="method">`ArrangeAt(Point position)`</span> | Places the element at a position its container chose, at its measured size; its margins and alignment are not applied. |
+| <span class="method">`ArrangeAt(Rectangle bounds)`</span> | Places the element at a position and size its container chose. |
+| <span class="method">`InvalidateMeasure()`</span> | Asks for a new measure and arrange of the element: a setting of its own changed its size or its content's. |
+| <span class="method">`InvalidateArrange()`</span> | Asks for the element's children to be placed again; its size stays. |
 
 ### Members for derived elements
 
 | Method | Description |
 | --- | --- |
-| `BaseElement(string name = null)` | Protected. Sets the name `GetElementByName` finds the element by. |
-| `GenericStyleAndMouseCursorsData(string name = null)` | Protected. The same, for an element with a style. |
-| `AcceptsItems` | Protected virtual property, `true` by default. Return false and the item methods do nothing on the element. |
-| `AddChild(BaseElement child, bool isSole = false, int insertIndex = -1, bool isVisualComponent = true)` | Protected. Adds a child; by default an own part, which the item methods leave alone and which is disposed when it is removed. `isSole` removes the other items first. |
-| `RemoveChild(BaseElement child)` | Protected. Takes a child out: an own part is disposed, an item only detached. |
-| `RemoveChildAt(int index)` | Protected. The same, by index in `Children`. |
-| `DetachChild(BaseElement child)` | Protected. Takes a child out without disposing it, to add it again later. |
-| `DetachChildren()` | Protected. Takes every child out without disposing them. |
-| `DetachChildren(Predicate<BaseElement> match)` | Protected. Takes the matching children out without disposing them. |
-| `ActualWidth`, `ActualHeight` | Their setters are protected; the layout sets them, you normally don't. |
-| `LoadTextures()` | Protected virtual. Called when `TexturesPath` changes; load the element's textures from the folder here and call the base. |
-| `UnsubscribeSelf()` | Protected virtual. Called on dispose: release the element's subscriptions to other objects here. |
-| `DisposeHandler()` | Protected override. The element's dispose (see [items and content](#items-and-content)); call the base when you override it. |
-| `CursorsPropertyChangedHandler()` | Protected. Shows the element's current cursors again, after its cursor set changed. |
-| `ApplyStyle(BaseStyle style, ValueSources valueSource)` | Protected. Applies the style's assigned properties to the element as the given value source. |
-| `Style` | Protected property of `GenericStyleAndMouseCursorsData<TStyle>`: the style override, or the general style. |
-| `ApplyGeneralStyle()` | Protected, of `GenericStyleAndMouseCursorsData<TStyle>`. Applies the general style over the framework defaults. |
-| `ApplyStyleOverride()` | Protected, of `GenericStyleAndMouseCursorsData<TStyle>`. Applies the style override again. |
+| <span class="method">`BaseElement(string name = null)`</span> | Protected. Sets the name `GetElementByName` finds the element by. |
+| <span class="method">`GenericStyleAndMouseCursorsData(string name = null)`</span> | Protected. The same, for an element with a style. |
+| <span class="method">`AcceptsItems`</span> | Protected virtual property, `true` by default. Return false and the item methods do nothing on the element. |
+| <span class="method">`AddChild(BaseElement child, bool isSole = false, int insertIndex = -1, bool isVisualComponent = true)`</span> | Protected. Adds a child; by default an own part, which the item methods leave alone and which is disposed when it is removed. `isSole` removes the other items first. |
+| <span class="method">`RemoveChild(BaseElement child)`</span> | Protected. Takes a child out: an own part is disposed, an item only detached. |
+| <span class="method">`RemoveChildAt(int index)`</span> | Protected. The same, by index in `Children`. |
+| <span class="method">`DetachChild(BaseElement child)`</span> | Protected. Takes a child out without disposing it, to add it again later. |
+| <span class="method">`DetachChildren()`</span> | Protected. Takes every child out without disposing them. |
+| <span class="method">`DetachChildren(Predicate<BaseElement> match)`</span> | Protected. Takes the matching children out without disposing them. |
+| <span class="method">`ActualWidth`</span>, <span class="method">`ActualHeight`</span> | Their setters are protected; the layout sets them, you normally don't. |
+| <span class="method">`LoadTextures()`</span> | Protected virtual. Called when `TexturesPath` changes; load the element's textures from the folder here and call the base. |
+| <span class="method">`UnsubscribeSelf()`</span> | Protected virtual. Called on dispose: release the element's subscriptions to other objects here. |
+| <span class="method">`DisposeHandler()`</span> | Protected override. The element's dispose (see [items and content](#items-and-content)); call the base when you override it. |
+| <span class="method">`CursorsPropertyChangedHandler()`</span> | Protected. Shows the element's current cursors again, after its cursor set changed. |
+| <span class="method">`ApplyStyle(BaseStyle style, ValueSources valueSource)`</span> | Protected. Applies the style's assigned properties to the element as the given value source. |
+| <span class="method">`Style`</span> | Protected property of `GenericStyleAndMouseCursorsData<TStyle>`: the style override, or the general style. |
+| <span class="method">`ApplyGeneralStyle()`</span> | Protected, of `GenericStyleAndMouseCursorsData<TStyle>`. Applies the general style over the framework defaults. |
+| <span class="method">`ApplyStyleOverride()`</span> | Protected, of `GenericStyleAndMouseCursorsData<TStyle>`. Applies the style override again. |
 
 ### Handler overrides
 
@@ -831,23 +831,23 @@ before the matching public event (if any) is raised.
 
 | Method | Description |
 | --- | --- |
-| `LocationChangedHandlerOverride(Point location)` | The element moved. |
-| `ActualWidthChangedHandlerOverride(int width)` | The layout gave the element another width. |
-| `ActualHeightChangedHandlerOverride(int height)` | The layout gave the element another height. |
-| `VisibilityChangedHandlerOverride(Visibility visibility)` | `Visibility` changed; called before the children hear of it. |
-| `VisibilityPropertyChangedHandlerOverride(Visibility value)` | `Visibility` changed; called after the children heard of it. |
-| `StateChangedHandlerOverride(BaseElement sender, ElementStateData stateData)` | The shown state changed, before `OnStateChanged`. |
-| `MouseEnterHandlerOverride()` | Before `OnMouseEnter`. |
-| `MouseLeaveHandlerOverride()` | Before `OnMouseLeave`. |
-| `ClickHandlerOverride(BaseElement sender, MouseClickEventArgs e)` | Before `OnClick`. |
-| `DoubleClickHandlerOverride(BaseElement sender, MouseClickEventArgs e)` | Before `OnDoubleClick`. |
-| `GotFocusHandlerOverride()` | The element got the keyboard. |
-| `LostFocusHandlerOverride()` | The element lost the keyboard. Focusing another element here (the next field of a form) works. |
-| `KeyDownHandlerOverride(KeyDownEventArgs e)` | A key reached the element, before `OnKeyDown`; set `e.Handled` for a key the element uses. |
-| `TextInputHandlerOverride(TextInputEventArgs e)` | Typed text reached the focused element. |
-| `InheritStatePropertyChangedHandlerOverride(InheritState value)` | `InheritState` changed. |
-| `ForegroundColorPropertyChangedHandlerOverride(Color value)` | `ForegroundColor` changed. |
-| `HitTestPropertyChangedHandlerOverride(bool value)` | `HitTest` changed. |
-| `TimeBeforeRepeatStartsMsPropertyChangedHandlerOverride(int value)` | `TimeBeforeRepeatStartsMs` changed (after it was passed to the parts). |
-| `TimeBetweenRepeatsMsPropertyChangedHandlerOverride(int value)` | `TimeBetweenRepeatsMs` changed (after it was passed to the parts). |
-| `DoubleClickIntervalMsPropertyChangedHandlerOverride(int value)` | `DoubleClickIntervalMs` changed (after it was passed to the parts). |
+| <span class="method">`LocationChangedHandlerOverride(Point location)`</span> | The element moved. |
+| <span class="method">`ActualWidthChangedHandlerOverride(int width)`</span> | The layout gave the element another width. |
+| <span class="method">`ActualHeightChangedHandlerOverride(int height)`</span> | The layout gave the element another height. |
+| <span class="method">`VisibilityChangedHandlerOverride(Visibility visibility)`</span> | `Visibility` changed; called before the children hear of it. |
+| <span class="method">`VisibilityPropertyChangedHandlerOverride(Visibility value)`</span> | `Visibility` changed; called after the children heard of it. |
+| <span class="method">`StateChangedHandlerOverride(BaseElement sender, ElementStateData stateData)`</span> | The shown state changed, before `OnStateChanged`. |
+| <span class="method">`MouseEnterHandlerOverride()`</span> | Before `OnMouseEnter`. |
+| <span class="method">`MouseLeaveHandlerOverride()`</span> | Before `OnMouseLeave`. |
+| <span class="method">`ClickHandlerOverride(BaseElement sender, MouseClickEventArgs e)`</span> | Before `OnClick`. |
+| <span class="method">`DoubleClickHandlerOverride(BaseElement sender, MouseClickEventArgs e)`</span> | Before `OnDoubleClick`. |
+| <span class="method">`GotFocusHandlerOverride()`</span> | The element got the keyboard. |
+| <span class="method">`LostFocusHandlerOverride()`</span> | The element lost the keyboard. Focusing another element here (the next field of a form) works. |
+| <span class="method">`KeyDownHandlerOverride(KeyDownEventArgs e)`</span> | A key reached the element, before `OnKeyDown`; set `e.Handled` for a key the element uses. |
+| <span class="method">`TextInputHandlerOverride(TextInputEventArgs e)`</span> | Typed text reached the focused element. |
+| <span class="method">`InheritStatePropertyChangedHandlerOverride(InheritState value)`</span> | `InheritState` changed. |
+| <span class="method">`ForegroundColorPropertyChangedHandlerOverride(Color value)`</span> | `ForegroundColor` changed. |
+| <span class="method">`HitTestPropertyChangedHandlerOverride(bool value)`</span> | `HitTest` changed. |
+| <span class="method">`TimeBeforeRepeatStartsMsPropertyChangedHandlerOverride(int value)`</span> | `TimeBeforeRepeatStartsMs` changed (after it was passed to the parts). |
+| <span class="method">`TimeBetweenRepeatsMsPropertyChangedHandlerOverride(int value)`</span> | `TimeBetweenRepeatsMs` changed (after it was passed to the parts). |
+| <span class="method">`DoubleClickIntervalMsPropertyChangedHandlerOverride(int value)`</span> | `DoubleClickIntervalMs` changed (after it was passed to the parts). |

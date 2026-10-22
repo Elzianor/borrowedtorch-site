@@ -5,9 +5,9 @@ description: Buttons, check boxes, sliders, progress bars, tooltips and the colo
 ---
 
 Every control here is an element: it has all the properties, events and methods of
-[`BaseElement`](/docs/ui-base-element/), which the tables below don't repeat. A property marked <span class="dp-badge">DP</span> is a dependency property: `Foo` is backed by `FooDP`, which a style, a binding or an animation can set (see
+[`BaseElement`](/docs/ui-base-element/), which the tables below don't repeat. Badges tell what each name is: <span class="kb kb-prop">P</span> a plain property, <span class="kb kb-method">M</span> a method, <span class="kb kb-event">E</span> an event, and <span class="kb kb-dp">DP</span> a dependency property: `Foo` is backed by `FooDP`, which a style, a binding or an animation can set (see
 [styles, bindings and animation](/docs/ui-styles/)), and by a static `FooDPActions` shared by all elements of the
-class. Unmarked properties are plain C# properties. Screenshots use the theme from [styles](/docs/ui-styles/#the-theme-of-these-pages).
+class. Screenshots use the theme from [styles](/docs/ui-styles/#the-theme-of-these-pages).
 
 ## Button
 
@@ -79,7 +79,7 @@ Without textures the button is drawn in the solid colour of its state. With `Tex
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| `OnToggled` | `(BaseElement sender, bool isToggledOn)` | A `Toggle` button turns on or off, by a click or from code. |
+| <span class="event">`OnToggled`</span> | `(BaseElement sender, bool isToggledOn)` | A `Toggle` button turns on or off, by a click or from code. |
 
 Clicks come through the inherited `OnClick`.
 
@@ -209,7 +209,7 @@ colour, so give them in a style or on the element. With `TexturesPath` set, the 
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| `OnCheckedUnchecked` | `(BaseElement sender, bool isChecked)` | `Checked` changes: by a click, from code, by a binding, or because another box of the group was checked. |
+| <span class="event">`OnCheckedUnchecked`</span> | `(BaseElement sender, bool isChecked)` | `Checked` changes: by a click, from code, by a binding, or because another box of the group was checked. |
 
 ### CheckBox methods
 
@@ -358,7 +358,7 @@ marks are drawn in their colours with or without textures.
 | <span class="dp">`Min`</span> | `float` | The smallest value. Setting it above `Max` moves `Max` along. |
 | <span class="dp">`Max`</span> | `float` | The largest value. Setting it below `Min` moves `Min` along. |
 | <span class="dp">`Value`</span> | `float` | The value, between `Min` and `Max`. A value you set is clamped to the range and snapped to the ticks. |
-| `NormalizedValue` | `float` | Read-only. Where the value lies in the range, from 0 at `Min` to 1 at `Max` (0 when `Min` equals `Max`). |
+| <span class="prop">`NormalizedValue`</span> | `float` | Read-only. Where the value lies in the range, from 0 at `Min` to 1 at `Max` (0 when `Min` equals `Max`). |
 | <span class="dp">`Orientation`</span> | `Orientation` | `Horizontal` (the default) or `Vertical`. A vertical slider has `Min` at the bottom. |
 | <span class="dp">`Type`</span> | `SliderType` | The kind of slider: `Slider` (the default), `SliderWithCaps`, `ScrollBar` or `ScrollBarNoButtons`. |
 | <span class="dp">`Tick`</span> | `float` | The step the value snaps to, from `Min`. 0 (the default) means no snapping and no tick marks. |
@@ -371,9 +371,9 @@ marks are drawn in their colours with or without textures.
 | <span class="dp">`ThumbMargin`</span> | `Margin` | Moves the thumb across the track: it is centred in the slider's thickness minus `ThumbMargin.Top` (horizontal) or `ThumbMargin.Left` (vertical). The other sides are not used. |
 | <span class="dp">`ThumbMinSize`</span> | `float` | The smallest length of the thumb along the track, in units. It keeps a scroll bar's thumb usable over long content. |
 | <span class="dp">`MoveToPoint`</span> | `bool` | When set, a click on the track moves the thumb to the clicked point instead of stepping. |
-| `ContentSize` | `Point` | The size of the content a scroll bar scrolls, in units. Changing it keeps the same content in view. |
-| `ViewSize` | `Point` | The size of the visible part of that content, in units. Changing it keeps the same content in view. |
-| `ScrollAreaSize` | `Vector2` | Read-only. `ContentSize` minus `ViewSize`: how far the content can scroll. |
+| <span class="prop">`ContentSize`</span> | `Point` | The size of the content a scroll bar scrolls, in units. Changing it keeps the same content in view. |
+| <span class="prop">`ViewSize`</span> | `Point` | The size of the visible part of that content, in units. Changing it keeps the same content in view. |
+| <span class="prop">`ScrollAreaSize`</span> | `Vector2` | Read-only. `ContentSize` minus `ViewSize`: how far the content can scroll. |
 | <span class="dp">`ButtonsSolidColor`</span> | `Color` | The colour of the end buttons and caps, without textures. |
 | <span class="dp">`LineDecreaseSolidColor`</span> | `Color` | The colour of the track between the start and the thumb, without textures. |
 | <span class="dp">`LineIncreaseSolidColor`</span> | `Color` | The colour of the track between the thumb and the end, without textures. |
@@ -383,16 +383,16 @@ marks are drawn in their colours with or without textures.
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| `OnValueChanged` | `(BaseElement sender, float value)` | `Value` changes: by a drag, a click, from code, or when a new range, tick, `ContentSize` or `ViewSize` moves it. The value is already clamped and snapped. |
+| <span class="event">`OnValueChanged`</span> | `(BaseElement sender, float value)` | `Value` changes: by a drag, a click, from code, or when a new range, tick, `ContentSize` or `ViewSize` moves it. The value is already clamped and snapped. |
 
 ### Slider methods
 
 | Method | Description |
 | --- | --- |
 | `Slider(string name = null)` | Creates a slider. The name is used by `GetElementByName`. |
-| `PageDecrease()` | Moves the value down by a page: one tick when `Tick` is set, otherwise the share of the range that `ViewSize` is of `ContentSize - ViewSize`. Does nothing when `Type` is `Slider`. |
-| `PageIncrease()` | Moves the value up by a page, as `PageDecrease` moves it down. Does nothing when `Type` is `Slider`. |
-| `Draw()` | Draws the slider, then its tick marks. The framework calls it; you don't need to. |
+| <span class="method">`PageDecrease()`</span> | Moves the value down by a page: one tick when `Tick` is set, otherwise the share of the range that `ViewSize` is of `ContentSize - ViewSize`. Does nothing when `Type` is `Slider`. |
+| <span class="method">`PageIncrease()`</span> | Moves the value up by a page, as `PageDecrease` moves it down. Does nothing when `Type` is `Slider`. |
+| <span class="method">`Draw()`</span> | Draws the slider, then its tick marks. The framework calls it; you don't need to. |
 
 Without `Tick`, set `ContentSize` and `ViewSize` along the slider's orientation before paging: the page size comes
 from them.
@@ -543,7 +543,7 @@ which does not wrap; the tooltip's own `BackgroundColor` is drawn behind it.
 | Method | Description |
 | --- | --- |
 | `ToolTip(string name = null)` | Creates a tooltip. The name is used by `GetElementByName`. |
-| `Show()` | Places the tooltip at the mouse cursor and shows it after the next layout pass. The element it is attached to calls this; it does nothing for a tooltip not attached to an element. |
+| <span class="method">`Show()`</span> | Places the tooltip at the mouse cursor and shows it after the next layout pass. The element it is attached to calls this; it does nothing for a tooltip not attached to an element. |
 
 `ToolTipPlacement`:
 
@@ -617,7 +617,7 @@ Before anything is picked, changing `Brightness` sets `SelectedColor` to black.
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| `OnSelectedColorChanged` | `(BaseElement sender, Color color)` | `SelectedColor` changes: by a pick, a `Brightness` change, or from code. |
+| <span class="event">`OnSelectedColorChanged`</span> | `(BaseElement sender, Color color)` | `SelectedColor` changes: by a pick, a `Brightness` change, or from code. |
 
 ### ColorPicker methods
 

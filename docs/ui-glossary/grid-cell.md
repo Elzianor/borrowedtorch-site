@@ -1,0 +1,29 @@
+---
+layout: docs
+title: "Glossary: GridCell"
+description: The properties, methods and events of GridCell, in alphabetical order.
+---
+
+A cell the grid makes to hold the items of one place and span. You don't create cells; get one with `TryGetCell`. A cell is aligned `Left` / `Top`, doesn't take the mouse, and clips its items. Its `GridColumn`, `GridRow`, `GridColumnSpan` and `GridRowSpan` tell its place.
+
+`GridCell` derives from [`BaseElement`](/docs/ui-glossary/base-element/) and has its members too. The [layout page](/docs/ui-layout/#gridcell) shows it in context, with code and screenshots.
+
+Badges tell what each name is: <span class="kb kb-prop">P</span> a plain property, <span class="kb kb-method">M</span> a method, <span class="kb kb-event">E</span> an event, and <span class="kb kb-dp">DP</span> a dependency property, which a style, a binding or an animation can set.
+
+## Properties
+
+<h3 id="contentheight"><span class="prop"><code>ContentHeight</code></span></h3>
+
+`int` · Read-only. The height the cell's items need; auto rows are sized by it.
+
+<h3 id="contentwidth"><span class="prop"><code>ContentWidth</code></span></h3>
+
+`int` · Read-only. The width the cell's items need; auto columns are sized by it.
+
+<h3 id="isspancell"><span class="prop"><code>IsSpanCell</code></span></h3>
+
+`bool` · Read-only. Whether the cell spans more than one column or row.
+
+<h3 id="items"><span class="prop"><code>Items</code></span></h3>
+
+`IReadOnlyList<BaseElement>` · Read-only. The items in the cell.

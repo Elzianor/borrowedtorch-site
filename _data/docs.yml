@@ -14,9 +14,13 @@
     - title: Entities & components
       url: /docs/ecs/
 
+# tree: true makes the group's title the root of a tree that opens on its pages. An article with glossary: names a
+# data file whose entries (each with members) become its subitems: _data/ui_glossary.yml is generated with the
+# glossary pages.
 - group: UI
+  tree: true
   articles:
-    - title: UI
+    - title: Quick start guide
       url: /docs/ui/
     - title: Base element
       url: /docs/ui-base-element/
@@ -32,6 +36,9 @@
       url: /docs/ui-images/
     - title: Styles, bindings and animation
       url: /docs/ui-styles/
+    - title: Glossary
+      url: /docs/ui-glossary/
+      glossary: ui_glossary
 
 - group: Systems
   articles:

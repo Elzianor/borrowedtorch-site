@@ -9,8 +9,8 @@ coloured words, links, inline images, editing, scrolling and a typing animation.
 font atlas every frame, so no text texture is made, and both get their fonts the same way (see [Fonts](#fonts)).
 
 Both are elements: they have all the properties, events and methods of [`BaseElement`](/docs/ui-base-element/), which
-the tables below don't repeat (the text colour, for example, is the inherited `ForegroundColor`). A property marked <span class="dp-badge">DP</span> is a dependency property: `Foo` is backed by `FooDP`, which a style, a binding or an animation
-can set (see [styles, bindings and animation](/docs/ui-styles/)). Unmarked properties are plain C# properties. Screenshots use the theme from
+the tables below don't repeat (the text colour, for example, is the inherited `ForegroundColor`). Badges tell what each name is: <span class="kb kb-prop">P</span> a plain property, <span class="kb kb-method">M</span> a method, <span class="kb kb-event">E</span> an event, and <span class="kb kb-dp">DP</span> a dependency property: `Foo` is backed by `FooDP`, which a style, a binding or an animation
+can set (see [styles, bindings and animation](/docs/ui-styles/)). Screenshots use the theme from
 [styles](/docs/ui-styles/#the-theme-of-these-pages).
 
 ## Label
@@ -101,18 +101,18 @@ its parent (`InheritState.FromParent`), so a label inside a button follows the b
 | <span class="dp">`TextRotation`</span> | `TextRotation` | Turns the text and its frame by a quarter or a half turn. Default `None`. |
 | <span class="dp">`WrapType`</span> | `TextWrap` | Whether lines break at spaces to fit the width. Applies only with a fixed or stretched width or a `MaxWidth`. Default `NoWrap`. |
 | <span class="dp">`LineSpacing`</span> | `int` | Extra space between two lines, in units. Negative values become 0. |
-| `LineCount` | `int` | Read-only. The number of laid out lines, after wrapping. |
-| `LastFontError` | `Exception` | Read-only. The exception of the last failed font preparation, `null` when the font is fine. The label draws nothing while it has no font. |
-| `FontSystemOverride` | `FontSystem` | A FontStashSharp font system for this label only, used instead of the general one. Setting `FontPath` sets it too. The label does not dispose it. |
-| `FontSystem` | `FontSystem` | Read-only. The font system in use: `FontSystemOverride`, or `GeneralFontSystem` without one. |
-| `GeneralFontSystem` | `FontSystem` | Static. The font system of every label and rich text box without one of their own; `Label.GeneralFontSystem` and `RichTextBox.GeneralFontSystem` are the same value. The bundled UbuntuMono unless you set one. |
+| <span class="prop">`LineCount`</span> | `int` | Read-only. The number of laid out lines, after wrapping. |
+| <span class="prop">`LastFontError`</span> | `Exception` | Read-only. The exception of the last failed font preparation, `null` when the font is fine. The label draws nothing while it has no font. |
+| <span class="prop">`FontSystemOverride`</span> | `FontSystem` | A FontStashSharp font system for this label only, used instead of the general one. Setting `FontPath` sets it too. The label does not dispose it. |
+| <span class="prop">`FontSystem`</span> | `FontSystem` | Read-only. The font system in use: `FontSystemOverride`, or `GeneralFontSystem` without one. |
+| <span class="prop">`GeneralFontSystem`</span> | `FontSystem` | Static. The font system of every label and rich text box without one of their own; `Label.GeneralFontSystem` and `RichTextBox.GeneralFontSystem` are the same value. The bundled UbuntuMono unless you set one. |
 
 ### Label methods
 
 | Method | Description |
 | --- | --- |
 | `Label(string name = null)` | Creates a label. The name is used by `GetElementByName`. |
-| `Draw()` | Draws the label's background, then its lines straight from the font atlas. The framework calls it; you don't need to. |
+| <span class="method">`Draw()`</span> | Draws the label's background, then its lines straight from the font atlas. The framework calls it; you don't need to. |
 
 `TextAlignment` (also used by `RichTextBox`):
 
@@ -369,33 +369,33 @@ With `CharacterPrintDelayMs` at 0 (its default) `AnimateText` sets the text at o
 | <span class="dp">`BackgroundStyle`</span> | `ImageStyle` | The style of the image the box draws behind its text. |
 | <span class="dp">`CharacterPrintDelayMs`</span> | `int` | The time between two characters printed by `AnimateText`, in milliseconds. Negative values become 0; 0 sets the text at once. |
 | <span class="dp">`ScrollToEndDuringTextAnimation`</span> | `bool` | Whether `AnimateText` keeps the box scrolled to the end while it prints. |
-| `RichColors` | `List<Color>` | Static field. The colours `[c=n]` tags index, shared by every box. |
-| `RichActions` | `List<Action>` | Static field. The actions `[a=n]` links run, shared by every box. |
-| `RichImages` | `List<Texture2D>` | Static field. The textures `[i=n]` tags show, shared by every box. |
-| `LastFontError` | `Exception` | Read-only. The exception of the last failed font preparation (font system or font size not usable), `null` when the font is fine. The box shows no text and gives up the keyboard while it has no font. |
-| `FontSystemOverride` | `FontSystem` | A FontStashSharp font system for this box only, used instead of the general one. Setting `FontPath` sets it too. The box does not dispose it. |
-| `FontSystem` | `FontSystem` | Read-only. The font system in use: `FontSystemOverride`, or `GeneralFontSystem` without one. |
-| `GeneralFontSystem` | `FontSystem` | Static. The same value as `Label.GeneralFontSystem`: the font system of every text element without one of its own. |
+| <span class="prop">`RichColors`</span> | `List<Color>` | Static field. The colours `[c=n]` tags index, shared by every box. |
+| <span class="prop">`RichActions`</span> | `List<Action>` | Static field. The actions `[a=n]` links run, shared by every box. |
+| <span class="prop">`RichImages`</span> | `List<Texture2D>` | Static field. The textures `[i=n]` tags show, shared by every box. |
+| <span class="prop">`LastFontError`</span> | `Exception` | Read-only. The exception of the last failed font preparation (font system or font size not usable), `null` when the font is fine. The box shows no text and gives up the keyboard while it has no font. |
+| <span class="prop">`FontSystemOverride`</span> | `FontSystem` | A FontStashSharp font system for this box only, used instead of the general one. Setting `FontPath` sets it too. The box does not dispose it. |
+| <span class="prop">`FontSystem`</span> | `FontSystem` | Read-only. The font system in use: `FontSystemOverride`, or `GeneralFontSystem` without one. |
+| <span class="prop">`GeneralFontSystem`</span> | `FontSystem` | Static. The same value as `Label.GeneralFontSystem`: the font system of every text element without one of its own. |
 
 ### RichTextBox events
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| `OnApply` | `(BaseElement sender, string text)` | A read-write box ends its editing: Enter, a press elsewhere or another element focused. Not when it is hidden, disabled or removed. Raised even if the text did not change. |
-| `OnTextChanged` | `(BaseElement sender, string text)` | `Text` changed, by typing, deleting, pasting, undo or redo, code, a binding, a style or the end of a text animation. The new lines are already laid out. |
+| <span class="event">`OnApply`</span> | `(BaseElement sender, string text)` | A read-write box ends its editing: Enter, a press elsewhere or another element focused. Not when it is hidden, disabled or removed. Raised even if the text did not change. |
+| <span class="event">`OnTextChanged`</span> | `(BaseElement sender, string text)` | `Text` changed, by typing, deleting, pasting, undo or redo, code, a binding, a style or the end of a text animation. The new lines are already laid out. |
 
 ### RichTextBox methods
 
 | Method | Description |
 | --- | --- |
 | `RichTextBox(string name = null)` | Creates a rich text box. The name is used by `GetElementByName`. |
-| `SelectAllText()` | Selects the whole text, scrolls to its end and gives the box the keyboard. |
-| `SelectTextInterval(int start, int end)` | Selects the text between two positions (clamped to the text), with the caret at `end`, scrolled into view, and gives the box the keyboard. Does nothing when `start` equals `end`. |
-| `PlaceCursorAt(int position)` | Moves the caret to a text position (clamped to the text), scrolls it into view and gives the box the keyboard. A read-only box shows no caret but scrolls there. |
-| `PlaceCursorAtTextStart()` | `PlaceCursorAt(0)`. |
-| `PlaceCursorAtTextEnd()` | `PlaceCursorAt(Text.Length)`. |
-| `AnimateText(string text)` | Types the text out with `CharacterPrintDelayMs` per character and makes the box read-only. Stops a running animation first. |
-| `StopTextAnimation()` | Stops a running text animation; the whole text is shown then. |
+| <span class="method">`SelectAllText()`</span> | Selects the whole text, scrolls to its end and gives the box the keyboard. |
+| <span class="method">`SelectTextInterval(int start, int end)`</span> | Selects the text between two positions (clamped to the text), with the caret at `end`, scrolled into view, and gives the box the keyboard. Does nothing when `start` equals `end`. |
+| <span class="method">`PlaceCursorAt(int position)`</span> | Moves the caret to a text position (clamped to the text), scrolls it into view and gives the box the keyboard. A read-only box shows no caret but scrolls there. |
+| <span class="method">`PlaceCursorAtTextStart()`</span> | `PlaceCursorAt(0)`. |
+| <span class="method">`PlaceCursorAtTextEnd()`</span> | `PlaceCursorAt(Text.Length)`. |
+| <span class="method">`AnimateText(string text)`</span> | Types the text out with `CharacterPrintDelayMs` per character and makes the box read-only. Stops a running animation first. |
+| <span class="method">`StopTextAnimation()`</span> | Stops a running text animation; the whole text is shown then. |
 
 Positions count the characters of `Text`. In a read-only box with `Rich` formatting the shown text differs from `Text`
 (the tags are removed), so the selection and caret methods do nothing there.

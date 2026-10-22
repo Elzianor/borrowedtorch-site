@@ -1,0 +1,1819 @@
+# The UI glossary in the docs sidebar: generated with the glossary pages, don't edit by hand.
+- title: "Base element"
+  url: /docs/ui-glossary/base-element/
+  members:
+    - title: "Actual<wbr>Height"
+      anchor: actualheight
+      kind: prop
+    - title: "Actual<wbr>Size<wbr>Rectangle<wbr>Color"
+      anchor: actualsizerectanglecolor
+      kind: prop
+    - title: "Actual<wbr>Width"
+      anchor: actualwidth
+      kind: prop
+    - title: "Background<wbr>Color"
+      anchor: backgroundcolor
+      kind: dp
+    - title: "Bottom"
+      anchor: bottom
+      kind: prop
+    - title: "Bounds"
+      anchor: bounds
+      kind: prop
+    - title: "Children"
+      anchor: children
+      kind: prop
+    - title: "Context<wbr>Menu"
+      anchor: contextmenu
+      kind: prop
+    - title: "Crop<wbr>Outside<wbr>Of<wbr>Parent<wbr>Border"
+      anchor: cropoutsideofparentborder
+      kind: dp
+    - title: "Custom<wbr>Effect"
+      anchor: customeffect
+      kind: dp
+    - title: "Default<wbr>Mouse<wbr>Cursors<wbr>Set"
+      anchor: defaultmousecursorsset
+      kind: prop
+    - title: "Desired<wbr>Height"
+      anchor: desiredheight
+      kind: dp
+    - title: "Desired<wbr>Width"
+      anchor: desiredwidth
+      kind: dp
+    - title: "Disabled"
+      anchor: disabled
+      kind: dp
+    - title: "Double<wbr>Click<wbr>Interval<wbr>Ms"
+      anchor: doubleclickintervalms
+      kind: dp
+    - title: "Drag<wbr>And<wbr>Drop<wbr>Representation"
+      anchor: draganddroprepresentation
+      kind: prop
+    - title: "Drag<wbr>Target"
+      anchor: dragtarget
+      kind: prop
+    - title: "Drag<wbr>Type"
+      anchor: dragtype
+      kind: dp
+    - title: "Drop<wbr>Allowed<wbr>Tint"
+      anchor: dropallowedtint
+      kind: prop
+    - title: "Drop<wbr>Denied<wbr>Tint"
+      anchor: dropdeniedtint
+      kind: prop
+    - title: "Foreground<wbr>Color"
+      anchor: foregroundcolor
+      kind: dp
+    - title: "Grid<wbr>Column"
+      anchor: gridcolumn
+      kind: dp
+    - title: "Grid<wbr>Column<wbr>Span"
+      anchor: gridcolumnspan
+      kind: dp
+    - title: "Grid<wbr>Row"
+      anchor: gridrow
+      kind: dp
+    - title: "Grid<wbr>Row<wbr>Span"
+      anchor: gridrowspan
+      kind: dp
+    - title: "Hit<wbr>Rectangle<wbr>Color"
+      anchor: hitrectanglecolor
+      kind: prop
+    - title: "Hit<wbr>Test"
+      anchor: hittest
+      kind: dp
+    - title: "Horizontal<wbr>Alignment"
+      anchor: horizontalalignment
+      kind: dp
+    - title: "Hover<wbr>Tint"
+      anchor: hovertint
+      kind: prop
+    - title: "Id"
+      anchor: id
+      kind: prop
+    - title: "Inherit<wbr>State"
+      anchor: inheritstate
+      kind: dp
+    - title: "Is<wbr>Disposed"
+      anchor: isdisposed
+      kind: prop
+    - title: "Is<wbr>Drop<wbr>Allowed<wbr>Predicate"
+      anchor: isdropallowedpredicate
+      kind: prop
+    - title: "Is<wbr>Focused"
+      anchor: isfocused
+      kind: prop
+    - title: "Is<wbr>Resizable"
+      anchor: isresizable
+      kind: dp
+    - title: "Left"
+      anchor: left
+      kind: prop
+    - title: "Location"
+      anchor: location
+      kind: prop
+    - title: "Margin"
+      anchor: margin
+      kind: dp
+    - title: "Max<wbr>Height"
+      anchor: maxheight
+      kind: dp
+    - title: "Max<wbr>Width"
+      anchor: maxwidth
+      kind: dp
+    - title: "Measured<wbr>Content<wbr>Height"
+      anchor: measuredcontentheight
+      kind: prop
+    - title: "Measured<wbr>Content<wbr>Width"
+      anchor: measuredcontentwidth
+      kind: prop
+    - title: "Measured<wbr>Height"
+      anchor: measuredheight
+      kind: prop
+    - title: "Measured<wbr>Width"
+      anchor: measuredwidth
+      kind: prop
+    - title: "Min<wbr>Height"
+      anchor: minheight
+      kind: dp
+    - title: "Min<wbr>Width"
+      anchor: minwidth
+      kind: dp
+    - title: "Modal<wbr>Window<wbr>Active<wbr>Shade<wbr>Tint"
+      anchor: modalwindowactiveshadetint
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set"
+      anchor: mousecursorsset
+      kind: prop
+    - title: "Name"
+      anchor: name
+      kind: prop
+    - title: "Parent"
+      anchor: parent
+      kind: prop
+    - title: "Post<wbr>Draw<wbr>Action"
+      anchor: postdrawaction
+      kind: prop
+    - title: "Pre<wbr>Draw<wbr>Action"
+      anchor: predrawaction
+      kind: prop
+    - title: "Pressed<wbr>Tint"
+      anchor: pressedtint
+      kind: prop
+    - title: "Repeat<wbr>Clicks"
+      anchor: repeatclicks
+      kind: dp
+    - title: "Resize<wbr>Area<wbr>Half<wbr>Width"
+      anchor: resizeareahalfwidth
+      kind: dp
+    - title: "Resize<wbr>Contour<wbr>Color"
+      anchor: resizecontourcolor
+      kind: dp
+    - title: "Resize<wbr>With<wbr>Element<wbr>Contour"
+      anchor: resizewithelementcontour
+      kind: dp
+    - title: "Right"
+      anchor: right
+      kind: prop
+    - title: "Show<wbr>Actual<wbr>Size<wbr>Rectangle"
+      anchor: showactualsizerectangle
+      kind: prop
+    - title: "Show<wbr>Actual<wbr>Size<wbr>Rectangle<wbr>Diagonals"
+      anchor: showactualsizerectanglediagonals
+      kind: prop
+    - title: "Show<wbr>Hit<wbr>Rectangle"
+      anchor: showhitrectangle
+      kind: prop
+    - title: "Show<wbr>Hit<wbr>Rectangle<wbr>Diagonals"
+      anchor: showhitrectanglediagonals
+      kind: prop
+    - title: "Show<wbr>State<wbr>Tint"
+      anchor: showstatetint
+      kind: prop
+    - title: "State<wbr>Data"
+      anchor: statedata
+      kind: prop
+    - title: "Textures<wbr>Path"
+      anchor: texturespath
+      kind: dp
+    - title: "Textures<wbr>Present"
+      anchor: texturespresent
+      kind: prop
+    - title: "Time<wbr>Before<wbr>Repeat<wbr>Starts<wbr>Ms"
+      anchor: timebeforerepeatstartsms
+      kind: dp
+    - title: "Time<wbr>Between<wbr>Repeats<wbr>Ms"
+      anchor: timebetweenrepeatsms
+      kind: dp
+    - title: "Tool<wbr>Tip"
+      anchor: tooltip
+      kind: prop
+    - title: "Top"
+      anchor: top
+      kind: prop
+    - title: "Transparency"
+      anchor: transparency
+      kind: dp
+    - title: "Vertical<wbr>Alignment"
+      anchor: verticalalignment
+      kind: dp
+    - title: "Visibility"
+      anchor: visibility
+      kind: dp
+    - title: "Accepts<wbr>Items()"
+      anchor: acceptsitems
+      kind: method
+    - title: "Actual<wbr>Height<wbr>Changed<wbr>Handler<wbr>Override()"
+      anchor: actualheightchangedhandleroverride
+      kind: method
+    - title: "Actual<wbr>Width<wbr>Changed<wbr>Handler<wbr>Override()"
+      anchor: actualwidthchangedhandleroverride
+      kind: method
+    - title: "Add<wbr>Child()"
+      anchor: addchild
+      kind: method
+    - title: "Add<wbr>Item()"
+      anchor: additem
+      kind: method
+    - title: "Add<wbr>Item<wbr>At()"
+      anchor: additemat
+      kind: method
+    - title: "Add<wbr>Items<wbr>Range()"
+      anchor: additemsrange
+      kind: method
+    - title: "Add<wbr>Items<wbr>Range<wbr>At()"
+      anchor: additemsrangeat
+      kind: method
+    - title: "Apply<wbr>General<wbr>Style()"
+      anchor: applygeneralstyle
+      kind: method
+    - title: "Apply<wbr>Style()"
+      anchor: applystyle
+      kind: method
+    - title: "Apply<wbr>Style<wbr>Override()"
+      anchor: applystyleoverride
+      kind: method
+    - title: "Arrange()"
+      anchor: arrange
+      kind: method
+    - title: "Arrange<wbr>At()"
+      anchor: arrangeat
+      kind: method
+    - title: "Arrange<wbr>Content()"
+      anchor: arrangecontent
+      kind: method
+    - title: "Clear<wbr>Items()"
+      anchor: clearitems
+      kind: method
+    - title: "Click<wbr>Handler<wbr>Override()"
+      anchor: clickhandleroverride
+      kind: method
+    - title: "Cursors<wbr>Property<wbr>Changed<wbr>Handler()"
+      anchor: cursorspropertychangedhandler
+      kind: method
+    - title: "Detach<wbr>Child()"
+      anchor: detachchild
+      kind: method
+    - title: "Detach<wbr>Children()"
+      anchor: detachchildren
+      kind: method
+    - title: "Dispose()"
+      anchor: dispose
+      kind: method
+    - title: "Dispose<wbr>Handler()"
+      anchor: disposehandler
+      kind: method
+    - title: "Double<wbr>Click<wbr>Handler<wbr>Override()"
+      anchor: doubleclickhandleroverride
+      kind: method
+    - title: "Double<wbr>Click<wbr>Interval<wbr>Ms<wbr>Property<wbr>Changed<wbr>Handler<wbr>Override()"
+      anchor: doubleclickintervalmspropertychangedhandleroverride
+      kind: method
+    - title: "Draw()"
+      anchor: draw
+      kind: method
+    - title: "Focus()"
+      anchor: focus
+      kind: method
+    - title: "Foreground<wbr>Color<wbr>Property<wbr>Changed<wbr>Handler<wbr>Override()"
+      anchor: foregroundcolorpropertychangedhandleroverride
+      kind: method
+    - title: "Generic<wbr>Style<wbr>And<wbr>Mouse<wbr>Cursors<wbr>Data()"
+      anchor: genericstyleandmousecursorsdata
+      kind: method
+    - title: "Get<wbr>Element<wbr>By<wbr>Name()"
+      anchor: getelementbyname
+      kind: method
+    - title: "Got<wbr>Focus<wbr>Handler<wbr>Override()"
+      anchor: gotfocushandleroverride
+      kind: method
+    - title: "Hit<wbr>Test<wbr>Property<wbr>Changed<wbr>Handler<wbr>Override()"
+      anchor: hittestpropertychangedhandleroverride
+      kind: method
+    - title: "Inherit<wbr>State<wbr>Property<wbr>Changed<wbr>Handler<wbr>Override()"
+      anchor: inheritstatepropertychangedhandleroverride
+      kind: method
+    - title: "Invalidate<wbr>Arrange()"
+      anchor: invalidatearrange
+      kind: method
+    - title: "Invalidate<wbr>Measure()"
+      anchor: invalidatemeasure
+      kind: method
+    - title: "Key<wbr>Down<wbr>Handler<wbr>Override()"
+      anchor: keydownhandleroverride
+      kind: method
+    - title: "Load<wbr>Textures()"
+      anchor: loadtextures
+      kind: method
+    - title: "Location<wbr>Changed<wbr>Handler<wbr>Override()"
+      anchor: locationchangedhandleroverride
+      kind: method
+    - title: "Lost<wbr>Focus<wbr>Handler<wbr>Override()"
+      anchor: lostfocushandleroverride
+      kind: method
+    - title: "Measure()"
+      anchor: measure
+      kind: method
+    - title: "Measure<wbr>At()"
+      anchor: measureat
+      kind: method
+    - title: "Measure<wbr>Content()"
+      anchor: measurecontent
+      kind: method
+    - title: "Mouse<wbr>Enter<wbr>Handler<wbr>Override()"
+      anchor: mouseenterhandleroverride
+      kind: method
+    - title: "Mouse<wbr>Leave<wbr>Handler<wbr>Override()"
+      anchor: mouseleavehandleroverride
+      kind: method
+    - title: "Remove<wbr>Child()"
+      anchor: removechild
+      kind: method
+    - title: "Remove<wbr>Child<wbr>At()"
+      anchor: removechildat
+      kind: method
+    - title: "Remove<wbr>Item()"
+      anchor: removeitem
+      kind: method
+    - title: "Remove<wbr>Item<wbr>At()"
+      anchor: removeitemat
+      kind: method
+    - title: "Remove<wbr>Items<wbr>Range<wbr>At()"
+      anchor: removeitemsrangeat
+      kind: method
+    - title: "State<wbr>Changed<wbr>Handler<wbr>Override()"
+      anchor: statechangedhandleroverride
+      kind: method
+    - title: "Style()"
+      anchor: style
+      kind: method
+    - title: "Text<wbr>Input<wbr>Handler<wbr>Override()"
+      anchor: textinputhandleroverride
+      kind: method
+    - title: "Time<wbr>Before<wbr>Repeat<wbr>Starts<wbr>Ms<wbr>Property<wbr>Changed<wbr>Handler<wbr>Override()"
+      anchor: timebeforerepeatstartsmspropertychangedhandleroverride
+      kind: method
+    - title: "Time<wbr>Between<wbr>Repeats<wbr>Ms<wbr>Property<wbr>Changed<wbr>Handler<wbr>Override()"
+      anchor: timebetweenrepeatsmspropertychangedhandleroverride
+      kind: method
+    - title: "Unsubscribe<wbr>Self()"
+      anchor: unsubscribeself
+      kind: method
+    - title: "Visibility<wbr>Changed<wbr>Handler<wbr>Override()"
+      anchor: visibilitychangedhandleroverride
+      kind: method
+    - title: "Visibility<wbr>Property<wbr>Changed<wbr>Handler<wbr>Override()"
+      anchor: visibilitypropertychangedhandleroverride
+      kind: method
+    - title: "On<wbr>Click"
+      anchor: onclick
+      kind: event
+    - title: "On<wbr>Disposed"
+      anchor: ondisposed
+      kind: event
+    - title: "On<wbr>Double<wbr>Click"
+      anchor: ondoubleclick
+      kind: event
+    - title: "On<wbr>Drag<wbr>And<wbr>Drop<wbr>Start"
+      anchor: ondraganddropstart
+      kind: event
+    - title: "On<wbr>Drop"
+      anchor: ondrop
+      kind: event
+    - title: "On<wbr>Drop<wbr>Denied"
+      anchor: ondropdenied
+      kind: event
+    - title: "On<wbr>Key<wbr>Down"
+      anchor: onkeydown
+      kind: event
+    - title: "On<wbr>Mouse<wbr>Enter"
+      anchor: onmouseenter
+      kind: event
+    - title: "On<wbr>Mouse<wbr>Leave"
+      anchor: onmouseleave
+      kind: event
+    - title: "On<wbr>State<wbr>Changed"
+      anchor: onstatechanged
+      kind: event
+- title: "Border"
+  url: /docs/ui-glossary/border/
+  members:
+    - title: "Content"
+      anchor: content
+      kind: dp
+    - title: "General<wbr>Mouse<wbr>Cursors<wbr>Set"
+      anchor: generalmousecursorsset
+      kind: prop
+    - title: "General<wbr>Style"
+      anchor: generalstyle
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set"
+      anchor: mousecursorsset
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set<wbr>Override"
+      anchor: mousecursorssetoverride
+      kind: prop
+    - title: "Padding"
+      anchor: padding
+      kind: dp
+    - title: "Style<wbr>Override"
+      anchor: styleoverride
+      kind: prop
+    - title: "Thickness"
+      anchor: thickness
+      kind: dp
+- title: "Button"
+  url: /docs/ui-glossary/button/
+  members:
+    - title: "Background<wbr>Style"
+      anchor: backgroundstyle
+      kind: dp
+    - title: "Content"
+      anchor: content
+      kind: dp
+    - title: "General<wbr>Mouse<wbr>Cursors<wbr>Set"
+      anchor: generalmousecursorsset
+      kind: prop
+    - title: "General<wbr>Style"
+      anchor: generalstyle
+      kind: prop
+    - title: "Hover<wbr>Color"
+      anchor: hovercolor
+      kind: dp
+    - title: "Mouse<wbr>Cursors<wbr>Set"
+      anchor: mousecursorsset
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set<wbr>Override"
+      anchor: mousecursorssetoverride
+      kind: prop
+    - title: "Normal<wbr>Color"
+      anchor: normalcolor
+      kind: dp
+    - title: "Pressed<wbr>Color"
+      anchor: pressedcolor
+      kind: dp
+    - title: "Style<wbr>Override"
+      anchor: styleoverride
+      kind: prop
+    - title: "Text"
+      anchor: text
+      kind: dp
+    - title: "Text<wbr>Style"
+      anchor: textstyle
+      kind: dp
+    - title: "Toggled<wbr>Color"
+      anchor: toggledcolor
+      kind: dp
+    - title: "Toggled<wbr>On"
+      anchor: toggledon
+      kind: dp
+    - title: "Type"
+      anchor: type
+      kind: dp
+    - title: "On<wbr>Toggled"
+      anchor: ontoggled
+      kind: event
+- title: "CheckBox"
+  url: /docs/ui-glossary/check-box/
+  members:
+    - title: "Checked"
+      anchor: checked
+      kind: dp
+    - title: "Checked<wbr>Solid<wbr>Color"
+      anchor: checkedsolidcolor
+      kind: dp
+    - title: "Content"
+      anchor: content
+      kind: dp
+    - title: "Direction"
+      anchor: direction
+      kind: dp
+    - title: "General<wbr>Mouse<wbr>Cursors<wbr>Set"
+      anchor: generalmousecursorsset
+      kind: prop
+    - title: "General<wbr>Style"
+      anchor: generalstyle
+      kind: prop
+    - title: "Group<wbr>Id"
+      anchor: groupid
+      kind: dp
+    - title: "Image<wbr>Style"
+      anchor: imagestyle
+      kind: dp
+    - title: "Mouse<wbr>Cursors<wbr>Set"
+      anchor: mousecursorsset
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set<wbr>Override"
+      anchor: mousecursorssetoverride
+      kind: prop
+    - title: "Style<wbr>Override"
+      anchor: styleoverride
+      kind: prop
+    - title: "Text"
+      anchor: text
+      kind: dp
+    - title: "Text<wbr>Style"
+      anchor: textstyle
+      kind: dp
+    - title: "Type"
+      anchor: type
+      kind: dp
+    - title: "Unchecked<wbr>Solid<wbr>Color"
+      anchor: uncheckedsolidcolor
+      kind: dp
+    - title: "On<wbr>Checked<wbr>Unchecked"
+      anchor: oncheckedunchecked
+      kind: event
+- title: "ColorPicker"
+  url: /docs/ui-glossary/color-picker/
+  members:
+    - title: "Brightness"
+      anchor: brightness
+      kind: dp
+    - title: "General<wbr>Mouse<wbr>Cursors<wbr>Set"
+      anchor: generalmousecursorsset
+      kind: prop
+    - title: "General<wbr>Style"
+      anchor: generalstyle
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set"
+      anchor: mousecursorsset
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set<wbr>Override"
+      anchor: mousecursorssetoverride
+      kind: prop
+    - title: "Selected<wbr>Color"
+      anchor: selectedcolor
+      kind: dp
+    - title: "Style<wbr>Override"
+      anchor: styleoverride
+      kind: prop
+    - title: "On<wbr>Selected<wbr>Color<wbr>Changed"
+      anchor: onselectedcolorchanged
+      kind: event
+- title: "ComboBox"
+  url: /docs/ui-glossary/combo-box/
+  members:
+    - title: "General<wbr>Mouse<wbr>Cursors<wbr>Set"
+      anchor: generalmousecursorsset
+      kind: prop
+    - title: "General<wbr>Style"
+      anchor: generalstyle
+      kind: prop
+    - title: "Items"
+      anchor: items
+      kind: prop
+    - title: "Items<wbr>Source"
+      anchor: itemssource
+      kind: dp
+    - title: "Items<wbr>Template"
+      anchor: itemstemplate
+      kind: prop
+    - title: "List<wbr>Box<wbr>Style"
+      anchor: listboxstyle
+      kind: dp
+    - title: "Mouse<wbr>Cursors<wbr>Set"
+      anchor: mousecursorsset
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set<wbr>Override"
+      anchor: mousecursorssetoverride
+      kind: prop
+    - title: "Selected<wbr>Index"
+      anchor: selectedindex
+      kind: dp
+    - title: "Selected<wbr>Item"
+      anchor: selecteditem
+      kind: dp
+    - title: "Selected<wbr>Source"
+      anchor: selectedsource
+      kind: prop
+    - title: "Selection<wbr>Style"
+      anchor: selectionstyle
+      kind: dp
+    - title: "Style<wbr>Override"
+      anchor: styleoverride
+      kind: prop
+    - title: "Toggle<wbr>Button<wbr>Style"
+      anchor: togglebuttonstyle
+      kind: dp
+    - title: "Add<wbr>Item()"
+      anchor: additem
+      kind: method
+    - title: "Add<wbr>Item<wbr>At()"
+      anchor: additemat
+      kind: method
+    - title: "Add<wbr>Items<wbr>Range()"
+      anchor: additemsrange
+      kind: method
+    - title: "Add<wbr>Items<wbr>Range<wbr>At()"
+      anchor: additemsrangeat
+      kind: method
+    - title: "Add<wbr>Text<wbr>Item()"
+      anchor: addtextitem
+      kind: method
+    - title: "Clear<wbr>Items()"
+      anchor: clearitems
+      kind: method
+    - title: "Deselect()"
+      anchor: deselect
+      kind: method
+    - title: "Deselect<wbr>At()"
+      anchor: deselectat
+      kind: method
+    - title: "Remove<wbr>Item()"
+      anchor: removeitem
+      kind: method
+    - title: "Remove<wbr>Item<wbr>At()"
+      anchor: removeitemat
+      kind: method
+    - title: "Remove<wbr>Items<wbr>Range<wbr>At()"
+      anchor: removeitemsrangeat
+      kind: method
+    - title: "Select()"
+      anchor: select
+      kind: method
+    - title: "Select<wbr>At()"
+      anchor: selectat
+      kind: method
+    - title: "Select<wbr>Next()"
+      anchor: selectnext
+      kind: method
+    - title: "Select<wbr>Previous()"
+      anchor: selectprevious
+      kind: method
+    - title: "Select<wbr>Source()"
+      anchor: selectsource
+      kind: method
+    - title: "On<wbr>Item<wbr>Select"
+      anchor: onitemselect
+      kind: event
+- title: "ContentContainer"
+  url: /docs/ui-glossary/content-container/
+  members:
+    - title: "Content"
+      anchor: content
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set"
+      anchor: mousecursorsset
+      kind: prop
+- title: "ContextMenu"
+  url: /docs/ui-glossary/context-menu/
+  members:
+    - title: "Border<wbr>Style"
+      anchor: borderstyle
+      kind: dp
+    - title: "Check<wbr>Icon<wbr>Style"
+      anchor: checkiconstyle
+      kind: dp
+    - title: "Expand<wbr>Icon<wbr>Style"
+      anchor: expandiconstyle
+      kind: dp
+    - title: "General<wbr>Mouse<wbr>Cursors<wbr>Set"
+      anchor: generalmousecursorsset
+      kind: prop
+    - title: "General<wbr>Style"
+      anchor: generalstyle
+      kind: prop
+    - title: "Is<wbr>Open"
+      anchor: isopen
+      kind: prop
+    - title: "Items"
+      anchor: items
+      kind: prop
+    - title: "Items<wbr>Source"
+      anchor: itemssource
+      kind: dp
+    - title: "Items<wbr>Template"
+      anchor: itemstemplate
+      kind: prop
+    - title: "List<wbr>Box<wbr>Style"
+      anchor: listboxstyle
+      kind: dp
+    - title: "Margin<wbr>From<wbr>Mouse<wbr>Cursor"
+      anchor: marginfrommousecursor
+      kind: dp
+    - title: "Mouse<wbr>Cursors<wbr>Set"
+      anchor: mousecursorsset
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set<wbr>Override"
+      anchor: mousecursorssetoverride
+      kind: prop
+    - title: "Parent<wbr>Item"
+      anchor: parentitem
+      kind: prop
+    - title: "Placement"
+      anchor: placement
+      kind: dp
+    - title: "Style<wbr>Override"
+      anchor: styleoverride
+      kind: prop
+    - title: "Sub<wbr>Menus<wbr>Open<wbr>Type"
+      anchor: submenusopentype
+      kind: dp
+    - title: "Add<wbr>Item()"
+      anchor: additem
+      kind: method
+    - title: "Add<wbr>Item<wbr>At()"
+      anchor: additemat
+      kind: method
+    - title: "Add<wbr>Items<wbr>Range()"
+      anchor: additemsrange
+      kind: method
+    - title: "Add<wbr>Items<wbr>Range<wbr>At()"
+      anchor: additemsrangeat
+      kind: method
+    - title: "Clear<wbr>Items()"
+      anchor: clearitems
+      kind: method
+    - title: "Close()"
+      anchor: close
+      kind: method
+    - title: "Open()"
+      anchor: open
+      kind: method
+    - title: "Remove<wbr>Item()"
+      anchor: removeitem
+      kind: method
+    - title: "Remove<wbr>Item<wbr>At()"
+      anchor: removeitemat
+      kind: method
+    - title: "Remove<wbr>Items<wbr>Range<wbr>At()"
+      anchor: removeitemsrangeat
+      kind: method
+    - title: "On<wbr>Item<wbr>Select"
+      anchor: onitemselect
+      kind: event
+- title: "ContextMenuItem"
+  url: /docs/ui-glossary/context-menu-item/
+  members:
+    - title: "Content"
+      anchor: content
+      kind: prop
+    - title: "Has<wbr>Sub<wbr>Items"
+      anchor: hassubitems
+      kind: prop
+    - title: "Is<wbr>Checkable"
+      anchor: ischeckable
+      kind: prop
+    - title: "Is<wbr>Checked"
+      anchor: ischecked
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set"
+      anchor: mousecursorsset
+      kind: prop
+    - title: "Parent<wbr>Menu"
+      anchor: parentmenu
+      kind: prop
+    - title: "Source"
+      anchor: source
+      kind: prop
+    - title: "Sub<wbr>Menu"
+      anchor: submenu
+      kind: prop
+- title: "DefaultWindowTitleBar"
+  url: /docs/ui-glossary/default-window-title-bar/
+  members:
+    - title: "Background"
+      anchor: background
+      kind: prop
+    - title: "Close<wbr>Button"
+      anchor: closebutton
+      kind: prop
+    - title: "On<wbr>Close<wbr>Button<wbr>Click<wbr>Action"
+      anchor: onclosebuttonclickaction
+      kind: prop
+    - title: "Title"
+      anchor: title
+      kind: prop
+- title: "DragAndDropRepresentation"
+  url: /docs/ui-glossary/drag-and-drop-representation/
+  members:
+    - title: "Use<wbr>Target<wbr>Appearance"
+      anchor: usetargetappearance
+      kind: prop
+- title: "Grid"
+  url: /docs/ui-glossary/grid/
+  members:
+    - title: "Columns<wbr>Count"
+      anchor: columnscount
+      kind: prop
+    - title: "Layout<wbr>Color"
+      anchor: layoutcolor
+      kind: prop
+    - title: "Rows<wbr>Count"
+      anchor: rowscount
+      kind: prop
+    - title: "Show<wbr>Layout"
+      anchor: showlayout
+      kind: prop
+    - title: "Add<wbr>Column<wbr>Definition()"
+      anchor: addcolumndefinition
+      kind: method
+    - title: "Add<wbr>Item()"
+      anchor: additem
+      kind: method
+    - title: "Add<wbr>Item<wbr>At()"
+      anchor: additemat
+      kind: method
+    - title: "Add<wbr>Row<wbr>Definition()"
+      anchor: addrowdefinition
+      kind: method
+    - title: "Clear()"
+      anchor: clear
+      kind: method
+    - title: "Clear<wbr>Items()"
+      anchor: clearitems
+      kind: method
+    - title: "Draw()"
+      anchor: draw
+      kind: method
+    - title: "Remove<wbr>Item()"
+      anchor: removeitem
+      kind: method
+    - title: "Remove<wbr>Item<wbr>At()"
+      anchor: removeitemat
+      kind: method
+    - title: "Remove<wbr>Items<wbr>Range<wbr>At()"
+      anchor: removeitemsrangeat
+      kind: method
+    - title: "Try<wbr>Get<wbr>Cell()"
+      anchor: trygetcell
+      kind: method
+- title: "GridCell"
+  url: /docs/ui-glossary/grid-cell/
+  members:
+    - title: "Content<wbr>Height"
+      anchor: contentheight
+      kind: prop
+    - title: "Content<wbr>Width"
+      anchor: contentwidth
+      kind: prop
+    - title: "Is<wbr>Span<wbr>Cell"
+      anchor: isspancell
+      kind: prop
+    - title: "Items"
+      anchor: items
+      kind: prop
+- title: "Image"
+  url: /docs/ui-glossary/image/
+  members:
+    - title: "Fill"
+      anchor: fill
+      kind: dp
+    - title: "General<wbr>Mouse<wbr>Cursors<wbr>Set"
+      anchor: generalmousecursorsset
+      kind: prop
+    - title: "General<wbr>Style"
+      anchor: generalstyle
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set"
+      anchor: mousecursorsset
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set<wbr>Override"
+      anchor: mousecursorssetoverride
+      kind: prop
+    - title: "Source"
+      anchor: source
+      kind: dp
+    - title: "Style<wbr>Override"
+      anchor: styleoverride
+      kind: prop
+- title: "Label"
+  url: /docs/ui-glossary/label/
+  members:
+    - title: "Font<wbr>Path"
+      anchor: fontpath
+      kind: dp
+    - title: "Font<wbr>Size"
+      anchor: fontsize
+      kind: dp
+    - title: "Font<wbr>System"
+      anchor: fontsystem
+      kind: prop
+    - title: "Font<wbr>System<wbr>Override"
+      anchor: fontsystemoverride
+      kind: prop
+    - title: "General<wbr>Font<wbr>System"
+      anchor: generalfontsystem
+      kind: prop
+    - title: "General<wbr>Mouse<wbr>Cursors<wbr>Set"
+      anchor: generalmousecursorsset
+      kind: prop
+    - title: "General<wbr>Style"
+      anchor: generalstyle
+      kind: prop
+    - title: "Last<wbr>Font<wbr>Error"
+      anchor: lastfonterror
+      kind: prop
+    - title: "Line<wbr>Count"
+      anchor: linecount
+      kind: prop
+    - title: "Line<wbr>Spacing"
+      anchor: linespacing
+      kind: dp
+    - title: "Mouse<wbr>Cursors<wbr>Set"
+      anchor: mousecursorsset
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set<wbr>Override"
+      anchor: mousecursorssetoverride
+      kind: prop
+    - title: "Style<wbr>Override"
+      anchor: styleoverride
+      kind: prop
+    - title: "Text"
+      anchor: text
+      kind: dp
+    - title: "Text<wbr>Alignment"
+      anchor: textalignment
+      kind: dp
+    - title: "Text<wbr>Margin"
+      anchor: textmargin
+      kind: dp
+    - title: "Text<wbr>Rotation"
+      anchor: textrotation
+      kind: dp
+    - title: "Vertical<wbr>Text<wbr>Alignment"
+      anchor: verticaltextalignment
+      kind: dp
+    - title: "Wrap<wbr>Type"
+      anchor: wraptype
+      kind: dp
+    - title: "Draw()"
+      anchor: draw
+      kind: method
+- title: "ListBox"
+  url: /docs/ui-glossary/list-box/
+  members:
+    - title: "Alternative<wbr>Item<wbr>Color"
+      anchor: alternativeitemcolor
+      kind: dp
+    - title: "Content<wbr>Height"
+      anchor: contentheight
+      kind: prop
+    - title: "Content<wbr>Width"
+      anchor: contentwidth
+      kind: prop
+    - title: "Count"
+      anchor: count
+      kind: prop
+    - title: "General<wbr>Mouse<wbr>Cursors<wbr>Set"
+      anchor: generalmousecursorsset
+      kind: prop
+    - title: "General<wbr>Style"
+      anchor: generalstyle
+      kind: prop
+    - title: "Hover<wbr>Item<wbr>Color"
+      anchor: hoveritemcolor
+      kind: dp
+    - title: "Item<wbr>Height"
+      anchor: itemheight
+      kind: dp
+    - title: "Items"
+      anchor: items
+      kind: prop
+    - title: "Items<wbr>Source"
+      anchor: itemssource
+      kind: dp
+    - title: "Items<wbr>Template"
+      anchor: itemstemplate
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set"
+      anchor: mousecursorsset
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set<wbr>Override"
+      anchor: mousecursorssetoverride
+      kind: prop
+    - title: "Normal<wbr>Item<wbr>Color"
+      anchor: normalitemcolor
+      kind: dp
+    - title: "Pressed<wbr>Item<wbr>Color"
+      anchor: presseditemcolor
+      kind: dp
+    - title: "Rows<wbr>Per<wbr>Page"
+      anchor: rowsperpage
+      kind: prop
+    - title: "Scrollable<wbr>Container<wbr>Style"
+      anchor: scrollablecontainerstyle
+      kind: dp
+    - title: "Selected<wbr>Index"
+      anchor: selectedindex
+      kind: dp
+    - title: "Selected<wbr>Indices"
+      anchor: selectedindices
+      kind: prop
+    - title: "Selected<wbr>Item"
+      anchor: selecteditem
+      kind: dp
+    - title: "Selected<wbr>Item<wbr>Color"
+      anchor: selecteditemcolor
+      kind: dp
+    - title: "Selected<wbr>Items"
+      anchor: selecteditems
+      kind: prop
+    - title: "Selected<wbr>Sources"
+      anchor: selectedsources
+      kind: prop
+    - title: "Selection<wbr>Mode"
+      anchor: selectionmode
+      kind: dp
+    - title: "Style<wbr>Override"
+      anchor: styleoverride
+      kind: prop
+    - title: "Use<wbr>Dual<wbr>Colors"
+      anchor: usedualcolors
+      kind: dp
+    - title: "Virtualization<wbr>Mode"
+      anchor: virtualizationmode
+      kind: dp
+    - title: "Add<wbr>Item()"
+      anchor: additem
+      kind: method
+    - title: "Add<wbr>Item<wbr>At()"
+      anchor: additemat
+      kind: method
+    - title: "Add<wbr>Items<wbr>Range()"
+      anchor: additemsrange
+      kind: method
+    - title: "Add<wbr>Items<wbr>Range<wbr>At()"
+      anchor: additemsrangeat
+      kind: method
+    - title: "Add<wbr>Text<wbr>Item()"
+      anchor: addtextitem
+      kind: method
+    - title: "Add<wbr>Text<wbr>Items()"
+      anchor: addtextitems
+      kind: method
+    - title: "Clear<wbr>Items()"
+      anchor: clearitems
+      kind: method
+    - title: "Deselect()"
+      anchor: deselect
+      kind: method
+    - title: "Deselect<wbr>All()"
+      anchor: deselectall
+      kind: method
+    - title: "Deselect<wbr>At()"
+      anchor: deselectat
+      kind: method
+    - title: "Move<wbr>Selection()"
+      anchor: moveselection
+      kind: method
+    - title: "Remove<wbr>Item()"
+      anchor: removeitem
+      kind: method
+    - title: "Remove<wbr>Item<wbr>At()"
+      anchor: removeitemat
+      kind: method
+    - title: "Remove<wbr>Items<wbr>Range<wbr>At()"
+      anchor: removeitemsrangeat
+      kind: method
+    - title: "Scroll<wbr>Into<wbr>View()"
+      anchor: scrollintoview
+      kind: method
+    - title: "Select()"
+      anchor: select
+      kind: method
+    - title: "Select<wbr>All()"
+      anchor: selectall
+      kind: method
+    - title: "Select<wbr>At()"
+      anchor: selectat
+      kind: method
+    - title: "Select<wbr>Next()"
+      anchor: selectnext
+      kind: method
+    - title: "Select<wbr>Previous()"
+      anchor: selectprevious
+      kind: method
+    - title: "Select<wbr>Source()"
+      anchor: selectsource
+      kind: method
+    - title: "On<wbr>Item<wbr>Select"
+      anchor: onitemselect
+      kind: event
+    - title: "On<wbr>Items<wbr>Select"
+      anchor: onitemsselect
+      kind: event
+- title: "ListBoxItem"
+  url: /docs/ui-glossary/list-box-item/
+  members:
+    - title: "Content"
+      anchor: content
+      kind: prop
+    - title: "Content<wbr>Height"
+      anchor: contentheight
+      kind: prop
+    - title: "Content<wbr>Width"
+      anchor: contentwidth
+      kind: prop
+    - title: "Index"
+      anchor: index
+      kind: prop
+    - title: "Is<wbr>Selected"
+      anchor: isselected
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set"
+      anchor: mousecursorsset
+      kind: prop
+    - title: "Source"
+      anchor: source
+      kind: prop
+- title: "ProgressBar"
+  url: /docs/ui-glossary/progress-bar/
+  members:
+    - title: "General<wbr>Mouse<wbr>Cursors<wbr>Set"
+      anchor: generalmousecursorsset
+      kind: prop
+    - title: "General<wbr>Style"
+      anchor: generalstyle
+      kind: prop
+    - title: "Max"
+      anchor: max
+      kind: dp
+    - title: "Min"
+      anchor: min
+      kind: dp
+    - title: "Mouse<wbr>Cursors<wbr>Set"
+      anchor: mousecursorsset
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set<wbr>Override"
+      anchor: mousecursorssetoverride
+      kind: prop
+    - title: "Orientation"
+      anchor: orientation
+      kind: dp
+    - title: "Style<wbr>Override"
+      anchor: styleoverride
+      kind: prop
+    - title: "Value"
+      anchor: value
+      kind: dp
+- title: "RichTextBox"
+  url: /docs/ui-glossary/rich-text-box/
+  members:
+    - title: "Background<wbr>Style"
+      anchor: backgroundstyle
+      kind: dp
+    - title: "Character<wbr>Print<wbr>Delay<wbr>Ms"
+      anchor: characterprintdelayms
+      kind: dp
+    - title: "Font<wbr>Path"
+      anchor: fontpath
+      kind: dp
+    - title: "Font<wbr>Size"
+      anchor: fontsize
+      kind: dp
+    - title: "Font<wbr>System"
+      anchor: fontsystem
+      kind: prop
+    - title: "Font<wbr>System<wbr>Override"
+      anchor: fontsystemoverride
+      kind: prop
+    - title: "Formatting"
+      anchor: formatting
+      kind: dp
+    - title: "General<wbr>Font<wbr>System"
+      anchor: generalfontsystem
+      kind: prop
+    - title: "General<wbr>Mouse<wbr>Cursors<wbr>Set"
+      anchor: generalmousecursorsset
+      kind: prop
+    - title: "General<wbr>Style"
+      anchor: generalstyle
+      kind: prop
+    - title: "Input<wbr>Type"
+      anchor: inputtype
+      kind: dp
+    - title: "Last<wbr>Font<wbr>Error"
+      anchor: lastfonterror
+      kind: prop
+    - title: "Line<wbr>Spacing"
+      anchor: linespacing
+      kind: dp
+    - title: "Mouse<wbr>Cursors<wbr>Set"
+      anchor: mousecursorsset
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set<wbr>Override"
+      anchor: mousecursorssetoverride
+      kind: prop
+    - title: "Rich<wbr>Actions"
+      anchor: richactions
+      kind: prop
+    - title: "Rich<wbr>Colors"
+      anchor: richcolors
+      kind: prop
+    - title: "Rich<wbr>Images"
+      anchor: richimages
+      kind: prop
+    - title: "Scroll<wbr>Bars"
+      anchor: scrollbars
+      kind: dp
+    - title: "Scroll<wbr>Bars<wbr>Style"
+      anchor: scrollbarsstyle
+      kind: dp
+    - title: "Scroll<wbr>Bars<wbr>Thickness"
+      anchor: scrollbarsthickness
+      kind: dp
+    - title: "Scroll<wbr>To<wbr>End<wbr>During<wbr>Text<wbr>Animation"
+      anchor: scrolltoendduringtextanimation
+      kind: dp
+    - title: "Style<wbr>Override"
+      anchor: styleoverride
+      kind: prop
+    - title: "Text"
+      anchor: text
+      kind: dp
+    - title: "Text<wbr>Alignment"
+      anchor: textalignment
+      kind: dp
+    - title: "Text<wbr>Cursor<wbr>Color"
+      anchor: textcursorcolor
+      kind: dp
+    - title: "Text<wbr>Cursor<wbr>Thickness"
+      anchor: textcursorthickness
+      kind: dp
+    - title: "Text<wbr>Filter"
+      anchor: textfilter
+      kind: dp
+    - title: "Text<wbr>Margin"
+      anchor: textmargin
+      kind: dp
+    - title: "Text<wbr>Selection<wbr>Color"
+      anchor: textselectioncolor
+      kind: dp
+    - title: "Type"
+      anchor: type
+      kind: dp
+    - title: "Vertical<wbr>Text<wbr>Alignment"
+      anchor: verticaltextalignment
+      kind: dp
+    - title: "Wrap<wbr>Type"
+      anchor: wraptype
+      kind: dp
+    - title: "Animate<wbr>Text()"
+      anchor: animatetext
+      kind: method
+    - title: "Place<wbr>Cursor<wbr>At()"
+      anchor: placecursorat
+      kind: method
+    - title: "Place<wbr>Cursor<wbr>At<wbr>Text<wbr>End()"
+      anchor: placecursorattextend
+      kind: method
+    - title: "Place<wbr>Cursor<wbr>At<wbr>Text<wbr>Start()"
+      anchor: placecursorattextstart
+      kind: method
+    - title: "Select<wbr>All<wbr>Text()"
+      anchor: selectalltext
+      kind: method
+    - title: "Select<wbr>Text<wbr>Interval()"
+      anchor: selecttextinterval
+      kind: method
+    - title: "Stop<wbr>Text<wbr>Animation()"
+      anchor: stoptextanimation
+      kind: method
+    - title: "On<wbr>Apply"
+      anchor: onapply
+      kind: event
+    - title: "On<wbr>Text<wbr>Changed"
+      anchor: ontextchanged
+      kind: event
+- title: "RootElement"
+  url: /docs/ui-glossary/root-element/
+  members:
+    - title: "General<wbr>Mouse<wbr>Cursors<wbr>Set"
+      anchor: generalmousecursorsset
+      kind: prop
+    - title: "General<wbr>Style"
+      anchor: generalstyle
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set"
+      anchor: mousecursorsset
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set<wbr>Override"
+      anchor: mousecursorssetoverride
+      kind: prop
+    - title: "Style<wbr>Override"
+      anchor: styleoverride
+      kind: prop
+- title: "ScrollableContainer"
+  url: /docs/ui-glossary/scrollable-container/
+  members:
+    - title: "Content<wbr>Margin"
+      anchor: contentmargin
+      kind: prop
+    - title: "General<wbr>Mouse<wbr>Cursors<wbr>Set"
+      anchor: generalmousecursorsset
+      kind: prop
+    - title: "General<wbr>Style"
+      anchor: generalstyle
+      kind: prop
+    - title: "Horizontal<wbr>Scrolling<wbr>Value"
+      anchor: horizontalscrollingvalue
+      kind: dp
+    - title: "Items"
+      anchor: items
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set"
+      anchor: mousecursorsset
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set<wbr>Override"
+      anchor: mousecursorssetoverride
+      kind: prop
+    - title: "Scroll<wbr>Area<wbr>Height"
+      anchor: scrollareaheight
+      kind: prop
+    - title: "Scroll<wbr>Area<wbr>Width"
+      anchor: scrollareawidth
+      kind: prop
+    - title: "Scroll<wbr>Bars"
+      anchor: scrollbars
+      kind: dp
+    - title: "Scroll<wbr>Bars<wbr>Style"
+      anchor: scrollbarsstyle
+      kind: dp
+    - title: "Scroll<wbr>Bars<wbr>Thickness"
+      anchor: scrollbarsthickness
+      kind: dp
+    - title: "Style<wbr>Override"
+      anchor: styleoverride
+      kind: prop
+    - title: "Vertical<wbr>Scrolling<wbr>Value"
+      anchor: verticalscrollingvalue
+      kind: dp
+    - title: "Add<wbr>Item()"
+      anchor: additem
+      kind: method
+    - title: "Add<wbr>Item<wbr>At()"
+      anchor: additemat
+      kind: method
+    - title: "Add<wbr>Items<wbr>Range()"
+      anchor: additemsrange
+      kind: method
+    - title: "Add<wbr>Items<wbr>Range<wbr>At()"
+      anchor: additemsrangeat
+      kind: method
+    - title: "Clear<wbr>Items()"
+      anchor: clearitems
+      kind: method
+    - title: "Horizontal<wbr>Page<wbr>Decrease()"
+      anchor: horizontalpagedecrease
+      kind: method
+    - title: "Horizontal<wbr>Page<wbr>Increase()"
+      anchor: horizontalpageincrease
+      kind: method
+    - title: "Page<wbr>Down()"
+      anchor: pagedown
+      kind: method
+    - title: "Page<wbr>Left()"
+      anchor: pageleft
+      kind: method
+    - title: "Page<wbr>Right()"
+      anchor: pageright
+      kind: method
+    - title: "Page<wbr>Up()"
+      anchor: pageup
+      kind: method
+    - title: "Remove<wbr>Item()"
+      anchor: removeitem
+      kind: method
+    - title: "Remove<wbr>Item<wbr>At()"
+      anchor: removeitemat
+      kind: method
+    - title: "Remove<wbr>Items<wbr>Range<wbr>At()"
+      anchor: removeitemsrangeat
+      kind: method
+    - title: "Vertical<wbr>Page<wbr>Decrease()"
+      anchor: verticalpagedecrease
+      kind: method
+    - title: "Vertical<wbr>Page<wbr>Increase()"
+      anchor: verticalpageincrease
+      kind: method
+- title: "Separator"
+  url: /docs/ui-glossary/separator/
+  members: []
+- title: "Slider"
+  url: /docs/ui-glossary/slider/
+  members:
+    - title: "Buttons<wbr>Solid<wbr>Color"
+      anchor: buttonssolidcolor
+      kind: dp
+    - title: "Content<wbr>Size"
+      anchor: contentsize
+      kind: prop
+    - title: "General<wbr>Mouse<wbr>Cursors<wbr>Set"
+      anchor: generalmousecursorsset
+      kind: prop
+    - title: "General<wbr>Style"
+      anchor: generalstyle
+      kind: prop
+    - title: "Line<wbr>Decrease<wbr>Solid<wbr>Color"
+      anchor: linedecreasesolidcolor
+      kind: dp
+    - title: "Line<wbr>Increase<wbr>Solid<wbr>Color"
+      anchor: lineincreasesolidcolor
+      kind: dp
+    - title: "Max"
+      anchor: max
+      kind: dp
+    - title: "Min"
+      anchor: min
+      kind: dp
+    - title: "Mouse<wbr>Cursors<wbr>Set"
+      anchor: mousecursorsset
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set<wbr>Override"
+      anchor: mousecursorssetoverride
+      kind: prop
+    - title: "Move<wbr>To<wbr>Point"
+      anchor: movetopoint
+      kind: dp
+    - title: "Normalized<wbr>Value"
+      anchor: normalizedvalue
+      kind: prop
+    - title: "Orientation"
+      anchor: orientation
+      kind: dp
+    - title: "Scroll<wbr>Area<wbr>Size"
+      anchor: scrollareasize
+      kind: prop
+    - title: "Style<wbr>Override"
+      anchor: styleoverride
+      kind: prop
+    - title: "Thumb<wbr>Margin"
+      anchor: thumbmargin
+      kind: dp
+    - title: "Thumb<wbr>Min<wbr>Size"
+      anchor: thumbminsize
+      kind: dp
+    - title: "Thumb<wbr>Scale"
+      anchor: thumbscale
+      kind: dp
+    - title: "Thumb<wbr>Solid<wbr>Color"
+      anchor: thumbsolidcolor
+      kind: dp
+    - title: "Tick"
+      anchor: tick
+      kind: dp
+    - title: "Tick<wbr>Offset"
+      anchor: tickoffset
+      kind: dp
+    - title: "Tick<wbr>Passed<wbr>Color"
+      anchor: tickpassedcolor
+      kind: dp
+    - title: "Tick<wbr>Placement"
+      anchor: tickplacement
+      kind: dp
+    - title: "Tick<wbr>Remaining<wbr>Color"
+      anchor: tickremainingcolor
+      kind: dp
+    - title: "Tick<wbr>Size"
+      anchor: ticksize
+      kind: dp
+    - title: "Type"
+      anchor: type
+      kind: dp
+    - title: "Value"
+      anchor: value
+      kind: dp
+    - title: "View<wbr>Size"
+      anchor: viewsize
+      kind: prop
+    - title: "Draw()"
+      anchor: draw
+      kind: method
+    - title: "Page<wbr>Decrease()"
+      anchor: pagedecrease
+      kind: method
+    - title: "Page<wbr>Increase()"
+      anchor: pageincrease
+      kind: method
+    - title: "On<wbr>Value<wbr>Changed"
+      anchor: onvaluechanged
+      kind: event
+- title: "StackPanel"
+  url: /docs/ui-glossary/stack-panel/
+  members:
+    - title: "General<wbr>Mouse<wbr>Cursors<wbr>Set"
+      anchor: generalmousecursorsset
+      kind: prop
+    - title: "General<wbr>Style"
+      anchor: generalstyle
+      kind: prop
+    - title: "Items"
+      anchor: items
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set"
+      anchor: mousecursorsset
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set<wbr>Override"
+      anchor: mousecursorssetoverride
+      kind: prop
+    - title: "Orientation"
+      anchor: orientation
+      kind: dp
+    - title: "Style<wbr>Override"
+      anchor: styleoverride
+      kind: prop
+    - title: "Add<wbr>Item()"
+      anchor: additem
+      kind: method
+    - title: "Add<wbr>Item<wbr>At()"
+      anchor: additemat
+      kind: method
+    - title: "Clear<wbr>Items()"
+      anchor: clearitems
+      kind: method
+    - title: "Remove<wbr>Item()"
+      anchor: removeitem
+      kind: method
+    - title: "Remove<wbr>Item<wbr>At()"
+      anchor: removeitemat
+      kind: method
+- title: "Stencil"
+  url: /docs/ui-glossary/stencil/
+  members:
+    - title: "General<wbr>Mouse<wbr>Cursors<wbr>Set"
+      anchor: generalmousecursorsset
+      kind: prop
+    - title: "General<wbr>Style"
+      anchor: generalstyle
+      kind: prop
+    - title: "Key<wbr>Color"
+      anchor: keycolor
+      kind: dp
+    - title: "Mouse<wbr>Cursors<wbr>Set"
+      anchor: mousecursorsset
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set<wbr>Override"
+      anchor: mousecursorssetoverride
+      kind: prop
+    - title: "Source<wbr>Texture"
+      anchor: sourcetexture
+      kind: dp
+    - title: "Stencil<wbr>Texture"
+      anchor: stenciltexture
+      kind: dp
+    - title: "Style<wbr>Override"
+      anchor: styleoverride
+      kind: prop
+    - title: "Tolerance"
+      anchor: tolerance
+      kind: dp
+- title: "ToolTip"
+  url: /docs/ui-glossary/tool-tip/
+  members:
+    - title: "Content"
+      anchor: content
+      kind: dp
+    - title: "General<wbr>Mouse<wbr>Cursors<wbr>Set"
+      anchor: generalmousecursorsset
+      kind: prop
+    - title: "General<wbr>Style"
+      anchor: generalstyle
+      kind: prop
+    - title: "Margin<wbr>From<wbr>Mouse<wbr>Cursor"
+      anchor: marginfrommousecursor
+      kind: dp
+    - title: "Mouse<wbr>Cursors<wbr>Set"
+      anchor: mousecursorsset
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set<wbr>Override"
+      anchor: mousecursorssetoverride
+      kind: prop
+    - title: "Placement"
+      anchor: placement
+      kind: dp
+    - title: "Style<wbr>Override"
+      anchor: styleoverride
+      kind: prop
+    - title: "Text"
+      anchor: text
+      kind: dp
+    - title: "Text<wbr>Style"
+      anchor: textstyle
+      kind: dp
+    - title: "Time<wbr>Before<wbr>Show<wbr>Ms"
+      anchor: timebeforeshowms
+      kind: dp
+    - title: "Show()"
+      anchor: show
+      kind: method
+- title: "TreeView"
+  url: /docs/ui-glossary/tree-view/
+  members:
+    - title: "Children<wbr>Selector"
+      anchor: childrenselector
+      kind: prop
+    - title: "Expanded<wbr>Icon<wbr>Color"
+      anchor: expandediconcolor
+      kind: dp
+    - title: "Expand<wbr>Icon<wbr>Style"
+      anchor: expandiconstyle
+      kind: dp
+    - title: "General<wbr>Mouse<wbr>Cursors<wbr>Set"
+      anchor: generalmousecursorsset
+      kind: prop
+    - title: "General<wbr>Style"
+      anchor: generalstyle
+      kind: prop
+    - title: "Items<wbr>Source"
+      anchor: itemssource
+      kind: dp
+    - title: "Items<wbr>Template"
+      anchor: itemstemplate
+      kind: prop
+    - title: "Leaves"
+      anchor: leaves
+      kind: prop
+    - title: "List<wbr>Box<wbr>Style"
+      anchor: listboxstyle
+      kind: dp
+    - title: "Minimized<wbr>Icon<wbr>Color"
+      anchor: minimizediconcolor
+      kind: dp
+    - title: "Mouse<wbr>Cursors<wbr>Set"
+      anchor: mousecursorsset
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set<wbr>Override"
+      anchor: mousecursorssetoverride
+      kind: prop
+    - title: "Selected<wbr>Item"
+      anchor: selecteditem
+      kind: dp
+    - title: "Style<wbr>Override"
+      anchor: styleoverride
+      kind: prop
+    - title: "Sub<wbr>Items<wbr>Shift"
+      anchor: subitemsshift
+      kind: dp
+    - title: "Add<wbr>Item()"
+      anchor: additem
+      kind: method
+    - title: "Add<wbr>Item<wbr>At()"
+      anchor: additemat
+      kind: method
+    - title: "Add<wbr>Items<wbr>Range()"
+      anchor: additemsrange
+      kind: method
+    - title: "Add<wbr>Items<wbr>Range<wbr>At()"
+      anchor: additemsrangeat
+      kind: method
+    - title: "Clear<wbr>Items()"
+      anchor: clearitems
+      kind: method
+    - title: "Collapse<wbr>All()"
+      anchor: collapseall
+      kind: method
+    - title: "Expand<wbr>All()"
+      anchor: expandall
+      kind: method
+    - title: "Remove<wbr>Item()"
+      anchor: removeitem
+      kind: method
+    - title: "Remove<wbr>Item<wbr>At()"
+      anchor: removeitemat
+      kind: method
+    - title: "Remove<wbr>Items<wbr>Range<wbr>At()"
+      anchor: removeitemsrangeat
+      kind: method
+    - title: "Select<wbr>Source()"
+      anchor: selectsource
+      kind: method
+    - title: "On<wbr>Item<wbr>Select"
+      anchor: onitemselect
+      kind: event
+- title: "TreeViewItem"
+  url: /docs/ui-glossary/tree-view-item/
+  members:
+    - title: "Has<wbr>Leaves"
+      anchor: hasleaves
+      kind: prop
+    - title: "Is<wbr>Expanded"
+      anchor: isexpanded
+      kind: prop
+    - title: "Leaves"
+      anchor: leaves
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set"
+      anchor: mousecursorsset
+      kind: prop
+    - title: "Source"
+      anchor: source
+      kind: prop
+    - title: "Add<wbr>Item()"
+      anchor: additem
+      kind: method
+    - title: "Add<wbr>Item<wbr>At()"
+      anchor: additemat
+      kind: method
+    - title: "Add<wbr>Items<wbr>Range()"
+      anchor: additemsrange
+      kind: method
+    - title: "Add<wbr>Items<wbr>Range<wbr>At()"
+      anchor: additemsrangeat
+      kind: method
+    - title: "Clear<wbr>Items()"
+      anchor: clearitems
+      kind: method
+    - title: "Remove<wbr>Item()"
+      anchor: removeitem
+      kind: method
+    - title: "Remove<wbr>Item<wbr>At()"
+      anchor: removeitemat
+      kind: method
+    - title: "Remove<wbr>Items<wbr>Range<wbr>At()"
+      anchor: removeitemsrangeat
+      kind: method
+- title: "ViewPort"
+  url: /docs/ui-glossary/view-port/
+  members:
+    - title: "Device<wbr>Bounds"
+      anchor: devicebounds
+      kind: prop
+    - title: "Draw<wbr>Instructions"
+      anchor: drawinstructions
+      kind: prop
+    - title: "General<wbr>Mouse<wbr>Cursors<wbr>Set"
+      anchor: generalmousecursorsset
+      kind: prop
+    - title: "General<wbr>Style"
+      anchor: generalstyle
+      kind: prop
+    - title: "Max<wbr>Depth"
+      anchor: maxdepth
+      kind: dp
+    - title: "Min<wbr>Depth"
+      anchor: mindepth
+      kind: dp
+    - title: "Mouse<wbr>Cursors<wbr>Set"
+      anchor: mousecursorsset
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set<wbr>Override"
+      anchor: mousecursorssetoverride
+      kind: prop
+    - title: "Style<wbr>Override"
+      anchor: styleoverride
+      kind: prop
+    - title: "Visible<wbr>Rectangle"
+      anchor: visiblerectangle
+      kind: prop
+    - title: "Draw()"
+      anchor: draw
+      kind: method
+- title: "Window"
+  url: /docs/ui-glossary/window/
+  members:
+    - title: "Border<wbr>Style"
+      anchor: borderstyle
+      kind: dp
+    - title: "Content"
+      anchor: content
+      kind: dp
+    - title: "General<wbr>Mouse<wbr>Cursors<wbr>Set"
+      anchor: generalmousecursorsset
+      kind: prop
+    - title: "General<wbr>Style"
+      anchor: generalstyle
+      kind: prop
+    - title: "Is<wbr>Modal"
+      anchor: ismodal
+      kind: dp
+    - title: "Mouse<wbr>Cursors<wbr>Set"
+      anchor: mousecursorsset
+      kind: prop
+    - title: "Mouse<wbr>Cursors<wbr>Set<wbr>Override"
+      anchor: mousecursorssetoverride
+      kind: prop
+    - title: "Style<wbr>Override"
+      anchor: styleoverride
+      kind: prop
+    - title: "Title<wbr>Bar"
+      anchor: titlebar
+      kind: dp
+    - title: "Hide()"
+      anchor: hide
+      kind: method
+    - title: "Show()"
+      anchor: show
+      kind: method

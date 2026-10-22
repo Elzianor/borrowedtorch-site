@@ -10,6 +10,14 @@ layout: base
     {%- assign doc_urls = doc_urls | push: a.url -%}
     {%- assign doc_titles = doc_titles | push: a.title -%}
     {%- assign doc_groups = doc_groups | push: g.group -%}
+    {%- if a.glossary -%}
+      {%- for e in site.data[a.glossary] -%}
+        {%- assign entry_title = a.title | append: ": " | append: e.title -%}
+        {%- assign doc_urls = doc_urls | push: e.url -%}
+        {%- assign doc_titles = doc_titles | push: entry_title -%}
+        {%- assign doc_groups = doc_groups | push: g.group -%}
+      {%- endfor -%}
+    {%- endif -%}
   {%- endfor -%}
 {%- endfor -%}
 {%- assign idx = -1 -%}
@@ -23,12 +31,54 @@ layout: base
       <div class="docs-groups">
         {%- for g in site.data.docs %}
         <div class="docs-group">
+          {%- if g.tree %}
+          {%- assign group_open = false %}
+          {%- for a in g.articles %}
+            {%- if a.url == page.url %}{% assign group_open = true %}{% endif %}
+            {%- if a.glossary and page.url contains a.url %}{% assign group_open = true %}{% endif %}
+          {%- endfor %}
+          <details class="docs-tree"{% if group_open %} open{% endif %}>
+            <summary class="docs-group-title">{{ g.group }}</summary>
+            <ul>
+              {%- for a in g.articles %}
+              {%- if a.glossary %}
+              <li>
+                <details class="docs-node"{% if page.url contains a.url %} open{% endif %}>
+                  <summary><a href="{{ a.url | relative_url }}"{% if a.url == page.url %} aria-current="page"{% endif %}>{{ a.title }}</a></summary>
+                  <ul>
+                    {%- for e in site.data[a.glossary] %}
+                    <li>
+                      {%- if e.members.size > 0 %}
+                      <details class="docs-node"{% if e.url == page.url %} open{% endif %}>
+                        <summary><a href="{{ e.url | relative_url }}"{% if e.url == page.url %} aria-current="page"{% endif %}>{{ e.title }}</a></summary>
+                        <ul class="docs-members">
+                          {%- for m in e.members %}
+                          <li><a class="kind-{{ m.kind }}" href="{{ e.url | relative_url }}#{{ m.anchor }}">{{ m.title }}</a></li>
+                          {%- endfor %}
+                        </ul>
+                      </details>
+                      {%- else %}
+                      <a href="{{ e.url | relative_url }}"{% if e.url == page.url %} aria-current="page"{% endif %}>{{ e.title }}</a>
+                      {%- endif %}
+                    </li>
+                    {%- endfor %}
+                  </ul>
+                </details>
+              </li>
+              {%- else %}
+              <li><a href="{{ a.url | relative_url }}"{% if a.url == page.url %} aria-current="page"{% endif %}>{{ a.title }}</a></li>
+              {%- endif %}
+              {%- endfor %}
+            </ul>
+          </details>
+          {%- else %}
           <p class="docs-group-title">{{ g.group }}</p>
           <ul>
             {%- for a in g.articles %}
             <li><a href="{{ a.url | relative_url }}"{% if a.url == page.url %} aria-current="page"{% endif %}>{{ a.title }}</a></li>
             {%- endfor %}
           </ul>
+          {%- endif %}
         </div>
         {%- endfor %}
       </div>
@@ -40,6 +90,24 @@ layout: base
         function sync() { if (mq.matches) menu.removeAttribute('open'); else menu.setAttribute('open', ''); }
         sync();
         if (mq.addEventListener) mq.addEventListener('change', sync);
+
+        // a glossary member: the link of the anchor in the URL is the current one
+        function markMember() {
+          var links = document.querySelectorAll('.docs-members a');
+          for (var i = 0; i < links.length; i++) {
+            var here = links[i].pathname === location.pathname && links[i].hash === location.hash && location.hash;
+            if (here) links[i].setAttribute('aria-current', 'location'); else links[i].removeAttribute('aria-current');
+          }
+        }
+        markMember();
+        addEventListener('hashchange', markMember);
+
+        // a long tree: the current page's link in view in the sidebar
+        var current = document.querySelector('.docs-nav [aria-current="page"]');
+        var groups = document.querySelector('.docs-groups');
+        if (current && groups && groups.scrollHeight > groups.clientHeight) {
+          groups.scrollTop = current.offsetTop - groups.clientHeight / 3;
+        }
       })();
     </script>
   </nav>

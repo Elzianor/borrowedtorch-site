@@ -6,7 +6,7 @@ description: Stack panels, grids, scrolling containers, borders, separators, win
 
 These elements arrange, frame and scroll other elements. Each of them, apart from `TabControl`, is an element: it has
 all the properties, events and methods of [`BaseElement`](/docs/ui-base-element/), which the tables below don't
-repeat. A property marked <span class="dp-badge">DP</span> is a dependency property: `Foo` is backed by `FooDP`, which a
+repeat. Badges tell what each name is: <span class="kb kb-prop">P</span> a plain property, <span class="kb kb-method">M</span> a method, <span class="kb kb-event">E</span> an event, and <span class="kb kb-dp">DP</span> a dependency property: `Foo` is backed by `FooDP`, which a
 style, a binding or an animation can set (see [styles, bindings and animation](/docs/ui-styles/)). Screenshots use the
 theme from [styles](/docs/ui-styles/#the-theme-of-these-pages).
 
@@ -81,18 +81,18 @@ An item that is disposed leaves the panel by itself.
 | Property | Type | Description |
 | --- | --- | --- |
 | <span class="dp">`Orientation`</span> | `Orientation` | `Vertical` stacks the items top to bottom, `Horizontal` left to right. The default is `Horizontal`. |
-| `Items` | `IReadOnlyList<BaseElement>` | Read-only. The items in the order they are stacked: the elements you added, not the panel's wrappers. A live view, nothing is copied. |
+| <span class="prop">`Items`</span> | `IReadOnlyList<BaseElement>` | Read-only. The items in the order they are stacked: the elements you added, not the panel's wrappers. A live view, nothing is copied. |
 
 ### StackPanel methods
 
 | Method | Description |
 | --- | --- |
 | `StackPanel(string name = null)` | Creates a stack panel. The name is used by `GetElementByName`. |
-| `AddItem(BaseElement item)` | Adds the item at the end. A null item is ignored. |
-| `AddItemAt(BaseElement item, int index)` | Inserts the item at the index (0 to the item count). |
-| `RemoveItem(BaseElement item)` | Removes the item. It is detached, not disposed. |
-| `RemoveItemAt(int index)` | Removes the item at the index. It is detached, not disposed. |
-| `ClearItems()` | Removes every item. The items are detached, not disposed. |
+| <span class="method">`AddItem(BaseElement item)`</span> | Adds the item at the end. A null item is ignored. |
+| <span class="method">`AddItemAt(BaseElement item, int index)`</span> | Inserts the item at the index (0 to the item count). |
+| <span class="method">`RemoveItem(BaseElement item)`</span> | Removes the item. It is detached, not disposed. |
+| <span class="method">`RemoveItemAt(int index)`</span> | Removes the item at the index. It is detached, not disposed. |
+| <span class="method">`ClearItems()`</span> | Removes every item. The items are detached, not disposed. |
 
 Style class: `StackPanelStyle` (`Orientation`; its defaults are `HitTest` off, `Left` / `Top` alignment and
 `InheritState.FromChildren`, see [styles](/docs/ui-styles/)).
@@ -172,31 +172,31 @@ clips its items, and it is removed once its last item is. The grid's `Foreground
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `ColumnsCount` | `int` | Read-only. The number of column definitions. |
-| `RowsCount` | `int` | Read-only. The number of row definitions. |
-| `ShowLayout` | `bool` | Draws the grid's outline, a line at the end of every column and row, and fills each of them with a dim shade of `LayoutColor`. A debugging aid, off by default. |
-| `LayoutColor` | `Color` | The colour of the lines `ShowLayout` draws; the fill is this colour with every channel divided by 5. Set it, the default is transparent. |
+| <span class="prop">`ColumnsCount`</span> | `int` | Read-only. The number of column definitions. |
+| <span class="prop">`RowsCount`</span> | `int` | Read-only. The number of row definitions. |
+| <span class="prop">`ShowLayout`</span> | `bool` | Draws the grid's outline, a line at the end of every column and row, and fills each of them with a dim shade of `LayoutColor`. A debugging aid, off by default. |
+| <span class="prop">`LayoutColor`</span> | `Color` | The colour of the lines `ShowLayout` draws; the fill is this colour with every channel divided by 5. Set it, the default is transparent. |
 
 ### Grid methods
 
 | Method | Description |
 | --- | --- |
 | `Grid(string name = null)` | Creates a grid without definitions. The name is used by `GetElementByName`. |
-| `AddColumnDefinition(int desiredSize)` | Adds a column of a fixed width in units (at least 1). |
-| `AddColumnDefinition()` | Adds an auto column, as wide as the widest content of its cells. |
-| `AddColumnDefinition(float proportion)` | Adds a proportional column, a share of the width left. Negative values count as 0. |
-| `AddRowDefinition(int desiredSize)` | Adds a row of a fixed height in units (at least 1). |
-| `AddRowDefinition()` | Adds an auto row, as tall as the tallest content of its cells. |
-| `AddRowDefinition(float proportion)` | Adds a proportional row, a share of the height left. Negative values count as 0. |
-| `AddItem(BaseElement item)` | Puts the item in the cell its `GridColumn`, `GridRow` and spans name, making the cell if needed. Ignored when the column or row doesn't exist. |
-| `AddItemAt(BaseElement item, int index)` | Does nothing: a grid places items by column and row. Use `AddItem`. |
-| `RemoveItem(BaseElement item)` | Takes the item out of its cell. It is detached, not disposed. |
-| `RemoveItemAt(int index)` | Removes an item by its index in the items of all cells, cell by cell. |
-| `RemoveItemsRangeAt(int index, int count)` | Removes `count` items from the index on, counted as in `RemoveItemAt`. |
-| `ClearItems()` | Removes every item and the emptied cells. The items are detached, not disposed; the definitions stay. |
-| `Clear()` | Removes every definition and every item. The items are detached, not disposed, so they can be added again. |
-| `TryGetCell(int column, int row, int columnSpan = 1, int rowSpan = 1)` | Returns the cell at that place with those spans, or null when there is none (no item uses it) or the place is outside the grid. Spans are cut to the grid as `AddItem` cuts them. |
-| `Draw()` | Draws the grid, with the `ShowLayout` lines under its items. The UI calls it; you don't. |
+| <span class="method">`AddColumnDefinition(int desiredSize)`</span> | Adds a column of a fixed width in units (at least 1). |
+| <span class="method">`AddColumnDefinition()`</span> | Adds an auto column, as wide as the widest content of its cells. |
+| <span class="method">`AddColumnDefinition(float proportion)`</span> | Adds a proportional column, a share of the width left. Negative values count as 0. |
+| <span class="method">`AddRowDefinition(int desiredSize)`</span> | Adds a row of a fixed height in units (at least 1). |
+| <span class="method">`AddRowDefinition()`</span> | Adds an auto row, as tall as the tallest content of its cells. |
+| <span class="method">`AddRowDefinition(float proportion)`</span> | Adds a proportional row, a share of the height left. Negative values count as 0. |
+| <span class="method">`AddItem(BaseElement item)`</span> | Puts the item in the cell its `GridColumn`, `GridRow` and spans name, making the cell if needed. Ignored when the column or row doesn't exist. |
+| <span class="method">`AddItemAt(BaseElement item, int index)`</span> | Does nothing: a grid places items by column and row. Use `AddItem`. |
+| <span class="method">`RemoveItem(BaseElement item)`</span> | Takes the item out of its cell. It is detached, not disposed. |
+| <span class="method">`RemoveItemAt(int index)`</span> | Removes an item by its index in the items of all cells, cell by cell. |
+| <span class="method">`RemoveItemsRangeAt(int index, int count)`</span> | Removes `count` items from the index on, counted as in `RemoveItemAt`. |
+| <span class="method">`ClearItems()`</span> | Removes every item and the emptied cells. The items are detached, not disposed; the definitions stay. |
+| <span class="method">`Clear()`</span> | Removes every definition and every item. The items are detached, not disposed, so they can be added again. |
+| <span class="method">`TryGetCell(int column, int row, int columnSpan = 1, int rowSpan = 1)`</span> | Returns the cell at that place with those spans, or null when there is none (no item uses it) or the place is outside the grid. Spans are cut to the grid as `AddItem` cuts them. |
+| <span class="method">`Draw()`</span> | Draws the grid, with the `ShowLayout` lines under its items. The UI calls it; you don't. |
 
 ### GridCell
 
@@ -206,10 +206,10 @@ A cell is aligned `Left` / `Top`, doesn't take the mouse, and clips its items. I
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `IsSpanCell` | `bool` | Read-only. Whether the cell spans more than one column or row. |
-| `ContentWidth` | `int` | Read-only. The width the cell's items need; auto columns are sized by it. |
-| `ContentHeight` | `int` | Read-only. The height the cell's items need; auto rows are sized by it. |
-| `Items` | `IReadOnlyList<BaseElement>` | Read-only. The items in the cell. |
+| <span class="prop">`IsSpanCell`</span> | `bool` | Read-only. Whether the cell spans more than one column or row. |
+| <span class="prop">`ContentWidth`</span> | `int` | Read-only. The width the cell's items need; auto columns are sized by it. |
+| <span class="prop">`ContentHeight`</span> | `int` | Read-only. The height the cell's items need; auto rows are sized by it. |
+| <span class="prop">`Items`</span> | `IReadOnlyList<BaseElement>` | Read-only. The items in the cell. |
 
 The grid has no style class; its properties are set in code.
 
@@ -276,30 +276,30 @@ The container's `Children` are its view and scroll bars; the item methods act on
 | <span class="dp">`ScrollBarsStyle`</span> | `SliderStyle` | The style of the scroll bars (see [sliders](/docs/ui-controls/#slider)). The vertical bar gets a copy with the colours of its two line halves swapped. |
 | <span class="dp">`HorizontalScrollingValue`</span> | `float` | How far the content is scrolled sideways, from 0 (the left) to 1 (the right). |
 | <span class="dp">`VerticalScrollingValue`</span> | `float` | How far the content is scrolled down, from 0 (the top) to 1 (the bottom). |
-| `Items` | `IReadOnlyList<BaseElement>` | Read-only. The items that scroll: the elements you added. The container's `Children` are its view and scroll bars. A live view. |
-| `ContentMargin` | `Margin` | Read-only. The current offset of the content in the view: `Left` and `Top` are 0 or negative while it is scrolled. |
-| `ScrollAreaWidth` | `float` | Read-only. How far the content can scroll sideways, in units: its width less the view's width (0 or less while it fits). |
-| `ScrollAreaHeight` | `float` | Read-only. How far the content can scroll down, in units: its height less the view's height (0 or less while it fits). |
+| <span class="prop">`Items`</span> | `IReadOnlyList<BaseElement>` | Read-only. The items that scroll: the elements you added. The container's `Children` are its view and scroll bars. A live view. |
+| <span class="prop">`ContentMargin`</span> | `Margin` | Read-only. The current offset of the content in the view: `Left` and `Top` are 0 or negative while it is scrolled. |
+| <span class="prop">`ScrollAreaWidth`</span> | `float` | Read-only. How far the content can scroll sideways, in units: its width less the view's width (0 or less while it fits). |
+| <span class="prop">`ScrollAreaHeight`</span> | `float` | Read-only. How far the content can scroll down, in units: its height less the view's height (0 or less while it fits). |
 
 ### ScrollableContainer methods
 
 | Method | Description |
 | --- | --- |
 | `ScrollableContainer(string name = null)` | Creates a scrollable container. The name is used by `GetElementByName`. |
-| `AddItem(BaseElement item)` | Adds the item to the view. |
-| `AddItemAt(BaseElement item, int index)` | Inserts the item at the index. |
-| `AddItemsRange(IEnumerable<BaseElement> items)` | Adds the items at the end. |
-| `AddItemsRangeAt(IEnumerable<BaseElement> items, int index)` | Inserts the items from the index on. |
-| `RemoveItem(BaseElement item)` | Removes the item. It is detached, not disposed. |
-| `RemoveItemAt(int index)` | Removes the item at the index. |
-| `RemoveItemsRangeAt(int index, int count)` | Removes `count` items from the index on. |
-| `ClearItems()` | Removes every item. |
-| `PageUp()` | Scrolls up by one view height. Does nothing while the content fits. |
-| `PageDown()` | Scrolls down by one view height. Does nothing while the content fits. |
-| `PageLeft()` | Scrolls left by one view width. Does nothing while the content fits. |
-| `PageRight()` | Scrolls right by one view width. Does nothing while the content fits. |
-| `HorizontalPageIncrease()`, `HorizontalPageDecrease()` | Obsolete: use `PageRight` and `PageLeft`. |
-| `VerticalPageIncrease()`, `VerticalPageDecrease()` | Obsolete: use `PageUp` and `PageDown`. The old names followed the vertical scroll bar's value, which grows upwards, so "increase" scrolled up. |
+| <span class="method">`AddItem(BaseElement item)`</span> | Adds the item to the view. |
+| <span class="method">`AddItemAt(BaseElement item, int index)`</span> | Inserts the item at the index. |
+| <span class="method">`AddItemsRange(IEnumerable<BaseElement> items)`</span> | Adds the items at the end. |
+| <span class="method">`AddItemsRangeAt(IEnumerable<BaseElement> items, int index)`</span> | Inserts the items from the index on. |
+| <span class="method">`RemoveItem(BaseElement item)`</span> | Removes the item. It is detached, not disposed. |
+| <span class="method">`RemoveItemAt(int index)`</span> | Removes the item at the index. |
+| <span class="method">`RemoveItemsRangeAt(int index, int count)`</span> | Removes `count` items from the index on. |
+| <span class="method">`ClearItems()`</span> | Removes every item. |
+| <span class="method">`PageUp()`</span> | Scrolls up by one view height. Does nothing while the content fits. |
+| <span class="method">`PageDown()`</span> | Scrolls down by one view height. Does nothing while the content fits. |
+| <span class="method">`PageLeft()`</span> | Scrolls left by one view width. Does nothing while the content fits. |
+| <span class="method">`PageRight()`</span> | Scrolls right by one view width. Does nothing while the content fits. |
+| <span class="method">`HorizontalPageIncrease()`</span>, <span class="method">`HorizontalPageDecrease()`</span> | Obsolete: use `PageRight` and `PageLeft`. |
+| <span class="method">`VerticalPageIncrease()`</span>, <span class="method">`VerticalPageDecrease()`</span> | Obsolete: use `PageUp` and `PageDown`. The old names followed the vertical scroll bar's value, which grows upwards, so "increase" scrolled up. |
 
 `ScrollBars`:
 
@@ -386,8 +386,8 @@ class of `Separator`. It doesn't take the mouse and shows the mouse cursors of t
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `Content` | `BaseElement` | Read-only. The element the container holds: its first item, or null. |
-| `MouseCursorsSet` | `MouseCursorsSet` | Read-only. The cursors of the container's parent, so the container shows the cursors of its control. |
+| <span class="prop">`Content`</span> | `BaseElement` | Read-only. The element the container holds: its first item, or null. |
+| <span class="prop">`MouseCursorsSet`</span> | `MouseCursorsSet` | Read-only. The cursors of the container's parent, so the container shows the cursors of its control. |
 
 | Method | Description |
 | --- | --- |
@@ -519,8 +519,8 @@ windows stack: the one shown last is on top, and hiding it gives the mouse back 
 | Method | Description |
 | --- | --- |
 | `Window(string name = null)` | Creates a window with the default title bar. The name is used by `GetElementByName`. |
-| `Show()` | Makes the window visible. A hidden window shown this way goes on top of the other shown windows (of the modal ones when it is modal). |
-| `Hide()` | Hides the window (`Visibility.Hidden`). |
+| <span class="method">`Show()`</span> | Makes the window visible. A hidden window shown this way goes on top of the other shown windows (of the modal ones when it is modal). |
+| <span class="method">`Hide()`</span> | Hides the window (`Visibility.Hidden`). |
 
 A window has no items: the item methods do nothing on it.
 
@@ -540,10 +540,10 @@ titleBar.OnCloseButtonClickAction = () => window.Hide();
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `Title` | `RichTextBox` | Read-only. The title text, centred in the bar. Set its `Text` and text style properties. |
-| `CloseButton` | `Button` | Read-only. The close button at the right of the bar. It shows no text until you set its `Text` or `Content`. |
-| `Background` | `Image` | Read-only. The image that fills the bar and holds the title and the close button. Its `BackgroundColor` is the bar's colour. |
-| `OnCloseButtonClickAction` | `Action` | What a click on the close button does. In a window's default title bar it is the window's `Hide`. |
+| <span class="prop">`Title`</span> | `RichTextBox` | Read-only. The title text, centred in the bar. Set its `Text` and text style properties. |
+| <span class="prop">`CloseButton`</span> | `Button` | Read-only. The close button at the right of the bar. It shows no text until you set its `Text` or `Content`. |
+| <span class="prop">`Background`</span> | `Image` | Read-only. The image that fills the bar and holds the title and the close button. Its `BackgroundColor` is the bar's colour. |
+| <span class="prop">`OnCloseButtonClickAction`</span> | `Action` | What a click on the close button does. In a window's default title bar it is the window's `Hide`. |
 
 | Method | Description |
 | --- | --- |
@@ -630,22 +630,22 @@ None of these are dependency properties.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `CurrentTab` | `BaseElement` | Read-only. The open tab, or null when there is none. |
-| `CurrentOpenedContent` | `BaseElement` | Read-only. The content of the open tab, the only one shown, or null. |
+| <span class="prop">`CurrentTab`</span> | `BaseElement` | Read-only. The open tab, or null when there is none. |
+| <span class="prop">`CurrentOpenedContent`</span> | `BaseElement` | Read-only. The content of the open tab, the only one shown, or null. |
 
 ### TabControl events
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| `OnTabOpened` | `(TabControl sender, BaseElement tab)` | Another tab opens: pressed, opened with `OpenTab`, the first one added, or the neighbour of a removed open tab. `tab` is null when the last tab was removed. |
+| <span class="event">`OnTabOpened`</span> | `(TabControl sender, BaseElement tab)` | Another tab opens: pressed, opened with `OpenTab`, the first one added, or the neighbour of a removed open tab. `tab` is null when the last tab was removed. |
 
 ### TabControl methods
 
 | Method | Description |
 | --- | --- |
 | `TabControl()` | Creates a tab control without tabs. |
-| `AddTab(BaseElement tab, BaseElement content)` | Adds a tab and its content; the content is hidden unless this is the first tab. Adding a tab again replaces its content. Null arguments are ignored. |
-| `RemoveTab(BaseElement tab)` | Removes the tab. When it was open, its neighbour opens. Its content is visible again. |
-| `OpenTab(BaseElement tab)` | Opens the tab, showing its content and hiding the open one. Does nothing for an element that isn't a tab of this control. |
+| <span class="method">`AddTab(BaseElement tab, BaseElement content)`</span> | Adds a tab and its content; the content is hidden unless this is the first tab. Adding a tab again replaces its content. Null arguments are ignored. |
+| <span class="method">`RemoveTab(BaseElement tab)`</span> | Removes the tab. When it was open, its neighbour opens. Its content is visible again. |
+| <span class="method">`OpenTab(BaseElement tab)`</span> | Opens the tab, showing its content and hiding the open one. Does nothing for an element that isn't a tab of this control. |
 
 The tab control has no style class.

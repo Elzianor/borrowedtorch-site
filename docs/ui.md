@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: UI
+title: "UI: quick start guide"
 description: Set up BorrowedTorch.UI in a MonoGame game, lay elements out, and find your way around the UI pages.
 ---
 
@@ -13,7 +13,7 @@ These pages cover the library from setup to every public type:
 
 | Page | What it covers |
 | --- | --- |
-| [UI](/docs/ui/) (this page) | Installing, creating the UI in a game, display scaling, how sizes and alignment work, a complete pause menu |
+| [Quick start guide](/docs/ui/) (this page) | Installing, creating the UI in a game, display scaling, how sizes and alignment work, a complete pause menu |
 | [Base element](/docs/ui-base-element/) | What every element has: size, appearance, items, mouse, keyboard, resizing, and writing your own element |
 | [Layout elements](/docs/ui-layout/) | Stack panels, grids, scrolling, borders, separators, windows and tabs |
 | [Controls](/docs/ui-controls/) | Buttons, check boxes, sliders, progress bars, tooltips and the colour picker |
@@ -21,6 +21,7 @@ These pages cover the library from setup to every public type:
 | [Text](/docs/ui-text/) | Labels, rich text boxes, text input and fonts |
 | [Images and drawing](/docs/ui-images/) | Images, stencils, view ports for your own drawing, and drag and drop |
 | [Styles, bindings and animation](/docs/ui-styles/) | Styles, mouse cursors, default settings, dependency properties, view model bindings and animations |
+| [Glossary](/docs/ui-glossary/) | Every element with its properties and methods in alphabetical order, one page per element |
 
 Screenshots on these pages are real renders of the snippets next to them, drawn with the theme shown on the
 [styles page](/docs/ui-styles/#the-theme-of-these-pages).
@@ -127,27 +128,29 @@ Two cases need more than the window:
 
 ### BorrowedTorchUI
 
+Badges tell what each name is: <span class="kb kb-prop">P</span> a plain property, <span class="kb kb-method">M</span> a method, <span class="kb kb-event">E</span> an event.
+
 | Member | Description |
 | --- | --- |
 | `BorrowedTorchUI(GraphicsDevice graphicsDevice, ContentManager contentManager, SpriteBatch spriteBatch, GameWindow window)` | Creates the UI over the back buffer's size, with the text and keys of the window. The sprite batch is the one the UI draws with; the content manager loads the colour picker's pointer and the textures named by `TexturesPath`. Disposing the UI unsubscribes from the window. |
 | `BorrowedTorchUI(GraphicsDevice graphicsDevice, ContentManager contentManager, SpriteBatch spriteBatch, ITextInputEvents textInputEvents)` | The same, with the text and keys of a source of your own, for a UI hosted outside a game window. The UI doesn't dispose the source. |
-| `RootElement` | Read-only. The element at the top of the tree, the size of the screen. See [the root element](/docs/ui-base-element/#the-root-element). |
-| `AddElementToRoot(BaseElement element)` | Adds an element to the root. |
-| `GetElementByName(string name)` | Finds an element anywhere in the tree by the name given to its constructor, `null` if there is none. |
-| `GetElementByName<T>(string name)` | The same, `null` also when the element is not a `T`. |
-| `Update(GameTime gameTime)` | Runs timers and animations, lays out what changed, and handles the mouse. Poll the input before it. |
-| `Draw()` | Draws the whole tree with the sprite batch, beginning and ending it itself. |
-| `FollowsBackBuffer` | Whether the UI takes the back buffer's size by itself, at the start of every `Update`. On by default. Turn it off for a UI drawn into a render target of its own size. Turned on again, it takes the back buffer's size at the next update. |
-| `ApplyGameWindowSize(int width, int height)` | Lays the UI out over a screen size in device pixels. A size of 0, such as a minimised window's, is ignored. With `FollowsBackBuffer` on, the size stays until the back buffer changes. |
-| `Scale` | How large one logical unit is on screen, see [display scaling](#display-scaling). Between `MinScale` (0.25) and `MaxScale` (8). |
-| `FollowsDisplayScale` | Whether `Scale` follows the display scale of the window's monitor, times `DisplayScaleFactor`. Turned on, it sets the scale at once and then follows the window to other monitors. A scale set by hand stays until the DPI changes. Off by default. Needs the window constructor, otherwise turning it on throws. |
-| `DisplayScaleFactor` | What the display scale is multiplied with while following: a UI size setting of the game. 1 by default, a positive number. Set while following, it applies at once. |
-| `DrawTransform` | Read-only. The matrix the UI draws with. Draw code that begins its own sprite batch inside the UI passes it to draw in logical units. |
-| `ExceptionHandler` | Gets the exceptions thrown inside `Update`, `Draw` and the handling of text input. Without a handler they are rethrown. |
-| `AddAnimation(BaseAnimation animation)` | Starts updating an animation, see [animations](/docs/ui-styles/#animations). |
-| `RemoveAnimation(BaseAnimation animation)` | Stops updating an animation. It keeps its state, and adding it again continues it. |
-| `SetDefaultMouseCursorsSet(MouseCursorsSet mouseCursorsSet)` | Sets the cursors every element uses unless it has its own, see [mouse cursors](/docs/ui-styles/#mouse-cursors). |
-| `Dispose()` | Disposes the root and forgets the shared state, so a new UI can be created. |
+| <span class="prop">`RootElement`</span> | Read-only. The element at the top of the tree, the size of the screen. See [the root element](/docs/ui-base-element/#the-root-element). |
+| <span class="method">`AddElementToRoot(BaseElement element)`</span> | Adds an element to the root. |
+| <span class="method">`GetElementByName(string name)`</span> | Finds an element anywhere in the tree by the name given to its constructor, `null` if there is none. |
+| <span class="method">`GetElementByName<T>(string name)`</span> | The same, `null` also when the element is not a `T`. |
+| <span class="method">`Update(GameTime gameTime)`</span> | Runs timers and animations, lays out what changed, and handles the mouse. Poll the input before it. |
+| <span class="method">`Draw()`</span> | Draws the whole tree with the sprite batch, beginning and ending it itself. |
+| <span class="prop">`FollowsBackBuffer`</span> | Whether the UI takes the back buffer's size by itself, at the start of every `Update`. On by default. Turn it off for a UI drawn into a render target of its own size. Turned on again, it takes the back buffer's size at the next update. |
+| <span class="method">`ApplyGameWindowSize(int width, int height)`</span> | Lays the UI out over a screen size in device pixels. A size of 0, such as a minimised window's, is ignored. With `FollowsBackBuffer` on, the size stays until the back buffer changes. |
+| <span class="prop">`Scale`</span> | How large one logical unit is on screen, see [display scaling](#display-scaling). Between `MinScale` (0.25) and `MaxScale` (8). |
+| <span class="prop">`FollowsDisplayScale`</span> | Whether `Scale` follows the display scale of the window's monitor, times `DisplayScaleFactor`. Turned on, it sets the scale at once and then follows the window to other monitors. A scale set by hand stays until the DPI changes. Off by default. Needs the window constructor, otherwise turning it on throws. |
+| <span class="prop">`DisplayScaleFactor`</span> | What the display scale is multiplied with while following: a UI size setting of the game. 1 by default, a positive number. Set while following, it applies at once. |
+| <span class="prop">`DrawTransform`</span> | Read-only. The matrix the UI draws with. Draw code that begins its own sprite batch inside the UI passes it to draw in logical units. |
+| <span class="prop">`ExceptionHandler`</span> | Gets the exceptions thrown inside `Update`, `Draw` and the handling of text input. Without a handler they are rethrown. |
+| <span class="method">`AddAnimation(BaseAnimation animation)`</span> | Starts updating an animation, see [animations](/docs/ui-styles/#animations). |
+| <span class="method">`RemoveAnimation(BaseAnimation animation)`</span> | Stops updating an animation. It keeps its state, and adding it again continues it. |
+| <span class="method">`SetDefaultMouseCursorsSet(MouseCursorsSet mouseCursorsSet)`</span> | Sets the cursors every element uses unless it has its own, see [mouse cursors](/docs/ui-styles/#mouse-cursors). |
+| <span class="method">`Dispose()`</span> | Disposes the root and forgets the shared state, so a new UI can be created. |
 
 ### ITextInputEvents
 
@@ -155,8 +158,8 @@ The source of typed text and key presses, for a UI hosted outside a game window.
 
 | Event | Description |
 | --- | --- |
-| `OnTextInput` | `EventHandler<TextInputEventArgs>`: a typed character, sent to the element that has the keyboard. |
-| `OnKeyDown` | `EventHandler<InputKeyEventArgs>`: a pressed key, sent to the element that has the keyboard and then up to its parents until one handles it. |
+| <span class="event">`OnTextInput`</span> | `EventHandler<TextInputEventArgs>`: a typed character, sent to the element that has the keyboard. |
+| <span class="event">`OnKeyDown`</span> | `EventHandler<InputKeyEventArgs>`: a pressed key, sent to the element that has the keyboard and then up to its parents until one handles it. |
 
 ### GameWindowTextInputEvents
 
@@ -166,7 +169,7 @@ disposes one itself.
 | Member | Description |
 | --- | --- |
 | `GameWindowTextInputEvents(GameWindow window)` | Subscribes to the window's `TextInput` and `KeyDown` events. |
-| `Dispose()` | Unsubscribes from the window. |
+| <span class="method">`Dispose()`</span> | Unsubscribes from the window. |
 
 ## Your first elements
 
@@ -367,10 +370,10 @@ Reads the Windows display scale of the monitor a window is on. Without the aware
 | Member | Description |
 | --- | --- |
 | `DefaultDpi` | 96, the DPI of a monitor at 100 %. |
-| `DeclarePerMonitorAwareness()` | Declares the process per-monitor DPI aware. Call it before the game creates its window. Returns `false` when Windows doesn't accept it: the awareness was declared already, by an application manifest or an earlier call, or Windows is older than Windows 10 1703. |
-| `DpiOf(GameWindow window)` | The DPI of the monitor under the middle of the window's client area. 96 when it can't be read. |
-| `DpiOf(Rectangle screenBounds)` | The same for a rectangle in screen coordinates, using the nearest monitor when none is under it. |
-| `ScaleOf(GameWindow window)` | The display scale as a UI scale: the DPI divided by 96, so 1.5 at 150 %. |
+| <span class="method">`DeclarePerMonitorAwareness()`</span> | Declares the process per-monitor DPI aware. Call it before the game creates its window. Returns `false` when Windows doesn't accept it: the awareness was declared already, by an application manifest or an earlier call, or Windows is older than Windows 10 1703. |
+| <span class="method">`DpiOf(GameWindow window)`</span> | The DPI of the monitor under the middle of the window's client area. 96 when it can't be read. |
+| <span class="method">`DpiOf(Rectangle screenBounds)`</span> | The same for a rectangle in screen coordinates, using the nearest monitor when none is under it. |
+| <span class="method">`ScaleOf(GameWindow window)`</span> | The display scale as a UI scale: the DPI divided by 96, so 1.5 at 150 %. |
 
 Some limits come with scaling:
 

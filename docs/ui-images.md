@@ -5,9 +5,9 @@ description: Images, stencils, view ports for your own drawing, and drag and dro
 ---
 
 Every element here has all the properties, events and methods of [`BaseElement`](/docs/ui-base-element/), which the
-tables below don't repeat. A property marked <span class="dp-badge">DP</span> is a dependency property: `Foo` is backed by
+tables below don't repeat. Badges tell what each name is: <span class="kb kb-prop">P</span> a plain property, <span class="kb kb-method">M</span> a method, <span class="kb kb-event">E</span> an event, and <span class="kb kb-dp">DP</span> a dependency property: `Foo` is backed by
 `FooDP`, which a style, a binding or an animation can set (see [styles, bindings and animation](/docs/ui-styles/)).
-Unmarked properties are plain C# properties. Screenshots use the theme from [styles](/docs/ui-styles/#the-theme-of-these-pages).
+Screenshots use the theme from [styles](/docs/ui-styles/#the-theme-of-these-pages).
 
 ## Image
 
@@ -103,19 +103,19 @@ instance.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `Width` | `int` | Read-only. The texture's width in pixels, `0` without a texture. |
-| `Height` | `int` | Read-only. The texture's height in pixels, `0` without a texture. |
-| `IsEmpty` | `bool` | Read-only. Whether there is nothing to draw: no texture, or a width or height of `0`. |
+| <span class="prop">`Width`</span> | `int` | Read-only. The texture's width in pixels, `0` without a texture. |
+| <span class="prop">`Height`</span> | `int` | Read-only. The texture's height in pixels, `0` without a texture. |
+| <span class="prop">`IsEmpty`</span> | `bool` | Read-only. Whether there is nothing to draw: no texture, or a width or height of `0`. |
 
 | Method | Description |
 | --- | --- |
 | `SourceData(Texture2D texture)` | Wraps the texture. |
-| `implicit operator SourceData(Texture2D texture)` | Lets you assign a texture where a `SourceData` is expected. |
-| `implicit operator SourceData(string path)` | Loads the content path as a `Texture2D` through the UI's `ContentManager` and wraps it. |
-| `implicit operator Texture2D(SourceData data)` | Gives back the wrapped texture (`null` when it wraps none). |
-| `operator ==` / `operator !=` | Compare a `SourceData` with another `SourceData`, a `Texture2D` or a content path, in either order, by texture instance. Comparing with a path loads that path through the `ContentManager`. |
-| `Equals(object obj)` | Whether `obj` is a `SourceData` wrapping the same texture instance. |
-| `GetHashCode()` | The hash code of the wrapped texture, `0` without one. |
+| <span class="method">`implicit operator SourceData(Texture2D texture)`</span> | Lets you assign a texture where a `SourceData` is expected. |
+| <span class="method">`implicit operator SourceData(string path)`</span> | Loads the content path as a `Texture2D` through the UI's `ContentManager` and wraps it. |
+| <span class="method">`implicit operator Texture2D(SourceData data)`</span> | Gives back the wrapped texture (`null` when it wraps none). |
+| <span class="method">`operator ==`</span> / <span class="method">`operator !=`</span> | Compare a `SourceData` with another `SourceData`, a `Texture2D` or a content path, in either order, by texture instance. Comparing with a path loads that path through the `ContentManager`. |
+| <span class="method">`Equals(object obj)`</span> | Whether `obj` is a `SourceData` wrapping the same texture instance. |
+| <span class="method">`GetHashCode()`</span> | The hash code of the wrapped texture, `0` without one. |
 
 Style class: `ImageStyle` (`Source` and `Fill`; it sets `ForegroundColor` to white, see [styles](/docs/ui-styles/)).
 
@@ -256,9 +256,9 @@ A view port doesn't take the mouse by default (its style sets `HitTest` to `fals
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `DrawInstructions` | `Action` | Your drawing code, run every frame inside the view port as described above. |
-| `VisibleRectangle` | `Rectangle` | Read-only. The part of the view port that is on screen, in logical units like the element's bounds: smaller than the view port where a parent crops it. The scissor rectangle is set to its device pixels. |
-| `DeviceBounds` | `Rectangle` | Read-only. The view port's bounds in device pixels, the rectangle `GraphicsDevice.Viewport` is set to. |
+| <span class="prop">`DrawInstructions`</span> | `Action` | Your drawing code, run every frame inside the view port as described above. |
+| <span class="prop">`VisibleRectangle`</span> | `Rectangle` | Read-only. The part of the view port that is on screen, in logical units like the element's bounds: smaller than the view port where a parent crops it. The scissor rectangle is set to its device pixels. |
+| <span class="prop">`DeviceBounds`</span> | `Rectangle` | Read-only. The view port's bounds in device pixels, the rectangle `GraphicsDevice.Viewport` is set to. |
 | <span class="dp">`MinDepth`</span> | `float` | The minimum depth of the viewport's depth range. Defaults to `DefaultSettings.DefaultMinDepth` (`0`). |
 | <span class="dp">`MaxDepth`</span> | `float` | The maximum depth of the viewport's depth range. Defaults to `DefaultSettings.DefaultMaxDepth` (`1`). |
 
@@ -377,7 +377,7 @@ mouse; the constructor sets `HitTest`, `HorizontalAlignment` and `VerticalAlignm
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `UseTargetAppearance` | `bool` | Whether each drag takes a picture of the dragged element, at the start of the drag, and shows it at the element's size instead of `Source`. The representation owns that picture and disposes it. |
+| <span class="prop">`UseTargetAppearance`</span> | `bool` | Whether each drag takes a picture of the dragged element, at the start of the drag, and shows it at the element's size instead of `Source`. The representation owns that picture and disposes it. |
 
 ### DragAndDropRepresentation methods
 

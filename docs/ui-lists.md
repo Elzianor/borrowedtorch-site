@@ -5,11 +5,11 @@ description: List boxes, combo boxes, tree views and context menus, with selecti
 ---
 
 Every element here has all the properties, events and methods of [`BaseElement`](/docs/ui-base-element/), which the
-tables below don't repeat. A property marked <span class="dp-badge">DP</span> is a dependency property: `Foo` is backed by
+tables below don't repeat. Badges tell what each name is: <span class="kb kb-prop">P</span> a plain property, <span class="kb kb-method">M</span> a method, <span class="kb kb-event">E</span> an event, and <span class="kb kb-dp">DP</span> a dependency property: `Foo` is backed by
 `FooDP`, which a style, a binding or an animation can set (see [styles, bindings and animation](/docs/ui-styles/)).
-Unmarked properties are plain C# properties. Screenshots use the theme from [styles](/docs/ui-styles/#the-theme-of-these-pages).
+Screenshots use the theme from [styles](/docs/ui-styles/#the-theme-of-these-pages).
 
-The keyboard reaches these elements from the game window you give `BorrowedTorchUI` (see [UI](/docs/ui/)):
+The keyboard reaches these elements from the game window you give `BorrowedTorchUI` (see the [quick start guide](/docs/ui/)):
 a key goes to the element that has the keyboard first, then to the elements around it until one uses it.
 
 ## ListBox
@@ -154,13 +154,13 @@ Ctrl and Shift held with these keys work as with clicks in `Multiple` mode.
 | <span class="dp">`SelectionMode`</span> | `ListBoxSelectionMode` | Whether one row or several rows can be selected. `Single` by default. |
 | <span class="dp">`SelectedItem`</span> | `ListBoxItem` | The primary selected row, `null` when nothing is selected. Setting it selects that row; `null` clears the selection. |
 | <span class="dp">`SelectedIndex`</span> | `int` | The index of the primary selected row, `-1` when nothing is selected. Setting it selects that row (the value is clamped to the rows); a negative value clears the selection. |
-| `SelectedItems` | `IReadOnlyList<ListBoxItem>` | Read-only. The selected rows that have an element (see `Items`). |
-| `SelectedIndices` | `IReadOnlyList<int>` | Read-only. The indices of all selected rows, with an element or not. |
-| `SelectedSources` | `IReadOnlyList<object>` | Read-only. The source objects of all selected rows, `null` for rows added as elements or text. |
-| `Count` | `int` | Read-only. The number of rows, in every virtualization mode. |
-| `Items` | `IReadOnlyList<ListBoxItem>` | Read-only. The rows that have an element, in order: every row in `None` mode, the rows around the view and the primary selected row in `Fixed` mode. A live view, don't keep it across changes. |
+| <span class="prop">`SelectedItems`</span> | `IReadOnlyList<ListBoxItem>` | Read-only. The selected rows that have an element (see `Items`). |
+| <span class="prop">`SelectedIndices`</span> | `IReadOnlyList<int>` | Read-only. The indices of all selected rows, with an element or not. |
+| <span class="prop">`SelectedSources`</span> | `IReadOnlyList<object>` | Read-only. The source objects of all selected rows, `null` for rows added as elements or text. |
+| <span class="prop">`Count`</span> | `int` | Read-only. The number of rows, in every virtualization mode. |
+| <span class="prop">`Items`</span> | `IReadOnlyList<ListBoxItem>` | Read-only. The rows that have an element, in order: every row in `None` mode, the rows around the view and the primary selected row in `Fixed` mode. A live view, don't keep it across changes. |
 | <span class="dp">`ItemsSource`</span> | `IEnumerable` | The objects to show, one row each. A `BindableCollection<T>` is followed. |
-| `ItemsTemplate` | `IItemsTemplate` | Makes the element of each `ItemsSource` object; a label with the object's text when none is set. Changing it builds the rows again. |
+| <span class="prop">`ItemsTemplate`</span> | `IItemsTemplate` | Makes the element of each `ItemsSource` object; a label with the object's text when none is set. Changing it builds the rows again. |
 | <span class="dp">`UseDualColors`</span> | `bool` | Alternates the background of unselected rows: `NormalItemColor` for even indices, `AlternativeItemColor` for odd ones. |
 | <span class="dp">`NormalItemColor`</span> | `Color` | The background of an unselected row (of the even rows with `UseDualColors`). |
 | <span class="dp">`AlternativeItemColor`</span> | `Color` | The background of the odd unselected rows while `UseDualColors` is set. |
@@ -170,43 +170,43 @@ Ctrl and Shift held with these keys work as with clicks in `Multiple` mode.
 | <span class="dp">`ScrollableContainerStyle`</span> | `ScrollableContainerStyle` | The style of the [scrollable container](/docs/ui-layout/#scrollablecontainer) around the rows, for example its scroll bars and their thickness. |
 | <span class="dp">`VirtualizationMode`</span> | `ListBoxVirtualizationMode` | Whether every row has an element (`None`, the default) or only the rows around the view (`Fixed`). |
 | <span class="dp">`ItemHeight`</span> | `int` | The height of every row in `Fixed` mode, in units. `Fixed` mode has no effect while it is 0 or less. |
-| `RowsPerPage` | `int` | Read-only. The number of rows that fit the view, at least one: the view's height divided by `ItemHeight` in `Fixed` mode, by the average row height otherwise. |
-| `ContentWidth` | `int` | Read-only. The width of the widest row content, in units (in `Fixed` mode the widest seen since the rows were cleared). |
-| `ContentHeight` | `int` | Read-only. The height of all the shown rows together, in units (`Count` times `ItemHeight` in `Fixed` mode). |
+| <span class="prop">`RowsPerPage`</span> | `int` | Read-only. The number of rows that fit the view, at least one: the view's height divided by `ItemHeight` in `Fixed` mode, by the average row height otherwise. |
+| <span class="prop">`ContentWidth`</span> | `int` | Read-only. The width of the widest row content, in units (in `Fixed` mode the widest seen since the rows were cleared). |
+| <span class="prop">`ContentHeight`</span> | `int` | Read-only. The height of all the shown rows together, in units (`Count` times `ItemHeight` in `Fixed` mode). |
 
 ### ListBox events
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| `OnItemSelect` | `(BaseElement sender, ListBoxItem item)` | The primary selection is set, by the user or from code. `item` is `null` when nothing is selected any more. |
-| `OnItemsSelect` | `(BaseElement sender, IReadOnlyList<ListBoxItem> items)` | The set of selected rows changes. `items` is `SelectedItems`, the selected rows that have an element. |
+| <span class="event">`OnItemSelect`</span> | `(BaseElement sender, ListBoxItem item)` | The primary selection is set, by the user or from code. `item` is `null` when nothing is selected any more. |
+| <span class="event">`OnItemsSelect`</span> | `(BaseElement sender, IReadOnlyList<ListBoxItem> items)` | The set of selected rows changes. `items` is `SelectedItems`, the selected rows that have an element. |
 
 ### ListBox methods
 
 | Method | Description |
 | --- | --- |
 | `ListBox(string name = null)` | Creates a list box. The name is used by `GetElementByName`. |
-| `AddItem(BaseElement item)` | Adds a row at the end. A `ListBoxItem` is the row itself, any other element is shown in a row the list makes. |
-| `AddItemAt(BaseElement item, int index)` | Inserts a row at the index (0 to `Count`); another index is ignored. |
-| `AddItemsRange(IEnumerable<BaseElement> items)` | Adds a row per element at the end, in one batch (the rows are indexed and laid out once). |
-| `AddItemsRangeAt(IEnumerable<BaseElement> items, int index)` | Inserts a row per element at the index, in one batch. |
-| `AddTextItem(string text)` | Adds a text row. Does nothing while an `ItemsSource` is set. |
-| `AddTextItems(IEnumerable<string> texts)` | Adds a text row per string, in one batch. Does nothing while an `ItemsSource` is set. |
-| `RemoveItem(BaseElement item)` | Removes the row of the item (the row itself or the element shown in it). |
-| `RemoveItemAt(int index)` | Removes the row at the index. |
-| `RemoveItemsRangeAt(int index, int count)` | Removes `count` rows from the index on (as many as there are). |
-| `ClearItems()` | Removes every row. |
-| `Select(BaseElement item)` | Selects the row of the item (the row itself or the element shown in it), as `SelectAt` does. |
-| `Deselect(BaseElement item)` | Deselects the row of the item, as `DeselectAt` does. |
-| `SelectAt(int index)` | Makes the row at the index the selected row; the other rows are deselected, also in `Multiple` mode. An index out of range is ignored. |
-| `DeselectAt(int index)` | Deselects the row at the index. If it was the primary row, the first row that is still selected becomes the primary one. |
-| `SelectSource(object source)` | Selects the row whose `Source` is the object. Nothing happens when there is none. |
-| `SelectAll()` | Selects every row except separators; the last one becomes the primary row. In `Single` mode it selects the first selectable row, and only when nothing is selected. |
-| `DeselectAll()` | Deselects every row. |
-| `SelectPrevious()` | Selects the previous row (separators and collapsed rows passed over) and scrolls it into view. Does nothing without a selection. |
-| `SelectNext()` | Selects the next row (separators and collapsed rows passed over) and scrolls it into view. Does nothing without a selection. |
-| `MoveSelection(int delta)` | Moves the selection by `delta` rows (clamped to the list, separators and collapsed rows passed over) and scrolls it into view. With no selection it selects the first row (`delta` above 0) or the last. |
-| `ScrollIntoView(int index)` | Scrolls the list so the row at the index is entirely in view. Needs the list laid out; nothing happens for a row that is in view already. |
+| <span class="method">`AddItem(BaseElement item)`</span> | Adds a row at the end. A `ListBoxItem` is the row itself, any other element is shown in a row the list makes. |
+| <span class="method">`AddItemAt(BaseElement item, int index)`</span> | Inserts a row at the index (0 to `Count`); another index is ignored. |
+| <span class="method">`AddItemsRange(IEnumerable<BaseElement> items)`</span> | Adds a row per element at the end, in one batch (the rows are indexed and laid out once). |
+| <span class="method">`AddItemsRangeAt(IEnumerable<BaseElement> items, int index)`</span> | Inserts a row per element at the index, in one batch. |
+| <span class="method">`AddTextItem(string text)`</span> | Adds a text row. Does nothing while an `ItemsSource` is set. |
+| <span class="method">`AddTextItems(IEnumerable<string> texts)`</span> | Adds a text row per string, in one batch. Does nothing while an `ItemsSource` is set. |
+| <span class="method">`RemoveItem(BaseElement item)`</span> | Removes the row of the item (the row itself or the element shown in it). |
+| <span class="method">`RemoveItemAt(int index)`</span> | Removes the row at the index. |
+| <span class="method">`RemoveItemsRangeAt(int index, int count)`</span> | Removes `count` rows from the index on (as many as there are). |
+| <span class="method">`ClearItems()`</span> | Removes every row. |
+| <span class="method">`Select(BaseElement item)`</span> | Selects the row of the item (the row itself or the element shown in it), as `SelectAt` does. |
+| <span class="method">`Deselect(BaseElement item)`</span> | Deselects the row of the item, as `DeselectAt` does. |
+| <span class="method">`SelectAt(int index)`</span> | Makes the row at the index the selected row; the other rows are deselected, also in `Multiple` mode. An index out of range is ignored. |
+| <span class="method">`DeselectAt(int index)`</span> | Deselects the row at the index. If it was the primary row, the first row that is still selected becomes the primary one. |
+| <span class="method">`SelectSource(object source)`</span> | Selects the row whose `Source` is the object. Nothing happens when there is none. |
+| <span class="method">`SelectAll()`</span> | Selects every row except separators; the last one becomes the primary row. In `Single` mode it selects the first selectable row, and only when nothing is selected. |
+| <span class="method">`DeselectAll()`</span> | Deselects every row. |
+| <span class="method">`SelectPrevious()`</span> | Selects the previous row (separators and collapsed rows passed over) and scrolls it into view. Does nothing without a selection. |
+| <span class="method">`SelectNext()`</span> | Selects the next row (separators and collapsed rows passed over) and scrolls it into view. Does nothing without a selection. |
+| <span class="method">`MoveSelection(int delta)`</span> | Moves the selection by `delta` rows (clamped to the list, separators and collapsed rows passed over) and scrolls it into view. With no selection it selects the first row (`delta` above 0) or the last. |
+| <span class="method">`ScrollIntoView(int index)`</span> | Scrolls the list so the row at the index is entirely in view. Needs the list laid out; nothing happens for a row that is in view already. |
 
 `ListBoxSelectionMode`:
 
@@ -234,13 +234,13 @@ its own height back when it leaves the list. A row added with `IsSelected` set j
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `IsSelected` | `bool` | Whether the row is selected. Setting it on a row in a list selects it as `SelectAt` does, or deselects it as `DeselectAt` does. A separator row is never selected. |
-| `Index` | `int` | Read-only. The row's index in the list. |
-| `Source` | `object` | Read-only. The `ItemsSource` object the row shows, `null` for a row added as an element or text. |
-| `Content` | `BaseElement` | Read-only. The element the row shows. |
-| `ContentWidth` | `int` | Read-only. The natural width of the content, in units (the row itself is stretched to the list's width). |
-| `ContentHeight` | `int` | Read-only. The row's height, in units: its content's, or its own desired height (`ItemHeight` in a `Fixed` mode list). |
-| `MouseCursorsSet` | `MouseCursorsSet` | Read-only. The mouse cursors of the list the row is in. |
+| <span class="prop">`IsSelected`</span> | `bool` | Whether the row is selected. Setting it on a row in a list selects it as `SelectAt` does, or deselects it as `DeselectAt` does. A separator row is never selected. |
+| <span class="prop">`Index`</span> | `int` | Read-only. The row's index in the list. |
+| <span class="prop">`Source`</span> | `object` | Read-only. The `ItemsSource` object the row shows, `null` for a row added as an element or text. |
+| <span class="prop">`Content`</span> | `BaseElement` | Read-only. The element the row shows. |
+| <span class="prop">`ContentWidth`</span> | `int` | Read-only. The natural width of the content, in units (the row itself is stretched to the list's width). |
+| <span class="prop">`ContentHeight`</span> | `int` | Read-only. The row's height, in units: its content's, or its own desired height (`ItemHeight` in a `Fixed` mode list). |
+| <span class="prop">`MouseCursorsSet`</span> | `MouseCursorsSet` | Read-only. The mouse cursors of the list the row is in. |
 
 | Method | Description |
 | --- | --- |
@@ -296,12 +296,12 @@ already). A selection made in code closes an open list as well.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `Items` | `IReadOnlyList<ListBoxItem>` | Read-only. The rows of the drop-down list that have an element (see the list box's `Items`). |
+| <span class="prop">`Items`</span> | `IReadOnlyList<ListBoxItem>` | Read-only. The rows of the drop-down list that have an element (see the list box's `Items`). |
 | <span class="dp">`ItemsSource`</span> | `IEnumerable` | The objects to show, one row each. A `BindableCollection<T>` is followed. |
-| `ItemsTemplate` | `IItemsTemplate` | Makes the element of each `ItemsSource` object; a label with the object's text when none is set. |
+| <span class="prop">`ItemsTemplate`</span> | `IItemsTemplate` | Makes the element of each `ItemsSource` object; a label with the object's text when none is set. |
 | <span class="dp">`SelectedItem`</span> | `ListBoxItem` | The selected row, `null` when nothing is selected. Setting it selects that row. |
 | <span class="dp">`SelectedIndex`</span> | `int` | The index of the selected row, `-1` when nothing is selected. |
-| `SelectedSource` | `object` | Read-only. The `ItemsSource` object of the selected row, `null` without one. |
+| <span class="prop">`SelectedSource`</span> | `object` | Read-only. The `ItemsSource` object of the selected row, `null` without one. |
 | <span class="dp">`SelectionStyle`</span> | `ImageStyle` | The style of the image that shows the selected row. |
 | <span class="dp">`ToggleButtonStyle`</span> | `ButtonStyle` | The style of the [button](/docs/ui-controls/#button) that opens and closes the list, for example its width and text. |
 | <span class="dp">`ListBoxStyle`</span> | `ListBoxStyle` | The style of the drop-down list, for example its row colours. |
@@ -310,29 +310,29 @@ already). A selection made in code closes an open list as well.
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| `OnItemSelect` | `(BaseElement sender, ListBoxItem item)` | The selection changes, by the user or from code. The sender is the combo box, `item` a row of its drop-down list, `null` when nothing is selected any more. |
+| <span class="event">`OnItemSelect`</span> | `(BaseElement sender, ListBoxItem item)` | The selection changes, by the user or from code. The sender is the combo box, `item` a row of its drop-down list, `null` when nothing is selected any more. |
 
 ### ComboBox methods
 
 | Method | Description |
 | --- | --- |
 | `ComboBox(string name = null)` | Creates a combo box. The name is used by `GetElementByName`. |
-| `AddItem(BaseElement item)` | Adds a row at the end of the list. |
-| `AddItemAt(BaseElement item, int index)` | Inserts a row at the index. |
-| `AddItemsRange(IEnumerable<BaseElement> items)` | Adds a row per element at the end, in one batch. |
-| `AddItemsRangeAt(IEnumerable<BaseElement> items, int index)` | Inserts a row per element at the index, in one batch. |
-| `AddTextItem(string text)` | Adds a text row. Does nothing while an `ItemsSource` is set. |
-| `RemoveItem(BaseElement item)` | Removes the row of the item. |
-| `RemoveItemAt(int index)` | Removes the row at the index. |
-| `RemoveItemsRangeAt(int index, int count)` | Removes `count` rows from the index on. |
-| `ClearItems()` | Removes every row. |
-| `Select(BaseElement item)` | Selects the row of the item. |
-| `Deselect(BaseElement item)` | Deselects the row of the item. |
-| `SelectAt(int index)` | Selects the row at the index. |
-| `DeselectAt(int index)` | Deselects the row at the index. |
-| `SelectSource(object source)` | Selects the row of the `ItemsSource` object. Nothing happens when there is none. |
-| `SelectPrevious()` | Selects the previous row (separators passed over). Does nothing without a selection. |
-| `SelectNext()` | Selects the next row (separators passed over). Does nothing without a selection. |
+| <span class="method">`AddItem(BaseElement item)`</span> | Adds a row at the end of the list. |
+| <span class="method">`AddItemAt(BaseElement item, int index)`</span> | Inserts a row at the index. |
+| <span class="method">`AddItemsRange(IEnumerable<BaseElement> items)`</span> | Adds a row per element at the end, in one batch. |
+| <span class="method">`AddItemsRangeAt(IEnumerable<BaseElement> items, int index)`</span> | Inserts a row per element at the index, in one batch. |
+| <span class="method">`AddTextItem(string text)`</span> | Adds a text row. Does nothing while an `ItemsSource` is set. |
+| <span class="method">`RemoveItem(BaseElement item)`</span> | Removes the row of the item. |
+| <span class="method">`RemoveItemAt(int index)`</span> | Removes the row at the index. |
+| <span class="method">`RemoveItemsRangeAt(int index, int count)`</span> | Removes `count` rows from the index on. |
+| <span class="method">`ClearItems()`</span> | Removes every row. |
+| <span class="method">`Select(BaseElement item)`</span> | Selects the row of the item. |
+| <span class="method">`Deselect(BaseElement item)`</span> | Deselects the row of the item. |
+| <span class="method">`SelectAt(int index)`</span> | Selects the row at the index. |
+| <span class="method">`DeselectAt(int index)`</span> | Deselects the row at the index. |
+| <span class="method">`SelectSource(object source)`</span> | Selects the row of the `ItemsSource` object. Nothing happens when there is none. |
+| <span class="method">`SelectPrevious()`</span> | Selects the previous row (separators passed over). Does nothing without a selection. |
+| <span class="method">`SelectNext()`</span> | Selects the next row (separators passed over). Does nothing without a selection. |
 
 Style class: `ComboBoxStyle` (`SelectionStyle`, `ToggleButtonStyle` and `ListBoxStyle`, see
 [styles](/docs/ui-styles/)).
@@ -427,10 +427,10 @@ expanded. The screenshot's theme uses a 10 by 10 icon in its own colours.
 | Property | Type | Description |
 | --- | --- | --- |
 | <span class="dp">`ItemsSource`</span> | `IEnumerable` | The top-level objects of the tree. A `BindableCollection<T>` is followed. |
-| `ChildrenSelector` | `Func<object, IEnumerable>` | Gives the children of an object of the `ItemsSource`, `null` or empty for a leaf. A children collection that is a `BindableCollection<T>` is followed. |
-| `ItemsTemplate` | `IItemsTemplate` | Makes the element of each object; a label with the object's text when none is set. |
+| <span class="prop">`ChildrenSelector`</span> | `Func<object, IEnumerable>` | Gives the children of an object of the `ItemsSource`, `null` or empty for a leaf. A children collection that is a `BindableCollection<T>` is followed. |
+| <span class="prop">`ItemsTemplate`</span> | `IItemsTemplate` | Makes the element of each object; a label with the object's text when none is set. |
 | <span class="dp">`SelectedItem`</span> | `TreeViewItem` | The selected item, `null` when nothing is selected. Only an item of this tree can be set; the branches above it are expanded. |
-| `Leaves` | `IReadOnlyList<TreeViewItem>` | Read-only. The top-level items. |
+| <span class="prop">`Leaves`</span> | `IReadOnlyList<TreeViewItem>` | Read-only. The top-level items. |
 | <span class="dp">`ListBoxStyle`</span> | `ListBoxStyle` | The style of the list the items are shown in, for example its row colours and scroll bars. |
 | <span class="dp">`ExpandIconStyle`</span> | `ImageStyle` | The style of the expand icon of the items, for example its size and margin. By default an 8 by 8 block, centred, with a margin of 4 before and 6 after it. |
 | <span class="dp">`MinimizedIconColor`</span> | `Color` | The colour of the icon of a collapsed branch, when the tree view has no textures. By default `(150, 150, 160)`. |
@@ -441,24 +441,24 @@ expanded. The screenshot's theme uses a 10 by 10 icon in its own colours.
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| `OnItemSelect` | `(BaseElement sender, TreeViewItem item)` | The selected item changes, by the user or from code. `item` is `null` when nothing is selected any more. |
+| <span class="event">`OnItemSelect`</span> | `(BaseElement sender, TreeViewItem item)` | The selected item changes, by the user or from code. `item` is `null` when nothing is selected any more. |
 
 ### TreeView methods
 
 | Method | Description |
 | --- | --- |
 | `TreeView(string name = null)` | Creates a tree view. The name is used by `GetElementByName`. |
-| `AddItem(BaseElement item)` | Adds a top-level item; an element that is not a `TreeViewItem` is put in one. Does nothing while an `ItemsSource` is set. |
-| `AddItemAt(BaseElement item, int index)` | Inserts a top-level item at the index. |
-| `AddItemsRange(IEnumerable<BaseElement> items)` | Adds top-level items at the end, listed in one go. |
-| `AddItemsRangeAt(IEnumerable<BaseElement> items, int index)` | Inserts top-level items at the index, listed in one go. |
-| `RemoveItem(BaseElement item)` | Removes the item (or the item made around the element) from wherever it is in the tree, with its branch. |
-| `RemoveItemAt(int index)` | Removes the top-level item at the index. |
-| `RemoveItemsRangeAt(int index, int count)` | Removes `count` top-level items from the index on. |
-| `ClearItems()` | Removes every item. |
-| `ExpandAll()` | Expands every branch, making the items of the whole data. |
-| `CollapseAll()` | Collapses every branch. |
-| `SelectSource(object source)` | Selects the item of the `ItemsSource` object, also one in a branch that was not expanded yet. Nothing happens when there is none. |
+| <span class="method">`AddItem(BaseElement item)`</span> | Adds a top-level item; an element that is not a `TreeViewItem` is put in one. Does nothing while an `ItemsSource` is set. |
+| <span class="method">`AddItemAt(BaseElement item, int index)`</span> | Inserts a top-level item at the index. |
+| <span class="method">`AddItemsRange(IEnumerable<BaseElement> items)`</span> | Adds top-level items at the end, listed in one go. |
+| <span class="method">`AddItemsRangeAt(IEnumerable<BaseElement> items, int index)`</span> | Inserts top-level items at the index, listed in one go. |
+| <span class="method">`RemoveItem(BaseElement item)`</span> | Removes the item (or the item made around the element) from wherever it is in the tree, with its branch. |
+| <span class="method">`RemoveItemAt(int index)`</span> | Removes the top-level item at the index. |
+| <span class="method">`RemoveItemsRangeAt(int index, int count)`</span> | Removes `count` top-level items from the index on. |
+| <span class="method">`ClearItems()`</span> | Removes every item. |
+| <span class="method">`ExpandAll()`</span> | Expands every branch, making the items of the whole data. |
+| <span class="method">`CollapseAll()`</span> | Collapses every branch. |
+| <span class="method">`SelectSource(object source)`</span> | Selects the item of the `ItemsSource` object, also one in a branch that was not expanded yet. Nothing happens when there is none. |
 
 Items the tree view made (around your elements, or for source objects) are disposed when they are removed; your own
 `TreeViewItem`s are let go with their branches and can be added again.
@@ -474,23 +474,23 @@ gets its place in the tree: its `Name` and its indentation are set by the item i
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `IsExpanded` | `bool` | Whether the leaves are shown (while the items above are expanded too). An item without leaves is never expanded. An item of a source object makes the items of its children the first time it is expanded. |
-| `Leaves` | `IReadOnlyList<TreeViewItem>` | Read-only. The items one level below. Empty for an item of a source object until it is first expanded. |
-| `HasLeaves` | `bool` | Read-only. Whether the item has leaves, also an item of a source object whose children were not made into items yet. |
-| `Source` | `object` | Read-only. The `ItemsSource` object the item shows, `null` for an item added in code. |
-| `MouseCursorsSet` | `MouseCursorsSet` | Read-only. The mouse cursors of the row the item is shown in. |
+| <span class="prop">`IsExpanded`</span> | `bool` | Whether the leaves are shown (while the items above are expanded too). An item without leaves is never expanded. An item of a source object makes the items of its children the first time it is expanded. |
+| <span class="prop">`Leaves`</span> | `IReadOnlyList<TreeViewItem>` | Read-only. The items one level below. Empty for an item of a source object until it is first expanded. |
+| <span class="prop">`HasLeaves`</span> | `bool` | Read-only. Whether the item has leaves, also an item of a source object whose children were not made into items yet. |
+| <span class="prop">`Source`</span> | `object` | Read-only. The `ItemsSource` object the item shows, `null` for an item added in code. |
+| <span class="prop">`MouseCursorsSet`</span> | `MouseCursorsSet` | Read-only. The mouse cursors of the row the item is shown in. |
 
 | Method | Description |
 | --- | --- |
 | `TreeViewItem(TreeView parentTreeView, BaseElement content, Margin shift, string name = null)` | Creates an item of the tree view showing the content. `shift` is its indentation until it is added to the tree, which sets its own. |
-| `AddItem(BaseElement item)` | Adds a leaf; an element that is not a `TreeViewItem` is put in one. Does nothing for an item of a source object. |
-| `AddItemAt(BaseElement item, int index)` | Inserts a leaf at the index. |
-| `AddItemsRange(IEnumerable<BaseElement> items)` | Adds leaves at the end, listed in one go. |
-| `AddItemsRangeAt(IEnumerable<BaseElement> items, int index)` | Inserts leaves at the index, listed in one go. |
-| `RemoveItem(BaseElement item)` | Removes the item (or the item made around the element) from anywhere in this item's branch. |
-| `RemoveItemAt(int index)` | Removes the leaf at the index, with its branch. |
-| `RemoveItemsRangeAt(int index, int count)` | Removes `count` leaves from the index on. |
-| `ClearItems()` | Removes every leaf. |
+| <span class="method">`AddItem(BaseElement item)`</span> | Adds a leaf; an element that is not a `TreeViewItem` is put in one. Does nothing for an item of a source object. |
+| <span class="method">`AddItemAt(BaseElement item, int index)`</span> | Inserts a leaf at the index. |
+| <span class="method">`AddItemsRange(IEnumerable<BaseElement> items)`</span> | Adds leaves at the end, listed in one go. |
+| <span class="method">`AddItemsRangeAt(IEnumerable<BaseElement> items, int index)`</span> | Inserts leaves at the index, listed in one go. |
+| <span class="method">`RemoveItem(BaseElement item)`</span> | Removes the item (or the item made around the element) from anywhere in this item's branch. |
+| <span class="method">`RemoveItemAt(int index)`</span> | Removes the leaf at the index, with its branch. |
+| <span class="method">`RemoveItemsRangeAt(int index, int count)`</span> | Removes `count` leaves from the index on. |
+| <span class="method">`ClearItems()`</span> | Removes every leaf. |
 
 ## ContextMenu
 
@@ -580,11 +580,11 @@ makes; such items are disposed when they are removed, your own items are only le
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `Items` | `IReadOnlyList<BaseElement>` | Read-only. The items and separators of the menu, in order. |
-| `IsOpen` | `bool` | Read-only. Whether the menu is open. |
-| `ParentItem` | `ContextMenuItem` | Read-only. The item whose sub-menu this menu is, `null` for the menu of an element. |
+| <span class="prop">`Items`</span> | `IReadOnlyList<BaseElement>` | Read-only. The items and separators of the menu, in order. |
+| <span class="prop">`IsOpen`</span> | `bool` | Read-only. Whether the menu is open. |
+| <span class="prop">`ParentItem`</span> | `ContextMenuItem` | Read-only. The item whose sub-menu this menu is, `null` for the menu of an element. |
 | <span class="dp">`ItemsSource`</span> | `IEnumerable` | The objects to show, one item each. A `BindableCollection<T>` is followed. |
-| `ItemsTemplate` | `IItemsTemplate` | Makes the content of the item of each `ItemsSource` object; a label with the object's text when none is set. |
+| <span class="prop">`ItemsTemplate`</span> | `IItemsTemplate` | Makes the content of the item of each `ItemsSource` object; a label with the object's text when none is set. |
 | <span class="dp">`Placement`</span> | `ContextMenuPlacement` | On which side of the point the menu opens. `BottomRight` by default. |
 | <span class="dp">`MarginFromMouseCursor`</span> | `Margin` | An offset added to the point the menu opens at: `Left` to the x, `Top` to the y, in units. |
 | <span class="dp">`SubMenusOpenType`</span> | `ContextMenuSubMenusOpenType` | Whether the sub-menus of this menu's items open on hover (`OnHover`, the default) or on click. |
@@ -597,23 +597,23 @@ makes; such items are disposed when they are removed, your own items are only le
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| `OnItemSelect` | `(BaseElement sender, ContextMenuItem item)` | An item of the menu or of one of its sub-menus is chosen. It is raised by the menu of the element; the sender is the menu the item is in. |
+| <span class="event">`OnItemSelect`</span> | `(BaseElement sender, ContextMenuItem item)` | An item of the menu or of one of its sub-menus is chosen. It is raised by the menu of the element; the sender is the menu the item is in. |
 
 ### ContextMenu methods
 
 | Method | Description |
 | --- | --- |
 | `ContextMenu(string name = null)` | Creates a closed menu. The name is used by `GetElementByName`. |
-| `Open(Point position)` | Opens the menu at a point of the screen, placed by `Placement` and `MarginFromMouseCursor` and kept on the screen. Only a menu in the element tree that can take the keyboard opens; a sub-menu doesn't. |
-| `Close()` | Closes the menu with its open sub-menus, and gives the keyboard back to the element that had it before. On a sub-menu it closes only that sub-menu. |
-| `AddItem(BaseElement item)` | Adds an item at the end. A `ContextMenuItem` or `Separator` is added as is, another element is put in an item. Does nothing while an `ItemsSource` is set. |
-| `AddItemAt(BaseElement item, int index)` | Inserts an item at the index. |
-| `AddItemsRange(IEnumerable<BaseElement> items)` | Adds items at the end. |
-| `AddItemsRangeAt(IEnumerable<BaseElement> items, int index)` | Inserts items at the index. |
-| `RemoveItem(BaseElement item)` | Removes the item, or the item made around the element. |
-| `RemoveItemAt(int index)` | Removes the item at the index. |
-| `RemoveItemsRangeAt(int index, int count)` | Removes `count` items from the index on. |
-| `ClearItems()` | Removes every item. |
+| <span class="method">`Open(Point position)`</span> | Opens the menu at a point of the screen, placed by `Placement` and `MarginFromMouseCursor` and kept on the screen. Only a menu in the element tree that can take the keyboard opens; a sub-menu doesn't. |
+| <span class="method">`Close()`</span> | Closes the menu with its open sub-menus, and gives the keyboard back to the element that had it before. On a sub-menu it closes only that sub-menu. |
+| <span class="method">`AddItem(BaseElement item)`</span> | Adds an item at the end. A `ContextMenuItem` or `Separator` is added as is, another element is put in an item. Does nothing while an `ItemsSource` is set. |
+| <span class="method">`AddItemAt(BaseElement item, int index)`</span> | Inserts an item at the index. |
+| <span class="method">`AddItemsRange(IEnumerable<BaseElement> items)`</span> | Adds items at the end. |
+| <span class="method">`AddItemsRangeAt(IEnumerable<BaseElement> items, int index)`</span> | Inserts items at the index. |
+| <span class="method">`RemoveItem(BaseElement item)`</span> | Removes the item, or the item made around the element. |
+| <span class="method">`RemoveItemAt(int index)`</span> | Removes the item at the index. |
+| <span class="method">`RemoveItemsRangeAt(int index, int count)`</span> | Removes `count` items from the index on. |
+| <span class="method">`ClearItems()`</span> | Removes every item. |
 
 `ContextMenuPlacement`:
 
@@ -641,14 +641,14 @@ state. Choosing it, with a click or the keyboard, raises its `OnClick` and the m
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `Content` | `BaseElement` | Read-only. The element the item shows, given when it is made. |
-| `IsCheckable` | `bool` | Whether choosing the item switches `IsChecked`. Setting it to `false` also clears `IsChecked`. |
-| `IsChecked` | `bool` | Whether the check mark of a checkable item is shown. |
-| `SubMenu` | `ContextMenu` | The menu opened next to the item, on hover or click (see the menu's `SubMenusOpenType`). The arrow shows while it has items. |
-| `HasSubItems` | `bool` | Read-only. Whether the item has a sub-menu with at least one item. |
-| `ParentMenu` | `ContextMenu` | Read-only. The menu the item is in. |
-| `Source` | `object` | Read-only. The `ItemsSource` object the item shows, `null` for an item added in code. |
-| `MouseCursorsSet` | `MouseCursorsSet` | Read-only. The mouse cursors of the row the item is in. |
+| <span class="prop">`Content`</span> | `BaseElement` | Read-only. The element the item shows, given when it is made. |
+| <span class="prop">`IsCheckable`</span> | `bool` | Whether choosing the item switches `IsChecked`. Setting it to `false` also clears `IsChecked`. |
+| <span class="prop">`IsChecked`</span> | `bool` | Whether the check mark of a checkable item is shown. |
+| <span class="prop">`SubMenu`</span> | `ContextMenu` | The menu opened next to the item, on hover or click (see the menu's `SubMenusOpenType`). The arrow shows while it has items. |
+| <span class="prop">`HasSubItems`</span> | `bool` | Read-only. Whether the item has a sub-menu with at least one item. |
+| <span class="prop">`ParentMenu`</span> | `ContextMenu` | Read-only. The menu the item is in. |
+| <span class="prop">`Source`</span> | `object` | Read-only. The `ItemsSource` object the item shows, `null` for an item added in code. |
+| <span class="prop">`MouseCursorsSet`</span> | `MouseCursorsSet` | Read-only. The mouse cursors of the row the item is in. |
 
 | Method | Description |
 | --- | --- |

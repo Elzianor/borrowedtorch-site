@@ -11,6 +11,8 @@ the class does when the value changes. This page covers what sets those properti
 plus mouse cursors and the framework-wide defaults. None of the properties of the types on this page are dependency
 properties themselves. Screenshots use the theme shown in [the next section](#the-theme-of-these-pages).
 
+Badges tell what each name is: <span class="kb kb-prop">P</span> a plain property, <span class="kb kb-method">M</span> a method, <span class="kb kb-event">E</span> an event.
+
 ## The theme of these pages
 
 Every screenshot on the UI pages is drawn with this theme. It changes a few framework-wide defaults and gives the
@@ -259,9 +261,9 @@ assigns it, even to the value it already has. The framework defaults of every st
 
 | Method | Description |
 | --- | --- |
-| `IsSet(string propertyName)` | Whether the property is assigned to this style, so the style applies it. Pass the name with `nameof`; an unknown name gives `false`. |
-| `Unset(string propertyName)` | Takes the property back out of the style: the style stops applying it, it reads its type's default again, and the elements using the style update. |
-| `Clone()` | Returns a copy (as `object`) with the same properties assigned. Part styles in it are copied too. |
+| <span class="method">`IsSet(string propertyName)`</span> | Whether the property is assigned to this style, so the style applies it. Pass the name with `nameof`; an unknown name gives `false`. |
+| <span class="method">`Unset(string propertyName)`</span> | Takes the property back out of the style: the style stops applying it, it reads its type's default again, and the elements using the style update. |
+| <span class="method">`Clone()`</span> | Returns a copy (as `object`) with the same properties assigned. Part styles in it are copied too. |
 
 ### Style classes
 
@@ -304,11 +306,11 @@ time the type is used from the class's defaults (internal, not reachable from yo
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `GeneralStyle` | `T` | Static. The style every element of the type takes, over the framework defaults. Starts as a copy of the defaults; `null` leaves only the defaults. |
+| <span class="prop">`GeneralStyle`</span> | `T` | Static. The style every element of the type takes, over the framework defaults. Starts as a copy of the defaults; `null` leaves only the defaults. |
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| `OnGeneralStyleChanged` | `(T prevStyle)` | Static. `GeneralStyle` is replaced by another style; the handler gets the previous one. Not raised when a property of the style changes. |
+| <span class="event">`OnGeneralStyleChanged`</span> | `(T prevStyle)` | Static. `GeneralStyle` is replaced by another style; the handler gets the previous one. Not raised when a property of the style changes. |
 
 ## Mouse cursors
 
@@ -348,16 +350,16 @@ The cursors an element shows. It is disposable: disposing it disposes its `DragA
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `HoverCursor` | `MouseCursor` | The cursor while the mouse is over the element. |
-| `PressedCursor` | `MouseCursor` | The cursor while the left button is held on the element. |
-| `DragAndDropCursors` | `DragAndDropCursors` | The cursors of a draggable element and of drop targets. |
-| `ResizeCursors` | `ResizeCursors` | The cursors on the edges and corners of a resizable element. |
-| `RichTextCursors` | `RichTextCursors` | The cursors over the text of a rich text box. |
+| <span class="prop">`HoverCursor`</span> | `MouseCursor` | The cursor while the mouse is over the element. |
+| <span class="prop">`PressedCursor`</span> | `MouseCursor` | The cursor while the left button is held on the element. |
+| <span class="prop">`DragAndDropCursors`</span> | `DragAndDropCursors` | The cursors of a draggable element and of drop targets. |
+| <span class="prop">`ResizeCursors`</span> | `ResizeCursors` | The cursors on the edges and corners of a resizable element. |
+| <span class="prop">`RichTextCursors`</span> | `RichTextCursors` | The cursors over the text of a rich text box. |
 
 | Method | Description |
 | --- | --- |
 | `MouseCursorsSet()` | Creates an empty set. |
-| `Clone()` | Returns a copy (as `object`), with copies of the three nested sets; the `MouseCursor` objects are shared. Returns `null` for a disposed set. |
+| <span class="method">`Clone()`</span> | Returns a copy (as `object`), with copies of the three nested sets; the `MouseCursor` objects are shared. Returns `null` for a disposed set. |
 
 ### DragAndDropCursors
 
@@ -365,15 +367,15 @@ The cursors of [drag and drop](/docs/ui-images/#drag-and-drop). Disposable like 
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `DragHoverCursor` | `MouseCursor` | Shown instead of `HoverCursor` over an element that can be dragged. |
-| `DragPressedCursor` | `MouseCursor` | Shown instead of `PressedCursor` while the left button is held on an element that can be dragged. |
-| `DropAllowedCursor` | `MouseCursor` | Shown over a drop target that accepts what is dragged. |
-| `DropDeniedCursor` | `MouseCursor` | Shown over a drop target that refuses what is dragged. |
+| <span class="prop">`DragHoverCursor`</span> | `MouseCursor` | Shown instead of `HoverCursor` over an element that can be dragged. |
+| <span class="prop">`DragPressedCursor`</span> | `MouseCursor` | Shown instead of `PressedCursor` while the left button is held on an element that can be dragged. |
+| <span class="prop">`DropAllowedCursor`</span> | `MouseCursor` | Shown over a drop target that accepts what is dragged. |
+| <span class="prop">`DropDeniedCursor`</span> | `MouseCursor` | Shown over a drop target that refuses what is dragged. |
 
 | Method | Description |
 | --- | --- |
 | `DragAndDropCursors()` | Creates an empty set. |
-| `Clone()` | Returns a copy (as `object`), or `null` when disposed. |
+| <span class="method">`Clone()`</span> | Returns a copy (as `object`), or `null` when disposed. |
 
 ### ResizeCursors
 
@@ -382,19 +384,19 @@ The cursors of the eight grips around a [resizable](/docs/ui-base-element/#resiz
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `LeftTop` | `MouseCursorsSet` | The top left corner. |
-| `RightTop` | `MouseCursorsSet` | The top right corner. |
-| `LeftBottom` | `MouseCursorsSet` | The bottom left corner. |
-| `RightBottom` | `MouseCursorsSet` | The bottom right corner. |
-| `Left` | `MouseCursorsSet` | The left edge. |
-| `Right` | `MouseCursorsSet` | The right edge. |
-| `Top` | `MouseCursorsSet` | The top edge. |
-| `Bottom` | `MouseCursorsSet` | The bottom edge. |
+| <span class="prop">`LeftTop`</span> | `MouseCursorsSet` | The top left corner. |
+| <span class="prop">`RightTop`</span> | `MouseCursorsSet` | The top right corner. |
+| <span class="prop">`LeftBottom`</span> | `MouseCursorsSet` | The bottom left corner. |
+| <span class="prop">`RightBottom`</span> | `MouseCursorsSet` | The bottom right corner. |
+| <span class="prop">`Left`</span> | `MouseCursorsSet` | The left edge. |
+| <span class="prop">`Right`</span> | `MouseCursorsSet` | The right edge. |
+| <span class="prop">`Top`</span> | `MouseCursorsSet` | The top edge. |
+| <span class="prop">`Bottom`</span> | `MouseCursorsSet` | The bottom edge. |
 
 | Method | Description |
 | --- | --- |
 | `ResizeCursors()` | Creates an empty set. |
-| `Clone()` | Returns a copy (as `object`) that shares the eight sets, or `null` when disposed. |
+| <span class="method">`Clone()`</span> | Returns a copy (as `object`) that shares the eight sets, or `null` when disposed. |
 
 ### RichTextCursors
 
@@ -403,13 +405,13 @@ of the box's set. Disposable like `MouseCursorsSet`.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `WriteCursor` | `MouseCursorsSet` | Its hover and pressed cursors are shown over the text of an editable (`ReadWrite`) box. |
-| `LinkCursor` | `MouseCursorsSet` | Its hover and pressed cursors are shown over a link in a box that is not editable. |
+| <span class="prop">`WriteCursor`</span> | `MouseCursorsSet` | Its hover and pressed cursors are shown over the text of an editable (`ReadWrite`) box. |
+| <span class="prop">`LinkCursor`</span> | `MouseCursorsSet` | Its hover and pressed cursors are shown over a link in a box that is not editable. |
 
 | Method | Description |
 | --- | --- |
 | `RichTextCursors()` | Creates an empty set. |
-| `Clone()` | Returns a copy (as `object`) that shares the two sets, or `null` when disposed. |
+| <span class="method">`Clone()`</span> | Returns a copy (as `object`) that shares the two sets, or `null` when disposed. |
 
 ### GenericMouseCursorsData&lt;T&gt;
 
@@ -418,11 +420,11 @@ The static holder of the general mouse cursors set of one element type, keyed by
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `GeneralMouseCursorsSet` | `MouseCursorsSet` | Static. The set of every element of the type that has none of its own. `null` at start, which means the default set. |
+| <span class="prop">`GeneralMouseCursorsSet`</span> | `MouseCursorsSet` | Static. The set of every element of the type that has none of its own. `null` at start, which means the default set. |
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| `OnGeneralMouseCursorsSetChanged` | `(MouseCursorsSet prevMouseCursorsSet)` | Static. `GeneralMouseCursorsSet` is replaced; the handler gets the previous set. Not raised when a property of the set changes. |
+| <span class="event">`OnGeneralMouseCursorsSetChanged`</span> | `(MouseCursorsSet prevMouseCursorsSet)` | Static. `GeneralMouseCursorsSet` is replaced; the handler gets the previous set. Not raised when a property of the set changes. |
 
 ## Default settings
 
@@ -495,18 +497,18 @@ of your own is on the [base element](/docs/ui-base-element/) page.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `Value` | `T` | Read-only. The value in effect: the one of the highest priority source, or the default when no source has one. |
-| `ValueSource` | `ValueSources` | Read-only. The source the value in effect comes from, `None` when the property reads its default. |
-| `PreAction` | `PreActionDelegate` | Called with `(ref T value, ref bool canProceed)` before every value is stored, from any source: change `value` to correct it, or set `canProceed` to `false` to reject it. Runs after the element's own pre-action. |
-| `PostAction` | `Action<T>` | Called with the new value in effect after the element's own reaction, before `OnPropertyChanged`. |
+| <span class="prop">`Value`</span> | `T` | Read-only. The value in effect: the one of the highest priority source, or the default when no source has one. |
+| <span class="prop">`ValueSource`</span> | `ValueSources` | Read-only. The source the value in effect comes from, `None` when the property reads its default. |
+| <span class="prop">`PreAction`</span> | `PreActionDelegate` | Called with `(ref T value, ref bool canProceed)` before every value is stored, from any source: change `value` to correct it, or set `canProceed` to `false` to reject it. Runs after the element's own pre-action. |
+| <span class="prop">`PostAction`</span> | `Action<T>` | Called with the new value in effect after the element's own reaction, before `OnPropertyChanged`. |
 
 ### DependencyProperty&lt;T&gt; events
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| `OnPropertyChanged` | `(T value)` | The value in effect changes. The handler gets the new value. |
-| `OnSourcePropertyChanged` | `(object propertyValue)` | The bound `Bindable` source reports a change of the bound property (or of all properties, with an empty name). The handler gets the source property's value, before conversion. Not raised for the echo of the property's own write, nor in `OneWayToSource` mode. |
-| `OnSourceCollectionChanged` | `(CollectionChangeType changeType, int startIndex, int count)` | The `IBindableCollection` held by the bound source property adds (`Add`) or removes (`Remove`) items. Not raised in `OneWayToSource` mode. |
+| <span class="event">`OnPropertyChanged`</span> | `(T value)` | The value in effect changes. The handler gets the new value. |
+| <span class="event">`OnSourcePropertyChanged`</span> | `(object propertyValue)` | The bound `Bindable` source reports a change of the bound property (or of all properties, with an empty name). The handler gets the source property's value, before conversion. Not raised for the echo of the property's own write, nor in `OneWayToSource` mode. |
+| <span class="event">`OnSourceCollectionChanged`</span> | `(CollectionChangeType changeType, int startIndex, int count)` | The `IBindableCollection` held by the bound source property adds (`Add`) or removes (`Remove`) items. Not raised in `OneWayToSource` mode. |
 
 ### DependencyProperty&lt;T&gt; methods
 
@@ -514,10 +516,10 @@ of your own is on the [base element](/docs/ui-base-element/) page.
 | --- | --- |
 | `DependencyProperty(BaseElement owner, Action<T> postAction = null, PreActionDelegate preAction = null)` | Creates a stand-alone property owned by an element, with an optional post- and pre-action. Its default is `default(T)`. |
 | `DependencyProperty(BaseElement owner, DependencyPropertyActions<T> actions)` | Creates a property that shares the element class's actions and default; the generated `FooDP` properties use it. |
-| `SetValue(T value, bool checkForEquality = true, bool setSourceValue = true, ValueSources valueSource = ValueSources.ManualAssign)` | Stores the value for the source. With `checkForEquality` off, the same value raises the change again. With `setSourceValue` off, a bound source is not written. |
-| `ClearValue(ValueSources valueSource)` | Removes the value of that source. If it was the value in effect, the next source (or the default) takes over and the change is raised when the value differs. |
-| `Bind(object dataContext, string sourcePropertyName, BindingMode mode, IConverter converter = null)` | Binds the property to a public property of `dataContext`, replacing any earlier binding. See [bindings](#bindings). |
-| `Dispose()` | Removes the binding and the event handlers. The element calls it when it is disposed. |
+| <span class="method">`SetValue(T value, bool checkForEquality = true, bool setSourceValue = true, ValueSources valueSource = ValueSources.ManualAssign)`</span> | Stores the value for the source. With `checkForEquality` off, the same value raises the change again. With `setSourceValue` off, a bound source is not written. |
+| <span class="method">`ClearValue(ValueSources valueSource)`</span> | Removes the value of that source. If it was the value in effect, the next source (or the default) takes over and the change is raised when the value differs. |
+| <span class="method">`Bind(object dataContext, string sourcePropertyName, BindingMode mode, IConverter converter = null)`</span> | Binds the property to a public property of `dataContext`, replacing any earlier binding. See [bindings](#bindings). |
+| <span class="method">`Dispose()`</span> | Removes the binding and the event handlers. The element calls it when it is disposed. |
 
 `OwnerPreActionDelegate`, with the signature `(BaseElement owner, ref T value, ref bool canProceed, ValueSources
 valueSource)`, is the type of the element class's own pre-action. It is assigned inside the library; you can't set one
@@ -531,7 +533,7 @@ the static `FooDPActions` field of the element class.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `DefaultValue` | `T` | Read-only. The value read while no source has one. Some defaults are read from `DefaultSettings` each time (see [default settings](#default-settings)). |
+| <span class="prop">`DefaultValue`</span> | `T` | Read-only. The value read while no source has one. Some defaults are read from `DefaultSettings` each time (see [default settings](#default-settings)). |
 
 | Method | Description |
 | --- | --- |
@@ -679,11 +681,11 @@ The abstract base of a view model.
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| `OnPropertyChanged` | `(string propertyName)` | The view model calls `PropertyChangedInvoke`. An empty name means every property changed. |
+| <span class="event">`OnPropertyChanged`</span> | `(string propertyName)` | The view model calls `PropertyChangedInvoke`. An empty name means every property changed. |
 
 | Method | Description |
 | --- | --- |
-| `PropertyChangedInvoke(string propertyName)` | Protected. Raises `OnPropertyChanged`; call it from a property setter with `nameof` the property. |
+| <span class="method">`PropertyChangedInvoke(string propertyName)`</span> | Protected. Raises `OnPropertyChanged`; call it from a property setter with `nameof` the property. |
 
 ### BindableCollection&lt;T&gt;
 
@@ -693,29 +695,29 @@ filled with a collection initializer or `[]`.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `this[int index]` | `T` | The item at the index. Setting it is reported as the old item removed and the new one added at that index. |
-| `Count` | `int` | Read-only. The number of items. |
-| `IsReadOnly` | `bool` | Read-only. Always `false`. |
+| <span class="prop">`this[int index]`</span> | `T` | The item at the index. Setting it is reported as the old item removed and the new one added at that index. |
+| <span class="prop">`Count`</span> | `int` | Read-only. The number of items. |
+| <span class="prop">`IsReadOnly`</span> | `bool` | Read-only. Always `false`. |
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| `OnCollectionChanged` | `(bool isItemsAdded, int startIndex, int count)` | Items are added (`isItemsAdded` is `true`) or removed, starting at `startIndex`. |
+| <span class="event">`OnCollectionChanged`</span> | `(bool isItemsAdded, int startIndex, int count)` | Items are added (`isItemsAdded` is `true`) or removed, starting at `startIndex`. |
 
 | Method | Description |
 | --- | --- |
 | `BindableCollection()` | Creates an empty collection. |
-| `Add(T item)` | Adds the item at the end. |
-| `AddRange(IEnumerable<T> collection)` | Adds the items at the end, reported as one change. Does nothing for `null` or an empty collection. |
-| `Insert(int index, T item)` | Inserts the item at the index. An index outside `0..Count` is ignored. |
-| `InsertRange(int index, IEnumerable<T> collection)` | Inserts the items at the index, reported as one change. An index outside `0..Count` is ignored. |
-| `Remove(T item)` | Removes the first occurrence of the item. Returns `false` when it is not in the collection. |
-| `RemoveAt(int index)` | Removes the item at the index. An index out of range is ignored. |
-| `RemoveRange(int index, int count)` | Removes up to `count` items from the index, reported as one change. |
-| `Clear()` | Removes every item, reported as one change. |
-| `TryGetElementAt(int index)` | Returns the item at the index, or `default` when the index is out of range. |
-| `Contains(T item)` | Whether the item is in the collection. |
-| `CopyTo(T[] array, int arrayIndex)` | Copies the items into the array from the index. |
-| `GetEnumerator()` | Enumerates the items. |
+| <span class="method">`Add(T item)`</span> | Adds the item at the end. |
+| <span class="method">`AddRange(IEnumerable<T> collection)`</span> | Adds the items at the end, reported as one change. Does nothing for `null` or an empty collection. |
+| <span class="method">`Insert(int index, T item)`</span> | Inserts the item at the index. An index outside `0..Count` is ignored. |
+| <span class="method">`InsertRange(int index, IEnumerable<T> collection)`</span> | Inserts the items at the index, reported as one change. An index outside `0..Count` is ignored. |
+| <span class="method">`Remove(T item)`</span> | Removes the first occurrence of the item. Returns `false` when it is not in the collection. |
+| <span class="method">`RemoveAt(int index)`</span> | Removes the item at the index. An index out of range is ignored. |
+| <span class="method">`RemoveRange(int index, int count)`</span> | Removes up to `count` items from the index, reported as one change. |
+| <span class="method">`Clear()`</span> | Removes every item, reported as one change. |
+| <span class="method">`TryGetElementAt(int index)`</span> | Returns the item at the index, or `default` when the index is out of range. |
+| <span class="method">`Contains(T item)`</span> | Whether the item is in the collection. |
+| <span class="method">`CopyTo(T[] array, int arrayIndex)`</span> | Copies the items into the array from the index. |
+| <span class="method">`GetEnumerator()`</span> | Enumerates the items. |
 
 ### IBindableCollection
 
@@ -724,7 +726,7 @@ source.
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| `OnCollectionChanged` | `(bool isItemsAdded, int startIndex, int count)` | Items were added (`true`) or removed (`false`), `count` of them from `startIndex`. |
+| <span class="event">`OnCollectionChanged`</span> | `(bool isItemsAdded, int startIndex, int count)` | Items were added (`true`) or removed (`false`), `count` of them from `startIndex`. |
 
 `CollectionChangeType` (in `OnSourceCollectionChanged`):
 
@@ -740,8 +742,8 @@ Translates between the source's type and the property's type.
 
 | Method | Description |
 | --- | --- |
-| `Convert(object value)` | Turns a source value into the property's value. Used in `OneWay` and `TwoWay` mode. |
-| `ConvertBack(object value)` | Turns the property's value into a source value. Used in `OneWayToSource` and `TwoWay` mode. |
+| <span class="method">`Convert(object value)`</span> | Turns a source value into the property's value. Used in `OneWay` and `TwoWay` mode. |
+| <span class="method">`ConvertBack(object value)`</span> | Turns the property's value into a source value. Used in `OneWayToSource` and `TwoWay` mode. |
 
 ## Items templates
 
@@ -806,7 +808,7 @@ ui.AddElementToRoot(list);
 
 | Method | Description |
 | --- | --- |
-| `GenerateItemElement(object data)` | Returns a new element that shows the source object. |
+| <span class="method">`GenerateItemElement(object data)`</span> | Returns a new element that shows the source object. |
 
 ### IRecyclingItemsTemplate
 
@@ -816,7 +818,7 @@ view instead of generating new ones.
 
 | Method | Description |
 | --- | --- |
-| `UpdateItemElement(BaseElement element, object data)` | Shows `data` in an element that `GenerateItemElement` of this template made earlier. |
+| <span class="method">`UpdateItemElement(BaseElement element, object data)`</span> | Shows `data` in an element that `GenerateItemElement` of this template made earlier. |
 
 ```csharp
 public class LevelTemplate : IRecyclingItemsTemplate
@@ -907,17 +909,17 @@ An animation of properties of type `T`. It has the properties of [`BaseAnimation
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `State` | `AnimationState` | Read-only. Where the animation is: not started, running, paused or completed. |
-| `RunBoundaryValues` | `RunBoundaryValues<T>` | Read-only. The values applied when the animation starts and when it completes, or `null`. |
+| <span class="prop">`State`</span> | `AnimationState` | Read-only. Where the animation is: not started, running, paused or completed. |
+| <span class="prop">`RunBoundaryValues`</span> | `RunBoundaryValues<T>` | Read-only. The values applied when the animation starts and when it completes, or `null`. |
 
 | Method | Description |
 | --- | --- |
 | `Animation(int durationMs, AnimationRepeatType repeatType = AnimationRepeatType.None, bool autoReverse = false, bool deleteOnComplete = true, RunBoundaryValues<T> runBoundaryValues = null, uint repeatsNumber = 1)` | Creates an animation with a time line of `durationMs` milliseconds. `repeatsNumber` counts the runs of a `NumberOfTimes` animation. A duration of 0 or less completes at once with the end values. |
-| `AddFrame(BaseAnimationFrame<T> frame)` | Adds a smooth or discrete frame. |
-| `AddDependencyProperty(DependencyProperty<T> property)` | Adds a property the animation drives. One animation can drive several properties. |
-| `Start()` | Runs a not started or paused animation. On the first start it applies `RunBoundaryValues.StartValue` and the values of the time line's start. Does nothing on a completed animation (call `Reset` first) or on a `NumberOfTimes` animation with 0 repeats. |
-| `Pause()` | Pauses a running animation; `Start` continues it. |
-| `Reset()` | Puts the animation back to not started, at the start of its time line with its repeats restored. The properties keep their current values. |
+| <span class="method">`AddFrame(BaseAnimationFrame<T> frame)`</span> | Adds a smooth or discrete frame. |
+| <span class="method">`AddDependencyProperty(DependencyProperty<T> property)`</span> | Adds a property the animation drives. One animation can drive several properties. |
+| <span class="method">`Start()`</span> | Runs a not started or paused animation. On the first start it applies `RunBoundaryValues.StartValue` and the values of the time line's start. Does nothing on a completed animation (call `Reset` first) or on a `NumberOfTimes` animation with 0 repeats. |
+| <span class="method">`Pause()`</span> | Pauses a running animation; `Start` continues it. |
+| <span class="method">`Reset()`</span> | Puts the animation back to not started, at the start of its time line with its repeats restored. The properties keep their current values. |
 
 ### BaseAnimation
 
@@ -925,12 +927,12 @@ The abstract base of animations, the type `AddAnimation` takes. Its properties a
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `State` | `AnimationState` | Read-only. The state of the animation. |
-| `DurationMs` | `int` | Read-only. The length of the time line in milliseconds. |
-| `RepeatType` | `AnimationRepeatType` | Read-only. How the runs repeat. |
-| `RepeatsNumber` | `uint` | Read-only. The number of runs of a `NumberOfTimes` animation. |
-| `AutoReverse` | `bool` | Read-only. Whether a run goes forth and back along the time line. |
-| `DeleteOnComplete` | `bool` | Read-only. Whether the UI removes the animation when it completes. |
+| <span class="prop">`State`</span> | `AnimationState` | Read-only. The state of the animation. |
+| <span class="prop">`DurationMs`</span> | `int` | Read-only. The length of the time line in milliseconds. |
+| <span class="prop">`RepeatType`</span> | `AnimationRepeatType` | Read-only. How the runs repeat. |
+| <span class="prop">`RepeatsNumber`</span> | `uint` | Read-only. The number of runs of a `NumberOfTimes` animation. |
+| <span class="prop">`AutoReverse`</span> | `bool` | Read-only. Whether a run goes forth and back along the time line. |
+| <span class="prop">`DeleteOnComplete`</span> | `bool` | Read-only. Whether the UI removes the animation when it completes. |
 
 `AnimationState`:
 
@@ -963,11 +965,11 @@ with `ShapingFunctionFactory.Create(ShapingFunctionId.CubicEaseInOut)`.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `From` | `T` | Read-only. The value at the start of the frame. |
-| `To` | `T` | Read-only. The value at the end of the frame. |
-| `DurationMs` | `int` | Read-only. The length of the frame in milliseconds. |
-| `StartAtMs` | `int` | Read-only. Where the frame starts on the time line, in milliseconds. |
-| `ShapingFunction` | `BaseShapingFunction` | Read-only. The function that maps the frame's progress (0 to 1) to the share of the way from `From` to `To`. `Linear` when none is given. |
+| <span class="prop">`From`</span> | `T` | Read-only. The value at the start of the frame. |
+| <span class="prop">`To`</span> | `T` | Read-only. The value at the end of the frame. |
+| <span class="prop">`DurationMs`</span> | `int` | Read-only. The length of the frame in milliseconds. |
+| <span class="prop">`StartAtMs`</span> | `int` | Read-only. Where the frame starts on the time line, in milliseconds. |
+| <span class="prop">`ShapingFunction`</span> | `BaseShapingFunction` | Read-only. The function that maps the frame's progress (0 to 1) to the share of the way from `From` to `To`. `Linear` when none is given. |
 
 | Method | Description |
 | --- | --- |
@@ -981,8 +983,8 @@ the same time, the one added last wins.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `Value` | `T` | Read-only. The value the frame sets. |
-| `ApplyAtMs` | `int` | Read-only. The point of the time line where it is set, in milliseconds. |
+| <span class="prop">`Value`</span> | `T` | Read-only. The value the frame sets. |
+| <span class="prop">`ApplyAtMs`</span> | `int` | Read-only. The point of the time line where it is set, in milliseconds. |
 
 | Method | Description |
 | --- | --- |
@@ -995,8 +997,8 @@ when it completes. Pass it to the `Animation<T>` constructor.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `StartValue` | `T` | The value set when the animation starts from not started. |
-| `EndValue` | `T` | The value set after the end values of the frames when the animation completes. |
+| <span class="prop">`StartValue`</span> | `T` | The value set when the animation starts from not started. |
+| <span class="prop">`EndValue`</span> | `T` | The value set after the end values of the frames when the animation completes. |
 
 | Method | Description |
 | --- | --- |
@@ -1006,5 +1008,5 @@ when it completes. Pass it to the `Animation<T>` constructor.
 
 | Method | Description |
 | --- | --- |
-| `AddAnimation(BaseAnimation animation)` | Registers the animation so the UI advances it while it runs. Adding it again while registered, or adding `null`, does nothing. |
-| `RemoveAnimation(BaseAnimation animation)` | Stops advancing the animation. It keeps its state; adding it again continues it. |
+| <span class="method">`AddAnimation(BaseAnimation animation)`</span> | Registers the animation so the UI advances it while it runs. Adding it again while registered, or adding `null`, does nothing. |
+| <span class="method">`RemoveAnimation(BaseAnimation animation)`</span> | Stops advancing the animation. It keeps its state; adding it again continues it. |
