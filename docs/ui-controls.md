@@ -260,8 +260,8 @@ A track with a thumb that picks a value between <a class="ref dp" href="/docs/ui
 elements: with <a class="ref prop" href="/docs/ui-glossary/elements/slider/#contentsize">`ContentSize`</a> and <a class="ref prop" href="/docs/ui-glossary/elements/slider/#viewsize">`ViewSize`</a> its thumb shows how much of the content is in view.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/controls-slider.png' | relative_url }}" width="395" height="184" alt="A volume slider at 60 with tick marks under it, a slider with end caps, a scroll bar with a long thumb, and a vertical slider">
-  <figcaption>A slider with ticks, a slider with caps, a scroll bar and a vertical slider.</figcaption>
+  <img src="{{ '/assets/img/ui/controls-slider-ticks.png' | relative_url }}" width="333" height="60" alt="A volume slider at 60 with tick marks under it">
+  <figcaption>A slider with tick marks: it snaps to steps of 10.</figcaption>
 </figure>
 
 ```csharp
@@ -272,16 +272,27 @@ var volume = new Slider("volume")
     Min = 0,
     Max = 100,
     Value = 60,
-    Tick = 10,                                // snaps to steps of 10, with tick marks
+    Tick = 10,  // snaps to steps of 10, with tick marks
     TickPlacement = TickPlacement.BottomOrRight,
     TickSize = new Point(1, 5),
     TickOffset = 3,
     ThumbScale = new Vector2(0.6f, 1.0f),
+    HorizontalAlignment = HorizontalAlignment.Left,
+    VerticalAlignment = VerticalAlignment.Top,
     Margin = (16, 16)
 };
 volume.OnValueChanged += (sender, value) => Console.WriteLine($"Volume {value}");
 
-// end buttons that jump to the minimum and the maximum
+ui.AddElementToRoot(volume);
+```
+
+<figure class="shot">
+  <img src="{{ '/assets/img/ui/controls-slider-caps.png' | relative_url }}" width="334" height="52" alt="A slider with an end cap on each side of its track">
+  <figcaption>A slider with caps that jump to the minimum and the maximum.</figcaption>
+</figure>
+
+```csharp
+// end caps that jump to the minimum and the maximum
 var brightness = new Slider("brightness")
 {
     Type = SliderType.SliderWithCaps,
@@ -289,9 +300,20 @@ var brightness = new Slider("brightness")
     DesiredHeight = 18,
     Max = 1,
     Value = 0.3f,
-    Margin = (16, 66)
+    HorizontalAlignment = HorizontalAlignment.Left,
+    VerticalAlignment = VerticalAlignment.Top,
+    Margin = (16, 16)
 };
 
+ui.AddElementToRoot(brightness);
+```
+
+<figure class="shot">
+  <img src="{{ '/assets/img/ui/controls-slider-scrollbar.png' | relative_url }}" width="334" height="48" alt="A scroll bar whose thumb covers a third of the track">
+  <figcaption>A scroll bar: the thumb is the view's share of the content.</figcaption>
+</figure>
+
+```csharp
 // a scroll bar: the thumb's length is the view's share of the content
 var scrollBar = new Slider("scrollBar")
 {
@@ -302,9 +324,21 @@ var scrollBar = new Slider("scrollBar")
     ViewSize = new Point(400, 0),
     Value = 0.5f,
     Max = 1,
-    Margin = (16, 110)
+    HorizontalAlignment = HorizontalAlignment.Left,
+    VerticalAlignment = VerticalAlignment.Top,
+    Margin = (16, 16)
 };
 
+ui.AddElementToRoot(scrollBar);
+```
+
+<figure class="shot">
+  <img src="{{ '/assets/img/ui/controls-slider-vertical.png' | relative_url }}" width="52" height="184" alt="A vertical slider filled from the bottom to 70">
+  <figcaption>A vertical slider: the minimum at the bottom.</figcaption>
+</figure>
+
+```csharp
+// the minimum at the bottom, the maximum at the top
 var height = new Slider("height")
 {
     Orientation = Orientation.Vertical,
@@ -312,13 +346,62 @@ var height = new Slider("height")
     DesiredHeight = 150,
     Max = 100,
     Value = 70,
-    Margin = (360, 16)
+    HorizontalAlignment = HorizontalAlignment.Left,
+    VerticalAlignment = VerticalAlignment.Top,
+    Margin = (16, 16)
 };
 
-ui.AddElementToRoot(volume);
-ui.AddElementToRoot(brightness);
-ui.AddElementToRoot(scrollBar);
 ui.AddElementToRoot(height);
+```
+
+<figure class="shot">
+  <img src="{{ '/assets/img/ui/controls-slider-thumb-scale.png' | relative_url }}" width="334" height="120" alt="Three sliders with a square, a narrow and a wide flat thumb">
+  <figcaption><code>ThumbScale</code>: a square thumb, a narrow one and a wide flat one.</figcaption>
+</figure>
+
+```csharp
+// the thumb is the slider's thickness times ThumbScale: X its width, Y its height
+Slider Scaled(float x, float y, int top) => new()
+{
+    DesiredWidth = 300,
+    DesiredHeight = 18,
+    Max = 100,
+    Value = 40,
+    ThumbScale = new Vector2(x, y),
+    HorizontalAlignment = HorizontalAlignment.Left,
+    VerticalAlignment = VerticalAlignment.Top,
+    Margin = (16, top)
+};
+
+ui.AddElementToRoot(Scaled(1.0f, 1.0f, 16));    // square, the default
+ui.AddElementToRoot(Scaled(0.4f, 1.0f, 50));    // narrow
+ui.AddElementToRoot(Scaled(2.0f, 0.6f, 84));    // wide and flat
+```
+
+<figure class="shot">
+  <img src="{{ '/assets/img/ui/controls-slider-thumb-margin.png' | relative_url }}" width="334" height="86" alt="Two sliders with a small thumb, centred and resting on the bottom edge">
+  <figcaption><code>ThumbMargin</code>: the same thumb centred, then moved down with a top of 8.</figcaption>
+</figure>
+
+```csharp
+// a thumb 10 high on a slider 18 high: centred, then resting on the bottom edge
+Slider Small(Margin thumbMargin, int top) => new()
+{
+    DesiredWidth = 300,
+    DesiredHeight = 18,
+    Max = 100,
+    Value = 40,
+    ThumbScale = new Vector2(0.6f, 0.6f),
+    ThumbMargin = thumbMargin,
+    HorizontalAlignment = HorizontalAlignment.Left,
+    VerticalAlignment = VerticalAlignment.Top,
+    Margin = (16, top)
+};
+
+ui.AddElementToRoot(Small(Margin.Zero, 16));
+
+// centred below ThumbMargin.Top (ThumbMargin.Left when vertical)
+ui.AddElementToRoot(Small((0, 8), 50));
 ```
 
 **Value.** <a class="ref dp" href="/docs/ui-glossary/elements/slider/#min">`Min`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/slider/#max">`Max`</a> both start at 0, so set <a class="ref dp" href="/docs/ui-glossary/elements/slider/#max">`Max`</a>. <a class="ref dp" href="/docs/ui-glossary/elements/slider/#value">`Value`</a> is always kept inside the range, and the order you
