@@ -223,11 +223,10 @@ Give the parent a `MaxWidth` to make it wrap.
 </figure>
 
 ```csharp
-// one look for every label: centred text on a brown fill
+// one look for every label: centred text on a brown fill, no text margin, so a fitted label hugs its text
 Label Swatch(string text) => new()
 {
     Text = text,
-    TextMargin = (10, 6, 10, 6),
     TextAlignment = TextAlignment.Center,
     VerticalTextAlignment = VerticalTextAlignment.Center,
     BackgroundColor = new Color(110, 82, 48)
