@@ -221,6 +221,9 @@
     - title: "Visibility"
       anchor: visibility
       kind: dp
+    - title: "Base<wbr>Element()"
+      anchor: baseelement
+      kind: method
     - title: "Accepts<wbr>Items()"
       anchor: acceptsitems
       kind: method
@@ -443,6 +446,9 @@
     - title: "Thickness"
       anchor: thickness
       kind: dp
+    - title: "Border()"
+      anchor: border
+      kind: method
 - title: "Button"
   url: /docs/ui-glossary/button/
   members:
@@ -491,6 +497,9 @@
     - title: "Type"
       anchor: type
       kind: dp
+    - title: "Button()"
+      anchor: button
+      kind: method
     - title: "On<wbr>Toggled"
       anchor: ontoggled
       kind: event
@@ -542,6 +551,9 @@
     - title: "Unchecked<wbr>Solid<wbr>Color"
       anchor: uncheckedsolidcolor
       kind: dp
+    - title: "Check<wbr>Box()"
+      anchor: checkbox
+      kind: method
     - title: "On<wbr>Checked<wbr>Unchecked"
       anchor: oncheckedunchecked
       kind: event
@@ -569,6 +581,9 @@
     - title: "Style<wbr>Override"
       anchor: styleoverride
       kind: prop
+    - title: "Color<wbr>Picker()"
+      anchor: colorpicker
+      kind: method
     - title: "On<wbr>Selected<wbr>Color<wbr>Changed"
       anchor: onselectedcolorchanged
       kind: event
@@ -617,6 +632,9 @@
     - title: "Toggle<wbr>Button<wbr>Style"
       anchor: togglebuttonstyle
       kind: dp
+    - title: "Combo<wbr>Box()"
+      anchor: combobox
+      kind: method
     - title: "Add<wbr>Item()"
       anchor: additem
       kind: method
@@ -677,6 +695,9 @@
     - title: "Mouse<wbr>Cursors<wbr>Set"
       anchor: mousecursorsset
       kind: prop
+    - title: "Content<wbr>Container()"
+      anchor: contentcontainer
+      kind: method
 - title: "ContextMenu"
   url: /docs/ui-glossary/context-menu/
   members:
@@ -731,6 +752,9 @@
     - title: "Sub<wbr>Menus<wbr>Open<wbr>Type"
       anchor: submenusopentype
       kind: dp
+    - title: "Context<wbr>Menu()"
+      anchor: contextmenu
+      kind: method
     - title: "Add<wbr>Item()"
       anchor: additem
       kind: method
@@ -791,6 +815,9 @@
     - title: "Sub<wbr>Menu"
       anchor: submenu
       kind: prop
+    - title: "Context<wbr>Menu<wbr>Item()"
+      anchor: contextmenuitem
+      kind: method
 - title: "DefaultWindowTitleBar"
   url: /docs/ui-glossary/default-window-title-bar/
   members:
@@ -806,12 +833,18 @@
     - title: "Title"
       anchor: title
       kind: prop
+    - title: "Default<wbr>Window<wbr>Title<wbr>Bar()"
+      anchor: defaultwindowtitlebar
+      kind: method
 - title: "DragAndDropRepresentation"
   url: /docs/ui-glossary/drag-and-drop-representation/
   members:
     - title: "Use<wbr>Target<wbr>Appearance"
       anchor: usetargetappearance
       kind: prop
+    - title: "Drag<wbr>And<wbr>Drop<wbr>Representation()"
+      anchor: draganddroprepresentation
+      kind: method
 - title: "Grid"
   url: /docs/ui-glossary/grid/
   members:
@@ -827,6 +860,9 @@
     - title: "Show<wbr>Layout"
       anchor: showlayout
       kind: prop
+    - title: "Grid()"
+      anchor: grid
+      kind: method
     - title: "Add<wbr>Column<wbr>Definition()"
       anchor: addcolumndefinition
       kind: method
@@ -899,6 +935,9 @@
     - title: "Style<wbr>Override"
       anchor: styleoverride
       kind: prop
+    - title: "Image()"
+      anchor: image
+      kind: method
 - title: "Label"
   url: /docs/ui-glossary/label/
   members:
@@ -959,6 +998,9 @@
     - title: "Wrap<wbr>Type"
       anchor: wraptype
       kind: dp
+    - title: "Label()"
+      anchor: label
+      kind: method
     - title: "Draw()"
       anchor: draw
       kind: method
@@ -1046,6 +1088,9 @@
     - title: "Virtualization<wbr>Mode"
       anchor: virtualizationmode
       kind: dp
+    - title: "List<wbr>Box()"
+      anchor: listbox
+      kind: method
     - title: "Add<wbr>Item()"
       anchor: additem
       kind: method
@@ -1139,6 +1184,9 @@
     - title: "Source"
       anchor: source
       kind: prop
+    - title: "List<wbr>Box<wbr>Item()"
+      anchor: listboxitem
+      kind: method
 - title: "ProgressBar"
   url: /docs/ui-glossary/progress-bar/
   members:
@@ -1169,6 +1217,9 @@
     - title: "Value"
       anchor: value
       kind: dp
+    - title: "Progress<wbr>Bar()"
+      anchor: progressbar
+      kind: method
 - title: "RichTextBox"
   url: /docs/ui-glossary/rich-text-box/
   members:
@@ -1271,6 +1322,9 @@
     - title: "Wrap<wbr>Type"
       anchor: wraptype
       kind: dp
+    - title: "Rich<wbr>Text<wbr>Box()"
+      anchor: richtextbox
+      kind: method
     - title: "Animate<wbr>Text()"
       anchor: animatetext
       kind: method
@@ -1361,6 +1415,9 @@
     - title: "Vertical<wbr>Scrolling<wbr>Value"
       anchor: verticalscrollingvalue
       kind: dp
+    - title: "Scrollable<wbr>Container()"
+      anchor: scrollablecontainer
+      kind: method
     - title: "Add<wbr>Item()"
       anchor: additem
       kind: method
@@ -1411,7 +1468,10 @@
       kind: method
 - title: "Separator"
   url: /docs/ui-glossary/separator/
-  members: []
+  members:
+    - title: "Separator()"
+      anchor: separator
+      kind: method
 - title: "Slider"
   url: /docs/ui-glossary/slider/
   members:
@@ -1499,6 +1559,9 @@
     - title: "View<wbr>Size"
       anchor: viewsize
       kind: prop
+    - title: "Slider()"
+      anchor: slider
+      kind: method
     - title: "Draw()"
       anchor: draw
       kind: method
@@ -1535,6 +1598,9 @@
     - title: "Style<wbr>Override"
       anchor: styleoverride
       kind: prop
+    - title: "Stack<wbr>Panel()"
+      anchor: stackpanel
+      kind: method
     - title: "Add<wbr>Item()"
       anchor: additem
       kind: method
@@ -1580,6 +1646,9 @@
     - title: "Tolerance"
       anchor: tolerance
       kind: dp
+    - title: "Stencil()"
+      anchor: stencil
+      kind: method
 - title: "ToolTip"
   url: /docs/ui-glossary/tool-tip/
   members:
@@ -1616,6 +1685,9 @@
     - title: "Time<wbr>Before<wbr>Show<wbr>Ms"
       anchor: timebeforeshowms
       kind: dp
+    - title: "Tool<wbr>Tip()"
+      anchor: tooltip
+      kind: method
     - title: "Show()"
       anchor: show
       kind: method
@@ -1667,6 +1739,9 @@
     - title: "Sub<wbr>Items<wbr>Shift"
       anchor: subitemsshift
       kind: dp
+    - title: "Tree<wbr>View()"
+      anchor: treeview
+      kind: method
     - title: "Add<wbr>Item()"
       anchor: additem
       kind: method
@@ -1721,6 +1796,9 @@
     - title: "Source"
       anchor: source
       kind: prop
+    - title: "Tree<wbr>View<wbr>Item()"
+      anchor: treeviewitem
+      kind: method
     - title: "Add<wbr>Item()"
       anchor: additem
       kind: method
@@ -1778,6 +1856,9 @@
     - title: "Visible<wbr>Rectangle"
       anchor: visiblerectangle
       kind: prop
+    - title: "View<wbr>Port()"
+      anchor: viewport
+      kind: method
     - title: "Draw()"
       anchor: draw
       kind: method
@@ -1811,6 +1892,9 @@
     - title: "Title<wbr>Bar"
       anchor: titlebar
       kind: dp
+    - title: "Window()"
+      anchor: window
+      kind: method
     - title: "Hide()"
       anchor: hide
       kind: method

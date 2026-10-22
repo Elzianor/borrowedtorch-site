@@ -87,7 +87,7 @@ An item that is disposed leaves the panel by itself.
 
 | Method | Description |
 | --- | --- |
-| `StackPanel(string name = null)` | Creates a stack panel. The name is used by `GetElementByName`. |
+| <span class="method">`StackPanel(string name = null)`</span> | Creates a stack panel. The name is used by `GetElementByName`. |
 | <span class="method">`AddItem(BaseElement item)`</span> | Adds the item at the end. A null item is ignored. |
 | <span class="method">`AddItemAt(BaseElement item, int index)`</span> | Inserts the item at the index (0 to the item count). |
 | <span class="method">`RemoveItem(BaseElement item)`</span> | Removes the item. It is detached, not disposed. |
@@ -181,7 +181,7 @@ clips its items, and it is removed once its last item is. The grid's `Foreground
 
 | Method | Description |
 | --- | --- |
-| `Grid(string name = null)` | Creates a grid without definitions. The name is used by `GetElementByName`. |
+| <span class="method">`Grid(string name = null)`</span> | Creates a grid without definitions. The name is used by `GetElementByName`. |
 | <span class="method">`AddColumnDefinition(int desiredSize)`</span> | Adds a column of a fixed width in units (at least 1). |
 | <span class="method">`AddColumnDefinition()`</span> | Adds an auto column, as wide as the widest content of its cells. |
 | <span class="method">`AddColumnDefinition(float proportion)`</span> | Adds a proportional column, a share of the width left. Negative values count as 0. |
@@ -285,7 +285,7 @@ The container's `Children` are its view and scroll bars; the item methods act on
 
 | Method | Description |
 | --- | --- |
-| `ScrollableContainer(string name = null)` | Creates a scrollable container. The name is used by `GetElementByName`. |
+| <span class="method">`ScrollableContainer(string name = null)`</span> | Creates a scrollable container. The name is used by `GetElementByName`. |
 | <span class="method">`AddItem(BaseElement item)`</span> | Adds the item to the view. |
 | <span class="method">`AddItemAt(BaseElement item, int index)`</span> | Inserts the item at the index. |
 | <span class="method">`AddItemsRange(IEnumerable<BaseElement> items)`</span> | Adds the items at the end. |
@@ -377,7 +377,7 @@ content that is disposed is cleared from `Content`.
 
 | Method | Description |
 | --- | --- |
-| `Border(string name = null)` | Creates a border. The name is used by `GetElementByName`. |
+| <span class="method">`Border(string name = null)`</span> | Creates a border. The name is used by `GetElementByName`. |
 
 ### ContentContainer
 
@@ -391,7 +391,7 @@ class of `Separator`. It doesn't take the mouse and shows the mouse cursors of t
 
 | Method | Description |
 | --- | --- |
-| `ContentContainer(string name = null)` | Creates a content container. The name is used by `GetElementByName`. |
+| <span class="method">`ContentContainer(string name = null)`</span> | Creates a content container. The name is used by `GetElementByName`. |
 
 Style class: `BorderStyle` (`Thickness` and `Padding`, see [styles](/docs/ui-styles/)). A window's frame is styled with
 one too.
@@ -441,7 +441,7 @@ A separator is a [`ContentContainer`](#contentcontainer) with nothing in it. It 
 
 | Method | Description |
 | --- | --- |
-| `Separator(string name = null)` | Creates a separator. The name is used by `GetElementByName`. |
+| <span class="method">`Separator(string name = null)`</span> | Creates a separator. The name is used by `GetElementByName`. |
 
 A separator has no style class of its own.
 
@@ -518,7 +518,7 @@ windows stack: the one shown last is on top, and hiding it gives the mouse back 
 
 | Method | Description |
 | --- | --- |
-| `Window(string name = null)` | Creates a window with the default title bar. The name is used by `GetElementByName`. |
+| <span class="method">`Window(string name = null)`</span> | Creates a window with the default title bar. The name is used by `GetElementByName`. |
 | <span class="method">`Show()`</span> | Makes the window visible. A hidden window shown this way goes on top of the other shown windows (of the modal ones when it is modal). |
 | <span class="method">`Hide()`</span> | Hides the window (`Visibility.Hidden`). |
 
@@ -547,7 +547,7 @@ titleBar.OnCloseButtonClickAction = () => window.Hide();
 
 | Method | Description |
 | --- | --- |
-| `DefaultWindowTitleBar(string name = null)` | Creates a title bar, for example to use in a window of your own. Its close button does nothing until `OnCloseButtonClickAction` is set. |
+| <span class="method">`DefaultWindowTitleBar(string name = null)`</span> | Creates a title bar, for example to use in a window of your own. Its close button does nothing until `OnCloseButtonClickAction` is set. |
 
 Style class: `WindowStyle` (`BorderStyle` and `IsModal`; its default `BorderStyle` has the `BackgroundColor`
 `DefaultSettings.DefaultWindowBackgroundColor`, the `Thickness` `DefaultSettings.DefaultWindowBorderThickness` (2) and
@@ -643,7 +643,7 @@ None of these are dependency properties.
 
 | Method | Description |
 | --- | --- |
-| `TabControl()` | Creates a tab control without tabs. |
+| <span class="method">`TabControl()`</span> | Creates a tab control without tabs. |
 | <span class="method">`AddTab(BaseElement tab, BaseElement content)`</span> | Adds a tab and its content; the content is hidden unless this is the first tab. Adding a tab again replaces its content. Null arguments are ignored. |
 | <span class="method">`RemoveTab(BaseElement tab)`</span> | Removes the tab. When it was open, its neighbour opens. Its content is visible again. |
 | <span class="method">`OpenTab(BaseElement tab)`</span> | Opens the tab, showing its content and hiding the open one. Does nothing for an element that isn't a tab of this control. |

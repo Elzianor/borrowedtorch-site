@@ -90,6 +90,10 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 ## Methods
 
+<h3 id="label"><span class="method"><code>Label()</code></span> <a class="ctx" href="/docs/ui-text/#label-methods" title="Label() in context on the text page" aria-label="Label() in context on the text page">→</a></h3>
+
+`Label(string name = null)` · Creates a label. The name is used by `GetElementByName`.
+
 <h3 id="draw"><span class="method"><code>Draw()</code></span> <a class="ctx" href="/docs/ui-text/#label-methods" title="Draw() in context on the text page" aria-label="Draw() in context on the text page">→</a></h3>
 
 `Draw()` · Draws the label's background, then its lines straight from the font atlas. The framework calls it; you don't need to.

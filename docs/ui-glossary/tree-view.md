@@ -74,6 +74,10 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 ## Methods
 
+<h3 id="treeview"><span class="method"><code>TreeView()</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-methods" title="TreeView() in context on the lists and menus page" aria-label="TreeView() in context on the lists and menus page">→</a></h3>
+
+`TreeView(string name = null)` · Creates a tree view. The name is used by `GetElementByName`.
+
 <h3 id="additem"><span class="method"><code>AddItem()</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-methods" title="AddItem() in context on the lists and menus page" aria-label="AddItem() in context on the lists and menus page">→</a></h3>
 
 `AddItem(BaseElement item)` · Adds a top-level item; an element that is not a `TreeViewItem` is put in one. Does nothing while an `ItemsSource` is set.

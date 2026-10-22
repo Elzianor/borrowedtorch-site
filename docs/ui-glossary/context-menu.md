@@ -82,6 +82,10 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 ## Methods
 
+<h3 id="contextmenu"><span class="method"><code>ContextMenu()</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenu-methods" title="ContextMenu() in context on the lists and menus page" aria-label="ContextMenu() in context on the lists and menus page">→</a></h3>
+
+`ContextMenu(string name = null)` · Creates a closed menu. The name is used by `GetElementByName`.
+
 <h3 id="additem"><span class="method"><code>AddItem()</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenu-methods" title="AddItem() in context on the lists and menus page" aria-label="AddItem() in context on the lists and menus page">→</a></h3>
 
 `AddItem(BaseElement item)` · Adds an item at the end. A `ContextMenuItem` or `Separator` is added as is, another element is put in an item. Does nothing while an `ItemsSource` is set.

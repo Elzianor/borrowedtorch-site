@@ -111,7 +111,7 @@ its parent (`InheritState.FromParent`), so a label inside a button follows the b
 
 | Method | Description |
 | --- | --- |
-| `Label(string name = null)` | Creates a label. The name is used by `GetElementByName`. |
+| <span class="method">`Label(string name = null)`</span> | Creates a label. The name is used by `GetElementByName`. |
 | <span class="method">`Draw()`</span> | Draws the label's background, then its lines straight from the font atlas. The framework calls it; you don't need to. |
 
 #### `TextAlignment`
@@ -394,7 +394,7 @@ With `CharacterPrintDelayMs` at 0 (its default) `AnimateText` sets the text at o
 
 | Method | Description |
 | --- | --- |
-| `RichTextBox(string name = null)` | Creates a rich text box. The name is used by `GetElementByName`. |
+| <span class="method">`RichTextBox(string name = null)`</span> | Creates a rich text box. The name is used by `GetElementByName`. |
 | <span class="method">`SelectAllText()`</span> | Selects the whole text, scrolls to its end and gives the box the keyboard. |
 | <span class="method">`SelectTextInterval(int start, int end)`</span> | Selects the text between two positions (clamped to the text), with the caret at `end`, scrolled into view, and gives the box the keyboard. Does nothing when `start` equals `end`. |
 | <span class="method">`PlaceCursorAt(int position)`</span> | Moves the caret to a text position (clamped to the text), scrolls it into view and gives the box the keyboard. A read-only box shows no caret but scrolls there. |

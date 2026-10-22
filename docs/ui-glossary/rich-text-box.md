@@ -146,6 +146,10 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 ## Methods
 
+<h3 id="richtextbox"><span class="method"><code>RichTextBox()</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-methods" title="RichTextBox() in context on the text page" aria-label="RichTextBox() in context on the text page">→</a></h3>
+
+`RichTextBox(string name = null)` · Creates a rich text box. The name is used by `GetElementByName`.
+
 <h3 id="animatetext"><span class="method"><code>AnimateText()</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-methods" title="AnimateText() in context on the text page" aria-label="AnimateText() in context on the text page">→</a></h3>
 
 `AnimateText(string text)` · Types the text out with `CharacterPrintDelayMs` per character and makes the box read-only. Stops a running animation first.

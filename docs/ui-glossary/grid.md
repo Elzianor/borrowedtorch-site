@@ -30,6 +30,10 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 ## Methods
 
+<h3 id="grid"><span class="method"><code>Grid()</code></span> <a class="ctx" href="/docs/ui-layout/#grid-methods" title="Grid() in context on the layout page" aria-label="Grid() in context on the layout page">→</a></h3>
+
+`Grid(string name = null)` · Creates a grid without definitions. The name is used by `GetElementByName`.
+
 <h3 id="addcolumndefinition"><span class="method"><code>AddColumnDefinition()</code></span> <a class="ctx" href="/docs/ui-layout/#grid-methods" title="AddColumnDefinition() in context on the layout page" aria-label="AddColumnDefinition() in context on the layout page">→</a></h3>
 
 `AddColumnDefinition(int desiredSize)` · Adds a column of a fixed width in units (at least 1).

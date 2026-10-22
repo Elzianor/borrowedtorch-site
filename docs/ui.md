@@ -132,8 +132,8 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 | Member | Description |
 | --- | --- |
-| `BorrowedTorchUI(GraphicsDevice graphicsDevice, ContentManager contentManager, SpriteBatch spriteBatch, GameWindow window)` | Creates the UI over the back buffer's size, with the text and keys of the window. The sprite batch is the one the UI draws with; the content manager loads the colour picker's pointer and the textures named by `TexturesPath`. Disposing the UI unsubscribes from the window. |
-| `BorrowedTorchUI(GraphicsDevice graphicsDevice, ContentManager contentManager, SpriteBatch spriteBatch, ITextInputEvents textInputEvents)` | The same, with the text and keys of a source of your own, for a UI hosted outside a game window. The UI doesn't dispose the source. |
+| <span class="method">`BorrowedTorchUI(GraphicsDevice graphicsDevice, ContentManager contentManager, SpriteBatch spriteBatch, GameWindow window)`</span> | Creates the UI over the back buffer's size, with the text and keys of the window. The sprite batch is the one the UI draws with; the content manager loads the colour picker's pointer and the textures named by `TexturesPath`. Disposing the UI unsubscribes from the window. |
+| <span class="method">`BorrowedTorchUI(GraphicsDevice graphicsDevice, ContentManager contentManager, SpriteBatch spriteBatch, ITextInputEvents textInputEvents)`</span> | The same, with the text and keys of a source of your own, for a UI hosted outside a game window. The UI doesn't dispose the source. |
 | <span class="prop">`RootElement`</span> | Read-only. The element at the top of the tree, the size of the screen. See [the root element](/docs/ui-base-element/#the-root-element). |
 | <span class="method">`AddElementToRoot(BaseElement element)`</span> | Adds an element to the root. |
 | <span class="method">`GetElementByName(string name)`</span> | Finds an element anywhere in the tree by the name given to its constructor, `null` if there is none. |
@@ -168,7 +168,7 @@ disposes one itself.
 
 | Member | Description |
 | --- | --- |
-| `GameWindowTextInputEvents(GameWindow window)` | Subscribes to the window's `TextInput` and `KeyDown` events. |
+| <span class="method">`GameWindowTextInputEvents(GameWindow window)`</span> | Subscribes to the window's `TextInput` and `KeyDown` events. |
 | <span class="method">`Dispose()`</span> | Unsubscribes from the window. |
 
 ## Your first elements

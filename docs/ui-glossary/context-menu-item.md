@@ -43,3 +43,11 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 <h3 id="submenu"><span class="prop"><code>SubMenu</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenuitem" title="SubMenu in context on the lists and menus page" aria-label="SubMenu in context on the lists and menus page">→</a></h3>
 
 `ContextMenu` · The menu opened next to the item, on hover or click (see the menu's `SubMenusOpenType`). The arrow shows while it has items.
+
+## Methods
+
+<h3 id="contextmenuitem"><span class="method"><code>ContextMenuItem()</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenuitem" title="ContextMenuItem() in context on the lists and menus page" aria-label="ContextMenuItem() in context on the lists and menus page">→</a></h3>
+
+`ContextMenuItem(string text, string name = null)` · Creates an item showing the text in a label.
+
+`ContextMenuItem(BaseElement content, string name = null)` · Creates an item showing any element.

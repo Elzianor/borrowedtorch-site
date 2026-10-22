@@ -15,3 +15,9 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 <h3 id="usetargetappearance"><span class="prop"><code>UseTargetAppearance</code></span> <a class="ctx" href="/docs/ui-images/#draganddroprepresentation-properties" title="UseTargetAppearance in context on the images page" aria-label="UseTargetAppearance in context on the images page">→</a></h3>
 
 `bool` · Whether each drag takes a picture of the dragged element, at the start of the drag, and shows it at the element's size instead of `Source`. The representation owns that picture and disposes it.
+
+## Methods
+
+<h3 id="draganddroprepresentation"><span class="method"><code>DragAndDropRepresentation()</code></span> <a class="ctx" href="/docs/ui-images/#draganddroprepresentation-methods" title="DragAndDropRepresentation() in context on the images page" aria-label="DragAndDropRepresentation() in context on the images page">→</a></h3>
+
+`DragAndDropRepresentation(string name = null)` · Creates a representation that doesn't take the mouse, aligned to the top left.

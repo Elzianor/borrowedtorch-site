@@ -58,6 +58,10 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 ## Methods
 
+<h3 id="tooltip"><span class="method"><code>ToolTip()</code></span> <a class="ctx" href="/docs/ui-controls/#tooltip-methods" title="ToolTip() in context on the controls page" aria-label="ToolTip() in context on the controls page">→</a></h3>
+
+`ToolTip(string name = null)` · Creates a tooltip. The name is used by `GetElementByName`.
+
 <h3 id="show"><span class="method"><code>Show()</code></span> <a class="ctx" href="/docs/ui-controls/#tooltip-methods" title="Show() in context on the controls page" aria-label="Show() in context on the controls page">→</a></h3>
 
 `Show()` · Places the tooltip at the mouse cursor and shows it after the next layout pass. The element it is attached to calls this; it does nothing for a tooltip not attached to an element.

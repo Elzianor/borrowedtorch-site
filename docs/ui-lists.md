@@ -185,7 +185,7 @@ Ctrl and Shift held with these keys work as with clicks in `Multiple` mode.
 
 | Method | Description |
 | --- | --- |
-| `ListBox(string name = null)` | Creates a list box. The name is used by `GetElementByName`. |
+| <span class="method">`ListBox(string name = null)`</span> | Creates a list box. The name is used by `GetElementByName`. |
 | <span class="method">`AddItem(BaseElement item)`</span> | Adds a row at the end. A `ListBoxItem` is the row itself, any other element is shown in a row the list makes. |
 | <span class="method">`AddItemAt(BaseElement item, int index)`</span> | Inserts a row at the index (0 to `Count`); another index is ignored. |
 | <span class="method">`AddItemsRange(IEnumerable<BaseElement> items)`</span> | Adds a row per element at the end, in one batch (the rows are indexed and laid out once). |
@@ -244,7 +244,7 @@ its own height back when it leaves the list. A row added with `IsSelected` set j
 
 | Method | Description |
 | --- | --- |
-| `ListBoxItem(BaseElement content, ListBox parentListBox, string name = null)` | Creates a row showing the content. `parentListBox` gives the row its colours until it is in a list; from then on the list it is in counts. |
+| <span class="method">`ListBoxItem(BaseElement content, ListBox parentListBox, string name = null)`</span> | Creates a row showing the content. `parentListBox` gives the row its colours until it is in a list; from then on the list it is in counts. |
 
 ## ComboBox
 
@@ -316,7 +316,7 @@ already). A selection made in code closes an open list as well.
 
 | Method | Description |
 | --- | --- |
-| `ComboBox(string name = null)` | Creates a combo box. The name is used by `GetElementByName`. |
+| <span class="method">`ComboBox(string name = null)`</span> | Creates a combo box. The name is used by `GetElementByName`. |
 | <span class="method">`AddItem(BaseElement item)`</span> | Adds a row at the end of the list. |
 | <span class="method">`AddItemAt(BaseElement item, int index)`</span> | Inserts a row at the index. |
 | <span class="method">`AddItemsRange(IEnumerable<BaseElement> items)`</span> | Adds a row per element at the end, in one batch. |
@@ -447,7 +447,7 @@ expanded. The screenshot's theme uses a 10 by 10 icon in its own colours.
 
 | Method | Description |
 | --- | --- |
-| `TreeView(string name = null)` | Creates a tree view. The name is used by `GetElementByName`. |
+| <span class="method">`TreeView(string name = null)`</span> | Creates a tree view. The name is used by `GetElementByName`. |
 | <span class="method">`AddItem(BaseElement item)`</span> | Adds a top-level item; an element that is not a `TreeViewItem` is put in one. Does nothing while an `ItemsSource` is set. |
 | <span class="method">`AddItemAt(BaseElement item, int index)`</span> | Inserts a top-level item at the index. |
 | <span class="method">`AddItemsRange(IEnumerable<BaseElement> items)`</span> | Adds top-level items at the end, listed in one go. |
@@ -482,7 +482,7 @@ gets its place in the tree: its `Name` and its indentation are set by the item i
 
 | Method | Description |
 | --- | --- |
-| `TreeViewItem(TreeView parentTreeView, BaseElement content, Margin shift, string name = null)` | Creates an item of the tree view showing the content. `shift` is its indentation until it is added to the tree, which sets its own. |
+| <span class="method">`TreeViewItem(TreeView parentTreeView, BaseElement content, Margin shift, string name = null)`</span> | Creates an item of the tree view showing the content. `shift` is its indentation until it is added to the tree, which sets its own. |
 | <span class="method">`AddItem(BaseElement item)`</span> | Adds a leaf; an element that is not a `TreeViewItem` is put in one. Does nothing for an item of a source object. |
 | <span class="method">`AddItemAt(BaseElement item, int index)`</span> | Inserts a leaf at the index. |
 | <span class="method">`AddItemsRange(IEnumerable<BaseElement> items)`</span> | Adds leaves at the end, listed in one go. |
@@ -603,7 +603,7 @@ makes; such items are disposed when they are removed, your own items are only le
 
 | Method | Description |
 | --- | --- |
-| `ContextMenu(string name = null)` | Creates a closed menu. The name is used by `GetElementByName`. |
+| <span class="method">`ContextMenu(string name = null)`</span> | Creates a closed menu. The name is used by `GetElementByName`. |
 | <span class="method">`Open(Point position)`</span> | Opens the menu at a point of the screen, placed by `Placement` and `MarginFromMouseCursor` and kept on the screen. Only a menu in the element tree that can take the keyboard opens; a sub-menu doesn't. |
 | <span class="method">`Close()`</span> | Closes the menu with its open sub-menus, and gives the keyboard back to the element that had it before. On a sub-menu it closes only that sub-menu. |
 | <span class="method">`AddItem(BaseElement item)`</span> | Adds an item at the end. A `ContextMenuItem` or `Separator` is added as is, another element is put in an item. Does nothing while an `ItemsSource` is set. |
@@ -652,5 +652,5 @@ state. Choosing it, with a click or the keyboard, raises its `OnClick` and the m
 
 | Method | Description |
 | --- | --- |
-| `ContextMenuItem(string text, string name = null)` | Creates an item showing the text in a label. |
-| `ContextMenuItem(BaseElement content, string name = null)` | Creates an item showing any element. |
+| <span class="method">`ContextMenuItem(string text, string name = null)`</span> | Creates an item showing the text in a label. |
+| <span class="method">`ContextMenuItem(BaseElement content, string name = null)`</span> | Creates an item showing any element. |

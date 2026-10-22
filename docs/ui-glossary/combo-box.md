@@ -70,6 +70,10 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 ## Methods
 
+<h3 id="combobox"><span class="method"><code>ComboBox()</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-methods" title="ComboBox() in context on the lists and menus page" aria-label="ComboBox() in context on the lists and menus page">→</a></h3>
+
+`ComboBox(string name = null)` · Creates a combo box. The name is used by `GetElementByName`.
+
 <h3 id="additem"><span class="method"><code>AddItem()</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-methods" title="AddItem() in context on the lists and menus page" aria-label="AddItem() in context on the lists and menus page">→</a></h3>
 
 `AddItem(BaseElement item)` · Adds a row at the end of the list.

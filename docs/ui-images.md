@@ -93,7 +93,7 @@ element.
 
 | Method | Description |
 | --- | --- |
-| `Image(string name = null)` | Creates an image. The name is used by `GetElementByName`. |
+| <span class="method">`Image(string name = null)`</span> | Creates an image. The name is used by `GetElementByName`. |
 
 ### SourceData
 
@@ -109,7 +109,7 @@ instance.
 
 | Method | Description |
 | --- | --- |
-| `SourceData(Texture2D texture)` | Wraps the texture. |
+| <span class="method">`SourceData(Texture2D texture)`</span> | Wraps the texture. |
 | <span class="method">`implicit operator SourceData(Texture2D texture)`</span> | Lets you assign a texture where a `SourceData` is expected. |
 | <span class="method">`implicit operator SourceData(string path)`</span> | Loads the content path as a `Texture2D` through the UI's `ContentManager` and wraps it. |
 | <span class="method">`implicit operator Texture2D(SourceData data)`</span> | Gives back the wrapped texture (`null` when it wraps none). |
@@ -173,7 +173,7 @@ made of its own parts only. The stencil doesn't dispose the textures you give it
 
 | Method | Description |
 | --- | --- |
-| `Stencil(string name = null)` | Creates a stencil. The name is used by `GetElementByName`. |
+| <span class="method">`Stencil(string name = null)`</span> | Creates a stencil. The name is used by `GetElementByName`. |
 
 Style class: `StencilStyle` (`KeyColor` and `Tolerance`, see [styles](/docs/ui-styles/)).
 
@@ -266,7 +266,7 @@ A view port doesn't take the mouse by default (its style sets `HitTest` to `fals
 
 | Method | Description |
 | --- | --- |
-| `ViewPort(string name = null)` | Creates a view port. The name is used by `GetElementByName`. |
+| <span class="method">`ViewPort(string name = null)`</span> | Creates a view port. The name is used by `GetElementByName`. |
 
 Style class: `ViewPortStyle` (`MinDepth` and `MaxDepth`, see [styles](/docs/ui-styles/)).
 
@@ -383,6 +383,6 @@ mouse; the constructor sets `HitTest`, `HorizontalAlignment` and `VerticalAlignm
 
 | Method | Description |
 | --- | --- |
-| `DragAndDropRepresentation(string name = null)` | Creates a representation that doesn't take the mouse, aligned to the top left. |
+| <span class="method">`DragAndDropRepresentation(string name = null)`</span> | Creates a representation that doesn't take the mouse, aligned to the top left. |
 
 Style class: `ImageStyle`, as for any image (see [styles](/docs/ui-styles/)).

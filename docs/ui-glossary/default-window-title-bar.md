@@ -27,3 +27,9 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 <h3 id="title"><span class="prop"><code>Title</code></span> <a class="ctx" href="/docs/ui-layout/#defaultwindowtitlebar" title="Title in context on the layout page" aria-label="Title in context on the layout page">→</a></h3>
 
 `RichTextBox` · Read-only. The title text, centred in the bar. Set its `Text` and text style properties.
+
+## Methods
+
+<h3 id="defaultwindowtitlebar"><span class="method"><code>DefaultWindowTitleBar()</code></span> <a class="ctx" href="/docs/ui-layout/#defaultwindowtitlebar" title="DefaultWindowTitleBar() in context on the layout page" aria-label="DefaultWindowTitleBar() in context on the layout page">→</a></h3>
+
+`DefaultWindowTitleBar(string name = null)` · Creates a title bar, for example to use in a window of your own. Its close button does nothing until `OnCloseButtonClickAction` is set.

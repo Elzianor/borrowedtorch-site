@@ -72,6 +72,12 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 `Color` · The colour of the box while it is unchecked, without textures.
 
+## Methods
+
+<h3 id="checkbox"><span class="method"><code>CheckBox()</code></span> <a class="ctx" href="/docs/ui-controls/#checkbox-methods" title="CheckBox() in context on the controls page" aria-label="CheckBox() in context on the controls page">→</a></h3>
+
+`CheckBox(string name = null)` · Creates a check box. The name is used by `GetElementByName`.
+
 ## Events
 
 <h3 id="oncheckedunchecked"><span class="event"><code>OnCheckedUnchecked</code></span> <a class="ctx" href="/docs/ui-controls/#checkbox-events" title="OnCheckedUnchecked in context on the controls page" aria-label="OnCheckedUnchecked in context on the controls page">→</a></h3>

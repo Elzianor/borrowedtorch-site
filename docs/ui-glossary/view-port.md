@@ -54,6 +54,10 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 ## Methods
 
+<h3 id="viewport"><span class="method"><code>ViewPort()</code></span> <a class="ctx" href="/docs/ui-images/#viewport-methods" title="ViewPort() in context on the images page" aria-label="ViewPort() in context on the images page">→</a></h3>
+
+`ViewPort(string name = null)` · Creates a view port. The name is used by `GetElementByName`.
+
 <h3 id="draw"><span class="method"><code>Draw()</code></span> <a class="ctx" href="/docs/ui-base-element/#appearance-methods" title="Draw() in context on the base element page" aria-label="Draw() in context on the base element page">→</a></h3>
 
 `Draw()` · Draws the element, its children and the popups above them. The UI calls it on the root every frame, you don't call it yourself.

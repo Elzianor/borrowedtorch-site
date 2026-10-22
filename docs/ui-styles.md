@@ -358,7 +358,7 @@ The cursors an element shows. It is disposable: disposing it disposes its `DragA
 
 | Method | Description |
 | --- | --- |
-| `MouseCursorsSet()` | Creates an empty set. |
+| <span class="method">`MouseCursorsSet()`</span> | Creates an empty set. |
 | <span class="method">`Clone()`</span> | Returns a copy (as `object`), with copies of the three nested sets; the `MouseCursor` objects are shared. Returns `null` for a disposed set. |
 
 ### DragAndDropCursors
@@ -374,7 +374,7 @@ The cursors of [drag and drop](/docs/ui-images/#drag-and-drop). Disposable like 
 
 | Method | Description |
 | --- | --- |
-| `DragAndDropCursors()` | Creates an empty set. |
+| <span class="method">`DragAndDropCursors()`</span> | Creates an empty set. |
 | <span class="method">`Clone()`</span> | Returns a copy (as `object`), or `null` when disposed. |
 
 ### ResizeCursors
@@ -395,7 +395,7 @@ The cursors of the eight grips around a [resizable](/docs/ui-base-element/#resiz
 
 | Method | Description |
 | --- | --- |
-| `ResizeCursors()` | Creates an empty set. |
+| <span class="method">`ResizeCursors()`</span> | Creates an empty set. |
 | <span class="method">`Clone()`</span> | Returns a copy (as `object`) that shares the eight sets, or `null` when disposed. |
 
 ### RichTextCursors
@@ -410,7 +410,7 @@ of the box's set. Disposable like `MouseCursorsSet`.
 
 | Method | Description |
 | --- | --- |
-| `RichTextCursors()` | Creates an empty set. |
+| <span class="method">`RichTextCursors()`</span> | Creates an empty set. |
 | <span class="method">`Clone()`</span> | Returns a copy (as `object`) that shares the two sets, or `null` when disposed. |
 
 ### GenericMouseCursorsData&lt;T&gt;
@@ -514,8 +514,8 @@ of your own is on the [base element](/docs/ui-base-element/) page.
 
 | Method | Description |
 | --- | --- |
-| `DependencyProperty(BaseElement owner, Action<T> postAction = null, PreActionDelegate preAction = null)` | Creates a stand-alone property owned by an element, with an optional post- and pre-action. Its default is `default(T)`. |
-| `DependencyProperty(BaseElement owner, DependencyPropertyActions<T> actions)` | Creates a property that shares the element class's actions and default; the generated `FooDP` properties use it. |
+| <span class="method">`DependencyProperty(BaseElement owner, Action<T> postAction = null, PreActionDelegate preAction = null)`</span> | Creates a stand-alone property owned by an element, with an optional post- and pre-action. Its default is `default(T)`. |
+| <span class="method">`DependencyProperty(BaseElement owner, DependencyPropertyActions<T> actions)`</span> | Creates a property that shares the element class's actions and default; the generated `FooDP` properties use it. |
 | <span class="method">`SetValue(T value, bool checkForEquality = true, bool setSourceValue = true, ValueSources valueSource = ValueSources.ManualAssign)`</span> | Stores the value for the source. With `checkForEquality` off, the same value raises the change again. With `setSourceValue` off, a bound source is not written. |
 | <span class="method">`ClearValue(ValueSources valueSource)`</span> | Removes the value of that source. If it was the value in effect, the next source (or the default) takes over and the change is raised when the value differs. |
 | <span class="method">`Bind(object dataContext, string sourcePropertyName, BindingMode mode, IConverter converter = null)`</span> | Binds the property to a public property of `dataContext`, replacing any earlier binding. See [bindings](#bindings). |
@@ -537,7 +537,7 @@ the static `FooDPActions` field of the element class.
 
 | Method | Description |
 | --- | --- |
-| `DependencyPropertyActions()` | Creates an empty set of actions with the default `default(T)`. |
+| <span class="method">`DependencyPropertyActions()`</span> | Creates an empty set of actions with the default `default(T)`. |
 
 ## Bindings
 
@@ -705,7 +705,7 @@ filled with a collection initializer or `[]`.
 
 | Method | Description |
 | --- | --- |
-| `BindableCollection()` | Creates an empty collection. |
+| <span class="method">`BindableCollection()`</span> | Creates an empty collection. |
 | <span class="method">`Add(T item)`</span> | Adds the item at the end. |
 | <span class="method">`AddRange(IEnumerable<T> collection)`</span> | Adds the items at the end, reported as one change. Does nothing for `null` or an empty collection. |
 | <span class="method">`Insert(int index, T item)`</span> | Inserts the item at the index. An index outside `0..Count` is ignored. |
@@ -916,7 +916,7 @@ An animation of properties of type `T`. It has the properties of [`BaseAnimation
 
 | Method | Description |
 | --- | --- |
-| `Animation(int durationMs, AnimationRepeatType repeatType = AnimationRepeatType.None, bool autoReverse = false, bool deleteOnComplete = true, RunBoundaryValues<T> runBoundaryValues = null, uint repeatsNumber = 1)` | Creates an animation with a time line of `durationMs` milliseconds. `repeatsNumber` counts the runs of a `NumberOfTimes` animation. A duration of 0 or less completes at once with the end values. |
+| <span class="method">`Animation(int durationMs, AnimationRepeatType repeatType = AnimationRepeatType.None, bool autoReverse = false, bool deleteOnComplete = true, RunBoundaryValues<T> runBoundaryValues = null, uint repeatsNumber = 1)`</span> | Creates an animation with a time line of `durationMs` milliseconds. `repeatsNumber` counts the runs of a `NumberOfTimes` animation. A duration of 0 or less completes at once with the end values. |
 | <span class="method">`AddFrame(BaseAnimationFrame<T> frame)`</span> | Adds a smooth or discrete frame. |
 | <span class="method">`AddDependencyProperty(DependencyProperty<T> property)`</span> | Adds a property the animation drives. One animation can drive several properties. |
 | <span class="method">`Start()`</span> | Runs a not started or paused animation. On the first start it applies `RunBoundaryValues.StartValue` and the values of the time line's start. Does nothing on a completed animation (call `Reset` first) or on a `NumberOfTimes` animation with 0 repeats. |
@@ -975,7 +975,7 @@ with `ShapingFunctionFactory.Create(ShapingFunctionId.CubicEaseInOut)`.
 
 | Method | Description |
 | --- | --- |
-| `SmoothAnimationFrame(T from, T to, int durationMs, int startAtMs = 0, BaseShapingFunction shapingFunction = null)` | Creates the frame. |
+| <span class="method">`SmoothAnimationFrame(T from, T to, int durationMs, int startAtMs = 0, BaseShapingFunction shapingFunction = null)`</span> | Creates the frame. |
 
 ### DiscreteAnimationFrame&lt;T&gt;
 
@@ -990,7 +990,7 @@ the same time, the one added last wins.
 
 | Method | Description |
 | --- | --- |
-| `DiscreteAnimationFrame(T value, int applyAtMs)` | Creates the frame. |
+| <span class="method">`DiscreteAnimationFrame(T value, int applyAtMs)`</span> | Creates the frame. |
 
 ### RunBoundaryValues&lt;T&gt;
 
@@ -1004,7 +1004,7 @@ when it completes. Pass it to the `Animation<T>` constructor.
 
 | Method | Description |
 | --- | --- |
-| `RunBoundaryValues()` | Creates the values, both `default(T)`. |
+| <span class="method">`RunBoundaryValues()`</span> | Creates the values, both `default(T)`. |
 
 ### BorrowedTorchUI animation methods
 

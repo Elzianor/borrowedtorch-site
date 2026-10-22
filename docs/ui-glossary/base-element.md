@@ -306,6 +306,10 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 ## Methods
 
+<h3 id="baseelement"><span class="method"><code>BaseElement()</code></span> <a class="ctx" href="/docs/ui-base-element/#members-for-derived-elements" title="BaseElement() in context on the base element page" aria-label="BaseElement() in context on the base element page">→</a></h3>
+
+`BaseElement(string name = null)` · Protected. Sets the name `GetElementByName` finds the element by.
+
 <h3 id="acceptsitems"><span class="method"><code>AcceptsItems()</code></span> <a class="ctx" href="/docs/ui-base-element/#members-for-derived-elements" title="AcceptsItems() in context on the base element page" aria-label="AcceptsItems() in context on the base element page">→</a></h3>
 
 `AcceptsItems` · Protected virtual property, `true` by default. Return false and the item methods do nothing on the element.

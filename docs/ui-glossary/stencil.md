@@ -47,3 +47,9 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 <h3 id="tolerance"><span class="dp"><code>Tolerance</code></span> <a class="ctx" href="/docs/ui-images/#stencil-properties" title="Tolerance in context on the images page" aria-label="Tolerance in context on the images page">→</a></h3>
 
 `float` · How far a stencil pixel may be from `KeyColor` and still be keyed, on a 0 to 1 scale per channel. Defaults to `0` (an exact match).
+
+## Methods
+
+<h3 id="stencil"><span class="method"><code>Stencil()</code></span> <a class="ctx" href="/docs/ui-images/#stencil-methods" title="Stencil() in context on the images page" aria-label="Stencil() in context on the images page">→</a></h3>
+
+`Stencil(string name = null)` · Creates a stencil. The name is used by `GetElementByName`.

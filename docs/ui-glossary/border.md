@@ -43,3 +43,9 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 <h3 id="thickness"><span class="dp"><code>Thickness</code></span> <a class="ctx" href="/docs/ui-layout/#border-properties" title="Thickness in context on the layout page" aria-label="Thickness in context on the layout page">→</a></h3>
 
 `Margin` · The width of the frame per side (`Left`, `Top`, `Right`, `Bottom`), in units.
+
+## Methods
+
+<h3 id="border"><span class="method"><code>Border()</code></span> <a class="ctx" href="/docs/ui-layout/#border-methods" title="Border() in context on the layout page" aria-label="Border() in context on the layout page">→</a></h3>
+
+`Border(string name = null)` · Creates a border. The name is used by `GetElementByName`.

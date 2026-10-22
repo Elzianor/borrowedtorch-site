@@ -19,3 +19,9 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 <h3 id="mousecursorsset"><span class="prop"><code>MouseCursorsSet</code></span> <a class="ctx" href="/docs/ui-layout/#contentcontainer" title="MouseCursorsSet in context on the layout page" aria-label="MouseCursorsSet in context on the layout page">→</a></h3>
 
 `MouseCursorsSet` · Read-only. The cursors of the container's parent, so the container shows the cursors of its control.
+
+## Methods
+
+<h3 id="contentcontainer"><span class="method"><code>ContentContainer()</code></span> <a class="ctx" href="/docs/ui-layout/#contentcontainer" title="ContentContainer() in context on the layout page" aria-label="ContentContainer() in context on the layout page">→</a></h3>
+
+`ContentContainer(string name = null)` · Creates a content container. The name is used by `GetElementByName`.

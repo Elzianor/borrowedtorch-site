@@ -87,7 +87,7 @@ Clicks come through the inherited `OnClick`.
 
 | Method | Description |
 | --- | --- |
-| `Button(string name = null)` | Creates a button. The name is used by `GetElementByName`. |
+| <span class="method">`Button(string name = null)`</span> | Creates a button. The name is used by `GetElementByName`. |
 
 #### `ButtonType`
 
@@ -215,7 +215,7 @@ colour, so give them in a style or on the element. With `TexturesPath` set, the 
 
 | Method | Description |
 | --- | --- |
-| `CheckBox(string name = null)` | Creates a check box. The name is used by `GetElementByName`. |
+| <span class="method">`CheckBox(string name = null)`</span> | Creates a check box. The name is used by `GetElementByName`. |
 
 #### `CheckBoxType`
 
@@ -389,7 +389,7 @@ marks are drawn in their colours with or without textures.
 
 | Method | Description |
 | --- | --- |
-| `Slider(string name = null)` | Creates a slider. The name is used by `GetElementByName`. |
+| <span class="method">`Slider(string name = null)`</span> | Creates a slider. The name is used by `GetElementByName`. |
 | <span class="method">`PageDecrease()`</span> | Moves the value down by a page: one tick when `Tick` is set, otherwise the share of the range that `ViewSize` is of `ContentSize - ViewSize`. Does nothing when `Type` is `Slider`. |
 | <span class="method">`PageIncrease()`</span> | Moves the value up by a page, as `PageDecrease` moves it down. Does nothing when `Type` is `Slider`. |
 | <span class="method">`Draw()`</span> | Draws the slider, then its tick marks. The framework calls it; you don't need to. |
@@ -483,7 +483,7 @@ set, it tiles the `Background` texture over the whole element and the `Bar` text
 
 | Method | Description |
 | --- | --- |
-| `ProgressBar(string name = null)` | Creates a progress bar. The name is used by `GetElementByName`. |
+| <span class="method">`ProgressBar(string name = null)`</span> | Creates a progress bar. The name is used by `GetElementByName`. |
 
 Style class: `ProgressBarStyle` (the same properties, see [styles](/docs/ui-styles/)).
 
@@ -542,7 +542,7 @@ which does not wrap; the tooltip's own `BackgroundColor` is drawn behind it.
 
 | Method | Description |
 | --- | --- |
-| `ToolTip(string name = null)` | Creates a tooltip. The name is used by `GetElementByName`. |
+| <span class="method">`ToolTip(string name = null)`</span> | Creates a tooltip. The name is used by `GetElementByName`. |
 | <span class="method">`Show()`</span> | Places the tooltip at the mouse cursor and shows it after the next layout pass. The element it is attached to calls this; it does nothing for a tooltip not attached to an element. |
 
 #### `ToolTipPlacement`
@@ -623,7 +623,7 @@ Before anything is picked, changing `Brightness` sets `SelectedColor` to black.
 
 | Method | Description |
 | --- | --- |
-| `ColorPicker(string name = null)` | Creates a colour picker. The name is used by `GetElementByName`. |
+| <span class="method">`ColorPicker(string name = null)`</span> | Creates a colour picker. The name is used by `GetElementByName`. |
 
 Style class: `ColorPickerStyle` (the inherited properties only: `Brightness` and `SelectedColor` are not styled, see
 [styles](/docs/ui-styles/)). Its defaults set `ForegroundColor` to white.

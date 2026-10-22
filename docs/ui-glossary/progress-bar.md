@@ -47,3 +47,9 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 <h3 id="value"><span class="dp"><code>Value</code></span> <a class="ctx" href="/docs/ui-controls/#progressbar-properties" title="Value in context on the controls page" aria-label="Value in context on the controls page">→</a></h3>
 
 `float` · The current value, clamped to the range between `Min` and `Max`.
+
+## Methods
+
+<h3 id="progressbar"><span class="method"><code>ProgressBar()</code></span> <a class="ctx" href="/docs/ui-controls/#progressbar-methods" title="ProgressBar() in context on the controls page" aria-label="ProgressBar() in context on the controls page">→</a></h3>
+
+`ProgressBar(string name = null)` · Creates a progress bar. The name is used by `GetElementByName`.

@@ -70,6 +70,10 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 ## Methods
 
+<h3 id="scrollablecontainer"><span class="method"><code>ScrollableContainer()</code></span> <a class="ctx" href="/docs/ui-layout/#scrollablecontainer-methods" title="ScrollableContainer() in context on the layout page" aria-label="ScrollableContainer() in context on the layout page">→</a></h3>
+
+`ScrollableContainer(string name = null)` · Creates a scrollable container. The name is used by `GetElementByName`.
+
 <h3 id="additem"><span class="method"><code>AddItem()</code></span> <a class="ctx" href="/docs/ui-layout/#scrollablecontainer-methods" title="AddItem() in context on the layout page" aria-label="AddItem() in context on the layout page">→</a></h3>
 
 `AddItem(BaseElement item)` · Adds the item to the view.

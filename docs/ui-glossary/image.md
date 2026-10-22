@@ -39,3 +39,9 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 <h3 id="styleoverride"><span class="prop"><code>StyleOverride</code></span> <a class="ctx" href="/docs/ui-base-element/#genericstyleandmousecursorsdata-properties" title="StyleOverride in context on the base element page" aria-label="StyleOverride in context on the base element page">→</a></h3>
 
 `ImageStyle` · A style for this element only, applied over the general style. Setting it to null takes its values back out.
+
+## Methods
+
+<h3 id="image"><span class="method"><code>Image()</code></span> <a class="ctx" href="/docs/ui-images/#image-methods" title="Image() in context on the images page" aria-label="Image() in context on the images page">→</a></h3>
+
+`Image(string name = null)` · Creates an image. The name is used by `GetElementByName`.

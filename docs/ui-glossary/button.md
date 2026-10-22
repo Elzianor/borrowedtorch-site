@@ -72,6 +72,12 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 `ButtonType` · How the button reacts to the mouse: `Normal`, `Repeat` or `Toggle`.
 
+## Methods
+
+<h3 id="button"><span class="method"><code>Button()</code></span> <a class="ctx" href="/docs/ui-controls/#button-methods" title="Button() in context on the controls page" aria-label="Button() in context on the controls page">→</a></h3>
+
+`Button(string name = null)` · Creates a button. The name is used by `GetElementByName`.
+
 ## Events
 
 <h3 id="ontoggled"><span class="event"><code>OnToggled</code></span> <a class="ctx" href="/docs/ui-controls/#button-events" title="OnToggled in context on the controls page" aria-label="OnToggled in context on the controls page">→</a></h3>

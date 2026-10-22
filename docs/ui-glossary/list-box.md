@@ -122,6 +122,10 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 ## Methods
 
+<h3 id="listbox"><span class="method"><code>ListBox()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="ListBox() in context on the lists and menus page" aria-label="ListBox() in context on the lists and menus page">→</a></h3>
+
+`ListBox(string name = null)` · Creates a list box. The name is used by `GetElementByName`.
+
 <h3 id="additem"><span class="method"><code>AddItem()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="AddItem() in context on the lists and menus page" aria-label="AddItem() in context on the lists and menus page">→</a></h3>
 
 `AddItem(BaseElement item)` · Adds a row at the end. A `ListBoxItem` is the row itself, any other element is shown in a row the list makes.

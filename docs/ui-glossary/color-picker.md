@@ -40,6 +40,12 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 `ColorPickerStyle` · A style for this element only, applied over the general style. Setting it to null takes its values back out.
 
+## Methods
+
+<h3 id="colorpicker"><span class="method"><code>ColorPicker()</code></span> <a class="ctx" href="/docs/ui-controls/#colorpicker-methods" title="ColorPicker() in context on the controls page" aria-label="ColorPicker() in context on the controls page">→</a></h3>
+
+`ColorPicker(string name = null)` · Creates a colour picker. The name is used by `GetElementByName`.
+
 ## Events
 
 <h3 id="onselectedcolorchanged"><span class="event"><code>OnSelectedColorChanged</code></span> <a class="ctx" href="/docs/ui-controls/#colorpicker-events" title="OnSelectedColorChanged in context on the controls page" aria-label="OnSelectedColorChanged in context on the controls page">→</a></h3>

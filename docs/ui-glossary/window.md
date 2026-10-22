@@ -50,6 +50,10 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 ## Methods
 
+<h3 id="window"><span class="method"><code>Window()</code></span> <a class="ctx" href="/docs/ui-layout/#window-methods" title="Window() in context on the layout page" aria-label="Window() in context on the layout page">→</a></h3>
+
+`Window(string name = null)` · Creates a window with the default title bar. The name is used by `GetElementByName`.
+
 <h3 id="hide"><span class="method"><code>Hide()</code></span> <a class="ctx" href="/docs/ui-layout/#window-methods" title="Hide() in context on the layout page" aria-label="Hide() in context on the layout page">→</a></h3>
 
 `Hide()` · Hides the window (`Visibility.Hidden`).

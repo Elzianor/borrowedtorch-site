@@ -34,6 +34,10 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 ## Methods
 
+<h3 id="treeviewitem"><span class="method"><code>TreeViewItem()</code></span> <a class="ctx" href="/docs/ui-lists/#treeviewitem" title="TreeViewItem() in context on the lists and menus page" aria-label="TreeViewItem() in context on the lists and menus page">→</a></h3>
+
+`TreeViewItem(TreeView parentTreeView, BaseElement content, Margin shift, string name = null)` · Creates an item of the tree view showing the content. `shift` is its indentation until it is added to the tree, which sets its own.
+
 <h3 id="additem"><span class="method"><code>AddItem()</code></span> <a class="ctx" href="/docs/ui-lists/#treeviewitem" title="AddItem() in context on the lists and menus page" aria-label="AddItem() in context on the lists and menus page">→</a></h3>
 
 `AddItem(BaseElement item)` · Adds a leaf; an element that is not a `TreeViewItem` is put in one. Does nothing for an item of a source object.

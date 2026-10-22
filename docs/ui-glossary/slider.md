@@ -126,6 +126,10 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 ## Methods
 
+<h3 id="slider"><span class="method"><code>Slider()</code></span> <a class="ctx" href="/docs/ui-controls/#slider-methods" title="Slider() in context on the controls page" aria-label="Slider() in context on the controls page">→</a></h3>
+
+`Slider(string name = null)` · Creates a slider. The name is used by `GetElementByName`.
+
 <h3 id="draw"><span class="method"><code>Draw()</code></span> <a class="ctx" href="/docs/ui-controls/#slider-methods" title="Draw() in context on the controls page" aria-label="Draw() in context on the controls page">→</a></h3>
 
 `Draw()` · Draws the slider, then its tick marks. The framework calls it; you don't need to.

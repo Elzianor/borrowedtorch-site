@@ -39,3 +39,9 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 <h3 id="source"><span class="prop"><code>Source</code></span> <a class="ctx" href="/docs/ui-lists/#listboxitem" title="Source in context on the lists and menus page" aria-label="Source in context on the lists and menus page">→</a></h3>
 
 `object` · Read-only. The `ItemsSource` object the row shows, `null` for a row added as an element or text.
+
+## Methods
+
+<h3 id="listboxitem"><span class="method"><code>ListBoxItem()</code></span> <a class="ctx" href="/docs/ui-lists/#listboxitem" title="ListBoxItem() in context on the lists and menus page" aria-label="ListBoxItem() in context on the lists and menus page">→</a></h3>
+
+`ListBoxItem(BaseElement content, ListBox parentListBox, string name = null)` · Creates a row showing the content. `parentListBox` gives the row its colours until it is in a list; from then on the list it is in counts.

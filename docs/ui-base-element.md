@@ -117,9 +117,9 @@ element.Margin = (10, 20, 30, 40);  // left, top, right, bottom
 
 | Method | Description |
 | --- | --- |
-| `Margin()` | A margin of 0 on every side. |
-| `Margin(int all)` | The same margin on every side. |
-| `Margin(int left = 0, int top = 0, int right = 0, int bottom = 0)` | A margin per side; the sides left out are 0. |
+| <span class="method">`Margin()`</span> | A margin of 0 on every side. |
+| <span class="method">`Margin(int all)`</span> | The same margin on every side. |
+| <span class="method">`Margin(int left = 0, int top = 0, int right = 0, int bottom = 0)`</span> | A margin per side; the sides left out are 0. |
 | <span class="method">`implicit operator Margin(int all)`</span> | `element.Margin = 5` sets 5 on every side. |
 | <span class="method">`implicit operator Margin((int left, int top) tuple)`</span> | Left and top; right and bottom are 0. |
 | <span class="method">`implicit operator Margin((int left, int top, int right) tuple)`</span> | Left, top and right; bottom is 0. |
@@ -396,7 +396,7 @@ The state an element shows, passed to `OnStateChanged`. The UI shares one immuta
 
 | Method | Description |
 | --- | --- |
-| `ElementStateData(ElementState state, StateSource source)` | Creates a state, for example to compare with `StateData`. |
+| <span class="method">`ElementStateData(ElementState state, StateSource source)`</span> | Creates a state, for example to compare with `StateData`. |
 | <span class="method">`operator ==(ElementStateData state1, ElementStateData state2)`</span> | True when the state and the source are equal. `!=` and `Equals` compare the same way. |
 | <span class="method">`GetHashCode()`</span> | A hash of the state and the source. |
 | <span class="method">`ToString()`</span> | The state and the source as text, separated by a vertical bar. |
@@ -412,7 +412,7 @@ What `OnClick` and `OnDoubleClick` get, taken when the click happens.
 
 | Method | Description |
 | --- | --- |
-| `MouseClickEventArgs()` | Takes the current mouse position and buttons states. |
+| <span class="method">`MouseClickEventArgs()`</span> | Takes the current mouse position and buttons states. |
 
 ## Click timing
 
@@ -486,7 +486,7 @@ The focused element's own `OnKeyDown` is raised even for a key its control used;
 
 | Method | Description |
 | --- | --- |
-| `KeyDownEventArgs(Keys key)` | Creates the arguments for a key. |
+| <span class="method">`KeyDownEventArgs(Keys key)`</span> | Creates the arguments for a key. |
 
 ## Tooltips and context menus
 
