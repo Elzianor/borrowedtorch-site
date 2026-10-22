@@ -5,9 +5,9 @@ description: List boxes, combo boxes, tree views and context menus, with selecti
 ---
 
 Every element here has all the properties, events and methods of [`BaseElement`](/docs/ui-base-element/), which the
-tables below don't repeat. Every property listed is a dependency property unless marked otherwise: `Foo` is backed by
+tables below don't repeat. A property marked <span class="dp-badge">DP</span> is a dependency property: `Foo` is backed by
 `FooDP`, which a style, a binding or an animation can set (see [styles, bindings and animation](/docs/ui-styles/)).
-Screenshots use the theme from [styles](/docs/ui-styles/#the-theme-of-these-pages).
+Unmarked properties are plain C# properties. Screenshots use the theme from [styles](/docs/ui-styles/#the-theme-of-these-pages).
 
 The keyboard reaches these elements from the game window you give `BorrowedTorchUI` (see [UI](/docs/ui/)):
 a key goes to the element that has the keyboard first, then to the elements around it until one uses it.
@@ -151,28 +151,28 @@ Ctrl and Shift held with these keys work as with clicks in `Multiple` mode.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `SelectionMode` | `ListBoxSelectionMode` | Whether one row or several rows can be selected. `Single` by default. |
-| `SelectedItem` | `ListBoxItem` | The primary selected row, `null` when nothing is selected. Setting it selects that row; `null` clears the selection. |
-| `SelectedIndex` | `int` | The index of the primary selected row, `-1` when nothing is selected. Setting it selects that row (the value is clamped to the rows); a negative value clears the selection. |
-| `SelectedItems` | `IReadOnlyList<ListBoxItem>` | Read-only. The selected rows that have an element (see `Items`). (not a dependency property) |
-| `SelectedIndices` | `IReadOnlyList<int>` | Read-only. The indices of all selected rows, with an element or not. (not a dependency property) |
-| `SelectedSources` | `IReadOnlyList<object>` | Read-only. The source objects of all selected rows, `null` for rows added as elements or text. (not a dependency property) |
-| `Count` | `int` | Read-only. The number of rows, in every virtualization mode. (not a dependency property) |
-| `Items` | `IReadOnlyList<ListBoxItem>` | Read-only. The rows that have an element, in order: every row in `None` mode, the rows around the view and the primary selected row in `Fixed` mode. A live view, don't keep it across changes. (not a dependency property) |
-| `ItemsSource` | `IEnumerable` | The objects to show, one row each. A `BindableCollection<T>` is followed. |
-| `ItemsTemplate` | `IItemsTemplate` | Makes the element of each `ItemsSource` object; a label with the object's text when none is set. Changing it builds the rows again. (not a dependency property) |
-| `UseDualColors` | `bool` | Alternates the background of unselected rows: `NormalItemColor` for even indices, `AlternativeItemColor` for odd ones. |
-| `NormalItemColor` | `Color` | The background of an unselected row (of the even rows with `UseDualColors`). |
-| `AlternativeItemColor` | `Color` | The background of the odd unselected rows while `UseDualColors` is set. |
-| `HoverItemColor` | `Color?` | The background of the row under the mouse. When `null` the row keeps its normal or selected colour. |
-| `PressedItemColor` | `Color?` | The background of a row while the left button is pressed on it. When `null` it doesn't change. |
-| `SelectedItemColor` | `Color?` | The background of a selected row. When `null` a selected row keeps the colour it had. |
-| `ScrollableContainerStyle` | `ScrollableContainerStyle` | The style of the [scrollable container](/docs/ui-layout/#scrollablecontainer) around the rows, for example its scroll bars and their thickness. |
-| `VirtualizationMode` | `ListBoxVirtualizationMode` | Whether every row has an element (`None`, the default) or only the rows around the view (`Fixed`). |
-| `ItemHeight` | `int` | The height of every row in `Fixed` mode, in units. `Fixed` mode has no effect while it is 0 or less. |
-| `RowsPerPage` | `int` | Read-only. The number of rows that fit the view, at least one: the view's height divided by `ItemHeight` in `Fixed` mode, by the average row height otherwise. (not a dependency property) |
-| `ContentWidth` | `int` | Read-only. The width of the widest row content, in units (in `Fixed` mode the widest seen since the rows were cleared). (not a dependency property) |
-| `ContentHeight` | `int` | Read-only. The height of all the shown rows together, in units (`Count` times `ItemHeight` in `Fixed` mode). (not a dependency property) |
+| <span class="dp">`SelectionMode`</span> | `ListBoxSelectionMode` | Whether one row or several rows can be selected. `Single` by default. |
+| <span class="dp">`SelectedItem`</span> | `ListBoxItem` | The primary selected row, `null` when nothing is selected. Setting it selects that row; `null` clears the selection. |
+| <span class="dp">`SelectedIndex`</span> | `int` | The index of the primary selected row, `-1` when nothing is selected. Setting it selects that row (the value is clamped to the rows); a negative value clears the selection. |
+| `SelectedItems` | `IReadOnlyList<ListBoxItem>` | Read-only. The selected rows that have an element (see `Items`). |
+| `SelectedIndices` | `IReadOnlyList<int>` | Read-only. The indices of all selected rows, with an element or not. |
+| `SelectedSources` | `IReadOnlyList<object>` | Read-only. The source objects of all selected rows, `null` for rows added as elements or text. |
+| `Count` | `int` | Read-only. The number of rows, in every virtualization mode. |
+| `Items` | `IReadOnlyList<ListBoxItem>` | Read-only. The rows that have an element, in order: every row in `None` mode, the rows around the view and the primary selected row in `Fixed` mode. A live view, don't keep it across changes. |
+| <span class="dp">`ItemsSource`</span> | `IEnumerable` | The objects to show, one row each. A `BindableCollection<T>` is followed. |
+| `ItemsTemplate` | `IItemsTemplate` | Makes the element of each `ItemsSource` object; a label with the object's text when none is set. Changing it builds the rows again. |
+| <span class="dp">`UseDualColors`</span> | `bool` | Alternates the background of unselected rows: `NormalItemColor` for even indices, `AlternativeItemColor` for odd ones. |
+| <span class="dp">`NormalItemColor`</span> | `Color` | The background of an unselected row (of the even rows with `UseDualColors`). |
+| <span class="dp">`AlternativeItemColor`</span> | `Color` | The background of the odd unselected rows while `UseDualColors` is set. |
+| <span class="dp">`HoverItemColor`</span> | `Color?` | The background of the row under the mouse. When `null` the row keeps its normal or selected colour. |
+| <span class="dp">`PressedItemColor`</span> | `Color?` | The background of a row while the left button is pressed on it. When `null` it doesn't change. |
+| <span class="dp">`SelectedItemColor`</span> | `Color?` | The background of a selected row. When `null` a selected row keeps the colour it had. |
+| <span class="dp">`ScrollableContainerStyle`</span> | `ScrollableContainerStyle` | The style of the [scrollable container](/docs/ui-layout/#scrollablecontainer) around the rows, for example its scroll bars and their thickness. |
+| <span class="dp">`VirtualizationMode`</span> | `ListBoxVirtualizationMode` | Whether every row has an element (`None`, the default) or only the rows around the view (`Fixed`). |
+| <span class="dp">`ItemHeight`</span> | `int` | The height of every row in `Fixed` mode, in units. `Fixed` mode has no effect while it is 0 or less. |
+| `RowsPerPage` | `int` | Read-only. The number of rows that fit the view, at least one: the view's height divided by `ItemHeight` in `Fixed` mode, by the average row height otherwise. |
+| `ContentWidth` | `int` | Read-only. The width of the widest row content, in units (in `Fixed` mode the widest seen since the rows were cleared). |
+| `ContentHeight` | `int` | Read-only. The height of all the shown rows together, in units (`Count` times `ItemHeight` in `Fixed` mode). |
 
 ### ListBox events
 
@@ -234,13 +234,13 @@ its own height back when it leaves the list. A row added with `IsSelected` set j
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `IsSelected` | `bool` | Whether the row is selected. Setting it on a row in a list selects it as `SelectAt` does, or deselects it as `DeselectAt` does. A separator row is never selected. (not a dependency property) |
-| `Index` | `int` | Read-only. The row's index in the list. (not a dependency property) |
-| `Source` | `object` | Read-only. The `ItemsSource` object the row shows, `null` for a row added as an element or text. (not a dependency property) |
-| `Content` | `BaseElement` | Read-only. The element the row shows. (not a dependency property) |
-| `ContentWidth` | `int` | Read-only. The natural width of the content, in units (the row itself is stretched to the list's width). (not a dependency property) |
-| `ContentHeight` | `int` | Read-only. The row's height, in units: its content's, or its own desired height (`ItemHeight` in a `Fixed` mode list). (not a dependency property) |
-| `MouseCursorsSet` | `MouseCursorsSet` | Read-only. The mouse cursors of the list the row is in. (not a dependency property) |
+| `IsSelected` | `bool` | Whether the row is selected. Setting it on a row in a list selects it as `SelectAt` does, or deselects it as `DeselectAt` does. A separator row is never selected. |
+| `Index` | `int` | Read-only. The row's index in the list. |
+| `Source` | `object` | Read-only. The `ItemsSource` object the row shows, `null` for a row added as an element or text. |
+| `Content` | `BaseElement` | Read-only. The element the row shows. |
+| `ContentWidth` | `int` | Read-only. The natural width of the content, in units (the row itself is stretched to the list's width). |
+| `ContentHeight` | `int` | Read-only. The row's height, in units: its content's, or its own desired height (`ItemHeight` in a `Fixed` mode list). |
+| `MouseCursorsSet` | `MouseCursorsSet` | Read-only. The mouse cursors of the list the row is in. |
 
 | Method | Description |
 | --- | --- |
@@ -296,15 +296,15 @@ already). A selection made in code closes an open list as well.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `Items` | `IReadOnlyList<ListBoxItem>` | Read-only. The rows of the drop-down list that have an element (see the list box's `Items`). (not a dependency property) |
-| `ItemsSource` | `IEnumerable` | The objects to show, one row each. A `BindableCollection<T>` is followed. |
-| `ItemsTemplate` | `IItemsTemplate` | Makes the element of each `ItemsSource` object; a label with the object's text when none is set. (not a dependency property) |
-| `SelectedItem` | `ListBoxItem` | The selected row, `null` when nothing is selected. Setting it selects that row. |
-| `SelectedIndex` | `int` | The index of the selected row, `-1` when nothing is selected. |
-| `SelectedSource` | `object` | Read-only. The `ItemsSource` object of the selected row, `null` without one. (not a dependency property) |
-| `SelectionStyle` | `ImageStyle` | The style of the image that shows the selected row. |
-| `ToggleButtonStyle` | `ButtonStyle` | The style of the [button](/docs/ui-controls/#button) that opens and closes the list, for example its width and text. |
-| `ListBoxStyle` | `ListBoxStyle` | The style of the drop-down list, for example its row colours. |
+| `Items` | `IReadOnlyList<ListBoxItem>` | Read-only. The rows of the drop-down list that have an element (see the list box's `Items`). |
+| <span class="dp">`ItemsSource`</span> | `IEnumerable` | The objects to show, one row each. A `BindableCollection<T>` is followed. |
+| `ItemsTemplate` | `IItemsTemplate` | Makes the element of each `ItemsSource` object; a label with the object's text when none is set. |
+| <span class="dp">`SelectedItem`</span> | `ListBoxItem` | The selected row, `null` when nothing is selected. Setting it selects that row. |
+| <span class="dp">`SelectedIndex`</span> | `int` | The index of the selected row, `-1` when nothing is selected. |
+| `SelectedSource` | `object` | Read-only. The `ItemsSource` object of the selected row, `null` without one. |
+| <span class="dp">`SelectionStyle`</span> | `ImageStyle` | The style of the image that shows the selected row. |
+| <span class="dp">`ToggleButtonStyle`</span> | `ButtonStyle` | The style of the [button](/docs/ui-controls/#button) that opens and closes the list, for example its width and text. |
+| <span class="dp">`ListBoxStyle`</span> | `ListBoxStyle` | The style of the drop-down list, for example its row colours. |
 
 ### ComboBox events
 
@@ -426,16 +426,16 @@ expanded. The screenshot's theme uses a 10 by 10 icon in its own colours.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `ItemsSource` | `IEnumerable` | The top-level objects of the tree. A `BindableCollection<T>` is followed. |
-| `ChildrenSelector` | `Func<object, IEnumerable>` | Gives the children of an object of the `ItemsSource`, `null` or empty for a leaf. A children collection that is a `BindableCollection<T>` is followed. (not a dependency property) |
-| `ItemsTemplate` | `IItemsTemplate` | Makes the element of each object; a label with the object's text when none is set. (not a dependency property) |
-| `SelectedItem` | `TreeViewItem` | The selected item, `null` when nothing is selected. Only an item of this tree can be set; the branches above it are expanded. |
-| `Leaves` | `IReadOnlyList<TreeViewItem>` | Read-only. The top-level items. (not a dependency property) |
-| `ListBoxStyle` | `ListBoxStyle` | The style of the list the items are shown in, for example its row colours and scroll bars. |
-| `ExpandIconStyle` | `ImageStyle` | The style of the expand icon of the items, for example its size and margin. By default an 8 by 8 block, centred, with a margin of 4 before and 6 after it. |
-| `MinimizedIconColor` | `Color` | The colour of the icon of a collapsed branch, when the tree view has no textures. By default `(150, 150, 160)`. |
-| `ExpandedIconColor` | `Color` | The colour of the icon of an expanded branch, when the tree view has no textures. By default `(90, 90, 100)`. |
-| `SubItemsShift` | `Margin` | How far each level is indented (`Left`) and the space above every row but the first (`Top`), in units. |
+| <span class="dp">`ItemsSource`</span> | `IEnumerable` | The top-level objects of the tree. A `BindableCollection<T>` is followed. |
+| `ChildrenSelector` | `Func<object, IEnumerable>` | Gives the children of an object of the `ItemsSource`, `null` or empty for a leaf. A children collection that is a `BindableCollection<T>` is followed. |
+| `ItemsTemplate` | `IItemsTemplate` | Makes the element of each object; a label with the object's text when none is set. |
+| <span class="dp">`SelectedItem`</span> | `TreeViewItem` | The selected item, `null` when nothing is selected. Only an item of this tree can be set; the branches above it are expanded. |
+| `Leaves` | `IReadOnlyList<TreeViewItem>` | Read-only. The top-level items. |
+| <span class="dp">`ListBoxStyle`</span> | `ListBoxStyle` | The style of the list the items are shown in, for example its row colours and scroll bars. |
+| <span class="dp">`ExpandIconStyle`</span> | `ImageStyle` | The style of the expand icon of the items, for example its size and margin. By default an 8 by 8 block, centred, with a margin of 4 before and 6 after it. |
+| <span class="dp">`MinimizedIconColor`</span> | `Color` | The colour of the icon of a collapsed branch, when the tree view has no textures. By default `(150, 150, 160)`. |
+| <span class="dp">`ExpandedIconColor`</span> | `Color` | The colour of the icon of an expanded branch, when the tree view has no textures. By default `(90, 90, 100)`. |
+| <span class="dp">`SubItemsShift`</span> | `Margin` | How far each level is indented (`Left`) and the space above every row but the first (`Top`), in units. |
 
 ### TreeView events
 
@@ -474,11 +474,11 @@ gets its place in the tree: its `Name` and its indentation are set by the item i
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `IsExpanded` | `bool` | Whether the leaves are shown (while the items above are expanded too). An item without leaves is never expanded. An item of a source object makes the items of its children the first time it is expanded. (not a dependency property) |
-| `Leaves` | `IReadOnlyList<TreeViewItem>` | Read-only. The items one level below. Empty for an item of a source object until it is first expanded. (not a dependency property) |
-| `HasLeaves` | `bool` | Read-only. Whether the item has leaves, also an item of a source object whose children were not made into items yet. (not a dependency property) |
-| `Source` | `object` | Read-only. The `ItemsSource` object the item shows, `null` for an item added in code. (not a dependency property) |
-| `MouseCursorsSet` | `MouseCursorsSet` | Read-only. The mouse cursors of the row the item is shown in. (not a dependency property) |
+| `IsExpanded` | `bool` | Whether the leaves are shown (while the items above are expanded too). An item without leaves is never expanded. An item of a source object makes the items of its children the first time it is expanded. |
+| `Leaves` | `IReadOnlyList<TreeViewItem>` | Read-only. The items one level below. Empty for an item of a source object until it is first expanded. |
+| `HasLeaves` | `bool` | Read-only. Whether the item has leaves, also an item of a source object whose children were not made into items yet. |
+| `Source` | `object` | Read-only. The `ItemsSource` object the item shows, `null` for an item added in code. |
+| `MouseCursorsSet` | `MouseCursorsSet` | Read-only. The mouse cursors of the row the item is shown in. |
 
 | Method | Description |
 | --- | --- |
@@ -580,18 +580,18 @@ makes; such items are disposed when they are removed, your own items are only le
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `Items` | `IReadOnlyList<BaseElement>` | Read-only. The items and separators of the menu, in order. (not a dependency property) |
-| `IsOpen` | `bool` | Read-only. Whether the menu is open. (not a dependency property) |
-| `ParentItem` | `ContextMenuItem` | Read-only. The item whose sub-menu this menu is, `null` for the menu of an element. (not a dependency property) |
-| `ItemsSource` | `IEnumerable` | The objects to show, one item each. A `BindableCollection<T>` is followed. |
-| `ItemsTemplate` | `IItemsTemplate` | Makes the content of the item of each `ItemsSource` object; a label with the object's text when none is set. (not a dependency property) |
-| `Placement` | `ContextMenuPlacement` | On which side of the point the menu opens. `BottomRight` by default. |
-| `MarginFromMouseCursor` | `Margin` | An offset added to the point the menu opens at: `Left` to the x, `Top` to the y, in units. |
-| `SubMenusOpenType` | `ContextMenuSubMenusOpenType` | Whether the sub-menus of this menu's items open on hover (`OnHover`, the default) or on click. |
-| `BorderStyle` | `BorderStyle` | The style of the [border](/docs/ui-layout/#border) around the items. By default a white background with a 1 unit dark grey border. |
-| `ListBoxStyle` | `ListBoxStyle` | The style of the list of the items. By default transparent rows, highlighted in light blue under the mouse and when selected. |
-| `CheckIconStyle` | `ImageStyle` | The style of the check mark of a checked item. By default an 8 by 8 unit dark grey square. |
-| `ExpandIconStyle` | `ImageStyle` | The style of the arrow of an item with a sub-menu. By default a 6 by 8 unit dark grey block at the right end. |
+| `Items` | `IReadOnlyList<BaseElement>` | Read-only. The items and separators of the menu, in order. |
+| `IsOpen` | `bool` | Read-only. Whether the menu is open. |
+| `ParentItem` | `ContextMenuItem` | Read-only. The item whose sub-menu this menu is, `null` for the menu of an element. |
+| <span class="dp">`ItemsSource`</span> | `IEnumerable` | The objects to show, one item each. A `BindableCollection<T>` is followed. |
+| `ItemsTemplate` | `IItemsTemplate` | Makes the content of the item of each `ItemsSource` object; a label with the object's text when none is set. |
+| <span class="dp">`Placement`</span> | `ContextMenuPlacement` | On which side of the point the menu opens. `BottomRight` by default. |
+| <span class="dp">`MarginFromMouseCursor`</span> | `Margin` | An offset added to the point the menu opens at: `Left` to the x, `Top` to the y, in units. |
+| <span class="dp">`SubMenusOpenType`</span> | `ContextMenuSubMenusOpenType` | Whether the sub-menus of this menu's items open on hover (`OnHover`, the default) or on click. |
+| <span class="dp">`BorderStyle`</span> | `BorderStyle` | The style of the [border](/docs/ui-layout/#border) around the items. By default a white background with a 1 unit dark grey border. |
+| <span class="dp">`ListBoxStyle`</span> | `ListBoxStyle` | The style of the list of the items. By default transparent rows, highlighted in light blue under the mouse and when selected. |
+| <span class="dp">`CheckIconStyle`</span> | `ImageStyle` | The style of the check mark of a checked item. By default an 8 by 8 unit dark grey square. |
+| <span class="dp">`ExpandIconStyle`</span> | `ImageStyle` | The style of the arrow of an item with a sub-menu. By default a 6 by 8 unit dark grey block at the right end. |
 
 ### ContextMenu events
 
@@ -641,14 +641,14 @@ state. Choosing it, with a click or the keyboard, raises its `OnClick` and the m
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `Content` | `BaseElement` | Read-only. The element the item shows, given when it is made. (not a dependency property) |
-| `IsCheckable` | `bool` | Whether choosing the item switches `IsChecked`. Setting it to `false` also clears `IsChecked`. (not a dependency property) |
-| `IsChecked` | `bool` | Whether the check mark of a checkable item is shown. (not a dependency property) |
-| `SubMenu` | `ContextMenu` | The menu opened next to the item, on hover or click (see the menu's `SubMenusOpenType`). The arrow shows while it has items. (not a dependency property) |
-| `HasSubItems` | `bool` | Read-only. Whether the item has a sub-menu with at least one item. (not a dependency property) |
-| `ParentMenu` | `ContextMenu` | Read-only. The menu the item is in. (not a dependency property) |
-| `Source` | `object` | Read-only. The `ItemsSource` object the item shows, `null` for an item added in code. (not a dependency property) |
-| `MouseCursorsSet` | `MouseCursorsSet` | Read-only. The mouse cursors of the row the item is in. (not a dependency property) |
+| `Content` | `BaseElement` | Read-only. The element the item shows, given when it is made. |
+| `IsCheckable` | `bool` | Whether choosing the item switches `IsChecked`. Setting it to `false` also clears `IsChecked`. |
+| `IsChecked` | `bool` | Whether the check mark of a checkable item is shown. |
+| `SubMenu` | `ContextMenu` | The menu opened next to the item, on hover or click (see the menu's `SubMenusOpenType`). The arrow shows while it has items. |
+| `HasSubItems` | `bool` | Read-only. Whether the item has a sub-menu with at least one item. |
+| `ParentMenu` | `ContextMenu` | Read-only. The menu the item is in. |
+| `Source` | `object` | Read-only. The `ItemsSource` object the item shows, `null` for an item added in code. |
+| `MouseCursorsSet` | `MouseCursorsSet` | Read-only. The mouse cursors of the row the item is in. |
 
 | Method | Description |
 | --- | --- |

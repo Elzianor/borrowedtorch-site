@@ -5,9 +5,9 @@ description: Images, stencils, view ports for your own drawing, and drag and dro
 ---
 
 Every element here has all the properties, events and methods of [`BaseElement`](/docs/ui-base-element/), which the
-tables below don't repeat. Every property listed is a dependency property unless marked otherwise: `Foo` is backed by
+tables below don't repeat. A property marked <span class="dp-badge">DP</span> is a dependency property: `Foo` is backed by
 `FooDP`, which a style, a binding or an animation can set (see [styles, bindings and animation](/docs/ui-styles/)).
-Screenshots use the theme from [styles](/docs/ui-styles/#the-theme-of-these-pages).
+Unmarked properties are plain C# properties. Screenshots use the theme from [styles](/docs/ui-styles/#the-theme-of-these-pages).
 
 ## Image
 
@@ -86,8 +86,8 @@ element.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `Source` | `SourceData` | The texture drawn. Assign a `Texture2D` or a content path. A new source lays the image out again. |
-| `Fill` | `ImageFill` | How the texture covers the image. Defaults to `Stretch`. |
+| <span class="dp">`Source`</span> | `SourceData` | The texture drawn. Assign a `Texture2D` or a content path. A new source lays the image out again. |
+| <span class="dp">`Fill`</span> | `ImageFill` | How the texture covers the image. Defaults to `Stretch`. |
 
 ### Image methods
 
@@ -103,9 +103,9 @@ instance.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `Width` | `int` | Read-only. The texture's width in pixels, `0` without a texture. (not a dependency property) |
-| `Height` | `int` | Read-only. The texture's height in pixels, `0` without a texture. (not a dependency property) |
-| `IsEmpty` | `bool` | Read-only. Whether there is nothing to draw: no texture, or a width or height of `0`. (not a dependency property) |
+| `Width` | `int` | Read-only. The texture's width in pixels, `0` without a texture. |
+| `Height` | `int` | Read-only. The texture's height in pixels, `0` without a texture. |
+| `IsEmpty` | `bool` | Read-only. Whether there is nothing to draw: no texture, or a width or height of `0`. |
 
 | Method | Description |
 | --- | --- |
@@ -164,10 +164,10 @@ made of its own parts only. The stencil doesn't dispose the textures you give it
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `SourceTexture` | `Texture2D` | The picture that shows where the stencil has the key colour. Not part of `StencilStyle`. |
-| `StencilTexture` | `Texture2D` | The mask drawn over the picture. A stencil that fits its content takes its size. Not part of `StencilStyle`. |
-| `KeyColor` | `Color` | The stencil colour, alpha included, where the source shows through. Defaults to transparent black (`0, 0, 0, 0`). |
-| `Tolerance` | `float` | How far a stencil pixel may be from `KeyColor` and still be keyed, on a 0 to 1 scale per channel. Defaults to `0` (an exact match). |
+| <span class="dp">`SourceTexture`</span> | `Texture2D` | The picture that shows where the stencil has the key colour. Not part of `StencilStyle`. |
+| <span class="dp">`StencilTexture`</span> | `Texture2D` | The mask drawn over the picture. A stencil that fits its content takes its size. Not part of `StencilStyle`. |
+| <span class="dp">`KeyColor`</span> | `Color` | The stencil colour, alpha included, where the source shows through. Defaults to transparent black (`0, 0, 0, 0`). |
+| <span class="dp">`Tolerance`</span> | `float` | How far a stencil pixel may be from `KeyColor` and still be keyed, on a 0 to 1 scale per channel. Defaults to `0` (an exact match). |
 
 ### Stencil methods
 
@@ -256,11 +256,11 @@ A view port doesn't take the mouse by default (its style sets `HitTest` to `fals
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `DrawInstructions` | `Action` | Your drawing code, run every frame inside the view port as described above. (not a dependency property) |
-| `VisibleRectangle` | `Rectangle` | Read-only. The part of the view port that is on screen, in logical units like the element's bounds: smaller than the view port where a parent crops it. The scissor rectangle is set to its device pixels. (not a dependency property) |
-| `DeviceBounds` | `Rectangle` | Read-only. The view port's bounds in device pixels, the rectangle `GraphicsDevice.Viewport` is set to. (not a dependency property) |
-| `MinDepth` | `float` | The minimum depth of the viewport's depth range. Defaults to `DefaultSettings.DefaultMinDepth` (`0`). |
-| `MaxDepth` | `float` | The maximum depth of the viewport's depth range. Defaults to `DefaultSettings.DefaultMaxDepth` (`1`). |
+| `DrawInstructions` | `Action` | Your drawing code, run every frame inside the view port as described above. |
+| `VisibleRectangle` | `Rectangle` | Read-only. The part of the view port that is on screen, in logical units like the element's bounds: smaller than the view port where a parent crops it. The scissor rectangle is set to its device pixels. |
+| `DeviceBounds` | `Rectangle` | Read-only. The view port's bounds in device pixels, the rectangle `GraphicsDevice.Viewport` is set to. |
+| <span class="dp">`MinDepth`</span> | `float` | The minimum depth of the viewport's depth range. Defaults to `DefaultSettings.DefaultMinDepth` (`0`). |
+| <span class="dp">`MaxDepth`</span> | `float` | The maximum depth of the viewport's depth range. Defaults to `DefaultSettings.DefaultMaxDepth` (`1`). |
 
 ### ViewPort methods
 
@@ -377,7 +377,7 @@ mouse; the constructor sets `HitTest`, `HorizontalAlignment` and `VerticalAlignm
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `UseTargetAppearance` | `bool` | Whether each drag takes a picture of the dragged element, at the start of the drag, and shows it at the element's size instead of `Source`. The representation owns that picture and disposes it. (not a dependency property) |
+| `UseTargetAppearance` | `bool` | Whether each drag takes a picture of the dragged element, at the start of the drag, and shows it at the element's size instead of `Source`. The representation owns that picture and disposes it. |
 
 ### DragAndDropRepresentation methods
 

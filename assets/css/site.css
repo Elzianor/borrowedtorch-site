@@ -356,6 +356,23 @@ a.card:hover { border-color: var(--line-strong); background: var(--surface-2); c
   line-height: 1.55;
 }
 .prose pre code { padding: 0; border: 0; background: none; color: #e6d8c2; font-size: .86rem; }
+/* a dependency property in the UI property tables: a small DP badge after its name */
+.prose .dp { white-space: nowrap; }
+.prose .dp::after, .prose .dp-badge {
+  display: inline-block;
+  padding: 0 .34em;
+  border: 1px solid var(--line-strong);
+  border-radius: 4px;
+  background: rgba(233, 194, 122, .08);
+  color: var(--gold-dim);
+  font-family: var(--sans);
+  font-size: .62rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  line-height: 1.45;
+  vertical-align: .14em;
+}
+.prose .dp::after { content: "DP"; margin-left: .45em; }
 .prose .highlighter-rouge + .highlighter-rouge, .prose div.highlight { margin-top: 1em; }
 .prose table { width: 100%; border-collapse: collapse; font-size: .93rem; display: block; overflow-x: auto; }
 /* the scroll bars of wide code blocks and tables, in the site's colours instead of the browser's */

@@ -5,10 +5,9 @@ description: Buttons, check boxes, sliders, progress bars, tooltips and the colo
 ---
 
 Every control here is an element: it has all the properties, events and methods of
-[`BaseElement`](/docs/ui-base-element/), which the tables below don't repeat. Every property listed is a dependency
-property unless marked otherwise: `Foo` is backed by `FooDP`, which a style, a binding or an animation can set (see
+[`BaseElement`](/docs/ui-base-element/), which the tables below don't repeat. A property marked <span class="dp-badge">DP</span> is a dependency property: `Foo` is backed by `FooDP`, which a style, a binding or an animation can set (see
 [styles, bindings and animation](/docs/ui-styles/)), and by a static `FooDPActions` shared by all elements of the
-class. Screenshots use the theme from [styles](/docs/ui-styles/#the-theme-of-these-pages).
+class. Unmarked properties are plain C# properties. Screenshots use the theme from [styles](/docs/ui-styles/#the-theme-of-these-pages).
 
 ## Button
 
@@ -65,16 +64,16 @@ Without textures the button is drawn in the solid colour of its state. With `Tex
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `Text` | `string` | Creates a centred `RichTextBox` content showing this text, styled by `TextStyle`. |
-| `Content` | `BaseElement` | Any element shown inside the button instead of a text. A content you give is detached, not disposed, when it is replaced. |
-| `Type` | `ButtonType` | How the button reacts to the mouse: `Normal`, `Repeat` or `Toggle`. |
-| `ToggledOn` | `bool` | Whether a `Toggle` button is on. Set it to switch the button from code; `OnToggled` is raised. |
-| `NormalColor` | `Color` | The solid colour while nothing happens. |
-| `HoverColor` | `Color` | The solid colour while the mouse is over the button. |
-| `PressedColor` | `Color` | The solid colour while the button is pressed. |
-| `ToggledColor` | `Color` | The solid colour of a `Toggle` button that is on. |
-| `TextStyle` | `RichTextBoxStyle` | The style of the text content made from `Text`. |
-| `BackgroundStyle` | `ImageStyle` | The style of the image the button draws its background with. |
+| <span class="dp">`Text`</span> | `string` | Creates a centred `RichTextBox` content showing this text, styled by `TextStyle`. |
+| <span class="dp">`Content`</span> | `BaseElement` | Any element shown inside the button instead of a text. A content you give is detached, not disposed, when it is replaced. |
+| <span class="dp">`Type`</span> | `ButtonType` | How the button reacts to the mouse: `Normal`, `Repeat` or `Toggle`. |
+| <span class="dp">`ToggledOn`</span> | `bool` | Whether a `Toggle` button is on. Set it to switch the button from code; `OnToggled` is raised. |
+| <span class="dp">`NormalColor`</span> | `Color` | The solid colour while nothing happens. |
+| <span class="dp">`HoverColor`</span> | `Color` | The solid colour while the mouse is over the button. |
+| <span class="dp">`PressedColor`</span> | `Color` | The solid colour while the button is pressed. |
+| <span class="dp">`ToggledColor`</span> | `Color` | The solid colour of a `Toggle` button that is on. |
+| <span class="dp">`TextStyle`</span> | `RichTextBoxStyle` | The style of the text content made from `Text`. |
+| <span class="dp">`BackgroundStyle`</span> | `ImageStyle` | The style of the image the button draws its background with. |
 
 ### Button events
 
@@ -195,16 +194,16 @@ colour, so give them in a style or on the element. With `TexturesPath` set, the 
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `Text` | `string` | Creates a `RichTextBox` content showing this text, styled by `TextStyle`. |
-| `Content` | `BaseElement` | Any element shown beside the box instead of a text. A content you give is detached, not disposed, when it is replaced. |
-| `Checked` | `bool` | Whether the box is checked. Setting it raises `OnCheckedUnchecked`, and checking a radio button unchecks the others of its group. |
-| `Type` | `CheckBoxType` | `CheckBox` (the default) or `RadioButton`. |
-| `GroupId` | `string` | The group of a radio button: the radio buttons in the tree with the same id uncheck each other. Not used by a `CheckBox`. |
-| `Direction` | `CheckBoxDirection` | Which side of the content the box is on: `Left` (the default) or `Right`. |
-| `CheckedSolidColor` | `Color` | The colour of the box while it is checked, without textures. |
-| `UncheckedSolidColor` | `Color` | The colour of the box while it is unchecked, without textures. |
-| `TextStyle` | `RichTextBoxStyle` | The style of the text content made from `Text`. |
-| `ImageStyle` | `ImageStyle` | The style of the image that draws the box. |
+| <span class="dp">`Text`</span> | `string` | Creates a `RichTextBox` content showing this text, styled by `TextStyle`. |
+| <span class="dp">`Content`</span> | `BaseElement` | Any element shown beside the box instead of a text. A content you give is detached, not disposed, when it is replaced. |
+| <span class="dp">`Checked`</span> | `bool` | Whether the box is checked. Setting it raises `OnCheckedUnchecked`, and checking a radio button unchecks the others of its group. |
+| <span class="dp">`Type`</span> | `CheckBoxType` | `CheckBox` (the default) or `RadioButton`. |
+| <span class="dp">`GroupId`</span> | `string` | The group of a radio button: the radio buttons in the tree with the same id uncheck each other. Not used by a `CheckBox`. |
+| <span class="dp">`Direction`</span> | `CheckBoxDirection` | Which side of the content the box is on: `Left` (the default) or `Right`. |
+| <span class="dp">`CheckedSolidColor`</span> | `Color` | The colour of the box while it is checked, without textures. |
+| <span class="dp">`UncheckedSolidColor`</span> | `Color` | The colour of the box while it is unchecked, without textures. |
+| <span class="dp">`TextStyle`</span> | `RichTextBoxStyle` | The style of the text content made from `Text`. |
+| <span class="dp">`ImageStyle`</span> | `ImageStyle` | The style of the image that draws the box. |
 
 ### CheckBox events
 
@@ -356,29 +355,29 @@ marks are drawn in their colours with or without textures.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `Min` | `float` | The smallest value. Setting it above `Max` moves `Max` along. |
-| `Max` | `float` | The largest value. Setting it below `Min` moves `Min` along. |
-| `Value` | `float` | The value, between `Min` and `Max`. A value you set is clamped to the range and snapped to the ticks. |
-| `NormalizedValue` | `float` | Read-only. Where the value lies in the range, from 0 at `Min` to 1 at `Max` (0 when `Min` equals `Max`). (not a dependency property) |
-| `Orientation` | `Orientation` | `Horizontal` (the default) or `Vertical`. A vertical slider has `Min` at the bottom. |
-| `Type` | `SliderType` | The kind of slider: `Slider` (the default), `SliderWithCaps`, `ScrollBar` or `ScrollBarNoButtons`. |
-| `Tick` | `float` | The step the value snaps to, from `Min`. 0 (the default) means no snapping and no tick marks. |
-| `TickPlacement` | `TickPlacement` | Where the tick marks are drawn. `None` (the default) draws none. |
-| `TickSize` | `Point` | The width and height of a tick mark, in units. |
-| `TickOffset` | `int` | The gap between the slider's edge and the tick marks, in units. |
-| `TickPassedColor` | `Color` | The colour of the tick marks at or below the value. |
-| `TickRemainingColor` | `Color` | The colour of the tick marks above the value. |
-| `ThumbScale` | `Vector2` | The thumb's width (`X`) and height (`Y`) as a share of the slider's thickness. On a scroll bar with `ContentSize` and `ViewSize`, the length along the track comes from them instead. |
-| `ThumbMargin` | `Margin` | Moves the thumb across the track: it is centred in the slider's thickness minus `ThumbMargin.Top` (horizontal) or `ThumbMargin.Left` (vertical). The other sides are not used. |
-| `ThumbMinSize` | `float` | The smallest length of the thumb along the track, in units. It keeps a scroll bar's thumb usable over long content. |
-| `MoveToPoint` | `bool` | When set, a click on the track moves the thumb to the clicked point instead of stepping. |
-| `ContentSize` | `Point` | The size of the content a scroll bar scrolls, in units. Changing it keeps the same content in view. (not a dependency property) |
-| `ViewSize` | `Point` | The size of the visible part of that content, in units. Changing it keeps the same content in view. (not a dependency property) |
-| `ScrollAreaSize` | `Vector2` | Read-only. `ContentSize` minus `ViewSize`: how far the content can scroll. (not a dependency property) |
-| `ButtonsSolidColor` | `Color` | The colour of the end buttons and caps, without textures. |
-| `LineDecreaseSolidColor` | `Color` | The colour of the track between the start and the thumb, without textures. |
-| `LineIncreaseSolidColor` | `Color` | The colour of the track between the thumb and the end, without textures. |
-| `ThumbSolidColor` | `Color` | The colour of the thumb, without textures. |
+| <span class="dp">`Min`</span> | `float` | The smallest value. Setting it above `Max` moves `Max` along. |
+| <span class="dp">`Max`</span> | `float` | The largest value. Setting it below `Min` moves `Min` along. |
+| <span class="dp">`Value`</span> | `float` | The value, between `Min` and `Max`. A value you set is clamped to the range and snapped to the ticks. |
+| `NormalizedValue` | `float` | Read-only. Where the value lies in the range, from 0 at `Min` to 1 at `Max` (0 when `Min` equals `Max`). |
+| <span class="dp">`Orientation`</span> | `Orientation` | `Horizontal` (the default) or `Vertical`. A vertical slider has `Min` at the bottom. |
+| <span class="dp">`Type`</span> | `SliderType` | The kind of slider: `Slider` (the default), `SliderWithCaps`, `ScrollBar` or `ScrollBarNoButtons`. |
+| <span class="dp">`Tick`</span> | `float` | The step the value snaps to, from `Min`. 0 (the default) means no snapping and no tick marks. |
+| <span class="dp">`TickPlacement`</span> | `TickPlacement` | Where the tick marks are drawn. `None` (the default) draws none. |
+| <span class="dp">`TickSize`</span> | `Point` | The width and height of a tick mark, in units. |
+| <span class="dp">`TickOffset`</span> | `int` | The gap between the slider's edge and the tick marks, in units. |
+| <span class="dp">`TickPassedColor`</span> | `Color` | The colour of the tick marks at or below the value. |
+| <span class="dp">`TickRemainingColor`</span> | `Color` | The colour of the tick marks above the value. |
+| <span class="dp">`ThumbScale`</span> | `Vector2` | The thumb's width (`X`) and height (`Y`) as a share of the slider's thickness. On a scroll bar with `ContentSize` and `ViewSize`, the length along the track comes from them instead. |
+| <span class="dp">`ThumbMargin`</span> | `Margin` | Moves the thumb across the track: it is centred in the slider's thickness minus `ThumbMargin.Top` (horizontal) or `ThumbMargin.Left` (vertical). The other sides are not used. |
+| <span class="dp">`ThumbMinSize`</span> | `float` | The smallest length of the thumb along the track, in units. It keeps a scroll bar's thumb usable over long content. |
+| <span class="dp">`MoveToPoint`</span> | `bool` | When set, a click on the track moves the thumb to the clicked point instead of stepping. |
+| `ContentSize` | `Point` | The size of the content a scroll bar scrolls, in units. Changing it keeps the same content in view. |
+| `ViewSize` | `Point` | The size of the visible part of that content, in units. Changing it keeps the same content in view. |
+| `ScrollAreaSize` | `Vector2` | Read-only. `ContentSize` minus `ViewSize`: how far the content can scroll. |
+| <span class="dp">`ButtonsSolidColor`</span> | `Color` | The colour of the end buttons and caps, without textures. |
+| <span class="dp">`LineDecreaseSolidColor`</span> | `Color` | The colour of the track between the start and the thumb, without textures. |
+| <span class="dp">`LineIncreaseSolidColor`</span> | `Color` | The colour of the track between the thumb and the end, without textures. |
+| <span class="dp">`ThumbSolidColor`</span> | `Color` | The colour of the thumb, without textures. |
 
 ### Slider events
 
@@ -475,10 +474,10 @@ set, it tiles the `Background` texture over the whole element and the `Bar` text
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `Min` | `float` | The value of an empty bar. Setting it above `Max` moves `Max` along. |
-| `Max` | `float` | The value of a full bar. Setting it below `Min` moves `Min` along. |
-| `Value` | `float` | The current value, clamped to the range between `Min` and `Max`. |
-| `Orientation` | `Orientation` | `Horizontal` (the default, fills from the left) or `Vertical` (fills from the bottom). |
+| <span class="dp">`Min`</span> | `float` | The value of an empty bar. Setting it above `Max` moves `Max` along. |
+| <span class="dp">`Max`</span> | `float` | The value of a full bar. Setting it below `Min` moves `Min` along. |
+| <span class="dp">`Value`</span> | `float` | The current value, clamped to the range between `Min` and `Max`. |
+| <span class="dp">`Orientation`</span> | `Orientation` | `Horizontal` (the default, fills from the left) or `Vertical` (fills from the bottom). |
 
 ### ProgressBar methods
 
@@ -532,12 +531,12 @@ which does not wrap; the tooltip's own `BackgroundColor` is drawn behind it.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `Text` | `string` | Creates a centred `RichTextBox` content showing this text, styled by `TextStyle`. |
-| `Content` | `BaseElement` | Any element shown in the tooltip instead of a text. |
-| `Placement` | `ToolTipPlacement` | Which side of the cursor the tooltip appears on. `TopLeft` is the default. |
-| `MarginFromMouseCursor` | `Margin` | The shift from the cursor, in units: `Left` is added to the x position and `Top` to the y position, whatever the placement (use negative values to move a `TopLeft` tooltip away from the cursor). The other sides are not used. |
-| `TimeBeforeShowMs` | `int` | How long the mouse rests on the element before the tooltip appears, in milliseconds. 0 shows it at once. |
-| `TextStyle` | `RichTextBoxStyle` | The style of the text content made from `Text`. |
+| <span class="dp">`Text`</span> | `string` | Creates a centred `RichTextBox` content showing this text, styled by `TextStyle`. |
+| <span class="dp">`Content`</span> | `BaseElement` | Any element shown in the tooltip instead of a text. |
+| <span class="dp">`Placement`</span> | `ToolTipPlacement` | Which side of the cursor the tooltip appears on. `TopLeft` is the default. |
+| <span class="dp">`MarginFromMouseCursor`</span> | `Margin` | The shift from the cursor, in units: `Left` is added to the x position and `Top` to the y position, whatever the placement (use negative values to move a `TopLeft` tooltip away from the cursor). The other sides are not used. |
+| <span class="dp">`TimeBeforeShowMs`</span> | `int` | How long the mouse rests on the element before the tooltip appears, in milliseconds. 0 shows it at once. |
+| <span class="dp">`TextStyle`</span> | `RichTextBoxStyle` | The style of the text content made from `Text`. |
 
 ### ToolTip methods
 
@@ -609,8 +608,8 @@ when the content manager's root is `Content`. Without a content manager the pick
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `Brightness` | `float` | Scales the picked colour, from 0 (black) to 1 (the palette's colour, the default). Values outside are clamped. Changing it recomputes `SelectedColor` from the picked spot. |
-| `SelectedColor` | `Color` | The picked colour times `Brightness`, always opaque. It starts black. Setting it raises `OnSelectedColorChanged` but does not move the pointer. |
+| <span class="dp">`Brightness`</span> | `float` | Scales the picked colour, from 0 (black) to 1 (the palette's colour, the default). Values outside are clamped. Changing it recomputes `SelectedColor` from the picked spot. |
+| <span class="dp">`SelectedColor`</span> | `Color` | The picked colour times `Brightness`, always opaque. It starts black. Setting it raises `OnSelectedColorChanged` but does not move the pointer. |
 
 Before anything is picked, changing `Brightness` sets `SelectedColor` to black.
 

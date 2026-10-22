@@ -6,7 +6,7 @@ description: Stack panels, grids, scrolling containers, borders, separators, win
 
 These elements arrange, frame and scroll other elements. Each of them, apart from `TabControl`, is an element: it has
 all the properties, events and methods of [`BaseElement`](/docs/ui-base-element/), which the tables below don't
-repeat. Every property listed is a dependency property unless marked otherwise: `Foo` is backed by `FooDP`, which a
+repeat. A property marked <span class="dp-badge">DP</span> is a dependency property: `Foo` is backed by `FooDP`, which a
 style, a binding or an animation can set (see [styles, bindings and animation](/docs/ui-styles/)). Screenshots use the
 theme from [styles](/docs/ui-styles/#the-theme-of-these-pages).
 
@@ -80,8 +80,8 @@ An item that is disposed leaves the panel by itself.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `Orientation` | `Orientation` | `Vertical` stacks the items top to bottom, `Horizontal` left to right. The default is `Horizontal`. |
-| `Items` | `IReadOnlyList<BaseElement>` | Read-only. The items in the order they are stacked: the elements you added, not the panel's wrappers. A live view, nothing is copied. (not a dependency property) |
+| <span class="dp">`Orientation`</span> | `Orientation` | `Vertical` stacks the items top to bottom, `Horizontal` left to right. The default is `Horizontal`. |
+| `Items` | `IReadOnlyList<BaseElement>` | Read-only. The items in the order they are stacked: the elements you added, not the panel's wrappers. A live view, nothing is copied. |
 
 ### StackPanel methods
 
@@ -172,10 +172,10 @@ clips its items, and it is removed once its last item is. The grid's `Foreground
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `ColumnsCount` | `int` | Read-only. The number of column definitions. (not a dependency property) |
-| `RowsCount` | `int` | Read-only. The number of row definitions. (not a dependency property) |
-| `ShowLayout` | `bool` | Draws the grid's outline, a line at the end of every column and row, and fills each of them with a dim shade of `LayoutColor`. A debugging aid, off by default. (not a dependency property) |
-| `LayoutColor` | `Color` | The colour of the lines `ShowLayout` draws; the fill is this colour with every channel divided by 5. Set it, the default is transparent. (not a dependency property) |
+| `ColumnsCount` | `int` | Read-only. The number of column definitions. |
+| `RowsCount` | `int` | Read-only. The number of row definitions. |
+| `ShowLayout` | `bool` | Draws the grid's outline, a line at the end of every column and row, and fills each of them with a dim shade of `LayoutColor`. A debugging aid, off by default. |
+| `LayoutColor` | `Color` | The colour of the lines `ShowLayout` draws; the fill is this colour with every channel divided by 5. Set it, the default is transparent. |
 
 ### Grid methods
 
@@ -206,10 +206,10 @@ A cell is aligned `Left` / `Top`, doesn't take the mouse, and clips its items. I
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `IsSpanCell` | `bool` | Read-only. Whether the cell spans more than one column or row. (not a dependency property) |
-| `ContentWidth` | `int` | Read-only. The width the cell's items need; auto columns are sized by it. (not a dependency property) |
-| `ContentHeight` | `int` | Read-only. The height the cell's items need; auto rows are sized by it. (not a dependency property) |
-| `Items` | `IReadOnlyList<BaseElement>` | Read-only. The items in the cell. (not a dependency property) |
+| `IsSpanCell` | `bool` | Read-only. Whether the cell spans more than one column or row. |
+| `ContentWidth` | `int` | Read-only. The width the cell's items need; auto columns are sized by it. |
+| `ContentHeight` | `int` | Read-only. The height the cell's items need; auto rows are sized by it. |
+| `Items` | `IReadOnlyList<BaseElement>` | Read-only. The items in the cell. |
 
 The grid has no style class; its properties are set in code.
 
@@ -271,15 +271,15 @@ The container's `Children` are its view and scroll bars; the item methods act on
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `ScrollBars` | `ScrollBars` | Which scroll bars may show: `None` (the default), `Vertical`, `Horizontal` or `Both`. |
-| `ScrollBarsThickness` | `int` | The width of a vertical bar and the height of a horizontal one, in units. The default is 0. |
-| `ScrollBarsStyle` | `SliderStyle` | The style of the scroll bars (see [sliders](/docs/ui-controls/#slider)). The vertical bar gets a copy with the colours of its two line halves swapped. |
-| `HorizontalScrollingValue` | `float` | How far the content is scrolled sideways, from 0 (the left) to 1 (the right). |
-| `VerticalScrollingValue` | `float` | How far the content is scrolled down, from 0 (the top) to 1 (the bottom). |
-| `Items` | `IReadOnlyList<BaseElement>` | Read-only. The items that scroll: the elements you added. The container's `Children` are its view and scroll bars. A live view. (not a dependency property) |
-| `ContentMargin` | `Margin` | Read-only. The current offset of the content in the view: `Left` and `Top` are 0 or negative while it is scrolled. (not a dependency property) |
-| `ScrollAreaWidth` | `float` | Read-only. How far the content can scroll sideways, in units: its width less the view's width (0 or less while it fits). (not a dependency property) |
-| `ScrollAreaHeight` | `float` | Read-only. How far the content can scroll down, in units: its height less the view's height (0 or less while it fits). (not a dependency property) |
+| <span class="dp">`ScrollBars`</span> | `ScrollBars` | Which scroll bars may show: `None` (the default), `Vertical`, `Horizontal` or `Both`. |
+| <span class="dp">`ScrollBarsThickness`</span> | `int` | The width of a vertical bar and the height of a horizontal one, in units. The default is 0. |
+| <span class="dp">`ScrollBarsStyle`</span> | `SliderStyle` | The style of the scroll bars (see [sliders](/docs/ui-controls/#slider)). The vertical bar gets a copy with the colours of its two line halves swapped. |
+| <span class="dp">`HorizontalScrollingValue`</span> | `float` | How far the content is scrolled sideways, from 0 (the left) to 1 (the right). |
+| <span class="dp">`VerticalScrollingValue`</span> | `float` | How far the content is scrolled down, from 0 (the top) to 1 (the bottom). |
+| `Items` | `IReadOnlyList<BaseElement>` | Read-only. The items that scroll: the elements you added. The container's `Children` are its view and scroll bars. A live view. |
+| `ContentMargin` | `Margin` | Read-only. The current offset of the content in the view: `Left` and `Top` are 0 or negative while it is scrolled. |
+| `ScrollAreaWidth` | `float` | Read-only. How far the content can scroll sideways, in units: its width less the view's width (0 or less while it fits). |
+| `ScrollAreaHeight` | `float` | Read-only. How far the content can scroll down, in units: its height less the view's height (0 or less while it fits). |
 
 ### ScrollableContainer methods
 
@@ -369,9 +369,9 @@ content that is disposed is cleared from `Content`.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `Content` | `BaseElement` | The element inside the frame. A style can't set it. |
-| `Thickness` | `Margin` | The width of the frame per side (`Left`, `Top`, `Right`, `Bottom`), in units. |
-| `Padding` | `Margin?` | The inset of the content from the border's edges, used instead of `Thickness`. Null (the default) insets the content by the thickness. |
+| <span class="dp">`Content`</span> | `BaseElement` | The element inside the frame. A style can't set it. |
+| <span class="dp">`Thickness`</span> | `Margin` | The width of the frame per side (`Left`, `Top`, `Right`, `Bottom`), in units. |
+| <span class="dp">`Padding`</span> | `Margin?` | The inset of the content from the border's edges, used instead of `Thickness`. Null (the default) insets the content by the thickness. |
 
 ### Border methods
 
@@ -386,8 +386,8 @@ class of `Separator`. It doesn't take the mouse and shows the mouse cursors of t
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `Content` | `BaseElement` | Read-only. The element the container holds: its first item, or null. (not a dependency property) |
-| `MouseCursorsSet` | `MouseCursorsSet` | Read-only. The cursors of the container's parent, so the container shows the cursors of its control. (not a dependency property) |
+| `Content` | `BaseElement` | Read-only. The element the container holds: its first item, or null. |
+| `MouseCursorsSet` | `MouseCursorsSet` | Read-only. The cursors of the container's parent, so the container shows the cursors of its control. |
 
 | Method | Description |
 | --- | --- |
@@ -509,10 +509,10 @@ windows stack: the one shown last is on top, and hiding it gives the mouse back 
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `BorderStyle` | `BorderStyle` | The style of the window's frame: its `Thickness`, `Padding`, frame colour (`ForegroundColor`), content area colour (`BackgroundColor`) and `TexturesPath`. The window follows changes made to the style object later. |
-| `TitleBar` | `BaseElement` | The element in the title row. The default is a [`DefaultWindowTitleBar`](#defaultwindowtitlebar); set your own element to replace it, and clear the value to get the default one back. A replaced title bar is detached, not disposed. A style can't set it. |
-| `Content` | `BaseElement` | The element in the content area. A replaced content is detached, not disposed, and a disposed one is cleared. A style can't set it. |
-| `IsModal` | `bool` | Makes the window modal: drawn above everything over a shade, and the only part of the UI that gets the mouse while shown. Off by default. |
+| <span class="dp">`BorderStyle`</span> | `BorderStyle` | The style of the window's frame: its `Thickness`, `Padding`, frame colour (`ForegroundColor`), content area colour (`BackgroundColor`) and `TexturesPath`. The window follows changes made to the style object later. |
+| <span class="dp">`TitleBar`</span> | `BaseElement` | The element in the title row. The default is a [`DefaultWindowTitleBar`](#defaultwindowtitlebar); set your own element to replace it, and clear the value to get the default one back. A replaced title bar is detached, not disposed. A style can't set it. |
+| <span class="dp">`Content`</span> | `BaseElement` | The element in the content area. A replaced content is detached, not disposed, and a disposed one is cleared. A style can't set it. |
+| <span class="dp">`IsModal`</span> | `bool` | Makes the window modal: drawn above everything over a shade, and the only part of the UI that gets the mouse while shown. Off by default. |
 
 ### Window methods
 
@@ -540,10 +540,10 @@ titleBar.OnCloseButtonClickAction = () => window.Hide();
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `Title` | `RichTextBox` | Read-only. The title text, centred in the bar. Set its `Text` and text style properties. (not a dependency property) |
-| `CloseButton` | `Button` | Read-only. The close button at the right of the bar. It shows no text until you set its `Text` or `Content`. (not a dependency property) |
-| `Background` | `Image` | Read-only. The image that fills the bar and holds the title and the close button. Its `BackgroundColor` is the bar's colour. (not a dependency property) |
-| `OnCloseButtonClickAction` | `Action` | What a click on the close button does. In a window's default title bar it is the window's `Hide`. (not a dependency property) |
+| `Title` | `RichTextBox` | Read-only. The title text, centred in the bar. Set its `Text` and text style properties. |
+| `CloseButton` | `Button` | Read-only. The close button at the right of the bar. It shows no text until you set its `Text` or `Content`. |
+| `Background` | `Image` | Read-only. The image that fills the bar and holds the title and the close button. Its `BackgroundColor` is the bar's colour. |
+| `OnCloseButtonClickAction` | `Action` | What a click on the close button does. In a window's default title bar it is the window's `Hide`. |
 
 | Method | Description |
 | --- | --- |

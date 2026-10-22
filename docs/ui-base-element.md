@@ -5,10 +5,9 @@ description: What every element has in common, input and states, resizing, the r
 ---
 
 Every element derives from `BaseElement`, so everything on this page applies to all of them: buttons, labels, stack
-panels, windows and your own elements. The other UI pages list only what each element adds. Every property listed is
-a dependency property unless marked otherwise: `Foo` is backed by `FooDP`, which a style, a binding or an animation can
+panels, windows and your own elements. The other UI pages list only what each element adds. A property marked <span class="dp-badge">DP</span> is a dependency property: `Foo` is backed by `FooDP`, which a style, a binding or an animation can
 set (see [styles, bindings and animation](/docs/ui-styles/)), and the class has a static `FooDPActions` with the
-property's shared actions and default. Screenshots use the theme from
+property's shared actions and default. Unmarked properties are plain C# properties. Screenshots use the theme from
 [styles](/docs/ui-styles/#the-theme-of-these-pages).
 
 The event handler types are delegates nested in `BaseElement` (`BaseElement.Click`, `BaseElement.KeyDown` and so on);
@@ -43,27 +42,27 @@ parent makes it wrap (see [sizes and alignment](/docs/ui/#sizes-and-alignment)).
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `DesiredWidth` | `int` | The width in units. 0 (the default) fits the content, or stretches over the slot when `HorizontalAlignment` is `Stretch`. |
-| `DesiredHeight` | `int` | The height in units. 0 (the default) fits the content, or stretches over the slot when `VerticalAlignment` is `Stretch`. |
-| `MinWidth` | `int` | The smallest width the layout (and a resize) gives the element. 0 is no limit. |
-| `MinHeight` | `int` | The smallest height the layout (and a resize) gives the element. 0 is no limit. |
-| `MaxWidth` | `int` | The largest width the layout (and a resize) gives the element. 0 is no limit. |
-| `MaxHeight` | `int` | The largest height the layout (and a resize) gives the element. 0 is no limit. |
-| `HorizontalAlignment` | `HorizontalAlignment` | Where the element sits in its slot horizontally, and whether it stretches over it. The default is `Stretch`. |
-| `VerticalAlignment` | `VerticalAlignment` | Where the element sits in its slot vertically, and whether it stretches over it. The default is `Stretch`. |
-| `Margin` | `Margin` | The space between the element and the edges of its slot. Which sides count is described above. |
-| `ActualWidth` | `int` | Read-only. The width the last layout gave the element, within its size limits (not a dependency property). |
-| `ActualHeight` | `int` | Read-only. The height the last layout gave the element, within its size limits (not a dependency property). |
-| `Location` | `Point` | Read-only. The top left corner of the element on the screen (not a dependency property). |
-| `Left` | `int` | Read-only. `Location.X` (not a dependency property). |
-| `Top` | `int` | Read-only. `Location.Y` (not a dependency property). |
-| `Right` | `int` | Read-only. `Left + ActualWidth` (not a dependency property). |
-| `Bottom` | `int` | Read-only. `Top + ActualHeight` (not a dependency property). |
-| `Bounds` | `Rectangle` | Read-only. `Location` and the actual size as one rectangle (not a dependency property). |
-| `MeasuredWidth` | `int` | Read-only. The width the last measure found: fixed, stretched over the slot or fitted to the content (not a dependency property). |
-| `MeasuredHeight` | `int` | Read-only. The height the last measure found (not a dependency property). |
-| `MeasuredContentWidth` | `int` | Read-only. The width the content needed at the last measure, whatever width the element was given (not a dependency property). |
-| `MeasuredContentHeight` | `int` | Read-only. The height the content needed at the last measure (not a dependency property). |
+| <span class="dp">`DesiredWidth`</span> | `int` | The width in units. 0 (the default) fits the content, or stretches over the slot when `HorizontalAlignment` is `Stretch`. |
+| <span class="dp">`DesiredHeight`</span> | `int` | The height in units. 0 (the default) fits the content, or stretches over the slot when `VerticalAlignment` is `Stretch`. |
+| <span class="dp">`MinWidth`</span> | `int` | The smallest width the layout (and a resize) gives the element. 0 is no limit. |
+| <span class="dp">`MinHeight`</span> | `int` | The smallest height the layout (and a resize) gives the element. 0 is no limit. |
+| <span class="dp">`MaxWidth`</span> | `int` | The largest width the layout (and a resize) gives the element. 0 is no limit. |
+| <span class="dp">`MaxHeight`</span> | `int` | The largest height the layout (and a resize) gives the element. 0 is no limit. |
+| <span class="dp">`HorizontalAlignment`</span> | `HorizontalAlignment` | Where the element sits in its slot horizontally, and whether it stretches over it. The default is `Stretch`. |
+| <span class="dp">`VerticalAlignment`</span> | `VerticalAlignment` | Where the element sits in its slot vertically, and whether it stretches over it. The default is `Stretch`. |
+| <span class="dp">`Margin`</span> | `Margin` | The space between the element and the edges of its slot. Which sides count is described above. |
+| `ActualWidth` | `int` | Read-only. The width the last layout gave the element, within its size limits. |
+| `ActualHeight` | `int` | Read-only. The height the last layout gave the element, within its size limits. |
+| `Location` | `Point` | Read-only. The top left corner of the element on the screen. |
+| `Left` | `int` | Read-only. `Location.X`. |
+| `Top` | `int` | Read-only. `Location.Y`. |
+| `Right` | `int` | Read-only. `Left + ActualWidth`. |
+| `Bottom` | `int` | Read-only. `Top + ActualHeight`. |
+| `Bounds` | `Rectangle` | Read-only. `Location` and the actual size as one rectangle. |
+| `MeasuredWidth` | `int` | Read-only. The width the last measure found: fixed, stretched over the slot or fitted to the content. |
+| `MeasuredHeight` | `int` | Read-only. The height the last measure found. |
+| `MeasuredContentWidth` | `int` | Read-only. The width the content needed at the last measure, whatever width the element was given. |
+| `MeasuredContentHeight` | `int` | Read-only. The height the content needed at the last measure. |
 
 The measure and arrange methods (`Measure`, `MeasureAt`, `Arrange`, `ArrangeAt`, `InvalidateMeasure`,
 `InvalidateArrange`) are public, but you only need them in your own elements: see
@@ -174,16 +173,16 @@ size, so the elements around it move up.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `Visibility` | `Visibility` | Whether the element is shown, hidden in its space or collapsed. The default is `Visible`. A hidden element loses the keyboard focus and any mouse state. |
-| `BackgroundColor` | `Color` | The colour the element's background is filled with. `Transparent` (the default) fills nothing. |
-| `ForegroundColor` | `Color` | The colour of what the element draws over its background, such as a label's text. An element drawn from textures tints them with it when it is not `Transparent`. |
-| `TexturesPath` | `string` | A content folder with the element's textures, for example `UITextures/Button/`. A missing trailing path separator is added. |
-| `TexturesPresent` | `bool` | Read-only. True when `TexturesPath` is set (not a dependency property). |
-| `Transparency` | `float` | From 0 (opaque, the default) to 1 (invisible); values outside are clamped. Applies to the element and its subtree, combined with the parents' transparency. |
-| `CropOutsideOfParentBorder` | `bool` | Clips the element to its parent's bounds. Without it the element may overflow its parent but is still clipped by whatever clips the parent (a scroll view, a window's content area). On by default for every element with a style. |
-| `CustomEffect` | `Effect` | A shader the element draws its background (or texture, an image's picture) with. Setting it sets it on the children as well, and a child added later takes it. An effect with a `ModulationColor` parameter gets the draw colour there. |
-| `PreDrawAction` | `Action` | Runs before the element and its subtree are drawn, for example to change the sprite batch state (not a dependency property). |
-| `PostDrawAction` | `Action` | Runs after the element and its subtree are drawn, for example to restore what `PreDrawAction` changed (not a dependency property). |
+| <span class="dp">`Visibility`</span> | `Visibility` | Whether the element is shown, hidden in its space or collapsed. The default is `Visible`. A hidden element loses the keyboard focus and any mouse state. |
+| <span class="dp">`BackgroundColor`</span> | `Color` | The colour the element's background is filled with. `Transparent` (the default) fills nothing. |
+| <span class="dp">`ForegroundColor`</span> | `Color` | The colour of what the element draws over its background, such as a label's text. An element drawn from textures tints them with it when it is not `Transparent`. |
+| <span class="dp">`TexturesPath`</span> | `string` | A content folder with the element's textures, for example `UITextures/Button/`. A missing trailing path separator is added. |
+| `TexturesPresent` | `bool` | Read-only. True when `TexturesPath` is set. |
+| <span class="dp">`Transparency`</span> | `float` | From 0 (opaque, the default) to 1 (invisible); values outside are clamped. Applies to the element and its subtree, combined with the parents' transparency. |
+| <span class="dp">`CropOutsideOfParentBorder`</span> | `bool` | Clips the element to its parent's bounds. Without it the element may overflow its parent but is still clipped by whatever clips the parent (a scroll view, a window's content area). On by default for every element with a style. |
+| <span class="dp">`CustomEffect`</span> | `Effect` | A shader the element draws its background (or texture, an image's picture) with. Setting it sets it on the children as well, and a child added later takes it. An effect with a `ModulationColor` parameter gets the draw colour there. |
+| `PreDrawAction` | `Action` | Runs before the element and its subtree are drawn, for example to change the sprite batch state. |
+| `PostDrawAction` | `Action` | Runs after the element and its subtree are drawn, for example to restore what `PreDrawAction` changed. |
 
 Tooltips, context menus, drop-downs and modal windows are never clipped by the elements they open from.
 `PreDrawAction` and `PostDrawAction` come in pairs: a hidden element runs neither of them.
@@ -227,10 +226,10 @@ Ownership decides what is disposed:
 | Property | Type | Description |
 | --- | --- | --- |
 | `Id` | `Guid` | Read-only field. A unique id made when the element is created. |
-| `Name` | `string` | Read-only. The name given to the constructor, used by `GetElementByName` (not a dependency property). |
-| `Parent` | `BaseElement` | Read-only. The element this one is in, null when it is not in one (not a dependency property). |
-| `Children` | `IReadOnlyList<BaseElement>` | Read-only. The element's children: its items and the parts it made itself (not a dependency property). |
-| `IsDisposed` | `bool` | Read-only. True once `Dispose()` was called (not a dependency property). |
+| `Name` | `string` | Read-only. The name given to the constructor, used by `GetElementByName`. |
+| `Parent` | `BaseElement` | Read-only. The element this one is in, null when it is not in one. |
+| `Children` | `IReadOnlyList<BaseElement>` | Read-only. The element's children: its items and the parts it made itself. |
+| `IsDisposed` | `bool` | Read-only. True once `Dispose()` was called. |
 
 ### Items and content events
 
@@ -337,10 +336,10 @@ the controls raise their own events for them (a selection, a value change).
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `HitTest` | `bool` | Whether the element itself takes the mouse. On by default for every element with a style; off for an element deriving from `BaseElement` directly. |
-| `Disabled` | `bool` | Stops the element and its subtree from showing states, raising mouse events and taking the keyboard, and draws them darker. |
-| `InheritState` | `InheritState` | Which states the element shows besides its own: its parent's, its children's, both or none (the default). |
-| `StateData` | `ElementStateData` | Read-only. The state the element shows now and where it comes from (not a dependency property). |
+| <span class="dp">`HitTest`</span> | `bool` | Whether the element itself takes the mouse. On by default for every element with a style; off for an element deriving from `BaseElement` directly. |
+| <span class="dp">`Disabled`</span> | `bool` | Stops the element and its subtree from showing states, raising mouse events and taking the keyboard, and draws them darker. |
+| <span class="dp">`InheritState`</span> | `InheritState` | Which states the element shows besides its own: its parent's, its children's, both or none (the default). |
+| `StateData` | `ElementStateData` | Read-only. The state the element shows now and where it comes from. |
 
 ### Mouse and states events
 
@@ -427,10 +426,10 @@ shown for the first time). Your own elements inside a control keep theirs. `Repe
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `RepeatClicks` | `bool` | Raises `OnClick` on the press and repeatedly while the left button is held, instead of once on release. Off by default. |
-| `TimeBeforeRepeatStartsMs` | `int` | Milliseconds from the press to the first repeated click. 1000 by default; negative values are taken as 0. |
-| `TimeBetweenRepeatsMs` | `int` | Milliseconds between the repeated clicks after the first one. 300 by default; negative values are taken as 0. |
-| `DoubleClickIntervalMs` | `int` | The longest time in milliseconds between two left presses that make a double click. 300 by default; negative values are taken as 0. |
+| <span class="dp">`RepeatClicks`</span> | `bool` | Raises `OnClick` on the press and repeatedly while the left button is held, instead of once on release. Off by default. |
+| <span class="dp">`TimeBeforeRepeatStartsMs`</span> | `int` | Milliseconds from the press to the first repeated click. 1000 by default; negative values are taken as 0. |
+| <span class="dp">`TimeBetweenRepeatsMs`</span> | `int` | Milliseconds between the repeated clicks after the first one. 300 by default; negative values are taken as 0. |
+| <span class="dp">`DoubleClickIntervalMs`</span> | `int` | The longest time in milliseconds between two left presses that make a double click. 300 by default; negative values are taken as 0. |
 
 ## Keyboard and focus
 
@@ -459,7 +458,7 @@ The focused element's own `OnKeyDown` is raised even for a key its control used;
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `IsFocused` | `bool` | Read-only. True while the element has the keyboard (not a dependency property). |
+| `IsFocused` | `bool` | Read-only. True while the element has the keyboard. |
 
 ### Keyboard and focus events
 
@@ -492,8 +491,8 @@ tooltip or menu belongs to one element at a time: giving it to another element t
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `ToolTip` | `ToolTip` | Shown while the element is hovered, after the tooltip's delay (not a dependency property). See [ToolTip](/docs/ui-controls/#tooltip). |
-| `ContextMenu` | `ContextMenu` | Opened at the mouse by a right click on the element, or on an element inside it without a menu of its own (not a dependency property). See [ContextMenu](/docs/ui-lists/#contextmenu). |
+| `ToolTip` | `ToolTip` | Shown while the element is hovered, after the tooltip's delay. See [ToolTip](/docs/ui-controls/#tooltip). |
+| `ContextMenu` | `ContextMenu` | Opened at the mouse by a right click on the element, or on an element inside it without a menu of its own. See [ContextMenu](/docs/ui-lists/#contextmenu). |
 
 ## Resizing
 
@@ -535,10 +534,10 @@ ui.AddElementToRoot(panel);
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `IsResizable` | `bool` | Lets the user resize the element by dragging its edges and corners. |
-| `ResizeAreaHalfWidth` | `int` | How far the resize areas reach to each side of the edges, in units. 3 by default (`DefaultSettings.DefaultResizeAreaHalfWidth`); negative values are taken as 0. |
-| `ResizeWithElementContour` | `bool` | Shows a contour while dragging and resizes the element once on release, instead of resizing it as the mouse moves. |
-| `ResizeContourColor` | `Color` | The colour of the contour. `(50, 50, 50, 190)` by default (`DefaultSettings.DefaultResizeContourColor`); it fades and darkens with the element. |
+| <span class="dp">`IsResizable`</span> | `bool` | Lets the user resize the element by dragging its edges and corners. |
+| <span class="dp">`ResizeAreaHalfWidth`</span> | `int` | How far the resize areas reach to each side of the edges, in units. 3 by default (`DefaultSettings.DefaultResizeAreaHalfWidth`); negative values are taken as 0. |
+| <span class="dp">`ResizeWithElementContour`</span> | `bool` | Shows a contour while dragging and resizes the element once on release, instead of resizing it as the mouse moves. |
+| <span class="dp">`ResizeContourColor`</span> | `Color` | The colour of the contour. `(50, 50, 50, 190)` by default (`DefaultSettings.DefaultResizeContourColor`); it fades and darkens with the element. |
 
 `ResizeState` names the edge or corner a resize drags; `ResizeCursors` has a cursor set for each one (see
 [styles](/docs/ui-styles/)).
@@ -564,10 +563,10 @@ walk-through with a screenshot is on the [images page](/docs/ui-images/#drag-and
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `DragType` | `DragType` | Whether a press on the element drags something: nothing (the default), the element itself, or a drag and drop. |
-| `DragTarget` | `BaseElement` | The element that is dragged; the element itself by default (not a dependency property). |
-| `DragAndDropRepresentation` | `DragAndDropRepresentation` | What is drawn under the mouse while the element is the dragged one. Detached, not disposed, with the element (not a dependency property). |
-| `IsDropAllowedPredicate` | `IfDropAllowed` | Decides whether a dragged element can be dropped here: `bool (BaseElement draggedElement)`. Without one every drop is denied (not a dependency property). |
+| <span class="dp">`DragType`</span> | `DragType` | Whether a press on the element drags something: nothing (the default), the element itself, or a drag and drop. |
+| `DragTarget` | `BaseElement` | The element that is dragged; the element itself by default. |
+| `DragAndDropRepresentation` | `DragAndDropRepresentation` | What is drawn under the mouse while the element is the dragged one. Detached, not disposed, with the element. |
+| `IsDropAllowedPredicate` | `IfDropAllowed` | Decides whether a dragged element can be dropped here: `bool (BaseElement draggedElement)`. Without one every drop is denied. |
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
@@ -589,10 +588,10 @@ These properties place an element inside a [`Grid`](/docs/ui-layout/#grid); othe
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `GridRow` | `int` | The row the element starts in, from 0. |
-| `GridColumn` | `int` | The column the element starts in, from 0. |
-| `GridRowSpan` | `int` | How many rows the element covers; values below 1 are taken as 1. |
-| `GridColumnSpan` | `int` | How many columns the element covers; values below 1 are taken as 1. |
+| <span class="dp">`GridRow`</span> | `int` | The row the element starts in, from 0. |
+| <span class="dp">`GridColumn`</span> | `int` | The column the element starts in, from 0. |
+| <span class="dp">`GridRowSpan`</span> | `int` | How many rows the element covers; values below 1 are taken as 1. |
+| <span class="dp">`GridColumnSpan`</span> | `int` | How many columns the element covers; values below 1 are taken as 1. |
 
 ## Debug helpers
 
@@ -634,18 +633,18 @@ control reaches its parts (the scroll bars of a list, the title bar of a window)
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `GeneralStyle` | `TStyle` | Static. The style of every element of this style type. It starts as a copy of the framework defaults; changing one of its properties updates every such element, a property it leaves unset takes its default (not a dependency property). |
-| `StyleOverride` | `TStyle` | A style for this element only, applied over the general style. Setting it to null takes its values back out (not a dependency property). |
-| `GeneralMouseCursorsSet` | `MouseCursorsSet` | Static. The cursors of every element of this style type; null (the default) falls back to `DefaultMouseCursorsSet` (not a dependency property). |
-| `MouseCursorsSetOverride` | `MouseCursorsSet` | The cursors of this element only, passed on to its parts that have none of their own (not a dependency property). |
-| `MouseCursorsSet` | `MouseCursorsSet` | Read-only. The cursors the element shows: its override, else the set given to the control it is a part of, else its type's general set, else `DefaultMouseCursorsSet` (not a dependency property). |
+| `GeneralStyle` | `TStyle` | Static. The style of every element of this style type. It starts as a copy of the framework defaults; changing one of its properties updates every such element, a property it leaves unset takes its default. |
+| `StyleOverride` | `TStyle` | A style for this element only, applied over the general style. Setting it to null takes its values back out. |
+| `GeneralMouseCursorsSet` | `MouseCursorsSet` | Static. The cursors of every element of this style type; null (the default) falls back to `DefaultMouseCursorsSet`. |
+| `MouseCursorsSetOverride` | `MouseCursorsSet` | The cursors of this element only, passed on to its parts that have none of their own. |
+| `MouseCursorsSet` | `MouseCursorsSet` | Read-only. The cursors the element shows: its override, else the set given to the control it is a part of, else its type's general set, else `DefaultMouseCursorsSet`. |
 
 ### BaseElement cursor properties
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `DefaultMouseCursorsSet` | `MouseCursorsSet` | Static. The cursors of every element without a more specific set: an arrow on hover, a hand over an element that can be dragged, a "no" cursor over a denied drop, and the sizing arrows over resize areas. `BorrowedTorchUI.SetDefaultMouseCursorsSet` sets it too (not a dependency property). |
-| `MouseCursorsSet` | `MouseCursorsSet` | Read-only. The cursors the element shows. On an element without a style: its control's cursors when it is a part of one, otherwise `DefaultMouseCursorsSet` (not a dependency property). |
+| `DefaultMouseCursorsSet` | `MouseCursorsSet` | Static. The cursors of every element without a more specific set: an arrow on hover, a hand over an element that can be dragged, a "no" cursor over a denied drop, and the sizing arrows over resize areas. `BorrowedTorchUI.SetDefaultMouseCursorsSet` sets it too. |
+| `MouseCursorsSet` | `MouseCursorsSet` | Read-only. The cursors the element shows. On an element without a style: its control's cursors when it is a part of one, otherwise `DefaultMouseCursorsSet`. |
 
 ## The root element
 

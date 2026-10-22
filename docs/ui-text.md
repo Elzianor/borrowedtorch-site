@@ -9,9 +9,8 @@ coloured words, links, inline images, editing, scrolling and a typing animation.
 font atlas every frame, so no text texture is made, and both get their fonts the same way (see [Fonts](#fonts)).
 
 Both are elements: they have all the properties, events and methods of [`BaseElement`](/docs/ui-base-element/), which
-the tables below don't repeat (the text colour, for example, is the inherited `ForegroundColor`). Every property listed
-is a dependency property unless marked otherwise: `Foo` is backed by `FooDP`, which a style, a binding or an animation
-can set (see [styles, bindings and animation](/docs/ui-styles/)). Screenshots use the theme from
+the tables below don't repeat (the text colour, for example, is the inherited `ForegroundColor`). A property marked <span class="dp-badge">DP</span> is a dependency property: `Foo` is backed by `FooDP`, which a style, a binding or an animation
+can set (see [styles, bindings and animation](/docs/ui-styles/)). Unmarked properties are plain C# properties. Screenshots use the theme from
 [styles](/docs/ui-styles/#the-theme-of-these-pages).
 
 ## Label
@@ -93,20 +92,20 @@ its parent (`InheritState.FromParent`), so a label inside a button follows the b
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `Text` | `string` | The text shown. Line breaks start new lines, tabs become spaces. Default `""`. |
-| `FontSize` | `float` | The font size in units. Negative values become 0, and 0 draws nothing. Default `DefaultSettings.DefaultFontSize` (14). |
-| `FontPath` | `string` | The path of a TTF or OTF file to draw with (see [Fonts](#fonts)). A path that loads replaces the font system in use; an empty or unreadable path goes back to the general font, but keeps a font system you set by hand. |
-| `TextMargin` | `Margin` | The space between the label's edges and its text, in units. It turns with `TextRotation`. |
-| `TextAlignment` | `TextAlignment` | How each line is placed across the width. Default `Left`. |
-| `VerticalTextAlignment` | `VerticalTextAlignment` | Where the lines sit in a label taller than its text. Default `Top`. |
-| `TextRotation` | `TextRotation` | Turns the text and its frame by a quarter or a half turn. Default `None`. |
-| `WrapType` | `TextWrap` | Whether lines break at spaces to fit the width. Applies only with a fixed or stretched width or a `MaxWidth`. Default `NoWrap`. |
-| `LineSpacing` | `int` | Extra space between two lines, in units. Negative values become 0. |
-| `LineCount` | `int` | Read-only. The number of laid out lines, after wrapping. (not a dependency property) |
-| `LastFontError` | `Exception` | Read-only. The exception of the last failed font preparation, `null` when the font is fine. The label draws nothing while it has no font. (not a dependency property) |
-| `FontSystemOverride` | `FontSystem` | A FontStashSharp font system for this label only, used instead of the general one. Setting `FontPath` sets it too. The label does not dispose it. (not a dependency property) |
-| `FontSystem` | `FontSystem` | Read-only. The font system in use: `FontSystemOverride`, or `GeneralFontSystem` without one. (not a dependency property) |
-| `GeneralFontSystem` | `FontSystem` | Static. The font system of every label and rich text box without one of their own; `Label.GeneralFontSystem` and `RichTextBox.GeneralFontSystem` are the same value. The bundled UbuntuMono unless you set one. (not a dependency property) |
+| <span class="dp">`Text`</span> | `string` | The text shown. Line breaks start new lines, tabs become spaces. Default `""`. |
+| <span class="dp">`FontSize`</span> | `float` | The font size in units. Negative values become 0, and 0 draws nothing. Default `DefaultSettings.DefaultFontSize` (14). |
+| <span class="dp">`FontPath`</span> | `string` | The path of a TTF or OTF file to draw with (see [Fonts](#fonts)). A path that loads replaces the font system in use; an empty or unreadable path goes back to the general font, but keeps a font system you set by hand. |
+| <span class="dp">`TextMargin`</span> | `Margin` | The space between the label's edges and its text, in units. It turns with `TextRotation`. |
+| <span class="dp">`TextAlignment`</span> | `TextAlignment` | How each line is placed across the width. Default `Left`. |
+| <span class="dp">`VerticalTextAlignment`</span> | `VerticalTextAlignment` | Where the lines sit in a label taller than its text. Default `Top`. |
+| <span class="dp">`TextRotation`</span> | `TextRotation` | Turns the text and its frame by a quarter or a half turn. Default `None`. |
+| <span class="dp">`WrapType`</span> | `TextWrap` | Whether lines break at spaces to fit the width. Applies only with a fixed or stretched width or a `MaxWidth`. Default `NoWrap`. |
+| <span class="dp">`LineSpacing`</span> | `int` | Extra space between two lines, in units. Negative values become 0. |
+| `LineCount` | `int` | Read-only. The number of laid out lines, after wrapping. |
+| `LastFontError` | `Exception` | Read-only. The exception of the last failed font preparation, `null` when the font is fine. The label draws nothing while it has no font. |
+| `FontSystemOverride` | `FontSystem` | A FontStashSharp font system for this label only, used instead of the general one. Setting `FontPath` sets it too. The label does not dispose it. |
+| `FontSystem` | `FontSystem` | Read-only. The font system in use: `FontSystemOverride`, or `GeneralFontSystem` without one. |
+| `GeneralFontSystem` | `FontSystem` | Static. The font system of every label and rich text box without one of their own; `Label.GeneralFontSystem` and `RichTextBox.GeneralFontSystem` are the same value. The bundled UbuntuMono unless you set one. |
 
 ### Label methods
 
@@ -349,34 +348,34 @@ With `CharacterPrintDelayMs` at 0 (its default) `AnimateText` sets the text at o
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `Type` | `RichTextBoxType` | Whether the text can be edited. Default `ReadOnly`. |
-| `Text` | `string` | The text shown. Line breaks become `\n`, tabs become spaces, then `TextFilter` is applied. Default `""`. |
-| `Formatting` | `RichTextBoxFormatting` | Whether a read-only box reads [rich formatting](#rich-formatting) tags out of its text. Default `Plain`. |
-| `TextMargin` | `Margin` | The space between the box's edges and its text, in units. |
-| `TextAlignment` | `TextAlignment` | How each line is placed across the width. `Justify` widens the spaces of wrapped lines in a box with a width of its own. Default `Left`. |
-| `VerticalTextAlignment` | `VerticalTextAlignment` | Where the lines sit in a box taller than its text. Applies only while the text fits; a scrolling text starts at the top. Default `Top`. |
-| `WrapType` | `TextWrap` | Whether lines break to fit the width (with a fixed or stretched width, or a `MaxWidth`). Words wider than a line are broken. Default `NoWrap`. |
-| `InputType` | `RichTextBoxInputType` | Whether typing inserts or replaces the character at the caret. The Insert key switches it. Default `Insert`. |
-| `TextFilter` | `Func<string, string>` | Transforms every text assigned to `Text`, edits included. Setting it filters the current text. |
-| `FontSize` | `float` | The font size in units. Negative values become 0, and 0 draws nothing. Default `DefaultSettings.DefaultFontSize` (14). |
-| `FontPath` | `string` | The path of a TTF or OTF file to draw with (see [Fonts](#fonts)). A path that loads replaces the font system in use; an empty or unreadable path goes back to the general font, but keeps a font system you set by hand (as a label does). |
-| `LineSpacing` | `int` | Extra space between two lines, in units. Negative values become 0. |
-| `TextCursorThickness` | `int` | The width of the caret bar, or the height of the overwrite underline, in units. Default `DefaultSettings.DefaultTextCursorThickness` (1). |
-| `TextCursorColor` | `Color` | The colour of the caret. Default `DefaultSettings.DefaultTextCursorColor` (black). |
-| `TextSelectionColor` | `Color` | The colour behind selected text. Default `DefaultSettings.DefaultTextSelectionColor` (light blue). |
-| `ScrollBars` | `ScrollBars` | Which scroll bars the box may show when its text is larger than the box. Default `None`. |
-| `ScrollBarsThickness` | `int` | The thickness of the scroll bars in units. Default 0. |
-| `ScrollBarsStyle` | `SliderStyle` | The style of the scroll bars. |
-| `BackgroundStyle` | `ImageStyle` | The style of the image the box draws behind its text. |
-| `CharacterPrintDelayMs` | `int` | The time between two characters printed by `AnimateText`, in milliseconds. Negative values become 0; 0 sets the text at once. |
-| `ScrollToEndDuringTextAnimation` | `bool` | Whether `AnimateText` keeps the box scrolled to the end while it prints. |
-| `RichColors` | `List<Color>` | Static field. The colours `[c=n]` tags index, shared by every box. (not a dependency property) |
-| `RichActions` | `List<Action>` | Static field. The actions `[a=n]` links run, shared by every box. (not a dependency property) |
-| `RichImages` | `List<Texture2D>` | Static field. The textures `[i=n]` tags show, shared by every box. (not a dependency property) |
-| `LastFontError` | `Exception` | Read-only. The exception of the last failed font preparation (font system or font size not usable), `null` when the font is fine. The box shows no text and gives up the keyboard while it has no font. (not a dependency property) |
-| `FontSystemOverride` | `FontSystem` | A FontStashSharp font system for this box only, used instead of the general one. Setting `FontPath` sets it too. The box does not dispose it. (not a dependency property) |
-| `FontSystem` | `FontSystem` | Read-only. The font system in use: `FontSystemOverride`, or `GeneralFontSystem` without one. (not a dependency property) |
-| `GeneralFontSystem` | `FontSystem` | Static. The same value as `Label.GeneralFontSystem`: the font system of every text element without one of its own. (not a dependency property) |
+| <span class="dp">`Type`</span> | `RichTextBoxType` | Whether the text can be edited. Default `ReadOnly`. |
+| <span class="dp">`Text`</span> | `string` | The text shown. Line breaks become `\n`, tabs become spaces, then `TextFilter` is applied. Default `""`. |
+| <span class="dp">`Formatting`</span> | `RichTextBoxFormatting` | Whether a read-only box reads [rich formatting](#rich-formatting) tags out of its text. Default `Plain`. |
+| <span class="dp">`TextMargin`</span> | `Margin` | The space between the box's edges and its text, in units. |
+| <span class="dp">`TextAlignment`</span> | `TextAlignment` | How each line is placed across the width. `Justify` widens the spaces of wrapped lines in a box with a width of its own. Default `Left`. |
+| <span class="dp">`VerticalTextAlignment`</span> | `VerticalTextAlignment` | Where the lines sit in a box taller than its text. Applies only while the text fits; a scrolling text starts at the top. Default `Top`. |
+| <span class="dp">`WrapType`</span> | `TextWrap` | Whether lines break to fit the width (with a fixed or stretched width, or a `MaxWidth`). Words wider than a line are broken. Default `NoWrap`. |
+| <span class="dp">`InputType`</span> | `RichTextBoxInputType` | Whether typing inserts or replaces the character at the caret. The Insert key switches it. Default `Insert`. |
+| <span class="dp">`TextFilter`</span> | `Func<string, string>` | Transforms every text assigned to `Text`, edits included. Setting it filters the current text. |
+| <span class="dp">`FontSize`</span> | `float` | The font size in units. Negative values become 0, and 0 draws nothing. Default `DefaultSettings.DefaultFontSize` (14). |
+| <span class="dp">`FontPath`</span> | `string` | The path of a TTF or OTF file to draw with (see [Fonts](#fonts)). A path that loads replaces the font system in use; an empty or unreadable path goes back to the general font, but keeps a font system you set by hand (as a label does). |
+| <span class="dp">`LineSpacing`</span> | `int` | Extra space between two lines, in units. Negative values become 0. |
+| <span class="dp">`TextCursorThickness`</span> | `int` | The width of the caret bar, or the height of the overwrite underline, in units. Default `DefaultSettings.DefaultTextCursorThickness` (1). |
+| <span class="dp">`TextCursorColor`</span> | `Color` | The colour of the caret. Default `DefaultSettings.DefaultTextCursorColor` (black). |
+| <span class="dp">`TextSelectionColor`</span> | `Color` | The colour behind selected text. Default `DefaultSettings.DefaultTextSelectionColor` (light blue). |
+| <span class="dp">`ScrollBars`</span> | `ScrollBars` | Which scroll bars the box may show when its text is larger than the box. Default `None`. |
+| <span class="dp">`ScrollBarsThickness`</span> | `int` | The thickness of the scroll bars in units. Default 0. |
+| <span class="dp">`ScrollBarsStyle`</span> | `SliderStyle` | The style of the scroll bars. |
+| <span class="dp">`BackgroundStyle`</span> | `ImageStyle` | The style of the image the box draws behind its text. |
+| <span class="dp">`CharacterPrintDelayMs`</span> | `int` | The time between two characters printed by `AnimateText`, in milliseconds. Negative values become 0; 0 sets the text at once. |
+| <span class="dp">`ScrollToEndDuringTextAnimation`</span> | `bool` | Whether `AnimateText` keeps the box scrolled to the end while it prints. |
+| `RichColors` | `List<Color>` | Static field. The colours `[c=n]` tags index, shared by every box. |
+| `RichActions` | `List<Action>` | Static field. The actions `[a=n]` links run, shared by every box. |
+| `RichImages` | `List<Texture2D>` | Static field. The textures `[i=n]` tags show, shared by every box. |
+| `LastFontError` | `Exception` | Read-only. The exception of the last failed font preparation (font system or font size not usable), `null` when the font is fine. The box shows no text and gives up the keyboard while it has no font. |
+| `FontSystemOverride` | `FontSystem` | A FontStashSharp font system for this box only, used instead of the general one. Setting `FontPath` sets it too. The box does not dispose it. |
+| `FontSystem` | `FontSystem` | Read-only. The font system in use: `FontSystemOverride`, or `GeneralFontSystem` without one. |
+| `GeneralFontSystem` | `FontSystem` | Static. The same value as `Label.GeneralFontSystem`: the font system of every text element without one of its own. |
 
 ### RichTextBox events
 
