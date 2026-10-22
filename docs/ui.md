@@ -140,6 +140,8 @@ Two cases need more than the window:
 | `FollowsBackBuffer` | Whether the UI takes the back buffer's size by itself, at the start of every `Update`. On by default. Turn it off for a UI drawn into a render target of its own size. Turned on again, it takes the back buffer's size at the next update. |
 | `ApplyGameWindowSize(int width, int height)` | Lays the UI out over a screen size in device pixels. A size of 0, such as a minimised window's, is ignored. With `FollowsBackBuffer` on, the size stays until the back buffer changes. |
 | `Scale` | How large one logical unit is on screen, see [display scaling](#display-scaling). Between `MinScale` (0.25) and `MaxScale` (8). |
+| `FollowsDisplayScale` | Whether `Scale` follows the display scale of the window's monitor, times `DisplayScaleFactor`. Turned on, it sets the scale at once and then follows the window to other monitors. A scale set by hand stays until the DPI changes. Off by default. Needs the window constructor, otherwise turning it on throws. |
+| `DisplayScaleFactor` | What the display scale is multiplied with while following: a UI size setting of the game. 1 by default, a positive number. Set while following, it applies at once. |
 | `DrawTransform` | Read-only. The matrix the UI draws with. Draw code that begins its own sprite batch inside the UI passes it to draw in logical units. |
 | `ExceptionHandler` | Gets the exceptions thrown inside `Update`, `Draw` and the handling of text input. Without a handler they are rethrown. |
 | `AddAnimation(BaseAnimation animation)` | Starts updating an animation, see [animations](/docs/ui-styles/#animations). |
@@ -330,29 +332,45 @@ final size (`ActualWidth`, `ActualHeight`) and position (`Location`, in screen u
 ## Display scaling
 
 On a display scaled to 150 %, Windows stretches the window of a game that isn't DPI aware, and everything comes out
-blurred. Declare the game per-monitor DPI aware before the window is created, then set `Scale` from the display's DPI.
-The UI is then drawn at the display's full resolution, one and a half times larger.
+blurred. Such a game is also told 96 DPI on every monitor. Declare the game per-monitor DPI aware before the window is
+created, then let the UI follow the display scale of the window's monitor. The UI is then drawn at the display's full
+resolution, one and a half times larger.
 
 ```csharp
-// Program.cs, before new MyGame(): DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2
-SetProcessDpiAwarenessContext(new IntPtr(-4));
+// Program.cs, before the game creates its window
+DisplayScale.DeclarePerMonitorAwareness();
 
-[DllImport("user32.dll")]
-static extern bool SetProcessDpiAwarenessContext(IntPtr value);
+using var game = new MyGame();
+game.Run();
 
-// in LoadContent, after creating the UI: 144 DPI is 150 %
-_ui.Scale = dpiOfTheWindowsMonitor / 96f;
+// in LoadContent, after creating the UI with the game window: 144 DPI is a scale of 1.5
+_ui.FollowsDisplayScale = true;
+
+// optional: a UI size setting of the game, multiplied with the display scale
+_ui.DisplayScaleFactor = 1.25f;
 ```
+
+`FollowsDisplayScale` sets `Scale` at once. Every 30 updates it reads the monitor's DPI again, and when the window moves
+to a monitor with another scale, the UI takes that scale. The window keeps its pixels, and the UI fills them. A scale you
+set by hand stays until the DPI changes. Following needs the constructor that takes the game window.
 
 The layout doesn't change with the scale. Sizes, margins, positions, font sizes and the mouse positions in events
 all stay in logical units; only the drawing, the clipping and the reading of the mouse are scaled, and fonts are
 rasterised for the scale. The screen size stays in device pixels, whether it is the back buffer's or one given to
-`ApplyGameWindowSize`, and the root covers it in logical units: at 150 % a 1920 x 1200 back buffer is a 1280 x 800 layout. `Scale` can also carry an
-in-game UI size setting, multiplied with the display's scale. The screenshots on these pages are rendered at a scale of
-2.
+`ApplyGameWindowSize`, and the root covers it in logical units: at 150 % a 1920 x 1200 back buffer is a 1280 x 800
+layout. The screenshots on these pages are rendered at a scale of 2.
 
-To read the DPI, call `MonitorFromPoint` and `GetDpiForMonitor` (shcore.dll) for the middle of the window, and read it
-again when the window moves to another monitor. The library's demo does this in its `DisplayScale` class.
+### DisplayScale
+
+Reads the Windows display scale of the monitor a window is on. Without the awareness call, Windows reports 96 DPI.
+
+| Member | Description |
+| --- | --- |
+| `DefaultDpi` | 96, the DPI of a monitor at 100 %. |
+| `DeclarePerMonitorAwareness()` | Declares the process per-monitor DPI aware. Call it before the game creates its window. Returns `false` when Windows doesn't accept it: the awareness was declared already, by an application manifest or an earlier call, or Windows is older than Windows 10 1703. |
+| `DpiOf(GameWindow window)` | The DPI of the monitor under the middle of the window's client area. 96 when it can't be read. |
+| `DpiOf(Rectangle screenBounds)` | The same for a rectangle in screen coordinates, using the nearest monitor when none is under it. |
+| `ScaleOf(GameWindow window)` | The display scale as a UI scale: the DPI divided by 96, so 1.5 at 150 %. |
 
 Some limits come with scaling:
 
