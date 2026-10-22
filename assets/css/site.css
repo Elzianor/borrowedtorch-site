@@ -382,13 +382,13 @@ a.card:hover { border-color: var(--line-strong); background: var(--surface-2); c
   line-height: 1.55;
 }
 .prose pre code { padding: 0; border: 0; background: none; color: #e6d8c2; font-size: .86rem; }
-/* the kind of a member name on the UI pages, in the colours of the code highlighting: a plain property, a method, an
-   event, a dependency property. The name's own chip takes the colour in the tables, the headings and the legends, and
+/* the kind of a member name on the UI pages, in the colours of the code highlighting (and a blue): a plain property, a
+   method, an event, a dependency property. The name's own chip takes the colour in the tables, the headings and the legends, and
    the name's link in the sidebar */
 .prop, .kb-prop, .kind-prop { --kind: #c9b28a; }
-.dp, .kb-dp, .kind-dp { --kind: #e9c27a; }
+.dp, .kb-dp, .kind-dp { --kind: #f2a65a; }
 .method, .kb-method, .kind-method { --kind: #b5c77a; }
-.event, .kb-event, .kind-event { --kind: #f2a65a; }
+.event, .kb-event, .kind-event { --kind: #8ab4d8; }
 .prose .prop > code, .prose .dp > code, .prose .method > code, .prose .event > code, .prose .kb {
   color: var(--kind);
   border-color: color-mix(in srgb, var(--kind) 55%, transparent);
