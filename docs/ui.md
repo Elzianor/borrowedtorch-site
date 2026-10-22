@@ -1,78 +1,406 @@
 ---
 layout: docs
 title: UI
-description: Create UI elements, set them up and lay them out, style them, and respond to player input.
-status: draft
+description: Set up BorrowedTorch.UI in a MonoGame game, lay elements out, and find your way around the UI pages.
 ---
 
-## Overview
+BorrowedTorch.UI is the UI framework of Kindling, built for MonoGame. You build the UI from elements (labels, buttons,
+lists, windows and more) arranged in a tree. Elements are laid out the way WPF lays them out, with margins,
+alignments and sizes that are fixed, stretched or fitted to their content. Every property can be set in code, by a
+style, or bound to a view model, and the whole tree is drawn with one `SpriteBatch`.
 
-<p class="todo">What the UI system is for (menus, HUD, editor overlays?), how it is drawn, and how it fits into a scene.</p>
+These pages cover the library from setup to every public type:
 
-## Creating a UI element
+| Page | What it covers |
+| --- | --- |
+| [UI](/docs/ui/) (this page) | Installing, creating the UI in a game, display scaling, how sizes and alignment work, a complete pause menu |
+| [Base element](/docs/ui-base-element/) | What every element has: size, appearance, items, mouse, keyboard, resizing, and writing your own element |
+| [Layout elements](/docs/ui-layout/) | Stack panels, grids, scrolling, borders, separators, windows and tabs |
+| [Controls](/docs/ui-controls/) | Buttons, check boxes, sliders, progress bars, tooltips and the colour picker |
+| [Lists and menus](/docs/ui-lists/) | List boxes, combo boxes, tree views and context menus |
+| [Text](/docs/ui-text/) | Labels, rich text boxes, text input and fonts |
+| [Images and drawing](/docs/ui-images/) | Images, stencils, view ports for your own drawing, and drag and drop |
+| [Styles, bindings and animation](/docs/ui-styles/) | Styles, mouse cursors, default settings, dependency properties, view model bindings and animations |
 
-<p class="todo">The smallest example: create one element and put it on screen. Say where UI elements live (a screen, a canvas, an entity?).</p>
+Screenshots on these pages are real renders of the snippets next to them, drawn with the theme shown on the
+[styles page](/docs/ui-styles/#the-theme-of-these-pages).
 
-```csharp
-// TODO: create a button, give it text, and add it to the screen
+## Installing
+
+Add the package to your MonoGame project:
+
+```shell
+dotnet add package BorrowedTorch.UI
 ```
 
-### Creating elements in the editor
+| Requirement | Version |
+| --- | --- |
+| .NET | 10, Windows (`net10.0-windows10.0.19041.0`, the text boxes use the Windows clipboard) |
+| MonoGame | 3.8.4 or later, DesktopGL or WindowsDX: your game references the platform package, the UI doesn't pick one for you |
+| Input | `BorrowedTorch.MonoInput` 2.0.1, installed with the UI |
 
-<p class="todo">The same thing in the editor, step by step, with a screenshot.</p>
+The package also brings the default font (UbuntuMono) and the colour picker's pointer texture. They are copied to
+`Content/Fonts` and `Content/Textures` next to your executable, so keep your `ContentManager.RootDirectory` set to
+`Content`.
 
-## Setting up an element
+## Setting up the UI
 
-### Position and size
+Create the UI once the `GraphicsDevice` exists, call `Update` and `Draw` every frame, and tell it when the window
+changes size. Two more things the UI needs from your game:
 
-<p class="todo">Coordinate space, units, and how size is set (fixed, relative, fit to content).</p>
-
-### Anchors and pivots
-
-<p class="todo">How elements stay in place when the window resizes.</p>
-
-### Padding and margins
-
-<p class="todo">Spacing inside and around an element.</p>
-
-## Layout containers
-
-<p class="todo">Containers that arrange their children (rows, columns, grids), and when to use each.</p>
-
-```csharp
-// TODO: a vertical list of three buttons with even spacing
-```
-
-## Styling
-
-<p class="todo">Colours, fonts, textures and nine-slice backgrounds; whether styles can be shared between elements.</p>
-
-## Handling input
-
-### Clicks and hover
-
-<p class="todo">Subscribing to events, and hover / pressed / disabled states.</p>
+- **Input.** The game polls the input. Call `KeyboardManager.Update()` and `MouseManager.Update()` from
+  BorrowedTorch.MonoInput once per frame, before the UI's `Update`. The UI reads the same managers, so polling them a
+  second time in a frame would lose presses.
+- **Text and keys.** Typed text and key presses reach the UI through an `ITextInputEvents`. The adapter below forwards
+  the MonoGame window's events. A UI hosted somewhere else, such as a WPF editor, writes its own adapter.
 
 ```csharp
-// TODO: react to a button click
+using BorrowedTorch.MonoInput.Inputs.Keyboard;
+using BorrowedTorch.MonoInput.Inputs.Mouse;
+using BorrowedTorch.UI;
+using BorrowedTorch.UI.Elements;
+using BorrowedTorch.UI.Misc;
+
+public class MyGame : Game
+{
+    private readonly GraphicsDeviceManager _graphics;
+    private SpriteBatch _spriteBatch;
+    private BorrowedTorchUI _ui;
+
+    public MyGame()
+    {
+        _graphics = new GraphicsDeviceManager(this);
+        Content.RootDirectory = "Content";
+        IsMouseVisible = true;
+        Window.AllowUserResizing = true;
+    }
+
+    protected override void LoadContent()
+    {
+        _spriteBatch = new SpriteBatch(GraphicsDevice);
+
+        _ui = new BorrowedTorchUI(GraphicsDevice, Content, _spriteBatch, new GameWindowTextInputEvents(Window))
+        {
+            ExceptionHandler = e => Console.Error.WriteLine(e)
+        };
+
+        Window.ClientSizeChanged += (_, _) =>
+            _ui.ApplyNewGameWindowSizeHandler(Window.ClientBounds.Width, Window.ClientBounds.Height);
+
+        // build the UI here, see "Your first elements" below
+    }
+
+    protected override void Update(GameTime gameTime)
+    {
+        KeyboardManager.Update();
+        MouseManager.Update();
+
+        _ui.Update(gameTime);
+        base.Update(gameTime);
+    }
+
+    protected override void Draw(GameTime gameTime)
+    {
+        GraphicsDevice.Clear(Color.Black);
+        _ui.Draw();
+        base.Draw(gameTime);
+    }
+
+    protected override void UnloadContent()
+    {
+        _ui.Dispose();
+        _spriteBatch.Dispose();
+    }
+}
+
+// forwards the MonoGame window's text and key events to the UI
+public sealed class GameWindowTextInputEvents : ITextInputEvents
+{
+    public event EventHandler<TextInputEventArgs> OnTextInput;
+    public event EventHandler<InputKeyEventArgs> OnKeyDown;
+
+    public GameWindowTextInputEvents(GameWindow window)
+    {
+        window.TextInput += (s, e) => OnTextInput?.Invoke(s, e);
+        window.KeyDown += (s, e) => OnKeyDown?.Invoke(s, e);
+    }
+}
 ```
 
-### Focus, keyboard and gamepad
+The framework keeps its state in static fields, so only one `BorrowedTorchUI` exists at a time. Creating a second one
+throws: dispose the first one before. Disposing the UI detaches the elements you added to the root but doesn't
+dispose them, so dispose the ones that hold resources yourself.
 
-<p class="todo">Focus order and navigating menus without a mouse.</p>
+### BorrowedTorchUI
 
-## Built-in elements
+| Member | Description |
+| --- | --- |
+| `BorrowedTorchUI(GraphicsDevice graphicsDevice, ContentManager contentManager, SpriteBatch spriteBatch, ITextInputEvents textInputEvents)` | Creates the UI over the back buffer's size. The sprite batch is the one the UI draws with; the content manager loads the colour picker's pointer and the textures named by `TexturesPath`. |
+| `RootElement` | Read-only. The element at the top of the tree, the size of the screen. See [the root element](/docs/ui-base-element/#the-root-element). |
+| `AddElementToRoot(BaseElement element)` | Adds an element to the root. |
+| `GetElementByName(string name)` | Finds an element anywhere in the tree by the name given to its constructor, `null` if there is none. |
+| `GetElementByName<T>(string name)` | The same, `null` also when the element is not a `T`. |
+| `Update(GameTime gameTime)` | Runs timers and animations, lays out what changed, and handles the mouse. Poll the input before it. |
+| `Draw()` | Draws the whole tree with the sprite batch, beginning and ending it itself. |
+| `ApplyNewGameWindowSizeHandler(int width, int height)` | Lays the UI out over a new window size, in device pixels (the back buffer's size). |
+| `Scale` | How large one logical unit is on screen, see [display scaling](#display-scaling). Between `MinScale` (0.25) and `MaxScale` (8). |
+| `DrawTransform` | Read-only. The matrix the UI draws with. Draw code that begins its own sprite batch inside the UI passes it to draw in logical units. |
+| `ExceptionHandler` | Gets the exceptions thrown inside `Update`, `Draw` and the handling of text input. Without a handler they are rethrown. |
+| `AddAnimation(BaseAnimation animation)` | Starts updating an animation, see [animations](/docs/ui-styles/#animations). |
+| `RemoveAnimation(BaseAnimation animation)` | Stops updating an animation. It keeps its state, and adding it again continues it. |
+| `SetDefaultMouseCursorsSet(MouseCursorsSet mouseCursorsSet)` | Sets the cursors every element uses unless it has its own, see [mouse cursors](/docs/ui-styles/#mouse-cursors). |
+| `Dispose()` | Disposes the root and forgets the shared state, so a new UI can be created. |
 
-<p class="todo">A short table of the built-in elements (e.g. label, button, image, panel, slider), one line each on what it is for.</p>
+### ITextInputEvents
 
-## Custom elements
+| Event | Description |
+| --- | --- |
+| `OnTextInput` | `EventHandler<TextInputEventArgs>`: a typed character, sent to the element that has the keyboard. |
+| `OnKeyDown` | `EventHandler<InputKeyEventArgs>`: a pressed key, sent to the element that has the keyboard and then up to its parents until one handles it. |
 
-<p class="todo">How to make your own element type: what to inherit from, what to override, and how it draws.</p>
+## Your first elements
 
-## Example: a pause menu
+Every element has a constructor taking an optional name. Set its properties, subscribe to its events and add it to the
+root (or to another element). The snippets on these pages call the UI `ui`; in the game above it is `_ui`.
 
-<p class="todo">A complete, copy-pasteable example that ties the article together.</p>
+<figure class="shot">
+  <img src="{{ '/assets/img/ui/ui-first-elements.png' | relative_url }}" width="440" height="112" alt="A title label and a Play button">
+  <figcaption>A label and a button added to the root.</figcaption>
+</figure>
 
 ```csharp
-// TODO: pause menu with Resume, Settings and Quit
+var title = new Label("title")
+{
+    Text = "Borrowed Torch",
+    FontSize = 24,
+    HorizontalAlignment = HorizontalAlignment.Left,
+    VerticalAlignment = VerticalAlignment.Top,
+    Margin = (16, 16)
+};
+
+var play = new Button("play")
+{
+    Text = "Play",
+    DesiredWidth = 140,
+    DesiredHeight = 36,
+    Margin = (16, 58)
+};
+play.OnClick += (sender, e) => Console.WriteLine("Play pressed");
+
+ui.AddElementToRoot(title);
+ui.AddElementToRoot(play);
 ```
+
+## Sizes and alignment
+
+An element's size along each side comes from three settings:
+
+- **A fixed size.** `DesiredWidth` and `DesiredHeight` above 0 fix it.
+- **Stretched.** Without a size, an element whose `HorizontalAlignment` or `VerticalAlignment` is `Stretch` takes the
+  space its parent gives it, less its margins. `Stretch` is the default alignment of most elements.
+- **Fitted to its content.** Without a size and with any other alignment, the element is as large as its content.
+
+`MinWidth`, `MinHeight`, `MaxWidth` and `MaxHeight` limit the result, with 0 meaning no limit.
+
+In a parent that fits its content, such as a stack panel, an auto-sized grid row or a fitted window body, a stretched
+child counts with the size of its own content, as in WPF. A label left at the default `Stretch` has its text's height
+in a stack panel, and an unwrapped label widens a fitted panel to its line. Wrapping text is the exception along the
+width: it takes the width the rest of the content decides and wraps there, instead of widening the parent to one long
+line.
+
+<figure class="shot">
+  <img src="{{ '/assets/img/ui/ui-sizes.png' | relative_url }}" width="520" height="160" alt="Four labels: a fixed one, one fitted to its text, one stretched across the width and one stretched both ways">
+  <figcaption>Fixed, fitted and stretched.</figcaption>
+</figure>
+
+```csharp
+// a fixed size
+ui.AddElementToRoot(new Label
+{
+    Text = "160 x 36",
+    DesiredWidth = 160,
+    DesiredHeight = 36,
+    TextAlignment = TextAlignment.Center,
+    VerticalTextAlignment = VerticalTextAlignment.Center,
+    BackgroundColor = new Color(58, 44, 30),
+    Margin = (16, 16)
+});
+
+// fitted to its content (no size, not stretched)
+ui.AddElementToRoot(new Label
+{
+    Text = "Fits its text",
+    TextMargin = (10, 8, 10, 8),
+    HorizontalAlignment = HorizontalAlignment.Left,
+    VerticalAlignment = VerticalAlignment.Top,
+    BackgroundColor = new Color(58, 44, 30),
+    Margin = (192, 16)
+});
+
+// stretched across its parent (the screen here), less its margins
+ui.AddElementToRoot(new Label
+{
+    Text = "Stretched across the width",
+    DesiredHeight = 36,
+    TextAlignment = TextAlignment.Center,
+    VerticalTextAlignment = VerticalTextAlignment.Center,
+    HorizontalAlignment = HorizontalAlignment.Stretch,
+    VerticalAlignment = VerticalAlignment.Top,
+    BackgroundColor = new Color(110, 82, 48),
+    Margin = (16, 70, 16, 0)
+});
+
+// stretched both ways inside the space its margins leave
+ui.AddElementToRoot(new Label
+{
+    Text = "Stretched both ways",
+    TextAlignment = TextAlignment.Center,
+    VerticalTextAlignment = VerticalTextAlignment.Center,
+    BackgroundColor = new Color(40, 31, 23),
+    Margin = (16, 116, 16, 12)
+});
+```
+
+The alignments place an element inside the space its parent gives it: `Left`, `Center`, `Right` or `Stretch`
+horizontally, `Top`, `Center`, `Bottom` or `Stretch` vertically.
+
+<figure class="shot">
+  <img src="{{ '/assets/img/ui/ui-alignment.png' | relative_url }}" width="520" height="200" alt="Six labels placed at the corners, the top centre and the middle of the screen">
+  <figcaption>Elements aligned within the screen, each with a margin of 12.</figcaption>
+</figure>
+
+```csharp
+Label Badge(string text, HorizontalAlignment horizontal, VerticalAlignment vertical) => new()
+{
+    Text = text,
+    TextMargin = (10, 6, 10, 6),
+    HorizontalAlignment = horizontal,
+    VerticalAlignment = vertical,
+    BackgroundColor = new Color(58, 44, 30),
+    Margin = 12
+};
+
+ui.AddElementToRoot(Badge("Left, Top", HorizontalAlignment.Left, VerticalAlignment.Top));
+ui.AddElementToRoot(Badge("Center, Top", HorizontalAlignment.Center, VerticalAlignment.Top));
+ui.AddElementToRoot(Badge("Right, Top", HorizontalAlignment.Right, VerticalAlignment.Top));
+ui.AddElementToRoot(Badge("Center, Center", HorizontalAlignment.Center, VerticalAlignment.Center));
+ui.AddElementToRoot(Badge("Left, Bottom", HorizontalAlignment.Left, VerticalAlignment.Bottom));
+ui.AddElementToRoot(Badge("Right, Bottom", HorizontalAlignment.Right, VerticalAlignment.Bottom));
+```
+
+### Margins
+
+`Margin` keeps an element away from the edges of its slot. It converts from an int and from tuples:
+
+```csharp
+element.Margin = 5;                 // all sides
+element.Margin = (10, 20);          // left, top
+element.Margin = (10, 20, 30);      // left, top, right
+element.Margin = (10, 20, 30, 40);  // left, top, right, bottom
+```
+
+A margin pushes the element away from the side it is aligned to. A parent that fits its content counts a child's
+margin only on that side: the left and top margins for `Left` and `Top`, the right and bottom ones for `Right` and
+`Bottom`, both for `Center`. So in a horizontal stack panel, put the gap between two items on the left margin of the
+second one, not on the right margin of the first.
+
+### Units
+
+Sizes, margins, positions and font sizes are in logical units: one unit is one pixel at a display scale of 100 %. The
+layout runs in two passes whenever something changed: measure finds every element's size, then arrange gives each its
+final size (`ActualWidth`, `ActualHeight`) and position (`Location`, in screen units). The
+[base element page](/docs/ui-base-element/#writing-your-own-element) explains the passes for custom elements.
+
+## Display scaling
+
+On a display scaled to 150 %, Windows stretches the window of a game that isn't DPI aware, and everything comes out
+blurred. Declare the game per-monitor DPI aware before the window is created, then set `Scale` from the display's DPI.
+The UI is then drawn at the display's full resolution, one and a half times larger.
+
+```csharp
+// Program.cs, before new MyGame(): DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2
+SetProcessDpiAwarenessContext(new IntPtr(-4));
+
+[DllImport("user32.dll")]
+static extern bool SetProcessDpiAwarenessContext(IntPtr value);
+
+// in LoadContent, after creating the UI: 144 DPI is 150 %
+_ui.Scale = dpiOfTheWindowsMonitor / 96f;
+_ui.ApplyNewGameWindowSizeHandler(GraphicsDevice.PresentationParameters.BackBufferWidth,
+    GraphicsDevice.PresentationParameters.BackBufferHeight);
+```
+
+The layout doesn't change with the scale. Sizes, margins, positions, font sizes and the mouse positions in events
+all stay in logical units; only the drawing, the clipping and the reading of the mouse are scaled, and fonts are
+rasterised for the scale. The window size you pass to `ApplyNewGameWindowSizeHandler` stays in device pixels, and the
+root covers it in logical units: at 150 % a 1920 x 1200 back buffer is a 1280 x 800 layout. `Scale` can also carry an
+in-game UI size setting, multiplied with the display's scale. The screenshots on these pages are rendered at a scale of
+2.
+
+To read the DPI, call `MonitorFromPoint` and `GetDpiForMonitor` (shcore.dll) for the middle of the window, and read it
+again when the window moves to another monitor. The library's demo does this in its `DisplayScale` class.
+
+Some limits come with scaling:
+
+- A one-unit line covers one or two device pixels at scales like 125 %.
+- Textures are resampled to the scale. Give sharper sources for crisp images.
+- Custom mouse cursors made from textures are not scaled.
+- A `FontSystem` given by hand keeps the resolution it was created with.
+- Draw code that begins its own sprite batch inside the UI passes `DrawTransform`. A [view port](/docs/ui-images/#viewport)
+  draws in device pixels.
+
+## A pause menu
+
+A modal window over the game, with three buttons in a stack panel. While it is open, the rest of the UI is shaded and
+gets no mouse input, and Escape closes it.
+
+<figure class="shot">
+  <img src="{{ '/assets/img/ui/ui-pause-menu.png' | relative_url }}" width="520" height="300" alt="A modal Paused window with Resume, Settings and Quit to menu buttons over a shaded game screen">
+  <figcaption>The pause menu over the game's own UI.</figcaption>
+</figure>
+
+```csharp
+var menu = new StackPanel("pauseButtons")
+{
+    Orientation = Orientation.Vertical,
+    HorizontalAlignment = HorizontalAlignment.Center,
+    VerticalAlignment = VerticalAlignment.Center
+};
+
+var resume = new Button("resume") { Text = "Resume", DesiredWidth = 200, DesiredHeight = 36 };
+var settings = new Button("settings") { Text = "Settings", DesiredWidth = 200, DesiredHeight = 36, Margin = (0, 10) };
+var quit = new Button("quit") { Text = "Quit to menu", DesiredWidth = 200, DesiredHeight = 36, Margin = (0, 10) };
+
+menu.AddItemsRange([resume, settings, quit]);
+
+var pauseWindow = new Window("pause")
+{
+    DesiredWidth = 260,
+    DesiredHeight = 210,
+    HorizontalAlignment = HorizontalAlignment.Center,
+    VerticalAlignment = VerticalAlignment.Center,
+    IsModal = true,
+    Content = menu
+};
+var titleBar = (DefaultWindowTitleBar)pauseWindow.TitleBar;
+titleBar.Title.Text = "Paused";
+titleBar.CloseButton.Text = "x";
+
+resume.OnClick += (sender, e) => pauseWindow.Hide();
+quit.OnClick += (sender, e) => Console.WriteLine("Back to the main menu");
+
+// Escape closes the menu while anything in it has the keyboard
+pauseWindow.OnKeyDown += (sender, e) =>
+{
+    if (e.Key != Keys.Escape) return;
+
+    pauseWindow.Hide();
+    e.Handled = true;
+};
+
+ui.AddElementToRoot(pauseWindow);
+pauseWindow.Show();
+```
+
+The [layout elements page](/docs/ui-layout/#window) has more on windows, and the
+[base element page](/docs/ui-base-element/#keyboard-and-focus) on how keys travel up to the window.

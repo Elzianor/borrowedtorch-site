@@ -14,10 +14,27 @@
     - title: Entities & components
       url: /docs/ecs/
 
-- group: Systems
+- group: UI
   articles:
     - title: UI
       url: /docs/ui/
+    - title: Base element
+      url: /docs/ui-base-element/
+    - title: Layout elements
+      url: /docs/ui-layout/
+    - title: Controls
+      url: /docs/ui-controls/
+    - title: Lists and menus
+      url: /docs/ui-lists/
+    - title: Text
+      url: /docs/ui-text/
+    - title: Images and drawing
+      url: /docs/ui-images/
+    - title: Styles, bindings and animation
+      url: /docs/ui-styles/
+
+- group: Systems
+  articles:
     - title: Camera
       url: /docs/camera/
     - title: Rendering & materials

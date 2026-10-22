@@ -359,6 +359,18 @@ a.card:hover { border-color: var(--line-strong); background: var(--surface-2); c
 .prose hr { border: 0; border-top: 1px solid var(--line); margin: 2em 0; }
 .prose blockquote { padding: 12px 18px; border-left: 3px solid var(--gold-dim); background: var(--surface); border-radius: 0 10px 10px 0; color: var(--text); }
 
+/* Screenshots of rendered UI (rendered at 2x, shown at their logical size) */
+.prose .shot { margin-top: 1.4em; }
+.prose .shot img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #100c09;
+}
+.prose .shot figcaption { margin-top: 6px; font-size: .85rem; color: var(--muted); }
+
 /* "To write" placeholder callouts in draft articles */
 .prose .todo {
   padding: 12px 16px;
