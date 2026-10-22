@@ -73,8 +73,9 @@ plus `TextMargin`. Line breaks always start a new line (`\r\n` and `\r` are turn
 
 **Wrapping.** `WrapType = TextWrap.Wrap` breaks the lines at spaces to fit the label's width, but only when the label
 has a width to wrap at: a fixed `DesiredWidth`, a width stretched by its parent, or a `MaxWidth` when it fits its text.
-A label sized to its text without a `MaxWidth` never wraps. A word wider than the whole line gets a line of its own and
-is not broken. `LineCount` tells how many lines the text took.
+A label sized to its text without a `MaxWidth` never wraps. Stretched in a parent that fits its content, a wrapping
+label wraps at the width the parent's other content gives; alone there, it keeps one line unless the parent has a
+`MaxWidth`. A word wider than the whole line gets a line of its own and is not broken. `LineCount` tells how many lines the text took.
 
 **Alignment.** `TextAlignment` places each line across the width (`Justify` is drawn like `Left` in a label).
 `VerticalTextAlignment` places the lines in a label taller than its text; lines that don't fit start at the top margin.

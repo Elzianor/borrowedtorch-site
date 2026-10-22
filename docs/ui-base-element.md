@@ -36,7 +36,8 @@ aligned to: the left / top margin for `Left` / `Top`, the right / bottom margin 
 the other side is not counted. So in a horizontal `StackPanel`, the `Margin.Right` of a `Left` aligned item adds no
 gap: put the gap on the left (or top) margin of the next item. A stretched child in a parent that fits its content
 counts with the size of its own content, as in WPF, except wrapping text along the width: it takes the width the rest
-of the content decides and wraps there (see [sizes and alignment](/docs/ui/#sizes-and-alignment)).
+of the content decides and wraps there. When nothing else gives a width, it keeps its one line, and a `MaxWidth` on the
+parent makes it wrap (see [sizes and alignment](/docs/ui/#sizes-and-alignment)).
 
 ### Size and position properties
 

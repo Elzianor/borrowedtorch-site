@@ -214,7 +214,8 @@ In a parent that fits its content, such as a stack panel, an auto-sized grid row
 child counts with the size of its own content, as in WPF. A label left at the default `Stretch` has its text's height
 in a stack panel, and an unwrapped label widens a fitted panel to its line. Wrapping text is the exception along the
 width: it takes the width the rest of the content decides and wraps there, instead of widening the parent to one long
-line.
+line. When nothing else gives a width, as for a label alone in a fitted panel, the text keeps its one line, as in WPF.
+Give the parent a `MaxWidth` to make it wrap.
 
 <figure class="shot">
   <img src="{{ '/assets/img/ui/ui-sizes.png' | relative_url }}" width="520" height="220" alt="Four identical framed areas, each with one label: a fixed size at the top left, one fitted to its text, one stretched across the width and one filling its area">
