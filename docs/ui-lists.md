@@ -521,7 +521,7 @@ A menu that opens at the mouse on a right click, drawn above everything. Its ite
 separators, or the objects of an <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#itemssource">`ItemsSource`</a>; an item can be checkable and can open a sub-menu.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/controls-contextmenu.png' | relative_url }}" width="224" height="195" alt="A label reading Right click here with a menu open below it: Copy, Rename, a separator, a checked Show grid item and a highlighted Sort item whose sub-menu shows By name and By date">
+  <img src="{{ '/assets/img/ui/controls-contextmenu.png' | relative_url }}" width="246" height="195" alt="A label reading Right click here with a menu open below it: Copy, Rename, a separator, a checked Show grid item and a highlighted Sort item whose sub-menu shows By name and By date">
   <figcaption>A context menu with a separator, a checked item and an open sub-menu.</figcaption>
 </figure>
 
@@ -670,7 +670,9 @@ Style class: <a class="ref" href="/docs/ui-glossary/types/context-menu-style/">`
 ### ContextMenuItem
 
 An item of a context menu: a check mark while it is checkable and checked, its content, and an arrow at the right
-end when it opens a sub-menu. The item is stretched over its row; the row takes the mouse and the item shows its
+end when it opens a sub-menu. While one item of the menu is checkable, every item keeps the check mark's column,
+so the contents line up; while one opens a sub-menu, every item keeps the arrow's column, so the items end alike.
+The item is stretched over its row; the row takes the mouse and the item shows its
 state. Choosing it, with a click or the keyboard, raises its `OnClick` and the menu's <span class="event">`OnItemSelect`</span>.
 
 | Property | Type | Description |

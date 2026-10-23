@@ -5,7 +5,7 @@ title: "Glossary: ContextMenuItem"
 description: "The properties, methods and events of ContextMenuItem, in alphabetical order."
 ---
 
-An item of a context menu: a check mark while it is checkable and checked, its content, and an arrow at the right end when it opens a sub-menu. The item is stretched over its row; the row takes the mouse and the item shows its state. Choosing it, with a click or the keyboard, raises its `OnClick` and the menu's <span class="event">`OnItemSelect`</span>.
+An item of a context menu: a check mark while it is checkable and checked, its content, and an arrow at the right end when it opens a sub-menu. While one item of the menu is checkable, every item keeps the check mark's column, so the contents line up; while one opens a sub-menu, every item keeps the arrow's column, so the items end alike. The item is stretched over its row; the row takes the mouse and the item shows its state. Choosing it, with a click or the keyboard, raises its `OnClick` and the menu's <span class="event">`OnItemSelect`</span>.
 
 `ContextMenuItem` derives from [`BaseElement`](/docs/ui-glossary/elements/base-element/) and has its members too. The [lists and menus page](/docs/ui-lists/#contextmenuitem) shows it in context, with code and screenshots.
 
