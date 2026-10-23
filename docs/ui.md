@@ -280,7 +280,7 @@ The alignments place an element inside the space its parent gives it: `Left`, `C
 horizontally, `Top`, `Center`, `Bottom` or `Stretch` vertically.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/ui-alignment.png' | relative_url }}" width="522" height="202" alt="Six labels placed at the corners, the top centre and the middle of the screen">
+  <img src="{{ '/assets/img/ui/ui-alignment.png' | relative_url }}" width="522" height="202" alt="Nine labels, one for each pair of Left, Center or Right with Top, Center or Bottom, placed at the corners, the middles of the edges and the middle of the screen">
   <figcaption>Elements aligned within the screen, each with a margin of 12.</figcaption>
 </figure>
 
@@ -302,10 +302,16 @@ ui.AddElementToRoot(Badge("Center, Top",
     HorizontalAlignment.Center, VerticalAlignment.Top));
 ui.AddElementToRoot(Badge("Right, Top",
     HorizontalAlignment.Right, VerticalAlignment.Top));
+ui.AddElementToRoot(Badge("Left, Center",
+    HorizontalAlignment.Left, VerticalAlignment.Center));
 ui.AddElementToRoot(Badge("Center, Center",
     HorizontalAlignment.Center, VerticalAlignment.Center));
+ui.AddElementToRoot(Badge("Right, Center",
+    HorizontalAlignment.Right, VerticalAlignment.Center));
 ui.AddElementToRoot(Badge("Left, Bottom",
     HorizontalAlignment.Left, VerticalAlignment.Bottom));
+ui.AddElementToRoot(Badge("Center, Bottom",
+    HorizontalAlignment.Center, VerticalAlignment.Bottom));
 ui.AddElementToRoot(Badge("Right, Bottom",
     HorizontalAlignment.Right, VerticalAlignment.Bottom));
 ```

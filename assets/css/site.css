@@ -325,6 +325,9 @@ a.card:hover { border-color: var(--line-strong); background: var(--surface-2); c
 /* the sections of a page, its ## headings (see _includes/docs-sections.html), like a book's contents */
 .docs-sections a { padding-top: 4px; padding-bottom: 4px; font-size: .85rem; }
 .docs-sections a[aria-current="location"] { color: var(--gold); border-left-color: var(--gold); background: rgba(233, 194, 122, .06); }
+/* a page's sections and an entry's members start right of their page's link, whose bar follows the caret: a
+   highlighted one never looks a level above its page (the tree's line stays under the caret) */
+.docs-node > ul.docs-sections > li > a, .docs-node > ul.docs-members > li > a { margin-left: 14px; padding-left: 10px; }
 /* a sidebar taller than the window scrolls on its own */
 @media (min-width: 861px) {
   .docs-groups { max-height: calc(100vh - var(--header-h) - 48px); overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent; }
