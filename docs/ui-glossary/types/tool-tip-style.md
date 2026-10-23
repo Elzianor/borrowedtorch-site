@@ -5,7 +5,7 @@ title: "Glossary: ToolTipStyle"
 description: "The members of ToolTipStyle, in alphabetical order."
 ---
 
-The style class of [`ToolTip`](/docs/ui-controls/#tooltip): the properties a style can set on it. Part style <a class="ref prop" href="/docs/ui-glossary/types/tool-tip-style/#textstyle">`TextStyle`</a> (<a class="ref" href="/docs/ui-glossary/types/rich-text-box-style/">`RichTextBoxStyle`</a>). Leaves out `Content`. Framework defaults: aligned left and top, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#hittest">`HitTest`</a> off, <a class="ref prop" href="/docs/ui-glossary/types/tool-tip-style/#timebeforeshowms">`TimeBeforeShowMs`</a> `DefaultTimeBeforeShowToolTipMs`.
+The style class of [`ToolTip`](/docs/ui-controls/#tooltip): the properties a style can set on it. Part style <a class="ref prop" href="/docs/ui-glossary/types/tool-tip-style/#textstyle">`TextStyle`</a> (<a class="ref" href="/docs/ui-glossary/types/label-style/">`LabelStyle`</a>). Leaves out `Content`. Framework defaults: aligned left and top, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#hittest">`HitTest`</a> off, <a class="ref prop" href="/docs/ui-glossary/types/tool-tip-style/#timebeforeshowms">`TimeBeforeShowMs`</a> `DefaultTimeBeforeShowToolTipMs`.
 
 A class deriving from [`BaseStyle`](/docs/ui-glossary/types/base-style/). The [styles page](/docs/ui-styles/#style-classes) shows it in context.
 
@@ -23,11 +23,11 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 <h3 id="text"><span class="prop"><code>Text</code></span> <a class="ctx" href="/docs/ui-controls/#tooltip-properties" title="Text in context on the controls page" aria-label="Text in context on the controls page">→</a></h3>
 
-`string` · Creates a centred <a class="ref" href="/docs/ui-glossary/elements/rich-text-box/">`RichTextBox`</a> content showing this text, styled by <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#textstyle">`TextStyle`</a>.
+`string` · Creates a centred <a class="ref" href="/docs/ui-glossary/elements/label/">`Label`</a> content showing this text, styled by <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#textstyle">`TextStyle`</a>.
 
 <h3 id="textstyle"><span class="prop"><code>TextStyle</code></span> <a class="ctx" href="/docs/ui-controls/#tooltip-properties" title="TextStyle in context on the controls page" aria-label="TextStyle in context on the controls page">→</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/rich-text-box-style/">`RichTextBoxStyle`</a> · The style of the text content made from <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#text">`Text`</a>.
+<a class="ref" href="/docs/ui-glossary/types/label-style/">`LabelStyle`</a> · The style of the text content made from <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#text">`Text`</a>.
 
 <h3 id="timebeforeshowms"><span class="prop"><code>TimeBeforeShowMs</code></span> <a class="ctx" href="/docs/ui-controls/#tooltip-properties" title="TimeBeforeShowMs in context on the controls page" aria-label="TimeBeforeShowMs in context on the controls page">→</a></h3>
 

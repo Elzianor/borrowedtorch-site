@@ -59,11 +59,11 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="text"><span class="dp"><code>Text</code></span> <a class="ctx" href="/docs/ui-controls/#checkbox-properties" title="Text in context on the controls page" aria-label="Text in context on the controls page">→</a></h3>
 
-`string` · Creates a <a class="ref" href="/docs/ui-glossary/elements/rich-text-box/">`RichTextBox`</a> content showing this text, styled by <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#textstyle">`TextStyle`</a>.
+`string` · Creates a <a class="ref" href="/docs/ui-glossary/elements/label/">`Label`</a> content showing this text, styled by <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#textstyle">`TextStyle`</a>.
 
 <h3 id="textstyle"><span class="dp"><code>TextStyle</code></span> <a class="ctx" href="/docs/ui-controls/#checkbox-properties" title="TextStyle in context on the controls page" aria-label="TextStyle in context on the controls page">→</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/rich-text-box-style/">`RichTextBoxStyle`</a> · The style of the text content made from <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#text">`Text`</a>.
+<a class="ref" href="/docs/ui-glossary/types/label-style/">`LabelStyle`</a> · The style of the text content made from <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#text">`Text`</a>.
 
 <h3 id="type"><span class="dp"><code>Type</code></span> <a class="ctx" href="/docs/ui-controls/#checkbox-properties" title="Type in context on the controls page" aria-label="Type in context on the controls page">→</a></h3>
 

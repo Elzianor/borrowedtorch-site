@@ -549,7 +549,7 @@ titleBar.OnCloseButtonClickAction = () => window.Hide();
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#title">`Title`</a> | <a class="ref" href="/docs/ui-glossary/elements/rich-text-box/">`RichTextBox`</a> | Read-only. The title text, centred in the bar. Set its <span class="dp">`Text`</span> and text style properties. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#title">`Title`</a> | <a class="ref" href="/docs/ui-glossary/elements/label/">`Label`</a> | Read-only. The title text, centred in the bar. Set its <span class="dp">`Text`</span> and text style properties. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#closebutton">`CloseButton`</a> | <a class="ref" href="/docs/ui-glossary/elements/button/">`Button`</a> | Read-only. The close button at the right of the bar. It shows no text until you set its <span class="dp">`Text`</span> or `Content`. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#background">`Background`</a> | <a class="ref" href="/docs/ui-glossary/elements/image/">`Image`</a> | Read-only. The image that fills the bar and holds the title and the close button. Its <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> is the bar's colour. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#onclosebuttonclickaction">`OnCloseButtonClickAction`</a> | `Action` | What a click on the close button does. In a window's default title bar it is the window's <a class="ref method" href="/docs/ui-glossary/elements/window/#hide">`Hide`</a>. |

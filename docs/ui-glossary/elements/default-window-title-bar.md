@@ -27,7 +27,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="title"><span class="prop"><code>Title</code></span> <a class="ctx" href="/docs/ui-layout/#defaultwindowtitlebar" title="Title in context on the layout page" aria-label="Title in context on the layout page">→</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/elements/rich-text-box/">`RichTextBox`</a> · Read-only. The title text, centred in the bar. Set its <span class="dp">`Text`</span> and text style properties.
+<a class="ref" href="/docs/ui-glossary/elements/label/">`Label`</a> · Read-only. The title text, centred in the bar. Set its <span class="dp">`Text`</span> and text style properties.
 
 ## Methods
 

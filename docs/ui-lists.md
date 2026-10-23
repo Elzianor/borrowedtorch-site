@@ -19,8 +19,8 @@ A scrollable list of rows with single or multiple selection. A row can be a text
 <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#itemssource">`ItemsSource`</a>, and long lists can be virtualized so only the rows in view have elements.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/controls-listbox.png' | relative_url }}" width="506" height="210" alt="Two lists: on the left text rows with Desert selected, a separator line and a check box row, with a vertical scroll bar; on the right five rows with Fire, Poison and Shadow selected">
-  <figcaption>A single selection list with a separator and a check box row, and a multiple selection list.</figcaption>
+  <img src="{{ '/assets/img/ui/controls-listbox-single.png' | relative_url }}" width="254" height="210" alt="A list of text rows with Desert selected, a separator line and a check box row, with a vertical scroll bar">
+  <figcaption>A single selection list with a separator and a check box row.</figcaption>
 </figure>
 
 ```csharp
@@ -52,21 +52,29 @@ levels.AddTextItems(["Caves", "Ruins"]);
 levels.SelectAt(1);
 levels.OnItemSelect += (sender, item) => Console.WriteLine($"Level {item?.Index}");
 
+ui.AddElementToRoot(levels);
+```
+
+<figure class="shot">
+  <img src="{{ '/assets/img/ui/controls-listbox-multiple.png' | relative_url }}" width="254" height="210" alt="A list of five rows with Fire, Ice and Shadow selected">
+  <figcaption>A multiple selection list: three rows of five selected.</figcaption>
+</figure>
+
+```csharp
 // several rows at once: Shift and Ctrl clicks, SelectAll, DeselectAt
 var tags = new ListBox("tags")
 {
     SelectionMode = ListBoxSelectionMode.Multiple,
     DesiredWidth = 220,
     DesiredHeight = 176,
-    Margin = (268, 16)
+    Margin = 16
 };
 
 tags.AddTextItems(["Fire", "Ice", "Poison", "Lightning", "Shadow"]);
 tags.SelectAll();
-tags.DeselectAt(1);
+tags.DeselectAt(2);
 tags.DeselectAt(3);
 
-ui.AddElementToRoot(levels);
 ui.AddElementToRoot(tags);
 ```
 

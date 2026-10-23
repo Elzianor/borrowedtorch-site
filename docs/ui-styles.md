@@ -63,7 +63,7 @@ public static void Apply()
         HoverColor = Gold,
         PressedColor = new Color(128, 98, 54),
         ToggledColor = Flame,
-        TextStyle = new RichTextBoxStyle { ForegroundColor = Ink }
+        TextStyle = new LabelStyle { ForegroundColor = Ink }
     };
 
     CheckBox.GeneralStyle = new CheckBoxStyle
@@ -121,7 +121,7 @@ public static void Apply()
             HoverColor = Gold,
             PressedColor = new Color(128, 98, 54),
             ToggledColor = Gold,
-            TextStyle = new RichTextBoxStyle { ForegroundColor = Ink }
+            TextStyle = new LabelStyle { ForegroundColor = Ink }
         }
     };
 
@@ -148,7 +148,7 @@ public static void Apply()
     ToolTip.GeneralStyle = new ToolTipStyle
     {
         BackgroundColor = new Color(52, 40, 29),
-        TextStyle = new RichTextBoxStyle { ForegroundColor = Text, TextMargin = (8, 5) }
+        TextStyle = new LabelStyle { ForegroundColor = Text, TextMargin = (8, 5) }
     };
 }
 ```
@@ -174,7 +174,7 @@ var danger = new ButtonStyle
     NormalColor = new Color(150, 52, 30),
     HoverColor = new Color(190, 70, 40),
     PressedColor = new Color(110, 38, 22),
-    TextStyle = new RichTextBoxStyle { ForegroundColor = new Color(255, 236, 214) }
+    TextStyle = new LabelStyle { ForegroundColor = new Color(255, 236, 214) }
 };
 
 var row = new StackPanel { Orientation = Orientation.Horizontal, Margin = (16, 18) };
@@ -219,8 +219,8 @@ to the level below. The "Delete save" button above takes its colours from `dange
   but not added yet, or removed) catches up when it is attached.
 - **Part styles.** Properties such as <a class="ref prop" href="/docs/ui-glossary/types/button-style/#textstyle">`ButtonStyle.TextStyle`</a> or <a class="ref prop" href="/docs/ui-glossary/types/list-box-style/#scrollablecontainerstyle">`ListBoxStyle.ScrollableContainerStyle`</a> hold the
   style of a part inside the control. The part takes it as its own `StyleOverride`, so it lies over the part type's
-  general style: <code>TextStyle = new <a href="/docs/ui-glossary/types/rich-text-box-style/">RichTextBoxStyle</a> { ForegroundColor = ... }</code> changes the text colour and keeps the
-  rest of <a class="ref prop" href="/docs/ui-glossary/elements/rich-text-box/#generalstyle">`RichTextBox.GeneralStyle`</a>.
+  general style: <code>TextStyle = new <a href="/docs/ui-glossary/types/label-style/">LabelStyle</a> { ForegroundColor = ... }</code> changes the text colour and keeps the
+  rest of <a class="ref prop" href="/docs/ui-glossary/elements/label/#generalstyle">`Label.GeneralStyle`</a>.
 - **No style class.** <a class="ref" href="/docs/ui-glossary/elements/grid/">`Grid`</a>, <a class="ref" href="/docs/ui-glossary/elements/separator/">`Separator`</a>, <a class="ref" href="/docs/ui-glossary/types/tab-control/">`TabControl`</a> and the parts that only exist inside an element
   (<a class="ref" href="/docs/ui-glossary/elements/list-box-item/">`ListBoxItem`</a>, <a class="ref" href="/docs/ui-glossary/elements/tree-view-item/">`TreeViewItem`</a>, <a class="ref" href="/docs/ui-glossary/elements/context-menu-item/">`ContextMenuItem`</a>, <a class="ref" href="/docs/ui-glossary/elements/grid-cell/">`GridCell`</a>, <a class="ref" href="/docs/ui-glossary/elements/content-container/">`ContentContainer`</a>, <a class="ref" href="/docs/ui-glossary/elements/default-window-title-bar/">`DefaultWindowTitleBar`</a>) have no
   style. They are set in code; their double click interval, repeat timings and resize area come from
@@ -276,8 +276,8 @@ None has properties beyond its element's. The last column lists the framework de
 | Style class | Element | Part styles, and element properties left out | Framework defaults |
 | --- | --- | --- | --- |
 | <a class="ref" href="/docs/ui-glossary/types/border-style/">`BorderStyle`</a> | [`Border`](/docs/ui-layout/#border) | Leaves out `Content`. | None beyond the base ones. |
-| <a class="ref" href="/docs/ui-glossary/types/button-style/">`ButtonStyle`</a> | [`Button`](/docs/ui-controls/#button) | Part styles `TextStyle` (<a class="ref" href="/docs/ui-glossary/types/rich-text-box-style/">`RichTextBoxStyle`</a>) and `BackgroundStyle` (<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a>). Leaves out `Content`. | None beyond the base ones. |
-| <a class="ref" href="/docs/ui-glossary/types/check-box-style/">`CheckBoxStyle`</a> | [`CheckBox`](/docs/ui-controls/#checkbox) | Part styles `TextStyle` (<a class="ref" href="/docs/ui-glossary/types/rich-text-box-style/">`RichTextBoxStyle`</a>) and <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> (<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a>). Leaves out `Content`. | None beyond the base ones. |
+| <a class="ref" href="/docs/ui-glossary/types/button-style/">`ButtonStyle`</a> | [`Button`](/docs/ui-controls/#button) | Part styles `TextStyle` (<a class="ref" href="/docs/ui-glossary/types/label-style/">`LabelStyle`</a>) and `BackgroundStyle` (<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a>). Leaves out `Content`. | None beyond the base ones. |
+| <a class="ref" href="/docs/ui-glossary/types/check-box-style/">`CheckBoxStyle`</a> | [`CheckBox`](/docs/ui-controls/#checkbox) | Part styles `TextStyle` (<a class="ref" href="/docs/ui-glossary/types/label-style/">`LabelStyle`</a>) and <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> (<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a>). Leaves out `Content`. | None beyond the base ones. |
 | <a class="ref" href="/docs/ui-glossary/types/color-picker-style/">`ColorPickerStyle`</a> | [`ColorPicker`](/docs/ui-controls/#colorpicker) | Leaves out `Brightness` and `SelectedColor`, so it has only the `BaseStyle` properties. | <a class="ref prop" href="/docs/ui-glossary/types/base-style/#foregroundcolor">`ForegroundColor`</a> white. |
 | <a class="ref" href="/docs/ui-glossary/types/combo-box-style/">`ComboBoxStyle`</a> | [`ComboBox`](/docs/ui-lists/#combobox) | Part styles `SelectionStyle` (<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a>), `ToggleButtonStyle` (<a class="ref" href="/docs/ui-glossary/types/button-style/">`ButtonStyle`</a>) and <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> (<a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a>). | Aligned left and top, <a class="ref" href="/docs/ui-glossary/types/inherit-state/#fromchildren">`InheritState.FromChildren`</a>. |
 | <a class="ref" href="/docs/ui-glossary/types/context-menu-style/">`ContextMenuStyle`</a> | [`ContextMenu`](/docs/ui-lists/#contextmenu) | Part styles <a class="ref" href="/docs/ui-glossary/types/border-style/">`BorderStyle`</a>, <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a>, `CheckIconStyle` and `ExpandIconStyle` (<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a>). Leaves out `ItemsSource`. | Aligned left and top, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#hittest">`HitTest`</a> off, `Placement` `BottomRight`. A border 1 unit thick in the context menu colours of <a class="ref" href="/docs/ui-glossary/types/default-settings/">`DefaultSettings`</a>; a transparent list without dual colours whose hover and selected rows use `DefaultContextMenuHighlightColor`; an 8 by 8 check icon and a 6 by 8 expand icon in `DefaultContextMenuIconColor`. |
@@ -291,7 +291,7 @@ None has properties beyond its element's. The last column lists the framework de
 | <a class="ref" href="/docs/ui-glossary/types/slider-style/">`SliderStyle`</a> | [`Slider`](/docs/ui-controls/#slider) | None. | <a class="ref" href="/docs/ui-glossary/types/inherit-state/#fromchildren">`InheritState.FromChildren`</a>, `ThumbScale` (1, 1). |
 | <a class="ref" href="/docs/ui-glossary/types/stack-panel-style/">`StackPanelStyle`</a> | [`StackPanel`](/docs/ui-layout/#stackpanel) | None. | Aligned left and top, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#hittest">`HitTest`</a> off, <a class="ref" href="/docs/ui-glossary/types/inherit-state/#fromchildren">`InheritState.FromChildren`</a>. |
 | <a class="ref" href="/docs/ui-glossary/types/stencil-style/">`StencilStyle`</a> | [`Stencil`](/docs/ui-images/#stencil) | Leaves out `SourceTexture` and `StencilTexture`. | None beyond the base ones. |
-| <a class="ref" href="/docs/ui-glossary/types/tool-tip-style/">`ToolTipStyle`</a> | [`ToolTip`](/docs/ui-controls/#tooltip) | Part style `TextStyle` (<a class="ref" href="/docs/ui-glossary/types/rich-text-box-style/">`RichTextBoxStyle`</a>). Leaves out `Content`. | Aligned left and top, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#hittest">`HitTest`</a> off, `TimeBeforeShowMs` `DefaultTimeBeforeShowToolTipMs`. |
+| <a class="ref" href="/docs/ui-glossary/types/tool-tip-style/">`ToolTipStyle`</a> | [`ToolTip`](/docs/ui-controls/#tooltip) | Part style `TextStyle` (<a class="ref" href="/docs/ui-glossary/types/label-style/">`LabelStyle`</a>). Leaves out `Content`. | Aligned left and top, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#hittest">`HitTest`</a> off, `TimeBeforeShowMs` `DefaultTimeBeforeShowToolTipMs`. |
 | <a class="ref" href="/docs/ui-glossary/types/tree-view-style/">`TreeViewStyle`</a> | [`TreeView`](/docs/ui-lists/#treeview) | Part styles <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> and `ExpandIconStyle` (<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a>). Leaves out `SelectedItem` and `ItemsSource`. | An `ExpandIconStyle` of an 8 by 8 block, centred, `MinimizedIconColor` (150, 150, 160), `ExpandedIconColor` (90, 90, 100). |
 | <a class="ref" href="/docs/ui-glossary/types/view-port-style/">`ViewPortStyle`</a> | [`ViewPort`](/docs/ui-images/#viewport) | None. | <a class="ref prop" href="/docs/ui-glossary/types/base-style/#hittest">`HitTest`</a> off, `MinDepth` and `MaxDepth` from <a class="ref" href="/docs/ui-glossary/types/default-settings/">`DefaultSettings`</a>. |
 | <a class="ref" href="/docs/ui-glossary/types/window-style/">`WindowStyle`</a> | [`Window`](/docs/ui-layout/#window) | Part style <a class="ref" href="/docs/ui-glossary/types/border-style/">`BorderStyle`</a>. Leaves out `TitleBar` and `Content`. | A border `DefaultWindowBorderThickness` thick, filled with `DefaultWindowBackgroundColor`, in `DefaultWindowBorderColor`. |

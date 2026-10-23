@@ -65,7 +65,7 @@ Without textures the button is drawn in the solid colour of its state. With <a c
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <a class="ref dp" href="/docs/ui-glossary/elements/button/#text">`Text`</a> | `string` | Creates a centred <a class="ref" href="/docs/ui-glossary/elements/rich-text-box/">`RichTextBox`</a> content showing this text, styled by <a class="ref dp" href="/docs/ui-glossary/elements/button/#textstyle">`TextStyle`</a>. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/button/#text">`Text`</a> | `string` | Creates a centred <a class="ref" href="/docs/ui-glossary/elements/label/">`Label`</a> content showing this text, styled by <a class="ref dp" href="/docs/ui-glossary/elements/button/#textstyle">`TextStyle`</a>. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/button/#content">`Content`</a> | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | Any element shown inside the button instead of a text. A content you give is detached, not disposed, when it is replaced. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/button/#type">`Type`</a> | <a class="ref" href="/docs/ui-glossary/types/button-type/">`ButtonType`</a> | How the button reacts to the mouse: `Normal`, `Repeat` or `Toggle`. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/button/#toggledon">`ToggledOn`</a> | `bool` | Whether a `Toggle` button is on. Set it to switch the button from code; <a class="ref event" href="/docs/ui-glossary/elements/button/#ontoggled">`OnToggled`</a> is raised. |
@@ -73,7 +73,7 @@ Without textures the button is drawn in the solid colour of its state. With <a c
 | <a class="ref dp" href="/docs/ui-glossary/elements/button/#hovercolor">`HoverColor`</a> | `Color` | The solid colour while the mouse is over the button. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/button/#pressedcolor">`PressedColor`</a> | `Color` | The solid colour while the button is pressed. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/button/#toggledcolor">`ToggledColor`</a> | `Color` | The solid colour of a `Toggle` button that is on. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/button/#textstyle">`TextStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/rich-text-box-style/">`RichTextBoxStyle`</a> | The style of the text content made from <a class="ref dp" href="/docs/ui-glossary/elements/button/#text">`Text`</a>. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/button/#textstyle">`TextStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/label-style/">`LabelStyle`</a> | The style of the text content made from <a class="ref dp" href="/docs/ui-glossary/elements/button/#text">`Text`</a>. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/button/#backgroundstyle">`BackgroundStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> | The style of the image the button draws its background with. |
 
 ### Button events
@@ -215,7 +215,7 @@ colour, so give them in a style or on the element. With <a class="ref dp" href="
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#text">`Text`</a> | `string` | Creates a <a class="ref" href="/docs/ui-glossary/elements/rich-text-box/">`RichTextBox`</a> content showing this text, styled by <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#textstyle">`TextStyle`</a>. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#text">`Text`</a> | `string` | Creates a <a class="ref" href="/docs/ui-glossary/elements/label/">`Label`</a> content showing this text, styled by <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#textstyle">`TextStyle`</a>. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#content">`Content`</a> | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | Any element shown beside the box instead of a text. A content you give is detached, not disposed, when it is replaced. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#checked">`Checked`</a> | `bool` | Whether the box is checked. Setting it raises <a class="ref event" href="/docs/ui-glossary/elements/check-box/#oncheckedunchecked">`OnCheckedUnchecked`</a>, and checking a radio button unchecks the others of its group. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#type">`Type`</a> | <a class="ref" href="/docs/ui-glossary/types/check-box-type/">`CheckBoxType`</a> | `CheckBox` (the default) or `RadioButton`. |
@@ -223,7 +223,7 @@ colour, so give them in a style or on the element. With <a class="ref dp" href="
 | <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#direction">`Direction`</a> | <a class="ref" href="/docs/ui-glossary/types/check-box-direction/">`CheckBoxDirection`</a> | Which side of the content the box is on: `Left` (the default) or `Right`. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#checkedsolidcolor">`CheckedSolidColor`</a> | `Color` | The colour of the box while it is checked, without textures. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#uncheckedsolidcolor">`UncheckedSolidColor`</a> | `Color` | The colour of the box while it is unchecked, without textures. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#textstyle">`TextStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/rich-text-box-style/">`RichTextBoxStyle`</a> | The style of the text content made from <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#text">`Text`</a>. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#textstyle">`TextStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/label-style/">`LabelStyle`</a> | The style of the text content made from <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#text">`Text`</a>. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#imagestyle">`ImageStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> | The style of the image that draws the box. |
 
 ### CheckBox events
@@ -635,12 +635,12 @@ which does not wrap; the tooltip's own <a class="ref dp" href="/docs/ui-glossary
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#text">`Text`</a> | `string` | Creates a centred <a class="ref" href="/docs/ui-glossary/elements/rich-text-box/">`RichTextBox`</a> content showing this text, styled by <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#textstyle">`TextStyle`</a>. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#text">`Text`</a> | `string` | Creates a centred <a class="ref" href="/docs/ui-glossary/elements/label/">`Label`</a> content showing this text, styled by <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#textstyle">`TextStyle`</a>. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#content">`Content`</a> | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | Any element shown in the tooltip instead of a text. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#placement">`Placement`</a> | <a class="ref" href="/docs/ui-glossary/types/tool-tip-placement/">`ToolTipPlacement`</a> | Which side of the cursor the tooltip appears on. `TopLeft` is the default. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#marginfrommousecursor">`MarginFromMouseCursor`</a> | <a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> | The shift from the cursor, in units: `Left` is added to the x position and `Top` to the y position, whatever the placement (use negative values to move a `TopLeft` tooltip away from the cursor). The other sides are not used. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#timebeforeshowms">`TimeBeforeShowMs`</a> | `int` | How long the mouse rests on the element before the tooltip appears, in milliseconds. 0 shows it at once. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#textstyle">`TextStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/rich-text-box-style/">`RichTextBoxStyle`</a> | The style of the text content made from <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#text">`Text`</a>. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#textstyle">`TextStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/label-style/">`LabelStyle`</a> | The style of the text content made from <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#text">`Text`</a>. |
 
 ### ToolTip methods
 

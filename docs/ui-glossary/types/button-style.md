@@ -5,7 +5,7 @@ title: "Glossary: ButtonStyle"
 description: "The members of ButtonStyle, in alphabetical order."
 ---
 
-The style class of [`Button`](/docs/ui-controls/#button): the properties a style can set on it. Part styles <a class="ref prop" href="/docs/ui-glossary/types/button-style/#textstyle">`TextStyle`</a> (<a class="ref" href="/docs/ui-glossary/types/rich-text-box-style/">`RichTextBoxStyle`</a>) and <a class="ref prop" href="/docs/ui-glossary/types/button-style/#backgroundstyle">`BackgroundStyle`</a> (<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a>). Leaves out `Content`. Framework defaults: none beyond the base ones.
+The style class of [`Button`](/docs/ui-controls/#button): the properties a style can set on it. Part styles <a class="ref prop" href="/docs/ui-glossary/types/button-style/#textstyle">`TextStyle`</a> (<a class="ref" href="/docs/ui-glossary/types/label-style/">`LabelStyle`</a>) and <a class="ref prop" href="/docs/ui-glossary/types/button-style/#backgroundstyle">`BackgroundStyle`</a> (<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a>). Leaves out `Content`. Framework defaults: none beyond the base ones.
 
 A class deriving from [`BaseStyle`](/docs/ui-glossary/types/base-style/). The [styles page](/docs/ui-styles/#style-classes) shows it in context.
 
@@ -31,11 +31,11 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 <h3 id="text"><span class="prop"><code>Text</code></span> <a class="ctx" href="/docs/ui-controls/#button-properties" title="Text in context on the controls page" aria-label="Text in context on the controls page">→</a></h3>
 
-`string` · Creates a centred <a class="ref" href="/docs/ui-glossary/elements/rich-text-box/">`RichTextBox`</a> content showing this text, styled by <a class="ref dp" href="/docs/ui-glossary/elements/button/#textstyle">`TextStyle`</a>.
+`string` · Creates a centred <a class="ref" href="/docs/ui-glossary/elements/label/">`Label`</a> content showing this text, styled by <a class="ref dp" href="/docs/ui-glossary/elements/button/#textstyle">`TextStyle`</a>.
 
 <h3 id="textstyle"><span class="prop"><code>TextStyle</code></span> <a class="ctx" href="/docs/ui-controls/#button-properties" title="TextStyle in context on the controls page" aria-label="TextStyle in context on the controls page">→</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/rich-text-box-style/">`RichTextBoxStyle`</a> · The style of the text content made from <a class="ref dp" href="/docs/ui-glossary/elements/button/#text">`Text`</a>.
+<a class="ref" href="/docs/ui-glossary/types/label-style/">`LabelStyle`</a> · The style of the text content made from <a class="ref dp" href="/docs/ui-glossary/elements/button/#text">`Text`</a>.
 
 <h3 id="toggledcolor"><span class="prop"><code>ToggledColor</code></span> <a class="ctx" href="/docs/ui-controls/#button-properties" title="ToggledColor in context on the controls page" aria-label="ToggledColor in context on the controls page">→</a></h3>
 
