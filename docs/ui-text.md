@@ -450,7 +450,7 @@ Positions count the characters of <a class="ref dp" href="/docs/ui-glossary/elem
 | Value | Meaning |
 | --- | --- |
 | <a class="ref" href="/docs/ui-glossary/types/rich-text-box-formatting/#plain">`Plain`</a> | The text is shown as it is. |
-| <a class="ref" href="/docs/ui-glossary/types/rich-text-box-formatting/#rich">`Rich`</a> | A read-only box reads `[c=n]`, `[a=n]`, `[i=n]` and `[/]` tags. |
+| <a class="ref" href="/docs/ui-glossary/types/rich-text-box-formatting/#rich">`Rich`</a> | A read-only box reads `[c=n]`, `[a=n]`, `[i=n]`, `[o=n]`, `[u=1]`, `[s=1]` and `[/]` tags, and self-closing ones such as `[i=0/]`. |
 
 Style class: <a class="ref" href="/docs/ui-glossary/types/rich-text-box-style/">`RichTextBoxStyle`</a> (the same properties, see [styles](/docs/ui-styles/)). Its defaults are an empty
 <span class="dp">`Text`</span>, <span class="dp">`FontSize`</span> 14, <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#foregroundcolor">`ForegroundColor`</a> <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaulttextcolor">`DefaultSettings.DefaultTextColor`</a> (black), the caret and selection settings

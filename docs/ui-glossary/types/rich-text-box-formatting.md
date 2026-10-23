@@ -14,4 +14,4 @@ The text is shown as it is.
 
 <h3 id="rich"><code>Rich</code> <a class="ctx" href="/docs/ui-text/#richtextboxformatting" title="Rich in context on the text page" aria-label="Rich in context on the text page">🠆</a></h3>
 
-A read-only box reads `[c=n]`, `[a=n]`, `[i=n]` and `[/]` tags.
+A read-only box reads `[c=n]`, `[a=n]`, `[i=n]`, `[o=n]`, `[u=1]`, `[s=1]` and `[/]` tags, and self-closing ones such as `[i=0/]`.
