@@ -127,7 +127,9 @@ public static void Apply()
 
     TreeView.GeneralStyle = new TreeViewStyle
     {
-        FoldedIconColor = GoldDim,
+        // the size and place of the expand icon: the tree view on these
+        // pages draws its arrow pictures (FoldedIcon and ExpandedIcon,
+        // from its TexturesPath) in this box
         ExpandIconStyle = new ImageStyle
         {
             DesiredWidth = 10,
@@ -136,7 +138,6 @@ public static void Apply()
             VerticalAlignment = VerticalAlignment.Center,
             HitTest = false
         },
-        ExpandedIconColor = Gold,
         ListBoxStyle = new ListBoxStyle
         {
             BackgroundColor = Panel,
