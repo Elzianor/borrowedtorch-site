@@ -440,6 +440,10 @@ a.card:hover { border-color: var(--line-strong); background: var(--surface-2); c
 .prose .kind-legend-title { margin-right: 4px; color: var(--muted); font-size: .7rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
 /* a name that links to its glossary entry: the chip itself is the link */
 .prose a.ref { text-decoration: none; white-space: nowrap; }
+/* in a table a linked signature wraps at its spaces, and a long name where the docs layout lets it (a long one made its
+   table wider than the page); a wrapped chip keeps its padding and border on every line */
+.prose td a.ref { white-space: normal; }
+.prose td code { -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 .prose a.ref code { transition: border-color .15s, background .15s; }
 /* the types linked inside a code chip (a signature, a handler, a generic type): the chip's colour, a faint underline */
 .prose code a { color: inherit; text-decoration: underline; text-decoration-color: color-mix(in srgb, currentColor 40%, transparent); text-underline-offset: 2px; }

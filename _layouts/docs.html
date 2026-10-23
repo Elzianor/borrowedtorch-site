@@ -200,6 +200,29 @@ layout: base
     {%- endif %}
 {{ content }}
     </article>
+    <script>
+      // a long name in a table (20 characters or more) may break after a dot and between its words, as in
+      // DefaultContextMenu|HighlightColor: such names made their tables wider than the page
+      (function () {
+        var chips = document.querySelectorAll('.prose td code');
+        for (var i = 0; i < chips.length; i++) {
+          if (chips[i].textContent.length < 20) continue;
+          var walker = document.createTreeWalker(chips[i], NodeFilter.SHOW_TEXT);
+          var texts = [];
+          while (walker.nextNode()) texts.push(walker.currentNode);
+          for (var j = 0; j < texts.length; j++) {
+            var parts = texts[j].nodeValue.replace(/\.(?=\S)/g, '.\u0001').replace(/([a-z0-9])(?=[A-Z])/g, '$1\u0001').split('\u0001');
+            if (parts.length < 2) continue;
+            var pieces = document.createDocumentFragment();
+            for (var k = 0; k < parts.length; k++) {
+              if (k > 0) pieces.appendChild(document.createElement('wbr'));
+              pieces.appendChild(document.createTextNode(parts[k]));
+            }
+            texts[j].parentNode.replaceChild(pieces, texts[j]);
+          }
+        }
+      })();
+    </script>
 
     {%- if idx >= 0 %}
     {%- assign prev_i = idx | minus: 1 %}
