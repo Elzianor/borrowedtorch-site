@@ -15,7 +15,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="devicebounds"><span class="prop"><code>DeviceBounds</code></span> <a class="ctx" href="/docs/ui-images/#viewport-properties" title="DeviceBounds in context on the images page" aria-label="DeviceBounds in context on the images page">🠆</a></h3>
 
-`Rectangle` · Read-only. The view port's bounds in device pixels, the rectangle `GraphicsDevice.Viewport` is set to.
+`Rectangle` · Read-only. The view port's bounds in device pixels, the rectangle `GraphicsDevice.Viewport` is set to. It can be read outside the draw instructions too, for example for a camera's aspect ratio.
 
 <h3 id="drawinstructions"><span class="prop"><code>DrawInstructions</code></span> <a class="ctx" href="/docs/ui-images/#viewport-properties" title="DrawInstructions in context on the images page" aria-label="DrawInstructions in context on the images page">🠆</a></h3>
 

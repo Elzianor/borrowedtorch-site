@@ -200,16 +200,16 @@ var scene = new ViewPort("scene")
     Margin = 16
 };
 
-// runs inside the view port: GraphicsDevice.Viewport is the view port's rectangle,
-// in device pixels
+// runs inside the view port, drawing from its top left corner; DeviceBounds is its
+// rectangle in device pixels (GraphicsDevice.Viewport is set to it meanwhile)
 scene.DrawInstructions = () =>
 {
-    var viewport = GraphicsDevice.Viewport;
-    var size = Math.Min(viewport.Width, viewport.Height) * 0.7f;
+    var bounds = scene.DeviceBounds;
+    var size = Math.Min(bounds.Width, bounds.Height) * 0.7f;
 
     batch.Begin();
     batch.Draw(logo,
-        new Vector2(viewport.Width / 2f, viewport.Height / 2f),
+        new Vector2(bounds.Width / 2f, bounds.Height / 2f),
         null,
         Color.White,
         angle,
@@ -227,9 +227,10 @@ ui.AddElementToRoot(scene);
 of them. Before it runs, the UI ends its sprite batch and sets three device states:
 
 - `GraphicsDevice.Viewport` is the view port's whole rectangle in device pixels (<a class="ref prop" href="/docs/ui-glossary/elements/view-port/#devicebounds">`DeviceBounds`</a>), with <a class="ref dp" href="/docs/ui-glossary/elements/view-port/#mindepth">`MinDepth`</a> and
-  <a class="ref dp" href="/docs/ui-glossary/elements/view-port/#maxdepth">`MaxDepth`</a> as its depth range. Draw relative to it: `(0, 0)` is the view port's top left corner, and
-  `GraphicsDevice.Viewport.Width` and `Height` give its size. The drawing is not scaled by the UI's display scale, so
-  size it by these device pixels.
+  <a class="ref dp" href="/docs/ui-glossary/elements/view-port/#maxdepth">`MaxDepth`</a> as its depth range. Draw relative to it: `(0, 0)` is the view port's top left corner, and its size is
+  `DeviceBounds.Width` and `Height`, the same as `GraphicsDevice.Viewport.Width` and `Height` (which drawing code
+  written for the whole screen already reads). The drawing is not scaled by the UI's display scale, so size it by these
+  device pixels.
 - `GraphicsDevice.ScissorRectangle` is the part of the view port that is on screen (its <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#hitrectangle">`HitRectangle`</a>, in device
   pixels). The viewport keeps its full size when a parent crops the view port, so the projection of your drawing does
   not change while it scrolls.
@@ -257,7 +258,7 @@ A view port doesn't take the mouse by default (its style sets <a class="ref dp" 
 | Property | Type | Description |
 | --- | --- | --- |
 | <a class="ref prop" href="/docs/ui-glossary/elements/view-port/#drawinstructions">`DrawInstructions`</a> | `Action` | Your drawing code, run every frame inside the view port as described above. |
-| <a class="ref prop" href="/docs/ui-glossary/elements/view-port/#devicebounds">`DeviceBounds`</a> | `Rectangle` | Read-only. The view port's bounds in device pixels, the rectangle `GraphicsDevice.Viewport` is set to. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/view-port/#devicebounds">`DeviceBounds`</a> | `Rectangle` | Read-only. The view port's bounds in device pixels, the rectangle `GraphicsDevice.Viewport` is set to. It can be read outside the draw instructions too, for example for a camera's aspect ratio. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/view-port/#mindepth">`MinDepth`</a> | `float` | The minimum depth of the viewport's depth range. Defaults to <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultmindepth">`DefaultSettings.DefaultMinDepth`</a> (`0`). |
 | <a class="ref dp" href="/docs/ui-glossary/elements/view-port/#maxdepth">`MaxDepth`</a> | `float` | The maximum depth of the viewport's depth range. Defaults to <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultmaxdepth">`DefaultSettings.DefaultMaxDepth`</a> (`1`). |
 
