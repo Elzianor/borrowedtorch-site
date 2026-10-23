@@ -346,18 +346,22 @@ A cursor property left `null` sets no cursor, so the one shown before stays. The
 the hand over a draggable element, the "no" cursor where a drop is denied, and the sizing arrows on the edges and
 corners of a resizable element; it has no pressed, drag pressed or drop allowed cursor and no rich text cursors.
 
+The Example columns below show the cursors of the `UITextures/MouseCursors` folder that comes with BorrowedTorch.UI
+(the set the snippet above loads from), the hover cursor first and the pressed one second where a set has both.
+They are one possible look: any picture can be a cursor (`MouseCursor.FromTexture2D`).
+
 ### MouseCursorsSet
 
 The cursors an element shows. It is disposable: disposing it disposes its <a class="ref" href="/docs/ui-glossary/types/drag-and-drop-cursors/">`DragAndDropCursors`</a>, <a class="ref" href="/docs/ui-glossary/types/resize-cursors/">`ResizeCursors`</a> and
 <a class="ref" href="/docs/ui-glossary/types/rich-text-cursors/">`RichTextCursors`</a>, and a disposed set ignores new values.
 
-| Property | Type | Description |
-| --- | --- | --- |
-| <a class="ref prop" href="/docs/ui-glossary/types/mouse-cursors-set/#hovercursor">`HoverCursor`</a> | `MouseCursor` | The cursor while the mouse is over the element. |
-| <a class="ref prop" href="/docs/ui-glossary/types/mouse-cursors-set/#pressedcursor">`PressedCursor`</a> | `MouseCursor` | The cursor while the left button is held on the element. |
-| <a class="ref prop" href="/docs/ui-glossary/types/mouse-cursors-set/#draganddropcursors">`DragAndDropCursors`</a> | <a class="ref" href="/docs/ui-glossary/types/drag-and-drop-cursors/">`DragAndDropCursors`</a> | The cursors of a draggable element and of drop targets. |
-| <a class="ref prop" href="/docs/ui-glossary/types/mouse-cursors-set/#resizecursors">`ResizeCursors`</a> | <a class="ref" href="/docs/ui-glossary/types/resize-cursors/">`ResizeCursors`</a> | The cursors on the edges and corners of a resizable element. |
-| <a class="ref prop" href="/docs/ui-glossary/types/mouse-cursors-set/#richtextcursors">`RichTextCursors`</a> | <a class="ref" href="/docs/ui-glossary/types/rich-text-cursors/">`RichTextCursors`</a> | The cursors over the text of a rich text box. |
+| Property | Type | Description | Example |
+| --- | --- | --- | --- |
+| <a class="ref prop" href="/docs/ui-glossary/types/mouse-cursors-set/#hovercursor">`HoverCursor`</a> | `MouseCursor` | The cursor while the mouse is over the element. | <img class="cursor" src="{{ '/assets/img/ui/cursors/ArrowHover.png' | relative_url }}" width="32" height="32" alt="arrow cursor" title="Arrow cursor"> |
+| <a class="ref prop" href="/docs/ui-glossary/types/mouse-cursors-set/#pressedcursor">`PressedCursor`</a> | `MouseCursor` | The cursor while the left button is held on the element. | <img class="cursor" src="{{ '/assets/img/ui/cursors/ArrowPressed.png' | relative_url }}" width="32" height="32" alt="pressed arrow cursor" title="Pressed arrow cursor"> |
+| <a class="ref prop" href="/docs/ui-glossary/types/mouse-cursors-set/#draganddropcursors">`DragAndDropCursors`</a> | <a class="ref" href="/docs/ui-glossary/types/drag-and-drop-cursors/">`DragAndDropCursors`</a> | The cursors of a draggable element and of drop targets. |  |
+| <a class="ref prop" href="/docs/ui-glossary/types/mouse-cursors-set/#resizecursors">`ResizeCursors`</a> | <a class="ref" href="/docs/ui-glossary/types/resize-cursors/">`ResizeCursors`</a> | The cursors on the edges and corners of a resizable element. |  |
+| <a class="ref prop" href="/docs/ui-glossary/types/mouse-cursors-set/#richtextcursors">`RichTextCursors`</a> | <a class="ref" href="/docs/ui-glossary/types/rich-text-cursors/">`RichTextCursors`</a> | The cursors over the text of a rich text box. |  |
 
 | Method | Description |
 | --- | --- |
@@ -368,12 +372,12 @@ The cursors an element shows. It is disposable: disposing it disposes its <a cla
 
 The cursors of [drag and drop](/docs/ui-images/#drag-and-drop). Disposable like <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a>.
 
-| Property | Type | Description |
-| --- | --- | --- |
-| <a class="ref prop" href="/docs/ui-glossary/types/drag-and-drop-cursors/#draghovercursor">`DragHoverCursor`</a> | `MouseCursor` | Shown instead of `HoverCursor` over an element that can be dragged. |
-| <a class="ref prop" href="/docs/ui-glossary/types/drag-and-drop-cursors/#dragpressedcursor">`DragPressedCursor`</a> | `MouseCursor` | Shown instead of `PressedCursor` while the left button is held on an element that can be dragged. |
-| <a class="ref prop" href="/docs/ui-glossary/types/drag-and-drop-cursors/#dropallowedcursor">`DropAllowedCursor`</a> | `MouseCursor` | Shown over a drop target that accepts what is dragged. |
-| <a class="ref prop" href="/docs/ui-glossary/types/drag-and-drop-cursors/#dropdeniedcursor">`DropDeniedCursor`</a> | `MouseCursor` | Shown over a drop target that refuses what is dragged. |
+| Property | Type | Description | Example |
+| --- | --- | --- | --- |
+| <a class="ref prop" href="/docs/ui-glossary/types/drag-and-drop-cursors/#draghovercursor">`DragHoverCursor`</a> | `MouseCursor` | Shown instead of `HoverCursor` over an element that can be dragged. | <img class="cursor" src="{{ '/assets/img/ui/cursors/Drag/Hover.png' | relative_url }}" width="32" height="32" alt="open hand cursor" title="Open hand cursor"> |
+| <a class="ref prop" href="/docs/ui-glossary/types/drag-and-drop-cursors/#dragpressedcursor">`DragPressedCursor`</a> | `MouseCursor` | Shown instead of `PressedCursor` while the left button is held on an element that can be dragged. | <img class="cursor" src="{{ '/assets/img/ui/cursors/Drag/Grab.png' | relative_url }}" width="32" height="32" alt="grabbing hand cursor" title="Grabbing hand cursor"> |
+| <a class="ref prop" href="/docs/ui-glossary/types/drag-and-drop-cursors/#dropallowedcursor">`DropAllowedCursor`</a> | `MouseCursor` | Shown over a drop target that accepts what is dragged. | <img class="cursor" src="{{ '/assets/img/ui/cursors/Drag/DropAllowed.png' | relative_url }}" width="32" height="32" alt="drop allowed cursor" title="Drop allowed cursor"> |
+| <a class="ref prop" href="/docs/ui-glossary/types/drag-and-drop-cursors/#dropdeniedcursor">`DropDeniedCursor`</a> | `MouseCursor` | Shown over a drop target that refuses what is dragged. | <img class="cursor" src="{{ '/assets/img/ui/cursors/Drag/DropDenied.png' | relative_url }}" width="32" height="32" alt="drop denied cursor" title="Drop denied cursor"> |
 
 | Method | Description |
 | --- | --- |
@@ -385,16 +389,16 @@ The cursors of [drag and drop](/docs/ui-images/#drag-and-drop). Disposable like 
 The cursors of the eight grips around a [resizable](/docs/ui-base-element/#resizing) element. Each grip is a
 <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a>, so it can have a hover and a pressed cursor. A sealed, disposable class.
 
-| Property | Type | Description |
-| --- | --- | --- |
-| <a class="ref prop" href="/docs/ui-glossary/types/resize-cursors/#lefttop">`LeftTop`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | The top left corner. |
-| <a class="ref prop" href="/docs/ui-glossary/types/resize-cursors/#righttop">`RightTop`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | The top right corner. |
-| <a class="ref prop" href="/docs/ui-glossary/types/resize-cursors/#leftbottom">`LeftBottom`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | The bottom left corner. |
-| <a class="ref prop" href="/docs/ui-glossary/types/resize-cursors/#rightbottom">`RightBottom`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | The bottom right corner. |
-| <a class="ref prop" href="/docs/ui-glossary/types/resize-cursors/#left">`Left`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | The left edge. |
-| <a class="ref prop" href="/docs/ui-glossary/types/resize-cursors/#right">`Right`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | The right edge. |
-| <a class="ref prop" href="/docs/ui-glossary/types/resize-cursors/#top">`Top`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | The top edge. |
-| <a class="ref prop" href="/docs/ui-glossary/types/resize-cursors/#bottom">`Bottom`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | The bottom edge. |
+| Property | Type | Description | Example |
+| --- | --- | --- | --- |
+| <a class="ref prop" href="/docs/ui-glossary/types/resize-cursors/#lefttop">`LeftTop`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | The top left corner. | <img class="cursor" src="{{ '/assets/img/ui/cursors/Resize/Hover/LeftTop.png' | relative_url }}" width="38" height="38" alt="top left resize cursor, hover" title="Hover"> <img class="cursor" src="{{ '/assets/img/ui/cursors/Resize/Pressed/LeftTop.png' | relative_url }}" width="38" height="38" alt="top left resize cursor, pressed" title="Pressed"> |
+| <a class="ref prop" href="/docs/ui-glossary/types/resize-cursors/#righttop">`RightTop`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | The top right corner. | <img class="cursor" src="{{ '/assets/img/ui/cursors/Resize/Hover/RightTop.png' | relative_url }}" width="38" height="38" alt="top right resize cursor, hover" title="Hover"> <img class="cursor" src="{{ '/assets/img/ui/cursors/Resize/Pressed/RightTop.png' | relative_url }}" width="38" height="38" alt="top right resize cursor, pressed" title="Pressed"> |
+| <a class="ref prop" href="/docs/ui-glossary/types/resize-cursors/#leftbottom">`LeftBottom`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | The bottom left corner. | <img class="cursor" src="{{ '/assets/img/ui/cursors/Resize/Hover/LeftBottom.png' | relative_url }}" width="38" height="38" alt="bottom left resize cursor, hover" title="Hover"> <img class="cursor" src="{{ '/assets/img/ui/cursors/Resize/Pressed/LeftBottom.png' | relative_url }}" width="38" height="38" alt="bottom left resize cursor, pressed" title="Pressed"> |
+| <a class="ref prop" href="/docs/ui-glossary/types/resize-cursors/#rightbottom">`RightBottom`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | The bottom right corner. | <img class="cursor" src="{{ '/assets/img/ui/cursors/Resize/Hover/RightBottom.png' | relative_url }}" width="38" height="38" alt="bottom right resize cursor, hover" title="Hover"> <img class="cursor" src="{{ '/assets/img/ui/cursors/Resize/Pressed/RightBottom.png' | relative_url }}" width="38" height="38" alt="bottom right resize cursor, pressed" title="Pressed"> |
+| <a class="ref prop" href="/docs/ui-glossary/types/resize-cursors/#left">`Left`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | The left edge. | <img class="cursor" src="{{ '/assets/img/ui/cursors/Resize/Hover/Left.png' | relative_url }}" width="38" height="38" alt="left resize cursor, hover" title="Hover"> <img class="cursor" src="{{ '/assets/img/ui/cursors/Resize/Pressed/Left.png' | relative_url }}" width="38" height="38" alt="left resize cursor, pressed" title="Pressed"> |
+| <a class="ref prop" href="/docs/ui-glossary/types/resize-cursors/#right">`Right`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | The right edge. | <img class="cursor" src="{{ '/assets/img/ui/cursors/Resize/Hover/Right.png' | relative_url }}" width="38" height="38" alt="right resize cursor, hover" title="Hover"> <img class="cursor" src="{{ '/assets/img/ui/cursors/Resize/Pressed/Right.png' | relative_url }}" width="38" height="38" alt="right resize cursor, pressed" title="Pressed"> |
+| <a class="ref prop" href="/docs/ui-glossary/types/resize-cursors/#top">`Top`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | The top edge. | <img class="cursor" src="{{ '/assets/img/ui/cursors/Resize/Hover/Up.png' | relative_url }}" width="38" height="38" alt="top resize cursor, hover" title="Hover"> <img class="cursor" src="{{ '/assets/img/ui/cursors/Resize/Pressed/Up.png' | relative_url }}" width="38" height="38" alt="top resize cursor, pressed" title="Pressed"> |
+| <a class="ref prop" href="/docs/ui-glossary/types/resize-cursors/#bottom">`Bottom`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | The bottom edge. | <img class="cursor" src="{{ '/assets/img/ui/cursors/Resize/Hover/Down.png' | relative_url }}" width="38" height="38" alt="bottom resize cursor, hover" title="Hover"> <img class="cursor" src="{{ '/assets/img/ui/cursors/Resize/Pressed/Down.png' | relative_url }}" width="38" height="38" alt="bottom resize cursor, pressed" title="Pressed"> |
 
 | Method | Description |
 | --- | --- |
@@ -406,10 +410,10 @@ The cursors of the eight grips around a [resizable](/docs/ui-base-element/#resiz
 The cursors over the text of a [`RichTextBox`](/docs/ui-text/#richtextbox). They replace the hover and pressed cursors
 of the box's set. Disposable like <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a>.
 
-| Property | Type | Description |
-| --- | --- | --- |
-| <a class="ref prop" href="/docs/ui-glossary/types/rich-text-cursors/#writecursor">`WriteCursor`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | Its hover and pressed cursors are shown over the text of an editable (`ReadWrite`) box. |
-| <a class="ref prop" href="/docs/ui-glossary/types/rich-text-cursors/#linkcursor">`LinkCursor`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | Its hover and pressed cursors are shown over a link in a box that is not editable. |
+| Property | Type | Description | Example |
+| --- | --- | --- | --- |
+| <a class="ref prop" href="/docs/ui-glossary/types/rich-text-cursors/#writecursor">`WriteCursor`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | Its hover and pressed cursors are shown over the text of an editable (`ReadWrite`) box. | <img class="cursor" src="{{ '/assets/img/ui/cursors/RichText/TextHover.png' | relative_url }}" width="32" height="32" alt="text cursor, hover" title="Hover"> <img class="cursor" src="{{ '/assets/img/ui/cursors/RichText/TextPressed.png' | relative_url }}" width="32" height="32" alt="text cursor, pressed" title="Pressed"> |
+| <a class="ref prop" href="/docs/ui-glossary/types/rich-text-cursors/#linkcursor">`LinkCursor`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | Its hover and pressed cursors are shown over a link in a box that is not editable. | <img class="cursor" src="{{ '/assets/img/ui/cursors/RichText/LinkHover.png' | relative_url }}" width="32" height="32" alt="link cursor, hover" title="Hover"> <img class="cursor" src="{{ '/assets/img/ui/cursors/RichText/LinkPressed.png' | relative_url }}" width="32" height="32" alt="link cursor, pressed" title="Pressed"> |
 
 | Method | Description |
 | --- | --- |
