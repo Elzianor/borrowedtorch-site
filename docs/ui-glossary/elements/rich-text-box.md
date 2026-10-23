@@ -151,6 +151,10 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 `List<Color>` · Static field. The colours `[c=n]` tags index, shared by every box.
 
+<h3 id="richfonts"><code>RichFonts</code> <a class="ctx" href="/docs/ui-text/#richtextbox-properties" title="RichFonts in context on the text page" aria-label="RichFonts in context on the text page">🠆</a></h3>
+
+`List<string>` · Static field. The font files `[f=n]` tags draw in, shared by every box (each loaded once).
+
 <h3 id="richimages"><code>RichImages</code> <a class="ctx" href="/docs/ui-text/#richtextbox-properties" title="RichImages in context on the text page" aria-label="RichImages in context on the text page">🠆</a></h3>
 
 `List<Texture2D>` · Static field. The textures `[i=n]` tags show, shared by every box.

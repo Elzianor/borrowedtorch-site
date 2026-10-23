@@ -230,24 +230,57 @@ var journal = new RichTextBox("quests")
 ui.AddElementToRoot(journal);
 ```
 
+<figure class="shot">
+  <img src="{{ '/assets/img/ui/text-rich-fonts.png' | relative_url }}" width="442" height="98" alt="A large gold serif title, The Ember Caves, with a small chapter one beside it on the same baseline, above a line of text in the box's font">
+  <figcaption>A title in another font and size, a small note on its baseline, and the box's own font below.</figcaption>
+</figure>
+
+```csharp
+// [f=n] draws in the font file RichFonts[n], [z=n] n units high; a line is
+// as high as its biggest letters need, all of them on one baseline
+RichTextBox.RichFonts.Add("Fonts/Georgia.ttf");
+RichTextBox.RichColors.Add(new Color(233, 194, 122));
+
+var page = new RichTextBox("page")
+{
+    Text = "[f=0,z=30,c=0]The Ember Caves[/] [z=12]chapter one[/]\n" +
+           "The torch burns low. Find a way out before the last ember dies.",
+    Formatting = RichTextBoxFormatting.Rich,
+    WrapType = TextWrap.Wrap,
+    DesiredWidth = 440,
+    HorizontalAlignment = HorizontalAlignment.Left,
+    VerticalAlignment = VerticalAlignment.Top,
+    Margin = (16, 16),
+    BackgroundColor = Color.Transparent
+};
+
+ui.AddElementToRoot(page);
+```
+
 With <code>Formatting = <a href="/docs/ui-glossary/types/rich-text-box-formatting/#rich">RichTextBoxFormatting.Rich</a></code> a read-only box reads tags out of its text. A tag in square brackets
-holds one or more instructions separated by commas, each a letter and a number: an index into one of three static lists shared by every box, or 1 and 0 to
-turn a line on and off:
+holds one or more instructions separated by commas, each a letter and a number: an index into one of the static lists shared by every box, a size, or 1 and 0
+to turn a line on and off:
 
 | Tag | Effect |
 | --- | --- |
 | `[c=n]` | The following text is drawn in <code><a href="/docs/ui-glossary/elements/rich-text-box/#richcolors">RichTextBox.RichColors</a>[n]</code>. |
 | `[a=n]` | The following text is a link: pressing it runs <code><a href="/docs/ui-glossary/elements/rich-text-box/#richactions">RichTextBox.RichActions</a>[n]</code>. |
-| `[i=n]` | The word is replaced by <code><a href="/docs/ui-glossary/elements/rich-text-box/#richimages">RichTextBox.RichImages</a>[n]</code>, drawn as a square one line high. A `c` instruction tints it. |
+| `[i=n]` | The word is replaced by <code><a href="/docs/ui-glossary/elements/rich-text-box/#richimages">RichTextBox.RichImages</a>[n]</code>, drawn as a square as high as a line of its font. A `c` instruction tints it. |
 | `[o=n]` | The letters of the following text get an outline in <code>RichTextBox.RichColors[n]</code>, <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#richoutlinethickness">`RichOutlineThickness`</a> units wide around them. |
 | `[u=1]` | The following text is underlined in its own colour, through the spaces between its words. `[u=0]` ends the underline. |
 | `[s=1]` | The following text is struck through in its own colour, like an underline. `[s=0]` ends it. |
+| `[f=n]` | The following text is drawn in the font file <code>RichTextBox.RichFonts[n]</code>, at the box's size unless a `z` instruction gives one. |
+| `[z=n]` | The following text is drawn `n` units high, in the box's font unless an `f` instruction gives another. `[z=0]` is the box's size again. |
 | `[/]` | Ends all formatting. |
 | `[.../]` | A self-closing tag, such as `[i=0/]` or `[c=1,i=0/]`: its instructions apply to that place only (an image, for `i`), and the formatting around it goes on. |
 
 Instructions combine, as in `[c=0,a=1]help[/]`. The formatting goes on over the following words until `[/]`, so
 `[c=0]two words[/]` colours both. An image tag goes on too, so close it at once: write it self-closing, as in `[i=0/]`, or follow it with `[/]`. An index past the end of its list is ignored. To show a bracket itself, escape it with
 a backslash: `\[` and `\]` (`"\\["` in a C# string).
+
+A line with other fonts or sizes is as high as its tallest letters need, and all its words stand on one baseline;
+it is never lower than a line of the box's own font. The space between two words is the box font's. A font file
+is loaded once and shared, like <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#fontpath">`FontPath`</a>: each file has a glyph atlas of its own.
 
 A link is drawn like the text around it, so give it a colour as well if it should stand out. Over a link the mouse shows
 the link cursor of the box's <a class="ref prop" href="/docs/ui-glossary/types/mouse-cursors-set/#richtextcursors">`MouseCursorsSet.RichTextCursors`</a> (see [styles](/docs/ui-styles/)), and a press on it runs
@@ -409,6 +442,7 @@ With <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#character
 | <a class="ref prop" href="/docs/ui-glossary/elements/rich-text-box/#richcolors-1">`RichColors`</a> | `List<Color>` | Static field. The colours `[c=n]` tags index, shared by every box. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/rich-text-box/#richactions-1">`RichActions`</a> | `List<Action>` | Static field. The actions `[a=n]` links run, shared by every box. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/rich-text-box/#richimages-1">`RichImages`</a> | `List<Texture2D>` | Static field. The textures `[i=n]` tags show, shared by every box. |
+| `RichFonts` | `List<string>` | Static field. The font files `[f=n]` tags draw in, shared by every box (each loaded once). |
 | <a class="ref prop" href="/docs/ui-glossary/elements/rich-text-box/#lastfonterror">`LastFontError`</a> | `Exception` | Read-only. The exception of the last failed font preparation (font system or font size not usable), `null` when the font is fine. The box shows no text and gives up the keyboard while it has no font. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/rich-text-box/#fontsystemoverride">`FontSystemOverride`</a> | <a class="ref prop" href="/docs/ui-glossary/elements/rich-text-box/#fontsystem">`FontSystem`</a> | A FontStashSharp font system for this box only, used instead of the general one. Setting <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#fontpath">`FontPath`</a> sets it too. The box does not dispose it. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/rich-text-box/#fontsystem">`FontSystem`</a> | <a class="ref prop" href="/docs/ui-glossary/elements/rich-text-box/#fontsystem">`FontSystem`</a> | Read-only. The font system in use: <a class="ref prop" href="/docs/ui-glossary/elements/rich-text-box/#fontsystemoverride">`FontSystemOverride`</a>, or <a class="ref prop" href="/docs/ui-glossary/elements/rich-text-box/#generalfontsystem">`GeneralFontSystem`</a> without one. |
@@ -456,7 +490,7 @@ Positions count the characters of <a class="ref dp" href="/docs/ui-glossary/elem
 | Value | Meaning |
 | --- | --- |
 | <a class="ref" href="/docs/ui-glossary/types/rich-text-box-formatting/#plain">`Plain`</a> | The text is shown as it is. |
-| <a class="ref" href="/docs/ui-glossary/types/rich-text-box-formatting/#rich">`Rich`</a> | A read-only box reads `[c=n]`, `[a=n]`, `[i=n]`, `[o=n]`, `[u=1]`, `[s=1]` and `[/]` tags, and self-closing ones such as `[i=0/]`. |
+| <a class="ref" href="/docs/ui-glossary/types/rich-text-box-formatting/#rich">`Rich`</a> | A read-only box reads `[c=n]`, `[a=n]`, `[i=n]`, `[o=n]`, `[u=1]`, `[s=1]`, `[f=n]`, `[z=n]` and `[/]` tags, and self-closing ones such as `[i=0/]`. |
 
 Style class: <a class="ref" href="/docs/ui-glossary/types/rich-text-box-style/">`RichTextBoxStyle`</a> (the same properties, see [styles](/docs/ui-styles/)). Its defaults are an empty
 <span class="dp">`Text`</span>, <span class="dp">`FontSize`</span> 14, <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#foregroundcolor">`ForegroundColor`</a> <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaulttextcolor">`DefaultSettings.DefaultTextColor`</a> (black), the caret and selection settings

@@ -15,12 +15,11 @@ Screenshots use the theme from [styles](/docs/ui-styles/#the-theme-of-these-page
 Draws a texture, stretched over the image, centred at its own size or repeated as tiles.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/images-fills.png' | relative_url }}" width="514" height="154" alt="Three framed images: the Beryllium UI logo stretched over the first, a check box texture centred in the second, and the same texture tiled in rows and columns in the third, cut at the right and bottom edges">
+  <img src="{{ '/assets/img/ui/images-fills.png' | relative_url }}" width="514" height="154" alt="Three framed images of one check box texture: stretched over the first, centred in the second and tiled over the third, cut at its right and bottom edges">
   <figcaption>The same frame size with <code>Stretch</code>, <code>Center</code> and <code>Tile</code>.</figcaption>
 </figure>
 
 ```csharp
-var logo = LoadTexture("Logo/BerylliumUI Logo.png");      // 1280 x 1280
 var mark = LoadTexture("CheckBox/Checked.png");           // 64 x 64
 
 Image Framed(Texture2D texture, ImageFill fill, int left) => new()
@@ -34,7 +33,7 @@ Image Framed(Texture2D texture, ImageFill fill, int left) => new()
 };
 
 // the whole texture over the image
-ui.AddElementToRoot(Framed(logo, ImageFill.Stretch, 16));
+ui.AddElementToRoot(Framed(mark, ImageFill.Stretch, 16));
 
 // its own size, in the middle
 ui.AddElementToRoot(Framed(mark, ImageFill.Center, 186));

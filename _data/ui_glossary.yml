@@ -1325,6 +1325,9 @@
         - title: "Rich<wbr>Colors"
           anchor: richcolors
           kind: field
+        - title: "Rich<wbr>Fonts"
+          anchor: richfonts
+          kind: field
         - title: "Rich<wbr>Images"
           anchor: richimages
           kind: field
