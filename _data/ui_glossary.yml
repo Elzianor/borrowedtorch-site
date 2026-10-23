@@ -1268,6 +1268,9 @@
         - title: "Mouse<wbr>Cursors<wbr>Set<wbr>Override"
           anchor: mousecursorssetoverride
           kind: prop
+        - title: "Rich<wbr>Outline<wbr>Thickness"
+          anchor: richoutlinethickness
+          kind: dp
         - title: "Scroll<wbr>Bars"
           anchor: scrollbars
           kind: dp

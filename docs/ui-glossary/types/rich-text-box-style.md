@@ -41,6 +41,10 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 `int` · Extra space between two lines, in units. Negative values become 0.
 
+<h3 id="richoutlinethickness"><span class="prop"><code>RichOutlineThickness</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-properties" title="RichOutlineThickness in context on the text page" aria-label="RichOutlineThickness in context on the text page">🠆</a></h3>
+
+`float` · How far the outline of an `[o=n]` tag reaches around the letters, in units. Default 1.
+
 <h3 id="scrollbars"><span class="prop"><code>ScrollBars</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-properties" title="ScrollBars in context on the text page" aria-label="ScrollBars in context on the text page">🠆</a></h3>
 
 <a class="ref" href="/docs/ui-glossary/types/scroll-bars/">`ScrollBars`</a> · Which scroll bars the box may show when its text is larger than the box. Default `None`.

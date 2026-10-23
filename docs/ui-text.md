@@ -203,15 +203,45 @@ var hint = new RichTextBox("hint")
 ui.AddElementToRoot(hint);
 ```
 
+<figure class="shot">
+  <img src="{{ '/assets/img/ui/text-rich-lines.png' | relative_url }}" width="442" height="70" alt="A quest list with whole letter underlined, Find the key struck through and Beware the guard in dark letters outlined in gold">
+  <figcaption>Underlined, struck through and outlined text.</figcaption>
+</figure>
+
+```csharp
+// [u=1] underlines, [s=1] strikes through (both in the text's colour),
+// [o=n] outlines the letters in RichColors[n]
+RichTextBox.RichColors.Add(new Color(20, 14, 10));      // dark letters
+RichTextBox.RichColors.Add(new Color(233, 194, 122));   // a gold outline
+
+var journal = new RichTextBox("quests")
+{
+    Text = "Read the [u=1]whole letter[/] first. [s=1]Find the key.[/] " +
+           "Open the door. [c=0,o=1]Beware the guard![/]",
+    Formatting = RichTextBoxFormatting.Rich,
+    WrapType = TextWrap.Wrap,
+    DesiredWidth = 440,
+    HorizontalAlignment = HorizontalAlignment.Left,
+    VerticalAlignment = VerticalAlignment.Top,
+    Margin = (16, 16),
+    BackgroundColor = Color.Transparent
+};
+
+ui.AddElementToRoot(journal);
+```
+
 With <code>Formatting = <a href="/docs/ui-glossary/types/rich-text-box-formatting/#rich">RichTextBoxFormatting.Rich</a></code> a read-only box reads tags out of its text. A tag in square brackets
-holds one or more instructions separated by commas, each a letter and an index into one of three static lists shared by
-every box:
+holds one or more instructions separated by commas, each a letter and a number: an index into one of three static lists shared by every box, or 1 and 0 to
+turn a line on and off:
 
 | Tag | Effect |
 | --- | --- |
 | `[c=n]` | The following text is drawn in <code><a href="/docs/ui-glossary/elements/rich-text-box/#richcolors">RichTextBox.RichColors</a>[n]</code>. |
 | `[a=n]` | The following text is a link: pressing it runs <code><a href="/docs/ui-glossary/elements/rich-text-box/#richactions">RichTextBox.RichActions</a>[n]</code>. |
 | `[i=n]` | The word is replaced by <code><a href="/docs/ui-glossary/elements/rich-text-box/#richimages">RichTextBox.RichImages</a>[n]</code>, drawn as a square one line high. A `c` instruction tints it. |
+| `[o=n]` | The letters of the following text get an outline in <code>RichTextBox.RichColors[n]</code>, <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#richoutlinethickness">`RichOutlineThickness`</a> units wide around them. |
+| `[u=1]` | The following text is underlined in its own colour, through the spaces between its words. `[u=0]` ends the underline. |
+| `[s=1]` | The following text is struck through in its own colour, like an underline. `[s=0]` ends it. |
 | `[/]` | Ends all formatting. |
 
 Instructions combine, as in `[c=0,a=1]help[/]`. The formatting goes on over the following words until `[/]`, so
@@ -378,6 +408,7 @@ With <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#character
 | <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#textcursorthickness">`TextCursorThickness`</a> | `int` | The width of the caret bar, or the height of the overwrite underline, in units. Default <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaulttextcursorthickness">`DefaultSettings.DefaultTextCursorThickness`</a> (1). |
 | <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#textcursorcolor">`TextCursorColor`</a> | `Color` | The colour of the caret. Default <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaulttextcursorcolor">`DefaultSettings.DefaultTextCursorColor`</a> (black). |
 | <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#textselectioncolor">`TextSelectionColor`</a> | `Color` | The colour behind selected text. Default <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaulttextselectioncolor">`DefaultSettings.DefaultTextSelectionColor`</a> (light blue). |
+| `RichOutlineThickness` | `float` | How far the outline of an `[o=n]` tag reaches around the letters, in units. Default 1. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#scrollbars">`ScrollBars`</a> | <a class="ref" href="/docs/ui-glossary/types/scroll-bars/">`ScrollBars`</a> | Which scroll bars the box may show when its text is larger than the box. Default `None`. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#scrollbarsthickness">`ScrollBarsThickness`</a> | `int` | The thickness of the scroll bars in units. Default 0. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#scrollbarsstyle">`ScrollBarsStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/slider-style/">`SliderStyle`</a> | The style of the scroll bars. |

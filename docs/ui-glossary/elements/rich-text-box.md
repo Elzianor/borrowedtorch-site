@@ -73,6 +73,10 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> · The cursors of this element only, passed on to its parts that have none of their own.
 
+<h3 id="richoutlinethickness"><span class="dp"><code>RichOutlineThickness</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-properties" title="RichOutlineThickness in context on the text page" aria-label="RichOutlineThickness in context on the text page">🠆</a></h3>
+
+`float` · How far the outline of an `[o=n]` tag reaches around the letters, in units. Default 1.
+
 <h3 id="scrollbars"><span class="dp"><code>ScrollBars</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-properties" title="ScrollBars in context on the text page" aria-label="ScrollBars in context on the text page">🠆</a></h3>
 
 <a class="ref" href="/docs/ui-glossary/types/scroll-bars/">`ScrollBars`</a> · Which scroll bars the box may show when its text is larger than the box. Default `None`.
