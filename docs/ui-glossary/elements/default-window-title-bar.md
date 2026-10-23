@@ -5,7 +5,7 @@ title: "Glossary: DefaultWindowTitleBar"
 description: "The properties, methods and events of DefaultWindowTitleBar, in alphabetical order."
 ---
 
-The title bar every window starts with: a <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#background">`Background`</a> image filling the bar, a centred <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#title">`Title`</a> text and a
+The title bar every window starts with: a <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#background">`Background`</a> image filling the bar, a centred <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#title">`Title`</a> text and a <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#closebutton">`CloseButton`</a> at the right. In a window it is <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultwindowtitlethickness">`DefaultSettings.DefaultWindowTitleThickness`</a> tall (30 units by default), and its close button is always 4 units smaller than that, square. The bar's color comes from <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultwindowtitlebarcolor">`DefaultSettings.DefaultWindowTitleBarColor`</a> (see [styles](/docs/ui-styles/)). Reach the parts through the window:
 
 `DefaultWindowTitleBar` derives from [`BaseElement`](/docs/ui-glossary/elements/base-element/) and has its members too. The [layout page](/docs/ui-layout/#defaultwindowtitlebar) shows it in context, with code and screenshots.
 

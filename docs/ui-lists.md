@@ -119,8 +119,8 @@ than the row. <a class="ref method" href="/docs/ui-glossary/elements/list-box/#a
 With <code>VirtualizationMode = <a href="/docs/ui-glossary/types/list-box-virtualization-mode/#fixed">ListBoxVirtualizationMode.Fixed</a></code> and an <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#itemheight">`ItemHeight`</a> above 0, every row is <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#itemheight">`ItemHeight`</a>
 units high and only the rows in view, three rows above and below them, and the primary selected row get elements.
 The rows are kept as light records, so lists of hundreds of thousands of rows fill quickly. Row elements that scroll
-out of view are reused for the rows that come in: a template that implements <a class="ref" href="/docs/ui-glossary/types/i-recycling-items-template/">`IRecyclingItemsTemplate`</a> (the default
-text template does) updates the content it made, other contents are made again. Elements you added with <a class="ref method" href="/docs/ui-glossary/elements/list-box/#additem">`AddItem`</a> are
+out of view are reused for the rows that come in: the template's `UpdateItemElement` updates the content it made
+(the default text template's does) or returns a new one, by default, which replaces it. Elements you added with <a class="ref method" href="/docs/ui-glossary/elements/list-box/#additem">`AddItem`</a> are
 detached while out of view and attached again when they come back, never disposed.
 
 In `Fixed` mode <a class="ref prop" href="/docs/ui-glossary/elements/list-box/#items">`Items`</a>, <a class="ref prop" href="/docs/ui-glossary/elements/list-box/#selecteditems">`SelectedItems`</a> and the rows passed to <a class="ref event" href="/docs/ui-glossary/elements/list-box/#onitemsselect">`OnItemsSelect`</a> only cover the rows that have an

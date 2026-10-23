@@ -5,6 +5,8 @@ title: "Glossary: RootElement"
 description: "The properties, methods and events of RootElement, in alphabetical order."
 ---
 
+<a class="ref" href="/docs/ui-glossary/elements/root-element/">`RootElement`</a> is the top of the element tree. <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-ui/">`BorrowedTorchUI`</a> creates it (you can't create one yourself) and gives it as `ui.RootElement`; `ui.AddElementToRoot(element)` adds an item to it. It has the size of the game window in units (the back buffer size divided by the display scale) and follows the back buffer when the window is resized, or takes the size given to `ApplyGameWindowSize`. It can't be resizable and it draws no background of its own, so give a full-screen panel your background color instead.
+
 `RootElement` derives from [`BaseElement`](/docs/ui-glossary/elements/base-element/) and has its members too. The [base element page](/docs/ui-base-element/#the-root-element) shows it in context, with code and screenshots.
 
 Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.

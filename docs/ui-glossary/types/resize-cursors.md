@@ -5,7 +5,7 @@ title: "Glossary: ResizeCursors"
 description: "The members of ResizeCursors, in alphabetical order."
 ---
 
-The cursors of the eight grips around a [resizable](/docs/ui-base-element/#resizing) element. Each grip is a
+The cursors of the eight grips around a [resizable](/docs/ui-base-element/#resizing) element. Each grip is a <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a>, so it can have a hover and a pressed cursor. A sealed, disposable class.
 
 A class deriving from [`DisposableBase`](/docs/ui-glossary/types/disposable-base/). The [styles page](/docs/ui-styles/#resizecursors) shows it in context.
 

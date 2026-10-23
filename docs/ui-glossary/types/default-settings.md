@@ -5,6 +5,8 @@ title: "Glossary: DefaultSettings"
 description: "The members of DefaultSettings, in alphabetical order."
 ---
 
+<a class="ref" href="/docs/ui-glossary/types/default-settings/">`DefaultSettings`</a> (namespace `BorrowedTorch.UI.Settings`) is a static class of public fields that hold framework-wide defaults. Set them at start, before you create elements. Most are read when the framework defaults of a style type are built, which happens once, the first time that style type is used (normally when the first element of the type is created, or when you touch `X.GeneralStyle`); changing them later doesn't reach that type. The ones marked "on use" are read each time they are needed.
+
 A static class. The [styles page](/docs/ui-styles/#default-settings) shows it in context.
 
 ## Fields

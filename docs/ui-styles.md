@@ -549,8 +549,7 @@ over.
 | <a class="ref method" href="/docs/ui-glossary/types/dependency-property/#dispose">`Dispose()`</a> | Removes the binding and the event handlers. The element calls it when it is disposed. |
 
 <a class="ref" href="/docs/ui-glossary/types/dependency-property-owner-pre-action-delegate/">`OwnerPreActionDelegate`</a>, with the signature `(BaseElement owner, ref T value, ref bool canProceed, ValueSources
-valueSource)`, is the type of the element class's own pre-action. It is assigned inside the library; you can't set one
-from your code.
+valueSource)`, is the type of the element class's own pre-action, `FooDPActions.OwnerPreAction` (see below).
 
 ### DependencyPropertyActions&lt;T&gt;
 
@@ -560,6 +559,8 @@ the static `FooDPActions` field of the element class.
 
 | Property | Type | Description |
 | --- | --- | --- |
+| `OwnerPreAction` | <a class="ref" href="/docs/ui-glossary/types/dependency-property-owner-pre-action-delegate/">`OwnerPreActionDelegate`</a> | The element class's own check of every value before it is stored, from any source: it may correct the value or reject it (`canProceed`). It runs before the property's `PreAction`. Set it once, in the element class's static constructor: a second set throws, so the actions of a class (the library's elements' too) can't be replaced from outside. |
+| `OwnerPostAction` | <code>Action&lt;BaseElement, T&gt;</code> | The element class's own reaction to a new value in effect, with the element it runs for: before the property's `PostAction` and `OnPropertyChanged`. Set once, like <a class="ref prop" href="/docs/ui-glossary/types/dependency-property-actions/#ownerpreaction">`OwnerPreAction`</a>. |
 | <a class="ref prop" href="/docs/ui-glossary/types/dependency-property-actions/#defaultvalue">`DefaultValue`</a> | `T` | Read-only. The value read while no source has one. Some defaults are read from <a class="ref" href="/docs/ui-glossary/types/default-settings/">`DefaultSettings`</a> each time (see [default settings](#default-settings)). |
 
 | Method | Description |
@@ -859,28 +860,28 @@ ui.AddElementToRoot(list);
 
 ### IItemsTemplate
 
+A list's `ItemsTemplate`. A virtualized [`ListBox`](/docs/ui-lists/#listbox) (`VirtualizationMode` `Fixed`) reuses the
+rows that scroll out of view: a template that can show another source object in an element it made overrides
+<a class="ref method" href="/docs/ui-glossary/types/i-items-template/#updateitemelement">`UpdateItemElement`</a>, otherwise a reused row gets a new element, as without virtualization.
+
 | Method | Description |
 | --- | --- |
 | <a class="ref method" href="/docs/ui-glossary/types/i-items-template/#generateitemelement">`GenerateItemElement(object data)`</a> | Returns a new element that shows the source object. |
-
-### IRecyclingItemsTemplate
-
-An <a class="ref" href="/docs/ui-glossary/types/i-items-template/">`IItemsTemplate`</a> whose elements can be re-bound to another source object. A virtualized
-[`ListBox`](/docs/ui-lists/#listbox) (`VirtualizationMode` `Fixed`) then reuses the row elements that scroll out of
-view instead of generating new ones.
-
-| Method | Description |
-| --- | --- |
-| <span class="method"><code><a href="/docs/ui-glossary/types/i-recycling-items-template/#updateitemelement">UpdateItemElement</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> element, object data)</code></span> | Shows `data` in an element that `GenerateItemElement` of this template made earlier. |
+| <code>UpdateItemElement(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> element, object data)</code> | Returns the element that shows `data` in a row whose element, made by this template, showed another source object: `element` updated, or a new one, which replaces it (the list disposes the replaced one). By default it returns <a class="ref method" href="/docs/ui-glossary/types/i-items-template/#generateitemelement">`GenerateItemElement(data)`</a>. |
 
 ```csharp
-public class LevelTemplate : IRecyclingItemsTemplate
+// updates the label it made instead of making a new one
+public class LevelTemplate : IItemsTemplate
 {
     public BaseElement GenerateItemElement(object data) =>
         new Label { Text = (string)data, Margin = 5 };
 
-    public void UpdateItemElement(BaseElement element, object data) =>
+    public BaseElement UpdateItemElement(BaseElement element, object data)
+    {
         ((Label)element).Text = (string)data;
+
+        return element;
+    }
 }
 ```
 
@@ -892,54 +893,108 @@ describe the values: <code><a href="/docs/ui-glossary/types/smooth-animation-fra
 and start it.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/styles-animation.png' | relative_url }}" width="334" height="103" alt="The orange text Level complete above a progress bar filled to about forty percent">
-  <figcaption>A banner that slid in and a bar that is filling, captured while running.</figcaption>
+  <img src="{{ '/assets/img/ui/styles-animation.png' | relative_url }}" width="494" height="134" alt="Two columns, Smooth frames and Discrete frames, each with the banner Level complete sliding in and a progress bar filling: on the left both move evenly, on the right they jump in steps, and the banner's color fades on the left and blinks on the right">
+  <figcaption>The same animations with smooth frames (left) and with discrete frames at points of the same time lines (right).</figcaption>
 </figure>
 
 ```csharp
-var banner = new Label("banner")
+var grid = new Grid
 {
-    Text = "Level complete",
-    FontSize = 22,
+    DesiredWidth = 460,
+    DesiredHeight = 100,
     HorizontalAlignment = HorizontalAlignment.Left,
     VerticalAlignment = VerticalAlignment.Top,
-    Margin = (-300, 16)
+    Margin = 16
 };
-var experience = new ProgressBar
+grid.AddColumnDefinition(1.0f);
+grid.AddColumnDefinition(1.0f);
+grid.AddRowDefinition(1.0f);
+
+// the same banner and bar in each column (a grid cell clips them, so a banner
+// slides in from the left edge of its own column)
+(Label Banner, ProgressBar Bar) Example(int column, string title)
 {
-    DesiredWidth = 300,
-    DesiredHeight = 12,
-    Max = 100,
-    Margin = (16, 70)
-};
+    var banner = new Label
+    {
+        Text = "Level complete",
+        FontSize = 22,
+        GridColumn = column,
+        HorizontalAlignment = HorizontalAlignment.Left,
+        VerticalAlignment = VerticalAlignment.Top,
+        Margin = (-220, 28)
+    };
+    var bar = new ProgressBar
+    {
+        DesiredWidth = 200,
+        DesiredHeight = 12,
+        Max = 100,
+        GridColumn = column,
+        HorizontalAlignment = HorizontalAlignment.Left,
+        VerticalAlignment = VerticalAlignment.Top,
+        Margin = (0, 78)
+    };
 
-ui.AddElementToRoot(banner);
-ui.AddElementToRoot(experience);
+    grid.AddItem(new Label
+    {
+        Text = title,
+        GridColumn = column,
+        HorizontalAlignment = HorizontalAlignment.Left,
+        VerticalAlignment = VerticalAlignment.Top
+    });
+    grid.AddItem(banner);
+    grid.AddItem(bar);
 
-// the banner slides in from the left, easing out
-var slideIn = new Animation<Margin>(500);
-slideIn.AddFrame(new SmoothAnimationFrame<Margin>((-300, 16), (16, 16), 500,
-    shapingFunction: new CubicEaseOut()));
-slideIn.AddDependencyProperty(banner.MarginDP);
+    return (banner, bar);
+}
 
-// the bar fills over a second, and its color pulses back and forth
-var fill = new Animation<float>(1000);
-fill.AddFrame(new SmoothAnimationFrame<float>(0, 100, 1000));
-fill.AddDependencyProperty(experience.ValueDP);
+var smooth = Example(0, "Smooth frames");
+var discrete = Example(1, "Discrete frames");
 
-var pulse = new Animation<Color>(400, AnimationRepeatType.Infinite,
-    autoReverse: true, deleteOnComplete: false);
-pulse.AddFrame(new SmoothAnimationFrame<Color>(new Color(233, 194, 122),
-    new Color(242, 140, 40), 400));
-pulse.AddDependencyProperty(banner.ForegroundColorDP);
+ui.AddElementToRoot(grid);
 
-ui.AddAnimation(slideIn);
-ui.AddAnimation(fill);
-ui.AddAnimation(pulse);
+// one animation of a property, started at once
+void Animate<T>(DependencyProperty<T> property, int durationMs, bool pulse,
+    params BaseAnimationFrame<T>[] frames)
+{
+    var animation = pulse
+        ? new Animation<T>(durationMs, AnimationRepeatType.Infinite,
+            autoReverse: true, deleteOnComplete: false)
+        : new Animation<T>(durationMs);
 
-slideIn.Start();
-fill.Start();
-pulse.Start();
+    foreach (var frame in frames) animation.AddFrame(frame);
+
+    animation.AddDependencyProperty(property);
+    ui.AddAnimation(animation);
+    animation.Start();
+}
+
+var gold = new Color(233, 194, 122);
+var flame = new Color(242, 140, 40);
+
+// smooth frames: from one value to another over a stretch of the time line
+Animate(smooth.Banner.MarginDP, 500, false,
+    new SmoothAnimationFrame<Margin>((-220, 28), (0, 28), 500,
+        shapingFunction: new CubicEaseOut()));
+Animate(smooth.Bar.ValueDP, 1000, false, new SmoothAnimationFrame<float>(0, 100, 1000));
+Animate(smooth.Banner.ForegroundColorDP, 400, true,
+    new SmoothAnimationFrame<Color>(gold, flame, 400));
+
+// discrete frames: a value at a point of the time line, kept until the next one
+Animate(discrete.Banner.MarginDP, 500, false,
+    new DiscreteAnimationFrame<Margin>((-220, 28), 0),
+    new DiscreteAnimationFrame<Margin>((-110, 28), 125),
+    new DiscreteAnimationFrame<Margin>((-45, 28), 250),
+    new DiscreteAnimationFrame<Margin>((-10, 28), 375),
+    new DiscreteAnimationFrame<Margin>((0, 28), 500));
+Animate(discrete.Bar.ValueDP, 1000, false,
+    new DiscreteAnimationFrame<float>(0, 0),
+    new DiscreteAnimationFrame<float>(25, 250),
+    new DiscreteAnimationFrame<float>(50, 500),
+    new DiscreteAnimationFrame<float>(75, 750),
+    new DiscreteAnimationFrame<float>(100, 1000));
+Animate(discrete.Banner.ForegroundColorDP, 400, true,
+    new DiscreteAnimationFrame<Color>(gold, 0),
+    new DiscreteAnimationFrame<Color>(flame, 200));
 ```
 
 The UI advances its running animations on every `Update`, by the frame's elapsed game time. A long

@@ -5,7 +5,7 @@ title: "Glossary: GenericMouseCursorsData&lt;T&gt;"
 description: "The members of GenericMouseCursorsData<T>, in alphabetical order."
 ---
 
-The static holder of the general mouse cursors set of one element type, keyed by its style class `T`.
+The static holder of the general mouse cursors set of one element type, keyed by its style class `T`. <a class="ref prop" href="/docs/ui-glossary/elements/button/#generalmousecursorsset">`Button.GeneralMouseCursorsSet`</a> reads and writes <code><a href="/docs/ui-glossary/types/generic-mouse-cursors-data/">GenericMouseCursorsData</a>&lt;<a href="/docs/ui-glossary/types/button-style/">ButtonStyle</a>&gt;.GeneralMouseCursorsSet</code>.
 
 A static class. The [styles page](/docs/ui-styles/#genericmousecursorsdatat) shows it in context.
 

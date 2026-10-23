@@ -44,9 +44,9 @@ Every public type of the UI that isn't an element has a page with its members: t
 | [`BaseAnimation`](/docs/ui-glossary/types/base-animation/) | The abstract base of animations, the type `AddAnimation` takes. |
 | [`BaseAnimationFrame<T>`](/docs/ui-glossary/types/base-animation-frame/) | The abstract base of the frames an <code><a href="/docs/ui-glossary/types/animation/">Animation</a>&lt;T&gt;</code> takes. |
 | [`Bindable`](/docs/ui-glossary/types/bindable/) | The abstract base of a view model. |
-| [`BindableCollection<T>`](/docs/ui-glossary/types/bindable-collection/) | A list that raises <a class="ref event" href="/docs/ui-glossary/types/bindable-collection/#oncollectionchanged">`OnCollectionChanged`</a> for every change, so a bound <a class="ref" href="/docs/ui-glossary/elements/list-box/">`ListBox`</a>, <a class="ref" href="/docs/ui-glossary/elements/combo-box/">`ComboBox`</a>, <a class="ref" href="/docs/ui-glossary/elements/tree-view/">`TreeView`</a> or |
+| [`BindableCollection<T>`](/docs/ui-glossary/types/bindable-collection/) | A list that raises <a class="ref event" href="/docs/ui-glossary/types/bindable-collection/#oncollectionchanged">`OnCollectionChanged`</a> for every change, so a bound <a class="ref" href="/docs/ui-glossary/elements/list-box/">`ListBox`</a>, <a class="ref" href="/docs/ui-glossary/elements/combo-box/">`ComboBox`</a>, <a class="ref" href="/docs/ui-glossary/elements/tree-view/">`TreeView`</a> or <a class="ref" href="/docs/ui-glossary/elements/context-menu/">`ContextMenu`</a> updates only the changed rows. |
 | [`BorrowedTorchUI`](/docs/ui-glossary/types/borrowed-torch-ui/) | Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>. |
-| [`DefaultSettings`](/docs/ui-glossary/types/default-settings/) |  |
+| [`DefaultSettings`](/docs/ui-glossary/types/default-settings/) | <a class="ref" href="/docs/ui-glossary/types/default-settings/">`DefaultSettings`</a> (namespace `BorrowedTorch.UI.Settings`) is a static class of public fields that hold framework-wide defaults. |
 | [`DependencyProperty<T>`](/docs/ui-glossary/types/dependency-property/) |  |
 | [`DependencyPropertyActions<T>`](/docs/ui-glossary/types/dependency-property-actions/) | What the properties of one name share over all the elements of a class: the class's own pre- and post-action (set once, in its static constructor) and the default value. |
 | [`DiscreteAnimationFrame<T>`](/docs/ui-glossary/types/discrete-animation-frame/) | Sets <a class="ref prop" href="/docs/ui-glossary/types/discrete-animation-frame/#value">`Value`</a> when the time line reaches <a class="ref prop" href="/docs/ui-glossary/types/discrete-animation-frame/#applyatms">`ApplyAtMs`</a>. |
@@ -80,8 +80,7 @@ Every public type of the UI that isn't an element has a page with its members: t
 | --- | --- |
 | [`IBindableCollection`](/docs/ui-glossary/types/i-bindable-collection/) | An `IEnumerable` that reports its changes. |
 | [`IConverter`](/docs/ui-glossary/types/i-converter/) | Translates between the source's type and the property's type. |
-| [`IItemsTemplate`](/docs/ui-glossary/types/i-items-template/) |  |
-| [`IRecyclingItemsTemplate`](/docs/ui-glossary/types/i-recycling-items-template/) | An <a class="ref" href="/docs/ui-glossary/types/i-items-template/">`IItemsTemplate`</a> whose elements can be re-bound to another source object. |
+| [`IItemsTemplate`](/docs/ui-glossary/types/i-items-template/) | A list's <span class="prop">`ItemsTemplate`</span>. |
 | [`ITextInputEvents`](/docs/ui-glossary/types/i-text-input-events/) | The source of typed text and key presses, for a UI hosted outside a game window. |
 
 ### Enums

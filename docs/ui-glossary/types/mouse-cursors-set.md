@@ -5,7 +5,7 @@ title: "Glossary: MouseCursorsSet"
 description: "The members of MouseCursorsSet, in alphabetical order."
 ---
 
-The cursors an element shows. It is disposable: disposing it disposes its <a class="ref" href="/docs/ui-glossary/types/drag-and-drop-cursors/">`DragAndDropCursors`</a>, <a class="ref" href="/docs/ui-glossary/types/resize-cursors/">`ResizeCursors`</a> and
+The cursors an element shows. It is disposable: disposing it disposes its <a class="ref" href="/docs/ui-glossary/types/drag-and-drop-cursors/">`DragAndDropCursors`</a>, <a class="ref" href="/docs/ui-glossary/types/resize-cursors/">`ResizeCursors`</a> and <a class="ref" href="/docs/ui-glossary/types/rich-text-cursors/">`RichTextCursors`</a>, and a disposed set ignores new values.
 
 A class deriving from [`DisposableBase`](/docs/ui-glossary/types/disposable-base/). The [styles page](/docs/ui-styles/#mousecursorsset) shows it in context.
 

@@ -5,7 +5,7 @@ title: "Glossary: BindableCollection&lt;T&gt;"
 description: "The members of BindableCollection<T>, in alphabetical order."
 ---
 
-A list that raises <a class="ref event" href="/docs/ui-glossary/types/bindable-collection/#oncollectionchanged">`OnCollectionChanged`</a> for every change, so a bound <a class="ref" href="/docs/ui-glossary/elements/list-box/">`ListBox`</a>, <a class="ref" href="/docs/ui-glossary/elements/combo-box/">`ComboBox`</a>, <a class="ref" href="/docs/ui-glossary/elements/tree-view/">`TreeView`</a> or
+A list that raises <a class="ref event" href="/docs/ui-glossary/types/bindable-collection/#oncollectionchanged">`OnCollectionChanged`</a> for every change, so a bound <a class="ref" href="/docs/ui-glossary/elements/list-box/">`ListBox`</a>, <a class="ref" href="/docs/ui-glossary/elements/combo-box/">`ComboBox`</a>, <a class="ref" href="/docs/ui-glossary/elements/tree-view/">`TreeView`</a> or <a class="ref" href="/docs/ui-glossary/elements/context-menu/">`ContextMenu`</a> updates only the changed rows. It implements <a class="ref" href="/docs/ui-glossary/types/i-bindable-collection/">`IBindableCollection`</a> and `IReadOnlyList<T>`, and can be filled with a collection initializer or `[]`.
 
 A class. The [styles page](/docs/ui-styles/#bindablecollectiont) shows it in context.
 

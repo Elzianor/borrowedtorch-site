@@ -2032,8 +2032,6 @@
               url: /docs/ui-glossary/types/i-converter/
             - title: "IItems<wbr>Template"
               url: /docs/ui-glossary/types/i-items-template/
-            - title: "IRecycling<wbr>Items<wbr>Template"
-              url: /docs/ui-glossary/types/i-recycling-items-template/
             - title: "IText<wbr>Input<wbr>Events"
               url: /docs/ui-glossary/types/i-text-input-events/
         - title: "Enums"

@@ -5,7 +5,7 @@ title: "Glossary: GridCell"
 description: "The properties, methods and events of GridCell, in alphabetical order."
 ---
 
-A cell the grid makes to hold the items of one place and span. You don't create cells; get one with <a class="ref method" href="/docs/ui-glossary/elements/grid/#trygetcell">`TryGetCell`</a>. A cell is aligned `Left` / `Top`, doesn't take the mouse, and clips its items. Its <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#gridcolumn">`GridColumn`</a>, <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#gridrow">`GridRow`</a>,
+A cell the grid makes to hold the items of one place and span. You don't create cells; get one with <a class="ref method" href="/docs/ui-glossary/elements/grid/#trygetcell">`TryGetCell`</a>. A cell is aligned `Left` / `Top`, doesn't take the mouse, and clips its items. Its <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#gridcolumn">`GridColumn`</a>, <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#gridrow">`GridRow`</a>, <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#gridcolumnspan">`GridColumnSpan`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#gridrowspan">`GridRowSpan`</a> tell its place. Among the other cells it is drawn and hit by the highest <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#zindex">`ZIndex`</a> of its items (see [the base element](/docs/ui-base-element/#appearance)).
 
 `GridCell` derives from [`BaseElement`](/docs/ui-glossary/elements/base-element/) and has its members too. The [layout page](/docs/ui-layout/#gridcell) shows it in context, with code and screenshots.
 

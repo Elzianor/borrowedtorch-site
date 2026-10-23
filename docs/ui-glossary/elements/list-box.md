@@ -5,7 +5,7 @@ title: "Glossary: ListBox"
 description: "The properties, methods and events of ListBox, in alphabetical order."
 ---
 
-A scrollable list of rows with single or multiple selection. A row can be a text, any element, or an object of an
+A scrollable list of rows with single or multiple selection. A row can be a text, any element, or an object of an <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#itemssource">`ItemsSource`</a>, and long lists can be virtualized so only the rows in view have elements.
 
 `ListBox` derives from [`BaseElement`](/docs/ui-glossary/elements/base-element/) and has its members too. The [lists and menus page](/docs/ui-lists/#listbox) shows it in context, with code and screenshots.
 
