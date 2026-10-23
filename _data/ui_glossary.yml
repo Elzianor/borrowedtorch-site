@@ -773,6 +773,9 @@
         - title: "Add<wbr>Items<wbr>Range<wbr>At()"
           anchor: additemsrangeat
           kind: method
+        - title: "Add<wbr>Text<wbr>Item()"
+          anchor: addtextitem
+          kind: method
         - title: "Clear<wbr>Items()"
           anchor: clearitems
           kind: method
@@ -1769,6 +1772,9 @@
         - title: "Add<wbr>Items<wbr>Range<wbr>At()"
           anchor: additemsrangeat
           kind: method
+        - title: "Add<wbr>Text<wbr>Item()"
+          anchor: addtextitem
+          kind: method
         - title: "Clear<wbr>Items()"
           anchor: clearitems
           kind: method
@@ -1825,6 +1831,9 @@
           kind: method
         - title: "Add<wbr>Items<wbr>Range<wbr>At()"
           anchor: additemsrangeat
+          kind: method
+        - title: "Add<wbr>Text<wbr>Item()"
+          anchor: addtextitem
           kind: method
         - title: "Clear<wbr>Items()"
           anchor: clearitems

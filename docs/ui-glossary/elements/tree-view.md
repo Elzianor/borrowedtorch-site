@@ -95,6 +95,10 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/tree-view/#additemsrangeat">AddItemsRangeAt</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items, int index)</code></span> · Inserts top-level items at the index, listed in one go.
 
+<h3 id="addtextitem"><span class="method"><code>AddTextItem()</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-methods" title="AddTextItem() in context on the lists and menus page" aria-label="AddTextItem() in context on the lists and menus page">🠆</a></h3>
+
+<a class="ref method" href="/docs/ui-glossary/elements/tree-view/#addtextitem">`AddTextItem(string text)`</a> · Adds a top-level item showing the text in a label and returns it, to nest items in it. The tree view made it, so it is disposed when it is removed. Does nothing and returns `null` while an <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#itemssource">`ItemsSource`</a> is set.
+
 <h3 id="clearitems"><span class="method"><code>ClearItems()</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-methods" title="ClearItems() in context on the lists and menus page" aria-label="ClearItems() in context on the lists and menus page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/tree-view/#clearitems">`ClearItems()`</a> · Removes every item.

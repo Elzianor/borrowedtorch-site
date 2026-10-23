@@ -103,6 +103,10 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/context-menu/#additemsrangeat">AddItemsRangeAt</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items, int index)</code></span> · Inserts items at the index.
 
+<h3 id="addtextitem"><span class="method"><code>AddTextItem()</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenu-methods" title="AddTextItem() in context on the lists and menus page" aria-label="AddTextItem() in context on the lists and menus page">🠆</a></h3>
+
+<a class="ref method" href="/docs/ui-glossary/elements/context-menu/#addtextitem">`AddTextItem(string text)`</a> · Adds an item showing the text in a label and returns it, to handle its `OnClick`, make it checkable or give it a <a class="ref prop" href="/docs/ui-glossary/elements/context-menu-item/#submenu">`SubMenu`</a>. The menu made it, so it is disposed when it is removed. Does nothing and returns `null` while an <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#itemssource">`ItemsSource`</a> is set.
+
 <h3 id="clearitems"><span class="method"><code>ClearItems()</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenu-methods" title="ClearItems() in context on the lists and menus page" aria-label="ClearItems() in context on the lists and menus page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/context-menu/#clearitems">`ClearItems()`</a> · Removes every item.

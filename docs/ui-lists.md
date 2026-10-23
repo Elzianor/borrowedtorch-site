@@ -409,13 +409,19 @@ itself (a cycle in the data) shows no children there. Setting another <a class="
 <a class="ref prop" href="/docs/ui-glossary/elements/tree-view/#itemstemplate">`ItemsTemplate`</a> makes the items again, keeping the expanded branches and the selected object. While an <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#itemssource">`ItemsSource`</a>
 is set, items are not added or removed in code.
 
-**In code.** Without an <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#itemssource">`ItemsSource`</a>, <a class="ref method" href="/docs/ui-glossary/elements/tree-view/#additem">`AddItem`</a> adds any element as a top-level item (in a <a class="ref" href="/docs/ui-glossary/elements/tree-view-item/">`TreeViewItem`</a> made around
-it), and you nest items by adding to a <a class="ref" href="/docs/ui-glossary/elements/tree-view-item/">`TreeViewItem`</a>. An item expands when it gets its first leaf.
+**In code.** Without an <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#itemssource">`ItemsSource`</a>, <a class="ref method" href="/docs/ui-glossary/elements/tree-view/#addtextitem">`AddTextItem(text)`</a> adds a top-level item showing the text and returns
+it, and <a class="ref method" href="/docs/ui-glossary/elements/tree-view/#additem">`AddItem`</a> adds any element as a top-level item (in a <a class="ref" href="/docs/ui-glossary/elements/tree-view-item/">`TreeViewItem`</a> made around it). You nest items by
+adding to a <a class="ref" href="/docs/ui-glossary/elements/tree-view-item/">`TreeViewItem`</a>, with its own <a class="ref method" href="/docs/ui-glossary/elements/tree-view-item/#addtextitem">`AddTextItem`</a> and <a class="ref method" href="/docs/ui-glossary/elements/tree-view-item/#additem">`AddItem`</a>. An item expands when it gets its first leaf.
 
 ```csharp
-var chapter = new TreeViewItem(tree, new Label { Text = "Chapter one" }, Margin.Zero);
-chapter.AddItem(new Label { Text = "Forest" });
-tree.AddItem(chapter);
+// a text item is returned, to nest items in it
+var chapter = tree.AddTextItem("Chapter one");
+chapter.AddTextItem("Forest");
+
+// an item of your own around any element, kept when it is removed
+var desert = new TreeViewItem(tree, new Label { Text = "Desert" }, Margin.Zero);
+desert.AddTextItem("Oasis");
+chapter.AddItem(desert);
 ```
 
 **Selecting and expanding.** A click on a row selects its item and opens or closes its branch. <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#selecteditem">`SelectedItem`</a> selects
@@ -467,6 +473,7 @@ pointing right and one pointing down, at the theme's 10 by 10.
 | <span class="method"><code><a href="/docs/ui-glossary/elements/tree-view/#additemat">AddItemAt</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item, int index)</code></span> | Inserts a top-level item at the index. |
 | <span class="method"><code><a href="/docs/ui-glossary/elements/tree-view/#additemsrange">AddItemsRange</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items)</code></span> | Adds top-level items at the end, listed in one go. |
 | <span class="method"><code><a href="/docs/ui-glossary/elements/tree-view/#additemsrangeat">AddItemsRangeAt</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items, int index)</code></span> | Inserts top-level items at the index, listed in one go. |
+| <a class="ref method" href="/docs/ui-glossary/elements/tree-view/#addtextitem">`AddTextItem(string text)`</a> | Adds a top-level item showing the text in a label and returns it, to nest items in it. The tree view made it, so it is disposed when it is removed. Does nothing and returns `null` while an <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#itemssource">`ItemsSource`</a> is set. |
 | <span class="method"><code><a href="/docs/ui-glossary/elements/tree-view/#removeitem">RemoveItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> | Removes the item (or the item made around the element) from wherever it is in the tree, with its branch. |
 | <a class="ref method" href="/docs/ui-glossary/elements/tree-view/#removeitemat">`RemoveItemAt(int index)`</a> | Removes the top-level item at the index. |
 | <a class="ref method" href="/docs/ui-glossary/elements/tree-view/#removeitemsrangeat">`RemoveItemsRangeAt(int index, int count)`</a> | Removes `count` top-level items from the index on. |
@@ -475,8 +482,8 @@ pointing right and one pointing down, at the theme's 10 by 10.
 | <a class="ref method" href="/docs/ui-glossary/elements/tree-view/#collapseall">`CollapseAll()`</a> | Collapses every branch. |
 | <a class="ref method" href="/docs/ui-glossary/elements/tree-view/#selectsource">`SelectSource(object source)`</a> | Selects the item of the <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#itemssource">`ItemsSource`</a> object, also one in a branch that was not expanded yet. Nothing happens when there is none. |
 
-Items the tree view made (around your elements, or for source objects) are disposed when they are removed; your own
-<a class="ref" href="/docs/ui-glossary/elements/tree-view-item/">`TreeViewItem`</a>s are let go with their branches and can be added again.
+Items the tree view made (around your elements, for texts, or for source objects) are disposed when they are
+removed; your own <a class="ref" href="/docs/ui-glossary/elements/tree-view-item/">`TreeViewItem`</a>s are let go with their branches and can be added again.
 
 Style class: <a class="ref" href="/docs/ui-glossary/types/tree-view-style/">`TreeViewStyle`</a> (the same properties except <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#selecteditem">`SelectedItem`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#itemssource">`ItemsSource`</a>, see
 [styles](/docs/ui-styles/)).
@@ -502,6 +509,7 @@ gets its place in the tree: its <a class="ref prop" href="/docs/ui-glossary/elem
 | <span class="method"><code><a href="/docs/ui-glossary/elements/tree-view-item/#additemat">AddItemAt</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item, int index)</code></span> | Inserts a leaf at the index. |
 | <span class="method"><code><a href="/docs/ui-glossary/elements/tree-view-item/#additemsrange">AddItemsRange</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items)</code></span> | Adds leaves at the end, listed in one go. |
 | <span class="method"><code><a href="/docs/ui-glossary/elements/tree-view-item/#additemsrangeat">AddItemsRangeAt</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items, int index)</code></span> | Inserts leaves at the index, listed in one go. |
+| <a class="ref method" href="/docs/ui-glossary/elements/tree-view-item/#addtextitem">`AddTextItem(string text)`</a> | Adds a leaf showing the text in a label and returns it. The tree view made it, so it is disposed when it is removed. Does nothing and returns `null` for an item of a source object. |
 | <span class="method"><code><a href="/docs/ui-glossary/elements/tree-view-item/#removeitem">RemoveItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> | Removes the item (or the item made around the element) from anywhere in this item's branch. |
 | <a class="ref method" href="/docs/ui-glossary/elements/tree-view-item/#removeitemat">`RemoveItemAt(int index)`</a> | Removes the leaf at the index, with its branch. |
 | <a class="ref method" href="/docs/ui-glossary/elements/tree-view-item/#removeitemsrangeat">`RemoveItemsRangeAt(int index, int count)`</a> | Removes `count` leaves from the index on. |
@@ -519,13 +527,8 @@ separators, or the objects of an <a class="ref dp" href="/docs/ui-glossary/eleme
 
 ```csharp
 var sortMenu = new ContextMenu("sort");
-sortMenu.AddItem(new ContextMenuItem("By name"));
-sortMenu.AddItem(new ContextMenuItem("By date"));
-
-var copy = new ContextMenuItem("Copy");
-copy.OnClick += (sender, e) => Console.WriteLine("Copy");
-
-var sort = new ContextMenuItem("Sort") { SubMenu = sortMenu };
+sortMenu.AddTextItem("By name");
+sortMenu.AddTextItem("By date");
 
 // the arrow of an item with a sub-menu: a picture instead of the default block
 var menu = new ContextMenu("listMenu")
@@ -541,8 +544,9 @@ var menu = new ContextMenu("listMenu")
         VerticalAlignment = VerticalAlignment.Center
     }
 };
-menu.AddItem(copy);
-menu.AddItem(new ContextMenuItem("Rename"));
+// a text item is returned, to handle its click or give it a sub-menu
+menu.AddTextItem("Copy").OnClick += (sender, e) => Console.WriteLine("Copy");
+menu.AddTextItem("Rename");
 menu.AddItem(new Separator
 {
     DesiredHeight = 1,
@@ -550,7 +554,7 @@ menu.AddItem(new Separator
     BackgroundColor = new Color(168, 131, 74)
 });
 menu.AddItem(new ContextMenuItem("Show grid") { IsCheckable = true, IsChecked = true });
-menu.AddItem(sort);
+menu.AddTextItem("Sort").SubMenu = sortMenu;
 menu.OnItemSelect += (sender, item) => Console.WriteLine($"Chosen {item}");
 
 // a right click on the element opens its menu at the mouse
@@ -602,7 +606,8 @@ object's text when none is set); a [`BindableCollection<T>`](/docs/ui-styles/#bi
 <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#itemssource">`ItemsSource`</a> is set, items are not added or removed in code.
 
 An element added with <a class="ref method" href="/docs/ui-glossary/elements/context-menu/#additem">`AddItem`</a> that is neither a <a class="ref" href="/docs/ui-glossary/elements/context-menu-item/">`ContextMenuItem`</a> nor a <a class="ref" href="/docs/ui-glossary/elements/separator/">`Separator`</a> is put in an item the menu
-makes; such items are disposed when they are removed, your own items are only let go (with their sub-menus).
+makes, and <a class="ref method" href="/docs/ui-glossary/elements/context-menu/#addtextitem">`AddTextItem`</a> makes an item showing a text; such items are disposed when they are removed, your own items
+are only let go (with their sub-menus).
 
 ### ContextMenu properties
 
@@ -638,6 +643,7 @@ makes; such items are disposed when they are removed, your own items are only le
 | <span class="method"><code><a href="/docs/ui-glossary/elements/context-menu/#additemat">AddItemAt</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item, int index)</code></span> | Inserts an item at the index. |
 | <span class="method"><code><a href="/docs/ui-glossary/elements/context-menu/#additemsrange">AddItemsRange</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items)</code></span> | Adds items at the end. |
 | <span class="method"><code><a href="/docs/ui-glossary/elements/context-menu/#additemsrangeat">AddItemsRangeAt</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items, int index)</code></span> | Inserts items at the index. |
+| <a class="ref method" href="/docs/ui-glossary/elements/context-menu/#addtextitem">`AddTextItem(string text)`</a> | Adds an item showing the text in a label and returns it, to handle its `OnClick`, make it checkable or give it a <a class="ref prop" href="/docs/ui-glossary/elements/context-menu-item/#submenu">`SubMenu`</a>. The menu made it, so it is disposed when it is removed. Does nothing and returns `null` while an <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#itemssource">`ItemsSource`</a> is set. |
 | <span class="method"><code><a href="/docs/ui-glossary/elements/context-menu/#removeitem">RemoveItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> | Removes the item, or the item made around the element. |
 | <a class="ref method" href="/docs/ui-glossary/elements/context-menu/#removeitemat">`RemoveItemAt(int index)`</a> | Removes the item at the index. |
 | <a class="ref method" href="/docs/ui-glossary/elements/context-menu/#removeitemsrangeat">`RemoveItemsRangeAt(int index, int count)`</a> | Removes `count` items from the index on. |
