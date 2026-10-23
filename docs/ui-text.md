@@ -336,7 +336,7 @@ var journal = new RichTextBox("journal")
     WrapType = TextWrap.Wrap,
     DesiredWidth = 420,
     DesiredHeight = 128,
-    TextMargin = (8, 6),
+    TextMargin = (8, 6, 8, 6),
     ScrollBars = ScrollBars.Vertical,
     ScrollBarsThickness = 10,
     BackgroundColor = new Color(26, 20, 15),
@@ -365,10 +365,16 @@ and the line breaks of the new one show as spaces; when it ends, or <a class="re
 whole text. With <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#scrolltoendduringtextanimation">`ScrollToEndDuringTextAnimation`</a> the box keeps scrolled to the end while it prints and scrolls to the
 end once more when it finishes. A box removed from the tree stops its animation.
 
+<figure class="shot">
+  <img src="{{ '/assets/img/ui/text-animate.png' | relative_url }}" width="454" height="78" alt="A two-line journal box typing out a sentence character by character, scrolling to keep the last line in view">
+  <figcaption><code>AnimateText</code> printing a character every 30 ms, kept scrolled to the end.</figcaption>
+</figure>
+
 ```csharp
 journal.CharacterPrintDelayMs = 30;
 journal.ScrollToEndDuringTextAnimation = true;
-journal.AnimateText("Day 13: a draught. Somewhere ahead the cave opens.");
+journal.AnimateText("Day 13: a draught. Somewhere ahead the cave opens, the torch " +
+                    "leans toward it and the drip of the walls goes quiet.");
 ```
 
 With <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#characterprintdelayms">`CharacterPrintDelayMs`</a> at 0 (its default) <a class="ref method" href="/docs/ui-glossary/elements/rich-text-box/#animatetext">`AnimateText`</a> sets the text at once.
