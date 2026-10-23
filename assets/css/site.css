@@ -164,6 +164,24 @@ a:hover { color: #fff3d6; }
   white-space: nowrap;
 }
 .pill.flame { color: var(--flame); border-color: rgba(242, 140, 40, .45); }
+/* the style badge after the heading of an element that has a style class: a link to the glossary page of the style
+   (see _layouts/docs.html) */
+.pill.style-badge {
+  margin-left: .7em;
+  vertical-align: middle;
+  font-family: var(--sans);
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: color .15s, border-color .15s, background .15s;
+}
+.pill.style-badge:hover, .pill.style-badge:focus-visible {
+  color: var(--gold);
+  border-color: var(--gold);
+  background: rgba(233, 194, 122, .1);
+}
+/* the title's row spaces its parts itself */
+.doc-header h1 .style-badge { margin-left: 0; }
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));

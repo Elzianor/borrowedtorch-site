@@ -46,6 +46,43 @@ layout: base
 {%- for u in doc_urls -%}
   {%- if u == page.url -%}{%- assign idx = forloop.index0 -%}{%- endif -%}
 {%- endfor -%}
+{%- comment -%}
+  The style badge: the heading of an element that has a style class links to the glossary page of the style
+  (ColorPicker to ColorPickerStyle, the base element to BaseStyle). The heading is the element's ## or ### section on a
+  UI page, the title of its glossary page, and for the base element the title of its page and for the root element
+  its section there. The elements are the glossary's (_data/ui_glossary.yml); an element has a style when the glossary
+  has a page for it. Added here, to the page's HTML, the badge stays out of the sidebar's section titles (they are read
+  from the page's own content, see docs-sections.html).
+{%- endcomment -%}
+{%- assign page_content = content -%}
+{%- assign title_badge = "" -%}
+{%- if page.url contains "/docs/ui" -%}
+  {%- assign badge_elements = site.data.ui_glossary | where: "title", "Elements" | first -%}
+  {%- for e in badge_elements.entries -%}
+    {%- assign badge_slug = e.url | split: "/" | last -%}
+    {%- assign badge_url = "/docs/ui-glossary/types/" | append: badge_slug | append: "-style/" | replace: "/base-element-style/", "/base-style/" -%}
+    {%- assign badge_style = site.pages | where: "url", badge_url | first -%}
+    {%- if badge_style -%}
+      {%- assign badge_element = e.title | remove: "<wbr>" | replace: "Base element", "BaseElement" -%}
+      {%- assign badge_class = badge_style.title | remove_first: "Glossary: " -%}
+      {%- capture badge %} <a class="pill style-badge" href="{{ badge_url | relative_url }}" title="{{ badge_class }}" aria-label="{{ badge_class }}, the style of {{ badge_element }}">Style</a>{% endcapture -%}
+      {%- assign badge_id = badge_element | downcase -%}
+      {%- for level in (2..3) -%}
+        {%- assign badge_heading = "<h" | append: level | append: ' id="' | append: badge_id | append: '">' | append: badge_element -%}
+        {%- assign badge_end = "</h" | append: level | append: ">" -%}
+        {%- assign badge_plain = badge_heading | append: badge_end -%}
+        {%- assign badge_marked = badge_heading | append: badge | append: badge_end -%}
+        {%- assign page_content = page_content | replace: badge_plain, badge_marked -%}
+      {%- endfor -%}
+      {%- if badge_slug == "root-element" -%}
+        {%- assign badge_marked = '<h2 id="the-root-element">The root element' | append: badge | append: "</h2>" -%}
+        {%- assign page_content = page_content | replace: '<h2 id="the-root-element">The root element</h2>', badge_marked -%}
+      {%- endif -%}
+      {%- if page.url == e.url -%}{%- assign title_badge = badge -%}{%- endif -%}
+      {%- if badge_slug == "base-element" and page.url == "/docs/ui-base-element/" -%}{%- assign title_badge = badge -%}{%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
 <div class="docs">
   <nav class="docs-nav" aria-label="Docs">
     <details class="docs-menu" open>
@@ -178,7 +215,7 @@ layout: base
         <a href="{{ '/docs/' | relative_url }}">Docs</a>
         {%- if idx >= 0 and page.url != '/docs/' %} / {{ doc_groups[idx] }}{% endif %}
       </p>
-      <h1>{{ page.title }}{% if page.status == 'draft' %} <span class="pill flame">Draft</span>{% endif %}</h1>
+      <h1>{{ page.title }}{{ title_badge }}{% if page.status == 'draft' %} <span class="pill flame">Draft</span>{% endif %}</h1>
       {%- if page.description %}
       <p class="lead">{{ page.description }}</p>
       {%- endif %}
@@ -198,7 +235,7 @@ layout: base
       {%- endfor %}
     </p>
     {%- endif %}
-{{ content }}
+{{ page_content }}
     </article>
     <script>
       // a long name in a table (20 characters or more) may break after a dot and between its words, as in
