@@ -33,6 +33,10 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> · The cursors of this element only, passed on to its parts that have none of their own.
 
+<h3 id="pointerstyle"><span class="dp"><code>PointerStyle</code></span> <a class="ctx" href="/docs/ui-controls/#colorpicker-properties" title="PointerStyle in context on the controls page" aria-label="PointerStyle in context on the controls page">🠆</a></h3>
+
+<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> · The style of the pointer. Its `Source` replaces the ring the picker makes; the pointer is centered on the picked pixel at whatever size it gets.
+
 <h3 id="selectedcolor"><span class="dp"><code>SelectedColor</code></span> <a class="ctx" href="/docs/ui-controls/#colorpicker-properties" title="SelectedColor in context on the controls page" aria-label="SelectedColor in context on the controls page">🠆</a></h3>
 
 `Color` · The picked color times <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#brightness">`Brightness`</a>, always opaque. It starts black. Setting it raises <a class="ref event" href="/docs/ui-glossary/elements/color-picker/#onselectedcolorchanged">`OnSelectedColorChanged`</a> but does not move the pointer.

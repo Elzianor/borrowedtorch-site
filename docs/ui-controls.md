@@ -704,15 +704,24 @@ the picker's top left corner.
 The picker has no content size of its own, so give it a size. Its <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#foregroundcolor">`ForegroundColor`</a> (white by default) tints the
 drawn palette; it does not change <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#selectedcolor">`SelectedColor`</a>.
 
-The pointer is the texture `Textures/SelectedColorPointer`, loaded through the `ContentManager` you give
-<a class="ref" href="/docs/ui-glossary/types/borrowed-torch-ui/">`BorrowedTorchUI`</a>. The package copies `Content/Textures/SelectedColorPointer.xnb` next to your game, so it is found
-when the content manager's root is `Content`. Without a content manager the picker works but shows no pointer.
+The pointer is a black ring 9 pixels across, centered on the picked pixel. The picker makes it in code, with its
+palette, once the UI has a graphics device. <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#pointerstyle">`PointerStyle`</a> styles the pointer, an image: a `Source` replaces the
+ring with a picture of your own, and a pointer of another size is still centered on the picked pixel.
+
+```csharp
+// a picture of your own instead of the ring
+picker.PointerStyle = new ImageStyle
+{
+    Source = Content.Load<Texture2D>("UITextures/Crosshair")
+};
+```
 
 ### ColorPicker properties
 
 | Property | Type | Description |
 | --- | --- | --- |
 | <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#brightness">`Brightness`</a> | `float` | Scales the picked color, from 0 (black) to 1 (the palette's color, the default). Values outside are clamped. Changing it recomputes <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#selectedcolor">`SelectedColor`</a> from the picked spot. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#pointerstyle">`PointerStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> | The style of the pointer. Its `Source` replaces the ring the picker makes; the pointer is centered on the picked pixel at whatever size it gets. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#selectedcolor">`SelectedColor`</a> | `Color` | The picked color times <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#brightness">`Brightness`</a>, always opaque. It starts black. Setting it raises <a class="ref event" href="/docs/ui-glossary/elements/color-picker/#onselectedcolorchanged">`OnSelectedColorChanged`</a> but does not move the pointer. |
 
 Before anything is picked, changing <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#brightness">`Brightness`</a> sets <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#selectedcolor">`SelectedColor`</a> to black.
@@ -729,5 +738,5 @@ Before anything is picked, changing <a class="ref dp" href="/docs/ui-glossary/el
 | --- | --- |
 | <a class="ref method" href="/docs/ui-glossary/elements/color-picker/#colorpicker">`ColorPicker(string name = null)`</a> | Creates a color picker. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>. |
 
-Style class: <a class="ref" href="/docs/ui-glossary/types/color-picker-style/">`ColorPickerStyle`</a> (the inherited properties only: <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#brightness">`Brightness`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#selectedcolor">`SelectedColor`</a> are not styled, see
+Style class: <a class="ref" href="/docs/ui-glossary/types/color-picker-style/">`ColorPickerStyle`</a> (the same properties except <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#brightness">`Brightness`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#selectedcolor">`SelectedColor`</a>, see
 [styles](/docs/ui-styles/)). Its defaults set <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#foregroundcolor">`ForegroundColor`</a> to white.

@@ -581,6 +581,9 @@
         - title: "Mouse<wbr>Cursors<wbr>Set<wbr>Override"
           anchor: mousecursorssetoverride
           kind: prop
+        - title: "Pointer<wbr>Style"
+          anchor: pointerstyle
+          kind: dp
         - title: "Selected<wbr>Color"
           anchor: selectedcolor
           kind: dp
