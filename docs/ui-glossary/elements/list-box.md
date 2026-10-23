@@ -115,7 +115,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <h3 id="usedualcolors"><span class="dp"><code>UseDualColors</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-properties" title="UseDualColors in context on the lists and menus page" aria-label="UseDualColors in context on the lists and menus page">🠆</a></h3>
 
-`bool` · Alternates the background of unselected rows: <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#normalitemcolor">`NormalItemColor`</a> for even indices, <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#alternativeitemcolor">`AlternativeItemColor`</a> for odd ones.
+`bool` · Alternates the background of unselected rows: <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#normalitemcolor">`NormalItemColor`</a> for even rows, <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#alternativeitemcolor">`AlternativeItemColor`</a> for odd ones, counted without the separators (a separator row lies on the normal color).
 
 <h3 id="virtualizationmode"><span class="dp"><code>VirtualizationMode</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-properties" title="VirtualizationMode in context on the lists and menus page" aria-label="VirtualizationMode in context on the lists and menus page">🠆</a></h3>
 

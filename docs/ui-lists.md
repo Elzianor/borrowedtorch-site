@@ -86,7 +86,7 @@ detaches the elements you added (they are not disposed); the rows and contents t
 of yours that is disposed while in the list takes its row with it.
 
 Rows are drawn in <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#normalitemcolor">`NormalItemColor`</a>, or alternately in <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#normalitemcolor">`NormalItemColor`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#alternativeitemcolor">`AlternativeItemColor`</a> with
-<a class="ref dp" href="/docs/ui-glossary/elements/list-box/#usedualcolors">`UseDualColors`</a>, and change to <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#hoveritemcolor">`HoverItemColor`</a>, <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#presseditemcolor">`PressedItemColor`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#selecteditemcolor">`SelectedItemColor`</a> when those are set. A
+<a class="ref dp" href="/docs/ui-glossary/elements/list-box/#usedualcolors">`UseDualColors`</a> (a separator row lies on the normal color, and the rows around it alternate as if it were not there), and change to <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#hoveritemcolor">`HoverItemColor`</a>, <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#presseditemcolor">`PressedItemColor`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#selecteditemcolor">`SelectedItemColor`</a> when those are set. A
 press on the list (a row or a scroll bar) gives it the keyboard. Setting <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#hittest">`HitTest`</a> to `false` stops the rows and the
 scroll bars from taking the mouse as well.
 
@@ -146,6 +146,10 @@ log.SelectAt(199_999);
 <a class="ref method" href="/docs/ui-glossary/elements/list-box/#moveselection">`MoveSelection(delta)`</a> select a row and scroll it into view; they pass over separators and collapsed rows.
 <a class="ref prop" href="/docs/ui-glossary/elements/list-box/#rowsperpage">`RowsPerPage`</a> is the number of rows that fit the view.
 
+A list without a size of its own fits its rows, within its <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#minwidth">`MinWidth`</a>, <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#maxwidth">`MaxWidth`</a>, <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#minheight">`MinHeight`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#maxheight">`MaxHeight`</a>.
+When the rows are taller than such a height, the list gets wider by the vertical scroll bar, so the bar takes no
+room from the rows (and gets taller by the horizontal one in the same way).
+
 A list that has the keyboard (it was pressed, or given <a class="ref method" href="/docs/ui-glossary/elements/base-element/#focus">`Focus()`</a>) reacts to these keys:
 
 | Key | Effect |
@@ -170,7 +174,7 @@ Ctrl and Shift held with these keys work as with clicks in `Multiple` mode.
 | <a class="ref prop" href="/docs/ui-glossary/elements/list-box/#items">`Items`</a> | <code>IReadOnlyList&lt;<a href="/docs/ui-glossary/elements/list-box-item/">ListBoxItem</a>&gt;</code> | Read-only. The rows that have an element, in order: every row in `None` mode, the rows around the view and the primary selected row in `Fixed` mode. A live view, don't keep it across changes. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#itemssource">`ItemsSource`</a> | `IEnumerable` | The objects to show, one row each. A <code><a href="/docs/ui-glossary/types/bindable-collection/">BindableCollection</a>&lt;T&gt;</code> is followed. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/list-box/#itemstemplate">`ItemsTemplate`</a> | <a class="ref" href="/docs/ui-glossary/types/i-items-template/">`IItemsTemplate`</a> | Makes the element of each <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#itemssource">`ItemsSource`</a> object; a label with the object's text when none is set. Changing it builds the rows again. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#usedualcolors">`UseDualColors`</a> | `bool` | Alternates the background of unselected rows: <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#normalitemcolor">`NormalItemColor`</a> for even indices, <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#alternativeitemcolor">`AlternativeItemColor`</a> for odd ones. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#usedualcolors">`UseDualColors`</a> | `bool` | Alternates the background of unselected rows: <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#normalitemcolor">`NormalItemColor`</a> for even rows, <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#alternativeitemcolor">`AlternativeItemColor`</a> for odd ones, counted without the separators (a separator row lies on the normal color). |
 | <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#normalitemcolor">`NormalItemColor`</a> | `Color` | The background of an unselected row (of the even rows with <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#usedualcolors">`UseDualColors`</a>). |
 | <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#alternativeitemcolor">`AlternativeItemColor`</a> | `Color` | The background of the odd unselected rows while <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#usedualcolors">`UseDualColors`</a> is set. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#hoveritemcolor">`HoverItemColor`</a> | `Color?` | The background of the row under the mouse. When `null` the row keeps its normal or selected color. |
@@ -576,7 +580,8 @@ ui.AddElementToRoot(files);
 **Opening.** Set the menu as an element's `ContextMenu`. A right click released over the element, or over an element
 inside it that has no menu of its own, opens the menu at the mouse. The element must take the mouse (<a class="ref dp" href="/docs/ui-glossary/elements/base-element/#hittest">`HitTest`</a>), which
 is why the label above sets it. <a class="ref method" href="/docs/ui-glossary/elements/context-menu/#open">`Open(point)`</a> opens the menu at a point of the screen from code. The menu is placed by
-<a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#placement">`Placement`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#marginfrommousecursor">`MarginFromMouseCursor`</a> and kept on the screen; a menu taller than the screen scrolls.
+<a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#placement">`Placement`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#marginfrommousecursor">`MarginFromMouseCursor`</a> and kept on the screen; a menu or a sub-menu taller than the screen is as tall as
+the screen and scrolls its items.
 
 **Keyboard.** The open menu takes the keyboard, and every key while it is open:
 
@@ -588,7 +593,8 @@ is why the label above sets it. <a class="ref method" href="/docs/ui-glossary/el
 | Left | Closes the sub-menu the keys are in. |
 | Escape | Closes the sub-menu the keys are in, or the menu itself. |
 
-The keys go to the deepest open sub-menu that has a selected item. Moving the mouse over an item selects it too.
+The keys go to the deepest open sub-menu that has a selected item. Only the keys select items: the mouse over an
+item shows it in the hover color and opens its sub-menu (with `OnHover`), but selects nothing.
 
 **Choosing.** Clicking an item or pressing Enter on it chooses it: a checkable item switches <a class="ref prop" href="/docs/ui-glossary/elements/context-menu-item/#ischecked">`IsChecked`</a>, the whole menu
 closes and the element that had the keyboard before gets it back, then the item's `OnClick` and the menu's
@@ -596,10 +602,14 @@ closes and the element that had the keyboard before gets it back, then the item'
 chosen. A press somewhere else, another element taking the keyboard, or the menu's element being hidden or removed
 also closes the menu.
 
-**Sub-menus.** Set an item's <a class="ref prop" href="/docs/ui-glossary/elements/context-menu-item/#submenu">`SubMenu`</a> to another `ContextMenu`. It opens to the right of the menu, level with its
-item, or to the left when there is no room on the right. With <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#submenusopentype">`SubMenusOpenType`</a> set to `OnHover` (the default) it
-opens when the mouse is over its item; with `OnClick` a click on the item opens or closes it. A sub-menu is opened
-by its item only, not by <a class="ref method" href="/docs/ui-glossary/elements/context-menu/#open">`Open`</a>.
+**Sub-menus.** Set an item's <a class="ref prop" href="/docs/ui-glossary/elements/context-menu-item/#submenu">`SubMenu`</a> to another `ContextMenu`. It opens right next to its item, over the edge of
+the menu, its first item level with the item, or at the item's left when there is no room on the right. With
+<a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#submenusopentype">`SubMenusOpenType`</a> set to `OnHover` (the default) it opens when the mouse is over its item and stays open while the
+mouse is over its item, over the sub-menu itself or over a sub-menu opened from it; anywhere else (another item, a
+border, outside of the menus) the sub-menus close and only the menu itself stays open. A sub-menu the keys opened
+stays until the mouse moves. With `OnClick` a click on the item opens or closes it. A press on a menu outside of its
+items (its border, a separator) closes the sub-menus opened from that menu; the menu stays open. A sub-menu is opened by its
+item only, not by <a class="ref method" href="/docs/ui-glossary/elements/context-menu/#open">`Open`</a>.
 
 **From data.** <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#itemssource">`ItemsSource`</a> gives an item per object, with content made by <a class="ref prop" href="/docs/ui-glossary/elements/context-menu/#itemstemplate">`ItemsTemplate`</a> (a label with the
 object's text when none is set); a [`BindableCollection<T>`](/docs/ui-styles/#bindings) is followed. While an
@@ -662,8 +672,8 @@ are only let go (with their sub-menus).
 
 | Value | Meaning |
 | --- | --- |
-| <a class="ref" href="/docs/ui-glossary/types/context-menu-sub-menus-open-type/#onhover">`OnHover`</a> | A sub-menu opens when the mouse is over its item. |
-| <a class="ref" href="/docs/ui-glossary/types/context-menu-sub-menus-open-type/#onclick">`OnClick`</a> | A click on the item opens or closes its sub-menu. |
+| <a class="ref" href="/docs/ui-glossary/types/context-menu-sub-menus-open-type/#onhover">`OnHover`</a> | A sub-menu opens when the mouse is over its item, and closes when the mouse is over neither the item, the sub-menu nor a sub-menu opened from it. |
+| <a class="ref" href="/docs/ui-glossary/types/context-menu-sub-menus-open-type/#onclick">`OnClick`</a> | A click on the item opens or closes its sub-menu; a press on the menu outside of its items (its border, a separator) closes the sub-menus opened from it. |
 
 Style class: <a class="ref" href="/docs/ui-glossary/types/context-menu-style/">`ContextMenuStyle`</a> (the same properties except <span class="dp">`ItemsSource`</span>, see [styles](/docs/ui-styles/)).
 
