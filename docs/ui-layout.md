@@ -369,7 +369,7 @@ is one and inside the <a class="ref dp" href="/docs/ui-glossary/elements/border/
 frame. A border without a size fits its content plus that inset.
 
 Without textures the frame is drawn in <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#foregroundcolor">`ForegroundColor`</a>. <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> fills only the content area, not the frame.
-With <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> set (e.g. <code>"UITextures/<a href="/docs/ui-glossary/elements/border/">Border</a>/"</code>), the parts are drawn from the textures `LeftTop`, `RightTop`,
+With <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> set (e.g. `"UITextures/Border/"`), the parts are drawn from the textures `LeftTop`, `RightTop`,
 `LeftBottom`, `RightBottom` (the corners) and `Left`, `Right`, `Top`, `Bottom` (the sides) in that folder, each
 stretched over its part (see [texture sets](/docs/ui-styles/#texture-sets)).
 
