@@ -575,6 +575,7 @@ below:
 
 ```csharp
 // a view model: the elements bound to it follow its PropertyChangedInvoke calls
+// (in a setter without a name for the setter's own property, with nameof for another)
 public sealed class SettingsViewModel : Bindable
 {
     private string _playerName = "";
@@ -586,7 +587,7 @@ public sealed class SettingsViewModel : Bindable
         set
         {
             _playerName = value;
-            PropertyChangedInvoke(nameof(PlayerName));
+            PropertyChangedInvoke();
             PropertyChangedInvoke(nameof(Greeting));
         }
     }
@@ -599,7 +600,7 @@ public sealed class SettingsViewModel : Bindable
         set
         {
             _volume = value;
-            PropertyChangedInvoke(nameof(Volume));
+            PropertyChangedInvoke();
         }
     }
 
@@ -708,11 +709,11 @@ The abstract base of a view model.
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| <a class="ref event" href="/docs/ui-glossary/types/bindable/#onpropertychanged">`OnPropertyChanged`</a> | `(string propertyName)` | The view model calls <a class="ref method" href="/docs/ui-glossary/types/bindable/#propertychangedinvoke">`PropertyChangedInvoke`</a>. An empty name means every property changed. |
+| <a class="ref event" href="/docs/ui-glossary/types/bindable/#onpropertychanged">`OnPropertyChanged`</a> | `(string propertyName)` | The view model calls <a class="ref method" href="/docs/ui-glossary/types/bindable/#propertychangedinvoke">`PropertyChangedInvoke`</a>. The handler gets the name of the property that changed; an empty (or `null`) name means every property changed. |
 
 | Method | Description |
 | --- | --- |
-| <a class="ref method" href="/docs/ui-glossary/types/bindable/#propertychangedinvoke">`PropertyChangedInvoke(string propertyName)`</a> | Protected. Raises <a class="ref event" href="/docs/ui-glossary/types/bindable/#onpropertychanged">`OnPropertyChanged`</a>; call it from a property setter with `nameof` the property. |
+| <a class="ref method" href="/docs/ui-glossary/types/bindable/#propertychangedinvoke">`PropertyChangedInvoke(string propertyName = "")`</a> | Protected. Raises <a class="ref event" href="/docs/ui-glossary/types/bindable/#onpropertychanged">`OnPropertyChanged`</a>. Called from a property's setter without a name, it names that property (`[CallerMemberName]`); another property is named with `nameof`. An empty or `null` name means every property changed: <a class="ref method" href="/docs/ui-glossary/types/bindable/#propertychangedinvoke">`PropertyChangedInvoke(string.Empty)`</a> (with no argument outside a setter, it names the calling method instead). |
 
 ### BindableCollection&lt;T&gt;
 

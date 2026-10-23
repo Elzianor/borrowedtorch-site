@@ -479,6 +479,11 @@ a.card:hover { border-color: var(--line-strong); background: var(--surface-2); c
 .prose table { width: 100%; border-collapse: collapse; font-size: .93rem; display: block; overflow-x: auto; }
 /* a cursor picture in a table (the Example column of the mouse cursors): at its own size, on the line, never shrunk */
 .prose td img.cursor { vertical-align: middle; max-width: none; }
+/* on a soft mid-tone, so a dark cursor (the text I-beam) shows as well as the light and golden ones; the padding goes
+   around the picture's own size (content-box), so it is not scaled */
+.prose td img.cursor { box-sizing: content-box; padding: 2px; border-radius: 6px; background: #6e6252; }
+/* a hover and a pressed cursor side by side, also where the description takes most of the row */
+.prose td:has(> img.cursor) { white-space: nowrap; }
 /* the scroll bars of wide code blocks and tables, in the site's colors instead of the browser's */
 .prose pre, .prose table {
   scrollbar-width: thin;
