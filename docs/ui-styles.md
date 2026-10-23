@@ -828,8 +828,8 @@ public sealed class QuestTemplate : IItemsTemplate
 ```
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/styles-items-template.png' | relative_url }}" width="334" height="154" alt="A list of four check boxes: Light the beacon, Find the map and Rest by the fire checked, Cross the river unchecked">
-  <figcaption>Each quest of the source shown as a check box bound to its Done: setting Done of the second quest checked its box.</figcaption>
+  <img src="{{ '/assets/img/ui/styles-items-template.png' | relative_url }}" width="334" height="154" alt="A list of four check boxes: Light the beacon and Rest by the fire checked, Find the map and Cross the river unchecked">
+  <figcaption>Each quest of the source shown as a check box bound to its Done: the last quest was added not done, and setting its Done checked its box.</figcaption>
 </figure>
 
 ```csharp
@@ -849,8 +849,10 @@ var list = new ListBox("quests")
     ItemsSource = quests
 };
 
-quests.Add(new Quest("Rest by the fire", true));   // a new row appears
-quests[1].Done = true;                             // its box checks itself
+var rest = new Quest("Rest by the fire", false);
+
+quests.Add(rest);    // a new row appears, its box not checked
+rest.Done = true;    // the box checks itself
 
 ui.AddElementToRoot(list);
 ```
