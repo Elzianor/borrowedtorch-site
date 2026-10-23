@@ -25,6 +25,10 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> · The style of the expand icon of the items, for example its size and margin. By default an 8 by 8 block, centred, with a margin of 4 before and 6 after it.
 
+<h3 id="foldediconcolor"><span class="dp"><code>FoldedIconColor</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-properties" title="FoldedIconColor in context on the lists and menus page" aria-label="FoldedIconColor in context on the lists and menus page">🠆</a></h3>
+
+`Color` · The colour of the icon of a collapsed branch, when the tree view has no textures. By default `(150, 150, 160)`.
+
 <h3 id="generalmousecursorsset"><span class="prop"><code>GeneralMouseCursorsSet</code></span> <a class="ctx" href="/docs/ui-base-element/#genericstyleandmousecursorsdata-properties" title="GeneralMouseCursorsSet in context on the base element page" aria-label="GeneralMouseCursorsSet in context on the base element page">🠆</a></h3>
 
 <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> · Static. The cursors of every element of this style type; null (the default) falls back to <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#defaultmousecursorsset">`DefaultMouseCursorsSet`</a>.
@@ -48,10 +52,6 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 <h3 id="listboxstyle"><span class="dp"><code>ListBoxStyle</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-properties" title="ListBoxStyle in context on the lists and menus page" aria-label="ListBoxStyle in context on the lists and menus page">🠆</a></h3>
 
 <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> · The style of the list the items are shown in, for example its row colours and scroll bars.
-
-<h3 id="minimizediconcolor"><span class="dp"><code>MinimizedIconColor</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-properties" title="MinimizedIconColor in context on the lists and menus page" aria-label="MinimizedIconColor in context on the lists and menus page">🠆</a></h3>
-
-`Color` · The colour of the icon of a collapsed branch, when the tree view has no textures. By default `(150, 150, 160)`.
 
 <h3 id="mousecursorsset"><span class="prop"><code>MouseCursorsSet</code></span> <a class="ctx" href="/docs/ui-base-element/#genericstyleandmousecursorsdata-properties" title="MouseCursorsSet in context on the base element page" aria-label="MouseCursorsSet in context on the base element page">🠆</a></h3>
 

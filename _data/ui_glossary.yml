@@ -1718,6 +1718,9 @@
         - title: "Expand<wbr>Icon<wbr>Style"
           anchor: expandiconstyle
           kind: dp
+        - title: "Folded<wbr>Icon<wbr>Color"
+          anchor: foldediconcolor
+          kind: dp
         - title: "General<wbr>Mouse<wbr>Cursors<wbr>Set"
           anchor: generalmousecursorsset
           kind: prop
@@ -1735,9 +1738,6 @@
           kind: prop
         - title: "List<wbr>Box<wbr>Style"
           anchor: listboxstyle
-          kind: dp
-        - title: "Minimized<wbr>Icon<wbr>Color"
-          anchor: minimizediconcolor
           kind: dp
         - title: "Mouse<wbr>Cursors<wbr>Set"
           anchor: mousecursorsset

@@ -386,7 +386,7 @@ var tree = new TreeView("levels")
     DesiredHeight = 188,
     Margin = 16,
     SubItemsShift = (18, 0),
-    // the expand icons: MinimizedIcon and ExpandedIcon, pictures in this content folder
+    // the expand icons: FoldedIcon and ExpandedIcon, pictures in this content folder
     TexturesPath = "UITextures/TreeView/",
     ChildrenSelector = folder => ((Folder)folder).Children,
     ItemsSource = levels
@@ -430,8 +430,8 @@ selects its first leaf when it is expanded already. Left collapses the selected 
 when it is collapsed.
 
 **Icons and indentation.** An item with leaves shows an expand icon before its content. Without <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> the
-icon is a block of <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#minimizediconcolor">`MinimizedIconColor`</a> (collapsed) or <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#expandediconcolor">`ExpandedIconColor`</a> (expanded), sized and placed by
-<a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#expandiconstyle">`ExpandIconStyle`</a>; with <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> it is the `MinimizedIcon` or `ExpandedIcon` texture from that folder,
+icon is a block of <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#foldediconcolor">`FoldedIconColor`</a> (collapsed) or <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#expandediconcolor">`ExpandedIconColor`</a> (expanded), sized and placed by
+<a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#expandiconstyle">`ExpandIconStyle`</a>; with <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> it is the `FoldedIcon` or `ExpandedIcon` texture from that folder,
 any picture you like. By default the icon is an 8 by 8 block centred before the content, light grey when
 collapsed and darker when expanded. The screenshot's tree gives it two pictures through <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a>, an arrow
 pointing right and one pointing down, at the theme's 10 by 10.
@@ -448,7 +448,7 @@ pointing right and one pointing down, at the theme's 10 by 10.
 | <a class="ref prop" href="/docs/ui-glossary/elements/tree-view/#leaves">`Leaves`</a> | <code>IReadOnlyList&lt;<a href="/docs/ui-glossary/elements/tree-view-item/">TreeViewItem</a>&gt;</code> | Read-only. The top-level items. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#listboxstyle">`ListBoxStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> | The style of the list the items are shown in, for example its row colours and scroll bars. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#expandiconstyle">`ExpandIconStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> | The style of the expand icon of the items, for example its size and margin. By default an 8 by 8 block, centred, with a margin of 4 before and 6 after it. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#minimizediconcolor">`MinimizedIconColor`</a> | `Color` | The colour of the icon of a collapsed branch, when the tree view has no textures. By default `(150, 150, 160)`. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#foldediconcolor">`FoldedIconColor`</a> | `Color` | The colour of the icon of a collapsed branch, when the tree view has no textures. By default `(150, 150, 160)`. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#expandediconcolor">`ExpandedIconColor`</a> | `Color` | The colour of the icon of an expanded branch, when the tree view has no textures. By default `(90, 90, 100)`. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#subitemsshift">`SubItemsShift`</a> | <a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> | How far each level is indented (`Left`) and the space above every row but the first (`Top`), in units. |
 
