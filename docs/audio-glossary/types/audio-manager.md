@@ -15,7 +15,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="airsoundabsorptioncoefficient"><span class="prop"><code>AirSoundAbsorptionCoefficient</code></span> <a class="ctx" href="/docs/audio-positional/#audiomanager-hrtf-and-environment-properties" title="AirSoundAbsorptionCoefficient in context on the positional sound page" aria-label="AirSoundAbsorptionCoefficient in context on the positional sound page">→</a></h3>
 
-`float` · Static. How much the air absorbs, in dB per metre. 0.005 by default. Distance effects use it when their `LoudnessDb` is set.
+`float` · Static. How much the air absorbs, in dB per meter. 0.005 by default. Distance effects use it when their `LoudnessDb` is set.
 
 <h3 id="emittersversion"><span class="prop"><code>EmittersVersion</code></span> <a class="ctx" href="/docs/audio-emitters/#audiomanager-emitter-properties" title="EmittersVersion in context on the emitters page" aria-label="EmittersVersion in context on the emitters page">→</a></h3>
 
@@ -35,7 +35,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="listenerforward"><span class="prop"><code>ListenerForward</code></span> <a class="ctx" href="/docs/audio/#audiomanager-properties" title="ListenerForward in context on the quick start guide" aria-label="ListenerForward in context on the quick start guide">→</a></h3>
 
-`Vector3` · The direction the listener faces, normalised.
+`Vector3` · The direction the listener faces, normalized.
 
 <h3 id="listenerposition"><span class="prop"><code>ListenerPosition</code></span> <a class="ctx" href="/docs/audio/#audiomanager-properties" title="ListenerPosition in context on the quick start guide" aria-label="ListenerPosition in context on the quick start guide">→</a></h3>
 
@@ -43,11 +43,11 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="listenerright"><span class="prop"><code>ListenerRight</code></span> <a class="ctx" href="/docs/audio/#audiomanager-properties" title="ListenerRight in context on the quick start guide" aria-label="ListenerRight in context on the quick start guide">→</a></h3>
 
-`Vector3` · The listener's right direction, normalised.
+`Vector3` · The listener's right direction, normalized.
 
 <h3 id="listenerup"><span class="prop"><code>ListenerUp</code></span> <a class="ctx" href="/docs/audio/#audiomanager-properties" title="ListenerUp in context on the quick start guide" aria-label="ListenerUp in context on the quick start guide">→</a></h3>
 
-`Vector3` · The listener's up direction, normalised.
+`Vector3` · The listener's up direction, normalized.
 
 <h3 id="mastervolume"><span class="prop"><code>MasterVolume</code></span> <a class="ctx" href="/docs/audio-mixing/#audiomanager-mix-properties" title="MasterVolume in context on the mixing page" aria-label="MasterVolume in context on the mixing page">→</a></h3>
 
@@ -83,6 +83,11 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#audiomanager">`AudioManager(string mhrFilePath = null, float initialMasterVolume = 1.0f)`</a> · Creates the mix, opens the default output device and loads an HRTF data set: the file at the path, or the embedded set when the path is `null` or can't be read.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `mhrFilePath` | `string` | The HRTF data set file (`.mhr`) to load, as <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#tryloadmhrfile">`TryLoadMhrFile`</a> loads it; `null` loads the embedded set. Default: `null`. |
+| `initialMasterVolume` | `float` | The <a class="ref prop" href="/docs/audio-glossary/types/audio-manager/#mastervolume">`MasterVolume`</a> to start with, from 0 to 1; a value outside is clamped. Default: `1.0f`. |
+
 <h3 id="clearaudiocache"><span class="method"><code>ClearAudioCache()</code></span> <a class="ctx" href="/docs/audio-emitters/#audiomanager-emitter-methods" title="ClearAudioCache() in context on the emitters page" aria-label="ClearAudioCache() in context on the emitters page">→</a></h3>
 
 <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#clearaudiocache">`ClearAudioCache()`</a> · Static. Empties the cache of decoded clips. Emitters keep the clips they hold; the next <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#tryaddaudio">`TryAddAudio`</a> of a file decodes it again.
@@ -107,6 +112,13 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#setlistenerdata">`SetListenerData(Vector3 position, Vector3 forward, Vector3 up, Vector3 right)`</a> · Sets the whole listener pose at once, so each spatial effect works out its new direction once instead of once per vector. Call it every frame the listener moves.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `position` | `Vector3` | The position of the listener in the world, usually the camera's. |
+| `forward` | `Vector3` | The direction the listener faces, normalized. |
+| `up` | `Vector3` | The listener's up direction, normalized. |
+| `right` | `Vector3` | The listener's right direction, normalized. |
+
 <h3 id="stopall"><span class="method"><code>StopAll()</code></span> <a class="ctx" href="/docs/audio-emitters/#audiomanager-emitter-methods" title="StopAll() in context on the emitters page" aria-label="StopAll() in context on the emitters page">→</a></h3>
 
 <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#stopall">`StopAll()`</a> · <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#stop">`Stop`</a> on every emitter.
@@ -115,66 +127,141 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#tryaddaudiotoemitter">`TryAddAudioToEmitter(string emitterName, string pathToAudio)`</a> · <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#tryaddaudio">`TryAddAudio`</a> on the emitter of that name.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `emitterName` | `string` | The <a class="ref prop" href="/docs/audio-glossary/types/i-audio-emitter/#name">`Name`</a> of the emitter. |
+| `pathToAudio` | `string` | The WAV or Ogg Vorbis file to add. |
+
 <h3 id="tryaddeffecttoemitter"><span class="method"><code>TryAddEffectToEmitter()</code></span> <a class="ctx" href="/docs/audio-effects/#audiomanager-effect-methods" title="TryAddEffectToEmitter() in context on the effect chains page" aria-label="TryAddEffectToEmitter() in context on the effect chains page">→</a></h3>
 
 <span class="method"><code><a href="/docs/audio-glossary/types/audio-manager/#tryaddeffecttoemitter">TryAddEffectToEmitter</a>(string emitterName, <a href="/docs/audio-glossary/types/audio-effect-types/">AudioEffectTypes</a> type, out <a href="/docs/audio-glossary/effects/base-audio-effect/">BaseAudioEffect</a> effect)</code></span> · <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#tryaddaudioeffect">`TryAddAudioEffect`</a> on the emitter of that name.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `emitterName` | `string` | The <a class="ref prop" href="/docs/audio-glossary/types/i-audio-emitter/#name">`Name`</a> of the emitter. |
+| `type` | <a class="ref" href="/docs/audio-glossary/types/audio-effect-types/">`AudioEffectTypes`</a> | The kind of effect to create. |
+| `effect` | <code>out&nbsp;<a href="/docs/audio-glossary/effects/base-audio-effect/">BaseAudioEffect</a></code> | The new effect, or `null` when the method returns `false`. |
 
 <h3 id="tryaddemitter"><span class="method"><code>TryAddEmitter()</code></span> <a class="ctx" href="/docs/audio-emitters/#audiomanager-emitter-methods" title="TryAddEmitter() in context on the emitters page" aria-label="TryAddEmitter() in context on the emitters page">→</a></h3>
 
 <span class="method"><code><a href="/docs/audio-glossary/types/audio-manager/#tryaddemitter">TryAddEmitter</a>(string name, <a href="/docs/audio-glossary/types/audio-emitter-types/">AudioEmitterTypes</a> type, out <a href="/docs/audio-glossary/types/i-audio-emitter/">IAudioEmitter</a> emitter)</code></span> · Creates an emitter under a name, starting from the current listener pose. `false` for an empty name or one that is taken.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | The emitter's <a class="ref prop" href="/docs/audio-glossary/types/i-audio-emitter/#name">`Name`</a>, which the manager's other methods find it by. It must not be empty or taken. |
+| `type` | <a class="ref" href="/docs/audio-glossary/types/audio-emitter-types/">`AudioEmitterTypes`</a> | Whether the emitter decodes its clips into memory once (`Cached`) or from disk while they play (`Streaming`). |
+| `emitter` | <code>out&nbsp;<a href="/docs/audio-glossary/types/i-audio-emitter/">IAudioEmitter</a></code> | The new emitter, or `null` when the method returns `false`. |
+
 <h3 id="tryclearemitteraudios"><span class="method"><code>TryClearEmitterAudios()</code></span> <a class="ctx" href="/docs/audio-emitters/#audiomanager-emitter-methods" title="TryClearEmitterAudios() in context on the emitters page" aria-label="TryClearEmitterAudios() in context on the emitters page">→</a></h3>
 
 <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#tryclearemitteraudios">`TryClearEmitterAudios(string emitterName)`</a> · <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#clearaudios">`ClearAudios`</a> on the emitter of that name.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `emitterName` | `string` | The <a class="ref prop" href="/docs/audio-glossary/types/i-audio-emitter/#name">`Name`</a> of the emitter. |
 
 <h3 id="tryclearemittereffects"><span class="method"><code>TryClearEmitterEffects()</code></span> <a class="ctx" href="/docs/audio-effects/#audiomanager-effect-methods" title="TryClearEmitterEffects() in context on the effect chains page" aria-label="TryClearEmitterEffects() in context on the effect chains page">→</a></h3>
 
 <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#tryclearemittereffects">`TryClearEmitterEffects(string emitterName)`</a> · <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#clearaudioeffects">`ClearAudioEffects`</a> on the emitter of that name.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `emitterName` | `string` | The <a class="ref prop" href="/docs/audio-glossary/types/i-audio-emitter/#name">`Name`</a> of the emitter. |
+
 <h3 id="trygeteffectbyid"><span class="method"><code>TryGetEffectById()</code></span> <a class="ctx" href="/docs/audio-effects/#audiomanager-effect-methods" title="TryGetEffectById() in context on the effect chains page" aria-label="TryGetEffectById() in context on the effect chains page">→</a></h3>
 
 <span class="method"><code><a href="/docs/audio-glossary/types/audio-manager/#trygeteffectbyid">TryGetEffectById</a>(string emitterName, Guid effectId, out <a href="/docs/audio-glossary/effects/base-audio-effect/">BaseAudioEffect</a> effect)</code></span> · <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#trygetaudioeffect">`TryGetAudioEffect`</a> on the emitter of that name.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `emitterName` | `string` | The <a class="ref prop" href="/docs/audio-glossary/types/i-audio-emitter/#name">`Name`</a> of the emitter. |
+| `effectId` | `Guid` | The <a class="ref prop" href="/docs/audio-glossary/effects/base-audio-effect/#id">`Id`</a> of the effect. |
+| `effect` | <code>out&nbsp;<a href="/docs/audio-glossary/effects/base-audio-effect/">BaseAudioEffect</a></code> | The effect, or `null` when there is no emitter of that name or it has no effect with that `Id`. |
+
 <h3 id="trygetemitterbyname"><span class="method"><code>TryGetEmitterByName()</code></span> <a class="ctx" href="/docs/audio-emitters/#audiomanager-emitter-methods" title="TryGetEmitterByName() in context on the emitters page" aria-label="TryGetEmitterByName() in context on the emitters page">→</a></h3>
 
-<span class="method"><code><a href="/docs/audio-glossary/types/audio-manager/#trygetemitterbyname">TryGetEmitterByName</a>(string name, out <a href="/docs/audio-glossary/types/i-audio-emitter/">IAudioEmitter</a> emitter)</code></span> · Finds an emitter by its name.
+<span class="method"><code><a href="/docs/audio-glossary/types/audio-manager/#trygetemitterbyname">TryGetEmitterByName</a>(string name, out <a href="/docs/audio-glossary/types/i-audio-emitter/">IAudioEmitter</a> audioEmitter)</code></span> · Finds an emitter by its name.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | The <a class="ref prop" href="/docs/audio-glossary/types/i-audio-emitter/#name">`Name`</a> to look for. |
+| `audioEmitter` | <code>out&nbsp;<a href="/docs/audio-glossary/types/i-audio-emitter/">IAudioEmitter</a></code> | The emitter, or `null` when there is none of that name. |
 
 <h3 id="tryloadmhrfile"><span class="method"><code>TryLoadMhrFile()</code></span> <a class="ctx" href="/docs/audio-positional/#audiomanager-hrtf-methods" title="TryLoadMhrFile() in context on the positional sound page" aria-label="TryLoadMhrFile() in context on the positional sound page">→</a></h3>
 
 <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#tryloadmhrfile">`TryLoadMhrFile(string path)`</a> · Loads an HRTF data set for every spatial effect: the file at the path, or the embedded set when the path is `null` or can't be opened. `false` when the file isn't a valid data set; no set is loaded then.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `path` | `string` | The HRTF data set file (`.mhr`) to load; `null` loads the embedded set. |
+
 <h3 id="trypauseemitter"><span class="method"><code>TryPauseEmitter()</code></span> <a class="ctx" href="/docs/audio-emitters/#audiomanager-emitter-methods" title="TryPauseEmitter() in context on the emitters page" aria-label="TryPauseEmitter() in context on the emitters page">→</a></h3>
 
 <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#trypauseemitter">`TryPauseEmitter(string name)`</a> · <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#pause">`Pause`</a> on the emitter of that name.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | The <a class="ref prop" href="/docs/audio-glossary/types/i-audio-emitter/#name">`Name`</a> of the emitter. |
 
 <h3 id="tryplayemitter"><span class="method"><code>TryPlayEmitter()</code></span> <a class="ctx" href="/docs/audio-emitters/#audiomanager-emitter-methods" title="TryPlayEmitter() in context on the emitters page" aria-label="TryPlayEmitter() in context on the emitters page">→</a></h3>
 
 <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#tryplayemitter">`TryPlayEmitter(string name)`</a> · <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#play">`Play`</a> on the emitter of that name.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | The <a class="ref prop" href="/docs/audio-glossary/types/i-audio-emitter/#name">`Name`</a> of the emitter. |
+
 <h3 id="tryremoveaudiofromemitter"><span class="method"><code>TryRemoveAudioFromEmitter()</code></span> <a class="ctx" href="/docs/audio-emitters/#audiomanager-emitter-methods" title="TryRemoveAudioFromEmitter() in context on the emitters page" aria-label="TryRemoveAudioFromEmitter() in context on the emitters page">→</a></h3>
 
 <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#tryremoveaudiofromemitter">`TryRemoveAudioFromEmitter(string emitterName, string pathToAudio)`</a> · <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#tryremoveaudio">`TryRemoveAudio`</a> on the emitter of that name.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `emitterName` | `string` | The <a class="ref prop" href="/docs/audio-glossary/types/i-audio-emitter/#name">`Name`</a> of the emitter. |
+| `pathToAudio` | `string` | The path the clip was added with. |
 
 <h3 id="tryremoveeffectfromemitter"><span class="method"><code>TryRemoveEffectFromEmitter()</code></span> <a class="ctx" href="/docs/audio-effects/#audiomanager-effect-methods" title="TryRemoveEffectFromEmitter() in context on the effect chains page" aria-label="TryRemoveEffectFromEmitter() in context on the effect chains page">→</a></h3>
 
 <span class="method"><code><a href="/docs/audio-glossary/types/audio-manager/#tryremoveeffectfromemitter">TryRemoveEffectFromEmitter</a>(string emitterName, <a href="/docs/audio-glossary/effects/base-audio-effect/">BaseAudioEffect</a> effect)</code></span> · <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#tryremoveaudioeffect">`TryRemoveAudioEffect`</a> on the emitter of that name.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `emitterName` | `string` | The <a class="ref prop" href="/docs/audio-glossary/types/i-audio-emitter/#name">`Name`</a> of the emitter. |
+| `effect` | <a class="ref" href="/docs/audio-glossary/effects/base-audio-effect/">`BaseAudioEffect`</a> | The effect to remove, one of that emitter's. |
+
 <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#tryremoveeffectfromemitter">`TryRemoveEffectFromEmitter(string emitterName, Guid effectId)`</a> · The same, by the effect's <a class="ref prop" href="/docs/audio-glossary/effects/base-audio-effect/#id">`Id`</a>.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `emitterName` | `string` | The <a class="ref prop" href="/docs/audio-glossary/types/i-audio-emitter/#name">`Name`</a> of the emitter. |
+| `effectId` | `Guid` | The <a class="ref prop" href="/docs/audio-glossary/effects/base-audio-effect/#id">`Id`</a> of the effect to remove. |
 
 <h3 id="tryremoveemitter"><span class="method"><code>TryRemoveEmitter()</code></span> <a class="ctx" href="/docs/audio-emitters/#audiomanager-emitter-methods" title="TryRemoveEmitter() in context on the emitters page" aria-label="TryRemoveEmitter() in context on the emitters page">→</a></h3>
 
 <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#tryremoveemitter">`TryRemoveEmitter(string name)`</a> · Takes an emitter out of the mix and disposes it.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | The <a class="ref prop" href="/docs/audio-glossary/types/i-audio-emitter/#name">`Name`</a> of the emitter. |
+
 <h3 id="trystopemitter"><span class="method"><code>TryStopEmitter()</code></span> <a class="ctx" href="/docs/audio-emitters/#audiomanager-emitter-methods" title="TryStopEmitter() in context on the emitters page" aria-label="TryStopEmitter() in context on the emitters page">→</a></h3>
 
 <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#trystopemitter">`TryStopEmitter(string name)`</a> · <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#stop">`Stop`</a> on the emitter of that name.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | The <a class="ref prop" href="/docs/audio-glossary/types/i-audio-emitter/#name">`Name`</a> of the emitter. |
 
 <h3 id="update"><span class="method"><code>Update()</code></span> <a class="ctx" href="/docs/audio/#audiomanager-methods" title="Update() in context on the quick start guide" aria-label="Update() in context on the quick start guide">→</a></h3>
 
 <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#update">`Update(float elapsedSeconds)`</a> · Advances every emitter: refreshes its `State`, runs its loop pause and measures its Doppler speeds. Also picks a new output device after a device change. Call it once per frame.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `elapsedSeconds` | `float` | The time since the last call, in seconds, which times the emitters' loop pauses and Doppler speeds. |
+
 ## Events
 
 <h3 id="onmmdevicechanged"><span class="event"><code>OnMmDeviceChanged</code></span> <a class="ctx" href="/docs/audio-mixing/#audiomanager-events" title="OnMmDeviceChanged in context on the mixing page" aria-label="OnMmDeviceChanged in context on the mixing page">→</a></h3>
 
-`()` · The manager has picked the output device again after a change, whether or not it found one. Raised on a thread-pool thread, or through the synchronisation context of the thread that called <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#update">`Update`</a> when it has one, as in a WinForms or WPF tool.
+`()` · The manager has picked the output device again after a change, whether or not it found one. Raised on a thread-pool thread, or through the synchronization context of the thread that called <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#update">`Update`</a> when it has one, as in a WinForms or WPF tool.

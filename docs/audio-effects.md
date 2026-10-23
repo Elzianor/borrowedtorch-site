@@ -33,8 +33,8 @@ sound from:
 emitter.TryAddAudioEffect(AudioEffectTypes.Equalizer, out var eq);
 emitter.TryAddAudioEffect(AudioEffectTypes.Volume, out var volume);
 
-var equaliser = (ThreeBandEqualizerAudioEffect)eq;
-equaliser.LowGainDb = 6;
+var equalizer = (ThreeBandEqualizerAudioEffect)eq;
+equalizer.LowGainDb = 6;
 
 // send -> eq -> volume -> return
 eq.Input = emitter.EffectLoopSend;
@@ -79,14 +79,14 @@ volume.IsBypass = true;  // as if the volume effect weren't there
 volume.IsBypass = false; // back
 ```
 
-Several effects also skip their work by themselves when their settings leave the sound unchanged: an equaliser band at
+Several effects also skip their work by themselves when their settings leave the sound unchanged: an equalizer band at
 0 dB, a pitch of 1, a delay of 0 ms, and Doppler while nothing moves. Don't bypass the send or the return: a bypassed
 send gives silence, and a bypassed return keeps playing through a pause.
 
 ## Removing effects
 
 <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#tryremoveaudioeffect">`TryRemoveAudioEffect`</a> takes an effect out of the emitter and disposes it, found by itself or by its <a class="ref prop" href="/docs/audio-glossary/effects/base-audio-effect/#id">`Id`</a>. An effect in
-the chain leaves a gap, so connect its neighbours again:
+the chain leaves a gap, so connect its neighbors again:
 
 ```csharp
 var before = volume.Input;
@@ -101,7 +101,7 @@ new for every effect and every run, which <a class="ref method" href="/docs/audi
 
 ## Kinds of effects
 
-Most effect types can be added any number of times, such as two equalisers in a row. The positional effects and the
+Most effect types can be added any number of times, such as two equalizers in a row. The positional effects and the
 time position effect read or steer the emitter as a whole, so an emitter has at most one of each, and
 <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#tryaddaudioeffect">`TryAddAudioEffect`</a> returns `false` for a second one.
 
@@ -109,9 +109,9 @@ time position effect read or steer the emitter as a whole, so an emitter has at 
 | --- | --- | --- | --- |
 | <a class="ref" href="/docs/audio-glossary/types/audio-effect-types/#distance">`Distance`</a> | <a class="ref" href="/docs/audio-glossary/effects/distance-audio-effect/">`DistanceAudioEffect`</a> | Yes | [Positional sound](/docs/audio-positional/#distance) |
 | <a class="ref" href="/docs/audio-glossary/types/audio-effect-types/#doppler">`Doppler`</a> | <a class="ref" href="/docs/audio-glossary/effects/doppler-audio-effect/">`DopplerAudioEffect`</a> | Yes | [Positional sound](/docs/audio-positional/#doppler) |
-| <a class="ref" href="/docs/audio-glossary/types/audio-effect-types/#spatial">`Spatial`</a> | <a class="ref" href="/docs/audio-glossary/effects/spatial-audio-effect/">`SpatialAudioEffect`</a> | Yes | [Positional sound](/docs/audio-positional/#spatialisation) |
+| <a class="ref" href="/docs/audio-glossary/types/audio-effect-types/#spatial">`Spatial`</a> | <a class="ref" href="/docs/audio-glossary/effects/spatial-audio-effect/">`SpatialAudioEffect`</a> | Yes | [Positional sound](/docs/audio-positional/#spatialization) |
 | <a class="ref" href="/docs/audio-glossary/types/audio-effect-types/#volume">`Volume`</a> | <a class="ref" href="/docs/audio-glossary/effects/volume-audio-effect/">`VolumeAudioEffect`</a> |  | [Volume, tone and time](/docs/audio-shaping/#volume) |
-| <a class="ref" href="/docs/audio-glossary/types/audio-effect-types/#equalizer">`Equalizer`</a> | <a class="ref" href="/docs/audio-glossary/effects/three-band-equalizer-audio-effect/">`ThreeBandEqualizerAudioEffect`</a> |  | [Volume, tone and time](/docs/audio-shaping/#equaliser) |
+| <a class="ref" href="/docs/audio-glossary/types/audio-effect-types/#equalizer">`Equalizer`</a> | <a class="ref" href="/docs/audio-glossary/effects/three-band-equalizer-audio-effect/">`ThreeBandEqualizerAudioEffect`</a> |  | [Volume, tone and time](/docs/audio-shaping/#equalizer) |
 | <a class="ref" href="/docs/audio-glossary/types/audio-effect-types/#pitch">`Pitch`</a> | <a class="ref" href="/docs/audio-glossary/effects/pitch-audio-effect/">`PitchAudioEffect`</a> |  | [Volume, tone and time](/docs/audio-shaping/#pitch) |
 | <a class="ref" href="/docs/audio-glossary/types/audio-effect-types/#delay">`Delay`</a> | <a class="ref" href="/docs/audio-glossary/effects/delay-audio-effect/">`DelayAudioEffect`</a> |  | [Volume, tone and time](/docs/audio-shaping/#delay) |
 | <a class="ref" href="/docs/audio-glossary/types/audio-effect-types/#fadeinout">`FadeInOut`</a> | <a class="ref" href="/docs/audio-glossary/effects/fade-in-out-audio-effect/">`FadeInOutAudioEffect`</a> |  | [Volume, tone and time](/docs/audio-shaping/#fades) |
@@ -123,11 +123,12 @@ time position effect read or steer the emitter as a whole, so an emitter has at 
 The chain runs in the order you wire it, and the order changes the sound. A good default for a sound in the world:
 
 ```text
-send -> fade -> equaliser -> pitch -> Doppler -> distance -> delay -> reverb -> spatial -> volume -> return
+send -> fade -> equalizer -> pitch -> Doppler -> distance -> delay
+     -> reverb -> spatial -> volume -> return
 ```
 
 - **Spatial near the end.** The spatial effect turns the sound into what each ear hears. Effects after it treat both
-  ears alike, which suits a volume, but an equaliser or a delay belongs before it.
+  ears alike, which suits a volume, but an equalizer or a delay belongs before it.
 - **Reverb before spatial.** The reverb bus then gets the sound before it is placed, and its tail comes from all around,
   as a room's does.
 - **Distance before or after reverb.** After the distance effect, the reverb fades with the sound and keeps the same
@@ -166,7 +167,7 @@ the end of the line instead of the return, and break the chain.
 | Method | Description |
 | --- | --- |
 | <span class="method"><code><a href="/docs/audio-glossary/types/i-audio-emitter/#tryaddaudioeffect">TryAddAudioEffect</a>(<a href="/docs/audio-glossary/types/audio-effect-types/">AudioEffectTypes</a> type, out <a href="/docs/audio-glossary/effects/base-audio-effect/">BaseAudioEffect</a> effect)</code></span> | Creates an effect of a type, not connected to anything. `false` for <a class="ref prop" href="/docs/audio-glossary/types/i-audio-emitter/#effectloopsend">`EffectLoopSend`</a> and <a class="ref prop" href="/docs/audio-glossary/types/i-audio-emitter/#effectloopreturn">`EffectLoopReturn`</a>, and for a second `Distance`, `Doppler`, `Spatial` or <a class="ref prop" href="/docs/audio-glossary/types/i-audio-emitter/#timeposition">`TimePosition`</a>. |
-| <span class="method"><code><a href="/docs/audio-glossary/types/i-audio-emitter/#tryremoveaudioeffect">TryRemoveAudioEffect</a>(<a href="/docs/audio-glossary/effects/base-audio-effect/">BaseAudioEffect</a> effect)</code></span> | Disconnects and disposes an effect of this emitter. An effect in the chain leaves it broken until you connect its neighbours. |
+| <span class="method"><code><a href="/docs/audio-glossary/types/i-audio-emitter/#tryremoveaudioeffect">TryRemoveAudioEffect</a>(<a href="/docs/audio-glossary/effects/base-audio-effect/">BaseAudioEffect</a> effect)</code></span> | Disconnects and disposes an effect of this emitter. An effect in the chain leaves it broken until you connect its neighbors. |
 | <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#tryremoveaudioeffect">`TryRemoveAudioEffect(Guid effectId)`</a> | The same, for the effect with that <a class="ref prop" href="/docs/audio-glossary/effects/base-audio-effect/#id">`Id`</a>. |
 | <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#clearaudioeffects">`ClearAudioEffects()`</a> | Disposes every effect and connects the send straight to the return. |
 | <span class="method"><code><a href="/docs/audio-glossary/types/i-audio-emitter/#trygetaudioeffect">TryGetAudioEffect</a>(Guid effectId, out <a href="/docs/audio-glossary/effects/base-audio-effect/">BaseAudioEffect</a> effect)</code></span> | Finds an effect of this emitter by its <a class="ref prop" href="/docs/audio-glossary/effects/base-audio-effect/#id">`Id`</a>, the send and the return included. |
@@ -189,11 +190,11 @@ the end of the line instead of the return, and break the chain.
 | <a class="ref" href="/docs/audio-glossary/types/audio-effect-types/#effectloopreturn">`EffectLoopReturn`</a> | The end of a chain. Every emitter has one; it can't be added. |
 | <a class="ref" href="/docs/audio-glossary/types/audio-effect-types/#distance">`Distance`</a> | Attenuation and low-pass by distance, see [distance](/docs/audio-positional/#distance). |
 | <a class="ref" href="/docs/audio-glossary/types/audio-effect-types/#doppler">`Doppler`</a> | Pitch shift by the speeds of the listener and the emitter, see [Doppler](/docs/audio-positional/#doppler). |
-| <a class="ref" href="/docs/audio-glossary/types/audio-effect-types/#equalizer">`Equalizer`</a> | A three-band equaliser, see [equaliser](/docs/audio-shaping/#equaliser). |
+| <a class="ref" href="/docs/audio-glossary/types/audio-effect-types/#equalizer">`Equalizer`</a> | A three-band equalizer, see [equalizer](/docs/audio-shaping/#equalizer). |
 | <a class="ref" href="/docs/audio-glossary/types/audio-effect-types/#fadeinout">`FadeInOut`</a> | Fades at the start and the end of each clip, see [fades](/docs/audio-shaping/#fades). |
 | <a class="ref" href="/docs/audio-glossary/types/audio-effect-types/#pitch">`Pitch`</a> | A pitch shift by a factor, see [pitch](/docs/audio-shaping/#pitch). |
 | <a class="ref" href="/docs/audio-glossary/types/audio-effect-types/#reverb">`Reverb`</a> | A send to the reverb bus, see [the reverb bus](/docs/audio-mixing/#the-reverb-bus). |
 | <a class="ref" href="/docs/audio-glossary/types/audio-effect-types/#delay">`Delay`</a> | An echo with feedback, see [delay](/docs/audio-shaping/#delay). |
-| <a class="ref" href="/docs/audio-glossary/types/audio-effect-types/#spatial">`Spatial`</a> | HRTF spatialisation, see [spatialisation](/docs/audio-positional/#spatialisation). |
+| <a class="ref" href="/docs/audio-glossary/types/audio-effect-types/#spatial">`Spatial`</a> | HRTF spatialization, see [spatialization](/docs/audio-positional/#spatialization). |
 | <a class="ref" href="/docs/audio-glossary/types/audio-effect-types/#timeposition">`TimePosition`</a> | Reading and setting the position in the clip, see [time position](/docs/audio-shaping/#time-position). |
 | <a class="ref" href="/docs/audio-glossary/types/audio-effect-types/#volume">`Volume`</a> | A gain, see [volume](/docs/audio-shaping/#volume). |

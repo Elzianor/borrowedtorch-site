@@ -98,7 +98,9 @@ whether a device was found or not:
 audio.OnMmDeviceChanged += () =>
 {
     // on a thread-pool thread: hand the news to the game thread
-    _deviceMessage = audio.IsInitialized ? $"Playing on {audio.MmDeviceName}" : "No audio device";
+    _deviceMessage = audio.IsInitialized
+        ? $"Playing on {audio.MmDeviceName}"
+        : "No audio device";
 };
 ```
 
@@ -109,7 +111,7 @@ device comes back.
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| <a class="ref event" href="/docs/audio-glossary/types/audio-manager/#onmmdevicechanged">`OnMmDeviceChanged`</a> | `()` | The manager has picked the output device again after a change, whether or not it found one. Raised on a thread-pool thread, or through the synchronisation context of the thread that called <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#update">`Update`</a> when it has one, as in a WinForms or WPF tool. |
+| <a class="ref event" href="/docs/audio-glossary/types/audio-manager/#onmmdevicechanged">`OnMmDeviceChanged`</a> | `()` | The manager has picked the output device again after a change, whether or not it found one. Raised on a thread-pool thread, or through the synchronization context of the thread that called <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#update">`Update`</a> when it has one, as in a WinForms or WPF tool. |
 
 ### MmNotificationClient
 
@@ -151,4 +153,4 @@ Events come on these threads:
 | --- | --- |
 | <a class="ref event" href="/docs/audio-glossary/types/i-audio-emitter/#onstatechanged">`IAudioEmitter.OnStateChanged`</a> | The game thread, from <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#update">`Update`</a>; or the thread that rewires the chain. |
 | <a class="ref event" href="/docs/audio-glossary/types/i-audio-emitter/#oncurrentaudiochanged">`IAudioEmitter.OnCurrentAudioChanged`</a> | The thread that calls <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#play">`Play`</a>, <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#stop">`Stop`</a> or a clip method; from <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#update">`Update`</a> for a new loop. |
-| <a class="ref event" href="/docs/audio-glossary/types/audio-manager/#onmmdevicechanged">`AudioManager.OnMmDeviceChanged`</a> | A thread-pool thread, or the synchronisation context of the thread that called <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#update">`Update`</a>. |
+| <a class="ref event" href="/docs/audio-glossary/types/audio-manager/#onmmdevicechanged">`AudioManager.OnMmDeviceChanged`</a> | A thread-pool thread, or the synchronization context of the thread that called <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#update">`Update`</a>. |

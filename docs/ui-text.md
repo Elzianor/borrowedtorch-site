@@ -21,8 +21,8 @@ and draws it from the font atlas. It has no scrolling, editing or rich formattin
 when you need those. <a class="ref method" href="/docs/ui-glossary/elements/list-box/#addtextitem">`ListBox.AddTextItem`</a> and the default items template make their rows from labels.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/text-label-caption.png' | relative_url }}" width="293" height="129" alt="A gold Chapter one caption above a centred paragraph wrapped over three lines">
-  <figcaption>A caption, and a description wrapped in its width with centred lines.</figcaption>
+  <img src="{{ '/assets/img/ui/text-label-caption.png' | relative_url }}" width="293" height="129" alt="A gold Chapter one caption above a centered paragraph wrapped over three lines">
+  <figcaption>A caption, and a description wrapped in its width with centered lines.</figcaption>
 </figure>
 
 ```csharp
@@ -130,7 +130,7 @@ Also used by <a class="ref" href="/docs/ui-glossary/elements/rich-text-box/">`Ri
 | Value | Meaning |
 | --- | --- |
 | <a class="ref" href="/docs/ui-glossary/types/text-alignment/#left">`Left`</a> | Lines start at the left margin. |
-| <a class="ref" href="/docs/ui-glossary/types/text-alignment/#center">`Center`</a> | Lines are centred in the width. |
+| <a class="ref" href="/docs/ui-glossary/types/text-alignment/#center">`Center`</a> | Lines are centered in the width. |
 | <a class="ref" href="/docs/ui-glossary/types/text-alignment/#right">`Right`</a> | Lines end at the right margin. |
 | <a class="ref" href="/docs/ui-glossary/types/text-alignment/#justify">`Justify`</a> | In a wrapping <a class="ref" href="/docs/ui-glossary/elements/rich-text-box/">`RichTextBox`</a>, the spaces of each line are widened so the line fills the width (not the last line of a paragraph). A label draws it like <a class="ref" href="/docs/ui-glossary/types/text-alignment/#left">`Left`</a>. |
 
@@ -141,7 +141,7 @@ Also used by <a class="ref" href="/docs/ui-glossary/elements/rich-text-box/">`Ri
 | Value | Meaning |
 | --- | --- |
 | <a class="ref" href="/docs/ui-glossary/types/vertical-text-alignment/#top">`Top`</a> | The lines start at the top margin. |
-| <a class="ref" href="/docs/ui-glossary/types/vertical-text-alignment/#center">`Center`</a> | The lines are centred in the free height. |
+| <a class="ref" href="/docs/ui-glossary/types/vertical-text-alignment/#center">`Center`</a> | The lines are centered in the free height. |
 | <a class="ref" href="/docs/ui-glossary/types/vertical-text-alignment/#bottom">`Bottom`</a> | The lines end at the bottom margin. |
 
 #### `TextWrap`
@@ -536,7 +536,7 @@ var title = new Label("title")
 };
 ```
 
-**Display scale.** The framework's own font systems (the bundled one and those loaded from a <span class="dp">`FontPath`</span>) rasterise their
+**Display scale.** The framework's own font systems (the bundled one and those loaded from a <span class="dp">`FontPath`</span>) rasterize their
 glyphs at twice the UI scale (a resolution factor between 2 and 8), so text is as sharp at 150 % as at 100 %. When
 <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#scale">`BorrowedTorchUI.Scale`</a> changes they are made again for the new scale, and the elements take them. A font system you
 give by hand keeps the resolution it was created with, so it may look soft at a large scale (see

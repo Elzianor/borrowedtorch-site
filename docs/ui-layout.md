@@ -503,7 +503,7 @@ outside it.
 
 **Moving.** Dragging the title bar with the left button moves the window by changing its <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#margin">`Margin`</a>: the left and top
 margins grow by the mouse movement and the right and bottom ones shrink by it, so a stretched window keeps its size and
-a centred one follows the mouse. <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#isresizable">`IsResizable`</a>, from the [base element](/docs/ui-base-element/#resizing), lets the user resize
+a centered one follows the mouse. <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#isresizable">`IsResizable`</a>, from the [base element](/docs/ui-base-element/#resizing), lets the user resize
 it by its edges.
 
 **Showing and hiding.** A window is visible when created. <a class="ref method" href="/docs/ui-glossary/elements/window/#show">`Show()`</a> and <a class="ref method" href="/docs/ui-glossary/elements/window/#hide">`Hide()`</a> set its <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#visibility">`Visibility`</a> to `Visible` and
@@ -540,7 +540,7 @@ A window has no items: the item methods do nothing on it.
 
 ### DefaultWindowTitleBar
 
-The title bar every window starts with: a <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#background">`Background`</a> image filling the bar, a centred <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#title">`Title`</a> text and a
+The title bar every window starts with: a <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#background">`Background`</a> image filling the bar, a centered <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#title">`Title`</a> text and a
 <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#closebutton">`CloseButton`</a> at the right. In a window it is <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultwindowtitlethickness">`DefaultSettings.DefaultWindowTitleThickness`</a> tall (30 units by
 default), and its close button is always 4 units smaller than that, square. The bar's color comes from
 <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultwindowtitlebarcolor">`DefaultSettings.DefaultWindowTitleBarColor`</a> (see [styles](/docs/ui-styles/)). Reach the parts through the window:
@@ -554,7 +554,7 @@ titleBar.OnCloseButtonClickAction = () => window.Hide();
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#title">`Title`</a> | <a class="ref" href="/docs/ui-glossary/elements/label/">`Label`</a> | Read-only. The title text, centred in the bar. Set its <span class="dp">`Text`</span> and text style properties. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#title">`Title`</a> | <a class="ref" href="/docs/ui-glossary/elements/label/">`Label`</a> | Read-only. The title text, centered in the bar. Set its <span class="dp">`Text`</span> and text style properties. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#closebutton">`CloseButton`</a> | <a class="ref" href="/docs/ui-glossary/elements/button/">`Button`</a> | Read-only. The close button at the right of the bar. It shows no text until you set its <span class="dp">`Text`</span> or `Content`. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#background">`Background`</a> | <a class="ref" href="/docs/ui-glossary/elements/image/">`Image`</a> | Read-only. The image that fills the bar and holds the title and the close button. Its <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> is the bar's color. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#onclosebuttonclickaction">`OnCloseButtonClickAction`</a> | `Action` | What a click on the close button does. In a window's default title bar it is the window's <a class="ref method" href="/docs/ui-glossary/elements/window/#hide">`Hide`</a>. |
@@ -634,7 +634,7 @@ The first tab added opens at once. After that, a tab opens when it is pressed wi
 tab control doesn't change how a tab looks: mark the open one in <a class="ref event" href="/docs/ui-glossary/types/tab-control/#ontabopened">`OnTabOpened`</a>, for example by setting <a class="ref dp" href="/docs/ui-glossary/elements/button/#toggledon">`ToggledOn`</a> on
 toggle buttons. Subscribe before adding the first tab if you want its opening too.
 
-Removing the open tab opens its neighbour (the next one when the first tab was removed, the previous one otherwise),
+Removing the open tab opens its neighbor (the next one when the first tab was removed, the previous one otherwise),
 and a content no tab uses anymore is made visible again. A tab or content that is disposed leaves the control by
 itself. <a class="ref method" href="/docs/ui-glossary/types/disposable-base/#dispose">`Dispose()`</a> (from [`DisposableBase`](/docs/ui-base-element/#disposablebase)) stops the control listening to its tabs.
 
@@ -651,7 +651,7 @@ None of these are dependency properties.
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| <a class="ref event" href="/docs/ui-glossary/types/tab-control/#ontabopened">`OnTabOpened`</a> | <code>(<a href="/docs/ui-glossary/types/tab-control/">TabControl</a> sender, <a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> tab)</code> | Another tab opens: pressed, opened with <a class="ref method" href="/docs/ui-glossary/types/tab-control/#opentab">`OpenTab`</a>, the first one added, or the neighbour of a removed open tab. `tab` is null when the last tab was removed. |
+| <a class="ref event" href="/docs/ui-glossary/types/tab-control/#ontabopened">`OnTabOpened`</a> | <code>(<a href="/docs/ui-glossary/types/tab-control/">TabControl</a> sender, <a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> tab)</code> | Another tab opens: pressed, opened with <a class="ref method" href="/docs/ui-glossary/types/tab-control/#opentab">`OpenTab`</a>, the first one added, or the neighbor of a removed open tab. `tab` is null when the last tab was removed. |
 
 ### TabControl methods
 
@@ -659,7 +659,7 @@ None of these are dependency properties.
 | --- | --- |
 | <a class="ref method" href="/docs/ui-glossary/types/tab-control/#tabcontrol">`TabControl()`</a> | Creates a tab control without tabs. |
 | <span class="method"><code><a href="/docs/ui-glossary/types/tab-control/#addtab">AddTab</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> tab, <a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> content)</code></span> | Adds a tab and its content; the content is hidden unless this is the first tab. Adding a tab again replaces its content. Null arguments are ignored. |
-| <span class="method"><code><a href="/docs/ui-glossary/types/tab-control/#removetab">RemoveTab</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> tab)</code></span> | Removes the tab. When it was open, its neighbour opens. Its content is visible again. |
+| <span class="method"><code><a href="/docs/ui-glossary/types/tab-control/#removetab">RemoveTab</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> tab)</code></span> | Removes the tab. When it was open, its neighbor opens. Its content is visible again. |
 | <span class="method"><code><a href="/docs/ui-glossary/types/tab-control/#opentab">OpenTab</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> tab)</code></span> | Opens the tab, showing its content and hiding the open one. Does nothing for an element that isn't a tab of this control. |
 
 The tab control has no style class.

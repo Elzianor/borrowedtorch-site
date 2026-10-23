@@ -87,27 +87,57 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#tryaddaudio">`TryAddAudio(string path)`</a> · Adds a WAV or Ogg Vorbis clip. A cached emitter decodes it now. `false` for an empty path, a file the emitter has already, or one that can't be opened or decoded.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `path` | `string` | The WAV or Ogg Vorbis file to add. The emitter knows the clip by this path. |
+
 <h3 id="tryaddaudioeffect"><span class="method"><code>TryAddAudioEffect()</code></span> <a class="ctx" href="/docs/audio-effects/#iaudioemitter-effect-methods" title="TryAddAudioEffect() in context on the effect chains page" aria-label="TryAddAudioEffect() in context on the effect chains page">→</a></h3>
 
 <span class="method"><code><a href="/docs/audio-glossary/types/i-audio-emitter/#tryaddaudioeffect">TryAddAudioEffect</a>(<a href="/docs/audio-glossary/types/audio-effect-types/">AudioEffectTypes</a> type, out <a href="/docs/audio-glossary/effects/base-audio-effect/">BaseAudioEffect</a> effect)</code></span> · Creates an effect of a type, not connected to anything. `false` for <a class="ref prop" href="/docs/audio-glossary/types/i-audio-emitter/#effectloopsend">`EffectLoopSend`</a> and <a class="ref prop" href="/docs/audio-glossary/types/i-audio-emitter/#effectloopreturn">`EffectLoopReturn`</a>, and for a second `Distance`, `Doppler`, `Spatial` or <a class="ref prop" href="/docs/audio-glossary/types/i-audio-emitter/#timeposition">`TimePosition`</a>.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `type` | <a class="ref" href="/docs/audio-glossary/types/audio-effect-types/">`AudioEffectTypes`</a> | The kind of effect to create. |
+| `effect` | <code>out&nbsp;<a href="/docs/audio-glossary/effects/base-audio-effect/">BaseAudioEffect</a></code> | The new effect, or `null` when the method returns `false`. |
 
 <h3 id="trygetaudioeffect"><span class="method"><code>TryGetAudioEffect()</code></span> <a class="ctx" href="/docs/audio-effects/#iaudioemitter-effect-methods" title="TryGetAudioEffect() in context on the effect chains page" aria-label="TryGetAudioEffect() in context on the effect chains page">→</a></h3>
 
 <span class="method"><code><a href="/docs/audio-glossary/types/i-audio-emitter/#trygetaudioeffect">TryGetAudioEffect</a>(Guid effectId, out <a href="/docs/audio-glossary/effects/base-audio-effect/">BaseAudioEffect</a> effect)</code></span> · Finds an effect of this emitter by its <a class="ref prop" href="/docs/audio-glossary/effects/base-audio-effect/#id">`Id`</a>, the send and the return included.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `effectId` | `Guid` | The <a class="ref prop" href="/docs/audio-glossary/effects/base-audio-effect/#id">`Id`</a> of the effect. |
+| `effect` | <code>out&nbsp;<a href="/docs/audio-glossary/effects/base-audio-effect/">BaseAudioEffect</a></code> | The effect, or `null` when the emitter has none with that `Id`. |
+
 <h3 id="tryremoveaudio"><span class="method"><code>TryRemoveAudio()</code></span> <a class="ctx" href="/docs/audio-emitters/#iaudioemitter-methods" title="TryRemoveAudio() in context on the emitters page" aria-label="TryRemoveAudio() in context on the emitters page">→</a></h3>
 
 <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#tryremoveaudio">`TryRemoveAudio(string path)`</a> · Takes a clip out and disposes it. When it is the clip playing, another random clip starts. `false` when the emitter doesn't have it.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `path` | `string` | The path the clip was added with. |
+
 <h3 id="tryremoveaudioeffect"><span class="method"><code>TryRemoveAudioEffect()</code></span> <a class="ctx" href="/docs/audio-effects/#iaudioemitter-effect-methods" title="TryRemoveAudioEffect() in context on the effect chains page" aria-label="TryRemoveAudioEffect() in context on the effect chains page">→</a></h3>
 
-<span class="method"><code><a href="/docs/audio-glossary/types/i-audio-emitter/#tryremoveaudioeffect">TryRemoveAudioEffect</a>(<a href="/docs/audio-glossary/effects/base-audio-effect/">BaseAudioEffect</a> effect)</code></span> · Disconnects and disposes an effect of this emitter. An effect in the chain leaves it broken until you connect its neighbours.
+<span class="method"><code><a href="/docs/audio-glossary/types/i-audio-emitter/#tryremoveaudioeffect">TryRemoveAudioEffect</a>(<a href="/docs/audio-glossary/effects/base-audio-effect/">BaseAudioEffect</a> effect)</code></span> · Disconnects and disposes an effect of this emitter. An effect in the chain leaves it broken until you connect its neighbors.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `effect` | <a class="ref" href="/docs/audio-glossary/effects/base-audio-effect/">`BaseAudioEffect`</a> | The effect to remove, one of this emitter's. |
 
 <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#tryremoveaudioeffect">`TryRemoveAudioEffect(Guid effectId)`</a> · The same, for the effect with that <a class="ref prop" href="/docs/audio-glossary/effects/base-audio-effect/#id">`Id`</a>.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `effectId` | `Guid` | The <a class="ref prop" href="/docs/audio-glossary/effects/base-audio-effect/#id">`Id`</a> of the effect to remove. |
 
 <h3 id="update"><span class="method"><code>Update()</code></span> <a class="ctx" href="/docs/audio-emitters/#iaudioemitter-methods" title="Update() in context on the emitters page" aria-label="Update() in context on the emitters page">→</a></h3>
 
 <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#update">`Update(float elapsedSeconds)`</a> · Refreshes the state, runs the loop pause and measures Doppler speeds. <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#update">`AudioManager.Update`</a> calls it for every emitter; don't call it yourself as well.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `elapsedSeconds` | `float` | The time since the last call, in seconds, which times the loop pause and the Doppler speeds. |
 
 ## Events
 
@@ -115,6 +145,14 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <code>(<a href="/docs/audio-glossary/types/i-audio-emitter/">IAudioEmitter</a> sender)</code> · The emitter takes a clip or lets one go: on play, at every loop, on stop, and when the clip playing is removed.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sender` | <a class="ref" href="/docs/audio-glossary/types/i-audio-emitter/">`IAudioEmitter`</a> | The emitter that raised the event. |
+
 <h3 id="onstatechanged"><span class="event"><code>OnStateChanged</code></span> <a class="ctx" href="/docs/audio-emitters/#iaudioemitter-events" title="OnStateChanged in context on the emitters page" aria-label="OnStateChanged in context on the emitters page">→</a></h3>
 
 <code>(<a href="/docs/audio-glossary/types/i-audio-emitter/">IAudioEmitter</a> sender)</code> · <a class="ref prop" href="/docs/audio-glossary/types/i-audio-emitter/#state">`State`</a> changes. From <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#update">`AudioManager.Update`</a> on the game thread, or from the thread that rewires the chain.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sender` | <a class="ref" href="/docs/audio-glossary/types/i-audio-emitter/">`IAudioEmitter`</a> | The emitter that raised the event. |

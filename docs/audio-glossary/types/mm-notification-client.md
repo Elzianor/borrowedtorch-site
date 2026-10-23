@@ -17,6 +17,12 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <a class="ref method" href="/docs/audio-glossary/types/mm-notification-client/#mmnotificationclient">`MmNotificationClient(Action<string, DeviceState> onDeviceStateChangedCallback, Action<string> onDeviceRemovedCallback, Action<DataFlow, Role, string> onDefaultDeviceChangedCallback)`</a> · Creates a client that calls the three callbacks. They are called on a Windows audio thread and must return quickly.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `onDeviceStateChangedCallback` | `Action<string, DeviceState>` | Gets the ID and the new state of a device whose state changes. |
+| `onDeviceRemovedCallback` | `Action<string>` | Gets the ID of a device that is removed. |
+| `onDefaultDeviceChangedCallback` | `Action<DataFlow, Role, string>` | Gets the data flow, the role and the ID of the new default device when a default device changes. |
+
 <h3 id="dispose"><span class="method"><code>Dispose()</code></span> <a class="ctx" href="/docs/audio-mixing/#mmnotificationclient" title="Dispose() in context on the mixing page" aria-label="Dispose() in context on the mixing page">→</a></h3>
 
 <a class="ref method" href="/docs/audio-glossary/types/mm-notification-client/#dispose">`Dispose()`</a> · Stops listening.
@@ -25,21 +31,45 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <a class="ref method" href="/docs/audio-glossary/types/mm-notification-client/#ondefaultdevicechanged">`OnDefaultDeviceChanged(DataFlow flow, Role role, string defaultDeviceId)`</a> · Calls the default device callback, for input and output devices and every role.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `flow` | `DataFlow` | Whether the device plays (`Render`) or records (`Capture`). |
+| `role` | `Role` | The role it is the default device for: `Console`, `Multimedia` or `Communications`. |
+| `defaultDeviceId` | `string` | The ID of the new default device. |
+
 <h3 id="ondeviceadded"><span class="method"><code>OnDeviceAdded()</code></span> <a class="ctx" href="/docs/audio-mixing/#mmnotificationclient" title="OnDeviceAdded() in context on the mixing page" aria-label="OnDeviceAdded() in context on the mixing page">→</a></h3>
 
 <a class="ref method" href="/docs/audio-glossary/types/mm-notification-client/#ondeviceadded">`OnDeviceAdded(string pwstrDeviceId)`</a> · Does nothing.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `pwstrDeviceId` | `string` | The ID of the device added. |
 
 <h3 id="ondeviceremoved"><span class="method"><code>OnDeviceRemoved()</code></span> <a class="ctx" href="/docs/audio-mixing/#mmnotificationclient" title="OnDeviceRemoved() in context on the mixing page" aria-label="OnDeviceRemoved() in context on the mixing page">→</a></h3>
 
 <a class="ref method" href="/docs/audio-glossary/types/mm-notification-client/#ondeviceremoved">`OnDeviceRemoved(string deviceId)`</a> · Calls the removal callback.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `deviceId` | `string` | The ID of the device removed. |
+
 <h3 id="ondevicestatechanged"><span class="method"><code>OnDeviceStateChanged()</code></span> <a class="ctx" href="/docs/audio-mixing/#mmnotificationclient" title="OnDeviceStateChanged() in context on the mixing page" aria-label="OnDeviceStateChanged() in context on the mixing page">→</a></h3>
 
 <a class="ref method" href="/docs/audio-glossary/types/mm-notification-client/#ondevicestatechanged">`OnDeviceStateChanged(string deviceId, DeviceState newState)`</a> · Calls the state callback. Called for every device whose state changes.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `deviceId` | `string` | The ID of the device. |
+| `newState` | `DeviceState` | Its new state: `Active`, `Disabled`, `NotPresent` or `Unplugged`. |
+
 <h3 id="onpropertyvaluechanged"><span class="method"><code>OnPropertyValueChanged()</code></span> <a class="ctx" href="/docs/audio-mixing/#mmnotificationclient" title="OnPropertyValueChanged() in context on the mixing page" aria-label="OnPropertyValueChanged() in context on the mixing page">→</a></h3>
 
 <a class="ref method" href="/docs/audio-glossary/types/mm-notification-client/#onpropertyvaluechanged">`OnPropertyValueChanged(string pwstrDeviceId, PropertyKey key)`</a> · Does nothing.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `pwstrDeviceId` | `string` | The ID of the device. |
+| `key` | `PropertyKey` | The property whose value changed. |
 
 <h3 id="removedeviceenumerator"><span class="method"><code>RemoveDeviceEnumerator()</code></span> <a class="ctx" href="/docs/audio-mixing/#mmnotificationclient" title="RemoveDeviceEnumerator() in context on the mixing page" aria-label="RemoveDeviceEnumerator() in context on the mixing page">→</a></h3>
 
@@ -48,3 +78,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 <h3 id="setdeviceenumerator"><span class="method"><code>SetDeviceEnumerator()</code></span> <a class="ctx" href="/docs/audio-mixing/#mmnotificationclient" title="SetDeviceEnumerator() in context on the mixing page" aria-label="SetDeviceEnumerator() in context on the mixing page">→</a></h3>
 
 <a class="ref method" href="/docs/audio-glossary/types/mm-notification-client/#setdeviceenumerator">`SetDeviceEnumerator(MMDeviceEnumerator deviceEnumerator)`</a> · Starts listening to the notifications of an NAudio device enumerator, and stops listening to the one before.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `deviceEnumerator` | `MMDeviceEnumerator` | The enumerator to listen to; `null` only stops listening. |

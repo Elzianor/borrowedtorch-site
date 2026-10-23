@@ -5,7 +5,7 @@ title: "Glossary: Image"
 description: "The properties, methods and events of Image, in alphabetical order."
 ---
 
-Draws a texture, stretched over the image, centred at its own size or repeated as tiles.
+Draws a texture, stretched over the image, centered at its own size or repeated as tiles.
 
 `Image` derives from [`BaseElement`](/docs/ui-glossary/elements/base-element/) and has its members too. The [images page](/docs/ui-images/#image) shows it in context, with code and screenshots.
 

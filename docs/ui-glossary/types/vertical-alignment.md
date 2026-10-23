@@ -19,7 +19,7 @@ At the top margin.
 
 <h3 id="center"><code>Center</code> <a class="ctx" href="/docs/ui-base-element/#verticalalignment" title="Center in context on the base element page" aria-label="Center in context on the base element page">🠆</a></h3>
 
-Centred between the top and the bottom margin.
+Centered between the top and the bottom margin.
 
 <h3 id="bottom"><code>Bottom</code> <a class="ctx" href="/docs/ui-base-element/#verticalalignment" title="Bottom in context on the base element page" aria-label="Bottom in context on the base element page">🠆</a></h3>
 

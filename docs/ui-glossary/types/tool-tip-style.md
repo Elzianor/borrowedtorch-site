@@ -23,7 +23,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="text"><span class="prop"><code>Text</code></span> <a class="ctx" href="/docs/ui-controls/#tooltip-properties" title="Text in context on the controls page" aria-label="Text in context on the controls page">🠆</a></h3>
 
-`string` · Creates a centred <a class="ref" href="/docs/ui-glossary/elements/label/">`Label`</a> content showing this text, styled by <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#textstyle">`TextStyle`</a>.
+`string` · Creates a centered <a class="ref" href="/docs/ui-glossary/elements/label/">`Label`</a> content showing this text, styled by <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#textstyle">`TextStyle`</a>.
 
 <h3 id="textstyle"><span class="prop"><code>TextStyle</code></span> <a class="ctx" href="/docs/ui-controls/#tooltip-properties" title="TextStyle in context on the controls page" aria-label="TextStyle in context on the controls page">🠆</a></h3>
 

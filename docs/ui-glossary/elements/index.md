@@ -18,11 +18,11 @@ Each element has a page listing its own properties, methods and events in alphab
 | [`ContentContainer`](/docs/ui-glossary/elements/content-container/) | The single-element holder that <a class="ref" href="/docs/ui-glossary/elements/border/">`Border`</a> (and a few controls, such as the check box) keep their content in, and the base class of <a class="ref" href="/docs/ui-glossary/elements/separator/">`Separator`</a>. |
 | [`ContextMenu`](/docs/ui-glossary/elements/context-menu/) | A menu that opens at the mouse on a right click, drawn above everything. |
 | [`ContextMenuItem`](/docs/ui-glossary/elements/context-menu-item/) | An item of a context menu: a check mark while it is checkable and checked, its content, and an arrow at the right end when it opens a sub-menu. |
-| [`DefaultWindowTitleBar`](/docs/ui-glossary/elements/default-window-title-bar/) | The title bar every window starts with: a <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#background">`Background`</a> image filling the bar, a centred <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#title">`Title`</a> text and a <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#closebutton">`CloseButton`</a> at the right. |
+| [`DefaultWindowTitleBar`](/docs/ui-glossary/elements/default-window-title-bar/) | The title bar every window starts with: a <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#background">`Background`</a> image filling the bar, a centered <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#title">`Title`</a> text and a <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#closebutton">`CloseButton`</a> at the right. |
 | [`DragAndDropRepresentation`](/docs/ui-glossary/elements/drag-and-drop-representation/) | The image that follows the mouse during a drag and drop. |
 | [`Grid`](/docs/ui-glossary/elements/grid/) | Lays its items out in columns and rows. |
 | [`GridCell`](/docs/ui-glossary/elements/grid-cell/) | A cell the grid makes to hold the items of one place and span. |
-| [`Image`](/docs/ui-glossary/elements/image/) | Draws a texture, stretched over the image, centred at its own size or repeated as tiles. |
+| [`Image`](/docs/ui-glossary/elements/image/) | Draws a texture, stretched over the image, centered at its own size or repeated as tiles. |
 | [`Label`](/docs/ui-glossary/elements/label/) | A light text element for captions, list rows and short descriptions. |
 | [`ListBox`](/docs/ui-glossary/elements/list-box/) | A scrollable list of rows with single or multiple selection. |
 | [`ListBoxItem`](/docs/ui-glossary/elements/list-box-item/) | A row of a list box. |

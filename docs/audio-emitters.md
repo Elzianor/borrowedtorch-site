@@ -131,7 +131,7 @@ During the pause the state is `Idle`.
 
 ## Position
 
-<a class="ref prop" href="/docs/audio-glossary/types/i-audio-emitter/#position">`Position`</a> places the emitter in the world, in the same units as the listener, usually metres. Its effects follow it at
+<a class="ref prop" href="/docs/audio-glossary/types/i-audio-emitter/#position">`Position`</a> places the emitter in the world, in the same units as the listener, usually meters. Its effects follow it at
 once. Without positional effects in its chain, the position changes nothing; the
 [positional sound page](/docs/audio-positional/) adds distance, Doppler and direction.
 
@@ -184,7 +184,7 @@ The effect methods of an emitter are on the [effect chains page](/docs/audio-eff
 | Method | Description |
 | --- | --- |
 | <span class="method"><code><a href="/docs/audio-glossary/types/audio-manager/#tryaddemitter">TryAddEmitter</a>(string name, <a href="/docs/audio-glossary/types/audio-emitter-types/">AudioEmitterTypes</a> type, out <a href="/docs/audio-glossary/types/i-audio-emitter/">IAudioEmitter</a> emitter)</code></span> | Creates an emitter under a name, starting from the current listener pose. `false` for an empty name or one that is taken. |
-| <span class="method"><code><a href="/docs/audio-glossary/types/audio-manager/#trygetemitterbyname">TryGetEmitterByName</a>(string name, out <a href="/docs/audio-glossary/types/i-audio-emitter/">IAudioEmitter</a> emitter)</code></span> | Finds an emitter by its name. |
+| <span class="method"><code><a href="/docs/audio-glossary/types/audio-manager/#trygetemitterbyname">TryGetEmitterByName</a>(string name, out <a href="/docs/audio-glossary/types/i-audio-emitter/">IAudioEmitter</a> audioEmitter)</code></span> | Finds an emitter by its name. |
 | <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#tryremoveemitter">`TryRemoveEmitter(string name)`</a> | Takes an emitter out of the mix and disposes it. |
 | <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#clearemitters">`ClearEmitters()`</a> | Removes and disposes every emitter. |
 | <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#tryaddaudiotoemitter">`TryAddAudioToEmitter(string emitterName, string pathToAudio)`</a> | <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#tryaddaudio">`TryAddAudio`</a> on the emitter of that name. |

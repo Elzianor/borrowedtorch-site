@@ -5,9 +5,9 @@ title: "Glossary: ThreeBandEqualizerAudioEffect"
 description: "The properties of ThreeBandEqualizerAudioEffect, in alphabetical order."
 ---
 
-A three-band equaliser: a low shelf, a middle peak and a high shelf.
+A three-band equalizer: a low shelf, a middle peak and a high shelf.
 
-`ThreeBandEqualizerAudioEffect` derives from [`BaseAudioEffect`](/docs/audio-glossary/effects/base-audio-effect/) and has its members too. The [volume, tone and time page](/docs/audio-shaping/#equaliser) shows it in context, with code.
+`ThreeBandEqualizerAudioEffect` derives from [`BaseAudioEffect`](/docs/audio-glossary/effects/base-audio-effect/) and has its members too. The [volume, tone and time page](/docs/audio-shaping/#equalizer) shows it in context, with code.
 
 Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>.
 
@@ -63,7 +63,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <h3 id="midfreqhz"><span class="prop"><code>MidFreqHz</code></span> <a class="ctx" href="/docs/audio-shaping/#threebandequalizeraudioeffect-properties" title="MidFreqHz in context on the volume, tone and time page" aria-label="MidFreqHz in context on the volume, tone and time page">→</a></h3>
 
-`float` · The centre of the middle peak. 1 000 Hz by default.
+`float` · The center of the middle peak. 1 000 Hz by default.
 
 <h3 id="midgaindb"><span class="prop"><code>MidGainDb</code></span> <a class="ctx" href="/docs/audio-shaping/#threebandequalizeraudioeffect-properties" title="MidGainDb in context on the volume, tone and time page" aria-label="MidGainDb in context on the volume, tone and time page">→</a></h3>
 

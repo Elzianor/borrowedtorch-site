@@ -17,8 +17,8 @@ These pages cover the library from setup to every public type:
 | [Quick start guide](/docs/audio/) (this page) | Installing, creating the manager in a game, the listener, a complete campfire scene |
 | [Emitters](/docs/audio-emitters/) | Cached and streaming emitters, clips and file formats, playing, looping, states and events |
 | [Effect chains](/docs/audio-effects/) | Wiring effects between an emitter's send and return, bypassing and removing them, the order of effects |
-| [Positional sound](/docs/audio-positional/) | Distance attenuation and air absorption, Doppler, HRTF spatialisation and HRTF data sets |
-| [Volume, tone and time](/docs/audio-shaping/) | Volume, the three-band equaliser, pitch, delay, fades and seeking |
+| [Positional sound](/docs/audio-positional/) | Distance attenuation and air absorption, Doppler, HRTF spatialization and HRTF data sets |
+| [Volume, tone and time](/docs/audio-shaping/) | Volume, the three-band equalizer, pitch, delay, fades and seeking |
 | [Mixing, reverb and output](/docs/audio-mixing/) | The signal path, the master volume, the reverb bus, the output device and threading |
 | [Glossary](/docs/audio-glossary/) | Every public type with its properties, methods and events in alphabetical order, one page per type |
 
@@ -71,7 +71,8 @@ public class MyGame : Game
         _audio = new AudioManager();
 
         // the listener before any sound plays, see "The listener" below
-        _audio.SetListenerData(_camera.Position, _camera.Forward, _camera.Up, _camera.Right);
+        _audio.SetListenerData(_camera.Position, _camera.Forward, _camera.Up,
+            _camera.Right);
 
         // create the emitters here, see "A campfire" below
 
@@ -81,7 +82,8 @@ public class MyGame : Game
     protected override void Update(GameTime gameTime)
     {
         // move the camera first, then hand its pose to the audio
-        _audio.SetListenerData(_camera.Position, _camera.Forward, _camera.Up, _camera.Right);
+        _audio.SetListenerData(_camera.Position, _camera.Forward, _camera.Up,
+            _camera.Right);
         _audio.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
 
         base.Update(gameTime);
@@ -116,9 +118,9 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 | <a class="ref prop" href="/docs/audio-glossary/types/audio-manager/#isinitialized">`IsInitialized`</a> | `bool` | Read-only. Whether an output device is open and playing the mix. `false` while the manager picks a new device, and when no device could be opened. |
 | <a class="ref prop" href="/docs/audio-glossary/types/audio-manager/#waveformat">`WaveFormat`</a> | `WaveFormat` | Read-only. The format of the mix: 32-bit float, two channels, 48 kHz. Every clip is converted to it. |
 | <a class="ref prop" href="/docs/audio-glossary/types/audio-manager/#listenerposition">`ListenerPosition`</a> | `Vector3` | The position of the listener in the world. Setting one listener property at a time updates every emitter each time, so prefer <a class="ref method" href="/docs/audio-glossary/types/audio-manager/#setlistenerdata">`SetListenerData`</a>. |
-| <a class="ref prop" href="/docs/audio-glossary/types/audio-manager/#listenerforward">`ListenerForward`</a> | `Vector3` | The direction the listener faces, normalised. |
-| <a class="ref prop" href="/docs/audio-glossary/types/audio-manager/#listenerup">`ListenerUp`</a> | `Vector3` | The listener's up direction, normalised. |
-| <a class="ref prop" href="/docs/audio-glossary/types/audio-manager/#listenerright">`ListenerRight`</a> | `Vector3` | The listener's right direction, normalised. |
+| <a class="ref prop" href="/docs/audio-glossary/types/audio-manager/#listenerforward">`ListenerForward`</a> | `Vector3` | The direction the listener faces, normalized. |
+| <a class="ref prop" href="/docs/audio-glossary/types/audio-manager/#listenerup">`ListenerUp`</a> | `Vector3` | The listener's up direction, normalized. |
+| <a class="ref prop" href="/docs/audio-glossary/types/audio-manager/#listenerright">`ListenerRight`</a> | `Vector3` | The listener's right direction, normalized. |
 
 ### AudioManager methods
 
@@ -139,7 +141,7 @@ bus and the output device on the [mixing page](/docs/audio-mixing/#audiomanager-
 
 The listener is the pair of ears every sound is mixed for. Distance and Doppler use its position; spatial effects also
 use its forward, up and right directions to tell left from right and front from back. Give all three directions
-normalised and at right angles to each other. The library doesn't assume a handedness: whatever your world's
+normalized and at right angles to each other. The library doesn't assume a handedness: whatever your world's
 convention, `right` is where the listener's right ear points.
 
 Until you set it, the listener sits at the origin with no directions, so set it once before the first sound plays, as
@@ -148,7 +150,7 @@ Until you set it, the listener sits at the origin with no directions, so set it 
 ## A campfire
 
 A looping campfire, fading with distance, with a little room reverb, heard from where it is. For a listener at the
-origin facing −Z, as in MonoGame, it burns four metres ahead and two to the left.
+origin facing −Z, as in MonoGame, it burns four meters ahead and two to the left.
 
 ```csharp
 using System.Numerics;

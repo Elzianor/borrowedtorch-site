@@ -23,7 +23,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <h3 id="expandiconstyle"><span class="dp"><code>ExpandIconStyle</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-properties" title="ExpandIconStyle in context on the lists and menus page" aria-label="ExpandIconStyle in context on the lists and menus page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> · The style of the expand icon of the items, for example its size and margin. By default an 8 by 8 block, centred, with a margin of 4 before and 6 after it.
+<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> · The style of the expand icon of the items, for example its size and margin. By default an 8 by 8 block, centered, with a margin of 4 before and 6 after it.
 
 <h3 id="foldediconcolor"><span class="dp"><code>FoldedIconColor</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-properties" title="FoldedIconColor in context on the lists and menus page" aria-label="FoldedIconColor in context on the lists and menus page">🠆</a></h3>
 

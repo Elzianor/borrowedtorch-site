@@ -12,10 +12,10 @@ Screenshots use the theme from [styles](/docs/ui-styles/#the-theme-of-these-page
 
 ## Image
 
-Draws a texture, stretched over the image, centred at its own size or repeated as tiles.
+Draws a texture, stretched over the image, centered at its own size or repeated as tiles.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/images-fills.png' | relative_url }}" width="514" height="154" alt="Three framed images of one check box texture: stretched over the first, centred in the second and tiled over the third, cut at its right and bottom edges">
+  <img src="{{ '/assets/img/ui/images-fills.png' | relative_url }}" width="514" height="154" alt="Three framed images of one check box texture: stretched over the first, centered in the second and tiled over the third, cut at its right and bottom edges">
   <figcaption>The same frame size with <code>Stretch</code>, <code>Center</code> and <code>Tile</code>.</figcaption>
 </figure>
 
@@ -125,7 +125,7 @@ Shows a picture through a mask texture: where the mask has the key color, the pi
 stays. A portrait in a frame is the usual case.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/images-stencil.png' | relative_url }}" width="354" height="182" alt="A knight portrait inside a gold heraldic frame, and on the right small previews of the portrait labelled source and of the frame labelled stencil">
+  <img src="{{ '/assets/img/ui/images-stencil.png' | relative_url }}" width="354" height="182" alt="A knight portrait inside a gold heraldic frame, and on the right small previews of the portrait labeled source and of the frame labeled stencil">
   <figcaption>The stencil, with its source and stencil textures on the right.</figcaption>
 </figure>
 

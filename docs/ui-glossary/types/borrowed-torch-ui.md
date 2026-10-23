@@ -91,7 +91,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="applygamewindowsize"><span class="method"><code>ApplyGameWindowSize()</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="ApplyGameWindowSize() in context on the quick start guide" aria-label="ApplyGameWindowSize() in context on the quick start guide">🠆</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#applygamewindowsize">`ApplyGameWindowSize(int width, int height)`</a> · Lays the UI out over a screen size in device pixels. A size of 0, such as a minimised window's, is ignored. With <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#followsbackbuffer">`FollowsBackBuffer`</a> on, the size stays until the back buffer changes.
+<a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#applygamewindowsize">`ApplyGameWindowSize(int width, int height)`</a> · Lays the UI out over a screen size in device pixels. A size of 0, such as a minimized window's, is ignored. With <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#followsbackbuffer">`FollowsBackBuffer`</a> on, the size stays until the back buffer changes.
 
 | Parameter | Type | Description |
 | --- | --- | --- |

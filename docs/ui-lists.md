@@ -294,7 +294,7 @@ Rows are added and selected as in a [`ListBox`](#listbox) in `Single` mode: <a c
 list's own properties, so a binding to them works as on a list box.
 
 The selection image is a picture of the selected row's content, drawn at its natural size at the left of the combo
-box and centred vertically. It keeps the side margins the content has in its row (5 units for a text row), so the
+box and centered vertically. It keeps the side margins the content has in its row (5 units for a text row), so the
 chosen value lines up with the rows of the list. It is a texture, so it is not made without a graphics device (for
 example in tests).
 
@@ -442,7 +442,7 @@ when it is collapsed.
 **Icons and indentation.** An item with leaves shows an expand icon before its content. Without <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> the
 icon is a block of <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#foldediconcolor">`FoldedIconColor`</a> (collapsed) or <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#expandediconcolor">`ExpandedIconColor`</a> (expanded), sized and placed by
 <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#expandiconstyle">`ExpandIconStyle`</a>; with <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> it is the `FoldedIcon` or `ExpandedIcon` texture from that folder,
-any picture you like. By default the icon is an 8 by 8 block centred before the content, light grey when
+any picture you like. By default the icon is an 8 by 8 block centered before the content, light gray when
 collapsed and darker when expanded. The screenshot's tree gives it two pictures through <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a>, an arrow
 pointing right and one pointing down, at the theme's 10 by 10 (see [texture sets](/docs/ui-styles/#texture-sets)).
 <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#subitemsshift">`SubItemsShift`</a> indents every level. The tree view's list never uses virtualization.
@@ -457,7 +457,7 @@ pointing right and one pointing down, at the theme's 10 by 10 (see [texture sets
 | <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#selecteditem">`SelectedItem`</a> | <a class="ref" href="/docs/ui-glossary/elements/tree-view-item/">`TreeViewItem`</a> | The selected item, `null` when nothing is selected. Only an item of this tree can be set; the branches above it are expanded. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/tree-view/#leaves">`Leaves`</a> | <code>IReadOnlyList&lt;<a href="/docs/ui-glossary/elements/tree-view-item/">TreeViewItem</a>&gt;</code> | Read-only. The top-level items. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#listboxstyle">`ListBoxStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> | The style of the list the items are shown in, for example its row colors and scroll bars. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#expandiconstyle">`ExpandIconStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> | The style of the expand icon of the items, for example its size and margin. By default an 8 by 8 block, centred, with a margin of 4 before and 6 after it. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#expandiconstyle">`ExpandIconStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> | The style of the expand icon of the items, for example its size and margin. By default an 8 by 8 block, centered, with a margin of 4 before and 6 after it. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#foldediconcolor">`FoldedIconColor`</a> | `Color` | The color of the icon of a collapsed branch, when the tree view has no textures. By default `(150, 150, 160)`. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#expandediconcolor">`ExpandedIconColor`</a> | `Color` | The color of the icon of an expanded branch, when the tree view has no textures. By default `(90, 90, 100)`. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#subitemsshift">`SubItemsShift`</a> | <a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> | How far each level is indented (`Left`) and the space above every row but the first (`Top`), in units. |
@@ -544,7 +544,7 @@ var menu = new ContextMenu("listMenu")
         DesiredWidth = 8,
         DesiredHeight = 8,
         Margin = (12, 0, 6, 0),
-        // centred, so both margins count toward its column
+        // centered, so both margins count toward its column
         HorizontalAlignment = HorizontalAlignment.Center,
         VerticalAlignment = VerticalAlignment.Center
     }
@@ -632,10 +632,10 @@ are only let go (with their sub-menus).
 | <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#placement">`Placement`</a> | <a class="ref" href="/docs/ui-glossary/types/context-menu-placement/">`ContextMenuPlacement`</a> | On which side of the point the menu opens. `BottomRight` by default. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#marginfrommousecursor">`MarginFromMouseCursor`</a> | <a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> | An offset added to the point the menu opens at: `Left` to the x, `Top` to the y, in units. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#submenusopentype">`SubMenusOpenType`</a> | <a class="ref" href="/docs/ui-glossary/types/context-menu-sub-menus-open-type/">`ContextMenuSubMenusOpenType`</a> | Whether the sub-menus of this menu's items open on hover (`OnHover`, the default) or on click. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#borderstyle">`BorderStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/border-style/">`BorderStyle`</a> | The style of the [border](/docs/ui-layout/#border) around the items. By default a white background with a 1 unit dark grey border. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#borderstyle">`BorderStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/border-style/">`BorderStyle`</a> | The style of the [border](/docs/ui-layout/#border) around the items. By default a white background with a 1 unit dark gray border. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#listboxstyle">`ListBoxStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> | The style of the list of the items. By default transparent rows, highlighted in light blue under the mouse and when selected. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#checkiconstyle">`CheckIconStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> | The style of the check mark of a checked item. By default an 8 by 8 unit dark grey square. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#expandiconstyle">`ExpandIconStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> | The style of the arrow of an item with a sub-menu. By default a 6 by 8 unit dark grey block at the right end; with a `Source` it is that picture, as in the screenshot. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#checkiconstyle">`CheckIconStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> | The style of the check mark of a checked item. By default an 8 by 8 unit dark gray square. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#expandiconstyle">`ExpandIconStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> | The style of the arrow of an item with a sub-menu. By default a 6 by 8 unit dark gray block at the right end; with a `Source` it is that picture, as in the screenshot. |
 
 ### ContextMenu events
 

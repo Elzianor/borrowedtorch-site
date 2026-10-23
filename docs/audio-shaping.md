@@ -2,7 +2,7 @@
 layout: docs
 legend: [prop, method]
 title: "Audio: volume, tone and time"
-description: The volume, three-band equaliser, pitch, delay, fade and time position effects.
+description: The volume, three-band equalizer, pitch, delay, fade and time position effects.
 ---
 
 These effects change a sound without caring where it is: how loud it is, its tone, its pitch, its echoes, how it starts
@@ -34,9 +34,9 @@ For the volume of everything at once, use the manager's [master volume](/docs/au
 | <a class="ref prop" href="/docs/audio-glossary/effects/volume-audio-effect/#volume">`Volume`</a> | `float` | The gain, kept within <a class="ref prop" href="/docs/audio-glossary/effects/volume-audio-effect/#volumerange">`VolumeRange`</a>. 1 by default. |
 | <a class="ref prop" href="/docs/audio-glossary/effects/volume-audio-effect/#volumerange">`VolumeRange`</a> | `(float min, float max)` | The lowest and highest <a class="ref prop" href="/docs/audio-glossary/effects/volume-audio-effect/#volume">`Volume`</a>. Negative ends are taken as 0, and the two ends are put in order. Setting it brings <a class="ref prop" href="/docs/audio-glossary/effects/volume-audio-effect/#volume">`Volume`</a> into the new range. `(0, 1)` by default. |
 
-## Equaliser
+## Equalizer
 
-The equaliser has three bands: a low shelf, a peak in the middle and a high shelf. Each band boosts or cuts by its gain
+The equalizer has three bands: a low shelf, a peak in the middle and a high shelf. Each band boosts or cuts by its gain
 in dB, and a band at 0 dB, the default, is switched off and costs nothing.
 
 ```csharp
@@ -80,7 +80,7 @@ animation.
 | <a class="ref prop" href="/docs/audio-glossary/effects/three-band-equalizer-audio-effect/#lowfreqhz">`LowFreqHz`</a> | `float` | Where the low shelf starts. 200 Hz by default. |
 | <a class="ref prop" href="/docs/audio-glossary/effects/three-band-equalizer-audio-effect/#lowslope">`LowSlope`</a> | `float` | How steep the low shelf's step is. 0.707 by default. |
 | <a class="ref prop" href="/docs/audio-glossary/effects/three-band-equalizer-audio-effect/#midgaindb">`MidGainDb`</a> | `float` | The boost or cut of the middle peak, in dB. 0 switches the band off. |
-| <a class="ref prop" href="/docs/audio-glossary/effects/three-band-equalizer-audio-effect/#midfreqhz">`MidFreqHz`</a> | `float` | The centre of the middle peak. 1 000 Hz by default. |
+| <a class="ref prop" href="/docs/audio-glossary/effects/three-band-equalizer-audio-effect/#midfreqhz">`MidFreqHz`</a> | `float` | The center of the middle peak. 1 000 Hz by default. |
 | <a class="ref prop" href="/docs/audio-glossary/effects/three-band-equalizer-audio-effect/#midq">`MidQ`</a> | `float` | How narrow the middle peak is; higher is narrower. 1 by default. |
 | <a class="ref prop" href="/docs/audio-glossary/effects/three-band-equalizer-audio-effect/#highgaindb">`HighGainDb`</a> | `float` | The boost or cut of the high shelf, in dB. 0 switches the band off. |
 | <a class="ref prop" href="/docs/audio-glossary/effects/three-band-equalizer-audio-effect/#highfreqhz">`HighFreqHz`</a> | `float` | Where the high shelf starts. 6 000 Hz by default. |

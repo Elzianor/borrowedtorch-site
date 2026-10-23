@@ -39,7 +39,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <h3 id="loudnessdb"><span class="prop"><code>LoudnessDb</code></span> <a class="ctx" href="/docs/audio-positional/#distanceaudioeffect-properties" title="LoudnessDb in context on the positional sound page" aria-label="LoudnessDb in context on the positional sound page">→</a></h3>
 
-`float` · The level of the sound one metre away, in dB. Sets <a class="ref prop" href="/docs/audio-glossary/effects/distance-audio-effect/#maxaudibledistancemeters">`MaxAudibleDistanceMeters`</a>. Negative values are taken as 0. 0 by default, so the sound is silent past one metre until you set it.
+`float` · The level of the sound one meter away, in dB. Sets <a class="ref prop" href="/docs/audio-glossary/effects/distance-audio-effect/#maxaudibledistancemeters">`MaxAudibleDistanceMeters`</a>. Negative values are taken as 0. 0 by default, so the sound is silent past one meter until you set it.
 
 <h3 id="maxaudibledistancemeters"><span class="prop"><code>MaxAudibleDistanceMeters</code></span> <a class="ctx" href="/docs/audio-positional/#distanceaudioeffect-properties" title="MaxAudibleDistanceMeters in context on the positional sound page" aria-label="MaxAudibleDistanceMeters in context on the positional sound page">→</a></h3>
 

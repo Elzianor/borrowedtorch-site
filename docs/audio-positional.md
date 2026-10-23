@@ -2,7 +2,7 @@
 layout: docs
 legend: [prop, method]
 title: "Audio: positional sound"
-description: Distance attenuation and air absorption, Doppler, HRTF spatialisation, HRTF data sets and demo mode.
+description: Distance attenuation and air absorption, Doppler, HRTF spatialization, HRTF data sets and demo mode.
 ---
 
 Three effects place a sound in the world: the distance effect makes it quieter and duller the further it is, the
@@ -10,7 +10,7 @@ Doppler effect bends its pitch while it moves, and the spatial effect makes it c
 reads the emitter's <a class="ref prop" href="/docs/audio-glossary/types/i-audio-emitter/#position">`Position`</a> and the [listener](/docs/audio/#the-listener), and follows them when they change. An
 emitter has at most one of each. Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>.
 
-Positions are in metres: the speed of sound, air absorption and the distances in HRTF data sets all assume it.
+Positions are in meters: the speed of sound, air absorption and the distances in HRTF data sets all assume it.
 
 ## Distance
 
@@ -25,8 +25,8 @@ distance.LoudnessDb = 40;                       // carries about 95 m
 Console.WriteLine(distance.MaxAudibleDistanceMeters);
 ```
 
-<a class="ref prop" href="/docs/audio-glossary/effects/distance-audio-effect/#loudnessdb">`LoudnessDb`</a> is the level of the sound one metre away. The audible distance is where that level, falling by 6 dB for
-every doubling of distance and by the air absorption for every metre, reaches the hearing threshold. With the default
+<a class="ref prop" href="/docs/audio-glossary/effects/distance-audio-effect/#loudnessdb">`LoudnessDb`</a> is the level of the sound one meter away. The audible distance is where that level, falling by 6 dB for
+every doubling of distance and by the air absorption for every meter, reaches the hearing threshold. With the default
 environment:
 
 | `LoudnessDb` | Audible up to | For example |
@@ -37,7 +37,7 @@ environment:
 | 50 | 271 m | A shout, an engine |
 | 60 | 677 m | A bell, an explosion far off |
 
-<a class="ref prop" href="/docs/audio-glossary/effects/distance-audio-effect/#loudnessdb">`LoudnessDb`</a> is 0 by default, which makes the sound fall silent within a metre, so always set it.
+<a class="ref prop" href="/docs/audio-glossary/effects/distance-audio-effect/#loudnessdb">`LoudnessDb`</a> is 0 by default, which makes the sound fall silent within a meter, so always set it.
 
 Between the listener and the audible distance, two curves shape the sound. Both take how close the emitter is, from 1
 at the listener to 0 at the audible distance, and give a value from 0 to 1:
@@ -55,10 +55,12 @@ sounds closer to real life than the straight line:
 using BorrowedTorch.ShapingFunctions;
 
 // quiet soon, then a long faint tail
-distance.DistanceVolumeAttenuationFunction = ShapingFunctionFactory.Create(ShapingFunctionId.QuadraticEaseIn);
+distance.DistanceVolumeAttenuationFunction =
+    ShapingFunctionFactory.Create(ShapingFunctionId.QuadraticEaseIn);
 
 // stays bright longer, then dulls near the edge
-distance.DistanceCutoffAttenuationFunction = ShapingFunctionFactory.Create(ShapingFunctionId.SineEaseOut);
+distance.DistanceCutoffAttenuationFunction =
+    ShapingFunctionFactory.Create(ShapingFunctionId.SineEaseOut);
 distance.DistanceMinimumCutoffHz = 400;
 ```
 
@@ -68,7 +70,7 @@ Two static settings of <a class="ref" href="/docs/audio-glossary/types/audio-man
 
 - **<a class="ref prop" href="/docs/audio-glossary/types/audio-manager/#hearingminimumdb">`HearingMinimumDb`</a>.** The level below which nothing is heard, 0 dB by default. Raise it for a noisy place where
   quiet sounds get lost sooner.
-- **<a class="ref prop" href="/docs/audio-glossary/types/audio-manager/#airsoundabsorptioncoefficient">`AirSoundAbsorptionCoefficient`</a>.** How much the air takes away, in dB per metre, 0.005 by default. Raise it for fog
+- **<a class="ref prop" href="/docs/audio-glossary/types/audio-manager/#airsoundabsorptioncoefficient">`AirSoundAbsorptionCoefficient`</a>.** How much the air takes away, in dB per meter, 0.005 by default. Raise it for fog
   or a thick forest.
 
 A distance effect works out its audible distance when its <a class="ref prop" href="/docs/audio-glossary/effects/distance-audio-effect/#loudnessdb">`LoudnessDb`</a> is set, so change the environment before you set
@@ -78,7 +80,7 @@ the loudness of your sounds, or set it again afterwards.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <a class="ref prop" href="/docs/audio-glossary/effects/distance-audio-effect/#loudnessdb">`LoudnessDb`</a> | `float` | The level of the sound one metre away, in dB. Sets <a class="ref prop" href="/docs/audio-glossary/effects/distance-audio-effect/#maxaudibledistancemeters">`MaxAudibleDistanceMeters`</a>. Negative values are taken as 0. 0 by default, so the sound is silent past one metre until you set it. |
+| <a class="ref prop" href="/docs/audio-glossary/effects/distance-audio-effect/#loudnessdb">`LoudnessDb`</a> | `float` | The level of the sound one meter away, in dB. Sets <a class="ref prop" href="/docs/audio-glossary/effects/distance-audio-effect/#maxaudibledistancemeters">`MaxAudibleDistanceMeters`</a>. Negative values are taken as 0. 0 by default, so the sound is silent past one meter until you set it. |
 | <a class="ref prop" href="/docs/audio-glossary/effects/distance-audio-effect/#maxaudibledistancemeters">`MaxAudibleDistanceMeters`</a> | `float` | Read-only. How far the sound carries: where its level falls to <a class="ref prop" href="/docs/audio-glossary/types/audio-manager/#hearingminimumdb">`HearingMinimumDb`</a>, with the air absorption. Worked out when <a class="ref prop" href="/docs/audio-glossary/effects/distance-audio-effect/#loudnessdb">`LoudnessDb`</a> is set. |
 | <a class="ref prop" href="/docs/audio-glossary/effects/distance-audio-effect/#distancevolumeattenuationfunction">`DistanceVolumeAttenuationFunction`</a> | `BaseShapingFunction` | Turns how close the emitter is, 1 at the listener to 0 at the audible distance, into the gain. `null` sets the default straight line. |
 | <a class="ref prop" href="/docs/audio-glossary/effects/distance-audio-effect/#distancecutoffattenuationfunction">`DistanceCutoffAttenuationFunction`</a> | `BaseShapingFunction` | Turns how close the emitter is into the low-pass cutoff, from <a class="ref prop" href="/docs/audio-glossary/effects/distance-audio-effect/#distanceminimumcutoffhz">`DistanceMinimumCutoffHz`</a> at 0 to <a class="ref prop" href="/docs/audio-glossary/effects/distance-audio-effect/#distancemaximumcutoffhz">`DistanceMaximumCutoffHz`</a> at 1. `null` sets the default straight line. |
@@ -110,11 +112,11 @@ A jump, such as a teleport or a respawn, reads as a very fast move and bends the
 | <a class="ref prop" href="/docs/audio-glossary/effects/doppler-audio-effect/#isdemomode">`IsDemoMode`</a> | `bool` | Measures the emitter's speed from the moves of <a class="ref prop" href="/docs/audio-glossary/effects/doppler-audio-effect/#demoemitterposition">`DemoEmitterPosition`</a>, around a listener standing still at the origin. See [demo mode](#demo-mode). |
 | <a class="ref prop" href="/docs/audio-glossary/effects/doppler-audio-effect/#demoemitterposition">`DemoEmitterPosition`</a> | `Vector3` | Where the sound is in demo mode. Move it between updates to hear the effect. |
 
-## Spatialisation
+## Spatialization
 
 The spatial effect makes a sound come from its direction, in front or behind, left or right, above or below, as
 headphones would carry it from a real source. It uses an HRTF, a head-related transfer function: for each direction, a
-pair of short filters, one per ear, measured on a real or modelled head. The effect finds the emitter's direction in
+pair of short filters, one per ear, measured on a real or modeled head. The effect finds the emitter's direction in
 the listener's frame, blends the filters of the nearest measured directions, and filters the sound for each ear with
 the right delay between them.
 
@@ -159,7 +161,7 @@ its own distance.
 | <a class="ref prop" href="/docs/audio-glossary/types/audio-manager/#ishrtfdataloaded">`IsHrtfDataLoaded`</a> | `bool` | Read-only. Whether an HRTF data set is loaded. Without one, spatial effects pass sound through. |
 | <a class="ref prop" href="/docs/audio-glossary/types/audio-manager/#mhrfilepath">`MhrFilePath`</a> | `string` | Read-only. The file the loaded data set came from, `null` when it is the embedded set or none is loaded. |
 | <a class="ref prop" href="/docs/audio-glossary/types/audio-manager/#hearingminimumdb">`HearingMinimumDb`</a> | `float` | Static. The level below which nothing is heard, in dB. 0 by default. Distance effects use it when their `LoudnessDb` is set. |
-| <a class="ref prop" href="/docs/audio-glossary/types/audio-manager/#airsoundabsorptioncoefficient">`AirSoundAbsorptionCoefficient`</a> | `float` | Static. How much the air absorbs, in dB per metre. 0.005 by default. Distance effects use it when their `LoudnessDb` is set. |
+| <a class="ref prop" href="/docs/audio-glossary/types/audio-manager/#airsoundabsorptioncoefficient">`AirSoundAbsorptionCoefficient`</a> | `float` | Static. How much the air absorbs, in dB per meter. 0.005 by default. Distance effects use it when their `LoudnessDb` is set. |
 
 ### AudioManager HRTF methods
 
@@ -190,7 +192,7 @@ distance.IsDemoMode = true;
 doppler.IsDemoMode = true;
 spatial.IsDemoMode = true;
 
-// two metres to the right and a little ahead, for all three
+// two meters to the right and a little ahead, for all three
 var position = new Vector3(2, 0, -0.5f);
 distance.DemoEmitterPosition = position;
 doppler.DemoEmitterPosition = position;

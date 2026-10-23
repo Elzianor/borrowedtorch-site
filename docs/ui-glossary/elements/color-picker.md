@@ -5,7 +5,7 @@ title: "Glossary: ColorPicker"
 description: "The properties, methods and events of ColorPicker, in alphabetical order."
 ---
 
-A color wheel to pick a color from with a click. The hue goes around the centre, the saturation grows from white at the centre to the full color at the edge, and <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#brightness">`Brightness`</a> darkens the result.
+A color wheel to pick a color from with a click. The hue goes around the center, the saturation grows from white at the center to the full color at the edge, and <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#brightness">`Brightness`</a> darkens the result.
 
 `ColorPicker` derives from [`BaseElement`](/docs/ui-glossary/elements/base-element/) and has its members too. The [controls page](/docs/ui-controls/#colorpicker) shows it in context, with code and screenshots.
 

@@ -15,15 +15,15 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="borderstyle"><span class="prop"><code>BorderStyle</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenu-properties" title="BorderStyle in context on the lists and menus page" aria-label="BorderStyle in context on the lists and menus page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/border-style/">`BorderStyle`</a> · The style of the [border](/docs/ui-layout/#border) around the items. By default a white background with a 1 unit dark grey border.
+<a class="ref" href="/docs/ui-glossary/types/border-style/">`BorderStyle`</a> · The style of the [border](/docs/ui-layout/#border) around the items. By default a white background with a 1 unit dark gray border.
 
 <h3 id="checkiconstyle"><span class="prop"><code>CheckIconStyle</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenu-properties" title="CheckIconStyle in context on the lists and menus page" aria-label="CheckIconStyle in context on the lists and menus page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> · The style of the check mark of a checked item. By default an 8 by 8 unit dark grey square.
+<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> · The style of the check mark of a checked item. By default an 8 by 8 unit dark gray square.
 
 <h3 id="expandiconstyle"><span class="prop"><code>ExpandIconStyle</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenu-properties" title="ExpandIconStyle in context on the lists and menus page" aria-label="ExpandIconStyle in context on the lists and menus page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> · The style of the arrow of an item with a sub-menu. By default a 6 by 8 unit dark grey block at the right end; with a `Source` it is that picture, as in the screenshot.
+<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> · The style of the arrow of an item with a sub-menu. By default a 6 by 8 unit dark gray block at the right end; with a `Source` it is that picture, as in the screenshot.
 
 <h3 id="listboxstyle"><span class="prop"><code>ListBoxStyle</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenu-properties" title="ListBoxStyle in context on the lists and menus page" aria-label="ListBoxStyle in context on the lists and menus page">🠆</a></h3>
 

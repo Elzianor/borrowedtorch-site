@@ -65,7 +65,7 @@ Without textures the button is drawn in the solid color of its state. With <a cl
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <a class="ref dp" href="/docs/ui-glossary/elements/button/#text">`Text`</a> | `string` | Creates a centred <a class="ref" href="/docs/ui-glossary/elements/label/">`Label`</a> content showing this text, styled by <a class="ref dp" href="/docs/ui-glossary/elements/button/#textstyle">`TextStyle`</a>. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/button/#text">`Text`</a> | `string` | Creates a centered <a class="ref" href="/docs/ui-glossary/elements/label/">`Label`</a> content showing this text, styled by <a class="ref dp" href="/docs/ui-glossary/elements/button/#textstyle">`TextStyle`</a>. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/button/#content">`Content`</a> | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | Any element shown inside the button instead of a text. A content you give is detached, not disposed, when it is replaced. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/button/#type">`Type`</a> | <a class="ref" href="/docs/ui-glossary/types/button-type/">`ButtonType`</a> | How the button reacts to the mouse: `Normal`, `Repeat` or `Toggle`. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/button/#toggledon">`ToggledOn`</a> | `bool` | Whether a `Toggle` button is on. Set it to switch the button from code; <a class="ref event" href="/docs/ui-glossary/elements/button/#ontoggled">`OnToggled`</a> is raised. |
@@ -190,7 +190,7 @@ ui.AddElementToRoot(mirrored);
 ```
 
 The box is a square as high as the check box, and the content takes the rest of the width beside it. Without a
-<a class="ref dp" href="/docs/ui-glossary/elements/base-element/#desiredheight">`DesiredHeight`</a> the check box is as high as its content. A text content is left-aligned, vertically centred and kept
+<a class="ref dp" href="/docs/ui-glossary/elements/base-element/#desiredheight">`DesiredHeight`</a> the check box is as high as its content. A text content is left-aligned, vertically centered and kept
 5 units from the box.
 
 Like a button click, a change happens when the left button is released over the check box it was pressed on. A
@@ -379,12 +379,12 @@ ui.AddElementToRoot(Scaled(2.0f, 0.6f, 84));    // wide and flat
 ```
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/controls-slider-thumb-margin.png' | relative_url }}" width="334" height="86" alt="Two sliders with a small thumb, centred and resting on the bottom edge">
-  <figcaption><code>ThumbMargin</code>: the same thumb centred, then moved down with a top of 8.</figcaption>
+  <img src="{{ '/assets/img/ui/controls-slider-thumb-margin.png' | relative_url }}" width="334" height="86" alt="Two sliders with a small thumb, centered and resting on the bottom edge">
+  <figcaption><code>ThumbMargin</code>: the same thumb centered, then moved down with a top of 8.</figcaption>
 </figure>
 
 ```csharp
-// a thumb 10 high on a slider 18 high: centred, then resting on the bottom edge
+// a thumb 10 high on a slider 18 high: centered, then resting on the bottom edge
 Slider Small(Margin thumbMargin, int top) => new()
 {
     DesiredWidth = 300,
@@ -400,7 +400,7 @@ Slider Small(Margin thumbMargin, int top) => new()
 
 ui.AddElementToRoot(Small(Margin.Zero, 16));
 
-// centred below ThumbMargin.Top (ThumbMargin.Left when vertical)
+// centered below ThumbMargin.Top (ThumbMargin.Left when vertical)
 ui.AddElementToRoot(Small((0, 8), 50));
 ```
 
@@ -472,7 +472,7 @@ marks are drawn in their colors with or without textures.
 | <a class="ref dp" href="/docs/ui-glossary/elements/slider/#tickpassedcolor">`TickPassedColor`</a> | `Color` | The color of the tick marks at or below the value. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/slider/#tickremainingcolor">`TickRemainingColor`</a> | `Color` | The color of the tick marks above the value. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/slider/#thumbscale">`ThumbScale`</a> | `Vector2` | The thumb's width (`X`) and height (`Y`) as a share of the slider's thickness. On a scroll bar with <a class="ref prop" href="/docs/ui-glossary/elements/slider/#contentsize">`ContentSize`</a> and <a class="ref prop" href="/docs/ui-glossary/elements/slider/#viewsize">`ViewSize`</a>, the length along the track comes from them instead. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#thumbmargin">`ThumbMargin`</a> | <a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> | Moves the thumb across the track: it is centred in the slider's thickness minus `ThumbMargin.Top` (horizontal) or `ThumbMargin.Left` (vertical). The other sides are not used. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#thumbmargin">`ThumbMargin`</a> | <a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> | Moves the thumb across the track: it is centered in the slider's thickness minus `ThumbMargin.Top` (horizontal) or `ThumbMargin.Left` (vertical). The other sides are not used. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/slider/#thumbminsize">`ThumbMinSize`</a> | `float` | The smallest length of the thumb along the track, in units. It keeps a scroll bar's thumb usable over long content. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/slider/#movetopoint">`MoveToPoint`</a> | `bool` | When set, a click on the track moves the thumb to the clicked point instead of stepping. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/slider/#contentsize">`ContentSize`</a> | `Point` | The size of the content a scroll bar scrolls, in units. Changing it keeps the same content in view. |
@@ -635,7 +635,7 @@ which does not wrap; the tooltip's own <a class="ref dp" href="/docs/ui-glossary
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#text">`Text`</a> | `string` | Creates a centred <a class="ref" href="/docs/ui-glossary/elements/label/">`Label`</a> content showing this text, styled by <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#textstyle">`TextStyle`</a>. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#text">`Text`</a> | `string` | Creates a centered <a class="ref" href="/docs/ui-glossary/elements/label/">`Label`</a> content showing this text, styled by <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#textstyle">`TextStyle`</a>. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#content">`Content`</a> | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | Any element shown in the tooltip instead of a text. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#placement">`Placement`</a> | <a class="ref" href="/docs/ui-glossary/types/tool-tip-placement/">`ToolTipPlacement`</a> | Which side of the cursor the tooltip appears on. `TopLeft` is the default. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#marginfrommousecursor">`MarginFromMouseCursor`</a> | <a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> | The shift from the cursor, in units: `Left` is added to the x position and `Top` to the y position, whatever the placement (use negative values to move a `TopLeft` tooltip away from the cursor). The other sides are not used. |
@@ -663,8 +663,8 @@ Style class: <a class="ref" href="/docs/ui-glossary/types/tool-tip-style/">`Tool
 
 ## ColorPicker
 
-A color wheel to pick a color from with a click. The hue goes around the centre, the saturation grows from white
-at the centre to the full color at the edge, and <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#brightness">`Brightness`</a> darkens the result.
+A color wheel to pick a color from with a click. The hue goes around the center, the saturation grows from white
+at the center to the full color at the edge, and <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#brightness">`Brightness`</a> darkens the result.
 
 <figure class="shot">
   <img src="{{ '/assets/img/ui/controls-colorpicker.png' | relative_url }}" width="334" height="222" alt="A square color wheel with a ring pointer on a light yellow-green, and a swatch of the picked color beside it">

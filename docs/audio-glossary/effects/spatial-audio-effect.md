@@ -7,7 +7,7 @@ description: "The properties of SpatialAudioEffect, in alphabetical order."
 
 Makes the sound come from the emitter's direction around the listener, with an HRTF.
 
-`SpatialAudioEffect` derives from [`BaseAudioEffect`](/docs/audio-glossary/effects/base-audio-effect/) and has its members too. The [positional sound page](/docs/audio-positional/#spatialisation) shows it in context, with code.
+`SpatialAudioEffect` derives from [`BaseAudioEffect`](/docs/audio-glossary/effects/base-audio-effect/) and has its members too. The [positional sound page](/docs/audio-positional/#spatialization) shows it in context, with code.
 
 Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>.
 

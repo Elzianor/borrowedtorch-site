@@ -16,7 +16,7 @@ The lines start at the top margin.
 
 <h3 id="center"><code>Center</code> <a class="ctx" href="/docs/ui-text/#verticaltextalignment" title="Center in context on the text page" aria-label="Center in context on the text page">🠆</a></h3>
 
-The lines are centred in the free height.
+The lines are centered in the free height.
 
 <h3 id="bottom"><code>Bottom</code> <a class="ctx" href="/docs/ui-text/#verticaltextalignment" title="Bottom in context on the text page" aria-label="Bottom in context on the text page">🠆</a></h3>
 

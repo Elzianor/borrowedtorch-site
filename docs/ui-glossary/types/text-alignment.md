@@ -16,7 +16,7 @@ Lines start at the left margin.
 
 <h3 id="center"><code>Center</code> <a class="ctx" href="/docs/ui-text/#textalignment" title="Center in context on the text page" aria-label="Center in context on the text page">🠆</a></h3>
 
-Lines are centred in the width.
+Lines are centered in the width.
 
 <h3 id="right"><code>Right</code> <a class="ctx" href="/docs/ui-text/#textalignment" title="Right in context on the text page" aria-label="Right in context on the text page">🠆</a></h3>
 

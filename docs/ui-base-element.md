@@ -27,7 +27,7 @@ result back as <a class="ref prop" href="/docs/ui-glossary/elements/base-element
 are logical units: one unit is one pixel at 100 % display scale (see the [quick start guide](/docs/ui/#display-scaling)).
 
 In its slot an element is placed by its alignment and margins: `Left` / `Top` at its left / top margin, `Right` /
-`Bottom` at its right / bottom margin, `Center` centred between both margins, `Stretch` over the whole slot less both
+`Bottom` at its right / bottom margin, `Center` centered between both margins, `Stretch` over the whole slot less both
 margins. A `Stretch` element that has a desired size is placed at its left / top margin.
 
 A child's margin counts toward the content size of a parent that fits its content only on the side the child is
@@ -76,7 +76,7 @@ The measure and arrange methods (<a class="ref method" href="/docs/ui-glossary/e
 | --- | --- |
 | <a class="ref" href="/docs/ui-glossary/types/horizontal-alignment/#stretch">`Stretch`</a> | Fills the slot less both margins when the element has no <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#desiredwidth">`DesiredWidth`</a>, otherwise sits at the left margin. |
 | <a class="ref" href="/docs/ui-glossary/types/horizontal-alignment/#left">`Left`</a> | At the left margin. |
-| <a class="ref" href="/docs/ui-glossary/types/horizontal-alignment/#center">`Center`</a> | Centred between the left and the right margin. |
+| <a class="ref" href="/docs/ui-glossary/types/horizontal-alignment/#center">`Center`</a> | Centered between the left and the right margin. |
 | <a class="ref" href="/docs/ui-glossary/types/horizontal-alignment/#right">`Right`</a> | At the right margin. |
 
 #### `VerticalAlignment`
@@ -85,7 +85,7 @@ The measure and arrange methods (<a class="ref method" href="/docs/ui-glossary/e
 | --- | --- |
 | <a class="ref" href="/docs/ui-glossary/types/vertical-alignment/#stretch">`Stretch`</a> | Fills the slot less both margins when the element has no <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#desiredheight">`DesiredHeight`</a>, otherwise sits at the top margin. |
 | <a class="ref" href="/docs/ui-glossary/types/vertical-alignment/#top">`Top`</a> | At the top margin. |
-| <a class="ref" href="/docs/ui-glossary/types/vertical-alignment/#center">`Center`</a> | Centred between the top and the bottom margin. |
+| <a class="ref" href="/docs/ui-glossary/types/vertical-alignment/#center">`Center`</a> | Centered between the top and the bottom margin. |
 | <a class="ref" href="/docs/ui-glossary/types/vertical-alignment/#bottom">`Bottom`</a> | At the bottom margin. |
 
 #### `Orientation`
@@ -178,7 +178,7 @@ one (it can be negative) goes below, and siblings with the same <a class="ref dp
 layout, the order of the items and the keyboard order stay as they are.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/base-zindex.png' | relative_url }}" width="374" height="138" alt="Three overlapping cards, First, Second and Third, where the lower Second card covers a corner of each of its neighbours">
+  <img src="{{ '/assets/img/ui/base-zindex.png' | relative_url }}" width="374" height="138" alt="Three overlapping cards, First, Second and Third, where the lower Second card covers a corner of each of its neighbors">
   <figcaption>The second card has a ZIndex of 1, so it lies over the third card, which was added after it.</figcaption>
 </figure>
 
@@ -201,7 +201,7 @@ var first = Card("First", new Color(233, 194, 122), 16, 16);
 var second = Card("Second", new Color(242, 166, 90), 116, 40);
 var third = Card("Third", new Color(181, 199, 122), 216, 16);
 
-// added second, drawn last: above both of its neighbours
+// added second, drawn last: above both of its neighbors
 second.ZIndex = 1;
 
 ui.AddElementToRoot(first);
@@ -550,7 +550,7 @@ tooltip or menu belongs to one element at a time: giving it to another element t
 Set <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#isresizable">`IsResizable`</a> to let the user resize an element with the mouse. It gets resize areas over its edges and corners,
 reaching <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#resizeareahalfwidth">`ResizeAreaHalfWidth`</a> units to each side of the edge, with the resize cursors of its <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#mousecursorsset">`MouseCursorsSet`</a>.
 Dragging an area changes <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#desiredwidth">`DesiredWidth`</a> / <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#desiredheight">`DesiredHeight`</a> (or the margins of a stretched element without a desired
-size) so that the opposite edge stays where it was; a centred element grows on both sides. The size stays within
+size) so that the opposite edge stays where it was; a centered element grows on both sides. The size stays within
 <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#minwidth">`MinWidth`</a> ... <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#maxheight">`MaxHeight`</a>; without a minimum it is at least two resize areas wide. The element needs a parent; the root can't be made
 resizable.
 

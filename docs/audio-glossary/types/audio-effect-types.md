@@ -29,7 +29,7 @@ Pitch shift by the speeds of the listener and the emitter, see [Doppler](/docs/a
 
 <h3 id="equalizer"><code>Equalizer</code> <a class="ctx" href="/docs/audio-effects/#audioeffecttypes" title="Equalizer in context on the effect chains page" aria-label="Equalizer in context on the effect chains page">→</a></h3>
 
-A three-band equaliser, see [equaliser](/docs/audio-shaping/#equaliser).
+A three-band equalizer, see [equalizer](/docs/audio-shaping/#equalizer).
 
 <h3 id="fadeinout"><code>FadeInOut</code> <a class="ctx" href="/docs/audio-effects/#audioeffecttypes" title="FadeInOut in context on the effect chains page" aria-label="FadeInOut in context on the effect chains page">→</a></h3>
 
@@ -49,7 +49,7 @@ An echo with feedback, see [delay](/docs/audio-shaping/#delay).
 
 <h3 id="spatial"><code>Spatial</code> <a class="ctx" href="/docs/audio-effects/#audioeffecttypes" title="Spatial in context on the effect chains page" aria-label="Spatial in context on the effect chains page">→</a></h3>
 
-HRTF spatialisation, see [spatialisation](/docs/audio-positional/#spatialisation).
+HRTF spatialization, see [spatialization](/docs/audio-positional/#spatialization).
 
 <h3 id="timeposition"><code>TimePosition</code> <a class="ctx" href="/docs/audio-effects/#audioeffecttypes" title="TimePosition in context on the effect chains page" aria-label="TimePosition in context on the effect chains page">→</a></h3>
 

@@ -142,7 +142,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 | <span class="method">`Update(GameTime gameTime)`</span> | Runs timers and animations, lays out what changed, and handles the mouse. Poll the input before it. |
 | <span class="method">`Draw()`</span> | Draws the whole tree with the sprite batch, beginning and ending it itself. |
 | <span class="prop">`FollowsBackBuffer`</span> | Whether the UI takes the back buffer's size by itself, at the start of every <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#update">`Update`</a>. On by default. Turn it off for a UI drawn into a render target of its own size. Turned on again, it takes the back buffer's size at the next update. |
-| <span class="method">`ApplyGameWindowSize(int width, int height)`</span> | Lays the UI out over a screen size in device pixels. A size of 0, such as a minimised window's, is ignored. With <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#followsbackbuffer">`FollowsBackBuffer`</a> on, the size stays until the back buffer changes. |
+| <span class="method">`ApplyGameWindowSize(int width, int height)`</span> | Lays the UI out over a screen size in device pixels. A size of 0, such as a minimized window's, is ignored. With <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#followsbackbuffer">`FollowsBackBuffer`</a> on, the size stays until the back buffer changes. |
 | <span class="prop">`Scale`</span> | How large one logical unit is on screen, see [display scaling](#display-scaling). Between <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-ui/#minscale">`MinScale`</a> (0.25) and <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-ui/#maxscale">`MaxScale`</a> (8). |
 | <span class="prop">`FollowsDisplayScale`</span> | Whether <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#scale">`Scale`</a> follows the display scale of the window's monitor, times <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#displayscalefactor">`DisplayScaleFactor`</a>. Turned on, it sets the scale at once and then follows the window to other monitors. A scale set by hand stays until the DPI changes. Off by default. Needs the window constructor, otherwise turning it on throws. |
 | <span class="prop">`DisplayScaleFactor`</span> | What the display scale is multiplied with while following: a UI size setting of the game. 1 by default, a positive number. Set while following, it applies at once. |
@@ -229,7 +229,7 @@ Give the parent a <a class="ref dp" href="/docs/ui-glossary/elements/base-elemen
 </figure>
 
 ```csharp
-// one look for every label: centred text on a brown fill; no text margin,
+// one look for every label: centered text on a brown fill; no text margin,
 // so a fitted label hugs its text
 Label Swatch(string text) => new()
 {
@@ -366,7 +366,7 @@ set by hand stays until the DPI changes. Following needs the constructor that ta
 
 The layout doesn't change with the scale. Sizes, margins, positions, font sizes and the mouse positions in events
 all stay in logical units; only the drawing, the clipping and the reading of the mouse are scaled, and fonts are
-rasterised for the scale. The screen size stays in device pixels, whether it is the back buffer's or one given to
+rasterized for the scale. The screen size stays in device pixels, whether it is the back buffer's or one given to
 `ApplyGameWindowSize`, and the root covers it in logical units: at 150 % a 1920 x 1200 back buffer is a 1280 x 800
 layout. The screenshots on these pages are rendered at a scale of 2.
 

@@ -43,7 +43,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="thumbmargin"><span class="prop"><code>ThumbMargin</code></span> <a class="ctx" href="/docs/ui-controls/#slider-properties" title="ThumbMargin in context on the controls page" aria-label="ThumbMargin in context on the controls page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> · Moves the thumb across the track: it is centred in the slider's thickness minus `ThumbMargin.Top` (horizontal) or `ThumbMargin.Left` (vertical). The other sides are not used.
+<a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> · Moves the thumb across the track: it is centered in the slider's thickness minus `ThumbMargin.Top` (horizontal) or `ThumbMargin.Left` (vertical). The other sides are not used.
 
 <h3 id="thumbminsize"><span class="prop"><code>ThumbMinSize</code></span> <a class="ctx" href="/docs/ui-controls/#slider-properties" title="ThumbMinSize in context on the controls page" aria-label="ThumbMinSize in context on the controls page">🠆</a></h3>
 

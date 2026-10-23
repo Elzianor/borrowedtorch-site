@@ -19,7 +19,7 @@ At the left margin.
 
 <h3 id="center"><code>Center</code> <a class="ctx" href="/docs/ui-base-element/#horizontalalignment" title="Center in context on the base element page" aria-label="Center in context on the base element page">🠆</a></h3>
 
-Centred between the left and the right margin.
+Centered between the left and the right margin.
 
 <h3 id="right"><code>Right</code> <a class="ctx" href="/docs/ui-base-element/#horizontalalignment" title="Right in context on the base element page" aria-label="Right in context on the base element page">🠆</a></h3>
 

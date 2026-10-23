@@ -46,7 +46,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="removetab"><span class="method"><code>RemoveTab()</code></span> <a class="ctx" href="/docs/ui-layout/#tabcontrol-methods" title="RemoveTab() in context on the layout page" aria-label="RemoveTab() in context on the layout page">🠆</a></h3>
 
-<span class="method"><code><a href="/docs/ui-glossary/types/tab-control/#removetab">RemoveTab</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> tab)</code></span> · Removes the tab. When it was open, its neighbour opens. Its content is visible again.
+<span class="method"><code><a href="/docs/ui-glossary/types/tab-control/#removetab">RemoveTab</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> tab)</code></span> · Removes the tab. When it was open, its neighbor opens. Its content is visible again.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
@@ -56,7 +56,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="ontabopened"><span class="event"><code>OnTabOpened</code></span> <a class="ctx" href="/docs/ui-layout/#tabcontrol-events" title="OnTabOpened in context on the layout page" aria-label="OnTabOpened in context on the layout page">🠆</a></h3>
 
-<code>(<a href="/docs/ui-glossary/types/tab-control/">TabControl</a> sender, <a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> tab)</code> · Another tab opens: pressed, opened with <a class="ref method" href="/docs/ui-glossary/types/tab-control/#opentab">`OpenTab`</a>, the first one added, or the neighbour of a removed open tab. `tab` is null when the last tab was removed.
+<code>(<a href="/docs/ui-glossary/types/tab-control/">TabControl</a> sender, <a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> tab)</code> · Another tab opens: pressed, opened with <a class="ref method" href="/docs/ui-glossary/types/tab-control/#opentab">`OpenTab`</a>, the first one added, or the neighbor of a removed open tab. `tab` is null when the last tab was removed.
 
 | Parameter | Type | Description |
 | --- | --- | --- |

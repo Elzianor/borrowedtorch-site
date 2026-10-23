@@ -18,6 +18,6 @@ Each effect has a page listing its own properties and methods in alphabetical or
 | [`PitchAudioEffect`](/docs/audio-glossary/effects/pitch-audio-effect/) | Raises or lowers the pitch by a factor, without changing how long the sound lasts. |
 | [`ReverbAudioEffect`](/docs/audio-glossary/effects/reverb-audio-effect/) | Sends part of the sound to the shared reverb bus. |
 | [`SpatialAudioEffect`](/docs/audio-glossary/effects/spatial-audio-effect/) | Makes the sound come from the emitter's direction around the listener, with an HRTF. |
-| [`ThreeBandEqualizerAudioEffect`](/docs/audio-glossary/effects/three-band-equalizer-audio-effect/) | A three-band equaliser: a low shelf, a middle peak and a high shelf. |
+| [`ThreeBandEqualizerAudioEffect`](/docs/audio-glossary/effects/three-band-equalizer-audio-effect/) | A three-band equalizer: a low shelf, a middle peak and a high shelf. |
 | [`TimePositionAudioEffect`](/docs/audio-glossary/effects/time-position-audio-effect/) | Reads and moves the playing position of the current clip. |
 | [`VolumeAudioEffect`](/docs/audio-glossary/effects/volume-audio-effect/) | Multiplies the sound by a gain kept within a range. |
