@@ -49,10 +49,6 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <a class="ref" href="/docs/ui-glossary/types/view-port-style/">`ViewPortStyle`</a> · A style for this element only, applied over the general style. Setting it to null takes its values back out.
 
-<h3 id="visiblerectangle"><span class="prop"><code>VisibleRectangle</code></span> <a class="ctx" href="/docs/ui-images/#viewport-properties" title="VisibleRectangle in context on the images page" aria-label="VisibleRectangle in context on the images page">🠆</a></h3>
-
-`Rectangle` · Read-only. The part of the view port that is on screen, in logical units like the element's bounds: smaller than the view port where a parent crops it. The scissor rectangle is set to its device pixels.
-
 ## Methods
 
 <h3 id="viewport"><span class="method"><code>ViewPort()</code></span> <a class="ctx" href="/docs/ui-images/#viewport-methods" title="ViewPort() in context on the images page" aria-label="ViewPort() in context on the images page">🠆</a></h3>

@@ -113,6 +113,10 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 `int` · How many rows the element covers; values below 1 are taken as 1.
 
+<h3 id="hitrectangle"><span class="prop"><code>HitRectangle</code></span> <a class="ctx" href="/docs/ui-base-element/#size-and-position-properties" title="HitRectangle in context on the base element page" aria-label="HitRectangle in context on the base element page">🠆</a></h3>
+
+`Rectangle` · Read-only. The part of the element on screen: its bounds as its cropping parents leave them (a scrollable container, <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#cropoutsideofparentborder">`CropOutsideOfParentBorder`</a>), empty when it is cropped away. The mouse hits the element only inside it.
+
 <h3 id="hitrectanglecolor"><span class="prop"><code>HitRectangleColor</code></span> <a class="ctx" href="/docs/ui-base-element/#debug-helpers" title="HitRectangleColor in context on the base element page" aria-label="HitRectangleColor in context on the base element page">🠆</a></h3>
 
 `Color` · The colour of the hit rectangle outline, `White` by default.

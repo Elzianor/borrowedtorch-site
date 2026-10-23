@@ -230,7 +230,7 @@ of them. Before it runs, the UI ends its sprite batch and sets three device stat
   <a class="ref dp" href="/docs/ui-glossary/elements/view-port/#maxdepth">`MaxDepth`</a> as its depth range. Draw relative to it: `(0, 0)` is the view port's top left corner, and
   `GraphicsDevice.Viewport.Width` and `Height` give its size. The drawing is not scaled by the UI's display scale, so
   size it by these device pixels.
-- `GraphicsDevice.ScissorRectangle` is the part of the view port that is on screen (<a class="ref prop" href="/docs/ui-glossary/elements/view-port/#visiblerectangle">`VisibleRectangle`</a>, in device
+- `GraphicsDevice.ScissorRectangle` is the part of the view port that is on screen (its <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#hitrectangle">`HitRectangle`</a>, in device
   pixels). The viewport keeps its full size when a parent crops the view port, so the projection of your drawing does
   not change while it scrolls.
 - `GraphicsDevice.RasterizerState` is a state with `ScissorTestEnable` set, so draws that keep it are cut to the
@@ -247,7 +247,7 @@ container). Give your own batches a rasterizer state with the scissor test on; c
 ```csharp
 var clipped = new RasterizerState { ScissorTestEnable = true };
 
-batch.Begin(rasterizerState: clipped);   // cut to scene.VisibleRectangle
+batch.Begin(rasterizerState: clipped);   // cut to scene.HitRectangle
 ```
 
 A view port doesn't take the mouse by default (its style sets <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#hittest">`HitTest`</a> to `false`).
@@ -257,7 +257,6 @@ A view port doesn't take the mouse by default (its style sets <a class="ref dp" 
 | Property | Type | Description |
 | --- | --- | --- |
 | <a class="ref prop" href="/docs/ui-glossary/elements/view-port/#drawinstructions">`DrawInstructions`</a> | `Action` | Your drawing code, run every frame inside the view port as described above. |
-| <a class="ref prop" href="/docs/ui-glossary/elements/view-port/#visiblerectangle">`VisibleRectangle`</a> | `Rectangle` | Read-only. The part of the view port that is on screen, in logical units like the element's bounds: smaller than the view port where a parent crops it. The scissor rectangle is set to its device pixels. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/view-port/#devicebounds">`DeviceBounds`</a> | `Rectangle` | Read-only. The view port's bounds in device pixels, the rectangle `GraphicsDevice.Viewport` is set to. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/view-port/#mindepth">`MinDepth`</a> | `float` | The minimum depth of the viewport's depth range. Defaults to <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultmindepth">`DefaultSettings.DefaultMinDepth`</a> (`0`). |
 | <a class="ref dp" href="/docs/ui-glossary/elements/view-port/#maxdepth">`MaxDepth`</a> | `float` | The maximum depth of the viewport's depth range. Defaults to <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultmaxdepth">`DefaultSettings.DefaultMaxDepth`</a> (`1`). |

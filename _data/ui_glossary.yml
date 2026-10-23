@@ -80,6 +80,9 @@
         - title: "Grid<wbr>Row<wbr>Span"
           anchor: gridrowspan
           kind: dp
+        - title: "Hit<wbr>Rectangle"
+          anchor: hitrectangle
+          kind: prop
         - title: "Hit<wbr>Rectangle<wbr>Color"
           anchor: hitrectanglecolor
           kind: prop
@@ -1861,9 +1864,6 @@
           kind: prop
         - title: "Style<wbr>Override"
           anchor: styleoverride
-          kind: prop
-        - title: "Visible<wbr>Rectangle"
-          anchor: visiblerectangle
           kind: prop
         - title: "View<wbr>Port()"
           anchor: viewport
