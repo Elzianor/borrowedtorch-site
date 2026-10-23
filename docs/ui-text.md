@@ -190,7 +190,7 @@ RichTextBox.RichImages.Add(LoadTexture("CheckBox/Checked.png"));
 var hint = new RichTextBox("hint")
 {
     Text = "Press [c=0]Space[/] to jump and [c=1]E[/] to use. " +
-           "Quests marked [i=0][/] are done, read the [a=0]help[/] for more.",
+           "Quests marked [i=0/] are done, read the [a=0]help[/] for more.",
     Formatting = RichTextBoxFormatting.Rich,
     WrapType = TextWrap.Wrap,
     DesiredWidth = 440,
@@ -243,9 +243,10 @@ turn a line on and off:
 | `[u=1]` | The following text is underlined in its own colour, through the spaces between its words. `[u=0]` ends the underline. |
 | `[s=1]` | The following text is struck through in its own colour, like an underline. `[s=0]` ends it. |
 | `[/]` | Ends all formatting. |
+| `[.../]` | A self-closing tag, such as `[i=0/]` or `[c=1,i=0/]`: its instructions apply to that place only (an image, for `i`), and the formatting around it goes on. |
 
 Instructions combine, as in `[c=0,a=1]help[/]`. The formatting goes on over the following words until `[/]`, so
-`[c=0]two words[/]` colours both. An image tag goes on too, so close it at once, as in `[i=0][/]`. An index past the end of its list is ignored. To show a bracket itself, escape it with
+`[c=0]two words[/]` colours both. An image tag goes on too, so close it at once: write it self-closing, as in `[i=0/]`, or follow it with `[/]`. An index past the end of its list is ignored. To show a bracket itself, escape it with
 a backslash: `\[` and `\]` (`"\\["` in a C# string).
 
 A link is drawn like the text around it, so give it a colour as well if it should stand out. Over a link the mouse shows
@@ -255,30 +256,11 @@ the action. The tags work in read-only boxes only: a `ReadWrite` box shows its t
 ### Editing
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/text-input.png' | relative_url }}" width="474" height="138" alt="A one-line name field holding Ash with the caret after it, and a larger two-line notes field">
-  <figcaption>A one-line input with its caret, and a wrapping multi-line input.</figcaption>
+  <img src="{{ '/assets/img/ui/text-input.png' | relative_url }}" width="474" height="90" alt="A two-line notes field with its first two words selected">
+  <figcaption>A wrapping multi-line input with a selection.</figcaption>
 </figure>
 
 ```csharp
-var name = new RichTextBox("playerName")
-{
-    Type = RichTextBoxType.ReadWrite,
-    Text = "Ash",
-    DesiredWidth = 240,
-    DesiredHeight = 32,
-    TextMargin = (8, 0),
-    VerticalTextAlignment = VerticalTextAlignment.Center,
-    BackgroundColor = new Color(40, 31, 23),
-    HorizontalAlignment = HorizontalAlignment.Left,
-    VerticalAlignment = VerticalAlignment.Top,
-    Margin = (16, 16),
-    // every assigned text goes through it
-    TextFilter = text => text.Length > 16 ? text[..16] : text
-};
-
-// Enter, or the editing ended
-name.OnApply += (sender, text) => Console.WriteLine($"Name: {text}");
-
 var notes = new RichTextBox("notes")
 {
     Type = RichTextBoxType.ReadWrite,
@@ -290,10 +272,9 @@ var notes = new RichTextBox("notes")
     BackgroundColor = new Color(40, 31, 23),
     HorizontalAlignment = HorizontalAlignment.Left,
     VerticalAlignment = VerticalAlignment.Top,
-    Margin = (16, 64)
+    Margin = (16, 16)
 };
 
-ui.AddElementToRoot(name);
 ui.AddElementToRoot(notes);
 ```
 
