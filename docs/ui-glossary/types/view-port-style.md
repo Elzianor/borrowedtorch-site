@@ -13,11 +13,11 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 ## Properties
 
-<h3 id="maxdepth"><span class="prop"><code>MaxDepth</code></span> <a class="ctx" href="/docs/ui-images/#viewport-properties" title="MaxDepth in context on the images page" aria-label="MaxDepth in context on the images page">➤</a></h3>
+<h3 id="maxdepth"><span class="prop"><code>MaxDepth</code></span> <a class="ctx" href="/docs/ui-images/#viewport-properties" title="MaxDepth in context on the images page" aria-label="MaxDepth in context on the images page">🠆</a></h3>
 
 `float` · The maximum depth of the viewport's depth range. Defaults to <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultmaxdepth">`DefaultSettings.DefaultMaxDepth`</a> (`1`).
 
-<h3 id="mindepth"><span class="prop"><code>MinDepth</code></span> <a class="ctx" href="/docs/ui-images/#viewport-properties" title="MinDepth in context on the images page" aria-label="MinDepth in context on the images page">➤</a></h3>
+<h3 id="mindepth"><span class="prop"><code>MinDepth</code></span> <a class="ctx" href="/docs/ui-images/#viewport-properties" title="MinDepth in context on the images page" aria-label="MinDepth in context on the images page">🠆</a></h3>
 
 `float` · The minimum depth of the viewport's depth range. Defaults to <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultmindepth">`DefaultSettings.DefaultMinDepth`</a> (`0`).
 
@@ -27,6 +27,6 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 <a class="ref method" href="/docs/ui-glossary/types/view-port-style/#viewportstyle">`ViewPortStyle()`</a>
 
-<h3 id="isset"><span class="method"><code>IsSet()</code></span> <a class="ctx" href="/docs/ui-styles/#basestyle" title="IsSet() in context on the styles page" aria-label="IsSet() in context on the styles page">➤</a></h3>
+<h3 id="isset"><span class="method"><code>IsSet()</code></span> <a class="ctx" href="/docs/ui-styles/#basestyle" title="IsSet() in context on the styles page" aria-label="IsSet() in context on the styles page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/types/view-port-style/#isset">`IsSet(string propertyName)`</a> · Whether the property is assigned to this style, so the style applies it. Pass the name with `nameof`; an unknown name gives `false`.

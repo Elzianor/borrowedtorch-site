@@ -13,15 +13,15 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 ## Properties
 
-<h3 id="listboxstyle"><span class="prop"><code>ListBoxStyle</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-properties" title="ListBoxStyle in context on the lists and menus page" aria-label="ListBoxStyle in context on the lists and menus page">➤</a></h3>
+<h3 id="listboxstyle"><span class="prop"><code>ListBoxStyle</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-properties" title="ListBoxStyle in context on the lists and menus page" aria-label="ListBoxStyle in context on the lists and menus page">🠆</a></h3>
 
 <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> · The style of the drop-down list, for example its row colours.
 
-<h3 id="selectionstyle"><span class="prop"><code>SelectionStyle</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-properties" title="SelectionStyle in context on the lists and menus page" aria-label="SelectionStyle in context on the lists and menus page">➤</a></h3>
+<h3 id="selectionstyle"><span class="prop"><code>SelectionStyle</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-properties" title="SelectionStyle in context on the lists and menus page" aria-label="SelectionStyle in context on the lists and menus page">🠆</a></h3>
 
 <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> · The style of the image that shows the selected row. The image is only as large as the row's content, so a background colour here lies just behind the chosen value; the combo box's own <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> colours the whole field.
 
-<h3 id="togglebuttonstyle"><span class="prop"><code>ToggleButtonStyle</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-properties" title="ToggleButtonStyle in context on the lists and menus page" aria-label="ToggleButtonStyle in context on the lists and menus page">➤</a></h3>
+<h3 id="togglebuttonstyle"><span class="prop"><code>ToggleButtonStyle</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-properties" title="ToggleButtonStyle in context on the lists and menus page" aria-label="ToggleButtonStyle in context on the lists and menus page">🠆</a></h3>
 
 <a class="ref" href="/docs/ui-glossary/types/button-style/">`ButtonStyle`</a> · The style of the [button](/docs/ui-controls/#button) that opens and closes the list, for example its width and text.
 
@@ -31,6 +31,6 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 <a class="ref method" href="/docs/ui-glossary/types/combo-box-style/#comboboxstyle">`ComboBoxStyle()`</a>
 
-<h3 id="isset"><span class="method"><code>IsSet()</code></span> <a class="ctx" href="/docs/ui-styles/#basestyle" title="IsSet() in context on the styles page" aria-label="IsSet() in context on the styles page">➤</a></h3>
+<h3 id="isset"><span class="method"><code>IsSet()</code></span> <a class="ctx" href="/docs/ui-styles/#basestyle" title="IsSet() in context on the styles page" aria-label="IsSet() in context on the styles page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/types/combo-box-style/#isset">`IsSet(string propertyName)`</a> · Whether the property is assigned to this style, so the style applies it. Pass the name with `nameof`; an unknown name gives `false`.

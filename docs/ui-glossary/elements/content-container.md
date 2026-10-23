@@ -13,16 +13,16 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 ## Properties
 
-<h3 id="content"><span class="prop"><code>Content</code></span> <a class="ctx" href="/docs/ui-layout/#contentcontainer" title="Content in context on the layout page" aria-label="Content in context on the layout page">➤</a></h3>
+<h3 id="content"><span class="prop"><code>Content</code></span> <a class="ctx" href="/docs/ui-layout/#contentcontainer" title="Content in context on the layout page" aria-label="Content in context on the layout page">🠆</a></h3>
 
 <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> · Read-only. The element the container holds: its first item, or null.
 
-<h3 id="mousecursorsset"><span class="prop"><code>MouseCursorsSet</code></span> <a class="ctx" href="/docs/ui-layout/#contentcontainer" title="MouseCursorsSet in context on the layout page" aria-label="MouseCursorsSet in context on the layout page">➤</a></h3>
+<h3 id="mousecursorsset"><span class="prop"><code>MouseCursorsSet</code></span> <a class="ctx" href="/docs/ui-layout/#contentcontainer" title="MouseCursorsSet in context on the layout page" aria-label="MouseCursorsSet in context on the layout page">🠆</a></h3>
 
 <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> · Read-only. The cursors of the container's parent, so the container shows the cursors of its control.
 
 ## Methods
 
-<h3 id="contentcontainer"><span class="method"><code>ContentContainer()</code></span> <a class="ctx" href="/docs/ui-layout/#contentcontainer" title="ContentContainer() in context on the layout page" aria-label="ContentContainer() in context on the layout page">➤</a></h3>
+<h3 id="contentcontainer"><span class="method"><code>ContentContainer()</code></span> <a class="ctx" href="/docs/ui-layout/#contentcontainer" title="ContentContainer() in context on the layout page" aria-label="ContentContainer() in context on the layout page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/content-container/#contentcontainer">`ContentContainer(string name = null)`</a> · Creates a content container. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>.

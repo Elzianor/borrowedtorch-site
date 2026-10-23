@@ -13,16 +13,16 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 ## Properties
 
-<h3 id="isdisposed"><span class="prop"><code>IsDisposed</code></span> <a class="ctx" href="/docs/ui-base-element/#disposablebase" title="IsDisposed in context on the base element page" aria-label="IsDisposed in context on the base element page">➤</a></h3>
+<h3 id="isdisposed"><span class="prop"><code>IsDisposed</code></span> <a class="ctx" href="/docs/ui-base-element/#disposablebase" title="IsDisposed in context on the base element page" aria-label="IsDisposed in context on the base element page">🠆</a></h3>
 
 `bool` · Read-only. True once <a class="ref method" href="/docs/ui-glossary/types/disposable-base/#dispose">`Dispose()`</a> was called.
 
 ## Methods
 
-<h3 id="dispose"><span class="method"><code>Dispose()</code></span> <a class="ctx" href="/docs/ui-base-element/#disposablebase" title="Dispose() in context on the base element page" aria-label="Dispose() in context on the base element page">➤</a></h3>
+<h3 id="dispose"><span class="method"><code>Dispose()</code></span> <a class="ctx" href="/docs/ui-base-element/#disposablebase" title="Dispose() in context on the base element page" aria-label="Dispose() in context on the base element page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/types/disposable-base/#dispose">`Dispose()`</a> · Marks the object disposed and runs <a class="ref method" href="/docs/ui-glossary/types/disposable-base/#disposehandler">`DisposeHandler`</a> once; later calls do nothing.
 
-<h3 id="disposehandler"><span class="method"><code>DisposeHandler()</code></span> <a class="ctx" href="/docs/ui-base-element/#disposablebase" title="DisposeHandler() in context on the base element page" aria-label="DisposeHandler() in context on the base element page">➤</a></h3>
+<h3 id="disposehandler"><span class="method"><code>DisposeHandler()</code></span> <a class="ctx" href="/docs/ui-base-element/#disposablebase" title="DisposeHandler() in context on the base element page" aria-label="DisposeHandler() in context on the base element page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/types/disposable-base/#disposehandler">`DisposeHandler()`</a> · Protected, abstract. The clean-up of the derived class; <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> implements it as described above.
