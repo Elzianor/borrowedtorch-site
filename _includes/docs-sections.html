@@ -1,0 +1,34 @@
+{%- comment -%}
+  The links to the sections of a docs page (include.url), one per ## heading, to the id kramdown gives the heading.
+  Jekyll renders the pages in no set order and replaces a page's content with its HTML once it has rendered it, so the
+  page is read either way: rendered, by its <h2 id="..."> tags; still Markdown, by its "## " lines, the id made the way
+  kramdown makes GFM ids (lowercased, punctuation left out, each space a hyphen). Each page is split once, not line by
+  line: the sidebar is built on every docs page. The variables start with toc_ (an include shares the page's scope).
+{%- endcomment -%}
+{%- assign toc_source = site.pages | where: "url", include.url | first -%}
+{%- if toc_source -%}
+  {%- if toc_source.content contains '<h2 id="' -%}
+    {%- assign toc_parts = toc_source.content | split: '<h2 id="' -%}
+    {%- for toc_part in toc_parts offset: 1 -%}
+      {%- assign toc_id = toc_part | split: '"' | first -%}
+      {%- assign toc_title = toc_part | split: '</h2>' | first | remove_first: toc_id | remove_first: '">' | strip_html | strip -%}
+<li><a href="{{ include.url | relative_url }}#{{ toc_id }}">{{ toc_title }}</a></li>
+    {%- endfor -%}
+  {%- else -%}
+    {%- capture toc_newline %}
+{% endcapture -%}
+    {%- assign toc_heading = toc_newline | append: "## " -%}
+    {%- assign toc_parts = toc_source.content | prepend: toc_newline | split: toc_heading -%}
+    {%- for toc_part in toc_parts offset: 1 -%}
+      {%- assign toc_title = toc_part | split: toc_newline | first | strip | strip_html | remove: "`" -%}
+      {%- assign toc_id = toc_title | downcase | remove: "~" | remove: "!" | remove: "@" | remove: "#" | remove: "$" -%}
+      {%- assign toc_id = toc_id | remove: "%" | remove: "^" | remove: "&" | remove: "*" | remove: "(" | remove: ")" -%}
+      {%- assign toc_id = toc_id | remove: "+" | remove: "=" | remove: "[" | remove: "]" | remove: "{" | remove: "}" -%}
+      {%- assign toc_id = toc_id | remove: "\" | remove: "|" | remove: ";" | remove: ":" | remove: "'" | remove: '"' -%}
+      {%- assign toc_id = toc_id | remove: "," | remove: "." | remove: "<" | remove: ">" | remove: "/" | remove: "?" -%}
+      {%- assign toc_id = toc_id | remove: "‘" | remove: "’" | remove: "“" | remove: "”" | remove: "…" | remove: "–" -%}
+      {%- assign toc_id = toc_id | remove: "—" | strip | replace: " ", "-" -%}
+<li><a href="{{ include.url | relative_url }}#{{ toc_id }}">{{ toc_title }}</a></li>
+    {%- endfor -%}
+  {%- endif -%}
+{%- endif -%}

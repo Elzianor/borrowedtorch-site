@@ -322,6 +322,9 @@ a.card:hover { border-color: var(--line-strong); background: var(--surface-2); c
 .docs-types a { padding-top: 4px; padding-bottom: 4px; font-family: var(--mono); font-size: .8rem; font-variant-ligatures: none; overflow-wrap: anywhere; }
 .docs-members a { padding-top: 4px; padding-bottom: 4px; font-family: var(--mono); font-size: .8rem; font-variant-ligatures: none; overflow-wrap: anywhere; }
 .docs-members a[aria-current="location"] { border-left-color: var(--kind, var(--gold)); background: color-mix(in srgb, var(--kind, #e9c27a) 16%, transparent); }
+/* the sections of a page, its ## headings (see _includes/docs-sections.html), like a book's contents */
+.docs-sections a { padding-top: 4px; padding-bottom: 4px; font-size: .85rem; }
+.docs-sections a[aria-current="location"] { color: var(--gold); border-left-color: var(--gold); background: rgba(233, 194, 122, .06); }
 /* a sidebar taller than the window scrolls on its own */
 @media (min-width: 861px) {
   .docs-groups { max-height: calc(100vh - var(--header-h) - 48px); overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent; }

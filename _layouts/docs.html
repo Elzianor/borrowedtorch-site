@@ -126,7 +126,7 @@ layout: base
                 </details>
               </li>
               {%- else %}
-              <li><a href="{{ a.url | relative_url }}"{% if a.url == page.url %} aria-current="page"{% endif %}>{{ a.title }}</a></li>
+              {% include docs-article.html article=a %}
               {%- endif %}
               {%- endfor %}
             </ul>
@@ -135,7 +135,7 @@ layout: base
           <p class="docs-group-title">{{ g.group }}</p>
           <ul>
             {%- for a in g.articles %}
-            <li><a href="{{ a.url | relative_url }}"{% if a.url == page.url %} aria-current="page"{% endif %}>{{ a.title }}</a></li>
+            {% include docs-article.html article=a %}
             {%- endfor %}
           </ul>
           {%- endif %}
@@ -151,9 +151,9 @@ layout: base
         sync();
         if (mq.addEventListener) mq.addEventListener('change', sync);
 
-        // a glossary member: the link of the anchor in the URL is the current one
+        // a glossary member or a page's section: the link of the anchor in the URL is the current one
         function markMember() {
-          var links = document.querySelectorAll('.docs-members a');
+          var links = document.querySelectorAll('.docs-members a, .docs-sections a');
           for (var i = 0; i < links.length; i++) {
             var here = links[i].pathname === location.pathname && links[i].hash === location.hash && location.hash;
             if (here) links[i].setAttribute('aria-current', 'location'); else links[i].removeAttribute('aria-current');

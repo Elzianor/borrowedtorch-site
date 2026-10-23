@@ -1,0 +1,18 @@
+{%- comment -%}
+  An article of the docs sidebar (include.article, an entry of _data/docs.yml): its link and, when its page has ##
+  sections, the links to them under it like a book's contents, open on the current page (see docs-sections.html).
+{%- endcomment -%}
+{%- capture toc_sections -%}{%- include docs-sections.html url=include.article.url -%}{%- endcapture -%}
+{%- assign toc_sections = toc_sections | strip -%}
+{%- assign toc_current = false -%}
+{%- if include.article.url == page.url -%}{%- assign toc_current = true -%}{%- endif -%}
+<li>
+  {%- if toc_sections != "" %}
+  <details class="docs-node"{% if toc_current %} open{% endif %}>
+    <summary><a href="{{ include.article.url | relative_url }}"{% if toc_current %} aria-current="page"{% endif %}>{{ include.article.title }}</a></summary>
+    <ul class="docs-sections">{{ toc_sections }}</ul>
+  </details>
+  {%- else %}
+  <a href="{{ include.article.url | relative_url }}"{% if toc_current %} aria-current="page"{% endif %}>{{ include.article.title }}</a>
+  {%- endif %}
+</li>
