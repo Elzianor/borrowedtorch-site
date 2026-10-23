@@ -22,3 +22,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 <h3 id="ongeneralstylechanged"><span class="event"><code>OnGeneralStyleChanged</code></span> <a class="ctx" href="/docs/ui-styles/#genericstylet" title="OnGeneralStyleChanged in context on the styles page" aria-label="OnGeneralStyleChanged in context on the styles page">🠆</a></h3>
 
 `(T prevStyle)` · Static. <a class="ref prop" href="/docs/ui-glossary/types/generic-style/#generalstyle">`GeneralStyle`</a> is replaced by another style; the handler gets the previous one. Not raised when a property of the style changes.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `prevStyle` | `T` | The style that was replaced. |

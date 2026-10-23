@@ -288,6 +288,16 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, <a href="/docs/ui-glossary/elements/list-box-item/">ListBoxItem</a> item)</code> · The primary selection is set, by the user or from code. `item` is `null` when nothing is selected any more.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sender` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The list box, or the combo box whose drop-down list it is. |
+| `item` | <a class="ref" href="/docs/ui-glossary/elements/list-box-item/">`ListBoxItem`</a> | The primary selected row, or `null` when nothing is selected any more. |
+
 <h3 id="onitemsselect"><span class="event"><code>OnItemsSelect</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-events" title="OnItemsSelect in context on the lists and menus page" aria-label="OnItemsSelect in context on the lists and menus page">🠆</a></h3>
 
 <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, IReadOnlyList&lt;<a href="/docs/ui-glossary/elements/list-box-item/">ListBoxItem</a>&gt; items)</code> · The set of selected rows changes. `items` is <a class="ref prop" href="/docs/ui-glossary/elements/list-box/#selecteditems">`SelectedItems`</a>, the selected rows that have an element.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sender` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element that raised the event. |
+| `items` | <code>IReadOnlyList&lt;<a href="/docs/ui-glossary/elements/list-box-item/">ListBoxItem</a>&gt;</code> | The selected rows that have an element (<a class="ref prop" href="/docs/ui-glossary/elements/list-box/#selecteditems">`SelectedItems`</a>). |

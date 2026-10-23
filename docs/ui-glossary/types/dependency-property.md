@@ -86,10 +86,24 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 `(T value)` · The value in effect changes. The handler gets the new value.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `value` | `T` | The new value in effect. |
+
 <h3 id="onsourcecollectionchanged"><span class="event"><code>OnSourceCollectionChanged</code></span> <a class="ctx" href="/docs/ui-styles/#dependencypropertyt-events" title="OnSourceCollectionChanged in context on the styles page" aria-label="OnSourceCollectionChanged in context on the styles page">🠆</a></h3>
 
 <code>(<a href="/docs/ui-glossary/types/collection-change-type/">CollectionChangeType</a> changeType, int startIndex, int count)</code> · The <a class="ref" href="/docs/ui-glossary/types/i-bindable-collection/">`IBindableCollection`</a> held by the bound source property adds (`Add`) or removes (`Remove`) items. Not raised in `OneWayToSource` mode.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `changeType` | <a class="ref" href="/docs/ui-glossary/types/collection-change-type/">`CollectionChangeType`</a> | Whether items were added (`Add`) or removed (`Remove`). |
+| `startIndex` | `int` | The index of the first item added or removed. |
+| `count` | `int` | The number of items added or removed. |
+
 <h3 id="onsourcepropertychanged"><span class="event"><code>OnSourcePropertyChanged</code></span> <a class="ctx" href="/docs/ui-styles/#dependencypropertyt-events" title="OnSourcePropertyChanged in context on the styles page" aria-label="OnSourcePropertyChanged in context on the styles page">🠆</a></h3>
 
 `(object propertyValue)` · The bound <a class="ref" href="/docs/ui-glossary/types/bindable/">`Bindable`</a> source reports a change of the bound property (or of all properties, with an empty name). The handler gets the source property's value, before conversion. Not raised for the echo of the property's own write, nor in `OneWayToSource` mode.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `propertyValue` | `object` | The source property's value, before conversion. |

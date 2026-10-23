@@ -26,3 +26,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 <h3 id="onpropertychanged"><span class="event"><code>OnPropertyChanged</code></span> <a class="ctx" href="/docs/ui-styles/#bindable" title="OnPropertyChanged in context on the styles page" aria-label="OnPropertyChanged in context on the styles page">🠆</a></h3>
 
 `(string propertyName)` · The view model calls <a class="ref method" href="/docs/ui-glossary/types/bindable/#propertychangedinvoke">`PropertyChangedInvoke`</a>. The handler gets the name of the property that changed; an empty (or `null`) name means every property changed.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `propertyName` | `string` | The name of the property that changed; empty or `null` means every property changed. |

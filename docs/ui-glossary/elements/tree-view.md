@@ -175,3 +175,8 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 <h3 id="onitemselect"><span class="event"><code>OnItemSelect</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-events" title="OnItemSelect in context on the lists and menus page" aria-label="OnItemSelect in context on the lists and menus page">🠆</a></h3>
 
 <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, <a href="/docs/ui-glossary/elements/tree-view-item/">TreeViewItem</a> item)</code> · The selected item changes, by the user or from code. `item` is `null` when nothing is selected any more.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sender` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element that raised the event. |
+| `item` | <a class="ref" href="/docs/ui-glossary/elements/tree-view-item/">`TreeViewItem`</a> | The selected item, or `null` when nothing is selected any more. |

@@ -706,38 +706,84 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, <a href="/docs/ui-glossary/types/mouse-click-event-args/">MouseClickEventArgs</a> e)</code> · A mouse button pressed on the element is released over it (with <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#repeatclicks">`RepeatClicks`</a>: on the press and while it is held).
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sender` | `BaseElement` | The element that raised the event. |
+| `e` | <a class="ref" href="/docs/ui-glossary/types/mouse-click-event-args/">`MouseClickEventArgs`</a> | Where the mouse was and the states of its buttons. |
+
 <h3 id="ondisposed"><span class="event"><code>OnDisposed</code></span> <a class="ctx" href="/docs/ui-base-element/#items-and-content-events" title="OnDisposed in context on the base element page" aria-label="OnDisposed in context on the base element page">🠆</a></h3>
 
 <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender)</code> · The element was disposed. Raised once, at the end of <a class="ref method" href="/docs/ui-glossary/elements/base-element/#dispose">`Dispose()`</a>; the handlers are let go afterwards.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sender` | `BaseElement` | The element that raised the event. |
 
 <h3 id="ondoubleclick"><span class="event"><code>OnDoubleClick</code></span> <a class="ctx" href="/docs/ui-base-element/#mouse-and-states-events" title="OnDoubleClick in context on the base element page" aria-label="OnDoubleClick in context on the base element page">🠆</a></h3>
 
 <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, <a href="/docs/ui-glossary/types/mouse-click-event-args/">MouseClickEventArgs</a> e)</code> · The left button is pressed a second time within <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#doubleclickintervalms">`DoubleClickIntervalMs`</a>. Not raised by an element with <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#repeatclicks">`RepeatClicks`</a>.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sender` | `BaseElement` | The element that raised the event. |
+| `e` | <a class="ref" href="/docs/ui-glossary/types/mouse-click-event-args/">`MouseClickEventArgs`</a> | Where the mouse was and the states of its buttons. |
+
 <h3 id="ondraganddropstart"><span class="event"><code>OnDragAndDropStart</code></span> <a class="ctx" href="/docs/ui-base-element/#drag-and-drop-properties" title="OnDragAndDropStart in context on the base element page" aria-label="OnDragAndDropStart in context on the base element page">🠆</a></h3>
 
 <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> draggedElement)</code> · A drag and drop of this element (as the <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#dragtarget">`DragTarget`</a>) starts; the argument is the element whose <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#dragtype">`DragType`</a> started it.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `draggedElement` | `BaseElement` | The element whose <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#dragtype">`DragType`</a> started the drag. |
 
 <h3 id="ondrop"><span class="event"><code>OnDrop</code></span> <a class="ctx" href="/docs/ui-base-element/#drag-and-drop-properties" title="OnDrop in context on the base element page" aria-label="OnDrop in context on the base element page">🠆</a></h3>
 
 <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> draggedElement, <a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> dragAndDropDestination)</code> · A dragged element is released over this element and its predicate allowed it.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `draggedElement` | `BaseElement` | The dragged element. |
+| `dragAndDropDestination` | `BaseElement` | The element it was dropped on. |
+
 <h3 id="ondropdenied"><span class="event"><code>OnDropDenied</code></span> <a class="ctx" href="/docs/ui-base-element/#drag-and-drop-properties" title="OnDropDenied in context on the base element page" aria-label="OnDropDenied in context on the base element page">🠆</a></h3>
 
 <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> draggedElement, <a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> dragAndDropDestination)</code> · A dragged element is released over this element and the drop is denied.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `draggedElement` | `BaseElement` | The dragged element. |
+| `dragAndDropDestination` | `BaseElement` | The element it was released over. |
 
 <h3 id="onkeydown"><span class="event"><code>OnKeyDown</code></span> <a class="ctx" href="/docs/ui-base-element/#keyboard-and-focus-events" title="OnKeyDown in context on the base element page" aria-label="OnKeyDown in context on the base element page">🠆</a></h3>
 
 <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, <a href="/docs/ui-glossary/types/key-down-event-args/">KeyDownEventArgs</a> e)</code> · A key is pressed while the element, or an element inside it that left the key unhandled, has the keyboard.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sender` | `BaseElement` | The element that raised the event. |
+| `e` | <a class="ref" href="/docs/ui-glossary/types/key-down-event-args/">`KeyDownEventArgs`</a> | The pressed key. Set `e.Handled` so the element's parents don't get it. |
+
 <h3 id="onmouseenter"><span class="event"><code>OnMouseEnter</code></span> <a class="ctx" href="/docs/ui-base-element/#mouse-and-states-events" title="OnMouseEnter in context on the base element page" aria-label="OnMouseEnter in context on the base element page">🠆</a></h3>
 
 <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender)</code> · The element starts taking the mouse.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sender` | `BaseElement` | The element that raised the event. |
 
 <h3 id="onmouseleave"><span class="event"><code>OnMouseLeave</code></span> <a class="ctx" href="/docs/ui-base-element/#mouse-and-states-events" title="OnMouseLeave in context on the base element page" aria-label="OnMouseLeave in context on the base element page">🠆</a></h3>
 
 <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender)</code> · The element stops taking the mouse: the mouse left, moved onto a child that takes it, or the element got disabled or hidden.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sender` | `BaseElement` | The element that raised the event. |
+
 <h3 id="onstatechanged"><span class="event"><code>OnStateChanged</code></span> <a class="ctx" href="/docs/ui-base-element/#mouse-and-states-events" title="OnStateChanged in context on the base element page" aria-label="OnStateChanged in context on the base element page">🠆</a></h3>
 
 <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, <a href="/docs/ui-glossary/types/element-state-data/">ElementStateData</a> e)</code> · The state the element shows changes, its own or one it takes. Raised again for every change of the mouse buttons while the element is pressed.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sender` | `BaseElement` | The element that raised the event. |
+| `e` | <a class="ref" href="/docs/ui-glossary/types/element-state-data/">`ElementStateData`</a> | The new state and where it comes from. |

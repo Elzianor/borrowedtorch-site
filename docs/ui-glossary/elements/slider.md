@@ -152,3 +152,8 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 <h3 id="onvaluechanged"><span class="event"><code>OnValueChanged</code></span> <a class="ctx" href="/docs/ui-controls/#slider-events" title="OnValueChanged in context on the controls page" aria-label="OnValueChanged in context on the controls page">🠆</a></h3>
 
 <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, float value)</code> · <a class="ref dp" href="/docs/ui-glossary/elements/slider/#value">`Value`</a> changes: by a drag, a click, from code, or when a new range, tick, <a class="ref prop" href="/docs/ui-glossary/elements/slider/#contentsize">`ContentSize`</a> or <a class="ref prop" href="/docs/ui-glossary/elements/slider/#viewsize">`ViewSize`</a> moves it. The value is already clamped and snapped.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sender` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element that raised the event. |
+| `value` | `float` | The new value, already clamped and snapped. |

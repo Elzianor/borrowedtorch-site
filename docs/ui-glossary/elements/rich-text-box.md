@@ -216,6 +216,16 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, string text)</code> · A read-write box ends its editing: Enter (Ctrl+Enter with <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#entertypeslinebreak">`EnterTypesLineBreak`</a>), a press elsewhere or another element focused. Not when it is hidden, disabled or removed. Raised even if the text did not change.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sender` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element that raised the event. |
+| `text` | `string` | The box's text. |
+
 <h3 id="ontextchanged"><span class="event"><code>OnTextChanged</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-events" title="OnTextChanged in context on the text page" aria-label="OnTextChanged in context on the text page">🠆</a></h3>
 
 <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, string text)</code> · <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#text">`Text`</a> changed, by typing, deleting, pasting, undo or redo, code, a binding, a style or the end of a text animation. The new lines are already laid out.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sender` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element that raised the event. |
+| `text` | `string` | The new text. |

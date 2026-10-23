@@ -88,3 +88,8 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 <h3 id="oncheckedunchecked"><span class="event"><code>OnCheckedUnchecked</code></span> <a class="ctx" href="/docs/ui-controls/#checkbox-events" title="OnCheckedUnchecked in context on the controls page" aria-label="OnCheckedUnchecked in context on the controls page">🠆</a></h3>
 
 <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, bool isChecked)</code> · <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#checked">`Checked`</a> changes: by a click, from code, by a binding, or because another box of the group was checked.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sender` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element that raised the event. |
+| `isChecked` | `bool` | Whether the box is checked now. |

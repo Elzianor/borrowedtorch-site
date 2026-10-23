@@ -16,3 +16,9 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 <h3 id="oncollectionchanged"><span class="event"><code>OnCollectionChanged</code></span> <a class="ctx" href="/docs/ui-styles/#ibindablecollection" title="OnCollectionChanged in context on the styles page" aria-label="OnCollectionChanged in context on the styles page">🠆</a></h3>
 
 `(bool isItemsAdded, int startIndex, int count)` · Items were added (`true`) or removed (`false`), `count` of them from `startIndex`.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `isItemsAdded` | `bool` | `true` when items were added, `false` when they were removed. |
+| `startIndex` | `int` | The index of the first item added or removed. |
+| `count` | `int` | The number of items added or removed. |

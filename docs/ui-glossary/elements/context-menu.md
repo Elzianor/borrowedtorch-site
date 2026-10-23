@@ -179,3 +179,8 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 <h3 id="onitemselect"><span class="event"><code>OnItemSelect</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenu-events" title="OnItemSelect in context on the lists and menus page" aria-label="OnItemSelect in context on the lists and menus page">🠆</a></h3>
 
 <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, <a href="/docs/ui-glossary/elements/context-menu-item/">ContextMenuItem</a> item)</code> · An item of the menu or of one of its sub-menus is chosen. It is raised by the menu of the element; the sender is the menu the item is in.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sender` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The menu the item is in: the element's menu or one of its sub-menus. |
+| `item` | <a class="ref" href="/docs/ui-glossary/elements/context-menu-item/">`ContextMenuItem`</a> | The chosen item. |

@@ -31,6 +31,16 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 `EventHandler<InputKeyEventArgs>`
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sender` | `object` | The game window, passed on from its `KeyDown` event. |
+| `e` | `InputKeyEventArgs` | The pressed key (`Key`), from the window's `KeyDown` event. |
+
 <h3 id="ontextinput"><span class="event"><code>OnTextInput</code></span></h3>
 
 `EventHandler<TextInputEventArgs>`
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sender` | `object` | The game window, passed on from its `TextInput` event. |
+| `e` | `TextInputEventArgs` | The typed character (`Character`) and the key that typed it (`Key`), from the window's `TextInput` event. |

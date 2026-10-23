@@ -57,3 +57,8 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 <h3 id="ontabopened"><span class="event"><code>OnTabOpened</code></span> <a class="ctx" href="/docs/ui-layout/#tabcontrol-events" title="OnTabOpened in context on the layout page" aria-label="OnTabOpened in context on the layout page">🠆</a></h3>
 
 <code>(<a href="/docs/ui-glossary/types/tab-control/">TabControl</a> sender, <a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> tab)</code> · Another tab opens: pressed, opened with <a class="ref method" href="/docs/ui-glossary/types/tab-control/#opentab">`OpenTab`</a>, the first one added, or the neighbour of a removed open tab. `tab` is null when the last tab was removed.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sender` | `TabControl` | The tab control. |
+| `tab` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The tab that opened, or `null` when the last tab was removed. |
