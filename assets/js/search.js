@@ -185,7 +185,10 @@
     }
     const item = list.children[index];
     input.setAttribute('aria-activedescendant', item.id);
-    item.scrollIntoView({ block: 'nearest' });
+    // the panel scrolled to it, and only the panel (scrollIntoView can scroll the page as well)
+    const top = item.offsetTop, bottom = top + item.offsetHeight;
+    if (top < panel.scrollTop) panel.scrollTop = top;
+    else if (bottom > panel.scrollTop + panel.clientHeight) panel.scrollTop = bottom - panel.clientHeight;
   }
 
   function update() {
@@ -216,7 +219,7 @@
   function openSearch() {
     root.classList.add('is-open');
     opener.setAttribute('aria-expanded', 'true');
-    input.focus();
+    input.focus({ preventScroll: true });
     input.select();
   }
 

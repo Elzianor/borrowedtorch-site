@@ -17,7 +17,10 @@
   --header-h: 60px;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-padding-top: calc(var(--header-h) + 16px); }
+/* what is scrolled to stays clear of the sticky header: the target of a link, and an element of the page that gets the
+   keyboard focus (not scroll-padding on the page: the search box in the header would count as hidden behind it, and
+   each key typed in it would scroll the page up) */
+:target, main :focus { scroll-margin-top: calc(var(--header-h) + 16px); }
 body {
   background: var(--bg);
   color: var(--text);
