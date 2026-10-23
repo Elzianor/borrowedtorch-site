@@ -133,6 +133,10 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 `Color` · Static. The tint of a hovered element, `(0, 10, 60, 10)` by default.
 
+<h3 id="id"><span class="prop"><code>Id</code></span> <a class="ctx" href="/docs/ui-base-element/#items-and-content-properties" title="Id in context on the base element page" aria-label="Id in context on the base element page">🠆</a></h3>
+
+`Guid` · Read-only. A unique id made when the element is created.
+
 <h3 id="inheritstate"><span class="dp"><code>InheritState</code></span> <a class="ctx" href="/docs/ui-base-element/#mouse-and-states-properties" title="InheritState in context on the base element page" aria-label="InheritState in context on the base element page">🠆</a></h3>
 
 <a class="ref" href="/docs/ui-glossary/types/inherit-state/">`InheritState`</a> · Which states the element shows besides its own: its parent's, its children's, both or none (the default).
@@ -308,12 +312,6 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 <h3 id="zindex"><span class="dp"><code>ZIndex</code></span> <a class="ctx" href="/docs/ui-base-element/#appearance-properties" title="ZIndex in context on the base element page" aria-label="ZIndex in context on the base element page">🠆</a></h3>
 
 `int` · The element's place among its overlapping siblings: a higher one is drawn above them and gets the mouse first, a lower one (it can be negative) goes below. The default is 0; siblings with the same one keep the order they were added in.
-
-## Fields
-
-<h3 id="id"><code>Id</code> <a class="ctx" href="/docs/ui-base-element/#items-and-content-properties" title="Id in context on the base element page" aria-label="Id in context on the base element page">🠆</a></h3>
-
-`Guid` · Read-only field. A unique id made when the element is created.
 
 ## Methods
 

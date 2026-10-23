@@ -95,6 +95,9 @@
         - title: "Hover<wbr>Tint"
           anchor: hovertint
           kind: prop
+        - title: "Id"
+          anchor: id
+          kind: prop
         - title: "Inherit<wbr>State"
           anchor: inheritstate
           kind: dp
@@ -227,9 +230,6 @@
         - title: "ZIndex"
           anchor: zindex
           kind: dp
-        - title: "Id"
-          anchor: id
-          kind: field
         - title: "Accepts<wbr>Items()"
           anchor: acceptsitems
           kind: method
