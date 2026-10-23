@@ -314,8 +314,8 @@ a.card:hover { border-color: var(--line-strong); background: var(--surface-2); c
 /* a group that is a tree (the UI): its title and its nodes open with a caret */
 .docs-tree > summary, .docs-node > summary { list-style: none; cursor: pointer; }
 .docs-tree > summary::-webkit-details-marker, .docs-node > summary::-webkit-details-marker { display: none; }
-.docs-tree > summary { display: flex; align-items: center; gap: 6px; }
-/* the caret centred in its box, the box over the line of the node's list (8px in + half of 13px = the middle of the 1px
+.docs-tree > summary { display: flex; align-items: center; gap: 2px; }
+/* the caret centered in its box, the box over the line of the node's list (8px in + half of 13px = the middle of the 1px
    line 14px in) */
 .docs-tree > summary::before, .docs-node > summary::before {
   content: "▸";
@@ -329,6 +329,9 @@ a.card:hover { border-color: var(--line-strong); background: var(--surface-2); c
 .docs-tree[open] > summary::before, .docs-node[open] > summary::before { transform: rotate(90deg); }
 .docs-tree > summary:hover, .docs-tree > summary:hover::before { color: var(--gold); }
 .docs-tree > summary { padding-left: 0; }
+/* a tree's title starts 12px in, as the other groups' titles do, and its caret hangs in the space before it: the glyph
+   starts 3px left of the sidebar, where it has no ink, so the ink spans 0 to 7px and the box stays centered on it */
+.docs-tree > summary::before { margin-left: -3px; text-align: left; }
 .docs-node > summary { display: flex; align-items: center; padding-left: 8px; }
 .docs-node > summary > a { flex: 1; min-width: 0; padding-left: 4px; }
 .docs-node > summary:hover::before { color: var(--gold); }
