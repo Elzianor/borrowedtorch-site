@@ -54,3 +54,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 <h3 id="stencil"><span class="method"><code>Stencil()</code></span> <a class="ctx" href="/docs/ui-images/#stencil-methods" title="Stencil() in context on the images page" aria-label="Stencil() in context on the images page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/stencil/#stencil">`Stencil(string name = null)`</a> · Creates a stencil. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | The element's <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a>, which <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a> finds it by. Default: `null`. |

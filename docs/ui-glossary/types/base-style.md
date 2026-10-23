@@ -155,6 +155,14 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <a class="ref method" href="/docs/ui-glossary/types/base-style/#isset">`IsSet(string propertyName)`</a> · Whether the property is assigned to this style, so the style applies it. Pass the name with `nameof`; an unknown name gives `false`.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `propertyName` | `string` | The name of a property of the style; `nameof` keeps it right. |
+
 <h3 id="unset"><span class="method"><code>Unset()</code></span> <a class="ctx" href="/docs/ui-styles/#basestyle" title="Unset() in context on the styles page" aria-label="Unset() in context on the styles page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/types/base-style/#unset">`Unset(string propertyName)`</a> · Takes the property back out of the style: the style stops applying it, it reads its type's default again, and the elements using the style update.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `propertyName` | `string` | The name of a property of the style; `nameof` keeps it right. |

@@ -75,25 +75,51 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <a class="ref method" href="/docs/ui-glossary/elements/combo-box/#combobox">`ComboBox(string name = null)`</a> · Creates a combo box. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | The element's <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a>, which <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a> finds it by. Default: `null`. |
+
 <h3 id="additem"><span class="method"><code>AddItem()</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-methods" title="AddItem() in context on the lists and menus page" aria-label="AddItem() in context on the lists and menus page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/combo-box/#additem">AddItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Adds a row at the end of the list.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element to add. |
 
 <h3 id="additemat"><span class="method"><code>AddItemAt()</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-methods" title="AddItemAt() in context on the lists and menus page" aria-label="AddItemAt() in context on the lists and menus page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/combo-box/#additemat">AddItemAt</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item, int index)</code></span> · Inserts a row at the index.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element to insert. |
+| `index` | `int` | The position to insert it at: 0 for the first, the number of items for the end. |
+
 <h3 id="additemsrange"><span class="method"><code>AddItemsRange()</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-methods" title="AddItemsRange() in context on the lists and menus page" aria-label="AddItemsRange() in context on the lists and menus page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/combo-box/#additemsrange">AddItemsRange</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items)</code></span> · Adds a row per element at the end, in one batch.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `items` | <code>IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt;</code> | The elements to add, in order. |
 
 <h3 id="additemsrangeat"><span class="method"><code>AddItemsRangeAt()</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-methods" title="AddItemsRangeAt() in context on the lists and menus page" aria-label="AddItemsRangeAt() in context on the lists and menus page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/combo-box/#additemsrangeat">AddItemsRangeAt</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items, int index)</code></span> · Inserts a row per element at the index, in one batch.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `items` | <code>IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt;</code> | The elements to insert, in order. |
+| `index` | `int` | The position of the first one: 0 for the first, the number of items for the end. |
+
 <h3 id="addtextitem"><span class="method"><code>AddTextItem()</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-methods" title="AddTextItem() in context on the lists and menus page" aria-label="AddTextItem() in context on the lists and menus page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/combo-box/#addtextitem">`AddTextItem(string text)`</a> · Adds a text row. Does nothing while an <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#itemssource">`ItemsSource`</a> is set.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `text` | `string` | The text of the row. |
 
 <h3 id="clearitems"><span class="method"><code>ClearItems()</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-methods" title="ClearItems() in context on the lists and menus page" aria-label="ClearItems() in context on the lists and menus page">🠆</a></h3>
 
@@ -103,29 +129,58 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/combo-box/#deselect">Deselect</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Deselects the row of the item.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element whose row is deselected. |
+
 <h3 id="deselectat"><span class="method"><code>DeselectAt()</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-methods" title="DeselectAt() in context on the lists and menus page" aria-label="DeselectAt() in context on the lists and menus page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/combo-box/#deselectat">`DeselectAt(int index)`</a> · Deselects the row at the index.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | `int` | The index of the row to deselect. |
 
 <h3 id="removeitem"><span class="method"><code>RemoveItem()</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-methods" title="RemoveItem() in context on the lists and menus page" aria-label="RemoveItem() in context on the lists and menus page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/combo-box/#removeitem">RemoveItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Removes the row of the item.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element to take out. |
+
 <h3 id="removeitemat"><span class="method"><code>RemoveItemAt()</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-methods" title="RemoveItemAt() in context on the lists and menus page" aria-label="RemoveItemAt() in context on the lists and menus page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/combo-box/#removeitemat">`RemoveItemAt(int index)`</a> · Removes the row at the index.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | `int` | The index of the item to take out. |
 
 <h3 id="removeitemsrangeat"><span class="method"><code>RemoveItemsRangeAt()</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-methods" title="RemoveItemsRangeAt() in context on the lists and menus page" aria-label="RemoveItemsRangeAt() in context on the lists and menus page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/combo-box/#removeitemsrangeat">`RemoveItemsRangeAt(int index, int count)`</a> · Removes `count` rows from the index on.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | `int` | The index of the first item to take out. |
+| `count` | `int` | The number of items to take out. |
+
 <h3 id="select"><span class="method"><code>Select()</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-methods" title="Select() in context on the lists and menus page" aria-label="Select() in context on the lists and menus page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/combo-box/#select">Select</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Selects the row of the item.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element whose row is selected. |
+
 <h3 id="selectat"><span class="method"><code>SelectAt()</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-methods" title="SelectAt() in context on the lists and menus page" aria-label="SelectAt() in context on the lists and menus page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/combo-box/#selectat">`SelectAt(int index)`</a> · Selects the row at the index.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | `int` | The index of the row to select. |
 
 <h3 id="selectnext"><span class="method"><code>SelectNext()</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-methods" title="SelectNext() in context on the lists and menus page" aria-label="SelectNext() in context on the lists and menus page">🠆</a></h3>
 
@@ -138,6 +193,10 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 <h3 id="selectsource"><span class="method"><code>SelectSource()</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-methods" title="SelectSource() in context on the lists and menus page" aria-label="SelectSource() in context on the lists and menus page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/combo-box/#selectsource">`SelectSource(object source)`</a> · Selects the row of the <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#itemssource">`ItemsSource`</a> object. Nothing happens when there is none.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `source` | `object` | The <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#itemssource">`ItemsSource`</a> object whose row is selected. |
 
 ## Events
 

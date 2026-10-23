@@ -8,4 +8,8 @@ A delegate: the handler type of an event.
 
 Signature: `void SourcePropertyChanged(object propertyValue)`
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `propertyValue` | `object` | The source property's value, before conversion. |
+
 Handles [`DependencyProperty.OnSourcePropertyChanged`](/docs/ui-glossary/types/dependency-property/#onsourcepropertychanged).

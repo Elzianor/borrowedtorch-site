@@ -87,25 +87,51 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <a class="ref method" href="/docs/ui-glossary/elements/context-menu/#contextmenu">`ContextMenu(string name = null)`</a> · Creates a closed menu. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | The element's <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a>, which <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a> finds it by. Default: `null`. |
+
 <h3 id="additem"><span class="method"><code>AddItem()</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenu-methods" title="AddItem() in context on the lists and menus page" aria-label="AddItem() in context on the lists and menus page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/context-menu/#additem">AddItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Adds an item at the end. A <a class="ref" href="/docs/ui-glossary/elements/context-menu-item/">`ContextMenuItem`</a> or <a class="ref" href="/docs/ui-glossary/elements/separator/">`Separator`</a> is added as is, another element is put in an item. Does nothing while an <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#itemssource">`ItemsSource`</a> is set.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element to add. |
 
 <h3 id="additemat"><span class="method"><code>AddItemAt()</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenu-methods" title="AddItemAt() in context on the lists and menus page" aria-label="AddItemAt() in context on the lists and menus page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/context-menu/#additemat">AddItemAt</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item, int index)</code></span> · Inserts an item at the index.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element to insert. |
+| `index` | `int` | The position to insert it at: 0 for the first, the number of items for the end. |
+
 <h3 id="additemsrange"><span class="method"><code>AddItemsRange()</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenu-methods" title="AddItemsRange() in context on the lists and menus page" aria-label="AddItemsRange() in context on the lists and menus page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/context-menu/#additemsrange">AddItemsRange</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items)</code></span> · Adds items at the end.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `items` | <code>IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt;</code> | The elements to add, in order. |
 
 <h3 id="additemsrangeat"><span class="method"><code>AddItemsRangeAt()</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenu-methods" title="AddItemsRangeAt() in context on the lists and menus page" aria-label="AddItemsRangeAt() in context on the lists and menus page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/context-menu/#additemsrangeat">AddItemsRangeAt</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items, int index)</code></span> · Inserts items at the index.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `items` | <code>IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt;</code> | The elements to insert, in order. |
+| `index` | `int` | The position of the first one: 0 for the first, the number of items for the end. |
+
 <h3 id="addtextitem"><span class="method"><code>AddTextItem()</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenu-methods" title="AddTextItem() in context on the lists and menus page" aria-label="AddTextItem() in context on the lists and menus page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/context-menu/#addtextitem">`AddTextItem(string text)`</a> · Adds an item showing the text in a label and returns it, to handle its `OnClick`, make it checkable or give it a <a class="ref prop" href="/docs/ui-glossary/elements/context-menu-item/#submenu">`SubMenu`</a>. The menu made it, so it is disposed when it is removed. Does nothing and returns `null` while an <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#itemssource">`ItemsSource`</a> is set.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `text` | `string` | The text of the item's label. |
 
 <h3 id="clearitems"><span class="method"><code>ClearItems()</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenu-methods" title="ClearItems() in context on the lists and menus page" aria-label="ClearItems() in context on the lists and menus page">🠆</a></h3>
 
@@ -119,17 +145,34 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <a class="ref method" href="/docs/ui-glossary/elements/context-menu/#open">`Open(Point position)`</a> · Opens the menu at a point of the screen, placed by <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#placement">`Placement`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#marginfrommousecursor">`MarginFromMouseCursor`</a> and kept on the screen. Only a menu in the element tree that can take the keyboard opens; a sub-menu doesn't.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `position` | `Point` | The point of the screen to open the menu at, in units. |
+
 <h3 id="removeitem"><span class="method"><code>RemoveItem()</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenu-methods" title="RemoveItem() in context on the lists and menus page" aria-label="RemoveItem() in context on the lists and menus page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/context-menu/#removeitem">RemoveItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Removes the item, or the item made around the element.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element to take out. |
 
 <h3 id="removeitemat"><span class="method"><code>RemoveItemAt()</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenu-methods" title="RemoveItemAt() in context on the lists and menus page" aria-label="RemoveItemAt() in context on the lists and menus page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/context-menu/#removeitemat">`RemoveItemAt(int index)`</a> · Removes the item at the index.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | `int` | The index of the item to take out. |
+
 <h3 id="removeitemsrangeat"><span class="method"><code>RemoveItemsRangeAt()</code></span> <a class="ctx" href="/docs/ui-lists/#contextmenu-methods" title="RemoveItemsRangeAt() in context on the lists and menus page" aria-label="RemoveItemsRangeAt() in context on the lists and menus page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/context-menu/#removeitemsrangeat">`RemoveItemsRangeAt(int index, int count)`</a> · Removes `count` items from the index on.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | `int` | The index of the first item to take out. |
+| `count` | `int` | The number of items to take out. |
 
 ## Events
 

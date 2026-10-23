@@ -31,13 +31,26 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <span class="method"><code><a href="/docs/ui-glossary/types/tab-control/#addtab">AddTab</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> tab, <a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> content)</code></span> · Adds a tab and its content; the content is hidden unless this is the first tab. Adding a tab again replaces its content. Null arguments are ignored.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `tab` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element pressed to open the tab, such as a button. |
+| `content` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element shown while the tab is open. |
+
 <h3 id="opentab"><span class="method"><code>OpenTab()</code></span> <a class="ctx" href="/docs/ui-layout/#tabcontrol-methods" title="OpenTab() in context on the layout page" aria-label="OpenTab() in context on the layout page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/types/tab-control/#opentab">OpenTab</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> tab)</code></span> · Opens the tab, showing its content and hiding the open one. Does nothing for an element that isn't a tab of this control.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `tab` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The tab to open, an element added with <a class="ref method" href="/docs/ui-glossary/types/tab-control/#addtab">`AddTab`</a>. |
+
 <h3 id="removetab"><span class="method"><code>RemoveTab()</code></span> <a class="ctx" href="/docs/ui-layout/#tabcontrol-methods" title="RemoveTab() in context on the layout page" aria-label="RemoveTab() in context on the layout page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/types/tab-control/#removetab">RemoveTab</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> tab)</code></span> · Removes the tab. When it was open, its neighbour opens. Its content is visible again.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `tab` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The tab to remove. |
 
 ## Events
 

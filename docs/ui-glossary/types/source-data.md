@@ -31,9 +31,21 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <a class="ref method" href="/docs/ui-glossary/types/source-data/#sourcedata">`SourceData(Texture2D texture)`</a> · Wraps the texture.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `texture` | <a class="ref method" href="/docs/ui-glossary/types/source-data/#texture2d">`Texture2D`</a> | The texture to wrap. |
+
 `implicit operator SourceData(Texture2D texture)` · Lets you assign a texture where a `SourceData` is expected.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `texture` | <a class="ref method" href="/docs/ui-glossary/types/source-data/#texture2d">`Texture2D`</a> | The texture to wrap. |
+
 `implicit operator SourceData(string path)` · Loads the content path as a <a class="ref method" href="/docs/ui-glossary/types/source-data/#texture2d">`Texture2D`</a> through the UI's `ContentManager` and wraps it.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `path` | `string` | A content path, loaded as a <a class="ref method" href="/docs/ui-glossary/types/source-data/#texture2d">`Texture2D`</a> through the UI's `ContentManager`. |
 
 <h3 id="section"><span class="method"><code>!=()</code></span> <a class="ctx" href="/docs/ui-images/#sourcedata" title="!=() in context on the images page" aria-label="!=() in context on the images page">🠆</a></h3>
 
@@ -47,6 +59,10 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <a class="ref method" href="/docs/ui-glossary/types/source-data/#equals">`Equals(object obj)`</a> · Whether `obj` is a `SourceData` wrapping the same texture instance.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `obj` | `object` | The object to compare with. |
+
 <h3 id="gethashcode"><span class="method"><code>GetHashCode()</code></span> <a class="ctx" href="/docs/ui-images/#sourcedata" title="GetHashCode() in context on the images page" aria-label="GetHashCode() in context on the images page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/types/source-data/#gethashcode">`GetHashCode()`</a> · The hash code of the wrapped texture, `0` without one.
@@ -54,3 +70,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 <h3 id="texture2d"><span class="method"><code>Texture2D()</code></span> <a class="ctx" href="/docs/ui-images/#sourcedata" title="Texture2D() in context on the images page" aria-label="Texture2D() in context on the images page">🠆</a></h3>
 
 `implicit operator Texture2D(SourceData data)` · Gives back the wrapped texture (`null` when it wraps none).
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `data` | `SourceData` | The source data whose texture is returned. |

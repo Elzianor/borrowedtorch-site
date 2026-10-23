@@ -63,6 +63,10 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <a class="ref method" href="/docs/ui-glossary/elements/tool-tip/#tooltip">`ToolTip(string name = null)`</a> · Creates a tooltip. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | The element's <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a>, which <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a> finds it by. Default: `null`. |
+
 <h3 id="show"><span class="method"><code>Show()</code></span> <a class="ctx" href="/docs/ui-controls/#tooltip-methods" title="Show() in context on the controls page" aria-label="Show() in context on the controls page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/tool-tip/#show">`Show()`</a> · Places the tooltip at the mouse cursor and shows it after the next layout pass. The element it is attached to calls this; it does nothing for a tooltip not attached to an element.

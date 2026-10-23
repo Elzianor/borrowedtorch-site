@@ -47,13 +47,26 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <a class="ref method" href="/docs/ui-glossary/elements/stack-panel/#stackpanel">`StackPanel(string name = null)`</a> · Creates a stack panel. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | The element's <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a>, which <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a> finds it by. Default: `null`. |
+
 <h3 id="additem"><span class="method"><code>AddItem()</code></span> <a class="ctx" href="/docs/ui-layout/#stackpanel-methods" title="AddItem() in context on the layout page" aria-label="AddItem() in context on the layout page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/stack-panel/#additem">AddItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Adds the item at the end. A null item is ignored.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element to add. |
+
 <h3 id="additemat"><span class="method"><code>AddItemAt()</code></span> <a class="ctx" href="/docs/ui-layout/#stackpanel-methods" title="AddItemAt() in context on the layout page" aria-label="AddItemAt() in context on the layout page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/stack-panel/#additemat">AddItemAt</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item, int index)</code></span> · Inserts the item at the index (0 to the item count).
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element to insert. |
+| `index` | `int` | The position to insert it at: 0 for the first, the number of items for the end. |
 
 <h3 id="clearitems"><span class="method"><code>ClearItems()</code></span> <a class="ctx" href="/docs/ui-layout/#stackpanel-methods" title="ClearItems() in context on the layout page" aria-label="ClearItems() in context on the layout page">🠆</a></h3>
 
@@ -63,6 +76,14 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/stack-panel/#removeitem">RemoveItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Removes the item. It is detached, not disposed.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element to take out. |
+
 <h3 id="removeitemat"><span class="method"><code>RemoveItemAt()</code></span> <a class="ctx" href="/docs/ui-layout/#stackpanel-methods" title="RemoveItemAt() in context on the layout page" aria-label="RemoveItemAt() in context on the layout page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/stack-panel/#removeitemat">`RemoveItemAt(int index)`</a> · Removes the item at the index. It is detached, not disposed.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | `int` | The index of the item to take out. |

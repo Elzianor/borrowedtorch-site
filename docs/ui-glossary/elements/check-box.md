@@ -79,6 +79,10 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <a class="ref method" href="/docs/ui-glossary/elements/check-box/#checkbox">`CheckBox(string name = null)`</a> · Creates a check box. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | The element's <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a>, which <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a> finds it by. Default: `null`. |
+
 ## Events
 
 <h3 id="oncheckedunchecked"><span class="event"><code>OnCheckedUnchecked</code></span> <a class="ctx" href="/docs/ui-controls/#checkbox-events" title="OnCheckedUnchecked in context on the controls page" aria-label="OnCheckedUnchecked in context on the controls page">🠆</a></h3>

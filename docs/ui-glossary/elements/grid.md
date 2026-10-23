@@ -35,29 +35,58 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <a class="ref method" href="/docs/ui-glossary/elements/grid/#grid">`Grid(string name = null)`</a> · Creates a grid without definitions. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | The element's <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a>, which <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a> finds it by. Default: `null`. |
+
 <h3 id="addcolumndefinition"><span class="method"><code>AddColumnDefinition()</code></span> <a class="ctx" href="/docs/ui-layout/#grid-methods" title="AddColumnDefinition() in context on the layout page" aria-label="AddColumnDefinition() in context on the layout page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/grid/#addcolumndefinition">`AddColumnDefinition(int desiredSize)`</a> · Adds a column of a fixed width in units (at least 1).
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `desiredSize` | `int` | The column's width, in units. |
 
 <a class="ref method" href="/docs/ui-glossary/elements/grid/#addcolumndefinition">`AddColumnDefinition()`</a> · Adds an auto column, as wide as the widest content of its cells.
 
 <a class="ref method" href="/docs/ui-glossary/elements/grid/#addcolumndefinition">`AddColumnDefinition(float proportion)`</a> · Adds a proportional column, a share of the width left. Negative values count as 0.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `proportion` | `float` | The column's share of the width the fixed and auto-sized columns leave, relative to the other proportional columns (two columns of 1.0f take half each). |
+
 <h3 id="additem"><span class="method"><code>AddItem()</code></span> <a class="ctx" href="/docs/ui-layout/#grid-methods" title="AddItem() in context on the layout page" aria-label="AddItem() in context on the layout page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/grid/#additem">AddItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Puts the item in the cell its <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#gridcolumn">`GridColumn`</a>, <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#gridrow">`GridRow`</a> and spans name, making the cell if needed. Ignored when the column or row doesn't exist.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element to add. |
 
 <h3 id="additemat"><span class="method"><code>AddItemAt()</code></span> <a class="ctx" href="/docs/ui-layout/#grid-methods" title="AddItemAt() in context on the layout page" aria-label="AddItemAt() in context on the layout page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/grid/#additemat">AddItemAt</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item, int index)</code></span> · Does nothing: a grid places items by column and row. Use <a class="ref method" href="/docs/ui-glossary/elements/grid/#additem">`AddItem`</a>.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element to insert. |
+| `index` | `int` | The position to insert it at: 0 for the first, the number of items for the end. |
+
 <h3 id="addrowdefinition"><span class="method"><code>AddRowDefinition()</code></span> <a class="ctx" href="/docs/ui-layout/#grid-methods" title="AddRowDefinition() in context on the layout page" aria-label="AddRowDefinition() in context on the layout page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/grid/#addrowdefinition">`AddRowDefinition(int desiredSize)`</a> · Adds a row of a fixed height in units (at least 1).
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `desiredSize` | `int` | The row's height, in units. |
+
 <a class="ref method" href="/docs/ui-glossary/elements/grid/#addrowdefinition">`AddRowDefinition()`</a> · Adds an auto row, as tall as the tallest content of its cells.
 
 <a class="ref method" href="/docs/ui-glossary/elements/grid/#addrowdefinition">`AddRowDefinition(float proportion)`</a> · Adds a proportional row, a share of the height left. Negative values count as 0.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `proportion` | `float` | The row's share of the height the fixed and auto-sized rows leave, relative to the other proportional rows (two rows of 1.0f take half each). |
 
 <h3 id="clear"><span class="method"><code>Clear()</code></span> <a class="ctx" href="/docs/ui-layout/#grid-methods" title="Clear() in context on the layout page" aria-label="Clear() in context on the layout page">🠆</a></h3>
 
@@ -75,14 +104,34 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/grid/#removeitem">RemoveItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Takes the item out of its cell. It is detached, not disposed.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element to take out. |
+
 <h3 id="removeitemat"><span class="method"><code>RemoveItemAt()</code></span> <a class="ctx" href="/docs/ui-layout/#grid-methods" title="RemoveItemAt() in context on the layout page" aria-label="RemoveItemAt() in context on the layout page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/grid/#removeitemat">`RemoveItemAt(int index)`</a> · Removes an item by its index in the items of all cells, cell by cell.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | `int` | The index of the item to take out. |
 
 <h3 id="removeitemsrangeat"><span class="method"><code>RemoveItemsRangeAt()</code></span> <a class="ctx" href="/docs/ui-layout/#grid-methods" title="RemoveItemsRangeAt() in context on the layout page" aria-label="RemoveItemsRangeAt() in context on the layout page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/grid/#removeitemsrangeat">`RemoveItemsRangeAt(int index, int count)`</a> · Removes `count` items from the index on, counted as in <a class="ref method" href="/docs/ui-glossary/elements/grid/#removeitemat">`RemoveItemAt`</a>.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | `int` | The index of the first item to take out. |
+| `count` | `int` | The number of items to take out. |
+
 <h3 id="trygetcell"><span class="method"><code>TryGetCell()</code></span> <a class="ctx" href="/docs/ui-layout/#grid-methods" title="TryGetCell() in context on the layout page" aria-label="TryGetCell() in context on the layout page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/grid/#trygetcell">`TryGetCell(int column, int row, int columnSpan = 1, int rowSpan = 1)`</a> · Returns the cell at that place with those spans, or null when there is none (no item uses it) or the place is outside the grid. Spans are cut to the grid as <a class="ref method" href="/docs/ui-glossary/elements/grid/#additem">`AddItem`</a> cuts them.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `column` | `int` | The index of the cell's first column. |
+| `row` | `int` | The index of the cell's first row. |
+| `columnSpan` | `int` | The number of columns the cell spans. Default: `1`. |
+| `rowSpan` | `int` | The number of rows the cell spans. Default: `1`. |

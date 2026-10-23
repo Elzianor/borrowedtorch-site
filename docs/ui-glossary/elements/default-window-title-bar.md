@@ -34,3 +34,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 <h3 id="defaultwindowtitlebar"><span class="method"><code>DefaultWindowTitleBar()</code></span> <a class="ctx" href="/docs/ui-layout/#defaultwindowtitlebar" title="DefaultWindowTitleBar() in context on the layout page" aria-label="DefaultWindowTitleBar() in context on the layout page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/default-window-title-bar/#defaultwindowtitlebar">`DefaultWindowTitleBar(string name = null)`</a> · Creates a title bar, for example to use in a window of your own. Its close button does nothing until <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#onclosebuttonclickaction">`OnCloseButtonClickAction`</a> is set.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | The element's <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a>, which <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a> finds it by. Default: `null`. |

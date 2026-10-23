@@ -43,33 +43,83 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <a class="ref method" href="/docs/ui-glossary/types/margin/#margin">`Margin(int all)`</a> · The same margin on every side.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `all` | `int` | The value of every side, in units. |
+
 <a class="ref method" href="/docs/ui-glossary/types/margin/#margin">`Margin(int left = 0, int top = 0, int right = 0, int bottom = 0)`</a> · A margin per side; the sides left out are 0.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `left` | `int` | The left side, in units. Default: `0`. |
+| `top` | `int` | The top side, in units. Default: `0`. |
+| `right` | `int` | The right side, in units. Default: `0`. |
+| `bottom` | `int` | The bottom side, in units. Default: `0`. |
 
 `implicit operator Margin(int all)` · `element.Margin = 5` sets 5 on every side.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `all` | `int` | The value of every side. |
+
 `implicit operator Margin((int left, int top) tuple)` · Left and top; right and bottom are 0.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `tuple` | `(int left, int top)` | The sides it names, in order; the ones it leaves out are 0. |
 
 `implicit operator Margin((int left, int top, int right) tuple)` · Left, top and right; bottom is 0.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `tuple` | `(int left, int top, int right)` | The sides it names, in order; the ones it leaves out are 0. |
+
 `implicit operator Margin((int left, int top, int right, int bottom) tuple)` · All four sides.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `tuple` | `(int left, int top, int right, int bottom)` | The sides it names, in order; the ones it leaves out are 0. |
 
 <h3 id="section"><span class="method"><code>+()</code></span> <a class="ctx" href="/docs/ui-base-element/#margin" title="+() in context on the base element page" aria-label="+() in context on the base element page">🠆</a></h3>
 
 `operator +(Margin margin1, Margin margin2)` · Adds the margins side by side.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `margin1` | `Margin` | The first margin. |
+| `margin2` | `Margin` | The margin added to it, side by side. |
+
 <h3 id="section-1"><span class="method"><code>-()</code></span> <a class="ctx" href="/docs/ui-base-element/#margin" title="-() in context on the base element page" aria-label="-() in context on the base element page">🠆</a></h3>
 
 `operator -(Margin margin)` · The margin with every side negated.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `margin` | `Margin` | The margin to negate. |
+
 `operator -(Margin margin1, Margin margin2)` · Subtracts the second margin from the first, side by side.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `margin1` | `Margin` | The margin to subtract from. |
+| `margin2` | `Margin` | The margin subtracted, side by side. |
 
 <h3 id="section-1-1"><span class="method"><code>==()</code></span> <a class="ctx" href="/docs/ui-base-element/#margin" title="==() in context on the base element page" aria-label="==() in context on the base element page">🠆</a></h3>
 
 `operator ==(Margin margin1, Margin margin2)` · True when all four sides are equal. `!=` is the opposite.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `margin1` | `Margin` | The first margin. |
+| `margin2` | `Margin` | The second margin. |
+
 <h3 id="equals"><span class="method"><code>Equals()</code></span> <a class="ctx" href="/docs/ui-base-element/#margin" title="Equals() in context on the base element page" aria-label="Equals() in context on the base element page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/types/margin/#equals">`Equals(Margin other)`</a> · True when all four sides are equal (<a class="ref method" href="/docs/ui-glossary/types/margin/#equals">`Equals(object)`</a> as well, for another `Margin`).
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `other` | `Margin` | The margin to compare with. |
 
 <h3 id="gethashcode"><span class="method"><code>GetHashCode()</code></span> <a class="ctx" href="/docs/ui-base-element/#margin" title="GetHashCode() in context on the base element page" aria-label="GetHashCode() in context on the base element page">🠆</a></h3>
 

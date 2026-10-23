@@ -50,3 +50,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 <h3 id="border"><span class="method"><code>Border()</code></span> <a class="ctx" href="/docs/ui-layout/#border-methods" title="Border() in context on the layout page" aria-label="Border() in context on the layout page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/border/#border">`Border(string name = null)`</a> · Creates a border. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | The element's <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a>, which <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a> finds it by. Default: `null`. |

@@ -165,13 +165,25 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <a class="ref method" href="/docs/ui-glossary/elements/rich-text-box/#richtextbox">`RichTextBox(string name = null)`</a> · Creates a rich text box. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | The element's <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a>, which <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a> finds it by. Default: `null`. |
+
 <h3 id="animatetext"><span class="method"><code>AnimateText()</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-methods" title="AnimateText() in context on the text page" aria-label="AnimateText() in context on the text page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/rich-text-box/#animatetext">`AnimateText(string text)`</a> · Types the text out with <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#characterprintdelayms">`CharacterPrintDelayMs`</a> per character and makes the box read-only. Stops a running animation first.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `text` | `string` | The text to type out; it becomes the box's text. |
+
 <h3 id="placecursorat"><span class="method"><code>PlaceCursorAt()</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-methods" title="PlaceCursorAt() in context on the text page" aria-label="PlaceCursorAt() in context on the text page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/rich-text-box/#placecursorat">`PlaceCursorAt(int position)`</a> · Moves the caret to a text position (clamped to the text), scrolls it into view and gives the box the keyboard. A read-only box shows no caret but scrolls there.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `position` | `int` | The text position: the number of characters before the caret. |
 
 <h3 id="placecursorattextend"><span class="method"><code>PlaceCursorAtTextEnd()</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-methods" title="PlaceCursorAtTextEnd() in context on the text page" aria-label="PlaceCursorAtTextEnd() in context on the text page">🠆</a></h3>
 
@@ -188,6 +200,11 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 <h3 id="selecttextinterval"><span class="method"><code>SelectTextInterval()</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-methods" title="SelectTextInterval() in context on the text page" aria-label="SelectTextInterval() in context on the text page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/rich-text-box/#selecttextinterval">`SelectTextInterval(int start, int end)`</a> · Selects the text between two positions (clamped to the text), with the caret at `end`, scrolled into view, and gives the box the keyboard. Does nothing when `start` equals `end`.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `start` | `int` | The text position where the selection starts. |
+| `end` | `int` | The text position where the selection ends, where the caret goes. |
 
 <h3 id="stoptextanimation"><span class="method"><code>StopTextAnimation()</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-methods" title="StopTextAnimation() in context on the text page" aria-label="StopTextAnimation() in context on the text page">🠆</a></h3>
 

@@ -95,6 +95,10 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <a class="ref method" href="/docs/ui-glossary/elements/label/#label">`Label(string name = null)`</a> · Creates a label. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | The element's <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a>, which <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a> finds it by. Default: `null`. |
+
 <h3 id="draw"><span class="method"><code>Draw()</code></span> <a class="ctx" href="/docs/ui-text/#label-methods" title="Draw() in context on the text page" aria-label="Draw() in context on the text page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/label/#draw">`Draw()`</a> · Draws the label's background, then its lines straight from the font atlas. The framework calls it; you don't need to.

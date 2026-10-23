@@ -22,3 +22,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 <h3 id="draganddroprepresentation"><span class="method"><code>DragAndDropRepresentation()</code></span> <a class="ctx" href="/docs/ui-images/#draganddroprepresentation-methods" title="DragAndDropRepresentation() in context on the images page" aria-label="DragAndDropRepresentation() in context on the images page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/drag-and-drop-representation/#draganddroprepresentation">`DragAndDropRepresentation(string name = null)`</a> · Creates a representation that doesn't take the mouse, aligned to the top left.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | The element's <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a>, which <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a> finds it by. Default: `null`. |

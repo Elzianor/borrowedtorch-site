@@ -8,4 +8,9 @@ A delegate: the handler type of an event.
 
 Signature: <code>void CheckedUnchecked(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, bool isChecked)</code>
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sender` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element that raised the event. |
+| `isChecked` | `bool` | Whether the box is checked now. |
+
 Handles [`CheckBox.OnCheckedUnchecked`](/docs/ui-glossary/elements/check-box/#oncheckedunchecked).

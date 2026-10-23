@@ -79,25 +79,51 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <a class="ref method" href="/docs/ui-glossary/elements/tree-view/#treeview">`TreeView(string name = null)`</a> · Creates a tree view. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | The element's <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a>, which <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a> finds it by. Default: `null`. |
+
 <h3 id="additem"><span class="method"><code>AddItem()</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-methods" title="AddItem() in context on the lists and menus page" aria-label="AddItem() in context on the lists and menus page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/tree-view/#additem">AddItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Adds a top-level item; an element that is not a <a class="ref" href="/docs/ui-glossary/elements/tree-view-item/">`TreeViewItem`</a> is put in one. Does nothing while an <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#itemssource">`ItemsSource`</a> is set.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element to add. |
 
 <h3 id="additemat"><span class="method"><code>AddItemAt()</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-methods" title="AddItemAt() in context on the lists and menus page" aria-label="AddItemAt() in context on the lists and menus page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/tree-view/#additemat">AddItemAt</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item, int index)</code></span> · Inserts a top-level item at the index.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element to insert. |
+| `index` | `int` | The position to insert it at: 0 for the first, the number of items for the end. |
+
 <h3 id="additemsrange"><span class="method"><code>AddItemsRange()</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-methods" title="AddItemsRange() in context on the lists and menus page" aria-label="AddItemsRange() in context on the lists and menus page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/tree-view/#additemsrange">AddItemsRange</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items)</code></span> · Adds top-level items at the end, listed in one go.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `items` | <code>IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt;</code> | The elements to add, in order. |
 
 <h3 id="additemsrangeat"><span class="method"><code>AddItemsRangeAt()</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-methods" title="AddItemsRangeAt() in context on the lists and menus page" aria-label="AddItemsRangeAt() in context on the lists and menus page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/tree-view/#additemsrangeat">AddItemsRangeAt</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items, int index)</code></span> · Inserts top-level items at the index, listed in one go.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `items` | <code>IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt;</code> | The elements to insert, in order. |
+| `index` | `int` | The position of the first one: 0 for the first, the number of items for the end. |
+
 <h3 id="addtextitem"><span class="method"><code>AddTextItem()</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-methods" title="AddTextItem() in context on the lists and menus page" aria-label="AddTextItem() in context on the lists and menus page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/tree-view/#addtextitem">`AddTextItem(string text)`</a> · Adds a top-level item showing the text in a label and returns it, to nest items in it. The tree view made it, so it is disposed when it is removed. Does nothing and returns `null` while an <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#itemssource">`ItemsSource`</a> is set.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `text` | `string` | The text of the item's label. |
 
 <h3 id="clearitems"><span class="method"><code>ClearItems()</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-methods" title="ClearItems() in context on the lists and menus page" aria-label="ClearItems() in context on the lists and menus page">🠆</a></h3>
 
@@ -115,17 +141,34 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/tree-view/#removeitem">RemoveItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Removes the item (or the item made around the element) from wherever it is in the tree, with its branch.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element to take out. |
+
 <h3 id="removeitemat"><span class="method"><code>RemoveItemAt()</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-methods" title="RemoveItemAt() in context on the lists and menus page" aria-label="RemoveItemAt() in context on the lists and menus page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/tree-view/#removeitemat">`RemoveItemAt(int index)`</a> · Removes the top-level item at the index.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | `int` | The index of the item to take out. |
 
 <h3 id="removeitemsrangeat"><span class="method"><code>RemoveItemsRangeAt()</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-methods" title="RemoveItemsRangeAt() in context on the lists and menus page" aria-label="RemoveItemsRangeAt() in context on the lists and menus page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/tree-view/#removeitemsrangeat">`RemoveItemsRangeAt(int index, int count)`</a> · Removes `count` top-level items from the index on.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | `int` | The index of the first item to take out. |
+| `count` | `int` | The number of items to take out. |
+
 <h3 id="selectsource"><span class="method"><code>SelectSource()</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-methods" title="SelectSource() in context on the lists and menus page" aria-label="SelectSource() in context on the lists and menus page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/tree-view/#selectsource">`SelectSource(object source)`</a> · Selects the item of the <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#itemssource">`ItemsSource`</a> object, also one in a branch that was not expanded yet. Nothing happens when there is none.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `source` | `object` | The <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#itemssource">`ItemsSource`</a> object whose item is selected. |
 
 ## Events
 

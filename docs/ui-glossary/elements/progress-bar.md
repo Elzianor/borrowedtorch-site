@@ -54,3 +54,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 <h3 id="progressbar"><span class="method"><code>ProgressBar()</code></span> <a class="ctx" href="/docs/ui-controls/#progressbar-methods" title="ProgressBar() in context on the controls page" aria-label="ProgressBar() in context on the controls page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/progress-bar/#progressbar">`ProgressBar(string name = null)`</a> · Creates a progress bar. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | The element's <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a>, which <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a> finds it by. Default: `null`. |

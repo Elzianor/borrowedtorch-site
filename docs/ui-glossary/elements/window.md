@@ -55,6 +55,10 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <a class="ref method" href="/docs/ui-glossary/elements/window/#window">`Window(string name = null)`</a> · Creates a window with the default title bar. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | The element's <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a>, which <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a> finds it by. Default: `null`. |
+
 <h3 id="bringtofront"><span class="method"><code>BringToFront()</code></span> <a class="ctx" href="/docs/ui-layout/#window-methods" title="BringToFront() in context on the layout page" aria-label="BringToFront() in context on the layout page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/window/#bringtofront">`BringToFront()`</a> · Puts the shown non-modal window above its sibling windows. Does nothing for a hidden or modal window.

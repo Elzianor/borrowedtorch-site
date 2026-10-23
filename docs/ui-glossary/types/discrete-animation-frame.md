@@ -26,3 +26,8 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 <h3 id="discreteanimationframe"><span class="method"><code>DiscreteAnimationFrame()</code></span> <a class="ctx" href="/docs/ui-styles/#discreteanimationframet" title="DiscreteAnimationFrame() in context on the styles page" aria-label="DiscreteAnimationFrame() in context on the styles page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/types/discrete-animation-frame/#discreteanimationframe">`DiscreteAnimationFrame(T value, int applyAtMs)`</a> · Creates the frame.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `value` | `T` | The value set on the properties. |
+| `applyAtMs` | `int` | The point of the time line where the value is set, in milliseconds. It stays until the next frame's. |

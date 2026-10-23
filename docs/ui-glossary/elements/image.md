@@ -46,3 +46,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 <h3 id="image"><span class="method"><code>Image()</code></span> <a class="ctx" href="/docs/ui-images/#image-methods" title="Image() in context on the images page" aria-label="Image() in context on the images page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/image/#image">`Image(string name = null)`</a> · Creates an image. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | The element's <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a>, which <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a> finds it by. Default: `null`. |

@@ -323,29 +323,62 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#actualheightchangedhandleroverride">`ActualHeightChangedHandlerOverride(int height)`</a> · The layout gave the element another height.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `height` | `int` | The element's new actual height, in units. |
+
 <h3 id="actualwidthchangedhandleroverride"><span class="method"><code>ActualWidthChangedHandlerOverride()</code></span> <a class="ctx" href="/docs/ui-base-element/#handler-overrides" title="ActualWidthChangedHandlerOverride() in context on the base element page" aria-label="ActualWidthChangedHandlerOverride() in context on the base element page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#actualwidthchangedhandleroverride">`ActualWidthChangedHandlerOverride(int width)`</a> · The layout gave the element another width.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `width` | `int` | The element's new actual width, in units. |
 
 <h3 id="addchild"><span class="method"><code>AddChild()</code></span> <a class="ctx" href="/docs/ui-base-element/#members-for-derived-elements" title="AddChild() in context on the base element page" aria-label="AddChild() in context on the base element page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#addchild">`AddChild(BaseElement child, bool isSole = false, int insertIndex = -1, bool isVisualComponent = true)`</a> · Protected. Adds a child; by default an own part, which the item methods leave alone and which is disposed when it is removed. `isSole` removes the other items first.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `child` | `BaseElement` | The element to add. One that has another parent throws `InvalidOperationException`. |
+| `isSole` | `bool` | Whether the element's other items are removed first, so the child is its only item (its parts stay). Default: `false`. |
+| `insertIndex` | `int` | The position in `Children` to insert the child at; -1, or a position past the end, adds it last. Default: `-1`. |
+| `isVisualComponent` | `bool` | Whether the child is a part of the element (`IsVisualComponent`): the item methods leave a part alone, and it is disposed when it is removed. Pass `false` for an item, which is only detached. Default: `true`. |
+
 <h3 id="additem"><span class="method"><code>AddItem()</code></span> <a class="ctx" href="/docs/ui-base-element/#items-and-content-methods" title="AddItem() in context on the base element page" aria-label="AddItem() in context on the base element page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#additem">`AddItem(BaseElement item)`</a> · Adds the item after the other children.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | `BaseElement` | The element to add. |
 
 <h3 id="additemat"><span class="method"><code>AddItemAt()</code></span> <a class="ctx" href="/docs/ui-base-element/#items-and-content-methods" title="AddItemAt() in context on the base element page" aria-label="AddItemAt() in context on the base element page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#additemat">`AddItemAt(BaseElement item, int index)`</a> · Inserts the item at the index in `Children`. An index below 0 or above the count is ignored.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | `BaseElement` | The element to insert. |
+| `index` | `int` | The position to insert it at: 0 for the first, the number of items for the end. |
+
 <h3 id="additemsrange"><span class="method"><code>AddItemsRange()</code></span> <a class="ctx" href="/docs/ui-base-element/#items-and-content-methods" title="AddItemsRange() in context on the base element page" aria-label="AddItemsRange() in context on the base element page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#additemsrange">`AddItemsRange(IEnumerable<BaseElement> items)`</a> · Adds the items in order after the other children.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `items` | `IEnumerable<BaseElement>` | The elements to add, in order. |
+
 <h3 id="additemsrangeat"><span class="method"><code>AddItemsRangeAt()</code></span> <a class="ctx" href="/docs/ui-base-element/#items-and-content-methods" title="AddItemsRangeAt() in context on the base element page" aria-label="AddItemsRangeAt() in context on the base element page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#additemsrangeat">`AddItemsRangeAt(IEnumerable<BaseElement> items, int index)`</a> · Inserts the items in order from the index; a null item takes no place.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `items` | `IEnumerable<BaseElement>` | The elements to insert, in order. |
+| `index` | `int` | The position of the first one: 0 for the first, the number of items for the end. |
 
 <h3 id="applygeneralstyle"><span class="method"><code>ApplyGeneralStyle()</code></span> <a class="ctx" href="/docs/ui-base-element/#members-for-derived-elements" title="ApplyGeneralStyle() in context on the base element page" aria-label="ApplyGeneralStyle() in context on the base element page">🠆</a></h3>
 
@@ -355,6 +388,11 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/base-element/#applystyle">ApplyStyle</a>(<a href="/docs/ui-glossary/types/base-style/">BaseStyle</a> style, <a href="/docs/ui-glossary/types/value-sources/">ValueSources</a> valueSource)</code></span> · Protected. Applies the style's assigned properties to the element as the given value source.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `style` | <a class="ref" href="/docs/ui-glossary/types/base-style/">`BaseStyle`</a> | The style whose assigned properties are applied. |
+| `valueSource` | <a class="ref" href="/docs/ui-glossary/types/value-sources/">`ValueSources`</a> | The source the style's values are stored for, such as <a class="ref" href="/docs/ui-glossary/types/value-sources/#styleoverride">`ValueSources.StyleOverride`</a>. |
+
 <h3 id="applystyleoverride"><span class="method"><code>ApplyStyleOverride()</code></span> <a class="ctx" href="/docs/ui-base-element/#members-for-derived-elements" title="ApplyStyleOverride() in context on the base element page" aria-label="ApplyStyleOverride() in context on the base element page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#applystyleoverride">`ApplyStyleOverride()`</a> · Protected, of <a class="ref method" href="/docs/ui-glossary/elements/base-element/#genericstyleandmousecursorsdata">`GenericStyleAndMouseCursorsData<TStyle>`</a>. Applies the style override again.
@@ -363,11 +401,23 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#arrange">`Arrange(Rectangle slot)`</a> · Gives the element its size and position in the slot: a stretched element takes the slot less its margins, the others keep their measured size and are placed by their margins and alignment.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `slot` | `Rectangle` | The rectangle the parent gives the element, in units. |
+
 <h3 id="arrangeat"><span class="method"><code>ArrangeAt()</code></span> <a class="ctx" href="/docs/ui-base-element/#layout-methods" title="ArrangeAt() in context on the base element page" aria-label="ArrangeAt() in context on the base element page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#arrangeat">`ArrangeAt(Point position)`</a> · Places the element at a position its container chose, at its measured size; its margins and alignment are not applied.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `position` | `Point` | The element's position, chosen by its container, in units. |
+
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#arrangeat">`ArrangeAt(Rectangle bounds)`</a> · Places the element at a position and size its container chose.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `bounds` | `Rectangle` | The element's position and size, chosen by its container, in units. |
 
 <h3 id="arrangecontent"><span class="method"><code>ArrangeContent()</code></span> <a class="ctx" href="/docs/ui-base-element/#layout-methods" title="ArrangeContent() in context on the base element page" aria-label="ArrangeContent() in context on the base element page">🠆</a></h3>
 
@@ -381,6 +431,11 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/base-element/#clickhandleroverride">ClickHandlerOverride</a>(BaseElement sender, <a href="/docs/ui-glossary/types/mouse-click-event-args/">MouseClickEventArgs</a> e)</code></span> · Before `OnClick`.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sender` | `BaseElement` | The element clicked. |
+| `e` | <a class="ref" href="/docs/ui-glossary/types/mouse-click-event-args/">`MouseClickEventArgs`</a> | Where the mouse was and the states of its buttons. |
+
 <h3 id="cursorspropertychangedhandler"><span class="method"><code>CursorsPropertyChangedHandler()</code></span> <a class="ctx" href="/docs/ui-base-element/#members-for-derived-elements" title="CursorsPropertyChangedHandler() in context on the base element page" aria-label="CursorsPropertyChangedHandler() in context on the base element page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#cursorspropertychangedhandler">`CursorsPropertyChangedHandler()`</a> · Protected. Shows the element's current cursors again, after its cursor set changed.
@@ -389,11 +444,19 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#detachchild">`DetachChild(BaseElement child)`</a> · Protected. Takes a child out without disposing it, to add it again later.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `child` | `BaseElement` | The child to take out. |
+
 <h3 id="detachchildren"><span class="method"><code>DetachChildren()</code></span> <a class="ctx" href="/docs/ui-base-element/#members-for-derived-elements" title="DetachChildren() in context on the base element page" aria-label="DetachChildren() in context on the base element page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#detachchildren">`DetachChildren()`</a> · Protected. Takes every child out without disposing them.
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#detachchildren">`DetachChildren(Predicate<BaseElement> match)`</a> · Protected. Takes the matching children out without disposing them.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `match` | `Predicate<BaseElement>` | Picks the children to take out: true for each one to detach. |
 
 <h3 id="dispose"><span class="method"><code>Dispose()</code></span> <a class="ctx" href="/docs/ui-base-element/#disposablebase" title="Dispose() in context on the base element page" aria-label="Dispose() in context on the base element page">🠆</a></h3>
 
@@ -407,9 +470,18 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/base-element/#doubleclickhandleroverride">DoubleClickHandlerOverride</a>(BaseElement sender, <a href="/docs/ui-glossary/types/mouse-click-event-args/">MouseClickEventArgs</a> e)</code></span> · Before <a class="ref event" href="/docs/ui-glossary/elements/base-element/#ondoubleclick">`OnDoubleClick`</a>.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sender` | `BaseElement` | The element double-clicked. |
+| `e` | <a class="ref" href="/docs/ui-glossary/types/mouse-click-event-args/">`MouseClickEventArgs`</a> | Where the mouse was and the states of its buttons. |
+
 <h3 id="doubleclickintervalmspropertychangedhandleroverride"><span class="method"><code>DoubleClickIntervalMsPropertyChangedHandlerOverride()</code></span> <a class="ctx" href="/docs/ui-base-element/#handler-overrides" title="DoubleClickIntervalMsPropertyChangedHandlerOverride() in context on the base element page" aria-label="DoubleClickIntervalMsPropertyChangedHandlerOverride() in context on the base element page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#doubleclickintervalmspropertychangedhandleroverride">`DoubleClickIntervalMsPropertyChangedHandlerOverride(int value)`</a> · <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#doubleclickintervalms">`DoubleClickIntervalMs`</a> changed (after it was passed to the parts).
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `value` | `int` | The new interval, in milliseconds. |
 
 <h3 id="draw"><span class="method"><code>Draw()</code></span> <a class="ctx" href="/docs/ui-base-element/#appearance-methods" title="Draw() in context on the base element page" aria-label="Draw() in context on the base element page">🠆</a></h3>
 
@@ -423,13 +495,25 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#foregroundcolorpropertychangedhandleroverride">`ForegroundColorPropertyChangedHandlerOverride(Color value)`</a> · <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#foregroundcolor">`ForegroundColor`</a> changed.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `value` | `Color` | The new foreground color. |
+
 <h3 id="genericstyleandmousecursorsdata"><span class="method"><code>GenericStyleAndMouseCursorsData()</code></span> <a class="ctx" href="/docs/ui-base-element/#members-for-derived-elements" title="GenericStyleAndMouseCursorsData() in context on the base element page" aria-label="GenericStyleAndMouseCursorsData() in context on the base element page">🠆</a></h3>
 
 <a class="ref" href="/docs/ui-glossary/types/generic-style-and-mouse-cursors-data/">`GenericStyleAndMouseCursorsData(string name = null)`</a> · Protected. The same, for an element with a style.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | The element's <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a>, which <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a> finds it by. Default: `null`. |
+
 <h3 id="getelementbyname"><span class="method"><code>GetElementByName()</code></span> <a class="ctx" href="/docs/ui-base-element/#items-and-content-methods" title="GetElementByName() in context on the base element page" aria-label="GetElementByName() in context on the base element page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName(string name)`</a> · Finds an element by name below this one (its children first, then deeper, popups such as its tooltip included). Null when there is none.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | The <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a> to look for. |
 
 <h3 id="gotfocushandleroverride"><span class="method"><code>GotFocusHandlerOverride()</code></span> <a class="ctx" href="/docs/ui-base-element/#handler-overrides" title="GotFocusHandlerOverride() in context on the base element page" aria-label="GotFocusHandlerOverride() in context on the base element page">🠆</a></h3>
 
@@ -439,9 +523,17 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#hittestpropertychangedhandleroverride">`HitTestPropertyChangedHandlerOverride(bool value)`</a> · <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#hittest">`HitTest`</a> changed.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `value` | `bool` | The new value of <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#hittest">`HitTest`</a>. |
+
 <h3 id="inheritstatepropertychangedhandleroverride"><span class="method"><code>InheritStatePropertyChangedHandlerOverride()</code></span> <a class="ctx" href="/docs/ui-base-element/#handler-overrides" title="InheritStatePropertyChangedHandlerOverride() in context on the base element page" aria-label="InheritStatePropertyChangedHandlerOverride() in context on the base element page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/base-element/#inheritstatepropertychangedhandleroverride">InheritStatePropertyChangedHandlerOverride</a>(<a href="/docs/ui-glossary/types/inherit-state/">InheritState</a> value)</code></span> · <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#inheritstate">`InheritState`</a> changed.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `value` | <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#inheritstate">`InheritState`</a> | The new value of <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#inheritstate">`InheritState`</a>. |
 
 <h3 id="invalidatearrange"><span class="method"><code>InvalidateArrange()</code></span> <a class="ctx" href="/docs/ui-base-element/#layout-methods" title="InvalidateArrange() in context on the base element page" aria-label="InvalidateArrange() in context on the base element page">🠆</a></h3>
 
@@ -455,6 +547,10 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/base-element/#keydownhandleroverride">KeyDownHandlerOverride</a>(<a href="/docs/ui-glossary/types/key-down-event-args/">KeyDownEventArgs</a> e)</code></span> · A key reached the element, before <a class="ref event" href="/docs/ui-glossary/elements/base-element/#onkeydown">`OnKeyDown`</a>; set `e.Handled` for a key the element uses.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `e` | <a class="ref" href="/docs/ui-glossary/types/key-down-event-args/">`KeyDownEventArgs`</a> | The pressed key. Set `e.Handled` for a key the element uses. |
+
 <h3 id="loadtextures"><span class="method"><code>LoadTextures()</code></span> <a class="ctx" href="/docs/ui-base-element/#members-for-derived-elements" title="LoadTextures() in context on the base element page" aria-label="LoadTextures() in context on the base element page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#loadtextures">`LoadTextures()`</a> · Protected virtual. Called when <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> changes; load the element's textures from the folder here and call the base.
@@ -462,6 +558,10 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 <h3 id="locationchangedhandleroverride"><span class="method"><code>LocationChangedHandlerOverride()</code></span> <a class="ctx" href="/docs/ui-base-element/#handler-overrides" title="LocationChangedHandlerOverride() in context on the base element page" aria-label="LocationChangedHandlerOverride() in context on the base element page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#locationchangedhandleroverride">`LocationChangedHandlerOverride(Point location)`</a> · The element moved.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `location` | `Point` | The element's new position on the screen, in units. |
 
 <h3 id="lostfocushandleroverride"><span class="method"><code>LostFocusHandlerOverride()</code></span> <a class="ctx" href="/docs/ui-base-element/#handler-overrides" title="LostFocusHandlerOverride() in context on the base element page" aria-label="LostFocusHandlerOverride() in context on the base element page">🠆</a></h3>
 
@@ -471,13 +571,28 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#measure">`Measure(int slotWidth, int slotHeight)`</a> · Measures the element for the slot its parent gives it (`-1`: a size the parent does not know yet): a stretched element takes the slot less its margins, a fixed one its desired size, the others fit their content.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `slotWidth` | `int` | The width of the slot the parent gives the element, in units, or -1 when the parent doesn't know it yet. |
+| `slotHeight` | `int` | The height of the slot the parent gives the element, in units, or -1 when the parent doesn't know it yet. |
+
 <h3 id="measureat"><span class="method"><code>MeasureAt()</code></span> <a class="ctx" href="/docs/ui-base-element/#layout-methods" title="MeasureAt() in context on the base element page" aria-label="MeasureAt() in context on the base element page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#measureat">`MeasureAt(int width, int height)`</a> · Measures the element at a size its container chose for it; along a side given as `-1` it has its own size (fixed, or fitted to its content).
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `width` | `int` | The width the container chose, in units, or -1 for the element's own width (fixed, or fitted to its content). |
+| `height` | `int` | The height the container chose, in units, or -1 for the element's own height (fixed, or fitted to its content). |
+
 <h3 id="measurecontent"><span class="method"><code>MeasureContent()</code></span> <a class="ctx" href="/docs/ui-base-element/#layout-methods" title="MeasureContent() in context on the base element page" aria-label="MeasureContent() in context on the base element page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#measurecontent">`MeasureContent(int width, int height)`</a> · Protected virtual, returns `Point`. Measures the children and returns the content size, as described above.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `width` | `int` | The element's width, in units, or -1 where the element fits its content. |
+| `height` | `int` | The element's height, in units, or -1 where the element fits its content. |
 
 <h3 id="mouseenterhandleroverride"><span class="method"><code>MouseEnterHandlerOverride()</code></span> <a class="ctx" href="/docs/ui-base-element/#handler-overrides" title="MouseEnterHandlerOverride() in context on the base element page" aria-label="MouseEnterHandlerOverride() in context on the base element page">🠆</a></h3>
 
@@ -491,25 +606,51 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#removechild">`RemoveChild(BaseElement child)`</a> · Protected. Takes a child out: an own part is disposed, an item only detached.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `child` | `BaseElement` | The child to take out. |
+
 <h3 id="removechildat"><span class="method"><code>RemoveChildAt()</code></span> <a class="ctx" href="/docs/ui-base-element/#members-for-derived-elements" title="RemoveChildAt() in context on the base element page" aria-label="RemoveChildAt() in context on the base element page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#removechildat">`RemoveChildAt(int index)`</a> · Protected. The same, by index in `Children`.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | `int` | The index in `Children` of the child to take out. |
 
 <h3 id="removeitem"><span class="method"><code>RemoveItem()</code></span> <a class="ctx" href="/docs/ui-base-element/#items-and-content-methods" title="RemoveItem() in context on the base element page" aria-label="RemoveItem() in context on the base element page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#removeitem">`RemoveItem(BaseElement item)`</a> · Takes the item out without disposing it. Does nothing for a part of the element.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | `BaseElement` | The element to take out. |
+
 <h3 id="removeitemat"><span class="method"><code>RemoveItemAt()</code></span> <a class="ctx" href="/docs/ui-base-element/#items-and-content-methods" title="RemoveItemAt() in context on the base element page" aria-label="RemoveItemAt() in context on the base element page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#removeitemat">`RemoveItemAt(int index)`</a> · Takes the item at the index out without disposing it.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | `int` | The index of the item to take out. |
 
 <h3 id="removeitemsrangeat"><span class="method"><code>RemoveItemsRangeAt()</code></span> <a class="ctx" href="/docs/ui-base-element/#items-and-content-methods" title="RemoveItemsRangeAt() in context on the base element page" aria-label="RemoveItemsRangeAt() in context on the base element page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#removeitemsrangeat">`RemoveItemsRangeAt(int index, int count)`</a> · Takes `count` items out from the index on (fewer when the children end first), without disposing them.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | `int` | The index of the first item to take out. |
+| `count` | `int` | The number of items to take out. |
+
 <h3 id="statechangedhandleroverride"><span class="method"><code>StateChangedHandlerOverride()</code></span> <a class="ctx" href="/docs/ui-base-element/#handler-overrides" title="StateChangedHandlerOverride() in context on the base element page" aria-label="StateChangedHandlerOverride() in context on the base element page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/base-element/#statechangedhandleroverride">StateChangedHandlerOverride</a>(BaseElement sender, <a href="/docs/ui-glossary/types/element-state-data/">ElementStateData</a> stateData)</code></span> · The shown state changed, before <a class="ref event" href="/docs/ui-glossary/elements/base-element/#onstatechanged">`OnStateChanged`</a>.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sender` | `BaseElement` | The element whose shown state changed. |
+| `stateData` | <a class="ref" href="/docs/ui-glossary/types/element-state-data/">`ElementStateData`</a> | The new state and where it comes from. |
 
 <h3 id="style"><span class="method"><code>Style()</code></span> <a class="ctx" href="/docs/ui-base-element/#members-for-derived-elements" title="Style() in context on the base element page" aria-label="Style() in context on the base element page">🠆</a></h3>
 
@@ -519,13 +660,25 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#textinputhandleroverride">`TextInputHandlerOverride(TextInputEventArgs e)`</a> · Typed text reached the focused element.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `e` | `TextInputEventArgs` | The typed character (MonoGame's `TextInputEventArgs`). |
+
 <h3 id="timebeforerepeatstartsmspropertychangedhandleroverride"><span class="method"><code>TimeBeforeRepeatStartsMsPropertyChangedHandlerOverride()</code></span> <a class="ctx" href="/docs/ui-base-element/#handler-overrides" title="TimeBeforeRepeatStartsMsPropertyChangedHandlerOverride() in context on the base element page" aria-label="TimeBeforeRepeatStartsMsPropertyChangedHandlerOverride() in context on the base element page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#timebeforerepeatstartsmspropertychangedhandleroverride">`TimeBeforeRepeatStartsMsPropertyChangedHandlerOverride(int value)`</a> · <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#timebeforerepeatstartsms">`TimeBeforeRepeatStartsMs`</a> changed (after it was passed to the parts).
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `value` | `int` | The new time, in milliseconds. |
+
 <h3 id="timebetweenrepeatsmspropertychangedhandleroverride"><span class="method"><code>TimeBetweenRepeatsMsPropertyChangedHandlerOverride()</code></span> <a class="ctx" href="/docs/ui-base-element/#handler-overrides" title="TimeBetweenRepeatsMsPropertyChangedHandlerOverride() in context on the base element page" aria-label="TimeBetweenRepeatsMsPropertyChangedHandlerOverride() in context on the base element page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#timebetweenrepeatsmspropertychangedhandleroverride">`TimeBetweenRepeatsMsPropertyChangedHandlerOverride(int value)`</a> · <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#timebetweenrepeatsms">`TimeBetweenRepeatsMs`</a> changed (after it was passed to the parts).
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `value` | `int` | The new time, in milliseconds. |
 
 <h3 id="unsubscribeself"><span class="method"><code>UnsubscribeSelf()</code></span> <a class="ctx" href="/docs/ui-base-element/#members-for-derived-elements" title="UnsubscribeSelf() in context on the base element page" aria-label="UnsubscribeSelf() in context on the base element page">🠆</a></h3>
 
@@ -535,9 +688,17 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/base-element/#visibilitychangedhandleroverride">VisibilityChangedHandlerOverride</a>(<a href="/docs/ui-glossary/types/visibility/">Visibility</a> visibility)</code></span> · <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#visibility">`Visibility`</a> changed; called before the children hear of it.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `visibility` | <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#visibility">`Visibility`</a> | The element's new visibility. |
+
 <h3 id="visibilitypropertychangedhandleroverride"><span class="method"><code>VisibilityPropertyChangedHandlerOverride()</code></span> <a class="ctx" href="/docs/ui-base-element/#handler-overrides" title="VisibilityPropertyChangedHandlerOverride() in context on the base element page" aria-label="VisibilityPropertyChangedHandlerOverride() in context on the base element page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/base-element/#visibilitypropertychangedhandleroverride">VisibilityPropertyChangedHandlerOverride</a>(<a href="/docs/ui-glossary/types/visibility/">Visibility</a> value)</code></span> · <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#visibility">`Visibility`</a> changed; called after the children heard of it.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `value` | <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#visibility">`Visibility`</a> | The element's new visibility. |
 
 ## Events
 

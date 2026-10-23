@@ -51,4 +51,14 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <a class="ref method" href="/docs/ui-glossary/elements/context-menu-item/#contextmenuitem">`ContextMenuItem(string text, string name = null)`</a> · Creates an item showing the text in a label.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `text` | `string` | The text of the item's label. |
+| `name` | `string` | The element's <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a>, which <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a> finds it by. Default: `null`. |
+
 <span class="method"><code><a href="/docs/ui-glossary/elements/context-menu-item/#contextmenuitem">ContextMenuItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> content, string name = null)</code></span> · Creates an item showing any element.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `content` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element the item shows, its <a class="ref prop" href="/docs/ui-glossary/elements/context-menu-item/#content">`Content`</a>. |
+| `name` | `string` | The element's <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a>, which <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a> finds it by. Default: `null`. |

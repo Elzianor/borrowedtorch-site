@@ -57,19 +57,46 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#borrowedtorchui">`BorrowedTorchUI(GraphicsDevice graphicsDevice, ContentManager contentManager, SpriteBatch spriteBatch, GameWindow window)`</a> · Creates the UI over the back buffer's size, with the text and keys of the window. The sprite batch is the one the UI draws with; the content manager loads the color picker's pointer and the textures named by <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a>. Disposing the UI unsubscribes from the window.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `graphicsDevice` | `GraphicsDevice` | The game's graphics device, which the UI draws with. |
+| `contentManager` | `ContentManager` | The content manager the UI loads pictures with: the <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> textures and <a class="ref" href="/docs/ui-glossary/types/source-data/">`SourceData`</a> paths. |
+| `spriteBatch` | `SpriteBatch` | The sprite batch the UI draws with. |
+| `window` | `GameWindow` | The game window: the UI takes typed text and keys from it, and reads the display scale of its monitor for <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#followsdisplayscale">`FollowsDisplayScale`</a>. |
+
 <span class="method"><code><a href="/docs/ui-glossary/types/borrowed-torch-ui/#borrowedtorchui">BorrowedTorchUI</a>(GraphicsDevice graphicsDevice, ContentManager contentManager, SpriteBatch spriteBatch, <a href="/docs/ui-glossary/types/i-text-input-events/">ITextInputEvents</a> textInputEvents)</code></span> · The same, with the text and keys of a source of your own, for a UI hosted outside a game window. The UI doesn't dispose the source.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `graphicsDevice` | `GraphicsDevice` | The game's graphics device, which the UI draws with. |
+| `contentManager` | `ContentManager` | The content manager the UI loads pictures with: the <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> textures and <a class="ref" href="/docs/ui-glossary/types/source-data/">`SourceData`</a> paths. |
+| `spriteBatch` | `SpriteBatch` | The sprite batch the UI draws with. |
+| `textInputEvents` | <a class="ref" href="/docs/ui-glossary/types/i-text-input-events/">`ITextInputEvents`</a> | The source of typed text and keys, such as a <a class="ref" href="/docs/ui-glossary/types/game-window-text-input-events/">`GameWindowTextInputEvents`</a>. The UI doesn't dispose it. |
 
 <h3 id="addanimation"><span class="method"><code>AddAnimation()</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="AddAnimation() in context on the quick start guide" aria-label="AddAnimation() in context on the quick start guide">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/types/borrowed-torch-ui/#addanimation">AddAnimation</a>(<a href="/docs/ui-glossary/types/base-animation/">BaseAnimation</a> animation)</code></span> · Starts updating an animation, see [animations](/docs/ui-styles/#animations).
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `animation` | <a class="ref" href="/docs/ui-glossary/types/base-animation/">`BaseAnimation`</a> | The animation to update with the UI; it plays once it is started. |
+
 <h3 id="addelementtoroot"><span class="method"><code>AddElementToRoot()</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="AddElementToRoot() in context on the quick start guide" aria-label="AddElementToRoot() in context on the quick start guide">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/types/borrowed-torch-ui/#addelementtoroot">AddElementToRoot</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> element)</code></span> · Adds an element to the root.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `element` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element to add to the root. |
+
 <h3 id="applygamewindowsize"><span class="method"><code>ApplyGameWindowSize()</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="ApplyGameWindowSize() in context on the quick start guide" aria-label="ApplyGameWindowSize() in context on the quick start guide">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#applygamewindowsize">`ApplyGameWindowSize(int width, int height)`</a> · Lays the UI out over a screen size in device pixels. A size of 0, such as a minimised window's, is ignored. With <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#followsbackbuffer">`FollowsBackBuffer`</a> on, the size stays until the back buffer changes.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `width` | `int` | The screen width, in device pixels. |
+| `height` | `int` | The screen height, in device pixels. |
 
 <h3 id="dispose"><span class="method"><code>Dispose()</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="Dispose() in context on the quick start guide" aria-label="Dispose() in context on the quick start guide">🠆</a></h3>
 
@@ -83,16 +110,36 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#getelementbyname">`GetElementByName(string name)`</a> · Finds an element anywhere in the tree by the name given to its constructor, `null` if there is none.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | The <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a> to look for. |
+
 <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#getelementbyname">`GetElementByName<T>(string name)`</a> · The same, `null` also when the element is not a `T`.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | The <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a> to look for. |
 
 <h3 id="removeanimation"><span class="method"><code>RemoveAnimation()</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="RemoveAnimation() in context on the quick start guide" aria-label="RemoveAnimation() in context on the quick start guide">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/types/borrowed-torch-ui/#removeanimation">RemoveAnimation</a>(<a href="/docs/ui-glossary/types/base-animation/">BaseAnimation</a> animation)</code></span> · Stops updating an animation. It keeps its state, and adding it again continues it.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `animation` | <a class="ref" href="/docs/ui-glossary/types/base-animation/">`BaseAnimation`</a> | The animation to stop updating. |
+
 <h3 id="setdefaultmousecursorsset"><span class="method"><code>SetDefaultMouseCursorsSet()</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="SetDefaultMouseCursorsSet() in context on the quick start guide" aria-label="SetDefaultMouseCursorsSet() in context on the quick start guide">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/types/borrowed-torch-ui/#setdefaultmousecursorsset">SetDefaultMouseCursorsSet</a>(<a href="/docs/ui-glossary/types/mouse-cursors-set/">MouseCursorsSet</a> mouseCursorsSet)</code></span> · Sets the cursors every element uses unless it has its own, see [mouse cursors](/docs/ui-styles/#mouse-cursors).
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `mouseCursorsSet` | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | The cursors every element uses unless it has its own. |
+
 <h3 id="update"><span class="method"><code>Update()</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="Update() in context on the quick start guide" aria-label="Update() in context on the quick start guide">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#update">`Update(GameTime gameTime)`</a> · Runs timers and animations, lays out what changed, and handles the mouse. Poll the input before it.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `gameTime` | `GameTime` | The game's time, from `Game.Update`. |

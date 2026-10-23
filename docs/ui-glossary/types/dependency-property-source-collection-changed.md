@@ -8,4 +8,10 @@ A delegate: the handler type of an event.
 
 Signature: <code>void SourceCollectionChanged(<a href="/docs/ui-glossary/types/collection-change-type/">CollectionChangeType</a> changeType, int startIndex, int count)</code>
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `changeType` | <a class="ref" href="/docs/ui-glossary/types/collection-change-type/">`CollectionChangeType`</a> | Whether items were added (`Add`) or removed (`Remove`). |
+| `startIndex` | `int` | The index of the first item added or removed. |
+| `count` | `int` | The number of items added or removed. |
+
 Handles [`DependencyProperty.OnSourceCollectionChanged`](/docs/ui-glossary/types/dependency-property/#onsourcecollectionchanged).

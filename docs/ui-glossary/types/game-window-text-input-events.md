@@ -17,6 +17,10 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <a class="ref method" href="/docs/ui-glossary/types/game-window-text-input-events/#gamewindowtextinputevents">`GameWindowTextInputEvents(GameWindow window)`</a> · Subscribes to the window's `TextInput` and `KeyDown` events.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `window` | `GameWindow` | The window whose `TextInput` and `KeyDown` events are followed. |
+
 <h3 id="dispose"><span class="method"><code>Dispose()</code></span> <a class="ctx" href="/docs/ui/#gamewindowtextinputevents" title="Dispose() in context on the quick start guide" aria-label="Dispose() in context on the quick start guide">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/types/game-window-text-input-events/#dispose">`Dispose()`</a> · Unsubscribes from the window.

@@ -24,3 +24,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 <h3 id="keydowneventargs"><span class="method"><code>KeyDownEventArgs()</code></span> <a class="ctx" href="/docs/ui-base-element/#keydowneventargs" title="KeyDownEventArgs() in context on the base element page" aria-label="KeyDownEventArgs() in context on the base element page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/types/key-down-event-args/#keydowneventargs">`KeyDownEventArgs(Keys key)`</a> · Creates the arguments for a key.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `key` | `Keys` | The pressed key. |

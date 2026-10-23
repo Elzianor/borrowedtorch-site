@@ -27,13 +27,30 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <span class="method"><code><a href="/docs/ui-glossary/types/animation/#animation">Animation</a>(int durationMs, <a href="/docs/ui-glossary/types/animation-repeat-type/">AnimationRepeatType</a> repeatType = <a href="/docs/ui-glossary/types/animation-repeat-type/#none">AnimationRepeatType.None</a>, bool autoReverse = false, bool deleteOnComplete = true, <a href="/docs/ui-glossary/types/run-boundary-values/">RunBoundaryValues</a>&lt;T&gt; runBoundaryValues = null, uint repeatsNumber = 1)</code></span> · Creates an animation with a time line of `durationMs` milliseconds. `repeatsNumber` counts the runs of a `NumberOfTimes` animation. A duration of 0 or less completes at once with the end values.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `durationMs` | `int` | The length of the time line, in milliseconds. 0 or less completes the animation at once with its end values. |
+| `repeatType` | <a class="ref" href="/docs/ui-glossary/types/animation-repeat-type/">`AnimationRepeatType`</a> | How many runs the animation plays: one (`None`), `repeatsNumber` (`NumberOfTimes`), or until it is paused or removed (`Infinite`). Default: <a class="ref" href="/docs/ui-glossary/types/animation-repeat-type/#none">`AnimationRepeatType.None`</a>. |
+| `autoReverse` | `bool` | Whether a run goes back along the time line after reaching its end. Default: `false`. |
+| `deleteOnComplete` | `bool` | Whether the UI removes the animation when it completes. Default: `true`. |
+| `runBoundaryValues` | <a class="ref prop" href="/docs/ui-glossary/types/animation/#runboundaryvalues">`RunBoundaryValues<T>`</a> | The values set on the properties when the animation first starts and when it completes, or `null` for none. Default: `null`. |
+| `repeatsNumber` | `uint` | The number of runs of a `NumberOfTimes` animation. Default: `1`. |
+
 <h3 id="adddependencyproperty"><span class="method"><code>AddDependencyProperty()</code></span> <a class="ctx" href="/docs/ui-styles/#animationt" title="AddDependencyProperty() in context on the styles page" aria-label="AddDependencyProperty() in context on the styles page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/types/animation/#adddependencyproperty">AddDependencyProperty</a>(<a href="/docs/ui-glossary/types/dependency-property/">DependencyProperty</a>&lt;T&gt; property)</code></span> · Adds a property the animation drives. One animation can drive several properties.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `property` | <code><a href="/docs/ui-glossary/types/dependency-property/">DependencyProperty</a>&lt;T&gt;</code> | The property to drive: an element's `FooDP`, such as `banner.MarginDP`. |
+
 <h3 id="addframe"><span class="method"><code>AddFrame()</code></span> <a class="ctx" href="/docs/ui-styles/#animationt" title="AddFrame() in context on the styles page" aria-label="AddFrame() in context on the styles page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/types/animation/#addframe">AddFrame</a>(<a href="/docs/ui-glossary/types/base-animation-frame/">BaseAnimationFrame</a>&lt;T&gt; frame)</code></span> · Adds a smooth or discrete frame.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `frame` | <code><a href="/docs/ui-glossary/types/base-animation-frame/">BaseAnimationFrame</a>&lt;T&gt;</code> | The frame to add: a <code><a href="/docs/ui-glossary/types/smooth-animation-frame/">SmoothAnimationFrame</a>&lt;T&gt;</code> or a <code><a href="/docs/ui-glossary/types/discrete-animation-frame/">DiscreteAnimationFrame</a>&lt;T&gt;</code>. |
 
 <h3 id="pause"><span class="method"><code>Pause()</code></span> <a class="ctx" href="/docs/ui-styles/#animationt" title="Pause() in context on the styles page" aria-label="Pause() in context on the styles page">🠆</a></h3>
 

@@ -75,21 +75,43 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <a class="ref method" href="/docs/ui-glossary/elements/scrollable-container/#scrollablecontainer">`ScrollableContainer(string name = null)`</a> · Creates a scrollable container. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | The element's <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a>, which <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a> finds it by. Default: `null`. |
+
 <h3 id="additem"><span class="method"><code>AddItem()</code></span> <a class="ctx" href="/docs/ui-layout/#scrollablecontainer-methods" title="AddItem() in context on the layout page" aria-label="AddItem() in context on the layout page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/scrollable-container/#additem">AddItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Adds the item to the view.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element to add. |
 
 <h3 id="additemat"><span class="method"><code>AddItemAt()</code></span> <a class="ctx" href="/docs/ui-layout/#scrollablecontainer-methods" title="AddItemAt() in context on the layout page" aria-label="AddItemAt() in context on the layout page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/scrollable-container/#additemat">AddItemAt</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item, int index)</code></span> · Inserts the item at the index.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element to insert. |
+| `index` | `int` | The position to insert it at: 0 for the first, the number of items for the end. |
+
 <h3 id="additemsrange"><span class="method"><code>AddItemsRange()</code></span> <a class="ctx" href="/docs/ui-layout/#scrollablecontainer-methods" title="AddItemsRange() in context on the layout page" aria-label="AddItemsRange() in context on the layout page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/scrollable-container/#additemsrange">AddItemsRange</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items)</code></span> · Adds the items at the end.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `items` | <code>IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt;</code> | The elements to add, in order. |
+
 <h3 id="additemsrangeat"><span class="method"><code>AddItemsRangeAt()</code></span> <a class="ctx" href="/docs/ui-layout/#scrollablecontainer-methods" title="AddItemsRangeAt() in context on the layout page" aria-label="AddItemsRangeAt() in context on the layout page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/scrollable-container/#additemsrangeat">AddItemsRangeAt</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items, int index)</code></span> · Inserts the items from the index on.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `items` | <code>IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt;</code> | The elements to insert, in order. |
+| `index` | `int` | The position of the first one: 0 for the first, the number of items for the end. |
 
 <h3 id="clearitems"><span class="method"><code>ClearItems()</code></span> <a class="ctx" href="/docs/ui-layout/#scrollablecontainer-methods" title="ClearItems() in context on the layout page" aria-label="ClearItems() in context on the layout page">🠆</a></h3>
 
@@ -123,13 +145,26 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/scrollable-container/#removeitem">RemoveItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Removes the item. It is detached, not disposed.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element to take out. |
+
 <h3 id="removeitemat"><span class="method"><code>RemoveItemAt()</code></span> <a class="ctx" href="/docs/ui-layout/#scrollablecontainer-methods" title="RemoveItemAt() in context on the layout page" aria-label="RemoveItemAt() in context on the layout page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/scrollable-container/#removeitemat">`RemoveItemAt(int index)`</a> · Removes the item at the index.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | `int` | The index of the item to take out. |
+
 <h3 id="removeitemsrangeat"><span class="method"><code>RemoveItemsRangeAt()</code></span> <a class="ctx" href="/docs/ui-layout/#scrollablecontainer-methods" title="RemoveItemsRangeAt() in context on the layout page" aria-label="RemoveItemsRangeAt() in context on the layout page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/scrollable-container/#removeitemsrangeat">`RemoveItemsRangeAt(int index, int count)`</a> · Removes `count` items from the index on.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | `int` | The index of the first item to take out. |
+| `count` | `int` | The number of items to take out. |
 
 <h3 id="verticalpagedecrease"><span class="method"><code>VerticalPageDecrease()</code></span> <a class="ctx" href="/docs/ui-layout/#scrollablecontainer-methods" title="VerticalPageDecrease() in context on the layout page" aria-label="VerticalPageDecrease() in context on the layout page">🠆</a></h3>
 

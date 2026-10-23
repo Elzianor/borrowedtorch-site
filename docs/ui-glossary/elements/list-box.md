@@ -127,29 +127,59 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <a class="ref method" href="/docs/ui-glossary/elements/list-box/#listbox">`ListBox(string name = null)`</a> · Creates a list box. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | The element's <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a>, which <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a> finds it by. Default: `null`. |
+
 <h3 id="additem"><span class="method"><code>AddItem()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="AddItem() in context on the lists and menus page" aria-label="AddItem() in context on the lists and menus page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/list-box/#additem">AddItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Adds a row at the end. A <a class="ref" href="/docs/ui-glossary/elements/list-box-item/">`ListBoxItem`</a> is the row itself, any other element is shown in a row the list makes.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element to add. |
 
 <h3 id="additemat"><span class="method"><code>AddItemAt()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="AddItemAt() in context on the lists and menus page" aria-label="AddItemAt() in context on the lists and menus page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/list-box/#additemat">AddItemAt</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item, int index)</code></span> · Inserts a row at the index (0 to <a class="ref prop" href="/docs/ui-glossary/elements/list-box/#count">`Count`</a>); another index is ignored.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element to insert. |
+| `index` | `int` | The position to insert it at: 0 for the first, the number of items for the end. |
+
 <h3 id="additemsrange"><span class="method"><code>AddItemsRange()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="AddItemsRange() in context on the lists and menus page" aria-label="AddItemsRange() in context on the lists and menus page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/list-box/#additemsrange">AddItemsRange</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items)</code></span> · Adds a row per element at the end, in one batch (the rows are indexed and laid out once).
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `items` | <code>IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt;</code> | The elements to add, in order. |
 
 <h3 id="additemsrangeat"><span class="method"><code>AddItemsRangeAt()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="AddItemsRangeAt() in context on the lists and menus page" aria-label="AddItemsRangeAt() in context on the lists and menus page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/list-box/#additemsrangeat">AddItemsRangeAt</a>(IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt; items, int index)</code></span> · Inserts a row per element at the index, in one batch.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `items` | <code>IEnumerable&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt;</code> | The elements to insert, in order. |
+| `index` | `int` | The position of the first one: 0 for the first, the number of items for the end. |
+
 <h3 id="addtextitem"><span class="method"><code>AddTextItem()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="AddTextItem() in context on the lists and menus page" aria-label="AddTextItem() in context on the lists and menus page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/list-box/#addtextitem">`AddTextItem(string text)`</a> · Adds a text row. Does nothing while an <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#itemssource">`ItemsSource`</a> is set.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `text` | `string` | The text of the row. |
+
 <h3 id="addtextitems"><span class="method"><code>AddTextItems()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="AddTextItems() in context on the lists and menus page" aria-label="AddTextItems() in context on the lists and menus page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/list-box/#addtextitems">`AddTextItems(IEnumerable<string> texts)`</a> · Adds a text row per string, in one batch. Does nothing while an <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#itemssource">`ItemsSource`</a> is set.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `texts` | `IEnumerable<string>` | The texts, one row per string. |
 
 <h3 id="clearitems"><span class="method"><code>ClearItems()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="ClearItems() in context on the lists and menus page" aria-label="ClearItems() in context on the lists and menus page">🠆</a></h3>
 
@@ -159,6 +189,10 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/list-box/#deselect">Deselect</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Deselects the row of the item, as <a class="ref method" href="/docs/ui-glossary/elements/list-box/#deselectat">`DeselectAt`</a> does.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element whose row is deselected. |
+
 <h3 id="deselectall"><span class="method"><code>DeselectAll()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="DeselectAll() in context on the lists and menus page" aria-label="DeselectAll() in context on the lists and menus page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/list-box/#deselectall">`DeselectAll()`</a> · Deselects every row.
@@ -167,29 +201,58 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <a class="ref method" href="/docs/ui-glossary/elements/list-box/#deselectat">`DeselectAt(int index)`</a> · Deselects the row at the index. If it was the primary row, the first row that is still selected becomes the primary one.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | `int` | The index of the row to deselect. |
+
 <h3 id="moveselection"><span class="method"><code>MoveSelection()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="MoveSelection() in context on the lists and menus page" aria-label="MoveSelection() in context on the lists and menus page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/list-box/#moveselection">`MoveSelection(int delta)`</a> · Moves the selection by `delta` rows (clamped to the list, separators and collapsed rows passed over) and scrolls it into view. With no selection it selects the first row (`delta` above 0) or the last.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `delta` | `int` | How many rows to move: negative moves up, positive down. |
 
 <h3 id="removeitem"><span class="method"><code>RemoveItem()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="RemoveItem() in context on the lists and menus page" aria-label="RemoveItem() in context on the lists and menus page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/list-box/#removeitem">RemoveItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Removes the row of the item (the row itself or the element shown in it).
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element to take out. |
+
 <h3 id="removeitemat"><span class="method"><code>RemoveItemAt()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="RemoveItemAt() in context on the lists and menus page" aria-label="RemoveItemAt() in context on the lists and menus page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/list-box/#removeitemat">`RemoveItemAt(int index)`</a> · Removes the row at the index.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | `int` | The index of the item to take out. |
 
 <h3 id="removeitemsrangeat"><span class="method"><code>RemoveItemsRangeAt()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="RemoveItemsRangeAt() in context on the lists and menus page" aria-label="RemoveItemsRangeAt() in context on the lists and menus page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/list-box/#removeitemsrangeat">`RemoveItemsRangeAt(int index, int count)`</a> · Removes `count` rows from the index on (as many as there are).
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | `int` | The index of the first item to take out. |
+| `count` | `int` | The number of items to take out. |
+
 <h3 id="scrollintoview"><span class="method"><code>ScrollIntoView()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="ScrollIntoView() in context on the lists and menus page" aria-label="ScrollIntoView() in context on the lists and menus page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/list-box/#scrollintoview">`ScrollIntoView(int index)`</a> · Scrolls the list so the row at the index is entirely in view. Needs the list laid out; nothing happens for a row that is in view already.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | `int` | The index of the row to bring into view. |
+
 <h3 id="select"><span class="method"><code>Select()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="Select() in context on the lists and menus page" aria-label="Select() in context on the lists and menus page">🠆</a></h3>
 
 <span class="method"><code><a href="/docs/ui-glossary/elements/list-box/#select">Select</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> item)</code></span> · Selects the row of the item (the row itself or the element shown in it), as <a class="ref method" href="/docs/ui-glossary/elements/list-box/#selectat">`SelectAt`</a> does.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element whose row is selected. |
 
 <h3 id="selectall"><span class="method"><code>SelectAll()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="SelectAll() in context on the lists and menus page" aria-label="SelectAll() in context on the lists and menus page">🠆</a></h3>
 
@@ -198,6 +261,10 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 <h3 id="selectat"><span class="method"><code>SelectAt()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="SelectAt() in context on the lists and menus page" aria-label="SelectAt() in context on the lists and menus page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/list-box/#selectat">`SelectAt(int index)`</a> · Makes the row at the index the selected row; the other rows are deselected, also in `Multiple` mode. An index out of range is ignored.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | `int` | The index of the row to select. |
 
 <h3 id="selectnext"><span class="method"><code>SelectNext()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="SelectNext() in context on the lists and menus page" aria-label="SelectNext() in context on the lists and menus page">🠆</a></h3>
 
@@ -210,6 +277,10 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 <h3 id="selectsource"><span class="method"><code>SelectSource()</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-methods" title="SelectSource() in context on the lists and menus page" aria-label="SelectSource() in context on the lists and menus page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/list-box/#selectsource">`SelectSource(object source)`</a> · Selects the row whose `Source` is the object. Nothing happens when there is none.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `source` | `object` | The <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#itemssource">`ItemsSource`</a> object whose row is selected. |
 
 ## Events
 

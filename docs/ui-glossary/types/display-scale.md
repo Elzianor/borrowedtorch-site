@@ -27,8 +27,20 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <a class="ref method" href="/docs/ui-glossary/types/display-scale/#dpiof">`DpiOf(GameWindow window)`</a> · Static. The DPI of the monitor under the middle of the window's client area. 96 when it can't be read.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `window` | `GameWindow` | The game window; the monitor under the middle of its client area counts. |
+
 <a class="ref method" href="/docs/ui-glossary/types/display-scale/#dpiof">`DpiOf(Rectangle screenBounds)`</a> · Static. The same for a rectangle in screen coordinates, using the nearest monitor when none is under it.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `screenBounds` | `Rectangle` | A rectangle in screen coordinates, in device pixels. |
 
 <h3 id="scaleof"><span class="method"><code>ScaleOf()</code></span> <a class="ctx" href="/docs/ui/#displayscale" title="ScaleOf() in context on the quick start guide" aria-label="ScaleOf() in context on the quick start guide">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/types/display-scale/#scaleof">`ScaleOf(GameWindow window)`</a> · Static. The display scale as a UI scale: the DPI divided by 96, so 1.5 at 150 %.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `window` | `GameWindow` | The game window; the monitor under the middle of its client area counts. |

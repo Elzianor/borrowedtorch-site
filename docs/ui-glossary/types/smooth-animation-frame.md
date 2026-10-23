@@ -38,3 +38,11 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 <h3 id="smoothanimationframe"><span class="method"><code>SmoothAnimationFrame()</code></span> <a class="ctx" href="/docs/ui-styles/#smoothanimationframet" title="SmoothAnimationFrame() in context on the styles page" aria-label="SmoothAnimationFrame() in context on the styles page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/types/smooth-animation-frame/#smoothanimationframe">`SmoothAnimationFrame(T from, T to, int durationMs, int startAtMs = 0, BaseShapingFunction shapingFunction = null)`</a> · Creates the frame.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `from` | `T` | The value at the frame's start. |
+| `to` | `T` | The value at the frame's end. |
+| `durationMs` | `int` | The length of the frame, in milliseconds. |
+| `startAtMs` | `int` | The point of the time line where the frame starts, in milliseconds. Default: `0`. |
+| `shapingFunction` | `BaseShapingFunction` | How the value moves from `from` to `to`, such as `CubicEaseOut`; `null` moves it evenly (`Linear`). Default: `null`. |

@@ -30,3 +30,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 <h3 id="isset"><span class="method"><code>IsSet()</code></span> <a class="ctx" href="/docs/ui-styles/#basestyle" title="IsSet() in context on the styles page" aria-label="IsSet() in context on the styles page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/types/stencil-style/#isset">`IsSet(string propertyName)`</a> · Whether the property is assigned to this style, so the style applies it. Pass the name with `nameof`; an unknown name gives `false`.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `propertyName` | `string` | The name of a property of the style; `nameof` keeps it right. |

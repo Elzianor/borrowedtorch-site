@@ -37,9 +37,19 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <span class="method"><code><a href="/docs/ui-glossary/types/element-state-data/#elementstatedata">ElementStateData</a>(<a href="/docs/ui-glossary/types/element-state/">ElementState</a> state, <a href="/docs/ui-glossary/types/state-source/">StateSource</a> source)</code></span> · Creates a state, for example to compare with <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#statedata">`StateData`</a>.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `state` | <a class="ref" href="/docs/ui-glossary/types/element-state/">`ElementState`</a> | The state, such as <a class="ref" href="/docs/ui-glossary/types/element-state/#hover">`ElementState.Hover`</a>. |
+| `source` | <a class="ref" href="/docs/ui-glossary/types/state-source/">`StateSource`</a> | Where the state comes from: the element's `Own`, its `Parent` or its `Children`. |
+
 <h3 id="section"><span class="method"><code>==()</code></span> <a class="ctx" href="/docs/ui-base-element/#elementstatedata" title="==() in context on the base element page" aria-label="==() in context on the base element page">🠆</a></h3>
 
 `operator ==(ElementStateData state1, ElementStateData state2)` · True when the state and the source are equal. `!=` and `Equals` compare the same way.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `state1` | `ElementStateData` | The first state. |
+| `state2` | `ElementStateData` | The second state. |
 
 <h3 id="gethashcode"><span class="method"><code>GetHashCode()</code></span> <a class="ctx" href="/docs/ui-base-element/#elementstatedata" title="GetHashCode() in context on the base element page" aria-label="GetHashCode() in context on the base element page">🠆</a></h3>
 

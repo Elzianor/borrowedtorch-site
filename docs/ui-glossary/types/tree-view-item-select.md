@@ -8,4 +8,9 @@ A delegate: the handler type of an event.
 
 Signature: <code>void ItemSelect(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, <a href="/docs/ui-glossary/elements/tree-view-item/">TreeViewItem</a> item)</code>
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sender` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element that raised the event. |
+| `item` | <a class="ref" href="/docs/ui-glossary/elements/tree-view-item/">`TreeViewItem`</a> | The selected item, or `null` when nothing is selected any more. |
+
 Handles [`TreeView.OnItemSelect`](/docs/ui-glossary/elements/tree-view/#onitemselect).

@@ -51,6 +51,10 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <a class="ref method" href="/docs/ui-glossary/elements/color-picker/#colorpicker">`ColorPicker(string name = null)`</a> · Creates a color picker. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | The element's <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a>, which <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a> finds it by. Default: `null`. |
+
 ## Events
 
 <h3 id="onselectedcolorchanged"><span class="event"><code>OnSelectedColorChanged</code></span> <a class="ctx" href="/docs/ui-controls/#colorpicker-events" title="OnSelectedColorChanged in context on the controls page" aria-label="OnSelectedColorChanged in context on the controls page">🠆</a></h3>

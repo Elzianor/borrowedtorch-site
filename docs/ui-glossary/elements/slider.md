@@ -131,6 +131,10 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <a class="ref method" href="/docs/ui-glossary/elements/slider/#slider">`Slider(string name = null)`</a> · Creates a slider. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | `string` | The element's <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a>, which <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a> finds it by. Default: `null`. |
+
 <h3 id="draw"><span class="method"><code>Draw()</code></span> <a class="ctx" href="/docs/ui-controls/#slider-methods" title="Draw() in context on the controls page" aria-label="Draw() in context on the controls page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/slider/#draw">`Draw()`</a> · Draws the slider, then its tick marks. The framework calls it; you don't need to.

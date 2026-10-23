@@ -35,9 +35,17 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <a class="ref method" href="/docs/ui-glossary/types/bindable-collection/#add">`Add(T item)`</a> · Adds the item at the end.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | `T` | The item to add. |
+
 <h3 id="addrange"><span class="method"><code>AddRange()</code></span> <a class="ctx" href="/docs/ui-styles/#bindablecollectiont" title="AddRange() in context on the styles page" aria-label="AddRange() in context on the styles page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/types/bindable-collection/#addrange">`AddRange(IEnumerable<T> collection)`</a> · Adds the items at the end, reported as one change. Does nothing for `null` or an empty collection.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `collection` | `IEnumerable<T>` | The items to add, in order. |
 
 <h3 id="clear"><span class="method"><code>Clear()</code></span> <a class="ctx" href="/docs/ui-styles/#bindablecollectiont" title="Clear() in context on the styles page" aria-label="Clear() in context on the styles page">🠆</a></h3>
 
@@ -47,9 +55,18 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <a class="ref method" href="/docs/ui-glossary/types/bindable-collection/#contains">`Contains(T item)`</a> · Whether the item is in the collection.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | `T` | The item to look for. |
+
 <h3 id="copyto"><span class="method"><code>CopyTo()</code></span> <a class="ctx" href="/docs/ui-styles/#bindablecollectiont" title="CopyTo() in context on the styles page" aria-label="CopyTo() in context on the styles page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/types/bindable-collection/#copyto">`CopyTo(T[] array, int arrayIndex)`</a> · Copies the items into the array from the index.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `array` | `T[]` | The array to copy the items into. |
+| `arrayIndex` | `int` | The index in the array where the first item goes. |
 
 <h3 id="getenumerator"><span class="method"><code>GetEnumerator()</code></span> <a class="ctx" href="/docs/ui-styles/#bindablecollectiont" title="GetEnumerator() in context on the styles page" aria-label="GetEnumerator() in context on the styles page">🠆</a></h3>
 
@@ -59,25 +76,52 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <a class="ref method" href="/docs/ui-glossary/types/bindable-collection/#insert">`Insert(int index, T item)`</a> · Inserts the item at the index. An index outside `0..Count` is ignored.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | `int` | The position to insert at, from 0 to <a class="ref prop" href="/docs/ui-glossary/types/bindable-collection/#count">`Count`</a>. |
+| `item` | `T` | The item to insert. |
+
 <h3 id="insertrange"><span class="method"><code>InsertRange()</code></span> <a class="ctx" href="/docs/ui-styles/#bindablecollectiont" title="InsertRange() in context on the styles page" aria-label="InsertRange() in context on the styles page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/types/bindable-collection/#insertrange">`InsertRange(int index, IEnumerable<T> collection)`</a> · Inserts the items at the index, reported as one change. An index outside `0..Count` is ignored.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | `int` | The position to insert at, from 0 to <a class="ref prop" href="/docs/ui-glossary/types/bindable-collection/#count">`Count`</a>. |
+| `collection` | `IEnumerable<T>` | The items to insert, in order. |
 
 <h3 id="remove"><span class="method"><code>Remove()</code></span> <a class="ctx" href="/docs/ui-styles/#bindablecollectiont" title="Remove() in context on the styles page" aria-label="Remove() in context on the styles page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/types/bindable-collection/#remove">`Remove(T item)`</a> · Removes the first occurrence of the item. Returns `false` when it is not in the collection.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | `T` | The item to remove. |
+
 <h3 id="removeat"><span class="method"><code>RemoveAt()</code></span> <a class="ctx" href="/docs/ui-styles/#bindablecollectiont" title="RemoveAt() in context on the styles page" aria-label="RemoveAt() in context on the styles page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/types/bindable-collection/#removeat">`RemoveAt(int index)`</a> · Removes the item at the index. An index out of range is ignored.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | `int` | The index of the item to remove. |
 
 <h3 id="removerange"><span class="method"><code>RemoveRange()</code></span> <a class="ctx" href="/docs/ui-styles/#bindablecollectiont" title="RemoveRange() in context on the styles page" aria-label="RemoveRange() in context on the styles page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/types/bindable-collection/#removerange">`RemoveRange(int index, int count)`</a> · Removes up to `count` items from the index, reported as one change.
 
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | `int` | The index of the first item to remove. |
+| `count` | `int` | The number of items to remove. |
+
 <h3 id="trygetelementat"><span class="method"><code>TryGetElementAt()</code></span> <a class="ctx" href="/docs/ui-styles/#bindablecollectiont" title="TryGetElementAt() in context on the styles page" aria-label="TryGetElementAt() in context on the styles page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/types/bindable-collection/#trygetelementat">`TryGetElementAt(int index)`</a> · Returns the item at the index, or `default` when the index is out of range.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | `int` | The index of the item. |
 
 ## Events
 
