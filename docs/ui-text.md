@@ -21,8 +21,8 @@ and draws it from the font atlas. It has no scrolling, editing or rich formattin
 when you need those. <a class="ref method" href="/docs/ui-glossary/elements/list-box/#addtextitem">`ListBox.AddTextItem`</a> and the default items template make their rows from labels.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/text-label.png' | relative_url }}" width="519" height="174" alt="A gold Chapter one caption, a centred paragraph wrapped over three lines, and three short labels turned clockwise, counterclockwise and upside down">
-  <figcaption>A caption, a wrapped and centred description, and three turned labels.</figcaption>
+  <img src="{{ '/assets/img/ui/text-label-caption.png' | relative_url }}" width="293" height="129" alt="A gold Chapter one caption above a centred paragraph wrapped over three lines">
+  <figcaption>A caption, and a description wrapped in its width with centred lines.</figcaption>
 </figure>
 
 ```csharp
@@ -50,6 +50,16 @@ var description = new Label("description")
     Margin = (16, 56)
 };
 
+ui.AddElementToRoot(caption);
+ui.AddElementToRoot(description);
+```
+
+<figure class="shot">
+  <img src="{{ '/assets/img/ui/text-label-turned.png' | relative_url }}" width="218" height="174" alt="Three short labels turned clockwise, counterclockwise and upside down">
+  <figcaption>Labels turned clockwise, counterclockwise and upside down.</figcaption>
+</figure>
+
+```csharp
 // turned on its side: the label fitted to its text swaps its width and height
 Label Turned(string text, TextRotation rotation, int left) => new()
 {
@@ -62,11 +72,9 @@ Label Turned(string text, TextRotation rotation, int left) => new()
     Margin = (left, 16)
 };
 
-ui.AddElementToRoot(caption);
-ui.AddElementToRoot(description);
-ui.AddElementToRoot(Turned("Clockwise", TextRotation.Clockwise, 316));
-ui.AddElementToRoot(Turned("Counterclockwise", TextRotation.CounterClockwise, 356));
-ui.AddElementToRoot(Turned("Upside down", TextRotation.UpsideDown, 400));
+ui.AddElementToRoot(Turned("Clockwise", TextRotation.Clockwise, 16));
+ui.AddElementToRoot(Turned("Counterclockwise", TextRotation.CounterClockwise, 56));
+ui.AddElementToRoot(Turned("Upside down", TextRotation.UpsideDown, 100));
 ```
 
 A label without a size of its own fits its text: its width is the longest line plus <a class="ref dp" href="/docs/ui-glossary/elements/label/#textmargin">`TextMargin`</a>, its height the lines

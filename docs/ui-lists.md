@@ -536,6 +536,8 @@ var menu = new ContextMenu("listMenu")
         DesiredWidth = 8,
         DesiredHeight = 8,
         Margin = (12, 0, 6, 0),
+        // centred, so both margins count toward its column
+        HorizontalAlignment = HorizontalAlignment.Center,
         VerticalAlignment = VerticalAlignment.Center
     }
 };
