@@ -39,7 +39,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="scale"><span class="prop"><code>Scale</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="Scale in context on the quick start guide" aria-label="Scale in context on the quick start guide">🠆</a></h3>
 
-`float` · How large one logical unit is on screen, see [display scaling](#display-scaling). Between <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-ui/#minscale">`MinScale`</a> (0.25) and <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-ui/#maxscale">`MaxScale`</a> (8).
+`float` · How large one logical unit is on screen, see [display scaling](/docs/ui/#display-scaling). Between <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-ui/#minscale">`MinScale`</a> (0.25) and <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-ui/#maxscale">`MaxScale`</a> (8).
 
 ## Fields
 

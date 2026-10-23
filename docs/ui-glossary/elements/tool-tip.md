@@ -5,7 +5,7 @@ title: "Glossary: ToolTip"
 description: "The properties, methods and events of ToolTip, in alphabetical order."
 ---
 
-A small popup that appears next to the mouse cursor while it rests over an element. You attach it through the element's `ToolTip` property (see the [base element](/docs/ui-base-element/)), not by adding it to the tree.
+A small popup that appears next to the mouse cursor while it rests over an element. You attach it through the element's `ToolTip` property (see the [base element](/docs/ui-base-element/#tooltips-and-context-menus)), not by adding it to the tree.
 
 `ToolTip` derives from [`BaseElement`](/docs/ui-glossary/elements/base-element/) and has its members too. The [controls page](/docs/ui-controls/#tooltip) shows it in context, with code and screenshots.
 

@@ -47,7 +47,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <h3 id="titlebar"><span class="dp"><code>TitleBar</code></span> <a class="ctx" href="/docs/ui-layout/#window-properties" title="TitleBar in context on the layout page" aria-label="TitleBar in context on the layout page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> · The element in the title row. The default is a [`DefaultWindowTitleBar`](#defaultwindowtitlebar); set your own element to replace it, and clear the value to get the default one back. A replaced title bar is detached, not disposed. A style can't set it.
+<a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> · The element in the title row. The default is a [`DefaultWindowTitleBar`](/docs/ui-layout/#defaultwindowtitlebar); set your own element to replace it, and clear the value to get the default one back. A replaced title bar is detached, not disposed. A style can't set it.
 
 ## Methods
 

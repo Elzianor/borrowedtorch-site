@@ -617,7 +617,7 @@ walk-through with a screenshot is on the [images page](/docs/ui-images/#drag-and
 | <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#dragtype">`DragType`</a> | <a class="ref" href="/docs/ui-glossary/types/drag-type/">`DragType`</a> | Whether a press on the element drags something: nothing (the default), the element itself, or a drag and drop. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#dragtarget">`DragTarget`</a> | `BaseElement` | The element that is dragged; the element itself by default. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#draganddroprepresentation">`DragAndDropRepresentation`</a> | <a class="ref" href="/docs/ui-glossary/elements/drag-and-drop-representation/">`DragAndDropRepresentation`</a> | What is drawn under the mouse while the element is the dragged one. Detached, not disposed, with the element. |
-| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#isdropallowedpredicate">`IsDropAllowedPredicate`</a> | `IfDropAllowed` | Decides whether a dragged element can be dropped here: <code>bool (<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> draggedElement)</code>. Without one every drop is denied. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#isdropallowedpredicate">`IsDropAllowedPredicate`</a> | <a class="ref" href="/docs/ui-glossary/types/base-element-if-drop-allowed/">`IfDropAllowed`</a> | Decides whether a dragged element can be dropped here: <code>bool (<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> draggedElement)</code>. Without one every drop is denied. |
 
 | Event | Handler | Raised when |
 | --- | --- | --- |

@@ -15,7 +15,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="fontpath"><span class="prop"><code>FontPath</code></span> <a class="ctx" href="/docs/ui-text/#label-properties" title="FontPath in context on the text page" aria-label="FontPath in context on the text page">🠆</a></h3>
 
-`string` · The path of a TTF or OTF file to draw with (see [Fonts](#fonts)). A path that loads replaces the font system in use; an empty or unreadable path goes back to the general font, but keeps a font system you set by hand.
+`string` · The path of a TTF or OTF file to draw with (see [Fonts](/docs/ui-text/#fonts)). A path that loads replaces the font system in use; an empty or unreadable path goes back to the general font, but keeps a font system you set by hand.
 
 <h3 id="fontsize"><span class="prop"><code>FontSize</code></span> <a class="ctx" href="/docs/ui-text/#label-properties" title="FontSize in context on the text page" aria-label="FontSize in context on the text page">🠆</a></h3>
 

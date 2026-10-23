@@ -5,7 +5,7 @@ title: "Glossary: Label"
 description: "The properties, methods and events of Label, in alphabetical order."
 ---
 
-A light text element for captions, list rows and short descriptions. It lays its text out once, optionally wrapped, and draws it from the font atlas. It has no scrolling, editing or rich formatting; use a [`RichTextBox`](#richtextbox) when you need those. <a class="ref method" href="/docs/ui-glossary/elements/list-box/#addtextitem">`ListBox.AddTextItem`</a> and the default items template make their rows from labels.
+A light text element for captions, list rows and short descriptions. It lays its text out once, optionally wrapped, and draws it from the font atlas. It has no scrolling, editing or rich formatting; use a [`RichTextBox`](/docs/ui-text/#richtextbox) when you need those. <a class="ref method" href="/docs/ui-glossary/elements/list-box/#addtextitem">`ListBox.AddTextItem`</a> and the default items template make their rows from labels.
 
 `Label` derives from [`BaseElement`](/docs/ui-glossary/elements/base-element/) and has its members too. The [text page](/docs/ui-text/#label) shows it in context, with code and screenshots.
 
@@ -15,7 +15,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <h3 id="fontpath"><span class="dp"><code>FontPath</code></span> <a class="ctx" href="/docs/ui-text/#label-properties" title="FontPath in context on the text page" aria-label="FontPath in context on the text page">🠆</a></h3>
 
-`string` · The path of a TTF or OTF file to draw with (see [Fonts](#fonts)). A path that loads replaces the font system in use; an empty or unreadable path goes back to the general font, but keeps a font system you set by hand.
+`string` · The path of a TTF or OTF file to draw with (see [Fonts](/docs/ui-text/#fonts)). A path that loads replaces the font system in use; an empty or unreadable path goes back to the general font, but keeps a font system you set by hand.
 
 <h3 id="fontsize"><span class="dp"><code>FontSize</code></span> <a class="ctx" href="/docs/ui-text/#label-properties" title="FontSize in context on the text page" aria-label="FontSize in context on the text page">🠆</a></h3>
 

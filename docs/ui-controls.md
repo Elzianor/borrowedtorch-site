@@ -594,7 +594,7 @@ Style class: <a class="ref" href="/docs/ui-glossary/types/progress-bar-style/">`
 ## ToolTip
 
 A small popup that appears next to the mouse cursor while it rests over an element. You attach it through the
-element's `ToolTip` property (see the [base element](/docs/ui-base-element/)), not by adding it to the tree.
+element's `ToolTip` property (see the [base element](/docs/ui-base-element/#tooltips-and-context-menus)), not by adding it to the tree.
 
 <figure class="shot">
   <img src="{{ '/assets/img/ui/controls-tooltip.png' | relative_url }}" width="296" height="95" alt="A Save button with a tooltip reading Save the game (Ctrl+S) below and to the right of the cursor">

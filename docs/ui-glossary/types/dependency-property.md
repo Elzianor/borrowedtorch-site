@@ -13,11 +13,11 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="postaction"><span class="prop"><code>PostAction</code></span> <a class="ctx" href="/docs/ui-styles/#dependencypropertyt-properties" title="PostAction in context on the styles page" aria-label="PostAction in context on the styles page">🠆</a></h3>
 
-`Action<T>` · Called with the new value in effect after the element's own reaction, before <a class="ref event" href="/docs/ui-glossary/types/dependency-property/#onpropertychanged">`OnPropertyChanged`</a>.
+`Action<T>` · Called with the new value in effect after the element class's own reaction (its `OwnerPostAction`), only when the value in effect changes (see [setting a value](/docs/ui-styles/#setting-a-value)), before <a class="ref event" href="/docs/ui-glossary/types/dependency-property/#onpropertychanged">`OnPropertyChanged`</a>.
 
 <h3 id="preaction"><span class="prop"><code>PreAction</code></span> <a class="ctx" href="/docs/ui-styles/#dependencypropertyt-properties" title="PreAction in context on the styles page" aria-label="PreAction in context on the styles page">🠆</a></h3>
 
-`PreActionDelegate` · Called with `(ref T value, ref bool canProceed)` before every value is stored, from any source: change `value` to correct it, or set `canProceed` to `false` to reject it. Runs after the element's own pre-action.
+<a class="ref" href="/docs/ui-glossary/types/dependency-property-pre-action-delegate/">`PreActionDelegate`</a> · Called with `(ref T value, ref bool canProceed)` before every value is stored, from any source: change `value` to correct it, or set `canProceed` to `false` to reject it. It runs after the element class's own check (its `OwnerPreAction`), so it gets the value the element already corrected, and it doesn't run for a value the element rejected (see [setting a value](/docs/ui-styles/#setting-a-value)).
 
 <h3 id="value"><span class="prop"><code>Value</code></span> <a class="ctx" href="/docs/ui-styles/#dependencypropertyt-properties" title="Value in context on the styles page" aria-label="Value in context on the styles page">🠆</a></h3>
 
@@ -31,13 +31,13 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="dependencyproperty"><span class="method"><code>DependencyProperty()</code></span> <a class="ctx" href="/docs/ui-styles/#dependencypropertyt-methods" title="DependencyProperty() in context on the styles page" aria-label="DependencyProperty() in context on the styles page">🠆</a></h3>
 
-<span class="method"><code><a href="/docs/ui-glossary/types/dependency-property/#dependencyproperty">DependencyProperty</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> owner, Action&lt;T&gt; postAction = null, PreActionDelegate preAction = null)</code></span> · Creates a stand-alone property owned by an element, with an optional post- and pre-action. Its default is `default(T)`.
+<span class="method"><code><a href="/docs/ui-glossary/types/dependency-property/#dependencyproperty">DependencyProperty</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> owner, Action&lt;T&gt; postAction = null, <a href="/docs/ui-glossary/types/dependency-property-pre-action-delegate/">PreActionDelegate</a> preAction = null)</code></span> · Creates a stand-alone property owned by an element, with an optional post- and pre-action. Its default is `default(T)`.
 
 <span class="method"><code><a href="/docs/ui-glossary/types/dependency-property/#dependencyproperty">DependencyProperty</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> owner, <a href="/docs/ui-glossary/types/dependency-property-actions/">DependencyPropertyActions</a>&lt;T&gt; actions)</code></span> · Creates a property that shares the element class's actions and default; the generated `FooDP` properties use it.
 
 <h3 id="bind"><span class="method"><code>Bind()</code></span> <a class="ctx" href="/docs/ui-styles/#dependencypropertyt-methods" title="Bind() in context on the styles page" aria-label="Bind() in context on the styles page">🠆</a></h3>
 
-<span class="method"><code><a href="/docs/ui-glossary/types/dependency-property/#bind">Bind</a>(object dataContext, string sourcePropertyName, <a href="/docs/ui-glossary/types/binding-mode/">BindingMode</a> mode, <a href="/docs/ui-glossary/types/i-converter/">IConverter</a> converter = null)</code></span> · Binds the property to a public property of `dataContext`, replacing any earlier binding. See [bindings](#bindings).
+<span class="method"><code><a href="/docs/ui-glossary/types/dependency-property/#bind">Bind</a>(object dataContext, string sourcePropertyName, <a href="/docs/ui-glossary/types/binding-mode/">BindingMode</a> mode, <a href="/docs/ui-glossary/types/i-converter/">IConverter</a> converter = null)</code></span> · Binds the property to a public property of `dataContext`, replacing any earlier binding. See [bindings](/docs/ui-styles/#bindings).
 
 <h3 id="clearvalue"><span class="method"><code>ClearValue()</code></span> <a class="ctx" href="/docs/ui-styles/#dependencypropertyt-methods" title="ClearValue() in context on the styles page" aria-label="ClearValue() in context on the styles page">🠆</a></h3>
 

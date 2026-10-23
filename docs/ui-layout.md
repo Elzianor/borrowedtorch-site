@@ -148,7 +148,7 @@ ui.AddElementToRoot(grid);
 ```
 
 An item picks its place with the <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#gridcolumn">`GridColumn`</a>, <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#gridrow">`GridRow`</a>, <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#gridcolumnspan">`GridColumnSpan`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#gridrowspan">`GridRowSpan`</a> properties every element
-has (see the [base element](/docs/ui-base-element/)). Define the columns and rows first: <a class="ref method" href="/docs/ui-glossary/elements/grid/#additem">`AddItem`</a> ignores an item
+has (see the [base element](/docs/ui-base-element/#grid-placement)). Define the columns and rows first: <a class="ref method" href="/docs/ui-glossary/elements/grid/#additem">`AddItem`</a> ignores an item
 whose column or row doesn't exist yet. A span that reaches past the last column or row is cut to the grid.
 
 Each definition is added with one of three overloads:
@@ -503,7 +503,7 @@ outside it.
 
 **Moving.** Dragging the title bar with the left button moves the window by changing its <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#margin">`Margin`</a>: the left and top
 margins grow by the mouse movement and the right and bottom ones shrink by it, so a stretched window keeps its size and
-a centred one follows the mouse. <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#isresizable">`IsResizable`</a>, from the [base element](/docs/ui-base-element/), lets the user resize
+a centred one follows the mouse. <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#isresizable">`IsResizable`</a>, from the [base element](/docs/ui-base-element/#resizing), lets the user resize
 it by its edges.
 
 **Showing and hiding.** A window is visible when created. <a class="ref method" href="/docs/ui-glossary/elements/window/#show">`Show()`</a> and <a class="ref method" href="/docs/ui-glossary/elements/window/#hide">`Hide()`</a> set its <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#visibility">`Visibility`</a> to `Visible` and
@@ -636,7 +636,7 @@ toggle buttons. Subscribe before adding the first tab if you want its opening to
 
 Removing the open tab opens its neighbour (the next one when the first tab was removed, the previous one otherwise),
 and a content no tab uses anymore is made visible again. A tab or content that is disposed leaves the control by
-itself. <a class="ref method" href="/docs/ui-glossary/types/disposable-base/#dispose">`Dispose()`</a> (from [`DisposableBase`](/docs/ui-base-element/)) stops the control listening to its tabs.
+itself. <a class="ref method" href="/docs/ui-glossary/types/disposable-base/#dispose">`Dispose()`</a> (from [`DisposableBase`](/docs/ui-base-element/#disposablebase)) stops the control listening to its tabs.
 
 ### TabControl properties
 

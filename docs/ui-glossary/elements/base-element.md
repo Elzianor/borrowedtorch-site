@@ -147,7 +147,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <h3 id="isdropallowedpredicate"><span class="prop"><code>IsDropAllowedPredicate</code></span> <a class="ctx" href="/docs/ui-base-element/#drag-and-drop-properties" title="IsDropAllowedPredicate in context on the base element page" aria-label="IsDropAllowedPredicate in context on the base element page">🠆</a></h3>
 
-`IfDropAllowed` · Decides whether a dragged element can be dropped here: <code>bool (<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> draggedElement)</code>. Without one every drop is denied.
+<a class="ref" href="/docs/ui-glossary/types/base-element-if-drop-allowed/">`IfDropAllowed`</a> · Decides whether a dragged element can be dropped here: <code>bool (<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> draggedElement)</code>. Without one every drop is denied.
 
 <h3 id="isfocused"><span class="prop"><code>IsFocused</code></span> <a class="ctx" href="/docs/ui-base-element/#keyboard-and-focus-properties" title="IsFocused in context on the base element page" aria-label="IsFocused in context on the base element page">🠆</a></h3>
 
@@ -401,7 +401,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <h3 id="disposehandler"><span class="method"><code>DisposeHandler()</code></span> <a class="ctx" href="/docs/ui-base-element/#members-for-derived-elements" title="DisposeHandler() in context on the base element page" aria-label="DisposeHandler() in context on the base element page">🠆</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/base-element/#disposehandler">`DisposeHandler()`</a> · Protected override. The element's dispose (see [items and content](#items-and-content)); call the base when you override it.
+<a class="ref method" href="/docs/ui-glossary/elements/base-element/#disposehandler">`DisposeHandler()`</a> · Protected override. The element's dispose (see [items and content](/docs/ui-base-element/#items-and-content)); call the base when you override it.
 
 <h3 id="doubleclickhandleroverride"><span class="method"><code>DoubleClickHandlerOverride()</code></span> <a class="ctx" href="/docs/ui-base-element/#handler-overrides" title="DoubleClickHandlerOverride() in context on the base element page" aria-label="DoubleClickHandlerOverride() in context on the base element page">🠆</a></h3>
 

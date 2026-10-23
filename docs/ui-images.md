@@ -275,7 +275,7 @@ Style class: <a class="ref" href="/docs/ui-glossary/types/view-port-style/">`Vie
 
 Any element can be dragged with the left mouse button. Its <a class="ref" href="/docs/ui-glossary/types/drag-type/">`DragType`</a> decides what a drag does; the drag members
 (<a class="ref" href="/docs/ui-glossary/types/drag-type/">`DragType`</a>, <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#dragtarget">`DragTarget`</a>, <a class="ref" href="/docs/ui-glossary/elements/drag-and-drop-representation/">`DragAndDropRepresentation`</a>, <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#isdropallowedpredicate">`IsDropAllowedPredicate`</a>, <a class="ref event" href="/docs/ui-glossary/elements/base-element/#ondraganddropstart">`OnDragAndDropStart`</a>, <a class="ref event" href="/docs/ui-glossary/elements/base-element/#ondrop">`OnDrop`</a>,
-<a class="ref event" href="/docs/ui-glossary/elements/base-element/#ondropdenied">`OnDropDenied`</a>) are on the [base element](/docs/ui-base-element/).
+<a class="ref event" href="/docs/ui-glossary/elements/base-element/#ondropdenied">`OnDropDenied`</a>) are on the [base element](/docs/ui-base-element/#drag-and-drop-properties).
 
 <figure class="shot">
   <img src="{{ '/assets/img/ui/images-draganddrop.png' | relative_url }}" width="416" height="162" alt="A Torch card on the left, a half transparent copy of it being dragged, and an outlined Slot on the right">

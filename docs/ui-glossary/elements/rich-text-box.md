@@ -27,7 +27,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <h3 id="fontpath"><span class="dp"><code>FontPath</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-properties" title="FontPath in context on the text page" aria-label="FontPath in context on the text page">🠆</a></h3>
 
-`string` · The path of a TTF or OTF file to draw with (see [Fonts](#fonts)). A path that loads replaces the font system in use; an empty or unreadable path goes back to the general font, but keeps a font system you set by hand (as a label does).
+`string` · The path of a TTF or OTF file to draw with (see [Fonts](/docs/ui-text/#fonts)). A path that loads replaces the font system in use; an empty or unreadable path goes back to the general font, but keeps a font system you set by hand (as a label does).
 
 <h3 id="fontsize"><span class="dp"><code>FontSize</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-properties" title="FontSize in context on the text page" aria-label="FontSize in context on the text page">🠆</a></h3>
 
@@ -43,7 +43,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <h3 id="formatting"><span class="dp"><code>Formatting</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-properties" title="Formatting in context on the text page" aria-label="Formatting in context on the text page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/rich-text-box-formatting/">`RichTextBoxFormatting`</a> · Whether a read-only box reads [rich formatting](#rich-formatting) tags out of its text. Default `Plain`.
+<a class="ref" href="/docs/ui-glossary/types/rich-text-box-formatting/">`RichTextBoxFormatting`</a> · Whether a read-only box reads [rich formatting](/docs/ui-text/#rich-formatting) tags out of its text. Default `Plain`.
 
 <h3 id="generalfontsystem"><span class="prop"><code>GeneralFontSystem</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-properties" title="GeneralFontSystem in context on the text page" aria-label="GeneralFontSystem in context on the text page">🠆</a></h3>
 

@@ -5,7 +5,7 @@ title: "Glossary: Animation&lt;T&gt;"
 description: "The members of Animation<T>, in alphabetical order."
 ---
 
-An animation of properties of type `T`. It has the properties of [`BaseAnimation`](#baseanimation).
+An animation of properties of type `T`. It has the properties of [`BaseAnimation`](/docs/ui-styles/#baseanimation).
 
 A class deriving from [`BaseAnimation`](/docs/ui-glossary/types/base-animation/). The [styles page](/docs/ui-styles/#animationt) shows it in context.
 

@@ -229,7 +229,7 @@ to the level below. The "Delete save" button above takes its colors from `danger
   [`DefaultSettings`](#default-settings) like every element's.
 
 `StyleOverride`, `GeneralStyle`, `MouseCursorsSetOverride` and `GeneralMouseCursorsSet` are members of every styled
-element, described on the [base element](/docs/ui-base-element/) page.
+element, described on the [base element](/docs/ui-base-element/#styles-and-cursors) page.
 
 ### Value priority
 
@@ -494,7 +494,27 @@ stored but changes nothing until the higher one is cleared.
 
 The `FooDP` and `Foo` properties and the style classes are generated at build time by the
 `BorrowedTorch.UIDPGenerator` package from the `.dpg` file next to each element. How to add properties to an element
-of your own is on the [base element](/docs/ui-base-element/) page.
+of your own is on the [base element](/docs/ui-base-element/#writing-your-own-element) page.
+
+### Setting a value
+
+<a class="ref method" href="/docs/ui-glossary/types/dependency-property/#setvalue">`SetValue`</a> (and so setting `Foo`) goes through these steps:
+
+1. The element class's own check, its `OwnerPreAction` (see [`DependencyPropertyActions<T>`](#dependencypropertyactionst)), may correct the value or
+   reject it. For example, <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> clamps <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#transparency">`Transparency`</a> to 0 ... 1 and keeps <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#gridcolumnspan">`GridColumnSpan`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#gridrowspan">`GridRowSpan`</a>
+   at 1 or more.
+2. The property's <a class="ref prop" href="/docs/ui-glossary/types/dependency-property/#preaction">`PreAction`</a>, if you set one, gets the value the element already corrected (a <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#transparency">`Transparency`</a> of 3
+   arrives as 1). It doesn't run for a value the element rejected, and it can correct or reject the value too.
+3. The value is stored for its source: set by hand, by the style override or by the general style. Setting the same
+   value again for the same source stops here (unless `checkForEquality` is off).
+4. If a source of higher priority has a value, that one stays in effect and nothing else happens.
+5. If the value in effect changed, the element class's own reaction runs, its `OwnerPostAction` (for example, the
+   element is laid out again after a size change).
+6. Then the property's <a class="ref prop" href="/docs/ui-glossary/types/dependency-property/#postaction">`PostAction`</a>, then <a class="ref event" href="/docs/ui-glossary/types/dependency-property/#onpropertychanged">`OnPropertyChanged`</a>, and a binding that writes to its source passes the
+   value on.
+
+<a class="ref method" href="/docs/ui-glossary/types/dependency-property/#clearvalue">`ClearValue`</a> skips the pre-actions: when the value in effect changes, steps 5 and 6 run with the value that takes
+over.
 
 ### DependencyProperty&lt;T&gt; properties
 
@@ -502,8 +522,8 @@ of your own is on the [base element](/docs/ui-base-element/) page.
 | --- | --- | --- |
 | <a class="ref prop" href="/docs/ui-glossary/types/dependency-property/#value">`Value`</a> | `T` | Read-only. The value in effect: the one of the highest priority source, or the default when no source has one. |
 | <a class="ref prop" href="/docs/ui-glossary/types/dependency-property/#valuesource">`ValueSource`</a> | <a class="ref" href="/docs/ui-glossary/types/value-sources/">`ValueSources`</a> | Read-only. The source the value in effect comes from, `None` when the property reads its default. |
-| <a class="ref prop" href="/docs/ui-glossary/types/dependency-property/#preaction">`PreAction`</a> | `PreActionDelegate` | Called with `(ref T value, ref bool canProceed)` before every value is stored, from any source: change `value` to correct it, or set `canProceed` to `false` to reject it. Runs after the element's own pre-action. |
-| <a class="ref prop" href="/docs/ui-glossary/types/dependency-property/#postaction">`PostAction`</a> | `Action<T>` | Called with the new value in effect after the element's own reaction, before <a class="ref event" href="/docs/ui-glossary/types/dependency-property/#onpropertychanged">`OnPropertyChanged`</a>. |
+| <a class="ref prop" href="/docs/ui-glossary/types/dependency-property/#preaction">`PreAction`</a> | <a class="ref" href="/docs/ui-glossary/types/dependency-property-pre-action-delegate/">`PreActionDelegate`</a> | Called with `(ref T value, ref bool canProceed)` before every value is stored, from any source: change `value` to correct it, or set `canProceed` to `false` to reject it. It runs after the element class's own check (its `OwnerPreAction`), so it gets the value the element already corrected, and it doesn't run for a value the element rejected (see [setting a value](#setting-a-value)). |
+| <a class="ref prop" href="/docs/ui-glossary/types/dependency-property/#postaction">`PostAction`</a> | `Action<T>` | Called with the new value in effect after the element class's own reaction (its `OwnerPostAction`), only when the value in effect changes (see [setting a value](#setting-a-value)), before <a class="ref event" href="/docs/ui-glossary/types/dependency-property/#onpropertychanged">`OnPropertyChanged`</a>. |
 
 ### DependencyProperty&lt;T&gt; events
 
@@ -524,7 +544,7 @@ of your own is on the [base element](/docs/ui-base-element/) page.
 | <span class="method"><code><a href="/docs/ui-glossary/types/dependency-property/#bind">Bind</a>(object dataContext, string sourcePropertyName, <a href="/docs/ui-glossary/types/binding-mode/">BindingMode</a> mode, <a href="/docs/ui-glossary/types/i-converter/">IConverter</a> converter = null)</code></span> | Binds the property to a public property of `dataContext`, replacing any earlier binding. See [bindings](#bindings). |
 | <a class="ref method" href="/docs/ui-glossary/types/dependency-property/#dispose">`Dispose()`</a> | Removes the binding and the event handlers. The element calls it when it is disposed. |
 
-`OwnerPreActionDelegate`, with the signature `(BaseElement owner, ref T value, ref bool canProceed, ValueSources
+<a class="ref" href="/docs/ui-glossary/types/dependency-property-owner-pre-action-delegate/">`OwnerPreActionDelegate`</a>, with the signature `(BaseElement owner, ref T value, ref bool canProceed, ValueSources
 valueSource)`, is the type of the element class's own pre-action. It is assigned inside the library; you can't set one
 from your code.
 

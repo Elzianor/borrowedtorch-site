@@ -15,7 +15,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="defaultvalue"><span class="prop"><code>DefaultValue</code></span> <a class="ctx" href="/docs/ui-styles/#dependencypropertyactionst" title="DefaultValue in context on the styles page" aria-label="DefaultValue in context on the styles page">🠆</a></h3>
 
-`T` · Read-only. The value read while no source has one. Some defaults are read from <a class="ref" href="/docs/ui-glossary/types/default-settings/">`DefaultSettings`</a> each time (see [default settings](#default-settings)).
+`T` · Read-only. The value read while no source has one. Some defaults are read from <a class="ref" href="/docs/ui-glossary/types/default-settings/">`DefaultSettings`</a> each time (see [default settings](/docs/ui-styles/#default-settings)).
 
 ## Methods
 
