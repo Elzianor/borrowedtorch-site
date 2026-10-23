@@ -550,7 +550,7 @@ menu.AddTextItem("Rename");
 menu.AddItem(new Separator
 {
     DesiredHeight = 1,
-    Margin = (4, 3),
+    Margin = (4, 3, 4),
     BackgroundColor = new Color(168, 131, 74)
 });
 menu.AddItem(new ContextMenuItem("Show grid") { IsCheckable = true, IsChecked = true });
