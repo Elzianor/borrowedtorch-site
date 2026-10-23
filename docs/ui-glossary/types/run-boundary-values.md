@@ -15,11 +15,11 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="endvalue"><span class="prop"><code>EndValue</code></span> <a class="ctx" href="/docs/ui-styles/#runboundaryvaluest" title="EndValue in context on the styles page" aria-label="EndValue in context on the styles page">🠆</a></h3>
 
-`T` · The value set after the end values of the frames when the animation completes.
+`T` · The value set after the end values of the frames when the animation completes. Never applied by an `Infinite` animation, which doesn't complete.
 
 <h3 id="startvalue"><span class="prop"><code>StartValue</code></span> <a class="ctx" href="/docs/ui-styles/#runboundaryvaluest" title="StartValue in context on the styles page" aria-label="StartValue in context on the styles page">🠆</a></h3>
 
-`T` · The value set when the animation starts from not started.
+`T` · The value set when the animation starts from not started, before the values of the time line's start: a frame that applies at 0 ms replaces it at once.
 
 ## Methods
 
