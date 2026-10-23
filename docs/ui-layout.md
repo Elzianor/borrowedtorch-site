@@ -212,6 +212,8 @@ clips its items, and it is removed once its last item is. The grid's <a class="r
 A cell the grid makes to hold the items of one place and span. You don't create cells; get one with <a class="ref method" href="/docs/ui-glossary/elements/grid/#trygetcell">`TryGetCell`</a>.
 A cell is aligned `Left` / `Top`, doesn't take the mouse, and clips its items. Its <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#gridcolumn">`GridColumn`</a>, <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#gridrow">`GridRow`</a>,
 <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#gridcolumnspan">`GridColumnSpan`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#gridrowspan">`GridRowSpan`</a> tell its place.
+Among the other cells it is drawn and hit by the highest <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#zindex">`ZIndex`</a> of its items (see
+[the base element](/docs/ui-base-element/#appearance)).
 
 | Property | Type | Description |
 | --- | --- | --- |
@@ -506,7 +508,9 @@ it by its edges.
 
 **Showing and hiding.** A window is visible when created. <a class="ref method" href="/docs/ui-glossary/elements/window/#show">`Show()`</a> and <a class="ref method" href="/docs/ui-glossary/elements/window/#hide">`Hide()`</a> set its <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#visibility">`Visibility`</a> to `Visible` and
 `Hidden`; the default title bar's close button calls <a class="ref method" href="/docs/ui-glossary/elements/window/#hide">`Hide()`</a>. A window is drawn above its siblings and gets the mouse
-before them, and of several shown windows the one shown last is on top.
+before them, whatever their <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#zindex">`ZIndex`</a>. Of several shown windows the one shown, pressed or focused last is on top: a
+press anywhere in a window, or focusing an element in it, brings it to the front of its sibling windows (a window in
+a window brings the outer one along), and <a class="ref method" href="/docs/ui-glossary/elements/window/#bringtofront">`BringToFront()`</a> does it from code.
 
 **Modal windows.** With <a class="ref dp" href="/docs/ui-glossary/elements/window/#ismodal">`IsModal`</a> on, a shown window in the tree is drawn above the whole UI, over a shade of
 everything below it (the shade's colour is <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#modalwindowactiveshadetint">`BaseElement.ModalWindowActiveShadeTint`</a>, black at an alpha of 75 by
@@ -530,6 +534,7 @@ windows stack: the one shown last is on top, and hiding it gives the mouse back 
 | <a class="ref method" href="/docs/ui-glossary/elements/window/#window">`Window(string name = null)`</a> | Creates a window with the default title bar. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>. |
 | <a class="ref method" href="/docs/ui-glossary/elements/window/#show">`Show()`</a> | Makes the window visible. A hidden window shown this way goes on top of the other shown windows (of the modal ones when it is modal). |
 | <a class="ref method" href="/docs/ui-glossary/elements/window/#hide">`Hide()`</a> | Hides the window (<a class="ref" href="/docs/ui-glossary/types/visibility/#hidden">`Visibility.Hidden`</a>). |
+| <a class="ref method" href="/docs/ui-glossary/elements/window/#bringtofront">`BringToFront()`</a> | Puts the shown non-modal window above its sibling windows. Does nothing for a hidden or modal window. |
 
 A window has no items: the item methods do nothing on it.
 

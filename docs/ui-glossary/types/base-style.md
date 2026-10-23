@@ -141,6 +141,10 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 <a class="ref" href="/docs/ui-glossary/types/visibility/">`Visibility`</a> · Whether the element is shown, hidden in its space or collapsed. The default is `Visible`. A hidden element loses the keyboard focus and any mouse state.
 
+<h3 id="zindex"><span class="prop"><code>ZIndex</code></span> <a class="ctx" href="/docs/ui-base-element/#appearance-properties" title="ZIndex in context on the base element page" aria-label="ZIndex in context on the base element page">🠆</a></h3>
+
+`int` · The element's place among its overlapping siblings: a higher one is drawn above them and gets the mouse first, a lower one (it can be negative) goes below. The default is 0; siblings with the same one keep the order they were added in.
+
 ## Methods
 
 <h3 id="clone"><span class="method"><code>Clone()</code></span> <a class="ctx" href="/docs/ui-styles/#basestyle" title="Clone() in context on the styles page" aria-label="Clone() in context on the styles page">🠆</a></h3>

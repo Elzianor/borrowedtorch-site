@@ -172,11 +172,55 @@ children of a hidden or disabled element are hidden or disabled with it, while t
 `Hidden` keeps the element's space in the layout but draws nothing and takes no input; `Collapsed` also gives it no
 size, so the elements around it move up.
 
+Overlapping siblings are drawn in the order they were added, the last one on top, and the mouse goes to the one on
+top. <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#zindex">`ZIndex`</a> changes that order: a sibling with a higher <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#zindex">`ZIndex`</a> is drawn above and gets the mouse first, a lower
+one (it can be negative) goes below, and siblings with the same <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#zindex">`ZIndex`</a> keep the order they were added in. The
+layout, the order of the items and the keyboard order stay as they are.
+
+<figure class="shot">
+  <img src="{{ '/assets/img/ui/base-zindex.png' | relative_url }}" width="374" height="138" alt="Three overlapping cards, First, Second and Third, where the lower Second card covers a corner of each of its neighbours">
+  <figcaption>The second card has a ZIndex of 1, so it lies over the third card, which was added after it.</figcaption>
+</figure>
+
+```csharp
+Label Card(string text, Color color, int left, int top) => new()
+{
+    Text = text,
+    DesiredWidth = 140,
+    DesiredHeight = 80,
+    HorizontalAlignment = HorizontalAlignment.Left,
+    VerticalAlignment = VerticalAlignment.Top,
+    Margin = (left, top),
+    TextAlignment = TextAlignment.Center,
+    VerticalTextAlignment = VerticalTextAlignment.Center,
+    ForegroundColor = new Color(20, 14, 10),
+    BackgroundColor = color
+};
+
+var first = Card("First", new Color(233, 194, 122), 16, 16);
+var second = Card("Second", new Color(242, 166, 90), 116, 40);
+var third = Card("Third", new Color(181, 199, 122), 216, 16);
+
+// added second, drawn last: above both of its neighbours
+second.ZIndex = 1;
+
+ui.AddElementToRoot(first);
+ui.AddElementToRoot(second);
+ui.AddElementToRoot(third);
+```
+
+<a class="ref dp" href="/docs/ui-glossary/elements/base-element/#zindex">`ZIndex`</a> orders siblings only: an element stays where its parent is among the parent's siblings, and the parent's
+clipping still applies. A stack panel and a list keep every item in a slot of its own, so their items don't overlap.
+In a [grid](/docs/ui-layout/#grid) a cell goes by the highest <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#zindex">`ZIndex`</a> of its items, so an item spanning other cells
+can be put above or below their items. Non-modal [windows](/docs/ui-layout/#window) stay above their siblings
+whatever their <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#zindex">`ZIndex`</a>.
+
 ### Appearance properties
 
 | Property | Type | Description |
 | --- | --- | --- |
 | <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#visibility">`Visibility`</a> | <a class="ref" href="/docs/ui-glossary/types/visibility/">`Visibility`</a> | Whether the element is shown, hidden in its space or collapsed. The default is `Visible`. A hidden element loses the keyboard focus and any mouse state. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#zindex">`ZIndex`</a> | `int` | The element's place among its overlapping siblings: a higher one is drawn above them and gets the mouse first, a lower one (it can be negative) goes below. The default is 0; siblings with the same one keep the order they were added in. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> | `Color` | The colour the element's background is filled with. `Transparent` (the default) fills nothing. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#foregroundcolor">`ForegroundColor`</a> | `Color` | The colour of what the element draws over its background, such as a label's text. An element drawn from textures tints them with it when it is not `Transparent`. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> | `string` | A content folder with the element's textures, for example <code>UITextures/<a href="/docs/ui-glossary/elements/button/">Button</a>/</code>. A missing trailing path separator is added. |

@@ -224,6 +224,9 @@
         - title: "Visibility"
           anchor: visibility
           kind: dp
+        - title: "ZIndex"
+          anchor: zindex
+          kind: dp
         - title: "Id"
           anchor: id
           kind: field
@@ -1900,6 +1903,9 @@
           kind: dp
         - title: "Window()"
           anchor: window
+          kind: method
+        - title: "Bring<wbr>To<wbr>Front()"
+          anchor: bringtofront
           kind: method
         - title: "Hide()"
           anchor: hide
