@@ -273,7 +273,7 @@ Ownership decides what is disposed:
 | Property | Type | Description |
 | --- | --- | --- |
 | <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#id">`Id`</a> | `Guid` | Read-only. A unique id made when the element is created. |
-| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a> | `string` | Read-only. The name given to the constructor, used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a> | `string` | Read-only. The name given to the constructor, used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>; it never changes. The parts an element makes are named after it. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#parent">`Parent`</a> | `BaseElement` | Read-only. The element this one is in, null when it is not in one. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#children">`Children`</a> | <code>IReadOnlyList&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt;</code> | Read-only. The element's children: its items and the parts it made itself. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#isdisposed">`IsDisposed`</a> | `bool` | Read-only. True once <a class="ref method" href="/docs/ui-glossary/elements/base-element/#dispose">`Dispose()`</a> was called. |

@@ -5,7 +5,7 @@ title: "Glossary: TreeViewItem"
 description: "The properties, methods and events of TreeViewItem, in alphabetical order."
 ---
 
-An item of a tree view: an expand icon and its content, with leaves below it. Items added in code can be made with the constructor; the items of source objects are made by the tree view. When an item is added to another item, it gets its place in the tree: its <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a> and its indentation are set by the item it joins.
+An item of a tree view: an expand icon and its content, with leaves below it. Items added in code can be made with the constructor; the items of source objects are made by the tree view. When an item is added to another item, it gets its place in the tree: its indentation is set by the item it joins. It keeps its own <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a>; the items the tree view makes (around your elements, for texts and for source objects) are named after the item they join.
 
 `TreeViewItem` derives from [`BaseElement`](/docs/ui-glossary/elements/base-element/) and has its members too. The [lists and menus page](/docs/ui-lists/#treeviewitem) shows it in context, with code and screenshots.
 

@@ -496,7 +496,8 @@ Style class: <a class="ref" href="/docs/ui-glossary/types/tree-view-style/">`Tre
 
 An item of a tree view: an expand icon and its content, with leaves below it. Items added in code can be made with
 the constructor; the items of source objects are made by the tree view. When an item is added to another item, it
-gets its place in the tree: its <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a> and its indentation are set by the item it joins.
+gets its place in the tree: its indentation is set by the item it joins. It keeps its own <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a>; the items the
+tree view makes (around your elements, for texts and for source objects) are named after the item they join.
 
 | Property | Type | Description |
 | --- | --- | --- |

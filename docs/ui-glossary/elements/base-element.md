@@ -211,7 +211,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <h3 id="name"><span class="prop"><code>Name</code></span> <a class="ctx" href="/docs/ui-base-element/#items-and-content-properties" title="Name in context on the base element page" aria-label="Name in context on the base element page">🠆</a></h3>
 
-`string` · Read-only. The name given to the constructor, used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>.
+`string` · Read-only. The name given to the constructor, used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>; it never changes. The parts an element makes are named after it.
 
 <h3 id="parent"><span class="prop"><code>Parent</code></span> <a class="ctx" href="/docs/ui-base-element/#items-and-content-properties" title="Parent in context on the base element page" aria-label="Parent in context on the base element page">🠆</a></h3>
 

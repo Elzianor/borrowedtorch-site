@@ -451,14 +451,14 @@ loaded together, each one stretched over its part.
 
 | Texture | Part | Example |
 | --- | --- | --- |
-| `LeftTop` | The top left corner. | <img class="texture" src="{{ '/assets/img/ui/textures/border/LeftTop.png' | relative_url }}" width="48" height="48" alt="The LeftTop texture of the example border"> |
-| `RightTop` | The top right corner. | <img class="texture" src="{{ '/assets/img/ui/textures/border/RightTop.png' | relative_url }}" width="48" height="48" alt="The RightTop texture of the example border"> |
-| `LeftBottom` | The bottom left corner. | <img class="texture" src="{{ '/assets/img/ui/textures/border/LeftBottom.png' | relative_url }}" width="48" height="48" alt="The LeftBottom texture of the example border"> |
-| `RightBottom` | The bottom right corner. | <img class="texture" src="{{ '/assets/img/ui/textures/border/RightBottom.png' | relative_url }}" width="48" height="48" alt="The RightBottom texture of the example border"> |
-| `Left` | The left side, between the left corners. | <img class="texture" src="{{ '/assets/img/ui/textures/border/Left.png' | relative_url }}" width="48" height="48" alt="The Left texture of the example border"> |
-| `Right` | The right side, between the right corners. | <img class="texture" src="{{ '/assets/img/ui/textures/border/Right.png' | relative_url }}" width="48" height="48" alt="The Right texture of the example border"> |
-| `Top` | The top side, between the top corners. | <img class="texture" src="{{ '/assets/img/ui/textures/border/Top.png' | relative_url }}" width="48" height="48" alt="The Top texture of the example border"> |
-| `Bottom` | The bottom side, between the bottom corners. | <img class="texture" src="{{ '/assets/img/ui/textures/border/Bottom.png' | relative_url }}" width="48" height="48" alt="The Bottom texture of the example border"> |
+| `LeftTop` | The top left corner. | <img class="texture" src="{{ '/assets/img/ui/textures/border/LeftTop.png' | relative_url }}" width="32" height="32" alt="The LeftTop texture of the example border"> |
+| `RightTop` | The top right corner. | <img class="texture" src="{{ '/assets/img/ui/textures/border/RightTop.png' | relative_url }}" width="32" height="32" alt="The RightTop texture of the example border"> |
+| `LeftBottom` | The bottom left corner. | <img class="texture" src="{{ '/assets/img/ui/textures/border/LeftBottom.png' | relative_url }}" width="32" height="32" alt="The LeftBottom texture of the example border"> |
+| `RightBottom` | The bottom right corner. | <img class="texture" src="{{ '/assets/img/ui/textures/border/RightBottom.png' | relative_url }}" width="32" height="32" alt="The RightBottom texture of the example border"> |
+| `Left` | The left side, between the left corners. | <img class="texture" src="{{ '/assets/img/ui/textures/border/Left.png' | relative_url }}" width="32" height="32" alt="The Left texture of the example border"> |
+| `Right` | The right side, between the right corners. | <img class="texture" src="{{ '/assets/img/ui/textures/border/Right.png' | relative_url }}" width="32" height="32" alt="The Right texture of the example border"> |
+| `Top` | The top side, between the top corners. | <img class="texture" src="{{ '/assets/img/ui/textures/border/Top.png' | relative_url }}" width="32" height="32" alt="The Top texture of the example border"> |
+| `Bottom` | The bottom side, between the bottom corners. | <img class="texture" src="{{ '/assets/img/ui/textures/border/Bottom.png' | relative_url }}" width="32" height="32" alt="The Bottom texture of the example border"> |
 
 ### Button textures
 
