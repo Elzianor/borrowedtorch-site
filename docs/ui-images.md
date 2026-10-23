@@ -183,12 +183,12 @@ Reserves a rectangle in the layout and runs your own drawing code inside it, for
 render embedded in the UI.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/images-viewport.png' | relative_url }}" width="314" height="202" alt="A dark rectangle with the Beryllium UI logo drawn rotated in its middle">
+  <img src="{{ '/assets/img/ui/images-viewport.png' | relative_url }}" width="314" height="202" alt="A dark rectangle with the Kindling engine mark, a flame over a K, drawn rotated in its middle">
   <figcaption>A view port whose draw instructions draw a rotated texture with their own sprite batch.</figcaption>
 </figure>
 
 ```csharp
-var logo = LoadTexture("Logo/BerylliumUI Logo.png");
+var logo = LoadTexture("Logo/Kindling.png");
 var batch = new SpriteBatch(GraphicsDevice);
 var angle = 0.5f;
 
