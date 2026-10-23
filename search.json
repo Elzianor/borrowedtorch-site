@@ -1,0 +1,82 @@
+---
+layout: null
+permalink: /search.json
+---
+{%- comment -%}
+  The index of the site search (assets/js/search.js), made on every build: each page with a title, split at its ## and
+  ### headings, as [{"t": title, "u": url, "d": description, "s": [[heading id, heading, text], ...]}], the text before
+  the first heading first (with an empty id and heading). Code blocks are left out. A page leaves itself out with
+  search: false in its front matter.
+  Jekyll replaces a page's content with its HTML once it has rendered the page (see _includes/docs-sections.html), so a
+  Markdown page not rendered yet is still Markdown here: it is converted first then (it starts with text, not a tag, or
+  has "## " headings). The variables start with s_ (a page shares one scope).
+{%- endcomment -%}
+{%- capture s_newline %}
+{% endcapture -%}
+{%- assign s_heading = s_newline | append: "## " -%}
+{%- comment -%} Liquid's own delimiters, put together: written out, they would end the tag they are in {%- endcomment -%}
+{%- assign s_tag_start = "{" | append: "%" -%}
+{%- assign s_tag_end = "%" | append: "}" -%}
+{%- assign s_output_start = "{" | append: "{" -%}
+{%- assign s_output_end = "}" | append: "}" -%}
+{%- assign s_count = 0 -%}
+[
+{%- for p in site.pages -%}
+  {%- assign s_ext = p.name | split: "." | last -%}
+  {%- if p.title == nil or p.search == false or p.url == page.url -%}{%- continue -%}{%- endif -%}
+  {%- unless s_ext == "md" or s_ext == "html" -%}{%- continue -%}{%- endunless -%}
+  {%- assign s_html = p.content -%}
+  {%- assign s_raw = false -%}
+  {%- if s_ext == "md" -%}
+    {%- assign s_first = s_html | strip | slice: 0 -%}
+    {%- assign s_lines = s_html | prepend: s_newline -%}
+    {%- if s_first != "<" or s_lines contains s_heading -%}{%- assign s_raw = true -%}{%- endif -%}
+  {%- endif -%}
+  {%- comment -%} a page not rendered yet: its Liquid tags out first (the | of a filter in a table row would split
+  the cell), then the Markdown converted {%- endcomment -%}
+  {%- if s_raw or s_html contains s_tag_start or s_html contains s_output_start -%}
+    {%- assign s_parts = s_html | split: s_tag_start -%}
+    {%- capture s_html -%}
+      {%- for s_part in s_parts -%}
+        {%- if forloop.first -%}{{ s_part }}{%- else -%}{%- assign s_tag = s_part | split: s_tag_end | first -%}{{ s_part | remove_first: s_tag | remove_first: s_tag_end }}{%- endif -%}
+      {%- endfor -%}
+    {%- endcapture -%}
+    {%- assign s_parts = s_html | split: s_output_start -%}
+    {%- capture s_html -%}
+      {%- for s_part in s_parts -%}
+        {%- if forloop.first -%}{{ s_part }}{%- else -%}{%- assign s_tag = s_part | split: s_output_end | first -%}{{ s_part | remove_first: s_tag | remove_first: s_output_end }}{%- endif -%}
+      {%- endfor -%}
+    {%- endcapture -%}
+  {%- endif -%}
+  {%- if s_raw -%}{%- assign s_html = s_html | markdownify -%}{%- endif -%}
+  {%- comment -%} the code blocks out, and a space after each block, so the words of two cells stay apart {%- endcomment -%}
+  {%- assign s_parts = s_html | split: "<pre" -%}
+  {%- capture s_html -%}
+    {%- for s_part in s_parts -%}
+      {%- if forloop.first -%}{{ s_part }}{%- else -%}{%- assign s_code = s_part | split: "</pre>" | first -%}{{ s_part | remove_first: s_code | remove_first: "</pre>" }}{%- endif -%}
+    {%- endfor -%}
+  {%- endcapture -%}
+  {%- assign s_html = s_html | replace: "</p>", " </p>" | replace: "</li>", " </li>" | replace: "</td>", " </td>" | replace: "</th>", " </th>" | replace: "</div>", " </div>" | replace: "<br", " <br" | replace: "</h4>", " </h4>" -%}
+  {%- assign s_parts = s_html | replace: '<h3 id="', '<h2 id="' | split: '<h2 id="' -%}
+  {%- if s_count > 0 %},{% endif %}
+  {%- assign s_count = s_count | plus: 1 %}
+{"t":{{ p.title | jsonify }},"u":{{ p.url | relative_url | jsonify }},"d":{{ p.description | default: "" | jsonify }},"s":[
+  {%- for s_part in s_parts -%}
+    {%- if forloop.first -%}
+      {%- assign s_id = "" -%}
+      {%- assign s_title = "" -%}
+      {%- assign s_body = s_part -%}
+    {%- else -%}
+      {%- assign s_head = s_part | split: "</h" | first -%}
+      {%- assign s_id = s_head | split: '"' | first -%}
+      {%- assign s_attributes = s_head | split: ">" | first -%}
+      {%- assign s_title = s_head | remove_first: s_attributes | remove_first: ">" | strip_html | remove: "→" | remove: "🠆" | normalize_whitespace | strip -%}
+      {%- assign s_body = s_part | remove_first: s_head -%}
+    {%- endif -%}
+    {%- assign s_text = s_body | strip_html | normalize_whitespace | strip -%}
+    {%- unless forloop.first %},{% endunless -%}
+    [{{ s_id | jsonify }},{{ s_title | jsonify }},{{ s_text | jsonify }}]
+  {%- endfor -%}
+]}
+{%- endfor %}
+]

@@ -15,6 +15,7 @@ GitHub Pages builds the site automatically on every push to `main`. There is no 
 | `_layouts/docs.html` | Docs page: sidebar, breadcrumbs, Previous / Next |
 | `_data/nav.yml` | Top menu items |
 | `_data/docs.yml` | Docs sidebar groups and reading order |
+| `search.json` | The index of the search box in the top menu (`assets/js/search.js`), made on every build from every page with a title; `search: false` in a page's front matter leaves it out |
 | `assets/` | CSS, JS and images |
 
 ## Adding a docs article

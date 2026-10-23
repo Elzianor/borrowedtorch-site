@@ -38,6 +38,7 @@
   {%- for name in page.css %}
   <link rel="stylesheet" href="{{ '/assets/css/' | append: name | append: '.css' | relative_url }}?v={{ asset_version }}">
   {%- endfor %}
+  <script src="{{ '/assets/js/search.js' | relative_url }}?v={{ asset_version }}" defer></script>
 </head>
 <body class="{{ page.body_class }}">
   <a class="skip-link" href="#content">Skip to content</a>
