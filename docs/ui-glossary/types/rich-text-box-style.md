@@ -21,6 +21,10 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 `int` · The time between two characters printed by <a class="ref method" href="/docs/ui-glossary/elements/rich-text-box/#animatetext">`AnimateText`</a>, in milliseconds. Negative values become 0; 0 sets the text at once.
 
+<h3 id="entertypeslinebreak"><span class="prop"><code>EnterTypesLineBreak</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-properties" title="EnterTypesLineBreak in context on the text page" aria-label="EnterTypesLineBreak in context on the text page">🠆</a></h3>
+
+`bool` · Whether Enter types a line break in a read-write box; Ctrl+Enter then ends the editing. Default `false`.
+
 <h3 id="fontpath"><span class="prop"><code>FontPath</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-properties" title="FontPath in context on the text page" aria-label="FontPath in context on the text page">🠆</a></h3>
 
 `string` · The path of a TTF or OTF file to draw with (see [Fonts](#fonts)). A path that loads replaces the font system in use; an empty or unreadable path goes back to the general font, but keeps a font system you set by hand (as a label does).

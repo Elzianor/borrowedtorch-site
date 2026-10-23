@@ -1229,6 +1229,9 @@
         - title: "Character<wbr>Print<wbr>Delay<wbr>Ms"
           anchor: characterprintdelayms
           kind: dp
+        - title: "Enter<wbr>Types<wbr>Line<wbr>Break"
+          anchor: entertypeslinebreak
+          kind: dp
         - title: "Font<wbr>Path"
           anchor: fontpath
           kind: dp

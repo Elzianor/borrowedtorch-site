@@ -266,6 +266,7 @@ var notes = new RichTextBox("notes")
     Type = RichTextBoxType.ReadWrite,
     Text = "Selected text can be copied, cut and pasted. Ctrl+Z undoes, Ctrl+Y redoes.",
     WrapType = TextWrap.Wrap,
+    EnterTypesLineBreak = true,   // Enter types a line break, Ctrl+Enter applies
     DesiredWidth = 440,
     DesiredHeight = 56,
     TextMargin = (8, 6),
@@ -286,7 +287,8 @@ replaced). The mouse shows the write cursor of <a class="ref prop" href="/docs/u
 
 The editing ends when the box loses the keyboard: Enter, a press somewhere else, or another element focused. Then
 <a class="ref event" href="/docs/ui-glossary/elements/rich-text-box/#onapply">`OnApply`</a> is raised with the text. It is not raised when the box loses the keyboard because it was hidden, disabled or
-removed. Enter never types a line break; a pasted text can bring line breaks in.
+removed. Enter never types a line break, unless <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#entertypeslinebreak">`EnterTypesLineBreak`</a> is set: then it does, and Ctrl+Enter ends the
+editing. A pasted text can bring line breaks in either way.
 
 <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#textfilter">`TextFilter`</a> receives every text assigned to <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#text">`Text`</a> and returns the text to keep: typed characters, pastes, undo and
 redo, code, bindings and styles all go through it. Setting a filter filters the text already there. When the filter
@@ -308,7 +310,8 @@ Keys while the box has the keyboard:
 | Home, End | Moves the caret to the start or the end of its line (Shift selects). | Scrolls to the top or the bottom, or to the left or right end when the text is not wrapped. |
 | Page Up, Page Down | Scrolls back or forward by a page: up or down, or left or right when the text is not wrapped. | The same. |
 | Backspace, Delete | Deletes the character before or after the caret, or the selection. | Not used. |
-| Enter | Ends the editing (<a class="ref event" href="/docs/ui-glossary/elements/rich-text-box/#onapply">`OnApply`</a>). | Not used. |
+| Enter | Ends the editing (<a class="ref event" href="/docs/ui-glossary/elements/rich-text-box/#onapply">`OnApply`</a>), or types a line break with <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#entertypeslinebreak">`EnterTypesLineBreak`</a>. | Not used. |
+| Ctrl+Enter | Ends the editing where Enter types line breaks, otherwise the same as Enter. | Not used. |
 | Insert | Switches <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#inputtype">`InputType`</a> between `Insert` and `Overwrite`. | Not used. |
 | Ctrl+A | Selects the whole text. | Selects the whole text (plain boxes only). |
 | Ctrl+C | Copies the selection. | Copies the selection. |
@@ -382,6 +385,7 @@ With <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#character
 | <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#verticaltextalignment">`VerticalTextAlignment`</a> | <a class="ref" href="/docs/ui-glossary/types/vertical-text-alignment/">`VerticalTextAlignment`</a> | Where the lines sit in a box taller than its text. Applies only while the text fits; a scrolling text starts at the top. Default `Top`. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#wraptype">`WrapType`</a> | <a class="ref" href="/docs/ui-glossary/types/text-wrap/">`TextWrap`</a> | Whether lines break to fit the width (with a fixed or stretched width, or a <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#maxwidth">`MaxWidth`</a>). Words wider than a line are broken. Default `NoWrap`. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#inputtype">`InputType`</a> | <a class="ref" href="/docs/ui-glossary/types/rich-text-box-input-type/">`RichTextBoxInputType`</a> | Whether typing inserts or replaces the character at the caret. The Insert key switches it. Default `Insert`. |
+| `EnterTypesLineBreak` | `bool` | Whether Enter types a line break in a read-write box; Ctrl+Enter then ends the editing. Default `false`. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#textfilter">`TextFilter`</a> | `Func<string, string>` | Transforms every text assigned to <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#text">`Text`</a>, edits included. Setting it filters the current text. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#fontsize">`FontSize`</a> | `float` | The font size in units. Negative values become 0, and 0 draws nothing. Default <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultfontsize">`DefaultSettings.DefaultFontSize`</a> (14). |
 | <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#fontpath">`FontPath`</a> | `string` | The path of a TTF or OTF file to draw with (see [Fonts](#fonts)). A path that loads replaces the font system in use; an empty or unreadable path goes back to the general font, but keeps a font system you set by hand (as a label does). |
@@ -408,7 +412,7 @@ With <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#character
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| <a class="ref event" href="/docs/ui-glossary/elements/rich-text-box/#onapply">`OnApply`</a> | <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, string text)</code> | A read-write box ends its editing: Enter, a press elsewhere or another element focused. Not when it is hidden, disabled or removed. Raised even if the text did not change. |
+| <a class="ref event" href="/docs/ui-glossary/elements/rich-text-box/#onapply">`OnApply`</a> | <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, string text)</code> | A read-write box ends its editing: Enter (Ctrl+Enter with <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#entertypeslinebreak">`EnterTypesLineBreak`</a>), a press elsewhere or another element focused. Not when it is hidden, disabled or removed. Raised even if the text did not change. |
 | <a class="ref event" href="/docs/ui-glossary/elements/rich-text-box/#ontextchanged">`OnTextChanged`</a> | <code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, string text)</code> | <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#text">`Text`</a> changed, by typing, deleting, pasting, undo or redo, code, a binding, a style or the end of a text animation. The new lines are already laid out. |
 
 ### RichTextBox methods

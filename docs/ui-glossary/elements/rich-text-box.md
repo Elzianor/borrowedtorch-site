@@ -21,6 +21,10 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 `int` · The time between two characters printed by <a class="ref method" href="/docs/ui-glossary/elements/rich-text-box/#animatetext">`AnimateText`</a>, in milliseconds. Negative values become 0; 0 sets the text at once.
 
+<h3 id="entertypeslinebreak"><span class="dp"><code>EnterTypesLineBreak</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-properties" title="EnterTypesLineBreak in context on the text page" aria-label="EnterTypesLineBreak in context on the text page">🠆</a></h3>
+
+`bool` · Whether Enter types a line break in a read-write box; Ctrl+Enter then ends the editing. Default `false`.
+
 <h3 id="fontpath"><span class="dp"><code>FontPath</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-properties" title="FontPath in context on the text page" aria-label="FontPath in context on the text page">🠆</a></h3>
 
 `string` · The path of a TTF or OTF file to draw with (see [Fonts](#fonts)). A path that loads replaces the font system in use; an empty or unreadable path goes back to the general font, but keeps a font system you set by hand (as a label does).
@@ -189,7 +193,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="onapply"><span class="event"><code>OnApply</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-events" title="OnApply in context on the text page" aria-label="OnApply in context on the text page">🠆</a></h3>
 
-<code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, string text)</code> · A read-write box ends its editing: Enter, a press elsewhere or another element focused. Not when it is hidden, disabled or removed. Raised even if the text did not change.
+<code>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> sender, string text)</code> · A read-write box ends its editing: Enter (Ctrl+Enter with <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#entertypeslinebreak">`EnterTypesLineBreak`</a>), a press elsewhere or another element focused. Not when it is hidden, disabled or removed. Raised even if the text did not change.
 
 <h3 id="ontextchanged"><span class="event"><code>OnTextChanged</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-events" title="OnTextChanged in context on the text page" aria-label="OnTextChanged in context on the text page">🠆</a></h3>
 
