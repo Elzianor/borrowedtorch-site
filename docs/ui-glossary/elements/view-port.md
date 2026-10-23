@@ -19,7 +19,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="drawinstructions"><span class="prop"><code>DrawInstructions</code></span> <a class="ctx" href="/docs/ui-images/#viewport-properties" title="DrawInstructions in context on the images page" aria-label="DrawInstructions in context on the images page">🠆</a></h3>
 
-`Action` · Your drawing code, run every frame inside the view port as described above.
+`Action` · Your drawing code, run every frame inside the view port, over its background and under its children, as described above.
 
 <h3 id="generalmousecursorsset"><span class="prop"><code>GeneralMouseCursorsSet</code></span> <a class="ctx" href="/docs/ui-base-element/#genericstyleandmousecursorsdata-properties" title="GeneralMouseCursorsSet in context on the base element page" aria-label="GeneralMouseCursorsSet in context on the base element page">🠆</a></h3>
 
@@ -54,7 +54,3 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 <h3 id="viewport"><span class="method"><code>ViewPort()</code></span> <a class="ctx" href="/docs/ui-images/#viewport-methods" title="ViewPort() in context on the images page" aria-label="ViewPort() in context on the images page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/view-port/#viewport">`ViewPort(string name = null)`</a> · Creates a view port. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>.
-
-<h3 id="draw"><span class="method"><code>Draw()</code></span> <a class="ctx" href="/docs/ui-base-element/#appearance-methods" title="Draw() in context on the base element page" aria-label="Draw() in context on the base element page">🠆</a></h3>
-
-<a class="ref method" href="/docs/ui-glossary/elements/view-port/#draw">`Draw()`</a> · Draws the element, its children and the popups above them. The UI calls it on the root every frame, you don't call it yourself.

@@ -1868,9 +1868,6 @@
         - title: "View<wbr>Port()"
           anchor: viewport
           kind: method
-        - title: "Draw()"
-          anchor: draw
-          kind: method
     - title: "Window"
       url: /docs/ui-glossary/elements/window/
       members:
