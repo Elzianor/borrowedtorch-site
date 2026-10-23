@@ -558,8 +558,8 @@ With <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#resizewith
 the new bounds, and the element is resized there once when the button is released.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/base-resize.png' | relative_url }}" width="348" height="154" alt="A dark panel reading Pull the edges, with a sand coloured contour around it reaching further to the right, where the panel will be resized to">
-  <figcaption>A resize with the contour: the panel is resized to the contour on release.</figcaption>
+  <img src="{{ '/assets/img/ui/base-resize.png' | relative_url }}" width="348" height="154" alt="The mouse cursor goes to the right edge of a dark panel reading Pull the edges and drags it to the right; a sand coloured contour follows the cursor, and when the button is released the panel takes the contour's width">
+  <figcaption>The cursor pulls the right edge: the contour follows it, and the panel is resized to the contour on release.</figcaption>
 </figure>
 
 ```csharp
