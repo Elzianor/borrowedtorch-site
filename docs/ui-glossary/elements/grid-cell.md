@@ -13,18 +13,18 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 ## Properties
 
-<h3 id="contentheight"><span class="prop"><code>ContentHeight</code></span> <a class="ctx" href="/docs/ui-layout/#gridcell" title="ContentHeight in context on the layout page" aria-label="ContentHeight in context on the layout page">→</a></h3>
+<h3 id="contentheight"><span class="prop"><code>ContentHeight</code></span> <a class="ctx" href="/docs/ui-layout/#gridcell" title="ContentHeight in context on the layout page" aria-label="ContentHeight in context on the layout page">🠆</a></h3>
 
 `int` · Read-only. The height the cell's items need; auto rows are sized by it.
 
-<h3 id="contentwidth"><span class="prop"><code>ContentWidth</code></span> <a class="ctx" href="/docs/ui-layout/#gridcell" title="ContentWidth in context on the layout page" aria-label="ContentWidth in context on the layout page">→</a></h3>
+<h3 id="contentwidth"><span class="prop"><code>ContentWidth</code></span> <a class="ctx" href="/docs/ui-layout/#gridcell" title="ContentWidth in context on the layout page" aria-label="ContentWidth in context on the layout page">🠆</a></h3>
 
 `int` · Read-only. The width the cell's items need; auto columns are sized by it.
 
-<h3 id="isspancell"><span class="prop"><code>IsSpanCell</code></span> <a class="ctx" href="/docs/ui-layout/#gridcell" title="IsSpanCell in context on the layout page" aria-label="IsSpanCell in context on the layout page">→</a></h3>
+<h3 id="isspancell"><span class="prop"><code>IsSpanCell</code></span> <a class="ctx" href="/docs/ui-layout/#gridcell" title="IsSpanCell in context on the layout page" aria-label="IsSpanCell in context on the layout page">🠆</a></h3>
 
 `bool` · Read-only. Whether the cell spans more than one column or row.
 
-<h3 id="items"><span class="prop"><code>Items</code></span> <a class="ctx" href="/docs/ui-layout/#gridcell" title="Items in context on the layout page" aria-label="Items in context on the layout page">→</a></h3>
+<h3 id="items"><span class="prop"><code>Items</code></span> <a class="ctx" href="/docs/ui-layout/#gridcell" title="Items in context on the layout page" aria-label="Items in context on the layout page">🠆</a></h3>
 
 <code>IReadOnlyList&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt;</code> · Read-only. The items in the cell.

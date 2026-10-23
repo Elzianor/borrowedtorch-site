@@ -13,6 +13,6 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 ## Methods
 
-<h3 id="separator"><span class="method"><code>Separator()</code></span> <a class="ctx" href="/docs/ui-layout/#separator-methods" title="Separator() in context on the layout page" aria-label="Separator() in context on the layout page">→</a></h3>
+<h3 id="separator"><span class="method"><code>Separator()</code></span> <a class="ctx" href="/docs/ui-layout/#separator-methods" title="Separator() in context on the layout page" aria-label="Separator() in context on the layout page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/separator/#separator">`Separator(string name = null)`</a> · Creates a separator. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>.

@@ -13,16 +13,16 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 ## Properties
 
-<h3 id="applyatms"><span class="prop"><code>ApplyAtMs</code></span> <a class="ctx" href="/docs/ui-styles/#discreteanimationframet" title="ApplyAtMs in context on the styles page" aria-label="ApplyAtMs in context on the styles page">→</a></h3>
+<h3 id="applyatms"><span class="prop"><code>ApplyAtMs</code></span> <a class="ctx" href="/docs/ui-styles/#discreteanimationframet" title="ApplyAtMs in context on the styles page" aria-label="ApplyAtMs in context on the styles page">🠆</a></h3>
 
 `int` · Read-only. The point of the time line where it is set, in milliseconds.
 
-<h3 id="value"><span class="prop"><code>Value</code></span> <a class="ctx" href="/docs/ui-styles/#discreteanimationframet" title="Value in context on the styles page" aria-label="Value in context on the styles page">→</a></h3>
+<h3 id="value"><span class="prop"><code>Value</code></span> <a class="ctx" href="/docs/ui-styles/#discreteanimationframet" title="Value in context on the styles page" aria-label="Value in context on the styles page">🠆</a></h3>
 
 `T` · Read-only. The value the frame sets.
 
 ## Methods
 
-<h3 id="discreteanimationframe"><span class="method"><code>DiscreteAnimationFrame()</code></span> <a class="ctx" href="/docs/ui-styles/#discreteanimationframet" title="DiscreteAnimationFrame() in context on the styles page" aria-label="DiscreteAnimationFrame() in context on the styles page">→</a></h3>
+<h3 id="discreteanimationframe"><span class="method"><code>DiscreteAnimationFrame()</code></span> <a class="ctx" href="/docs/ui-styles/#discreteanimationframet" title="DiscreteAnimationFrame() in context on the styles page" aria-label="DiscreteAnimationFrame() in context on the styles page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/types/discrete-animation-frame/#discreteanimationframe">`DiscreteAnimationFrame(T value, int applyAtMs)`</a> · Creates the frame.

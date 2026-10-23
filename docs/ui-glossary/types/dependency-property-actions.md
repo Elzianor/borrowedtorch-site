@@ -13,12 +13,12 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 ## Properties
 
-<h3 id="defaultvalue"><span class="prop"><code>DefaultValue</code></span> <a class="ctx" href="/docs/ui-styles/#dependencypropertyactionst" title="DefaultValue in context on the styles page" aria-label="DefaultValue in context on the styles page">→</a></h3>
+<h3 id="defaultvalue"><span class="prop"><code>DefaultValue</code></span> <a class="ctx" href="/docs/ui-styles/#dependencypropertyactionst" title="DefaultValue in context on the styles page" aria-label="DefaultValue in context on the styles page">🠆</a></h3>
 
 `T` · Read-only. The value read while no source has one. Some defaults are read from <a class="ref" href="/docs/ui-glossary/types/default-settings/">`DefaultSettings`</a> each time (see [default settings](#default-settings)).
 
 ## Methods
 
-<h3 id="dependencypropertyactions"><span class="method"><code>DependencyPropertyActions()</code></span> <a class="ctx" href="/docs/ui-styles/#dependencypropertyactionst" title="DependencyPropertyActions() in context on the styles page" aria-label="DependencyPropertyActions() in context on the styles page">→</a></h3>
+<h3 id="dependencypropertyactions"><span class="method"><code>DependencyPropertyActions()</code></span> <a class="ctx" href="/docs/ui-styles/#dependencypropertyactionst" title="DependencyPropertyActions() in context on the styles page" aria-label="DependencyPropertyActions() in context on the styles page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/types/dependency-property-actions/#dependencypropertyactions">`DependencyPropertyActions()`</a> · Creates an empty set of actions with the default `default(T)`.

@@ -13,6 +13,6 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 ## Events
 
-<h3 id="oncollectionchanged"><span class="event"><code>OnCollectionChanged</code></span> <a class="ctx" href="/docs/ui-styles/#ibindablecollection" title="OnCollectionChanged in context on the styles page" aria-label="OnCollectionChanged in context on the styles page">→</a></h3>
+<h3 id="oncollectionchanged"><span class="event"><code>OnCollectionChanged</code></span> <a class="ctx" href="/docs/ui-styles/#ibindablecollection" title="OnCollectionChanged in context on the styles page" aria-label="OnCollectionChanged in context on the styles page">🠆</a></h3>
 
 `(bool isItemsAdded, int startIndex, int count)` · Items were added (`true`) or removed (`false`), `count` of them from `startIndex`.

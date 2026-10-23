@@ -297,18 +297,21 @@ a.card:hover { border-color: var(--line-strong); background: var(--surface-2); c
 .docs-tree > summary, .docs-node > summary { list-style: none; cursor: pointer; }
 .docs-tree > summary::-webkit-details-marker, .docs-node > summary::-webkit-details-marker { display: none; }
 .docs-tree > summary { display: flex; align-items: center; gap: 6px; }
+/* the caret centred in its box, the box over the line of the node's list (8px in + half of 13px = the middle of the 1px
+   line 14px in) */
 .docs-tree > summary::before, .docs-node > summary::before {
   content: "▸";
   flex: none;
-  width: 12px;
+  width: 13px;
+  text-align: center;
   color: var(--muted);
-  font-size: .7rem;
+  font-size: 1rem;
   transition: transform .15s;
 }
 .docs-tree[open] > summary::before, .docs-node[open] > summary::before { transform: rotate(90deg); }
 .docs-tree > summary:hover, .docs-tree > summary:hover::before { color: var(--gold); }
 .docs-tree > summary { padding-left: 0; }
-.docs-node > summary { display: flex; align-items: center; padding-left: 12px; }
+.docs-node > summary { display: flex; align-items: center; padding-left: 8px; }
 .docs-node > summary > a { flex: 1; min-width: 0; padding-left: 4px; }
 .docs-node > summary:hover::before { color: var(--gold); }
 .docs-node ul { margin-left: 14px; border-left: 1px solid var(--line); }
@@ -445,7 +448,8 @@ a.card:hover { border-color: var(--line-strong); background: var(--surface-2); c
   border-color: var(--kind, var(--gold-dim));
   background: color-mix(in srgb, var(--kind, #e9c27a) 24%, transparent);
 }
-/* the arrow after a name in a glossary heading: the member's table on its topic page */
+/* the arrow after a name in a glossary heading: the member's table on its topic page (the arrow from a symbol font
+   loaded for it alone, see base.html) */
 .prose .ctx {
   display: inline-block;
   margin-left: .45em;
@@ -453,7 +457,7 @@ a.card:hover { border-color: var(--line-strong); background: var(--surface-2); c
   border: 1px solid var(--line-strong);
   border-radius: 4px;
   color: var(--gold-dim);
-  font-family: var(--sans);
+  font-family: "Noto Sans Symbols 2", var(--sans);
   font-size: .9rem;
   font-weight: 600;
   line-height: 1.3;
