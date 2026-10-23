@@ -290,7 +290,9 @@ Rows are added and selected as in a [`ListBox`](#listbox) in `Single` mode: <a c
 list's own properties, so a binding to them works as on a list box.
 
 The selection image is a picture of the selected row's content, drawn at its natural size at the left of the combo
-box and centred vertically. It is a texture, so it is not made without a graphics device (for example in tests).
+box and centred vertically. It keeps the side margins the content has in its row (5 units for a text row), so the
+chosen value lines up with the rows of the list. It is a texture, so it is not made without a graphics device (for
+example in tests).
 
 A press on the combo box, on its selection image or on its toggle button, opens or closes the list. The list opens
 below the combo box, at least as wide as it. When it doesn't fit below, it opens on the side with more room, and its
@@ -311,7 +313,7 @@ already). A selection made in code closes an open list as well.
 | <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#selecteditem">`SelectedItem`</a> | <a class="ref" href="/docs/ui-glossary/elements/list-box-item/">`ListBoxItem`</a> | The selected row, `null` when nothing is selected. Setting it selects that row. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#selectedindex">`SelectedIndex`</a> | `int` | The index of the selected row, `-1` when nothing is selected. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/combo-box/#selectedsource">`SelectedSource`</a> | `object` | Read-only. The <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#itemssource">`ItemsSource`</a> object of the selected row, `null` without one. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#selectionstyle">`SelectionStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> | The style of the image that shows the selected row. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#selectionstyle">`SelectionStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> | The style of the image that shows the selected row. The image is only as large as the row's content, so a background colour here lies just behind the chosen value; the combo box's own <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> colours the whole field. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#togglebuttonstyle">`ToggleButtonStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/button-style/">`ButtonStyle`</a> | The style of the [button](/docs/ui-controls/#button) that opens and closes the list, for example its width and text. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#listboxstyle">`ListBoxStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> | The style of the drop-down list, for example its row colours. |
 

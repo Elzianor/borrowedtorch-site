@@ -114,7 +114,7 @@ public static void Apply()
 
     ComboBox.GeneralStyle = new ComboBoxStyle
     {
-        SelectionStyle = new ImageStyle { BackgroundColor = PanelLight },
+        BackgroundColor = PanelLight,
         ToggleButtonStyle = new ButtonStyle
         {
             NormalColor = GoldDim,
