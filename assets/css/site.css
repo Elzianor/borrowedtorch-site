@@ -502,6 +502,16 @@ a.card:hover { border-color: var(--line-strong); background: var(--surface-2); c
 .prose td img.cursor { box-sizing: content-box; padding: 2px; border-radius: 6px; background: #6e6252; }
 /* a hover and a pressed cursor side by side, also where the description takes most of the row */
 .prose td:has(> img.cursor) { white-space: nowrap; }
+/* an example texture of a texture set (on the styles page): on a faint checkerboard, so its transparent parts and its
+   outline show; the padding goes around the picture's own size */
+.prose td img.texture {
+  vertical-align: middle;
+  max-width: none;
+  box-sizing: content-box;
+  padding: 3px;
+  border-radius: 6px;
+  background: repeating-conic-gradient(#2c241c 0 25%, #1a140f 0 50%) 0 0 / 10px 10px;
+}
 /* the scroll bars of wide code blocks and tables, in the site's colors instead of the browser's */
 .prose pre, .prose table {
   scrollbar-width: thin;

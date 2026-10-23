@@ -440,7 +440,7 @@ icon is a block of <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/
 <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#expandiconstyle">`ExpandIconStyle`</a>; with <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> it is the `FoldedIcon` or `ExpandedIcon` texture from that folder,
 any picture you like. By default the icon is an 8 by 8 block centred before the content, light grey when
 collapsed and darker when expanded. The screenshot's tree gives it two pictures through <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a>, an arrow
-pointing right and one pointing down, at the theme's 10 by 10.
+pointing right and one pointing down, at the theme's 10 by 10 (see [texture sets](/docs/ui-styles/#texture-sets)).
 <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#subitemsshift">`SubItemsShift`</a> indents every level. The tree view's list never uses virtualization.
 
 ### TreeView properties

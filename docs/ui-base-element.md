@@ -137,7 +137,7 @@ element.Margin = (10, 20, 30, 40);  // left, top, right, bottom
 ## Appearance
 
 Without textures an element fills its bounds with <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a>. With <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> set, the elements that use
-textures draw them from that folder instead (each element's section says which textures it reads). A disabled element
+textures draw them from that folder instead (the [texture sets](/docs/ui-styles/#texture-sets) list the names each element reads). A disabled element
 is drawn darker, and <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#transparency">`Transparency`</a> fades the element together with everything inside it.
 
 <figure class="shot">

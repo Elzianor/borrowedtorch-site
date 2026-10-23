@@ -59,7 +59,7 @@ releasing cancels it. A `Repeat` button raises `OnClick` as soon as it is presse
 [base element](/docs/ui-base-element/#click-timing)).
 
 Without textures the button is drawn in the solid color of its state. With <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> set, it draws the
-`Normal`, `Hover`, `Pressed` and `Toggled` textures from that folder instead.
+`Normal`, `Hover`, `Pressed` and `Toggled` textures from that folder instead (see [texture sets](/docs/ui-styles/#texture-sets)).
 
 ### Button properties
 
@@ -209,7 +209,7 @@ A radio button without a <a class="ref dp" href="/docs/ui-glossary/elements/chec
 
 Without textures the box is a solid square in <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#checkedsolidcolor">`CheckedSolidColor`</a> or <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#uncheckedsolidcolor">`UncheckedSolidColor`</a>. These have no default
 color, so give them in a style or on the element. With <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> set, the box shows the <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#checked">`Checked`</a> and
-`Unchecked` textures from that folder instead, stretched over the square.
+`Unchecked` textures from that folder instead, stretched over the square (see [texture sets](/docs/ui-styles/#texture-sets)).
 
 ### CheckBox properties
 
@@ -443,7 +443,7 @@ the slider is too short for its buttons and thumb, its parts are not drawn.
 <a class="ref dp" href="/docs/ui-glossary/elements/slider/#linedecreasesolidcolor">`LineDecreaseSolidColor`</a> for the track from the start (left, or bottom) to the thumb, <a class="ref dp" href="/docs/ui-glossary/elements/slider/#lineincreasesolidcolor">`LineIncreaseSolidColor`</a> for
 the rest of the track, and <a class="ref dp" href="/docs/ui-glossary/elements/slider/#thumbsolidcolor">`ThumbSolidColor`</a> for the thumb. These have no default color, so give them in a style or
 on the element. With <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> set, the slider draws these textures from that folder instead (the track halves
-and the thumb's middle are tiled, the rest stretched):
+and the thumb's middle are tiled, the rest stretched; [texture sets](/docs/ui-styles/#texture-sets) has examples):
 
 | Part | Horizontal | Vertical |
 | --- | --- | --- |
@@ -572,7 +572,7 @@ behave as on a slider: <a class="ref dp" href="/docs/ui-glossary/elements/progre
 not matter, and setting one bound past the other moves the other along.
 
 Without textures the inherited <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> is the track and <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#foregroundcolor">`ForegroundColor`</a> the bar. With <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a>
-set, it tiles the <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#background">`Background`</a> texture over the whole element and the `Bar` texture over the filled part instead.
+set, it tiles the <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#background">`Background`</a> texture over the whole element and the `Bar` texture over the filled part instead (see [texture sets](/docs/ui-styles/#texture-sets)).
 
 ### ProgressBar properties
 

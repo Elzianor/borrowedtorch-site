@@ -433,6 +433,96 @@ The static holder of the general mouse cursors set of one element type, keyed by
 | --- | --- | --- |
 | <a class="ref event" href="/docs/ui-glossary/types/generic-mouse-cursors-data/#ongeneralmousecursorssetchanged">`OnGeneralMouseCursorsSetChanged`</a> | <code>(<a href="/docs/ui-glossary/types/mouse-cursors-set/">MouseCursorsSet</a> prevMouseCursorsSet)</code> | Static. <a class="ref prop" href="/docs/ui-glossary/types/generic-mouse-cursors-data/#generalmousecursorsset">`GeneralMouseCursorsSet`</a> is replaced; the handler gets the previous set. Not raised when a property of the set changes. |
 
+## Texture sets
+
+An element whose <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> names a content folder draws pictures from that folder instead of its solid colors.
+It loads each picture by a fixed name: the asset name the content pipeline gives it, its file name without the
+extension. So a button with <code>TexturesPath = "UITextures/<a href="/docs/ui-glossary/elements/button/">Button</a>/"</code> loads <code>UITextures/<a href="/docs/ui-glossary/elements/button/">Button</a>/Normal</code> (compiled from
+`Normal.png`) and the others below. A name the element loads has to be in the folder: when it is missing, the
+content manager throws a `ContentLoadException`. The pictures are drawn in their own colors.
+
+The examples are one possible look. Any pictures with these names work, at any size: each is stretched or tiled
+over its part as the tables say.
+
+### Button textures
+
+<a class="ref" href="/docs/ui-glossary/elements/button/">`Button`</a>, and the buttons inside other elements: the toggle button of a <a class="ref" href="/docs/ui-glossary/elements/combo-box/">`ComboBox`</a> (its `ToggleButtonStyle`) and the
+`CloseButton` of a window's <a class="ref" href="/docs/ui-glossary/elements/default-window-title-bar/">`DefaultWindowTitleBar`</a>. Each texture is stretched over the button (its `BackgroundStyle`
+can give another `Fill`). A texture is loaded the first time the button shows its state, so a button that is never a
+`Toggle` needs no `Toggled`, as the close button below.
+
+| Texture | Shown | Button | Combo box toggle | Close button |
+| --- | --- | --- | --- | --- |
+| `Normal` | The button at rest. | <img class="texture" src="{{ '/assets/img/ui/textures/button/Normal.png' | relative_url }}" width="96" height="32" alt="The Normal texture of the example button"> | <img class="texture" src="{{ '/assets/img/ui/textures/combo-box-toggle-button/Normal.png' | relative_url }}" width="32" height="32" alt="The Normal texture of the example combo box toggle button"> | <img class="texture" src="{{ '/assets/img/ui/textures/close-button/Normal.png' | relative_url }}" width="32" height="32" alt="The Normal texture of the example close button"> |
+| `Hover` | The mouse is over the button. | <img class="texture" src="{{ '/assets/img/ui/textures/button/Hover.png' | relative_url }}" width="96" height="32" alt="The Hover texture of the example button"> | <img class="texture" src="{{ '/assets/img/ui/textures/combo-box-toggle-button/Hover.png' | relative_url }}" width="32" height="32" alt="The Hover texture of the example combo box toggle button"> | <img class="texture" src="{{ '/assets/img/ui/textures/close-button/Hover.png' | relative_url }}" width="32" height="32" alt="The Hover texture of the example close button"> |
+| `Pressed` | The left button is held down on it. | <img class="texture" src="{{ '/assets/img/ui/textures/button/Pressed.png' | relative_url }}" width="96" height="32" alt="The Pressed texture of the example button"> | <img class="texture" src="{{ '/assets/img/ui/textures/combo-box-toggle-button/Pressed.png' | relative_url }}" width="32" height="32" alt="The Pressed texture of the example combo box toggle button"> | <img class="texture" src="{{ '/assets/img/ui/textures/close-button/Pressed.png' | relative_url }}" width="32" height="32" alt="The Pressed texture of the example close button"> |
+| `Toggled` | A `Toggle` button that is on (`ToggledOn`), at rest or under the mouse. `Pressed` still shows while it is held down. | <img class="texture" src="{{ '/assets/img/ui/textures/button/Toggled.png' | relative_url }}" width="96" height="32" alt="The Toggled texture of the example button"> | <img class="texture" src="{{ '/assets/img/ui/textures/combo-box-toggle-button/Toggled.png' | relative_url }}" width="32" height="32" alt="The Toggled texture of the example combo box toggle button"> | Not needed: it never toggles. |
+
+### CheckBox textures
+
+Stretched over the box's square. A radio button (`Type` `RadioButton`) takes the same names, from a folder of its own
+for another look. Each one is loaded the first time the box shows it.
+
+| Texture | Shown | Check box | Radio button |
+| --- | --- | --- | --- |
+| `Checked` | `Checked` is true. | <img class="texture" src="{{ '/assets/img/ui/textures/check-box/Checked.png' | relative_url }}" width="32" height="32" alt="The Checked texture of the example check box"> | <img class="texture" src="{{ '/assets/img/ui/textures/radio-button/Checked.png' | relative_url }}" width="32" height="32" alt="The Checked texture of the example radio button"> |
+| `Unchecked` | `Checked` is false. | <img class="texture" src="{{ '/assets/img/ui/textures/check-box/Unchecked.png' | relative_url }}" width="32" height="32" alt="The Unchecked texture of the example check box"> | <img class="texture" src="{{ '/assets/img/ui/textures/radio-button/Unchecked.png' | relative_url }}" width="32" height="32" alt="The Unchecked texture of the example radio button"> |
+
+### Border textures
+
+<a class="ref" href="/docs/ui-glossary/elements/border/">`Border`</a>, and the frame of a <a class="ref" href="/docs/ui-glossary/elements/window/">`Window`</a>, a <a class="ref" href="/docs/ui-glossary/elements/context-menu/">`ContextMenu`</a> and a <a class="ref" href="/docs/ui-glossary/elements/rich-text-box/">`RichTextBox`</a> (their <a class="ref" href="/docs/ui-glossary/types/border-style/">`BorderStyle`</a>). All eight are
+loaded together, each one stretched over its part.
+
+| Texture | Part | Example |
+| --- | --- | --- |
+| `LeftTop` | The top left corner. | <img class="texture" src="{{ '/assets/img/ui/textures/border/LeftTop.png' | relative_url }}" width="48" height="48" alt="The LeftTop texture of the example border"> |
+| `RightTop` | The top right corner. | <img class="texture" src="{{ '/assets/img/ui/textures/border/RightTop.png' | relative_url }}" width="48" height="48" alt="The RightTop texture of the example border"> |
+| `LeftBottom` | The bottom left corner. | <img class="texture" src="{{ '/assets/img/ui/textures/border/LeftBottom.png' | relative_url }}" width="48" height="48" alt="The LeftBottom texture of the example border"> |
+| `RightBottom` | The bottom right corner. | <img class="texture" src="{{ '/assets/img/ui/textures/border/RightBottom.png' | relative_url }}" width="48" height="48" alt="The RightBottom texture of the example border"> |
+| `Left` | The left side, between the left corners. | <img class="texture" src="{{ '/assets/img/ui/textures/border/Left.png' | relative_url }}" width="48" height="48" alt="The Left texture of the example border"> |
+| `Right` | The right side, between the right corners. | <img class="texture" src="{{ '/assets/img/ui/textures/border/Right.png' | relative_url }}" width="48" height="48" alt="The Right texture of the example border"> |
+| `Top` | The top side, between the top corners. | <img class="texture" src="{{ '/assets/img/ui/textures/border/Top.png' | relative_url }}" width="48" height="48" alt="The Top texture of the example border"> |
+| `Bottom` | The bottom side, between the bottom corners. | <img class="texture" src="{{ '/assets/img/ui/textures/border/Bottom.png' | relative_url }}" width="48" height="48" alt="The Bottom texture of the example border"> |
+
+### ProgressBar textures
+
+Both are loaded together and tiled.
+
+| Texture | Part | Example |
+| --- | --- | --- |
+| `Background` | The track, tiled over the whole bar. | <img class="texture" src="{{ '/assets/img/ui/textures/progress-bar/Background.png' | relative_url }}" width="48" height="48" alt="The Background texture of the example progress bar"> |
+| `Bar` | The filled part, tiled over it. | <img class="texture" src="{{ '/assets/img/ui/textures/progress-bar/Bar.png' | relative_url }}" width="48" height="48" alt="The Bar texture of the example progress bar"> |
+
+### Slider textures
+
+<a class="ref" href="/docs/ui-glossary/elements/slider/">`Slider`</a>, and the scroll bars of a <a class="ref" href="/docs/ui-glossary/elements/scrollable-container/">`ScrollableContainer`</a> and a <a class="ref" href="/docs/ui-glossary/elements/rich-text-box/">`RichTextBox`</a> (their `ScrollBarsStyle`) and of a
+<a class="ref" href="/docs/ui-glossary/elements/list-box/">`ListBox`</a> (its <a class="ref" href="/docs/ui-glossary/types/scrollable-container-style/">`ScrollableContainerStyle`</a>). A slider loads the seven textures of its <a class="ref" href="/docs/ui-glossary/types/orientation/">`Orientation`</a> and `Type`: the caps
+or the buttons at its ends, the two halves of the track and the three pieces of the thumb. A vertical slider starts
+at the bottom. `ScrollBarNoButtons` loads the button textures too, though it doesn't show them. The track halves and
+the thumb's middle are tiled along the slider, the rest is stretched.
+
+| Part | Horizontal | Example | Vertical | Example |
+| --- | --- | --- | --- | --- |
+| Start cap (<a class="ref" href="/docs/ui-glossary/elements/slider/">`Slider`</a>, `SliderWithCaps`) | `LeftEnd` | <img class="texture" src="{{ '/assets/img/ui/textures/slider/LeftEnd.png' | relative_url }}" width="16" height="32" alt="The LeftEnd texture of the example slider"> | `BottomEnd` | <img class="texture" src="{{ '/assets/img/ui/textures/slider/BottomEnd.png' | relative_url }}" width="32" height="16" alt="The BottomEnd texture of the example slider"> |
+| End cap (<a class="ref" href="/docs/ui-glossary/elements/slider/">`Slider`</a>, `SliderWithCaps`) | `RightEnd` | <img class="texture" src="{{ '/assets/img/ui/textures/slider/RightEnd.png' | relative_url }}" width="16" height="32" alt="The RightEnd texture of the example slider"> | `TopEnd` | <img class="texture" src="{{ '/assets/img/ui/textures/slider/TopEnd.png' | relative_url }}" width="32" height="16" alt="The TopEnd texture of the example slider"> |
+| Start button (`ScrollBar`, `ScrollBarNoButtons`) | `LeftButton` | <img class="texture" src="{{ '/assets/img/ui/textures/slider/LeftButton.png' | relative_url }}" width="32" height="32" alt="The LeftButton texture of the example slider"> | `DownButton` | <img class="texture" src="{{ '/assets/img/ui/textures/slider/DownButton.png' | relative_url }}" width="32" height="32" alt="The DownButton texture of the example slider"> |
+| End button (`ScrollBar`, `ScrollBarNoButtons`) | `RightButton` | <img class="texture" src="{{ '/assets/img/ui/textures/slider/RightButton.png' | relative_url }}" width="32" height="32" alt="The RightButton texture of the example slider"> | `UpButton` | <img class="texture" src="{{ '/assets/img/ui/textures/slider/UpButton.png' | relative_url }}" width="32" height="32" alt="The UpButton texture of the example slider"> |
+| Track before the thumb (tiled) | `HorizontalDecrease` | <img class="texture" src="{{ '/assets/img/ui/textures/slider/HorizontalDecrease.png' | relative_url }}" width="32" height="32" alt="The HorizontalDecrease texture of the example slider"> | `VerticalDecrease` | <img class="texture" src="{{ '/assets/img/ui/textures/slider/VerticalDecrease.png' | relative_url }}" width="32" height="32" alt="The VerticalDecrease texture of the example slider"> |
+| Track after the thumb (tiled) | `HorizontalIncrease` | <img class="texture" src="{{ '/assets/img/ui/textures/slider/HorizontalIncrease.png' | relative_url }}" width="32" height="32" alt="The HorizontalIncrease texture of the example slider"> | `VerticalIncrease` | <img class="texture" src="{{ '/assets/img/ui/textures/slider/VerticalIncrease.png' | relative_url }}" width="32" height="32" alt="The VerticalIncrease texture of the example slider"> |
+| Thumb's start | `ThumbLeft` | <img class="texture" src="{{ '/assets/img/ui/textures/slider/ThumbLeft.png' | relative_url }}" width="8" height="32" alt="The ThumbLeft texture of the example slider"> | `ThumbBottom` | <img class="texture" src="{{ '/assets/img/ui/textures/slider/ThumbBottom.png' | relative_url }}" width="32" height="8" alt="The ThumbBottom texture of the example slider"> |
+| Thumb's middle (tiled) | `ThumbHorizontal` | <img class="texture" src="{{ '/assets/img/ui/textures/slider/ThumbHorizontal.png' | relative_url }}" width="8" height="32" alt="The ThumbHorizontal texture of the example slider"> | `ThumbVertical` | <img class="texture" src="{{ '/assets/img/ui/textures/slider/ThumbVertical.png' | relative_url }}" width="32" height="8" alt="The ThumbVertical texture of the example slider"> |
+| Thumb's end | `ThumbRight` | <img class="texture" src="{{ '/assets/img/ui/textures/slider/ThumbRight.png' | relative_url }}" width="8" height="32" alt="The ThumbRight texture of the example slider"> | `ThumbTop` | <img class="texture" src="{{ '/assets/img/ui/textures/slider/ThumbTop.png' | relative_url }}" width="32" height="8" alt="The ThumbTop texture of the example slider"> |
+
+### TreeView textures
+
+The expand icon before an item with leaves, at the size of `ExpandIconStyle`. Both are loaded when an item shows its
+icon. The example is the arrow pair these pages use.
+
+| Texture | Shown | Example |
+| --- | --- | --- |
+| `FoldedIcon` | The item's branch is collapsed. | <img class="texture" src="{{ '/assets/img/ui/textures/tree-view/FoldedIcon.png' | relative_url }}" width="20" height="20" alt="The FoldedIcon texture of the example tree view"> |
+| `ExpandedIcon` | The item's branch is expanded. | <img class="texture" src="{{ '/assets/img/ui/textures/tree-view/ExpandedIcon.png' | relative_url }}" width="20" height="20" alt="The ExpandedIcon texture of the example tree view"> |
+
 ## Default settings
 
 <a class="ref" href="/docs/ui-glossary/types/default-settings/">`DefaultSettings`</a> (namespace `BorrowedTorch.UI.Settings`) is a static class of public fields that hold framework-wide
