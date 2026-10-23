@@ -781,11 +781,27 @@ A list box, combo box, tree view or context menu with an `ItemsSource` makes one
 `ItemsTemplate` makes the element shown in each row; without one, the row shows the object's `ToString()` in a
 <a class="ref" href="/docs/ui-glossary/elements/label/">`Label`</a>. The elements a template makes belong to the list, which may dispose or reuse them, so don't keep or move
 them. Setting another
-template on a list box with an items source rebuilds its rows. This template and record are used by the example
-below:
+template on a list box with an items source rebuilds its rows. The template below binds each row's check box to its
+quest, so the row follows the quest and the quest follows the row:
 
 ```csharp
-public sealed record Quest(string Title, bool Done);
+// a quest that tells its bound elements when it is done or not
+public sealed class Quest(string title, bool done) : Bindable
+{
+    private bool _done = done;
+
+    public string Title { get; } = title;
+
+    public bool Done
+    {
+        get => _done;
+        set
+        {
+            _done = value;
+            PropertyChangedInvoke();
+        }
+    }
+}
 
 // makes the element of a row from its source object
 public sealed class QuestTemplate : IItemsTemplate
@@ -794,22 +810,26 @@ public sealed class QuestTemplate : IItemsTemplate
     {
         var quest = (Quest)data;
 
-        return new CheckBox
+        var checkBox = new CheckBox
         {
             Text = quest.Title,
-            Checked = quest.Done,
             DesiredHeight = 22,
             Margin = (6, 3),
             HorizontalAlignment = HorizontalAlignment.Left,
             VerticalAlignment = VerticalAlignment.Top
         };
+
+        // both ways: the box shows Done, and a click on the box sets Done
+        checkBox.CheckedDP.Bind(quest, nameof(Quest.Done), BindingMode.TwoWay);
+
+        return checkBox;
     }
 }
 ```
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/styles-items-template.png' | relative_url }}" width="334" height="154" alt="A list of four check boxes: Light the beacon and Rest by the fire checked, Find the map and Cross the river unchecked">
-  <figcaption>Each quest of the source shown as a check box.</figcaption>
+  <img src="{{ '/assets/img/ui/styles-items-template.png' | relative_url }}" width="334" height="154" alt="A list of four check boxes: Light the beacon, Find the map and Rest by the fire checked, Cross the river unchecked">
+  <figcaption>Each quest of the source shown as a check box bound to its Done: setting Done of the second quest checked its box.</figcaption>
 </figure>
 
 ```csharp
@@ -830,6 +850,7 @@ var list = new ListBox("quests")
 };
 
 quests.Add(new Quest("Rest by the fire", true));   // a new row appears
+quests[1].Done = true;                             // its box checks itself
 
 ui.AddElementToRoot(list);
 ```
