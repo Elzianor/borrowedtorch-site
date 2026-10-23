@@ -13,12 +13,12 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 ## Properties
 
-<h3 id="generalmousecursorsset"><span class="prop"><code>GeneralMouseCursorsSet</code></span> <a class="ctx" href="/docs/ui-styles/#genericmousecursorsdatat" title="GeneralMouseCursorsSet in context on the styles page" aria-label="GeneralMouseCursorsSet in context on the styles page">🠆</a></h3>
+<h3 id="generalmousecursorsset"><span class="prop"><code>GeneralMouseCursorsSet</code></span> <a class="ctx" href="/docs/ui-styles/#genericmousecursorsdatat" title="GeneralMouseCursorsSet in context on the styles page" aria-label="GeneralMouseCursorsSet in context on the styles page">➤</a></h3>
 
 <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> · Static. The set of every element of the type that has none of its own. `null` at start, which means the default set.
 
 ## Events
 
-<h3 id="ongeneralmousecursorssetchanged"><span class="event"><code>OnGeneralMouseCursorsSetChanged</code></span> <a class="ctx" href="/docs/ui-styles/#genericmousecursorsdatat" title="OnGeneralMouseCursorsSetChanged in context on the styles page" aria-label="OnGeneralMouseCursorsSetChanged in context on the styles page">🠆</a></h3>
+<h3 id="ongeneralmousecursorssetchanged"><span class="event"><code>OnGeneralMouseCursorsSetChanged</code></span> <a class="ctx" href="/docs/ui-styles/#genericmousecursorsdatat" title="OnGeneralMouseCursorsSetChanged in context on the styles page" aria-label="OnGeneralMouseCursorsSetChanged in context on the styles page">➤</a></h3>
 
 <code>(<a href="/docs/ui-glossary/types/mouse-cursors-set/">MouseCursorsSet</a> prevMouseCursorsSet)</code> · Static. <a class="ref prop" href="/docs/ui-glossary/types/generic-mouse-cursors-data/#generalmousecursorsset">`GeneralMouseCursorsSet`</a> is replaced; the handler gets the previous set. Not raised when a property of the set changes.

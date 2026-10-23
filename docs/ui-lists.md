@@ -386,6 +386,8 @@ var tree = new TreeView("levels")
     DesiredHeight = 188,
     Margin = 16,
     SubItemsShift = (18, 0),
+    // the expand icons: MinimizedIcon and ExpandedIcon, pictures in this content folder
+    TexturesPath = "UITextures/TreeView/",
     ChildrenSelector = folder => ((Folder)folder).Children,
     ItemsSource = levels
 };
@@ -428,10 +430,11 @@ selects its first leaf when it is expanded already. Left collapses the selected 
 when it is collapsed.
 
 **Icons and indentation.** An item with leaves shows an expand icon before its content. Without <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> the
-icon is an arrowhead (like ➤), pointing right in <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#minimizediconcolor">`MinimizedIconColor`</a> while collapsed and down in <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#expandediconcolor">`ExpandedIconColor`</a> while expanded, sized and placed by
-<a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#expandiconstyle">`ExpandIconStyle`</a>; with <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> it is the `MinimizedIcon` or `ExpandedIcon` texture from that folder.
-By default the icon is 8 by 8, centred before the content, light grey when collapsed and darker when
-expanded. The screenshot's theme uses a 10 by 10 icon in its own colours.
+icon is a block of <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#minimizediconcolor">`MinimizedIconColor`</a> (collapsed) or <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#expandediconcolor">`ExpandedIconColor`</a> (expanded), sized and placed by
+<a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#expandiconstyle">`ExpandIconStyle`</a>; with <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> it is the `MinimizedIcon` or `ExpandedIcon` texture from that folder,
+any picture you like. By default the icon is an 8 by 8 block centred before the content, light grey when
+collapsed and darker when expanded. The screenshot's tree gives it two pictures through <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a>, an arrow
+pointing right and one pointing down, at the theme's 10 by 10.
 <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#subitemsshift">`SubItemsShift`</a> indents every level. The tree view's list never uses virtualization.
 
 ### TreeView properties
@@ -444,9 +447,9 @@ expanded. The screenshot's theme uses a 10 by 10 icon in its own colours.
 | <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#selecteditem">`SelectedItem`</a> | <a class="ref" href="/docs/ui-glossary/elements/tree-view-item/">`TreeViewItem`</a> | The selected item, `null` when nothing is selected. Only an item of this tree can be set; the branches above it are expanded. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/tree-view/#leaves">`Leaves`</a> | <code>IReadOnlyList&lt;<a href="/docs/ui-glossary/elements/tree-view-item/">TreeViewItem</a>&gt;</code> | Read-only. The top-level items. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#listboxstyle">`ListBoxStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> | The style of the list the items are shown in, for example its row colours and scroll bars. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#expandiconstyle">`ExpandIconStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> | The style of the expand icon of the items, for example its size and margin. By default 8 by 8, centred, with a margin of 4 before and 6 after it. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#minimizediconcolor">`MinimizedIconColor`</a> | `Color` | The colour of the arrow of a collapsed branch (pointing right), when the tree view has no textures. By default `(150, 150, 160)`. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#expandediconcolor">`ExpandedIconColor`</a> | `Color` | The colour of the arrow of an expanded branch (pointing down), when the tree view has no textures. By default `(90, 90, 100)`. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#expandiconstyle">`ExpandIconStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> | The style of the expand icon of the items, for example its size and margin. By default an 8 by 8 block, centred, with a margin of 4 before and 6 after it. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#minimizediconcolor">`MinimizedIconColor`</a> | `Color` | The colour of the icon of a collapsed branch, when the tree view has no textures. By default `(150, 150, 160)`. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#expandediconcolor">`ExpandedIconColor`</a> | `Color` | The colour of the icon of an expanded branch, when the tree view has no textures. By default `(90, 90, 100)`. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#subitemsshift">`SubItemsShift`</a> | <a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> | How far each level is indented (`Left`) and the space above every row but the first (`Top`), in units. |
 
 ### TreeView events
@@ -524,7 +527,18 @@ copy.OnClick += (sender, e) => Console.WriteLine("Copy");
 
 var sort = new ContextMenuItem("Sort") { SubMenu = sortMenu };
 
-var menu = new ContextMenu("listMenu");
+// the arrow of an item with a sub-menu: a picture instead of the default block
+var menu = new ContextMenu("listMenu")
+{
+    ExpandIconStyle = new ImageStyle
+    {
+        Source = Content.Load<Texture2D>("UITextures/ContextMenu/SubMenu"),
+        DesiredWidth = 8,
+        DesiredHeight = 8,
+        Margin = (12, 0, 6, 0),
+        VerticalAlignment = VerticalAlignment.Center
+    }
+};
 menu.AddItem(copy);
 menu.AddItem(new ContextMenuItem("Rename"));
 menu.AddItem(new Separator
@@ -603,7 +617,7 @@ makes; such items are disposed when they are removed, your own items are only le
 | <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#borderstyle">`BorderStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/border-style/">`BorderStyle`</a> | The style of the [border](/docs/ui-layout/#border) around the items. By default a white background with a 1 unit dark grey border. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#listboxstyle">`ListBoxStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> | The style of the list of the items. By default transparent rows, highlighted in light blue under the mouse and when selected. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#checkiconstyle">`CheckIconStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> | The style of the check mark of a checked item. By default an 8 by 8 unit dark grey square. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#expandiconstyle">`ExpandIconStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> | The style of the arrow of an item with a sub-menu: its background colour is drawn as an arrowhead pointing right. By default 6 by 8 units, dark grey, at the right end. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/context-menu/#expandiconstyle">`ExpandIconStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> | The style of the arrow of an item with a sub-menu. By default a 6 by 8 unit dark grey block at the right end; with a `Source` it is that picture, as in the screenshot. |
 
 ### ContextMenu events
 

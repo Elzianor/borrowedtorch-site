@@ -13,19 +13,19 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 ## Properties
 
-<h3 id="max"><span class="prop"><code>Max</code></span> <a class="ctx" href="/docs/ui-controls/#progressbar-properties" title="Max in context on the controls page" aria-label="Max in context on the controls page">🠆</a></h3>
+<h3 id="max"><span class="prop"><code>Max</code></span> <a class="ctx" href="/docs/ui-controls/#progressbar-properties" title="Max in context on the controls page" aria-label="Max in context on the controls page">➤</a></h3>
 
 `float` · The value of a full bar. Setting it below <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#min">`Min`</a> moves <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#min">`Min`</a> along.
 
-<h3 id="min"><span class="prop"><code>Min</code></span> <a class="ctx" href="/docs/ui-controls/#progressbar-properties" title="Min in context on the controls page" aria-label="Min in context on the controls page">🠆</a></h3>
+<h3 id="min"><span class="prop"><code>Min</code></span> <a class="ctx" href="/docs/ui-controls/#progressbar-properties" title="Min in context on the controls page" aria-label="Min in context on the controls page">➤</a></h3>
 
 `float` · The value of an empty bar. Setting it above <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#max">`Max`</a> moves <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#max">`Max`</a> along.
 
-<h3 id="orientation"><span class="prop"><code>Orientation</code></span> <a class="ctx" href="/docs/ui-controls/#progressbar-properties" title="Orientation in context on the controls page" aria-label="Orientation in context on the controls page">🠆</a></h3>
+<h3 id="orientation"><span class="prop"><code>Orientation</code></span> <a class="ctx" href="/docs/ui-controls/#progressbar-properties" title="Orientation in context on the controls page" aria-label="Orientation in context on the controls page">➤</a></h3>
 
 <a class="ref" href="/docs/ui-glossary/types/orientation/">`Orientation`</a> · `Horizontal` (the default, fills from the left) or `Vertical` (fills from the bottom).
 
-<h3 id="value"><span class="prop"><code>Value</code></span> <a class="ctx" href="/docs/ui-controls/#progressbar-properties" title="Value in context on the controls page" aria-label="Value in context on the controls page">🠆</a></h3>
+<h3 id="value"><span class="prop"><code>Value</code></span> <a class="ctx" href="/docs/ui-controls/#progressbar-properties" title="Value in context on the controls page" aria-label="Value in context on the controls page">➤</a></h3>
 
 `float` · The current value, clamped to the range between <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#min">`Min`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#max">`Max`</a>.
 
@@ -35,6 +35,6 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 <a class="ref method" href="/docs/ui-glossary/types/progress-bar-style/#progressbarstyle">`ProgressBarStyle()`</a>
 
-<h3 id="isset"><span class="method"><code>IsSet()</code></span> <a class="ctx" href="/docs/ui-styles/#basestyle" title="IsSet() in context on the styles page" aria-label="IsSet() in context on the styles page">🠆</a></h3>
+<h3 id="isset"><span class="method"><code>IsSet()</code></span> <a class="ctx" href="/docs/ui-styles/#basestyle" title="IsSet() in context on the styles page" aria-label="IsSet() in context on the styles page">➤</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/types/progress-bar-style/#isset">`IsSet(string propertyName)`</a> · Whether the property is assigned to this style, so the style applies it. Pass the name with `nameof`; an unknown name gives `false`.

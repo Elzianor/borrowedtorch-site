@@ -13,24 +13,24 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 ## Properties
 
-<h3 id="background"><span class="prop"><code>Background</code></span> <a class="ctx" href="/docs/ui-layout/#defaultwindowtitlebar" title="Background in context on the layout page" aria-label="Background in context on the layout page">🠆</a></h3>
+<h3 id="background"><span class="prop"><code>Background</code></span> <a class="ctx" href="/docs/ui-layout/#defaultwindowtitlebar" title="Background in context on the layout page" aria-label="Background in context on the layout page">➤</a></h3>
 
 <a class="ref" href="/docs/ui-glossary/elements/image/">`Image`</a> · Read-only. The image that fills the bar and holds the title and the close button. Its <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> is the bar's colour.
 
-<h3 id="closebutton"><span class="prop"><code>CloseButton</code></span> <a class="ctx" href="/docs/ui-layout/#defaultwindowtitlebar" title="CloseButton in context on the layout page" aria-label="CloseButton in context on the layout page">🠆</a></h3>
+<h3 id="closebutton"><span class="prop"><code>CloseButton</code></span> <a class="ctx" href="/docs/ui-layout/#defaultwindowtitlebar" title="CloseButton in context on the layout page" aria-label="CloseButton in context on the layout page">➤</a></h3>
 
 <a class="ref" href="/docs/ui-glossary/elements/button/">`Button`</a> · Read-only. The close button at the right of the bar. It shows no text until you set its <span class="dp">`Text`</span> or `Content`.
 
-<h3 id="onclosebuttonclickaction"><span class="prop"><code>OnCloseButtonClickAction</code></span> <a class="ctx" href="/docs/ui-layout/#defaultwindowtitlebar" title="OnCloseButtonClickAction in context on the layout page" aria-label="OnCloseButtonClickAction in context on the layout page">🠆</a></h3>
+<h3 id="onclosebuttonclickaction"><span class="prop"><code>OnCloseButtonClickAction</code></span> <a class="ctx" href="/docs/ui-layout/#defaultwindowtitlebar" title="OnCloseButtonClickAction in context on the layout page" aria-label="OnCloseButtonClickAction in context on the layout page">➤</a></h3>
 
 `Action` · What a click on the close button does. In a window's default title bar it is the window's <a class="ref method" href="/docs/ui-glossary/elements/window/#hide">`Hide`</a>.
 
-<h3 id="title"><span class="prop"><code>Title</code></span> <a class="ctx" href="/docs/ui-layout/#defaultwindowtitlebar" title="Title in context on the layout page" aria-label="Title in context on the layout page">🠆</a></h3>
+<h3 id="title"><span class="prop"><code>Title</code></span> <a class="ctx" href="/docs/ui-layout/#defaultwindowtitlebar" title="Title in context on the layout page" aria-label="Title in context on the layout page">➤</a></h3>
 
 <a class="ref" href="/docs/ui-glossary/elements/label/">`Label`</a> · Read-only. The title text, centred in the bar. Set its <span class="dp">`Text`</span> and text style properties.
 
 ## Methods
 
-<h3 id="defaultwindowtitlebar"><span class="method"><code>DefaultWindowTitleBar()</code></span> <a class="ctx" href="/docs/ui-layout/#defaultwindowtitlebar" title="DefaultWindowTitleBar() in context on the layout page" aria-label="DefaultWindowTitleBar() in context on the layout page">🠆</a></h3>
+<h3 id="defaultwindowtitlebar"><span class="method"><code>DefaultWindowTitleBar()</code></span> <a class="ctx" href="/docs/ui-layout/#defaultwindowtitlebar" title="DefaultWindowTitleBar() in context on the layout page" aria-label="DefaultWindowTitleBar() in context on the layout page">➤</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/default-window-title-bar/#defaultwindowtitlebar">`DefaultWindowTitleBar(string name = null)`</a> · Creates a title bar, for example to use in a window of your own. Its close button does nothing until <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#onclosebuttonclickaction">`OnCloseButtonClickAction`</a> is set.
