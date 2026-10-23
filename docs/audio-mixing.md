@@ -6,7 +6,7 @@ description: The signal path, the master volume, the reverb bus, the output devi
 ---
 
 This page follows the sound from the emitters to the speakers: how the emitters are mixed, the shared reverb, the
-master volume, and the device the mix plays on. Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>.
+master volume, and the device the mix plays on. Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>.
 
 ## The signal path
 

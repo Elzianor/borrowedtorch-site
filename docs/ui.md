@@ -17,7 +17,7 @@ These pages cover the library from setup to every public type:
 | [Quick start guide](/docs/ui/) (this page) | Installing, creating the UI in a game, display scaling, how sizes and alignment work, a complete pause menu |
 | [Base element](/docs/ui-base-element/) | What every element has: size, appearance, items, mouse, keyboard, resizing, and writing your own element |
 | [Layout elements](/docs/ui-layout/) | Stack panels, grids, scrolling, borders, separators, windows and tabs |
-| [Controls](/docs/ui-controls/) | Buttons, check boxes, sliders, progress bars, tooltips and the colour picker |
+| [Controls](/docs/ui-controls/) | Buttons, check boxes, sliders, progress bars, tooltips and the color picker |
 | [Lists and menus](/docs/ui-lists/) | List boxes, combo boxes, tree views and context menus |
 | [Text](/docs/ui-text/) | Labels, rich text boxes, text input and fonts |
 | [Images and drawing](/docs/ui-images/) | Images, stencils, view ports for your own drawing, and drag and drop |
@@ -41,7 +41,7 @@ dotnet add package BorrowedTorch.UI
 | MonoGame | 3.8.4 or later, DesktopGL or WindowsDX: your game references the platform package, the UI doesn't pick one for you |
 | Input | `BorrowedTorch.MonoInput` 2.0.1, installed with the UI |
 
-The package also brings the default font (UbuntuMono) and the colour picker's pointer texture. They are copied to
+The package also brings the default font (UbuntuMono) and the color picker's pointer texture. They are copied to
 `Content/Fonts` and `Content/Textures` next to your executable, so keep your `ContentManager.RootDirectory` set to
 `Content`.
 
@@ -129,11 +129,11 @@ Two cases need more than the window:
 
 ### BorrowedTorchUI
 
-Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>.
+Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>.
 
 | Member | Description |
 | --- | --- |
-| <span class="method">`BorrowedTorchUI(GraphicsDevice graphicsDevice, ContentManager contentManager, SpriteBatch spriteBatch, GameWindow window)`</span> | Creates the UI over the back buffer's size, with the text and keys of the window. The sprite batch is the one the UI draws with; the content manager loads the colour picker's pointer and the textures named by <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a>. Disposing the UI unsubscribes from the window. |
+| <span class="method">`BorrowedTorchUI(GraphicsDevice graphicsDevice, ContentManager contentManager, SpriteBatch spriteBatch, GameWindow window)`</span> | Creates the UI over the back buffer's size, with the text and keys of the window. The sprite batch is the one the UI draws with; the content manager loads the color picker's pointer and the textures named by <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a>. Disposing the UI unsubscribes from the window. |
 | <span class="method">`BorrowedTorchUI(GraphicsDevice graphicsDevice, ContentManager contentManager, SpriteBatch spriteBatch, ITextInputEvents textInputEvents)`</span> | The same, with the text and keys of a source of your own, for a UI hosted outside a game window. The UI doesn't dispose the source. |
 | <span class="prop">`RootElement`</span> | Read-only. The element at the top of the tree, the size of the screen. See [the root element](/docs/ui-base-element/#the-root-element). |
 | <span class="method">`AddElementToRoot(BaseElement element)`</span> | Adds an element to the root. |

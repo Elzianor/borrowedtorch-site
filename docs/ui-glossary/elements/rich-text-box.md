@@ -5,11 +5,11 @@ title: "Glossary: RichTextBox"
 description: "The properties, methods and events of RichTextBox, in alphabetical order."
 ---
 
-The full text element: read-only text with coloured words, links and inline images, or an editable text field with a caret, selection, clipboard and undo. Text longer than the box scrolls inside it. Only the lines inside the visible area are drawn each frame, so the length of the text is limited by memory, not by the GPU texture size.
+The full text element: read-only text with colored words, links and inline images, or an editable text field with a caret, selection, clipboard and undo. Text longer than the box scrolls inside it. Only the lines inside the visible area are drawn each frame, so the length of the text is limited by memory, not by the GPU texture size.
 
 `RichTextBox` derives from [`BaseElement`](/docs/ui-glossary/elements/base-element/) and has its members too. The [text page](/docs/ui-text/#richtextbox) shows it in context, with code and screenshots.
 
-Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
+Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
 
 ## Properties
 
@@ -111,7 +111,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="textcursorcolor"><span class="dp"><code>TextCursorColor</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-properties" title="TextCursorColor in context on the text page" aria-label="TextCursorColor in context on the text page">🠆</a></h3>
 
-`Color` · The colour of the caret. Default <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaulttextcursorcolor">`DefaultSettings.DefaultTextCursorColor`</a> (black).
+`Color` · The color of the caret. Default <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaulttextcursorcolor">`DefaultSettings.DefaultTextCursorColor`</a> (black).
 
 <h3 id="textcursorthickness"><span class="dp"><code>TextCursorThickness</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-properties" title="TextCursorThickness in context on the text page" aria-label="TextCursorThickness in context on the text page">🠆</a></h3>
 
@@ -127,7 +127,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="textselectioncolor"><span class="dp"><code>TextSelectionColor</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-properties" title="TextSelectionColor in context on the text page" aria-label="TextSelectionColor in context on the text page">🠆</a></h3>
 
-`Color` · The colour behind selected text. Default <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaulttextselectioncolor">`DefaultSettings.DefaultTextSelectionColor`</a> (light blue).
+`Color` · The color behind selected text. Default <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaulttextselectioncolor">`DefaultSettings.DefaultTextSelectionColor`</a> (light blue).
 
 <h3 id="type"><span class="dp"><code>Type</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-properties" title="Type in context on the text page" aria-label="Type in context on the text page">🠆</a></h3>
 
@@ -149,7 +149,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="richcolors"><code>RichColors</code> <a class="ctx" href="/docs/ui-text/#richtextbox-properties" title="RichColors in context on the text page" aria-label="RichColors in context on the text page">🠆</a></h3>
 
-`List<Color>` · Static field. The colours `[c=n]` tags index, shared by every box.
+`List<Color>` · Static field. The colors `[c=n]` tags index, shared by every box.
 
 <h3 id="richfonts"><code>RichFonts</code> <a class="ctx" href="/docs/ui-text/#richtextbox-properties" title="RichFonts in context on the text page" aria-label="RichFonts in context on the text page">🠆</a></h3>
 

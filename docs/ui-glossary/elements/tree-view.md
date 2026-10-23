@@ -9,7 +9,7 @@ A tree of <a class="ref" href="/docs/ui-glossary/elements/tree-view-item/">`Tree
 
 `TreeView` derives from [`BaseElement`](/docs/ui-glossary/elements/base-element/) and has its members too. The [lists and menus page](/docs/ui-lists/#treeview) shows it in context, with code and screenshots.
 
-Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
+Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
 
 ## Properties
 
@@ -19,7 +19,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="expandediconcolor"><span class="dp"><code>ExpandedIconColor</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-properties" title="ExpandedIconColor in context on the lists and menus page" aria-label="ExpandedIconColor in context on the lists and menus page">🠆</a></h3>
 
-`Color` · The colour of the icon of an expanded branch, when the tree view has no textures. By default `(90, 90, 100)`.
+`Color` · The color of the icon of an expanded branch, when the tree view has no textures. By default `(90, 90, 100)`.
 
 <h3 id="expandiconstyle"><span class="dp"><code>ExpandIconStyle</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-properties" title="ExpandIconStyle in context on the lists and menus page" aria-label="ExpandIconStyle in context on the lists and menus page">🠆</a></h3>
 
@@ -27,7 +27,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="foldediconcolor"><span class="dp"><code>FoldedIconColor</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-properties" title="FoldedIconColor in context on the lists and menus page" aria-label="FoldedIconColor in context on the lists and menus page">🠆</a></h3>
 
-`Color` · The colour of the icon of a collapsed branch, when the tree view has no textures. By default `(150, 150, 160)`.
+`Color` · The color of the icon of a collapsed branch, when the tree view has no textures. By default `(150, 150, 160)`.
 
 <h3 id="generalmousecursorsset"><span class="prop"><code>GeneralMouseCursorsSet</code></span> <a class="ctx" href="/docs/ui-base-element/#genericstyleandmousecursorsdata-properties" title="GeneralMouseCursorsSet in context on the base element page" aria-label="GeneralMouseCursorsSet in context on the base element page">🠆</a></h3>
 
@@ -51,7 +51,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="listboxstyle"><span class="dp"><code>ListBoxStyle</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-properties" title="ListBoxStyle in context on the lists and menus page" aria-label="ListBoxStyle in context on the lists and menus page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> · The style of the list the items are shown in, for example its row colours and scroll bars.
+<a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> · The style of the list the items are shown in, for example its row colors and scroll bars.
 
 <h3 id="mousecursorsset"><span class="prop"><code>MouseCursorsSet</code></span> <a class="ctx" href="/docs/ui-base-element/#genericstyleandmousecursorsdata-properties" title="MouseCursorsSet in context on the base element page" aria-label="MouseCursorsSet in context on the base element page">🠆</a></h3>
 

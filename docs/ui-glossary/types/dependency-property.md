@@ -7,7 +7,7 @@ description: "The members of DependencyProperty<T>, in alphabetical order."
 
 A class. The [styles page](/docs/ui-styles/#dependencypropertyt-properties) shows it in context.
 
-Names are coloured by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain colour.
+Names are colored by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain color.
 
 ## Properties
 

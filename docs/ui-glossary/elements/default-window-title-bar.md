@@ -9,13 +9,13 @@ The title bar every window starts with: a <a class="ref prop" href="/docs/ui-glo
 
 `DefaultWindowTitleBar` derives from [`BaseElement`](/docs/ui-glossary/elements/base-element/) and has its members too. The [layout page](/docs/ui-layout/#defaultwindowtitlebar) shows it in context, with code and screenshots.
 
-Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
+Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
 
 ## Properties
 
 <h3 id="background"><span class="prop"><code>Background</code></span> <a class="ctx" href="/docs/ui-layout/#defaultwindowtitlebar" title="Background in context on the layout page" aria-label="Background in context on the layout page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/elements/image/">`Image`</a> · Read-only. The image that fills the bar and holds the title and the close button. Its <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> is the bar's colour.
+<a class="ref" href="/docs/ui-glossary/elements/image/">`Image`</a> · Read-only. The image that fills the bar and holds the title and the close button. Its <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> is the bar's color.
 
 <h3 id="closebutton"><span class="prop"><code>CloseButton</code></span> <a class="ctx" href="/docs/ui-layout/#defaultwindowtitlebar" title="CloseButton in context on the layout page" aria-label="CloseButton in context on the layout page">🠆</a></h3>
 

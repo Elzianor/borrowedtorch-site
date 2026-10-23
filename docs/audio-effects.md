@@ -6,7 +6,7 @@ description: Wiring effects between an emitter's send and return, bypassing and 
 ---
 
 Every emitter runs its clip through a chain of effects before it reaches the mix. You add effects to the emitter, then
-connect them in a line from its send to its return. Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>.
+connect them in a line from its send to its return. Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>.
 
 ## The send and the return
 

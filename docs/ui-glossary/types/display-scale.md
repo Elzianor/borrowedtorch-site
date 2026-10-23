@@ -9,7 +9,7 @@ Reads the Windows display scale of the monitor a window is on. Without the aware
 
 A static class. The [quick start guide](/docs/ui/#displayscale) shows it in context.
 
-Names are coloured by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain colour.
+Names are colored by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain color.
 
 ## Fields
 

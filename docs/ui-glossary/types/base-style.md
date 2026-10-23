@@ -9,13 +9,13 @@ The abstract base of every style class. It has one property for each dependency 
 
 An abstract class. The [styles page](/docs/ui-styles/#basestyle) shows it in context.
 
-Names are coloured by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain colour.
+Names are colored by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain color.
 
 ## Properties
 
 <h3 id="backgroundcolor"><span class="prop"><code>BackgroundColor</code></span> <a class="ctx" href="/docs/ui-base-element/#appearance-properties" title="BackgroundColor in context on the base element page" aria-label="BackgroundColor in context on the base element page">🠆</a></h3>
 
-`Color` · The colour the element's background is filled with. `Transparent` (the default) fills nothing.
+`Color` · The color the element's background is filled with. `Transparent` (the default) fills nothing.
 
 <h3 id="cropoutsideofparentborder"><span class="prop"><code>CropOutsideOfParentBorder</code></span> <a class="ctx" href="/docs/ui-base-element/#appearance-properties" title="CropOutsideOfParentBorder in context on the base element page" aria-label="CropOutsideOfParentBorder in context on the base element page">🠆</a></h3>
 
@@ -23,7 +23,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 <h3 id="customeffect"><span class="prop"><code>CustomEffect</code></span> <a class="ctx" href="/docs/ui-base-element/#appearance-properties" title="CustomEffect in context on the base element page" aria-label="CustomEffect in context on the base element page">🠆</a></h3>
 
-`Effect` · A shader the element draws its background (or texture, an image's picture) with. Setting it sets it on the children as well, and a child added later takes it. An effect with a `ModulationColor` parameter gets the draw colour there.
+`Effect` · A shader the element draws its background (or texture, an image's picture) with. Setting it sets it on the children as well, and a child added later takes it. An effect with a `ModulationColor` parameter gets the draw color there.
 
 <h3 id="desiredheight"><span class="prop"><code>DesiredHeight</code></span> <a class="ctx" href="/docs/ui-base-element/#size-and-position-properties" title="DesiredHeight in context on the base element page" aria-label="DesiredHeight in context on the base element page">🠆</a></h3>
 
@@ -47,7 +47,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 <h3 id="foregroundcolor"><span class="prop"><code>ForegroundColor</code></span> <a class="ctx" href="/docs/ui-base-element/#appearance-properties" title="ForegroundColor in context on the base element page" aria-label="ForegroundColor in context on the base element page">🠆</a></h3>
 
-`Color` · The colour of what the element draws over its background, such as a label's text. An element drawn from textures tints them with it when it is not `Transparent`.
+`Color` · The color of what the element draws over its background, such as a label's text. An element drawn from textures tints them with it when it is not `Transparent`.
 
 <h3 id="gridcolumn"><span class="prop"><code>GridColumn</code></span> <a class="ctx" href="/docs/ui-base-element/#grid-placement" title="GridColumn in context on the base element page" aria-label="GridColumn in context on the base element page">🠆</a></h3>
 
@@ -111,7 +111,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 <h3 id="resizecontourcolor"><span class="prop"><code>ResizeContourColor</code></span> <a class="ctx" href="/docs/ui-base-element/#resizing" title="ResizeContourColor in context on the base element page" aria-label="ResizeContourColor in context on the base element page">🠆</a></h3>
 
-`Color` · The colour of the contour. `(50, 50, 50, 190)` by default (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultresizecontourcolor">`DefaultSettings.DefaultResizeContourColor`</a>); it fades and darkens with the element.
+`Color` · The color of the contour. `(50, 50, 50, 190)` by default (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultresizecontourcolor">`DefaultSettings.DefaultResizeContourColor`</a>); it fades and darkens with the element.
 
 <h3 id="resizewithelementcontour"><span class="prop"><code>ResizeWithElementContour</code></span> <a class="ctx" href="/docs/ui-base-element/#resizing" title="ResizeWithElementContour in context on the base element page" aria-label="ResizeWithElementContour in context on the base element page">🠆</a></h3>
 

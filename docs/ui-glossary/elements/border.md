@@ -5,11 +5,11 @@ title: "Glossary: Border"
 description: "The properties, methods and events of Border, in alphabetical order."
 ---
 
-A frame around one <a class="ref dp" href="/docs/ui-glossary/elements/border/#content">`Content`</a> element, drawn in a solid colour or from eight textures.
+A frame around one <a class="ref dp" href="/docs/ui-glossary/elements/border/#content">`Content`</a> element, drawn in a solid color or from eight textures.
 
 `Border` derives from [`BaseElement`](/docs/ui-glossary/elements/base-element/) and has its members too. The [layout page](/docs/ui-layout/#border) shows it in context, with code and screenshots.
 
-Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
+Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
 
 ## Properties
 

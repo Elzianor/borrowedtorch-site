@@ -10,10 +10,10 @@ Each element has a page listing its own properties, methods and events in alphab
 | Element | What it is |
 | --- | --- |
 | [Base element](/docs/ui-glossary/elements/base-element/) | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> is the abstract base of every element: buttons, labels, panels, windows and your own elements. |
-| [`Border`](/docs/ui-glossary/elements/border/) | A frame around one <a class="ref dp" href="/docs/ui-glossary/elements/border/#content">`Content`</a> element, drawn in a solid colour or from eight textures. |
+| [`Border`](/docs/ui-glossary/elements/border/) | A frame around one <a class="ref dp" href="/docs/ui-glossary/elements/border/#content">`Content`</a> element, drawn in a solid color or from eight textures. |
 | [`Button`](/docs/ui-glossary/elements/button/) | A clickable element with a text or any element as content. |
 | [`CheckBox`](/docs/ui-glossary/elements/check-box/) | A box with a text or any element beside it. |
-| [`ColorPicker`](/docs/ui-glossary/elements/color-picker/) | A colour wheel to pick a colour from with a click. |
+| [`ColorPicker`](/docs/ui-glossary/elements/color-picker/) | A color wheel to pick a color from with a click. |
 | [`ComboBox`](/docs/ui-glossary/elements/combo-box/) | A selection image, a toggle button and a drop-down list box: the closed combo box shows the selected row, the open one lists all rows to choose from. |
 | [`ContentContainer`](/docs/ui-glossary/elements/content-container/) | The single-element holder that <a class="ref" href="/docs/ui-glossary/elements/border/">`Border`</a> (and a few controls, such as the check box) keep their content in, and the base class of <a class="ref" href="/docs/ui-glossary/elements/separator/">`Separator`</a>. |
 | [`ContextMenu`](/docs/ui-glossary/elements/context-menu/) | A menu that opens at the mouse on a right click, drawn above everything. |
@@ -27,13 +27,13 @@ Each element has a page listing its own properties, methods and events in alphab
 | [`ListBox`](/docs/ui-glossary/elements/list-box/) | A scrollable list of rows with single or multiple selection. |
 | [`ListBoxItem`](/docs/ui-glossary/elements/list-box-item/) | A row of a list box. |
 | [`ProgressBar`](/docs/ui-glossary/elements/progress-bar/) | A bar that fills in proportion to <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#value">`Value`</a> between <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#min">`Min`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#max">`Max`</a>. |
-| [`RichTextBox`](/docs/ui-glossary/elements/rich-text-box/) | The full text element: read-only text with coloured words, links and inline images, or an editable text field with a caret, selection, clipboard and undo. |
+| [`RichTextBox`](/docs/ui-glossary/elements/rich-text-box/) | The full text element: read-only text with colored words, links and inline images, or an editable text field with a caret, selection, clipboard and undo. |
 | [`RootElement`](/docs/ui-glossary/elements/root-element/) |  |
 | [`ScrollableContainer`](/docs/ui-glossary/elements/scrollable-container/) | Shows its items in a view of its own size and scrolls them when they are larger, with scroll bars, the mouse wheel or code. |
 | [`Separator`](/docs/ui-glossary/elements/separator/) | An empty element to draw a dividing line or leave a gap: give it a size along one side, stretch it along the other, and it fills itself with its <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a>. |
 | [`Slider`](/docs/ui-glossary/elements/slider/) | A track with a thumb that picks a value between <a class="ref dp" href="/docs/ui-glossary/elements/slider/#min">`Min`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/slider/#max">`Max`</a>. |
 | [`StackPanel`](/docs/ui-glossary/elements/stack-panel/) | Puts its items one after another, in a column or in a row, and fits their size. |
-| [`Stencil`](/docs/ui-glossary/elements/stencil/) | Shows a picture through a mask texture: where the mask has the key colour, the picture shows, and the rest of the mask stays. |
+| [`Stencil`](/docs/ui-glossary/elements/stencil/) | Shows a picture through a mask texture: where the mask has the key color, the picture shows, and the rest of the mask stays. |
 | [`ToolTip`](/docs/ui-glossary/elements/tool-tip/) | A small popup that appears next to the mouse cursor while it rests over an element. |
 | [`TreeView`](/docs/ui-glossary/elements/tree-view/) | A tree of <a class="ref" href="/docs/ui-glossary/elements/tree-view-item/">`TreeViewItem`</a>s shown as the rows of a list box. |
 | [`TreeViewItem`](/docs/ui-glossary/elements/tree-view-item/) | An item of a tree view: an expand icon and its content, with leaves below it. |

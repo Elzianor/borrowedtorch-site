@@ -9,7 +9,7 @@ A clickable element with a text or any element as content. It can act once per c
 
 `Button` derives from [`BaseElement`](/docs/ui-glossary/elements/base-element/) and has its members too. The [controls page](/docs/ui-controls/#button) shows it in context, with code and screenshots.
 
-Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
+Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
 
 ## Properties
 
@@ -31,7 +31,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="hovercolor"><span class="dp"><code>HoverColor</code></span> <a class="ctx" href="/docs/ui-controls/#button-properties" title="HoverColor in context on the controls page" aria-label="HoverColor in context on the controls page">🠆</a></h3>
 
-`Color` · The solid colour while the mouse is over the button.
+`Color` · The solid color while the mouse is over the button.
 
 <h3 id="mousecursorsset"><span class="prop"><code>MouseCursorsSet</code></span> <a class="ctx" href="/docs/ui-base-element/#genericstyleandmousecursorsdata-properties" title="MouseCursorsSet in context on the base element page" aria-label="MouseCursorsSet in context on the base element page">🠆</a></h3>
 
@@ -43,11 +43,11 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="normalcolor"><span class="dp"><code>NormalColor</code></span> <a class="ctx" href="/docs/ui-controls/#button-properties" title="NormalColor in context on the controls page" aria-label="NormalColor in context on the controls page">🠆</a></h3>
 
-`Color` · The solid colour while nothing happens.
+`Color` · The solid color while nothing happens.
 
 <h3 id="pressedcolor"><span class="dp"><code>PressedColor</code></span> <a class="ctx" href="/docs/ui-controls/#button-properties" title="PressedColor in context on the controls page" aria-label="PressedColor in context on the controls page">🠆</a></h3>
 
-`Color` · The solid colour while the button is pressed.
+`Color` · The solid color while the button is pressed.
 
 <h3 id="styleoverride"><span class="prop"><code>StyleOverride</code></span> <a class="ctx" href="/docs/ui-base-element/#genericstyleandmousecursorsdata-properties" title="StyleOverride in context on the base element page" aria-label="StyleOverride in context on the base element page">🠆</a></h3>
 
@@ -63,7 +63,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="toggledcolor"><span class="dp"><code>ToggledColor</code></span> <a class="ctx" href="/docs/ui-controls/#button-properties" title="ToggledColor in context on the controls page" aria-label="ToggledColor in context on the controls page">🠆</a></h3>
 
-`Color` · The solid colour of a `Toggle` button that is on.
+`Color` · The solid color of a `Toggle` button that is on.
 
 <h3 id="toggledon"><span class="dp"><code>ToggledOn</code></span> <a class="ctx" href="/docs/ui-controls/#button-properties" title="ToggledOn in context on the controls page" aria-label="ToggledOn in context on the controls page">🠆</a></h3>
 

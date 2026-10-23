@@ -9,7 +9,7 @@ An animation of properties of type `T`. It has the properties of [`BaseAnimation
 
 A class deriving from [`BaseAnimation`](/docs/ui-glossary/types/base-animation/). The [styles page](/docs/ui-styles/#animationt) shows it in context.
 
-Names are coloured by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain colour.
+Names are colored by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain color.
 
 ## Properties
 

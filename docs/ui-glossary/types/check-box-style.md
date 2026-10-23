@@ -9,7 +9,7 @@ The style class of [`CheckBox`](/docs/ui-controls/#checkbox): the properties a s
 
 A class deriving from [`BaseStyle`](/docs/ui-glossary/types/base-style/). The [styles page](/docs/ui-styles/#style-classes) shows it in context.
 
-Names are coloured by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain colour.
+Names are colored by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain color.
 
 ## Properties
 
@@ -19,7 +19,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 <h3 id="checkedsolidcolor"><span class="prop"><code>CheckedSolidColor</code></span> <a class="ctx" href="/docs/ui-controls/#checkbox-properties" title="CheckedSolidColor in context on the controls page" aria-label="CheckedSolidColor in context on the controls page">🠆</a></h3>
 
-`Color` · The colour of the box while it is checked, without textures.
+`Color` · The color of the box while it is checked, without textures.
 
 <h3 id="direction"><span class="prop"><code>Direction</code></span> <a class="ctx" href="/docs/ui-controls/#checkbox-properties" title="Direction in context on the controls page" aria-label="Direction in context on the controls page">🠆</a></h3>
 
@@ -47,7 +47,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 <h3 id="uncheckedsolidcolor"><span class="prop"><code>UncheckedSolidColor</code></span> <a class="ctx" href="/docs/ui-controls/#checkbox-properties" title="UncheckedSolidColor in context on the controls page" aria-label="UncheckedSolidColor in context on the controls page">🠆</a></h3>
 
-`Color` · The colour of the box while it is unchecked, without textures.
+`Color` · The color of the box while it is unchecked, without textures.
 
 ## Methods
 

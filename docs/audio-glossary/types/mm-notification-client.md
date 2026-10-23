@@ -9,7 +9,7 @@ Forwards the Windows notifications about output devices to callbacks; the manage
 
 A class. The [mixing page](/docs/audio-mixing/#mmnotificationclient) shows it in context, with code.
 
-Names are coloured by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain colour.
+Names are colored by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain color.
 
 ## Methods
 

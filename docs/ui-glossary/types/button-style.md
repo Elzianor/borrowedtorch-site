@@ -9,7 +9,7 @@ The style class of [`Button`](/docs/ui-controls/#button): the properties a style
 
 A class deriving from [`BaseStyle`](/docs/ui-glossary/types/base-style/). The [styles page](/docs/ui-styles/#style-classes) shows it in context.
 
-Names are coloured by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain colour.
+Names are colored by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain color.
 
 ## Properties
 
@@ -19,15 +19,15 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 <h3 id="hovercolor"><span class="prop"><code>HoverColor</code></span> <a class="ctx" href="/docs/ui-controls/#button-properties" title="HoverColor in context on the controls page" aria-label="HoverColor in context on the controls page">🠆</a></h3>
 
-`Color` · The solid colour while the mouse is over the button.
+`Color` · The solid color while the mouse is over the button.
 
 <h3 id="normalcolor"><span class="prop"><code>NormalColor</code></span> <a class="ctx" href="/docs/ui-controls/#button-properties" title="NormalColor in context on the controls page" aria-label="NormalColor in context on the controls page">🠆</a></h3>
 
-`Color` · The solid colour while nothing happens.
+`Color` · The solid color while nothing happens.
 
 <h3 id="pressedcolor"><span class="prop"><code>PressedColor</code></span> <a class="ctx" href="/docs/ui-controls/#button-properties" title="PressedColor in context on the controls page" aria-label="PressedColor in context on the controls page">🠆</a></h3>
 
-`Color` · The solid colour while the button is pressed.
+`Color` · The solid color while the button is pressed.
 
 <h3 id="text"><span class="prop"><code>Text</code></span> <a class="ctx" href="/docs/ui-controls/#button-properties" title="Text in context on the controls page" aria-label="Text in context on the controls page">🠆</a></h3>
 
@@ -39,7 +39,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 <h3 id="toggledcolor"><span class="prop"><code>ToggledColor</code></span> <a class="ctx" href="/docs/ui-controls/#button-properties" title="ToggledColor in context on the controls page" aria-label="ToggledColor in context on the controls page">🠆</a></h3>
 
-`Color` · The solid colour of a `Toggle` button that is on.
+`Color` · The solid color of a `Toggle` button that is on.
 
 <h3 id="toggledon"><span class="prop"><code>ToggledOn</code></span> <a class="ctx" href="/docs/ui-controls/#button-properties" title="ToggledOn in context on the controls page" aria-label="ToggledOn in context on the controls page">🠆</a></h3>
 

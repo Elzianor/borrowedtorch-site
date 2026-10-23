@@ -9,7 +9,7 @@ The style class of [`ListBox`](/docs/ui-lists/#listbox): the properties a style 
 
 A class deriving from [`BaseStyle`](/docs/ui-glossary/types/base-style/). The [styles page](/docs/ui-styles/#style-classes) shows it in context.
 
-Names are coloured by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain colour.
+Names are colored by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain color.
 
 ## Properties
 
@@ -19,7 +19,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 <h3 id="hoveritemcolor"><span class="prop"><code>HoverItemColor</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-properties" title="HoverItemColor in context on the lists and menus page" aria-label="HoverItemColor in context on the lists and menus page">🠆</a></h3>
 
-`Color?` · The background of the row under the mouse. When `null` the row keeps its normal or selected colour.
+`Color?` · The background of the row under the mouse. When `null` the row keeps its normal or selected color.
 
 <h3 id="itemheight"><span class="prop"><code>ItemHeight</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-properties" title="ItemHeight in context on the lists and menus page" aria-label="ItemHeight in context on the lists and menus page">🠆</a></h3>
 
@@ -39,7 +39,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 <h3 id="selecteditemcolor"><span class="prop"><code>SelectedItemColor</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-properties" title="SelectedItemColor in context on the lists and menus page" aria-label="SelectedItemColor in context on the lists and menus page">🠆</a></h3>
 
-`Color?` · The background of a selected row. When `null` a selected row keeps the colour it had.
+`Color?` · The background of a selected row. When `null` a selected row keeps the color it had.
 
 <h3 id="selectionmode"><span class="prop"><code>SelectionMode</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-properties" title="SelectionMode in context on the lists and menus page" aria-label="SelectionMode in context on the lists and menus page">🠆</a></h3>
 

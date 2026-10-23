@@ -2,11 +2,11 @@
 layout: docs
 legend: [prop, dp, method, event]
 title: "UI: controls"
-description: Buttons, check boxes, sliders, progress bars, tooltips and the colour picker.
+description: Buttons, check boxes, sliders, progress bars, tooltips and the color picker.
 ---
 
 Every control here is an element: it has all the properties, events and methods of
-[`BaseElement`](/docs/ui-base-element/), which the tables below don't repeat. Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>: `Foo` is backed by `FooDP`, which a style, a binding or an animation can set (see
+[`BaseElement`](/docs/ui-base-element/), which the tables below don't repeat. Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>: `Foo` is backed by `FooDP`, which a style, a binding or an animation can set (see
 [styles, bindings and animation](/docs/ui-styles/)), and by a static `FooDPActions` shared by all elements of the
 class. Screenshots use the theme from [styles](/docs/ui-styles/#the-theme-of-these-pages).
 
@@ -58,7 +58,7 @@ releasing cancels it. A `Repeat` button raises `OnClick` as soon as it is presse
 <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#timebeforerepeatstartsms">`TimeBeforeRepeatStartsMs`</a> and every <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#timebetweenrepeatsms">`TimeBetweenRepeatsMs`</a> while held (see the
 [base element](/docs/ui-base-element/#click-timing)).
 
-Without textures the button is drawn in the solid colour of its state. With <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> set, it draws the
+Without textures the button is drawn in the solid color of its state. With <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> set, it draws the
 `Normal`, `Hover`, `Pressed` and `Toggled` textures from that folder instead.
 
 ### Button properties
@@ -69,10 +69,10 @@ Without textures the button is drawn in the solid colour of its state. With <a c
 | <a class="ref dp" href="/docs/ui-glossary/elements/button/#content">`Content`</a> | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | Any element shown inside the button instead of a text. A content you give is detached, not disposed, when it is replaced. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/button/#type">`Type`</a> | <a class="ref" href="/docs/ui-glossary/types/button-type/">`ButtonType`</a> | How the button reacts to the mouse: `Normal`, `Repeat` or `Toggle`. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/button/#toggledon">`ToggledOn`</a> | `bool` | Whether a `Toggle` button is on. Set it to switch the button from code; <a class="ref event" href="/docs/ui-glossary/elements/button/#ontoggled">`OnToggled`</a> is raised. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/button/#normalcolor">`NormalColor`</a> | `Color` | The solid colour while nothing happens. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/button/#hovercolor">`HoverColor`</a> | `Color` | The solid colour while the mouse is over the button. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/button/#pressedcolor">`PressedColor`</a> | `Color` | The solid colour while the button is pressed. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/button/#toggledcolor">`ToggledColor`</a> | `Color` | The solid colour of a `Toggle` button that is on. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/button/#normalcolor">`NormalColor`</a> | `Color` | The solid color while nothing happens. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/button/#hovercolor">`HoverColor`</a> | `Color` | The solid color while the mouse is over the button. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/button/#pressedcolor">`PressedColor`</a> | `Color` | The solid color while the button is pressed. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/button/#toggledcolor">`ToggledColor`</a> | `Color` | The solid color of a `Toggle` button that is on. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/button/#textstyle">`TextStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/label-style/">`LabelStyle`</a> | The style of the text content made from <a class="ref dp" href="/docs/ui-glossary/elements/button/#text">`Text`</a>. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/button/#backgroundstyle">`BackgroundStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> | The style of the image the button draws its background with. |
 
@@ -208,7 +208,7 @@ Radio buttons with the same <a class="ref dp" href="/docs/ui-glossary/elements/c
 A radio button without a <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#groupid">`GroupId`</a> is a group of its own: a click checks it and nothing unchecks it.
 
 Without textures the box is a solid square in <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#checkedsolidcolor">`CheckedSolidColor`</a> or <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#uncheckedsolidcolor">`UncheckedSolidColor`</a>. These have no default
-colour, so give them in a style or on the element. With <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> set, the box shows the <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#checked">`Checked`</a> and
+color, so give them in a style or on the element. With <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> set, the box shows the <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#checked">`Checked`</a> and
 `Unchecked` textures from that folder instead, stretched over the square.
 
 ### CheckBox properties
@@ -221,8 +221,8 @@ colour, so give them in a style or on the element. With <a class="ref dp" href="
 | <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#type">`Type`</a> | <a class="ref" href="/docs/ui-glossary/types/check-box-type/">`CheckBoxType`</a> | `CheckBox` (the default) or `RadioButton`. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#groupid">`GroupId`</a> | `string` | The group of a radio button: the radio buttons in the tree with the same id uncheck each other. Not used by a `CheckBox`. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#direction">`Direction`</a> | <a class="ref" href="/docs/ui-glossary/types/check-box-direction/">`CheckBoxDirection`</a> | Which side of the content the box is on: `Left` (the default) or `Right`. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#checkedsolidcolor">`CheckedSolidColor`</a> | `Color` | The colour of the box while it is checked, without textures. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#uncheckedsolidcolor">`UncheckedSolidColor`</a> | `Color` | The colour of the box while it is unchecked, without textures. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#checkedsolidcolor">`CheckedSolidColor`</a> | `Color` | The color of the box while it is checked, without textures. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#uncheckedsolidcolor">`UncheckedSolidColor`</a> | `Color` | The color of the box while it is unchecked, without textures. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#textstyle">`TextStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/label-style/">`LabelStyle`</a> | The style of the text content made from <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#text">`Text`</a>. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#imagestyle">`ImageStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> | The style of the image that draws the box. |
 
@@ -441,7 +441,7 @@ the slider is too short for its buttons and thumb, its parts are not drawn.
 
 **Drawing.** Without textures the parts are solid rectangles: <a class="ref dp" href="/docs/ui-glossary/elements/slider/#buttonssolidcolor">`ButtonsSolidColor`</a> for the end buttons and caps,
 <a class="ref dp" href="/docs/ui-glossary/elements/slider/#linedecreasesolidcolor">`LineDecreaseSolidColor`</a> for the track from the start (left, or bottom) to the thumb, <a class="ref dp" href="/docs/ui-glossary/elements/slider/#lineincreasesolidcolor">`LineIncreaseSolidColor`</a> for
-the rest of the track, and <a class="ref dp" href="/docs/ui-glossary/elements/slider/#thumbsolidcolor">`ThumbSolidColor`</a> for the thumb. These have no default colour, so give them in a style or
+the rest of the track, and <a class="ref dp" href="/docs/ui-glossary/elements/slider/#thumbsolidcolor">`ThumbSolidColor`</a> for the thumb. These have no default color, so give them in a style or
 on the element. With <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> set, the slider draws these textures from that folder instead (the track halves
 and the thumb's middle are tiled, the rest stretched):
 
@@ -453,7 +453,7 @@ and the thumb's middle are tiled, the rest stretched):
 | Thumb: first end, middle, second end | `ThumbLeft`, `ThumbHorizontal`, `ThumbRight` | `ThumbBottom`, `ThumbVertical`, `ThumbTop` |
 
 A plain `Slider` and a `ScrollBarNoButtons` have no end parts, so their cap or button textures are not shown. Tick
-marks are drawn in their colours with or without textures.
+marks are drawn in their colors with or without textures.
 
 ### Slider properties
 
@@ -469,8 +469,8 @@ marks are drawn in their colours with or without textures.
 | <a class="ref dp" href="/docs/ui-glossary/elements/slider/#tickplacement">`TickPlacement`</a> | <a class="ref" href="/docs/ui-glossary/types/tick-placement/">`TickPlacement`</a> | Where the tick marks are drawn. `None` (the default) draws none. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/slider/#ticksize">`TickSize`</a> | `Point` | The width and height of a tick mark, in units. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/slider/#tickoffset">`TickOffset`</a> | `int` | The gap between the slider's edge and the tick marks, in units. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#tickpassedcolor">`TickPassedColor`</a> | `Color` | The colour of the tick marks at or below the value. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#tickremainingcolor">`TickRemainingColor`</a> | `Color` | The colour of the tick marks above the value. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#tickpassedcolor">`TickPassedColor`</a> | `Color` | The color of the tick marks at or below the value. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#tickremainingcolor">`TickRemainingColor`</a> | `Color` | The color of the tick marks above the value. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/slider/#thumbscale">`ThumbScale`</a> | `Vector2` | The thumb's width (`X`) and height (`Y`) as a share of the slider's thickness. On a scroll bar with <a class="ref prop" href="/docs/ui-glossary/elements/slider/#contentsize">`ContentSize`</a> and <a class="ref prop" href="/docs/ui-glossary/elements/slider/#viewsize">`ViewSize`</a>, the length along the track comes from them instead. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/slider/#thumbmargin">`ThumbMargin`</a> | <a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> | Moves the thumb across the track: it is centred in the slider's thickness minus `ThumbMargin.Top` (horizontal) or `ThumbMargin.Left` (vertical). The other sides are not used. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/slider/#thumbminsize">`ThumbMinSize`</a> | `float` | The smallest length of the thumb along the track, in units. It keeps a scroll bar's thumb usable over long content. |
@@ -478,10 +478,10 @@ marks are drawn in their colours with or without textures.
 | <a class="ref prop" href="/docs/ui-glossary/elements/slider/#contentsize">`ContentSize`</a> | `Point` | The size of the content a scroll bar scrolls, in units. Changing it keeps the same content in view. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/slider/#viewsize">`ViewSize`</a> | `Point` | The size of the visible part of that content, in units. Changing it keeps the same content in view. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/slider/#scrollareasize">`ScrollAreaSize`</a> | `Vector2` | Read-only. <a class="ref prop" href="/docs/ui-glossary/elements/slider/#contentsize">`ContentSize`</a> minus <a class="ref prop" href="/docs/ui-glossary/elements/slider/#viewsize">`ViewSize`</a>: how far the content can scroll. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#buttonssolidcolor">`ButtonsSolidColor`</a> | `Color` | The colour of the end buttons and caps, without textures. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#linedecreasesolidcolor">`LineDecreaseSolidColor`</a> | `Color` | The colour of the track between the start and the thumb, without textures. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#lineincreasesolidcolor">`LineIncreaseSolidColor`</a> | `Color` | The colour of the track between the thumb and the end, without textures. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#thumbsolidcolor">`ThumbSolidColor`</a> | `Color` | The colour of the thumb, without textures. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#buttonssolidcolor">`ButtonsSolidColor`</a> | `Color` | The color of the end buttons and caps, without textures. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#linedecreasesolidcolor">`LineDecreaseSolidColor`</a> | `Color` | The color of the track between the start and the thumb, without textures. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#lineincreasesolidcolor">`LineIncreaseSolidColor`</a> | `Color` | The color of the track between the thumb and the end, without textures. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#thumbsolidcolor">`ThumbSolidColor`</a> | `Color` | The color of the thumb, without textures. |
 
 ### Slider events
 
@@ -530,7 +530,7 @@ it.
 
 <figure class="shot">
   <img src="{{ '/assets/img/ui/controls-progressbar.png' | relative_url }}" width="392" height="130" alt="Two horizontal progress bars, one at 35 percent and an orange one at 80 percent, and a vertical bar at 60 percent">
-  <figcaption>Two horizontal bars, one with its own colours, and a vertical bar.</figcaption>
+  <figcaption>Two horizontal bars, one with its own colors, and a vertical bar.</figcaption>
 </figure>
 
 ```csharp
@@ -663,12 +663,12 @@ Style class: <a class="ref" href="/docs/ui-glossary/types/tool-tip-style/">`Tool
 
 ## ColorPicker
 
-A colour wheel to pick a colour from with a click. The hue goes around the centre, the saturation grows from white
-at the centre to the full colour at the edge, and <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#brightness">`Brightness`</a> darkens the result.
+A color wheel to pick a color from with a click. The hue goes around the centre, the saturation grows from white
+at the centre to the full color at the edge, and <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#brightness">`Brightness`</a> darkens the result.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/controls-colorpicker.png' | relative_url }}" width="334" height="222" alt="A square colour wheel with a ring pointer on a light yellow-green, and a swatch of the picked colour beside it">
-  <figcaption>The picker and a label showing the selected colour.</figcaption>
+  <img src="{{ '/assets/img/ui/controls-colorpicker.png' | relative_url }}" width="334" height="222" alt="A square color wheel with a ring pointer on a light yellow-green, and a swatch of the picked color beside it">
+  <figcaption>The picker and a label showing the selected color.</figcaption>
 </figure>
 
 ```csharp
@@ -697,7 +697,7 @@ ui.AddElementToRoot(swatch);
 
 The palette fills the whole element: red at the left, then round through orange, yellow, green and blue to purple,
 with full saturation from the edge of the circle out into the corners. Releasing the left button over the picker
-picks the colour under the cursor, moves the pointer there and sets <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#selectedcolor">`SelectedColor`</a> to that colour times
+picks the color under the cursor, moves the pointer there and sets <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#selectedcolor">`SelectedColor`</a> to that color times
 <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#brightness">`Brightness`</a>. The pointer stays on the picked spot when the picker is resized. Before the first pick it is moved off
 the picker's top left corner.
 
@@ -712,8 +712,8 @@ when the content manager's root is `Content`. Without a content manager the pick
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#brightness">`Brightness`</a> | `float` | Scales the picked colour, from 0 (black) to 1 (the palette's colour, the default). Values outside are clamped. Changing it recomputes <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#selectedcolor">`SelectedColor`</a> from the picked spot. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#selectedcolor">`SelectedColor`</a> | `Color` | The picked colour times <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#brightness">`Brightness`</a>, always opaque. It starts black. Setting it raises <a class="ref event" href="/docs/ui-glossary/elements/color-picker/#onselectedcolorchanged">`OnSelectedColorChanged`</a> but does not move the pointer. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#brightness">`Brightness`</a> | `float` | Scales the picked color, from 0 (black) to 1 (the palette's color, the default). Values outside are clamped. Changing it recomputes <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#selectedcolor">`SelectedColor`</a> from the picked spot. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#selectedcolor">`SelectedColor`</a> | `Color` | The picked color times <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#brightness">`Brightness`</a>, always opaque. It starts black. Setting it raises <a class="ref event" href="/docs/ui-glossary/elements/color-picker/#onselectedcolorchanged">`OnSelectedColorChanged`</a> but does not move the pointer. |
 
 Before anything is picked, changing <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#brightness">`Brightness`</a> sets <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#selectedcolor">`SelectedColor`</a> to black.
 
@@ -727,7 +727,7 @@ Before anything is picked, changing <a class="ref dp" href="/docs/ui-glossary/el
 
 | Method | Description |
 | --- | --- |
-| <a class="ref method" href="/docs/ui-glossary/elements/color-picker/#colorpicker">`ColorPicker(string name = null)`</a> | Creates a colour picker. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>. |
+| <a class="ref method" href="/docs/ui-glossary/elements/color-picker/#colorpicker">`ColorPicker(string name = null)`</a> | Creates a color picker. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>. |
 
 Style class: <a class="ref" href="/docs/ui-glossary/types/color-picker-style/">`ColorPickerStyle`</a> (the inherited properties only: <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#brightness">`Brightness`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#selectedcolor">`SelectedColor`</a> are not styled, see
 [styles](/docs/ui-styles/)). Its defaults set <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#foregroundcolor">`ForegroundColor`</a> to white.

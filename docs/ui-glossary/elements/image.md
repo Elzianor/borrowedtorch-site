@@ -9,7 +9,7 @@ Draws a texture, stretched over the image, centred at its own size or repeated a
 
 `Image` derives from [`BaseElement`](/docs/ui-glossary/elements/base-element/) and has its members too. The [images page](/docs/ui-images/#image) shows it in context, with code and screenshots.
 
-Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
+Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
 
 ## Properties
 

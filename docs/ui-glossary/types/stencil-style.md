@@ -9,13 +9,13 @@ The style class of [`Stencil`](/docs/ui-images/#stencil): the properties a style
 
 A class deriving from [`BaseStyle`](/docs/ui-glossary/types/base-style/). The [styles page](/docs/ui-styles/#style-classes) shows it in context.
 
-Names are coloured by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain colour.
+Names are colored by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain color.
 
 ## Properties
 
 <h3 id="keycolor"><span class="prop"><code>KeyColor</code></span> <a class="ctx" href="/docs/ui-images/#stencil-properties" title="KeyColor in context on the images page" aria-label="KeyColor in context on the images page">🠆</a></h3>
 
-`Color` · The stencil colour, alpha included, where the source shows through. Defaults to transparent black (`0, 0, 0, 0`).
+`Color` · The stencil color, alpha included, where the source shows through. Defaults to transparent black (`0, 0, 0, 0`).
 
 <h3 id="tolerance"><span class="prop"><code>Tolerance</code></span> <a class="ctx" href="/docs/ui-images/#stencil-properties" title="Tolerance in context on the images page" aria-label="Tolerance in context on the images page">🠆</a></h3>
 

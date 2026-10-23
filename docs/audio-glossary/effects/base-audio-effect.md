@@ -9,7 +9,7 @@ description: "The properties and methods of BaseAudioEffect, in alphabetical ord
 
 Everything on this page applies to every effect. The [effect chains page](/docs/audio-effects/#wiring-a-chain) shows it in context, with code.
 
-Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>.
+Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>.
 
 ## Properties
 

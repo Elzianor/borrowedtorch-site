@@ -9,7 +9,7 @@ The style class of [`RichTextBox`](/docs/ui-text/#richtextbox): the properties a
 
 A class deriving from [`BaseStyle`](/docs/ui-glossary/types/base-style/). The [styles page](/docs/ui-styles/#style-classes) shows it in context.
 
-Names are coloured by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain colour.
+Names are colored by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain color.
 
 ## Properties
 
@@ -75,7 +75,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 <h3 id="textcursorcolor"><span class="prop"><code>TextCursorColor</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-properties" title="TextCursorColor in context on the text page" aria-label="TextCursorColor in context on the text page">🠆</a></h3>
 
-`Color` · The colour of the caret. Default <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaulttextcursorcolor">`DefaultSettings.DefaultTextCursorColor`</a> (black).
+`Color` · The color of the caret. Default <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaulttextcursorcolor">`DefaultSettings.DefaultTextCursorColor`</a> (black).
 
 <h3 id="textcursorthickness"><span class="prop"><code>TextCursorThickness</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-properties" title="TextCursorThickness in context on the text page" aria-label="TextCursorThickness in context on the text page">🠆</a></h3>
 
@@ -91,7 +91,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 <h3 id="textselectioncolor"><span class="prop"><code>TextSelectionColor</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-properties" title="TextSelectionColor in context on the text page" aria-label="TextSelectionColor in context on the text page">🠆</a></h3>
 
-`Color` · The colour behind selected text. Default <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaulttextselectioncolor">`DefaultSettings.DefaultTextSelectionColor`</a> (light blue).
+`Color` · The color behind selected text. Default <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaulttextselectioncolor">`DefaultSettings.DefaultTextSelectionColor`</a> (light blue).
 
 <h3 id="type"><span class="prop"><code>Type</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-properties" title="Type in context on the text page" aria-label="Type in context on the text page">🠆</a></h3>
 

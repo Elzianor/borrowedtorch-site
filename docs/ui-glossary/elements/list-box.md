@@ -9,7 +9,7 @@ A scrollable list of rows with single or multiple selection. A row can be a text
 
 `ListBox` derives from [`BaseElement`](/docs/ui-glossary/elements/base-element/) and has its members too. The [lists and menus page](/docs/ui-lists/#listbox) shows it in context, with code and screenshots.
 
-Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
+Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
 
 ## Properties
 
@@ -39,7 +39,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="hoveritemcolor"><span class="dp"><code>HoverItemColor</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-properties" title="HoverItemColor in context on the lists and menus page" aria-label="HoverItemColor in context on the lists and menus page">🠆</a></h3>
 
-`Color?` · The background of the row under the mouse. When `null` the row keeps its normal or selected colour.
+`Color?` · The background of the row under the mouse. When `null` the row keeps its normal or selected color.
 
 <h3 id="itemheight"><span class="dp"><code>ItemHeight</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-properties" title="ItemHeight in context on the lists and menus page" aria-label="ItemHeight in context on the lists and menus page">🠆</a></h3>
 
@@ -95,7 +95,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="selecteditemcolor"><span class="dp"><code>SelectedItemColor</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-properties" title="SelectedItemColor in context on the lists and menus page" aria-label="SelectedItemColor in context on the lists and menus page">🠆</a></h3>
 
-`Color?` · The background of a selected row. When `null` a selected row keeps the colour it had.
+`Color?` · The background of a selected row. When `null` a selected row keeps the color it had.
 
 <h3 id="selecteditems"><span class="prop"><code>SelectedItems</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-properties" title="SelectedItems in context on the lists and menus page" aria-label="SelectedItems in context on the lists and menus page">🠆</a></h3>
 

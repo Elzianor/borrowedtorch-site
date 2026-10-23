@@ -9,13 +9,13 @@ The style class of [`TreeView`](/docs/ui-lists/#treeview): the properties a styl
 
 A class deriving from [`BaseStyle`](/docs/ui-glossary/types/base-style/). The [styles page](/docs/ui-styles/#style-classes) shows it in context.
 
-Names are coloured by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain colour.
+Names are colored by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain color.
 
 ## Properties
 
 <h3 id="expandediconcolor"><span class="prop"><code>ExpandedIconColor</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-properties" title="ExpandedIconColor in context on the lists and menus page" aria-label="ExpandedIconColor in context on the lists and menus page">🠆</a></h3>
 
-`Color` · The colour of the icon of an expanded branch, when the tree view has no textures. By default `(90, 90, 100)`.
+`Color` · The color of the icon of an expanded branch, when the tree view has no textures. By default `(90, 90, 100)`.
 
 <h3 id="expandiconstyle"><span class="prop"><code>ExpandIconStyle</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-properties" title="ExpandIconStyle in context on the lists and menus page" aria-label="ExpandIconStyle in context on the lists and menus page">🠆</a></h3>
 
@@ -23,11 +23,11 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 <h3 id="foldediconcolor"><span class="prop"><code>FoldedIconColor</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-properties" title="FoldedIconColor in context on the lists and menus page" aria-label="FoldedIconColor in context on the lists and menus page">🠆</a></h3>
 
-`Color` · The colour of the icon of a collapsed branch, when the tree view has no textures. By default `(150, 150, 160)`.
+`Color` · The color of the icon of a collapsed branch, when the tree view has no textures. By default `(150, 150, 160)`.
 
 <h3 id="listboxstyle"><span class="prop"><code>ListBoxStyle</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-properties" title="ListBoxStyle in context on the lists and menus page" aria-label="ListBoxStyle in context on the lists and menus page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> · The style of the list the items are shown in, for example its row colours and scroll bars.
+<a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> · The style of the list the items are shown in, for example its row colors and scroll bars.
 
 <h3 id="subitemsshift"><span class="prop"><code>SubItemsShift</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-properties" title="SubItemsShift in context on the lists and menus page" aria-label="SubItemsShift in context on the lists and menus page">🠆</a></h3>
 

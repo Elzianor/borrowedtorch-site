@@ -9,7 +9,7 @@ Goes from <a class="ref prop" href="/docs/ui-glossary/types/smooth-animation-fra
 
 A class deriving from [`BaseAnimationFrame<T>`](/docs/ui-glossary/types/base-animation-frame/). The [styles page](/docs/ui-styles/#smoothanimationframet) shows it in context.
 
-Names are coloured by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain colour.
+Names are colored by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain color.
 
 ## Properties
 

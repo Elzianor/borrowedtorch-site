@@ -6,7 +6,7 @@ description: Images, stencils, view ports for your own drawing, and drag and dro
 ---
 
 Every element here has all the properties, events and methods of [`BaseElement`](/docs/ui-base-element/), which the
-tables below don't repeat. Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>: `Foo` is backed by
+tables below don't repeat. Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>: `Foo` is backed by
 `FooDP`, which a style, a binding or an animation can set (see [styles, bindings and animation](/docs/ui-styles/)).
 Screenshots use the theme from [styles](/docs/ui-styles/#the-theme-of-these-pages).
 
@@ -121,7 +121,7 @@ Style class: <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageSt
 
 ## Stencil
 
-Shows a picture through a mask texture: where the mask has the key colour, the picture shows, and the rest of the mask
+Shows a picture through a mask texture: where the mask has the key color, the picture shows, and the rest of the mask
 stays. A portrait in a frame is the usual case.
 
 <figure class="shot">
@@ -147,7 +147,7 @@ ui.AddElementToRoot(portrait);
 
 Both textures are scaled to the stencil's size, one pixel for every device pixel it covers, and then combined pixel by
 pixel. A stencil pixel is replaced by the source pixel at the same place when its red, green and blue are within
-<a class="ref dp" href="/docs/ui-glossary/elements/stencil/#tolerance">`Tolerance`</a> of <a class="ref dp" href="/docs/ui-glossary/elements/stencil/#keycolor">`KeyColor`</a> (the distance between the two colours, with each channel from 0 to 1) and its alpha is within
+<a class="ref dp" href="/docs/ui-glossary/elements/stencil/#tolerance">`Tolerance`</a> of <a class="ref dp" href="/docs/ui-glossary/elements/stencil/#keycolor">`KeyColor`</a> (the distance between the two colors, with each channel from 0 to 1) and its alpha is within
 <a class="ref dp" href="/docs/ui-glossary/elements/stencil/#tolerance">`Tolerance`</a> of the key's alpha as well. Every other stencil pixel stays as it is.
 
 The alpha counts: the hole of this stencil is half transparent black, so the key is `new Color(0, 0, 0, 128)`. The
@@ -164,9 +164,9 @@ made of its own parts only. The stencil doesn't dispose the textures you give it
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <a class="ref dp" href="/docs/ui-glossary/elements/stencil/#sourcetexture">`SourceTexture`</a> | `Texture2D` | The picture that shows where the stencil has the key colour. Not part of <a class="ref" href="/docs/ui-glossary/types/stencil-style/">`StencilStyle`</a>. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/stencil/#sourcetexture">`SourceTexture`</a> | `Texture2D` | The picture that shows where the stencil has the key color. Not part of <a class="ref" href="/docs/ui-glossary/types/stencil-style/">`StencilStyle`</a>. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/stencil/#stenciltexture">`StencilTexture`</a> | `Texture2D` | The mask drawn over the picture. A stencil that fits its content takes its size. Not part of <a class="ref" href="/docs/ui-glossary/types/stencil-style/">`StencilStyle`</a>. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/stencil/#keycolor">`KeyColor`</a> | `Color` | The stencil colour, alpha included, where the source shows through. Defaults to transparent black (`0, 0, 0, 0`). |
+| <a class="ref dp" href="/docs/ui-glossary/elements/stencil/#keycolor">`KeyColor`</a> | `Color` | The stencil color, alpha included, where the source shows through. Defaults to transparent black (`0, 0, 0, 0`). |
 | <a class="ref dp" href="/docs/ui-glossary/elements/stencil/#tolerance">`Tolerance`</a> | `float` | How far a stencil pixel may be from <a class="ref dp" href="/docs/ui-glossary/elements/stencil/#keycolor">`KeyColor`</a> and still be keyed, on a 0 to 1 scale per channel. Defaults to `0` (an exact match). |
 
 ### Stencil methods

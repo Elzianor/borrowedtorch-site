@@ -404,8 +404,8 @@ a.card:hover { border-color: var(--line-strong); background: var(--surface-2); c
   line-height: 1.55;
 }
 .prose pre code { padding: 0; border: 0; background: none; color: #e6d8c2; font-size: .86rem; }
-/* the kind of a member name on the UI pages, in the colours of the code highlighting (and a blue): a plain property, a
-   method, an event, a dependency property. The name's own chip takes the colour in the tables, the headings and the legends, and
+/* the kind of a member name on the UI pages, in the colors of the code highlighting (and a blue): a plain property, a
+   method, an event, a dependency property. The name's own chip takes the color in the tables, the headings and the legends, and
    the name's link in the sidebar */
 .prop, .kb-prop, .kind-prop { --kind: #c9b28a; }
 .dp, .kb-dp, .kind-dp { --kind: #f2a65a; }
@@ -428,7 +428,7 @@ a.card:hover { border-color: var(--line-strong); background: var(--surface-2); c
 .docs-members a[class*="kind-"] { color: var(--kind); border-left-color: color-mix(in srgb, var(--kind) 45%, transparent); }
 .docs-members a[class*="kind-"]:hover { background: color-mix(in srgb, var(--kind) 10%, transparent); border-left-color: var(--kind); }
 .docs-members a[class*="kind-"][aria-current="location"] { border-left-color: var(--kind); background: color-mix(in srgb, var(--kind) 18%, transparent); }
-/* the legend row at the top of a page whose names are coloured by kind */
+/* the legend row at the top of a page whose names are colored by kind */
 .prose .kind-legend {
   display: flex;
   flex-wrap: wrap;
@@ -448,7 +448,7 @@ a.card:hover { border-color: var(--line-strong); background: var(--surface-2); c
 .prose td a.ref { white-space: normal; }
 .prose td code { -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 .prose a.ref code { transition: border-color .15s, background .15s; }
-/* the types linked inside a code chip (a signature, a handler, a generic type): the chip's colour, a faint underline */
+/* the types linked inside a code chip (a signature, a handler, a generic type): the chip's color, a faint underline */
 .prose code a { color: inherit; text-decoration: underline; text-decoration-color: color-mix(in srgb, currentColor 40%, transparent); text-underline-offset: 2px; }
 .prose code a:hover, .prose code a:focus-visible { color: var(--gold); text-decoration-color: currentColor; }
 .prose a.ref:hover code, .prose a.ref:focus-visible code {
@@ -474,7 +474,7 @@ a.card:hover { border-color: var(--line-strong); background: var(--surface-2); c
 .prose .ctx:hover, .prose .ctx:focus-visible { color: var(--gold); border-color: var(--gold-dim); background: rgba(233, 194, 122, .08); }
 .prose .highlighter-rouge + .highlighter-rouge, .prose div.highlight { margin-top: 1em; }
 .prose table { width: 100%; border-collapse: collapse; font-size: .93rem; display: block; overflow-x: auto; }
-/* the scroll bars of wide code blocks and tables, in the site's colours instead of the browser's */
+/* the scroll bars of wide code blocks and tables, in the site's colors instead of the browser's */
 .prose pre, .prose table {
   scrollbar-width: thin;
   scrollbar-color: var(--line-strong) transparent;
@@ -495,7 +495,7 @@ a.card:hover { border-color: var(--line-strong); background: var(--surface-2); c
 .prose .shot { margin-top: 1.4em; }
 .prose .shot img {
   display: block;
-  /* the canvas around the picture, in its own colour: the rounded corners cut into it, not into the picture's
+  /* the canvas around the picture, in its own color: the rounded corners cut into it, not into the picture's
      frame; outside the picture's size (content-box), so the picture isn't scaled */
   box-sizing: content-box;
   max-width: calc(100% - 18px);
@@ -552,7 +552,7 @@ a.card:hover { border-color: var(--line-strong); background: var(--surface-2); c
 .doc-pager a span { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
 .doc-pager a.next { text-align: right; }
 
-/* Rouge syntax colours (C# and friends) */
+/* Rouge syntax colors (C# and friends) */
 .highlight .c, .highlight .c1, .highlight .cm, .highlight .cs, .highlight .cd { color: #7d6f5c; font-style: italic; }
 .highlight .k, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kc { color: #f2a65a; }
 .highlight .kt, .highlight .nc, .highlight .nn { color: #e9c27a; }

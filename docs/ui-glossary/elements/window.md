@@ -9,13 +9,13 @@ A frame with a title bar and a content area. The user moves it by its title bar,
 
 `Window` derives from [`BaseElement`](/docs/ui-glossary/elements/base-element/) and has its members too. The [layout page](/docs/ui-layout/#window) shows it in context, with code and screenshots.
 
-Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
+Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
 
 ## Properties
 
 <h3 id="borderstyle"><span class="dp"><code>BorderStyle</code></span> <a class="ctx" href="/docs/ui-layout/#window-properties" title="BorderStyle in context on the layout page" aria-label="BorderStyle in context on the layout page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/border-style/">`BorderStyle`</a> · The style of the window's frame: its <a class="ref dp" href="/docs/ui-glossary/elements/border/#thickness">`Thickness`</a>, <a class="ref dp" href="/docs/ui-glossary/elements/border/#padding">`Padding`</a>, frame colour (<a class="ref dp" href="/docs/ui-glossary/elements/base-element/#foregroundcolor">`ForegroundColor`</a>), content area colour (<a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a>) and <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a>. The window follows changes made to the style object later.
+<a class="ref" href="/docs/ui-glossary/types/border-style/">`BorderStyle`</a> · The style of the window's frame: its <a class="ref dp" href="/docs/ui-glossary/elements/border/#thickness">`Thickness`</a>, <a class="ref dp" href="/docs/ui-glossary/elements/border/#padding">`Padding`</a>, frame color (<a class="ref dp" href="/docs/ui-glossary/elements/base-element/#foregroundcolor">`ForegroundColor`</a>), content area color (<a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a>) and <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a>. The window follows changes made to the style object later.
 
 <h3 id="content"><span class="dp"><code>Content</code></span> <a class="ctx" href="/docs/ui-layout/#window-properties" title="Content in context on the layout page" aria-label="Content in context on the layout page">🠆</a></h3>
 

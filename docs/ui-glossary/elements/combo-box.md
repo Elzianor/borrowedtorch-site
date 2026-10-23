@@ -9,7 +9,7 @@ A selection image, a toggle button and a drop-down list box: the closed combo bo
 
 `ComboBox` derives from [`BaseElement`](/docs/ui-glossary/elements/base-element/) and has its members too. The [lists and menus page](/docs/ui-lists/#combobox) shows it in context, with code and screenshots.
 
-Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
+Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
 
 ## Properties
 
@@ -35,7 +35,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="listboxstyle"><span class="dp"><code>ListBoxStyle</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-properties" title="ListBoxStyle in context on the lists and menus page" aria-label="ListBoxStyle in context on the lists and menus page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> · The style of the drop-down list, for example its row colours.
+<a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> · The style of the drop-down list, for example its row colors.
 
 <h3 id="mousecursorsset"><span class="prop"><code>MouseCursorsSet</code></span> <a class="ctx" href="/docs/ui-base-element/#genericstyleandmousecursorsdata-properties" title="MouseCursorsSet in context on the base element page" aria-label="MouseCursorsSet in context on the base element page">🠆</a></h3>
 
@@ -59,7 +59,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="selectionstyle"><span class="dp"><code>SelectionStyle</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-properties" title="SelectionStyle in context on the lists and menus page" aria-label="SelectionStyle in context on the lists and menus page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> · The style of the image that shows the selected row. The image is only as large as the row's content, so a background colour here lies just behind the chosen value; the combo box's own <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> colours the whole field.
+<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> · The style of the image that shows the selected row. The image is only as large as the row's content, so a background color here lies just behind the chosen value; the combo box's own <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> colors the whole field.
 
 <h3 id="styleoverride"><span class="prop"><code>StyleOverride</code></span> <a class="ctx" href="/docs/ui-base-element/#genericstyleandmousecursorsdata-properties" title="StyleOverride in context on the base element page" aria-label="StyleOverride in context on the base element page">🠆</a></h3>
 

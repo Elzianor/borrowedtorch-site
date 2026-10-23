@@ -5,17 +5,17 @@ title: "Glossary: ColorPicker"
 description: "The properties, methods and events of ColorPicker, in alphabetical order."
 ---
 
-A colour wheel to pick a colour from with a click. The hue goes around the centre, the saturation grows from white at the centre to the full colour at the edge, and <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#brightness">`Brightness`</a> darkens the result.
+A color wheel to pick a color from with a click. The hue goes around the centre, the saturation grows from white at the centre to the full color at the edge, and <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#brightness">`Brightness`</a> darkens the result.
 
 `ColorPicker` derives from [`BaseElement`](/docs/ui-glossary/elements/base-element/) and has its members too. The [controls page](/docs/ui-controls/#colorpicker) shows it in context, with code and screenshots.
 
-Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
+Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
 
 ## Properties
 
 <h3 id="brightness"><span class="dp"><code>Brightness</code></span> <a class="ctx" href="/docs/ui-controls/#colorpicker-properties" title="Brightness in context on the controls page" aria-label="Brightness in context on the controls page">🠆</a></h3>
 
-`float` · Scales the picked colour, from 0 (black) to 1 (the palette's colour, the default). Values outside are clamped. Changing it recomputes <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#selectedcolor">`SelectedColor`</a> from the picked spot.
+`float` · Scales the picked color, from 0 (black) to 1 (the palette's color, the default). Values outside are clamped. Changing it recomputes <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#selectedcolor">`SelectedColor`</a> from the picked spot.
 
 <h3 id="generalmousecursorsset"><span class="prop"><code>GeneralMouseCursorsSet</code></span> <a class="ctx" href="/docs/ui-base-element/#genericstyleandmousecursorsdata-properties" title="GeneralMouseCursorsSet in context on the base element page" aria-label="GeneralMouseCursorsSet in context on the base element page">🠆</a></h3>
 
@@ -35,7 +35,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="selectedcolor"><span class="dp"><code>SelectedColor</code></span> <a class="ctx" href="/docs/ui-controls/#colorpicker-properties" title="SelectedColor in context on the controls page" aria-label="SelectedColor in context on the controls page">🠆</a></h3>
 
-`Color` · The picked colour times <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#brightness">`Brightness`</a>, always opaque. It starts black. Setting it raises <a class="ref event" href="/docs/ui-glossary/elements/color-picker/#onselectedcolorchanged">`OnSelectedColorChanged`</a> but does not move the pointer.
+`Color` · The picked color times <a class="ref dp" href="/docs/ui-glossary/elements/color-picker/#brightness">`Brightness`</a>, always opaque. It starts black. Setting it raises <a class="ref event" href="/docs/ui-glossary/elements/color-picker/#onselectedcolorchanged">`OnSelectedColorChanged`</a> but does not move the pointer.
 
 <h3 id="styleoverride"><span class="prop"><code>StyleOverride</code></span> <a class="ctx" href="/docs/ui-base-element/#genericstyleandmousecursorsdata-properties" title="StyleOverride in context on the base element page" aria-label="StyleOverride in context on the base element page">🠆</a></h3>
 
@@ -45,7 +45,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="colorpicker"><span class="method"><code>ColorPicker()</code></span> <a class="ctx" href="/docs/ui-controls/#colorpicker-methods" title="ColorPicker() in context on the controls page" aria-label="ColorPicker() in context on the controls page">🠆</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/elements/color-picker/#colorpicker">`ColorPicker(string name = null)`</a> · Creates a colour picker. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>.
+<a class="ref method" href="/docs/ui-glossary/elements/color-picker/#colorpicker">`ColorPicker(string name = null)`</a> · Creates a color picker. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>.
 
 ## Events
 

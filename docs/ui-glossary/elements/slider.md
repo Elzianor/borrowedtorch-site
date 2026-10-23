@@ -9,13 +9,13 @@ A track with a thumb that picks a value between <a class="ref dp" href="/docs/ui
 
 `Slider` derives from [`BaseElement`](/docs/ui-glossary/elements/base-element/) and has its members too. The [controls page](/docs/ui-controls/#slider) shows it in context, with code and screenshots.
 
-Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
+Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
 
 ## Properties
 
 <h3 id="buttonssolidcolor"><span class="dp"><code>ButtonsSolidColor</code></span> <a class="ctx" href="/docs/ui-controls/#slider-properties" title="ButtonsSolidColor in context on the controls page" aria-label="ButtonsSolidColor in context on the controls page">🠆</a></h3>
 
-`Color` · The colour of the end buttons and caps, without textures.
+`Color` · The color of the end buttons and caps, without textures.
 
 <h3 id="contentsize"><span class="prop"><code>ContentSize</code></span> <a class="ctx" href="/docs/ui-controls/#slider-properties" title="ContentSize in context on the controls page" aria-label="ContentSize in context on the controls page">🠆</a></h3>
 
@@ -31,11 +31,11 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="linedecreasesolidcolor"><span class="dp"><code>LineDecreaseSolidColor</code></span> <a class="ctx" href="/docs/ui-controls/#slider-properties" title="LineDecreaseSolidColor in context on the controls page" aria-label="LineDecreaseSolidColor in context on the controls page">🠆</a></h3>
 
-`Color` · The colour of the track between the start and the thumb, without textures.
+`Color` · The color of the track between the start and the thumb, without textures.
 
 <h3 id="lineincreasesolidcolor"><span class="dp"><code>LineIncreaseSolidColor</code></span> <a class="ctx" href="/docs/ui-controls/#slider-properties" title="LineIncreaseSolidColor in context on the controls page" aria-label="LineIncreaseSolidColor in context on the controls page">🠆</a></h3>
 
-`Color` · The colour of the track between the thumb and the end, without textures.
+`Color` · The color of the track between the thumb and the end, without textures.
 
 <h3 id="max"><span class="dp"><code>Max</code></span> <a class="ctx" href="/docs/ui-controls/#slider-properties" title="Max in context on the controls page" aria-label="Max in context on the controls page">🠆</a></h3>
 
@@ -87,7 +87,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="thumbsolidcolor"><span class="dp"><code>ThumbSolidColor</code></span> <a class="ctx" href="/docs/ui-controls/#slider-properties" title="ThumbSolidColor in context on the controls page" aria-label="ThumbSolidColor in context on the controls page">🠆</a></h3>
 
-`Color` · The colour of the thumb, without textures.
+`Color` · The color of the thumb, without textures.
 
 <h3 id="tick"><span class="dp"><code>Tick</code></span> <a class="ctx" href="/docs/ui-controls/#slider-properties" title="Tick in context on the controls page" aria-label="Tick in context on the controls page">🠆</a></h3>
 
@@ -99,7 +99,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="tickpassedcolor"><span class="dp"><code>TickPassedColor</code></span> <a class="ctx" href="/docs/ui-controls/#slider-properties" title="TickPassedColor in context on the controls page" aria-label="TickPassedColor in context on the controls page">🠆</a></h3>
 
-`Color` · The colour of the tick marks at or below the value.
+`Color` · The color of the tick marks at or below the value.
 
 <h3 id="tickplacement"><span class="dp"><code>TickPlacement</code></span> <a class="ctx" href="/docs/ui-controls/#slider-properties" title="TickPlacement in context on the controls page" aria-label="TickPlacement in context on the controls page">🠆</a></h3>
 
@@ -107,7 +107,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="tickremainingcolor"><span class="dp"><code>TickRemainingColor</code></span> <a class="ctx" href="/docs/ui-controls/#slider-properties" title="TickRemainingColor in context on the controls page" aria-label="TickRemainingColor in context on the controls page">🠆</a></h3>
 
-`Color` · The colour of the tick marks above the value.
+`Color` · The color of the tick marks above the value.
 
 <h3 id="ticksize"><span class="dp"><code>TickSize</code></span> <a class="ctx" href="/docs/ui-controls/#slider-properties" title="TickSize in context on the controls page" aria-label="TickSize in context on the controls page">🠆</a></h3>
 

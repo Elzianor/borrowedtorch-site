@@ -7,7 +7,7 @@ description: Stack panels, grids, scrolling containers, borders, separators, win
 
 These elements arrange, frame and scroll other elements. Each of them, apart from <a class="ref" href="/docs/ui-glossary/types/tab-control/">`TabControl`</a>, is an element: it has
 all the properties, events and methods of [`BaseElement`](/docs/ui-base-element/), which the tables below don't
-repeat. Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>: `Foo` is backed by `FooDP`, which a
+repeat. Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>: `Foo` is backed by `FooDP`, which a
 style, a binding or an animation can set (see [styles, bindings and animation](/docs/ui-styles/)). Screenshots use the
 theme from [styles](/docs/ui-styles/#the-theme-of-these-pages).
 
@@ -184,7 +184,7 @@ clips its items, and it is removed once its last item is. The grid's <a class="r
 | <a class="ref prop" href="/docs/ui-glossary/elements/grid/#columnscount">`ColumnsCount`</a> | `int` | Read-only. The number of column definitions. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/grid/#rowscount">`RowsCount`</a> | `int` | Read-only. The number of row definitions. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/grid/#showlayout">`ShowLayout`</a> | `bool` | Draws the grid's outline, a line at the end of every column and row, and fills each of them with a dim shade of <a class="ref prop" href="/docs/ui-glossary/elements/grid/#layoutcolor">`LayoutColor`</a>. A debugging aid, off by default. |
-| <a class="ref prop" href="/docs/ui-glossary/elements/grid/#layoutcolor">`LayoutColor`</a> | `Color` | The colour of the lines <a class="ref prop" href="/docs/ui-glossary/elements/grid/#showlayout">`ShowLayout`</a> draws; the fill is this colour with every channel divided by 5. Set it, the default is transparent. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/grid/#layoutcolor">`LayoutColor`</a> | `Color` | The color of the lines <a class="ref prop" href="/docs/ui-glossary/elements/grid/#showlayout">`ShowLayout`</a> draws; the fill is this color with every channel divided by 5. Set it, the default is transparent. |
 
 ### Grid methods
 
@@ -284,7 +284,7 @@ The container's `Children` are its view and scroll bars; the item methods act on
 | --- | --- | --- |
 | <a class="ref dp" href="/docs/ui-glossary/elements/scrollable-container/#scrollbars">`ScrollBars`</a> | <a class="ref" href="/docs/ui-glossary/types/scroll-bars/">`ScrollBars`</a> | Which scroll bars may show: `None` (the default), `Vertical`, `Horizontal` or `Both`. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/scrollable-container/#scrollbarsthickness">`ScrollBarsThickness`</a> | `int` | The width of a vertical bar and the height of a horizontal one, in units. The default is 0. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/scrollable-container/#scrollbarsstyle">`ScrollBarsStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/slider-style/">`SliderStyle`</a> | The style of the scroll bars (see [sliders](/docs/ui-controls/#slider)). The vertical bar gets a copy with the colours of its two line halves swapped. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/scrollable-container/#scrollbarsstyle">`ScrollBarsStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/slider-style/">`SliderStyle`</a> | The style of the scroll bars (see [sliders](/docs/ui-controls/#slider)). The vertical bar gets a copy with the colors of its two line halves swapped. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/scrollable-container/#horizontalscrollingvalue">`HorizontalScrollingValue`</a> | `float` | How far the content is scrolled sideways, from 0 (the left) to 1 (the right). |
 | <a class="ref dp" href="/docs/ui-glossary/elements/scrollable-container/#verticalscrollingvalue">`VerticalScrollingValue`</a> | `float` | How far the content is scrolled down, from 0 (the top) to 1 (the bottom). |
 | <a class="ref prop" href="/docs/ui-glossary/elements/scrollable-container/#items">`Items`</a> | <code>IReadOnlyList&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt;</code> | Read-only. The items that scroll: the elements you added. The container's `Children` are its view and scroll bars. A live view. |
@@ -326,7 +326,7 @@ Style class: <a class="ref" href="/docs/ui-glossary/types/scrollable-container-s
 
 ## Border
 
-A frame around one <a class="ref dp" href="/docs/ui-glossary/elements/border/#content">`Content`</a> element, drawn in a solid colour or from eight textures.
+A frame around one <a class="ref dp" href="/docs/ui-glossary/elements/border/#content">`Content`</a> element, drawn in a solid color or from eight textures.
 
 <figure class="shot">
   <img src="{{ '/assets/img/ui/layout-border.png' | relative_url }}" width="416" height="78" alt="A label in a thin golden frame, and a Section title label underlined by an orange rule">
@@ -513,7 +513,7 @@ press anywhere in a window, or focusing an element in it, brings it to the front
 a window brings the outer one along), and <a class="ref method" href="/docs/ui-glossary/elements/window/#bringtofront">`BringToFront()`</a> does it from code.
 
 **Modal windows.** With <a class="ref dp" href="/docs/ui-glossary/elements/window/#ismodal">`IsModal`</a> on, a shown window in the tree is drawn above the whole UI, over a shade of
-everything below it (the shade's colour is <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#modalwindowactiveshadetint">`BaseElement.ModalWindowActiveShadeTint`</a>, black at an alpha of 75 by
+everything below it (the shade's color is <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#modalwindowactiveshadetint">`BaseElement.ModalWindowActiveShadeTint`</a>, black at an alpha of 75 by
 default), and only that window and what is inside it get the mouse. The elements it sits in don't clip it. Modal
 windows stack: the one shown last is on top, and hiding it gives the mouse back to the one below. The
 [pause menu on the UI page](/docs/ui/#a-pause-menu) is a complete modal window, closed by Escape.
@@ -522,7 +522,7 @@ windows stack: the one shown last is on top, and hiding it gives the mouse back 
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <a class="ref dp" href="/docs/ui-glossary/elements/window/#borderstyle">`BorderStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/border-style/">`BorderStyle`</a> | The style of the window's frame: its <a class="ref dp" href="/docs/ui-glossary/elements/border/#thickness">`Thickness`</a>, <a class="ref dp" href="/docs/ui-glossary/elements/border/#padding">`Padding`</a>, frame colour (<a class="ref dp" href="/docs/ui-glossary/elements/base-element/#foregroundcolor">`ForegroundColor`</a>), content area colour (<a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a>) and <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a>. The window follows changes made to the style object later. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/window/#borderstyle">`BorderStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/border-style/">`BorderStyle`</a> | The style of the window's frame: its <a class="ref dp" href="/docs/ui-glossary/elements/border/#thickness">`Thickness`</a>, <a class="ref dp" href="/docs/ui-glossary/elements/border/#padding">`Padding`</a>, frame color (<a class="ref dp" href="/docs/ui-glossary/elements/base-element/#foregroundcolor">`ForegroundColor`</a>), content area color (<a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a>) and <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a>. The window follows changes made to the style object later. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/window/#titlebar">`TitleBar`</a> | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element in the title row. The default is a [`DefaultWindowTitleBar`](#defaultwindowtitlebar); set your own element to replace it, and clear the value to get the default one back. A replaced title bar is detached, not disposed. A style can't set it. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/window/#content">`Content`</a> | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element in the content area. A replaced content is detached, not disposed, and a disposed one is cleared. A style can't set it. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/window/#ismodal">`IsModal`</a> | `bool` | Makes the window modal: drawn above everything over a shade, and the only part of the UI that gets the mouse while shown. Off by default. |
@@ -542,7 +542,7 @@ A window has no items: the item methods do nothing on it.
 
 The title bar every window starts with: a <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#background">`Background`</a> image filling the bar, a centred <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#title">`Title`</a> text and a
 <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#closebutton">`CloseButton`</a> at the right. In a window it is <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultwindowtitlethickness">`DefaultSettings.DefaultWindowTitleThickness`</a> tall (30 units by
-default), and its close button is always 4 units smaller than that, square. The bar's colour comes from
+default), and its close button is always 4 units smaller than that, square. The bar's color comes from
 <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultwindowtitlebarcolor">`DefaultSettings.DefaultWindowTitleBarColor`</a> (see [styles](/docs/ui-styles/)). Reach the parts through the window:
 
 ```csharp
@@ -556,7 +556,7 @@ titleBar.OnCloseButtonClickAction = () => window.Hide();
 | --- | --- | --- |
 | <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#title">`Title`</a> | <a class="ref" href="/docs/ui-glossary/elements/label/">`Label`</a> | Read-only. The title text, centred in the bar. Set its <span class="dp">`Text`</span> and text style properties. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#closebutton">`CloseButton`</a> | <a class="ref" href="/docs/ui-glossary/elements/button/">`Button`</a> | Read-only. The close button at the right of the bar. It shows no text until you set its <span class="dp">`Text`</span> or `Content`. |
-| <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#background">`Background`</a> | <a class="ref" href="/docs/ui-glossary/elements/image/">`Image`</a> | Read-only. The image that fills the bar and holds the title and the close button. Its <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> is the bar's colour. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#background">`Background`</a> | <a class="ref" href="/docs/ui-glossary/elements/image/">`Image`</a> | Read-only. The image that fills the bar and holds the title and the close button. Its <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> is the bar's color. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#onclosebuttonclickaction">`OnCloseButtonClickAction`</a> | `Action` | What a click on the close button does. In a window's default title bar it is the window's <a class="ref method" href="/docs/ui-glossary/elements/window/#hide">`Hide`</a>. |
 
 | Method | Description |

@@ -9,7 +9,7 @@ Shows its items in a view of its own size and scrolls them when they are larger,
 
 `ScrollableContainer` derives from [`BaseElement`](/docs/ui-glossary/elements/base-element/) and has its members too. The [layout page](/docs/ui-layout/#scrollablecontainer) shows it in context, with code and screenshots.
 
-Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
+Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
 
 ## Properties
 
@@ -55,7 +55,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="scrollbarsstyle"><span class="dp"><code>ScrollBarsStyle</code></span> <a class="ctx" href="/docs/ui-layout/#scrollablecontainer-properties" title="ScrollBarsStyle in context on the layout page" aria-label="ScrollBarsStyle in context on the layout page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/slider-style/">`SliderStyle`</a> · The style of the scroll bars (see [sliders](/docs/ui-controls/#slider)). The vertical bar gets a copy with the colours of its two line halves swapped.
+<a class="ref" href="/docs/ui-glossary/types/slider-style/">`SliderStyle`</a> · The style of the scroll bars (see [sliders](/docs/ui-controls/#slider)). The vertical bar gets a copy with the colors of its two line halves swapped.
 
 <h3 id="scrollbarsthickness"><span class="dp"><code>ScrollBarsThickness</code></span> <a class="ctx" href="/docs/ui-layout/#scrollablecontainer-properties" title="ScrollBarsThickness in context on the layout page" aria-label="ScrollBarsThickness in context on the layout page">🠆</a></h3>
 

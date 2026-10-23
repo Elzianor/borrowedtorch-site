@@ -6,11 +6,11 @@ description: Plain labels, the rich text box for formatted, editable and scrolli
 ---
 
 Two elements show text. <a class="ref" href="/docs/ui-glossary/elements/label/">`Label`</a> is the cheap one: plain text in one or more lines, nothing else. <a class="ref" href="/docs/ui-glossary/elements/rich-text-box/">`RichTextBox`</a> adds
-coloured words, links, inline images, editing, scrolling and a typing animation. Both draw their glyphs straight from a
+colored words, links, inline images, editing, scrolling and a typing animation. Both draw their glyphs straight from a
 font atlas every frame, so no text texture is made, and both get their fonts the same way (see [Fonts](#fonts)).
 
 Both are elements: they have all the properties, events and methods of [`BaseElement`](/docs/ui-base-element/), which
-the tables below don't repeat (the text colour, for example, is the inherited <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#foregroundcolor">`ForegroundColor`</a>). Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>: `Foo` is backed by `FooDP`, which a style, a binding or an animation
+the tables below don't repeat (the text color, for example, is the inherited <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#foregroundcolor">`ForegroundColor`</a>). Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>: `Foo` is backed by `FooDP`, which a style, a binding or an animation
 can set (see [styles, bindings and animation](/docs/ui-styles/)). Screenshots use the theme from
 [styles](/docs/ui-styles/#the-theme-of-these-pages).
 
@@ -168,7 +168,7 @@ Style class: <a class="ref" href="/docs/ui-glossary/types/label-style/">`LabelSt
 
 ## RichTextBox
 
-The full text element: read-only text with coloured words, links and inline images, or an editable text field with a
+The full text element: read-only text with colored words, links and inline images, or an editable text field with a
 caret, selection, clipboard and undo. Text longer than the box scrolls inside it. Only the lines inside the visible
 area are drawn each frame, so the length of the text is limited by memory, not by the GPU texture size.
 
@@ -176,7 +176,7 @@ area are drawn each frame, so the length of the text is limited by memory, not b
 
 <figure class="shot">
   <img src="{{ '/assets/img/ui/text-rich.png' | relative_url }}" width="466" height="67" alt="A two-line hint with Space in orange, E in green and a small check box image inside the sentence">
-  <figcaption>Coloured words and an inline image in a read-only rich text box.</figcaption>
+  <figcaption>Colored words and an inline image in a read-only rich text box.</figcaption>
 </figure>
 
 ```csharp
@@ -209,7 +209,7 @@ ui.AddElementToRoot(hint);
 </figure>
 
 ```csharp
-// [u=1] underlines, [s=1] strikes through (both in the text's colour),
+// [u=1] underlines, [s=1] strikes through (both in the text's color),
 // [o=n] outlines the letters in RichColors[n]
 RichTextBox.RichColors.Add(new Color(20, 14, 10));      // dark letters
 RichTextBox.RichColors.Add(new Color(233, 194, 122));   // a gold outline
@@ -267,22 +267,22 @@ to turn a line on and off:
 | `[a=n]` | The following text is a link: pressing it runs <code><a href="/docs/ui-glossary/elements/rich-text-box/#richactions">RichTextBox.RichActions</a>[n]</code>. |
 | `[i=n]` | The word is replaced by <code><a href="/docs/ui-glossary/elements/rich-text-box/#richimages">RichTextBox.RichImages</a>[n]</code>, drawn as a square as high as a line of its font. A `c` instruction tints it. |
 | `[o=n]` | The letters of the following text get an outline in <code>RichTextBox.RichColors[n]</code>, <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#richoutlinethickness">`RichOutlineThickness`</a> units wide around them. |
-| `[u=1]` | The following text is underlined in its own colour, through the spaces between its words. `[u=0]` ends the underline. |
-| `[s=1]` | The following text is struck through in its own colour, like an underline. `[s=0]` ends it. |
+| `[u=1]` | The following text is underlined in its own color, through the spaces between its words. `[u=0]` ends the underline. |
+| `[s=1]` | The following text is struck through in its own color, like an underline. `[s=0]` ends it. |
 | `[f=n]` | The following text is drawn in the font file <code>RichTextBox.RichFonts[n]</code>, at the box's size unless a `z` instruction gives one. |
 | `[z=n]` | The following text is drawn `n` units high, in the box's font unless an `f` instruction gives another. `[z=0]` is the box's size again. |
 | `[/]` | Ends all formatting. |
 | `[.../]` | A self-closing tag, such as `[i=0/]` or `[c=1,i=0/]`: its instructions apply to that place only (an image, for `i`), and the formatting around it goes on. |
 
 Instructions combine, as in `[c=0,a=1]help[/]`. The formatting goes on over the following words until `[/]`, so
-`[c=0]two words[/]` colours both. An image tag goes on too, so close it at once: write it self-closing, as in `[i=0/]`, or follow it with `[/]`. An index past the end of its list is ignored. To show a bracket itself, escape it with
+`[c=0]two words[/]` colors both. An image tag goes on too, so close it at once: write it self-closing, as in `[i=0/]`, or follow it with `[/]`. An index past the end of its list is ignored. To show a bracket itself, escape it with
 a backslash: `\[` and `\]` (`"\\["` in a C# string).
 
 A line with other fonts or sizes is as high as its tallest letters need, and all its words stand on one baseline;
 it is never lower than a line of the box's own font. The space between two words is the box font's. A font file
 is loaded once and shared, like <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#fontpath">`FontPath`</a>: each file has a glyph atlas of its own.
 
-A link is drawn like the text around it, so give it a colour as well if it should stand out. Over a link the mouse shows
+A link is drawn like the text around it, so give it a color as well if it should stand out. Over a link the mouse shows
 the link cursor of the box's <a class="ref prop" href="/docs/ui-glossary/types/mouse-cursors-set/#richtextcursors">`MouseCursorsSet.RichTextCursors`</a> (see [styles](/docs/ui-styles/)), and a press on it runs
 the action. The tags work in read-only boxes only: a `ReadWrite` box shows its text as it is, tags included.
 
@@ -430,8 +430,8 @@ With <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#character
 | <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#fontpath">`FontPath`</a> | `string` | The path of a TTF or OTF file to draw with (see [Fonts](#fonts)). A path that loads replaces the font system in use; an empty or unreadable path goes back to the general font, but keeps a font system you set by hand (as a label does). |
 | <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#linespacing">`LineSpacing`</a> | `int` | Extra space between two lines, in units. Negative values become 0. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#textcursorthickness">`TextCursorThickness`</a> | `int` | The width of the caret bar, or the height of the overwrite underline, in units. Default <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaulttextcursorthickness">`DefaultSettings.DefaultTextCursorThickness`</a> (1). |
-| <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#textcursorcolor">`TextCursorColor`</a> | `Color` | The colour of the caret. Default <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaulttextcursorcolor">`DefaultSettings.DefaultTextCursorColor`</a> (black). |
-| <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#textselectioncolor">`TextSelectionColor`</a> | `Color` | The colour behind selected text. Default <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaulttextselectioncolor">`DefaultSettings.DefaultTextSelectionColor`</a> (light blue). |
+| <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#textcursorcolor">`TextCursorColor`</a> | `Color` | The color of the caret. Default <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaulttextcursorcolor">`DefaultSettings.DefaultTextCursorColor`</a> (black). |
+| <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#textselectioncolor">`TextSelectionColor`</a> | `Color` | The color behind selected text. Default <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaulttextselectioncolor">`DefaultSettings.DefaultTextSelectionColor`</a> (light blue). |
 | <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#richoutlinethickness">`RichOutlineThickness`</a> | `float` | How far the outline of an `[o=n]` tag reaches around the letters, in units. Default 1. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#scrollbars">`ScrollBars`</a> | <a class="ref" href="/docs/ui-glossary/types/scroll-bars/">`ScrollBars`</a> | Which scroll bars the box may show when its text is larger than the box. Default `None`. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#scrollbarsthickness">`ScrollBarsThickness`</a> | `int` | The thickness of the scroll bars in units. Default 0. |
@@ -439,7 +439,7 @@ With <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#character
 | <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#backgroundstyle">`BackgroundStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> | The style of the image the box draws behind its text. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#characterprintdelayms">`CharacterPrintDelayMs`</a> | `int` | The time between two characters printed by <a class="ref method" href="/docs/ui-glossary/elements/rich-text-box/#animatetext">`AnimateText`</a>, in milliseconds. Negative values become 0; 0 sets the text at once. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#scrolltoendduringtextanimation">`ScrollToEndDuringTextAnimation`</a> | `bool` | Whether <a class="ref method" href="/docs/ui-glossary/elements/rich-text-box/#animatetext">`AnimateText`</a> keeps the box scrolled to the end while it prints. |
-| <a class="ref prop" href="/docs/ui-glossary/elements/rich-text-box/#richcolors-1">`RichColors`</a> | `List<Color>` | Static field. The colours `[c=n]` tags index, shared by every box. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/rich-text-box/#richcolors-1">`RichColors`</a> | `List<Color>` | Static field. The colors `[c=n]` tags index, shared by every box. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/rich-text-box/#richactions-1">`RichActions`</a> | `List<Action>` | Static field. The actions `[a=n]` links run, shared by every box. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/rich-text-box/#richimages-1">`RichImages`</a> | `List<Texture2D>` | Static field. The textures `[i=n]` tags show, shared by every box. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/rich-text-box/#richfonts">`RichFonts`</a> | `List<string>` | Static field. The font files `[f=n]` tags draw in, shared by every box (each loaded once). |

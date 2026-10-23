@@ -9,7 +9,7 @@ A row of a list box. The list makes the rows for texts, elements and source obje
 
 `ListBoxItem` derives from [`BaseElement`](/docs/ui-glossary/elements/base-element/) and has its members too. The [lists and menus page](/docs/ui-lists/#listboxitem) shows it in context, with code and screenshots.
 
-Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
+Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
 
 ## Properties
 
@@ -45,4 +45,4 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="listboxitem"><span class="method"><code>ListBoxItem()</code></span> <a class="ctx" href="/docs/ui-lists/#listboxitem" title="ListBoxItem() in context on the lists and menus page" aria-label="ListBoxItem() in context on the lists and menus page">🠆</a></h3>
 
-<span class="method"><code><a href="/docs/ui-glossary/elements/list-box-item/#listboxitem">ListBoxItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> content, <a href="/docs/ui-glossary/elements/list-box/">ListBox</a> parentListBox, string name = null)</code></span> · Creates a row showing the content. `parentListBox` gives the row its colours until it is in a list; from then on the list it is in counts.
+<span class="method"><code><a href="/docs/ui-glossary/elements/list-box-item/#listboxitem">ListBoxItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> content, <a href="/docs/ui-glossary/elements/list-box/">ListBox</a> parentListBox, string name = null)</code></span> · Creates a row showing the content. `parentListBox` gives the row its colors until it is in a list; from then on the list it is in counts.

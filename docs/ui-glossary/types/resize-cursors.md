@@ -9,7 +9,7 @@ The cursors of the eight grips around a [resizable](/docs/ui-base-element/#resiz
 
 A class deriving from [`DisposableBase`](/docs/ui-glossary/types/disposable-base/). The [styles page](/docs/ui-styles/#resizecursors) shows it in context.
 
-Names are coloured by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain colour.
+Names are colored by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain color.
 
 ## Properties
 

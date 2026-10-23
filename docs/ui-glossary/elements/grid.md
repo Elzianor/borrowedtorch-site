@@ -9,7 +9,7 @@ Lays its items out in columns and rows. Each column and row is fixed, fitted to 
 
 `Grid` derives from [`BaseElement`](/docs/ui-glossary/elements/base-element/) and has its members too. The [layout page](/docs/ui-layout/#grid) shows it in context, with code and screenshots.
 
-Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
+Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
 
 ## Properties
 
@@ -19,7 +19,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="layoutcolor"><span class="prop"><code>LayoutColor</code></span> <a class="ctx" href="/docs/ui-layout/#grid-properties" title="LayoutColor in context on the layout page" aria-label="LayoutColor in context on the layout page">🠆</a></h3>
 
-`Color` · The colour of the lines <a class="ref prop" href="/docs/ui-glossary/elements/grid/#showlayout">`ShowLayout`</a> draws; the fill is this colour with every channel divided by 5. Set it, the default is transparent.
+`Color` · The color of the lines <a class="ref prop" href="/docs/ui-glossary/elements/grid/#showlayout">`ShowLayout`</a> draws; the fill is this color with every channel divided by 5. Set it, the default is transparent.
 
 <h3 id="rowscount"><span class="prop"><code>RowsCount</code></span> <a class="ctx" href="/docs/ui-layout/#grid-properties" title="RowsCount in context on the layout page" aria-label="RowsCount in context on the layout page">🠆</a></h3>
 

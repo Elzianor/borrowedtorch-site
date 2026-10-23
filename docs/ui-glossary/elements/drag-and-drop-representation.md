@@ -9,7 +9,7 @@ The image that follows the mouse during a drag and drop. It is an [`Image`](#ima
 
 `DragAndDropRepresentation` derives from [`Image`](/docs/ui-glossary/elements/image/) and has its members too. The [images page](/docs/ui-images/#draganddroprepresentation) shows it in context, with code and screenshots.
 
-Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
+Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
 
 ## Properties
 

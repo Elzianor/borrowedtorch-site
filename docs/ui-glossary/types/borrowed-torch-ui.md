@@ -5,11 +5,11 @@ title: "Glossary: BorrowedTorchUI"
 description: "The members of BorrowedTorchUI, in alphabetical order."
 ---
 
-Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>.
+Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>.
 
 A class. The [quick start guide](/docs/ui/#borrowedtorchui) shows it in context.
 
-Names are coloured by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain colour.
+Names are colored by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain color.
 
 ## Properties
 
@@ -55,7 +55,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">property</span>,
 
 <h3 id="borrowedtorchui"><span class="method"><code>BorrowedTorchUI()</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="BorrowedTorchUI() in context on the quick start guide" aria-label="BorrowedTorchUI() in context on the quick start guide">🠆</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#borrowedtorchui">`BorrowedTorchUI(GraphicsDevice graphicsDevice, ContentManager contentManager, SpriteBatch spriteBatch, GameWindow window)`</a> · Creates the UI over the back buffer's size, with the text and keys of the window. The sprite batch is the one the UI draws with; the content manager loads the colour picker's pointer and the textures named by <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a>. Disposing the UI unsubscribes from the window.
+<a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#borrowedtorchui">`BorrowedTorchUI(GraphicsDevice graphicsDevice, ContentManager contentManager, SpriteBatch spriteBatch, GameWindow window)`</a> · Creates the UI over the back buffer's size, with the text and keys of the window. The sprite batch is the one the UI draws with; the content manager loads the color picker's pointer and the textures named by <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a>. Disposing the UI unsubscribes from the window.
 
 <span class="method"><code><a href="/docs/ui-glossary/types/borrowed-torch-ui/#borrowedtorchui">BorrowedTorchUI</a>(GraphicsDevice graphicsDevice, ContentManager contentManager, SpriteBatch spriteBatch, <a href="/docs/ui-glossary/types/i-text-input-events/">ITextInputEvents</a> textInputEvents)</code></span> · The same, with the text and keys of a source of your own, for a UI hosted outside a game window. The UI doesn't dispose the source.
 

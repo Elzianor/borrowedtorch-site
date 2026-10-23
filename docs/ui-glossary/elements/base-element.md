@@ -9,7 +9,7 @@ description: "The properties, methods and events of BaseElement, in alphabetical
 
 The [base element page](/docs/ui-base-element/) shows it in context, with code and screenshots.
 
-Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
+Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
 
 ## Properties
 
@@ -19,7 +19,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="actualsizerectanglecolor"><span class="prop"><code>ActualSizeRectangleColor</code></span> <a class="ctx" href="/docs/ui-base-element/#debug-helpers" title="ActualSizeRectangleColor in context on the base element page" aria-label="ActualSizeRectangleColor in context on the base element page">🠆</a></h3>
 
-`Color` · The colour of the bounds outline, `Green` by default.
+`Color` · The color of the bounds outline, `Green` by default.
 
 <h3 id="actualwidth"><span class="prop"><code>ActualWidth</code></span> <a class="ctx" href="/docs/ui-base-element/#size-and-position-properties" title="ActualWidth in context on the base element page" aria-label="ActualWidth in context on the base element page">🠆</a></h3>
 
@@ -27,7 +27,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="backgroundcolor"><span class="dp"><code>BackgroundColor</code></span> <a class="ctx" href="/docs/ui-base-element/#appearance-properties" title="BackgroundColor in context on the base element page" aria-label="BackgroundColor in context on the base element page">🠆</a></h3>
 
-`Color` · The colour the element's background is filled with. `Transparent` (the default) fills nothing.
+`Color` · The color the element's background is filled with. `Transparent` (the default) fills nothing.
 
 <h3 id="bottom"><span class="prop"><code>Bottom</code></span> <a class="ctx" href="/docs/ui-base-element/#size-and-position-properties" title="Bottom in context on the base element page" aria-label="Bottom in context on the base element page">🠆</a></h3>
 
@@ -51,7 +51,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="customeffect"><span class="dp"><code>CustomEffect</code></span> <a class="ctx" href="/docs/ui-base-element/#appearance-properties" title="CustomEffect in context on the base element page" aria-label="CustomEffect in context on the base element page">🠆</a></h3>
 
-`Effect` · A shader the element draws its background (or texture, an image's picture) with. Setting it sets it on the children as well, and a child added later takes it. An effect with a `ModulationColor` parameter gets the draw colour there.
+`Effect` · A shader the element draws its background (or texture, an image's picture) with. Setting it sets it on the children as well, and a child added later takes it. An effect with a `ModulationColor` parameter gets the draw color there.
 
 <h3 id="defaultmousecursorsset"><span class="prop"><code>DefaultMouseCursorsSet</code></span> <a class="ctx" href="/docs/ui-base-element/#baseelement-cursor-properties" title="DefaultMouseCursorsSet in context on the base element page" aria-label="DefaultMouseCursorsSet in context on the base element page">🠆</a></h3>
 
@@ -95,7 +95,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="foregroundcolor"><span class="dp"><code>ForegroundColor</code></span> <a class="ctx" href="/docs/ui-base-element/#appearance-properties" title="ForegroundColor in context on the base element page" aria-label="ForegroundColor in context on the base element page">🠆</a></h3>
 
-`Color` · The colour of what the element draws over its background, such as a label's text. An element drawn from textures tints them with it when it is not `Transparent`.
+`Color` · The color of what the element draws over its background, such as a label's text. An element drawn from textures tints them with it when it is not `Transparent`.
 
 <h3 id="gridcolumn"><span class="dp"><code>GridColumn</code></span> <a class="ctx" href="/docs/ui-base-element/#grid-placement" title="GridColumn in context on the base element page" aria-label="GridColumn in context on the base element page">🠆</a></h3>
 
@@ -119,7 +119,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="hitrectanglecolor"><span class="prop"><code>HitRectangleColor</code></span> <a class="ctx" href="/docs/ui-base-element/#debug-helpers" title="HitRectangleColor in context on the base element page" aria-label="HitRectangleColor in context on the base element page">🠆</a></h3>
 
-`Color` · The colour of the hit rectangle outline, `White` by default.
+`Color` · The color of the hit rectangle outline, `White` by default.
 
 <h3 id="hittest"><span class="dp"><code>HitTest</code></span> <a class="ctx" href="/docs/ui-base-element/#mouse-and-states-properties" title="HitTest in context on the base element page" aria-label="HitTest in context on the base element page">🠆</a></h3>
 
@@ -235,7 +235,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="resizecontourcolor"><span class="dp"><code>ResizeContourColor</code></span> <a class="ctx" href="/docs/ui-base-element/#resizing" title="ResizeContourColor in context on the base element page" aria-label="ResizeContourColor in context on the base element page">🠆</a></h3>
 
-`Color` · The colour of the contour. `(50, 50, 50, 190)` by default (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultresizecontourcolor">`DefaultSettings.DefaultResizeContourColor`</a>); it fades and darkens with the element.
+`Color` · The color of the contour. `(50, 50, 50, 190)` by default (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultresizecontourcolor">`DefaultSettings.DefaultResizeContourColor`</a>); it fades and darkens with the element.
 
 <h3 id="resizewithelementcontour"><span class="dp"><code>ResizeWithElementContour</code></span> <a class="ctx" href="/docs/ui-base-element/#resizing" title="ResizeWithElementContour in context on the base element page" aria-label="ResizeWithElementContour in context on the base element page">🠆</a></h3>
 

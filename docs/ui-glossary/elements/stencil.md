@@ -5,11 +5,11 @@ title: "Glossary: Stencil"
 description: "The properties, methods and events of Stencil, in alphabetical order."
 ---
 
-Shows a picture through a mask texture: where the mask has the key colour, the picture shows, and the rest of the mask stays. A portrait in a frame is the usual case.
+Shows a picture through a mask texture: where the mask has the key color, the picture shows, and the rest of the mask stays. A portrait in a frame is the usual case.
 
 `Stencil` derives from [`BaseElement`](/docs/ui-glossary/elements/base-element/) and has its members too. The [images page](/docs/ui-images/#stencil) shows it in context, with code and screenshots.
 
-Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
+Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
 
 ## Properties
 
@@ -23,7 +23,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="keycolor"><span class="dp"><code>KeyColor</code></span> <a class="ctx" href="/docs/ui-images/#stencil-properties" title="KeyColor in context on the images page" aria-label="KeyColor in context on the images page">🠆</a></h3>
 
-`Color` · The stencil colour, alpha included, where the source shows through. Defaults to transparent black (`0, 0, 0, 0`).
+`Color` · The stencil color, alpha included, where the source shows through. Defaults to transparent black (`0, 0, 0, 0`).
 
 <h3 id="mousecursorsset"><span class="prop"><code>MouseCursorsSet</code></span> <a class="ctx" href="/docs/ui-base-element/#genericstyleandmousecursorsdata-properties" title="MouseCursorsSet in context on the base element page" aria-label="MouseCursorsSet in context on the base element page">🠆</a></h3>
 
@@ -35,7 +35,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="sourcetexture"><span class="dp"><code>SourceTexture</code></span> <a class="ctx" href="/docs/ui-images/#stencil-properties" title="SourceTexture in context on the images page" aria-label="SourceTexture in context on the images page">🠆</a></h3>
 
-`Texture2D` · The picture that shows where the stencil has the key colour. Not part of <a class="ref" href="/docs/ui-glossary/types/stencil-style/">`StencilStyle`</a>.
+`Texture2D` · The picture that shows where the stencil has the key color. Not part of <a class="ref" href="/docs/ui-glossary/types/stencil-style/">`StencilStyle`</a>.
 
 <h3 id="stenciltexture"><span class="dp"><code>StencilTexture</code></span> <a class="ctx" href="/docs/ui-images/#stencil-properties" title="StencilTexture in context on the images page" aria-label="StencilTexture in context on the images page">🠆</a></h3>
 

@@ -6,7 +6,7 @@ description: What every element has in common, input and states, resizing, the r
 ---
 
 Every element derives from `BaseElement`, so everything on this page applies to all of them: buttons, labels, stack
-panels, windows and your own elements. The other UI pages list only what each element adds. Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>: `Foo` is backed by `FooDP`, which a style, a binding or an animation can
+panels, windows and your own elements. The other UI pages list only what each element adds. Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>: `Foo` is backed by `FooDP`, which a style, a binding or an animation can
 set (see [styles, bindings and animation](/docs/ui-styles/)), and the class has a static `FooDPActions` with the
 property's shared actions and default. Screenshots use the theme from
 [styles](/docs/ui-styles/#the-theme-of-these-pages).
@@ -141,7 +141,7 @@ textures draw them from that folder instead (each element's section says which t
 is drawn darker, and <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#transparency">`Transparency`</a> fades the element together with everything inside it.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/base-transparency.png' | relative_url }}" width="494" height="98" alt="Four sand coloured labels reading 0.00, 0.25, 0.50 and 0.75, each one more faded into the dark background than the one before">
+  <img src="{{ '/assets/img/ui/base-transparency.png' | relative_url }}" width="494" height="98" alt="Four sand colored labels reading 0.00, 0.25, 0.50 and 0.75, each one more faded into the dark background than the one before">
   <figcaption>The same label at a transparency of 0, 0.25, 0.5 and 0.75.</figcaption>
 </figure>
 
@@ -221,13 +221,13 @@ whatever their <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#
 | --- | --- | --- |
 | <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#visibility">`Visibility`</a> | <a class="ref" href="/docs/ui-glossary/types/visibility/">`Visibility`</a> | Whether the element is shown, hidden in its space or collapsed. The default is `Visible`. A hidden element loses the keyboard focus and any mouse state. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#zindex">`ZIndex`</a> | `int` | The element's place among its overlapping siblings: a higher one is drawn above them and gets the mouse first, a lower one (it can be negative) goes below. The default is 0; siblings with the same one keep the order they were added in. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> | `Color` | The colour the element's background is filled with. `Transparent` (the default) fills nothing. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#foregroundcolor">`ForegroundColor`</a> | `Color` | The colour of what the element draws over its background, such as a label's text. An element drawn from textures tints them with it when it is not `Transparent`. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> | `Color` | The color the element's background is filled with. `Transparent` (the default) fills nothing. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#foregroundcolor">`ForegroundColor`</a> | `Color` | The color of what the element draws over its background, such as a label's text. An element drawn from textures tints them with it when it is not `Transparent`. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> | `string` | A content folder with the element's textures, for example <code>UITextures/<a href="/docs/ui-glossary/elements/button/">Button</a>/</code>. A missing trailing path separator is added. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#texturespresent">`TexturesPresent`</a> | `bool` | Read-only. True when <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> is set. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#transparency">`Transparency`</a> | `float` | From 0 (opaque, the default) to 1 (invisible); values outside are clamped. Applies to the element and its subtree, combined with the parents' transparency. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#cropoutsideofparentborder">`CropOutsideOfParentBorder`</a> | `bool` | Clips the element to its parent's bounds. Without it the element may overflow its parent but is still clipped by whatever clips the parent (a scroll view, a window's content area). On by default for every element with a style. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#customeffect">`CustomEffect`</a> | `Effect` | A shader the element draws its background (or texture, an image's picture) with. Setting it sets it on the children as well, and a child added later takes it. An effect with a `ModulationColor` parameter gets the draw colour there. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#customeffect">`CustomEffect`</a> | `Effect` | A shader the element draws its background (or texture, an image's picture) with. Setting it sets it on the children as well, and a child added later takes it. An effect with a `ModulationColor` parameter gets the draw color there. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#predrawaction">`PreDrawAction`</a> | `Action` | Runs before the element and its subtree are drawn, for example to change the sprite batch state. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#postdrawaction">`PostDrawAction`</a> | `Action` | Runs after the element and its subtree are drawn, for example to restore what <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#predrawaction">`PreDrawAction`</a> changed. |
 
@@ -334,7 +334,7 @@ label is hovered; the label with `FromParent` lights up with the title bar. The 
 through as if they were not there, so only the elements you created decide.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/base-states.png' | relative_url }}" width="486" height="74" alt="Three buttons side by side: Normal in sand brown, Hovered in a lighter sand colour, Disabled in a dark brown">
+  <img src="{{ '/assets/img/ui/base-states.png' | relative_url }}" width="486" height="74" alt="Three buttons side by side: Normal in sand brown, Hovered in a lighter sand color, Disabled in a dark brown">
   <figcaption>A button in its normal state, hovered, and disabled.</figcaption>
 </figure>
 
@@ -558,7 +558,7 @@ With <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#resizewith
 the new bounds, and the element is resized there once when the button is released.
 
 <figure class="shot">
-  <img src="{{ '/assets/img/ui/base-resize.png' | relative_url }}" width="348" height="154" alt="The mouse cursor goes to the right edge of a dark panel reading Pull the edges and drags it to the right; a sand coloured contour follows the cursor, and when the button is released the panel takes the contour's width">
+  <img src="{{ '/assets/img/ui/base-resize.png' | relative_url }}" width="348" height="154" alt="The mouse cursor goes to the right edge of a dark panel reading Pull the edges and drags it to the right; a sand colored contour follows the cursor, and when the button is released the panel takes the contour's width">
   <figcaption>The cursor pulls the right edge: the contour follows it, and the panel is resized to the contour on release.</figcaption>
 </figure>
 
@@ -588,7 +588,7 @@ ui.AddElementToRoot(panel);
 | <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#isresizable">`IsResizable`</a> | `bool` | Lets the user resize the element by dragging its edges and corners. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#resizeareahalfwidth">`ResizeAreaHalfWidth`</a> | `int` | How far the resize areas reach to each side of the edges, in units. 3 by default (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultresizeareahalfwidth">`DefaultSettings.DefaultResizeAreaHalfWidth`</a>); negative values are taken as 0. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#resizewithelementcontour">`ResizeWithElementContour`</a> | `bool` | Shows a contour while dragging and resizes the element once on release, instead of resizing it as the mouse moves. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#resizecontourcolor">`ResizeContourColor`</a> | `Color` | The colour of the contour. `(50, 50, 50, 190)` by default (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultresizecontourcolor">`DefaultSettings.DefaultResizeContourColor`</a>); it fades and darkens with the element. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#resizecontourcolor">`ResizeContourColor`</a> | `Color` | The color of the contour. `(50, 50, 50, 190)` by default (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultresizecontourcolor">`DefaultSettings.DefaultResizeContourColor`</a>); it fades and darkens with the element. |
 
 <a class="ref" href="/docs/ui-glossary/types/resize-state/">`ResizeState`</a> names the edge or corner a resize drags; <a class="ref" href="/docs/ui-glossary/types/resize-cursors/">`ResizeCursors`</a> has a cursor set for each one (see
 [styles](/docs/ui-styles/)).
@@ -661,10 +661,10 @@ cells (see [Grid](/docs/ui-layout/#grid)).
 | <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#modalwindowactiveshadetint">`ModalWindowActiveShadeTint`</a> | `Color` | Static. The shade drawn over everything below the top modal window, `(0, 0, 0, 75)` by default. Always drawn, not a debug setting. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#showhitrectangle">`ShowHitRectangle`</a> | `bool` | Outlines the element's hit rectangle: its bounds as clipped by its parents. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#showhitrectanglediagonals">`ShowHitRectangleDiagonals`</a> | `bool` | Adds the diagonals to the hit rectangle outline. |
-| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#hitrectanglecolor">`HitRectangleColor`</a> | `Color` | The colour of the hit rectangle outline, `White` by default. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#hitrectanglecolor">`HitRectangleColor`</a> | `Color` | The color of the hit rectangle outline, `White` by default. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#showactualsizerectangle">`ShowActualSizeRectangle`</a> | `bool` | Outlines the element's <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#bounds">`Bounds`</a>, without clipping. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#showactualsizerectanglediagonals">`ShowActualSizeRectangleDiagonals`</a> | `bool` | Adds the diagonals to the bounds outline. |
-| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#actualsizerectanglecolor">`ActualSizeRectangleColor`</a> | `Color` | The colour of the bounds outline, `Green` by default. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#actualsizerectanglecolor">`ActualSizeRectangleColor`</a> | `Color` | The color of the bounds outline, `Green` by default. |
 
 ## Styles and cursors
 
@@ -703,7 +703,7 @@ control reaches its parts (the scroll bars of a list, the title bar of a window)
 it as `ui.RootElement`; `ui.AddElementToRoot(element)` adds an item to it. It has the size of the game window in
 units (the back buffer size divided by the display scale) and follows the back buffer when the window is resized,
 or takes the size given to `ApplyGameWindowSize`. It can't be resizable and it draws no background of its own, so give a full-screen panel your background
-colour instead.
+color instead.
 
 Above the tree the root draws the popups: the modal windows (with <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#modalwindowactiveshadetint">`ModalWindowActiveShadeTint`</a> under the top one), the
 open drop-down, the open context menu, the tooltip, the dragged representation and the resize contour, in that order

@@ -9,7 +9,7 @@ Bends the pitch by the speeds of the listener and the emitter along the line bet
 
 `DopplerAudioEffect` derives from [`BaseAudioEffect`](/docs/audio-glossary/effects/base-audio-effect/) and has its members too. The [positional sound page](/docs/audio-positional/#doppler) shows it in context, with code.
 
-Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>.
+Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>.
 
 ## Properties
 

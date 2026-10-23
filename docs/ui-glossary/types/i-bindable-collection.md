@@ -9,7 +9,7 @@ An `IEnumerable` that reports its changes. Implement it for a collection of your
 
 An interface. The [styles page](/docs/ui-styles/#ibindablecollection) shows it in context.
 
-Names are coloured by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain colour.
+Names are colored by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain color.
 
 ## Events
 

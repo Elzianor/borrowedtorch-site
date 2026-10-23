@@ -9,7 +9,7 @@ A sound source in the world: a position, a list of clips and a chain of effects.
 
 An interface. The [emitters page](/docs/audio-emitters/#iaudioemitter-properties) shows it in context, with code.
 
-Names are coloured by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain colour.
+Names are colored by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain color.
 
 ## Properties
 

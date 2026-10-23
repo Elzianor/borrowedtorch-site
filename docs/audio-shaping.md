@@ -7,7 +7,7 @@ description: The volume, three-band equaliser, pitch, delay, fade and time posit
 
 These effects change a sound without caring where it is: how loud it is, its tone, its pitch, its echoes, how it starts
 and ends, and where in the clip it plays. Any number of each can sit in a chain, except the time position effect, of
-which an emitter has one. Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>.
+which an emitter has one. Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>.
 
 Every setting can change while the sound plays. The audio thread picks the new value up at the start of its next block
 of samples, a few milliseconds later.

@@ -109,7 +109,7 @@ Two constructor arguments change the defaults:
 
 ### AudioManager properties
 
-Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>.
+Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>.
 
 | Property | Type | Description |
 | --- | --- | --- |

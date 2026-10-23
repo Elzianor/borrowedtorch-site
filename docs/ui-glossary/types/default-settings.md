@@ -11,19 +11,19 @@ A static class. The [styles page](/docs/ui-styles/#default-settings) shows it in
 
 <h3 id="defaultcontextmenubackgroundcolor"><code>DefaultContextMenuBackgroundColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultContextMenuBackgroundColor in context on the styles page" aria-label="DefaultContextMenuBackgroundColor in context on the styles page">🠆</a></h3>
 
-`Color` · Static. The background colour of <a class="ref" href="/docs/ui-glossary/types/context-menu-style/">`ContextMenuStyle`</a>'s default border. Default: `Color.White`.
+`Color` · Static. The background color of <a class="ref" href="/docs/ui-glossary/types/context-menu-style/">`ContextMenuStyle`</a>'s default border. Default: `Color.White`.
 
 <h3 id="defaultcontextmenubordercolor"><code>DefaultContextMenuBorderColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultContextMenuBorderColor in context on the styles page" aria-label="DefaultContextMenuBorderColor in context on the styles page">🠆</a></h3>
 
-`Color` · Static. The border colour of <a class="ref" href="/docs/ui-glossary/types/context-menu-style/">`ContextMenuStyle`</a>'s default border. Default: `new(80, 80, 80, 255)`.
+`Color` · Static. The border color of <a class="ref" href="/docs/ui-glossary/types/context-menu-style/">`ContextMenuStyle`</a>'s default border. Default: `new(80, 80, 80, 255)`.
 
 <h3 id="defaultcontextmenuhighlightcolor"><code>DefaultContextMenuHighlightColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultContextMenuHighlightColor in context on the styles page" aria-label="DefaultContextMenuHighlightColor in context on the styles page">🠆</a></h3>
 
-`Color` · Static. The colour of the hovered and selected rows of <a class="ref" href="/docs/ui-glossary/types/context-menu-style/">`ContextMenuStyle`</a>'s default list style. Default: `new(200, 220, 240, 255)`.
+`Color` · Static. The color of the hovered and selected rows of <a class="ref" href="/docs/ui-glossary/types/context-menu-style/">`ContextMenuStyle`</a>'s default list style. Default: `new(200, 220, 240, 255)`.
 
 <h3 id="defaultcontextmenuiconcolor"><code>DefaultContextMenuIconColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultContextMenuIconColor in context on the styles page" aria-label="DefaultContextMenuIconColor in context on the styles page">🠆</a></h3>
 
-`Color` · Static. The colour of the check and expand icons of <a class="ref" href="/docs/ui-glossary/types/context-menu-style/">`ContextMenuStyle`</a>. Default: `new(80, 80, 80, 255)`.
+`Color` · Static. The color of the check and expand icons of <a class="ref" href="/docs/ui-glossary/types/context-menu-style/">`ContextMenuStyle`</a>. Default: `new(80, 80, 80, 255)`.
 
 <h3 id="defaultdoubleclickintervalms"><code>DefaultDoubleClickIntervalMs</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultDoubleClickIntervalMs in context on the styles page" aria-label="DefaultDoubleClickIntervalMs in context on the styles page">🠆</a></h3>
 
@@ -87,11 +87,11 @@ A static class. The [styles page](/docs/ui-styles/#default-settings) shows it in
 
 <h3 id="defaultwindowbackgroundcolor"><code>DefaultWindowBackgroundColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultWindowBackgroundColor in context on the styles page" aria-label="DefaultWindowBackgroundColor in context on the styles page">🠆</a></h3>
 
-`Color` · Static. The background colour of <a class="ref" href="/docs/ui-glossary/types/window-style/">`WindowStyle`</a>'s default border. Default: `Color.Wheat`.
+`Color` · Static. The background color of <a class="ref" href="/docs/ui-glossary/types/window-style/">`WindowStyle`</a>'s default border. Default: `Color.Wheat`.
 
 <h3 id="defaultwindowbordercolor"><code>DefaultWindowBorderColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultWindowBorderColor in context on the styles page" aria-label="DefaultWindowBorderColor in context on the styles page">🠆</a></h3>
 
-`Color` · Static. The border colour of <a class="ref" href="/docs/ui-glossary/types/window-style/">`WindowStyle`</a>'s default border. Default: `new(80, 80, 80, 255)`.
+`Color` · Static. The border color of <a class="ref" href="/docs/ui-glossary/types/window-style/">`WindowStyle`</a>'s default border. Default: `new(80, 80, 80, 255)`.
 
 <h3 id="defaultwindowborderthickness"><code>DefaultWindowBorderThickness</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultWindowBorderThickness in context on the styles page" aria-label="DefaultWindowBorderThickness in context on the styles page">🠆</a></h3>
 
@@ -99,7 +99,7 @@ A static class. The [styles page](/docs/ui-styles/#default-settings) shows it in
 
 <h3 id="defaultwindowtitlebarcolor"><code>DefaultWindowTitleBarColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultWindowTitleBarColor in context on the styles page" aria-label="DefaultWindowTitleBarColor in context on the styles page">🠆</a></h3>
 
-`Color` · Static. The background colour of a window's default title bar, read when the title bar is created. Default: `Color.LightBlue`.
+`Color` · Static. The background color of a window's default title bar, read when the title bar is created. Default: `Color.LightBlue`.
 
 <h3 id="defaultwindowtitlethickness"><code>DefaultWindowTitleThickness</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultWindowTitleThickness in context on the styles page" aria-label="DefaultWindowTitleThickness in context on the styles page">🠆</a></h3>
 

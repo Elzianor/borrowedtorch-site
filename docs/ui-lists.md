@@ -6,7 +6,7 @@ description: List boxes, combo boxes, tree views and context menus, with selecti
 ---
 
 Every element here has all the properties, events and methods of [`BaseElement`](/docs/ui-base-element/), which the
-tables below don't repeat. Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>: `Foo` is backed by
+tables below don't repeat. Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>: `Foo` is backed by
 `FooDP`, which a style, a binding or an animation can set (see [styles, bindings and animation](/docs/ui-styles/)).
 Screenshots use the theme from [styles](/docs/ui-styles/#the-theme-of-these-pages).
 
@@ -173,9 +173,9 @@ Ctrl and Shift held with these keys work as with clicks in `Multiple` mode.
 | <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#usedualcolors">`UseDualColors`</a> | `bool` | Alternates the background of unselected rows: <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#normalitemcolor">`NormalItemColor`</a> for even indices, <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#alternativeitemcolor">`AlternativeItemColor`</a> for odd ones. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#normalitemcolor">`NormalItemColor`</a> | `Color` | The background of an unselected row (of the even rows with <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#usedualcolors">`UseDualColors`</a>). |
 | <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#alternativeitemcolor">`AlternativeItemColor`</a> | `Color` | The background of the odd unselected rows while <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#usedualcolors">`UseDualColors`</a> is set. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#hoveritemcolor">`HoverItemColor`</a> | `Color?` | The background of the row under the mouse. When `null` the row keeps its normal or selected colour. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#hoveritemcolor">`HoverItemColor`</a> | `Color?` | The background of the row under the mouse. When `null` the row keeps its normal or selected color. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#presseditemcolor">`PressedItemColor`</a> | `Color?` | The background of a row while the left button is pressed on it. When `null` it doesn't change. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#selecteditemcolor">`SelectedItemColor`</a> | `Color?` | The background of a selected row. When `null` a selected row keeps the colour it had. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#selecteditemcolor">`SelectedItemColor`</a> | `Color?` | The background of a selected row. When `null` a selected row keeps the color it had. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#scrollablecontainerstyle">`ScrollableContainerStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/scrollable-container-style/">`ScrollableContainerStyle`</a> | The style of the [scrollable container](/docs/ui-layout/#scrollablecontainer) around the rows, for example its scroll bars and their thickness. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#virtualizationmode">`VirtualizationMode`</a> | <a class="ref" href="/docs/ui-glossary/types/list-box-virtualization-mode/">`ListBoxVirtualizationMode`</a> | Whether every row has an element (`None`, the default) or only the rows around the view (`Fixed`). |
 | <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#itemheight">`ItemHeight`</a> | `int` | The height of every row in `Fixed` mode, in units. `Fixed` mode has no effect while it is 0 or less. |
@@ -253,7 +253,7 @@ its own height back when it leaves the list. A row added with <a class="ref prop
 
 | Method | Description |
 | --- | --- |
-| <span class="method"><code><a href="/docs/ui-glossary/elements/list-box-item/#listboxitem">ListBoxItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> content, <a href="/docs/ui-glossary/elements/list-box/">ListBox</a> parentListBox, string name = null)</code></span> | Creates a row showing the content. `parentListBox` gives the row its colours until it is in a list; from then on the list it is in counts. |
+| <span class="method"><code><a href="/docs/ui-glossary/elements/list-box-item/#listboxitem">ListBoxItem</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> content, <a href="/docs/ui-glossary/elements/list-box/">ListBox</a> parentListBox, string name = null)</code></span> | Creates a row showing the content. `parentListBox` gives the row its colors until it is in a list; from then on the list it is in counts. |
 
 ## ComboBox
 
@@ -313,9 +313,9 @@ already). A selection made in code closes an open list as well.
 | <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#selecteditem">`SelectedItem`</a> | <a class="ref" href="/docs/ui-glossary/elements/list-box-item/">`ListBoxItem`</a> | The selected row, `null` when nothing is selected. Setting it selects that row. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#selectedindex">`SelectedIndex`</a> | `int` | The index of the selected row, `-1` when nothing is selected. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/combo-box/#selectedsource">`SelectedSource`</a> | `object` | Read-only. The <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#itemssource">`ItemsSource`</a> object of the selected row, `null` without one. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#selectionstyle">`SelectionStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> | The style of the image that shows the selected row. The image is only as large as the row's content, so a background colour here lies just behind the chosen value; the combo box's own <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> colours the whole field. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#selectionstyle">`SelectionStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> | The style of the image that shows the selected row. The image is only as large as the row's content, so a background color here lies just behind the chosen value; the combo box's own <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> colors the whole field. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#togglebuttonstyle">`ToggleButtonStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/button-style/">`ButtonStyle`</a> | The style of the [button](/docs/ui-controls/#button) that opens and closes the list, for example its width and text. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#listboxstyle">`ListBoxStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> | The style of the drop-down list, for example its row colours. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#listboxstyle">`ListBoxStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> | The style of the drop-down list, for example its row colors. |
 
 ### ComboBox events
 
@@ -446,10 +446,10 @@ pointing right and one pointing down, at the theme's 10 by 10.
 | <a class="ref prop" href="/docs/ui-glossary/elements/tree-view/#itemstemplate">`ItemsTemplate`</a> | <a class="ref" href="/docs/ui-glossary/types/i-items-template/">`IItemsTemplate`</a> | Makes the element of each object; a label with the object's text when none is set. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#selecteditem">`SelectedItem`</a> | <a class="ref" href="/docs/ui-glossary/elements/tree-view-item/">`TreeViewItem`</a> | The selected item, `null` when nothing is selected. Only an item of this tree can be set; the branches above it are expanded. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/tree-view/#leaves">`Leaves`</a> | <code>IReadOnlyList&lt;<a href="/docs/ui-glossary/elements/tree-view-item/">TreeViewItem</a>&gt;</code> | Read-only. The top-level items. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#listboxstyle">`ListBoxStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> | The style of the list the items are shown in, for example its row colours and scroll bars. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#listboxstyle">`ListBoxStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> | The style of the list the items are shown in, for example its row colors and scroll bars. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#expandiconstyle">`ExpandIconStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> | The style of the expand icon of the items, for example its size and margin. By default an 8 by 8 block, centred, with a margin of 4 before and 6 after it. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#foldediconcolor">`FoldedIconColor`</a> | `Color` | The colour of the icon of a collapsed branch, when the tree view has no textures. By default `(150, 150, 160)`. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#expandediconcolor">`ExpandedIconColor`</a> | `Color` | The colour of the icon of an expanded branch, when the tree view has no textures. By default `(90, 90, 100)`. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#foldediconcolor">`FoldedIconColor`</a> | `Color` | The color of the icon of a collapsed branch, when the tree view has no textures. By default `(150, 150, 160)`. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#expandediconcolor">`ExpandedIconColor`</a> | `Color` | The color of the icon of an expanded branch, when the tree view has no textures. By default `(90, 90, 100)`. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#subitemsshift">`SubItemsShift`</a> | <a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> | How far each level is indented (`Left`) and the space above every row but the first (`Top`), in units. |
 
 ### TreeView events

@@ -9,7 +9,7 @@ An <a class="ref" href="/docs/ui-glossary/types/i-text-input-events/">`ITextInpu
 
 A class. The [quick start guide](/docs/ui/#gamewindowtextinputevents) shows it in context.
 
-Names are coloured by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain colour.
+Names are colored by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain color.
 
 ## Methods
 

@@ -8,7 +8,7 @@ description: Distance attenuation and air absorption, Doppler, HRTF spatialisati
 Three effects place a sound in the world: the distance effect makes it quieter and duller the further it is, the
 Doppler effect bends its pitch while it moves, and the spatial effect makes it come from its direction. Each one
 reads the emitter's <a class="ref prop" href="/docs/audio-glossary/types/i-audio-emitter/#position">`Position`</a> and the [listener](/docs/audio/#the-listener), and follows them when they change. An
-emitter has at most one of each. Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>.
+emitter has at most one of each. Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>.
 
 Positions are in metres: the speed of sound, air absorption and the distances in HRTF data sets all assume it.
 

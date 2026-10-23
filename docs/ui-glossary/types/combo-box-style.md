@@ -9,17 +9,17 @@ The style class of [`ComboBox`](/docs/ui-lists/#combobox): the properties a styl
 
 A class deriving from [`BaseStyle`](/docs/ui-glossary/types/base-style/). The [styles page](/docs/ui-styles/#style-classes) shows it in context.
 
-Names are coloured by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain colour.
+Names are colored by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain color.
 
 ## Properties
 
 <h3 id="listboxstyle"><span class="prop"><code>ListBoxStyle</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-properties" title="ListBoxStyle in context on the lists and menus page" aria-label="ListBoxStyle in context on the lists and menus page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> · The style of the drop-down list, for example its row colours.
+<a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> · The style of the drop-down list, for example its row colors.
 
 <h3 id="selectionstyle"><span class="prop"><code>SelectionStyle</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-properties" title="SelectionStyle in context on the lists and menus page" aria-label="SelectionStyle in context on the lists and menus page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> · The style of the image that shows the selected row. The image is only as large as the row's content, so a background colour here lies just behind the chosen value; the combo box's own <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> colours the whole field.
+<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> · The style of the image that shows the selected row. The image is only as large as the row's content, so a background color here lies just behind the chosen value; the combo box's own <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> colors the whole field.
 
 <h3 id="togglebuttonstyle"><span class="prop"><code>ToggleButtonStyle</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-properties" title="ToggleButtonStyle in context on the lists and menus page" aria-label="ToggleButtonStyle in context on the lists and menus page">🠆</a></h3>
 

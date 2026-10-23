@@ -9,7 +9,7 @@ A box with a text or any element beside it. It works as a check box that turns o
 
 `CheckBox` derives from [`BaseElement`](/docs/ui-glossary/elements/base-element/) and has its members too. The [controls page](/docs/ui-controls/#checkbox) shows it in context, with code and screenshots.
 
-Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
+Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span>, an <span class="kb kb-event">event</span> or a <span class="kb kb-dp">dependency property</span>, which a style, a binding or an animation can set.
 
 ## Properties
 
@@ -19,7 +19,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="checkedsolidcolor"><span class="dp"><code>CheckedSolidColor</code></span> <a class="ctx" href="/docs/ui-controls/#checkbox-properties" title="CheckedSolidColor in context on the controls page" aria-label="CheckedSolidColor in context on the controls page">🠆</a></h3>
 
-`Color` · The colour of the box while it is checked, without textures.
+`Color` · The color of the box while it is checked, without textures.
 
 <h3 id="content"><span class="dp"><code>Content</code></span> <a class="ctx" href="/docs/ui-controls/#checkbox-properties" title="Content in context on the controls page" aria-label="Content in context on the controls page">🠆</a></h3>
 
@@ -71,7 +71,7 @@ Names are coloured by what they are: a <span class="kb kb-prop">plain property</
 
 <h3 id="uncheckedsolidcolor"><span class="dp"><code>UncheckedSolidColor</code></span> <a class="ctx" href="/docs/ui-controls/#checkbox-properties" title="UncheckedSolidColor in context on the controls page" aria-label="UncheckedSolidColor in context on the controls page">🠆</a></h3>
 
-`Color` · The colour of the box while it is unchecked, without textures.
+`Color` · The color of the box while it is unchecked, without textures.
 
 ## Methods
 

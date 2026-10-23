@@ -6,7 +6,7 @@ description: Cached and streaming emitters, clips and file formats, playing, loo
 ---
 
 An emitter is a sound source in the world: a position, a list of clips and a chain of effects. Every emitter belongs to
-the manager that created it and has a name that is unique in it. Names are coloured by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>.
+the manager that created it and has a name that is unique in it. Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>.
 
 ## Creating emitters
 
