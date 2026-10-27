@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 190" width="640" height="190" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="13" text-anchor="middle">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#e9c27a"/>
+    </marker>
+    <marker id="arrow-dim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#a8834a"/>
+    </marker>
+  </defs>
+
+  <!-- the modes -->
+  <g font-family="Consolas, ui-monospace, monospace" fill="#e9c27a" text-anchor="start">
+    <text x="20" y="44">Stop</text>
+    <text x="20" y="112">Loop</text>
+    <text x="20" y="166">PingPong</text>
+  </g>
+  <g fill="#8a7a63" font-size="12" text-anchor="start">
+    <text x="494" y="44">stops at the end</text>
+    <text x="494" y="112">jumps back to the start</text>
+    <text x="494" y="166">turns around at each end</text>
+  </g>
+
+  <!-- Stop: once, then a halt -->
+  <path d="M136 40 C 236 24, 366 56, 460 40" fill="none" stroke="#e9c27a" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="478" y1="30" x2="478" y2="50" stroke="#d9cbb4" stroke-width="2.5"/>
+
+  <!-- Loop: once, then a cut back to the start -->
+  <path d="M136 108 C 236 92, 366 124, 460 108" fill="none" stroke="#e9c27a" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M466 100 C 400 70, 200 70, 136 98" fill="none" stroke="#a8834a" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrow-dim)"/>
+
+  <!-- PingPong: there and back -->
+  <path d="M136 157 C 236 141, 366 173, 460 157" fill="none" stroke="#e9c27a" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M464 167 C 370 183, 240 151, 140 167" fill="none" stroke="#e9c27a" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- the ends -->
+  <g fill="#15100c" stroke="#d9cbb4" stroke-width="1.5">
+    <circle cx="130" cy="40" r="4"/>
+    <circle cx="470" cy="40" r="4"/>
+    <circle cx="130" cy="108" r="4"/>
+    <circle cx="470" cy="108" r="4"/>
+    <circle cx="130" cy="162" r="4"/>
+    <circle cx="470" cy="162" r="4"/>
+  </g>
+  <g fill="#8a7a63" font-size="11">
+    <text x="130" y="62">start</text>
+    <text x="470" y="62">end</text>
+  </g>
+</svg>

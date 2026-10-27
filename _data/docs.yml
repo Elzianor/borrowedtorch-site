@@ -16,7 +16,8 @@
 
 # tree: true makes the group's title the root of a tree that opens on its pages. An article with glossary: names a
 # data file whose entries (each with members) become its subitems: _data/audio_glossary.yml,
-# _data/ui_glossary.yml and _data/randomness_glossary.yml are generated with their glossary pages.
+# _data/ui_glossary.yml, _data/randomness_glossary.yml and _data/camera_glossary.yml are generated with their
+# glossary pages.
 - group: Audio
   tree: true
   articles:
@@ -74,9 +75,28 @@
       url: /docs/randomness-glossary/
       glossary: randomness_glossary
 
+- group: Camera
+  tree: true
+  articles:
+    - title: Quick start guide
+      url: /docs/camera/
+    - title: Pose and projection
+      url: /docs/camera-pose/
+    - title: Picking and large worlds
+      url: /docs/camera-picking/
+    - title: Controllers
+      url: /docs/camera-controllers/
+    - title: Camera paths
+      url: /docs/camera-paths/
+    - title: Path playback
+      url: /docs/camera-playback/
+    - title: Drawing a path
+      url: /docs/camera-drawing/
+    - title: Glossary
+      url: /docs/camera-glossary/
+      glossary: camera_glossary
+
 - group: Systems
   articles:
-    - title: Camera
-      url: /docs/camera/
     - title: Rendering & materials
       url: /docs/rendering/

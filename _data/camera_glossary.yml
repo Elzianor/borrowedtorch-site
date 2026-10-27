@@ -1,0 +1,349 @@
+# The camera glossary in the docs sidebar: generated with the glossary pages, don't edit by hand.
+- title: "Cameras and controllers"
+  url: /docs/camera-glossary/cameras/
+  entries:
+    - title: "Camera"
+      url: /docs/camera-glossary/cameras/camera/
+      members:
+        - title: "Aspect<wbr>Ratio"
+          anchor: aspectratio
+          kind: prop
+        - title: "Controller"
+          anchor: controller
+          kind: prop
+        - title: "Far<wbr>Plane"
+          anchor: farplane
+          kind: prop
+        - title: "Field<wbr>Of<wbr>View<wbr>Degrees"
+          anchor: fieldofviewdegrees
+          kind: prop
+        - title: "Forward"
+          anchor: forward
+          kind: prop
+        - title: "Near<wbr>Plane"
+          anchor: nearplane
+          kind: prop
+        - title: "Offset"
+          anchor: offset
+          kind: prop
+        - title: "Orientation"
+          anchor: orientation
+          kind: prop
+        - title: "Position"
+          anchor: position
+          kind: prop
+        - title: "Projection"
+          anchor: projection
+          kind: prop
+        - title: "Rebased<wbr>Position"
+          anchor: rebasedposition
+          kind: prop
+        - title: "Right"
+          anchor: right
+          kind: prop
+        - title: "Up"
+          anchor: up
+          kind: prop
+        - title: "View"
+          anchor: view
+          kind: prop
+        - title: "Camera()"
+          anchor: camera
+          kind: method
+        - title: "Look<wbr>At()"
+          anchor: lookat
+          kind: method
+        - title: "Screen<wbr>Point<wbr>To<wbr>Ray()"
+          anchor: screenpointtoray
+          kind: method
+        - title: "Update()"
+          anchor: update
+          kind: method
+    - title: "Base<wbr>Camera<wbr>Controller"
+      url: /docs/camera-glossary/cameras/base-camera-controller/
+      members:
+        - title: "Camera"
+          anchor: camera
+          kind: prop
+        - title: "Convergence<wbr>Amount"
+          anchor: convergenceamount
+          kind: field
+        - title: "Apply<wbr>To()"
+          anchor: applyto
+          kind: method
+        - title: "Sync<wbr>From()"
+          anchor: syncfrom
+          kind: method
+        - title: "Update()"
+          anchor: update
+          kind: method
+    - title: "Animated<wbr>Camera<wbr>Controller"
+      url: /docs/camera-glossary/cameras/animated-camera-controller/
+      members:
+        - title: "Duration<wbr>Sec"
+          anchor: durationsec
+          kind: prop
+        - title: "Entry<wbr>Blend<wbr>Duration<wbr>Sec"
+          anchor: entryblenddurationsec
+          kind: prop
+        - title: "Is<wbr>Playing"
+          anchor: isplaying
+          kind: prop
+        - title: "Open<wbr>Path<wbr>Animation<wbr>Mode"
+          anchor: openpathanimationmode
+          kind: prop
+        - title: "Path"
+          anchor: path
+          kind: prop
+        - title: "Path<wbr>Distance"
+          anchor: pathdistance
+          kind: prop
+        - title: "Snap<wbr>To<wbr>Nearest<wbr>On<wbr>Entry"
+          anchor: snaptonearestonentry
+          kind: prop
+        - title: "Animated<wbr>Camera<wbr>Controller()"
+          anchor: animatedcameracontroller
+          kind: method
+        - title: "Add<wbr>Waypoint()"
+          anchor: addwaypoint
+          kind: method
+        - title: "Pause()"
+          anchor: pause
+          kind: method
+        - title: "Play()"
+          anchor: play
+          kind: method
+        - title: "Seek()"
+          anchor: seek
+          kind: method
+        - title: "Seek<wbr>Normalized()"
+          anchor: seeknormalized
+          kind: method
+        - title: "Update()"
+          anchor: update
+          kind: method
+    - title: "Free<wbr>Camera<wbr>Controller"
+      url: /docs/camera-glossary/cameras/free-camera-controller/
+      members:
+        - title: "Axis<wbr>Snap<wbr>Convergence<wbr>Sec"
+          anchor: axissnapconvergencesec
+          kind: prop
+        - title: "Look<wbr>Sensitivity"
+          anchor: looksensitivity
+          kind: prop
+        - title: "Move<wbr>Speed<wbr>Unit<wbr>Sec"
+          anchor: movespeedunitsec
+          kind: prop
+        - title: "Roll<wbr>Speed<wbr>Rad<wbr>Sec"
+          anchor: rollspeedradsec
+          kind: prop
+        - title: "Free<wbr>Camera<wbr>Controller()"
+          anchor: freecameracontroller
+          kind: method
+        - title: "Look()"
+          anchor: look
+          kind: method
+        - title: "Move()"
+          anchor: move
+          kind: method
+        - title: "Roll()"
+          anchor: roll
+          kind: method
+        - title: "Snap<wbr>To()"
+          anchor: snapto
+          kind: method
+        - title: "Update()"
+          anchor: update
+          kind: method
+- title: "Paths"
+  url: /docs/camera-glossary/paths/
+  entries:
+    - title: "Camera<wbr>Path"
+      url: /docs/camera-glossary/paths/camera-path/
+      members:
+        - title: "Closed"
+          anchor: closed
+          kind: prop
+        - title: "Is<wbr>Closed"
+          anchor: isclosed
+          kind: prop
+        - title: "Is<wbr>Visualized"
+          anchor: isvisualized
+          kind: prop
+        - title: "Length"
+          anchor: length
+          kind: prop
+        - title: "Segment<wbr>Count"
+          anchor: segmentcount
+          kind: prop
+        - title: "Visual<wbr>Geometry<wbr>Buffers"
+          anchor: visualgeometrybuffers
+          kind: prop
+        - title: "Visual<wbr>Options"
+          anchor: visualoptions
+          kind: prop
+        - title: "Waypoints"
+          anchor: waypoints
+          kind: prop
+        - title: "World<wbr>Up"
+          anchor: worldup
+          kind: prop
+        - title: "Camera<wbr>Path()"
+          anchor: camerapath
+          kind: method
+        - title: "Add<wbr>Waypoint()"
+          anchor: addwaypoint
+          kind: method
+        - title: "Clear<wbr>Waypoints()"
+          anchor: clearwaypoints
+          kind: method
+        - title: "Closest<wbr>Distance()"
+          anchor: closestdistance
+          kind: method
+        - title: "Get<wbr>Waypoint<wbr>Orientation()"
+          anchor: getwaypointorientation
+          kind: method
+        - title: "Insert<wbr>Waypoint()"
+          anchor: insertwaypoint
+          kind: method
+        - title: "Position<wbr>By<wbr>Path<wbr>Distance()"
+          anchor: positionbypathdistance
+          kind: method
+        - title: "Position<wbr>By<wbr>Path<wbr>Distance<wbr>Normalized()"
+          anchor: positionbypathdistancenormalized
+          kind: method
+        - title: "Rebuild()"
+          anchor: rebuild
+          kind: method
+        - title: "Remove<wbr>Waypoint<wbr>At()"
+          anchor: removewaypointat
+          kind: method
+        - title: "Sample<wbr>By<wbr>Path<wbr>Distance()"
+          anchor: samplebypathdistance
+          kind: method
+        - title: "Sample<wbr>By<wbr>Path<wbr>Distance<wbr>Normalized()"
+          anchor: samplebypathdistancenormalized
+          kind: method
+        - title: "Set<wbr>Waypoint()"
+          anchor: setwaypoint
+          kind: method
+    - title: "Camera<wbr>Path<wbr>Geometry<wbr>Buffers"
+      url: /docs/camera-glossary/paths/camera-path-geometry-buffers/
+      members:
+        - title: "Gizmos"
+          anchor: gizmos
+          kind: field
+        - title: "Polyline"
+          anchor: polyline
+          kind: field
+        - title: "Waypoint<wbr>Gizmos"
+          anchor: waypointgizmos
+          kind: field
+        - title: "Waypoints"
+          anchor: waypoints
+          kind: field
+        - title: "Camera<wbr>Path<wbr>Geometry<wbr>Buffers()"
+          anchor: camerapathgeometrybuffers
+          kind: method
+        - title: "Clear()"
+          anchor: clear
+          kind: method
+    - title: "Camera<wbr>Path<wbr>Gizmo"
+      url: /docs/camera-glossary/paths/camera-path-gizmo/
+      members:
+        - title: "Forward"
+          anchor: forward
+          kind: field
+        - title: "Position"
+          anchor: position
+          kind: field
+        - title: "Right"
+          anchor: right
+          kind: field
+        - title: "Up"
+          anchor: up
+          kind: field
+        - title: "Camera<wbr>Path<wbr>Gizmo()"
+          anchor: camerapathgizmo
+          kind: method
+    - title: "Camera<wbr>Path<wbr>Point"
+      url: /docs/camera-glossary/paths/camera-path-point/
+      members:
+        - title: "Distance<wbr>Units"
+          anchor: distanceunits
+          kind: field
+        - title: "Orientation"
+          anchor: orientation
+          kind: field
+        - title: "Position"
+          anchor: position
+          kind: field
+        - title: "Tangent"
+          anchor: tangent
+          kind: field
+        - title: "Camera<wbr>Path<wbr>Point()"
+          anchor: camerapathpoint
+          kind: method
+    - title: "Camera<wbr>Path<wbr>Visualizer"
+      url: /docs/camera-glossary/paths/camera-path-visualizer/
+      members:
+        - title: "Build()"
+          anchor: build
+          kind: method
+    - title: "Camera<wbr>Path<wbr>Visual<wbr>Options"
+      url: /docs/camera-glossary/paths/camera-path-visual-options/
+      members:
+        - title: "Default"
+          anchor: default
+          kind: prop
+        - title: "Chord<wbr>Tolerance"
+          anchor: chordtolerance
+          kind: field
+        - title: "Gizmo<wbr>Count"
+          anchor: gizmocount
+          kind: field
+        - title: "Is<wbr>Adaptive"
+          anchor: isadaptive
+          kind: field
+        - title: "Max<wbr>Subdivision<wbr>Depth"
+          anchor: maxsubdivisiondepth
+          kind: field
+        - title: "Polyline<wbr>Samples"
+          anchor: polylinesamples
+          kind: field
+    - title: "Camera<wbr>Waypoint"
+      url: /docs/camera-glossary/paths/camera-waypoint/
+      members:
+        - title: "Look<wbr>At<wbr>Target"
+          anchor: lookattarget
+          kind: field
+        - title: "Orientation"
+          anchor: orientation
+          kind: field
+        - title: "Orientation<wbr>Mode"
+          anchor: orientationmode
+          kind: field
+        - title: "Position"
+          anchor: position
+          kind: field
+        - title: "Create<wbr>Fixed()"
+          anchor: createfixed
+          kind: method
+        - title: "Create<wbr>Fixed<wbr>From<wbr>Camera()"
+          anchor: createfixedfromcamera
+          kind: method
+        - title: "Create<wbr>Look<wbr>At<wbr>Target()"
+          anchor: createlookattarget
+          kind: method
+        - title: "Create<wbr>Tangent<wbr>Follow()"
+          anchor: createtangentfollow
+          kind: method
+- title: "Types"
+  url: /docs/camera-glossary/types/
+  groups:
+    - title: "Enums"
+      entries:
+        - title: "Camera<wbr>Animation<wbr>Mode"
+          url: /docs/camera-glossary/types/camera-animation-mode/
+        - title: "Camera<wbr>Waypoint<wbr>Orientation<wbr>Mode"
+          url: /docs/camera-glossary/types/camera-waypoint-orientation-mode/

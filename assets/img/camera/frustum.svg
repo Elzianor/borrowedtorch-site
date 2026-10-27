@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 286" width="640" height="286" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="13" text-anchor="middle">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#a8834a"/>
+    </marker>
+  </defs>
+
+  <!-- what is drawn: between the near and the far plane, inside the field of view (15° each side of forward) -->
+  <polygon points="170,108.6 520,14.8 520,245.2 170,151.4" fill="#e9c27a" fill-opacity=".08"/>
+  <g stroke="#e9c27a" stroke-width="1.5">
+    <line x1="170" y1="108.6" x2="520" y2="14.8"/>
+    <line x1="170" y1="151.4" x2="520" y2="245.2"/>
+  </g>
+  <g stroke="#8a7a63" stroke-dasharray="4 3">
+    <line x1="92" y1="130" x2="170" y2="108.6"/>
+    <line x1="92" y1="130" x2="170" y2="151.4"/>
+  </g>
+  <g stroke="#e9c27a" stroke-width="2.5">
+    <line x1="170" y1="108.6" x2="170" y2="151.4"/>
+    <line x1="520" y1="14.8" x2="520" y2="245.2"/>
+  </g>
+  <text x="350" y="178" fill="#8a7a63" font-size="12">what is drawn</text>
+
+  <!-- the camera and its axes -->
+  <rect x="58" y="118" width="28" height="24" rx="4" fill="#15100c" stroke="#e9c27a"/>
+  <rect x="86" y="124" width="6" height="12" rx="1" fill="#15100c" stroke="#e9c27a"/>
+  <g stroke="#a8834a" stroke-width="1.5" fill="none" marker-end="url(#arrow)">
+    <line x1="92" y1="130" x2="612" y2="130"/>
+    <line x1="72" y1="118" x2="72" y2="66"/>
+  </g>
+  <g fill="#d9cbb4">
+    <text x="574" y="120">Forward, −Z</text>
+    <text x="72" y="56">Up, +Y</text>
+  </g>
+
+  <!-- the field of view -->
+  <path d="M146.1 115.5 A56 56 0 0 1 146.1 144.5" fill="none" stroke="#e9c27a" stroke-width="1.5"/>
+  <line x1="168" y1="74" x2="148" y2="112" stroke="#8a7a63"/>
+  <g font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#e9c27a">
+    <text x="200" y="68">FieldOfViewDegrees</text>
+    <text x="131" y="198">NearPlane</text>
+    <text x="306" y="278">FarPlane</text>
+  </g>
+
+  <!-- the distances of the clip planes -->
+  <g stroke="#8a7a63">
+    <line x1="92" y1="178" x2="170" y2="178"/>
+    <line x1="92" y1="172" x2="92" y2="184"/>
+    <line x1="170" y1="172" x2="170" y2="184"/>
+    <line x1="92" y1="258" x2="520" y2="258"/>
+    <line x1="92" y1="252" x2="92" y2="264"/>
+    <line x1="520" y1="252" x2="520" y2="264"/>
+  </g>
+</svg>
