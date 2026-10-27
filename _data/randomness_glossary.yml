@@ -1,0 +1,100 @@
+# The randomness glossary in the docs sidebar: generated with the glossary pages, don't edit by hand.
+- title: "Random streams"
+  url: /docs/randomness-glossary/streams/
+  entries:
+    - title: "Rng"
+      url: /docs/randomness-glossary/streams/rng/
+      members:
+        - title: "Seed"
+          anchor: seed
+          kind: prop
+        - title: "Rng()"
+          anchor: rng
+          kind: method
+        - title: "Fork()"
+          anchor: fork
+          kind: method
+        - title: "Next<wbr>Bool()"
+          anchor: nextbool
+          kind: method
+        - title: "Next<wbr>Double()"
+          anchor: nextdouble
+          kind: method
+        - title: "Next<wbr>Int()"
+          anchor: nextint
+          kind: method
+        - title: "Next<wbr>UInt()"
+          anchor: nextuint
+          kind: method
+        - title: "Pick()"
+          anchor: pick
+          kind: method
+        - title: "Shuffle()"
+          anchor: shuffle
+          kind: method
+    - title: "Stable<wbr>Hash"
+      url: /docs/randomness-glossary/streams/stable-hash/
+      members:
+        - title: "Combine()"
+          anchor: combine
+          kind: method
+        - title: "Mix()"
+          anchor: mix
+          kind: method
+        - title: "Of()"
+          anchor: of
+          kind: method
+- title: "Noise"
+  url: /docs/randomness-glossary/noise/
+  entries:
+    - title: "Fractal<wbr>Noise"
+      url: /docs/randomness-glossary/noise/fractal-noise/
+      members:
+        - title: "Seed"
+          anchor: seed
+          kind: prop
+        - title: "Settings"
+          anchor: settings
+          kind: prop
+        - title: "Max<wbr>Octaves"
+          anchor: maxoctaves
+          kind: field
+        - title: "Fractal<wbr>Noise()"
+          anchor: fractalnoise
+          kind: method
+        - title: "Sample()"
+          anchor: sample
+          kind: method
+    - title: "Fractal<wbr>Settings"
+      url: /docs/randomness-glossary/noise/fractal-settings/
+      members:
+        - title: "Default"
+          anchor: default
+          kind: prop
+        - title: "Frequency"
+          anchor: frequency
+          kind: prop
+        - title: "Gain"
+          anchor: gain
+          kind: prop
+        - title: "Lacunarity"
+          anchor: lacunarity
+          kind: prop
+        - title: "Octaves"
+          anchor: octaves
+          kind: prop
+    - title: "Gradient<wbr>Noise"
+      url: /docs/randomness-glossary/noise/gradient-noise/
+      members:
+        - title: "Seed"
+          anchor: seed
+          kind: prop
+        - title: "Max<wbr>Coordinate"
+          anchor: maxcoordinate
+          kind: field
+        - title: "Gradient<wbr>Noise()"
+          anchor: gradientnoise
+          kind: method
+        - title: "Sample()"
+          anchor: sample
+          kind: method

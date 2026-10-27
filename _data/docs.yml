@@ -15,8 +15,8 @@
       url: /docs/ecs/
 
 # tree: true makes the group's title the root of a tree that opens on its pages. An article with glossary: names a
-# data file whose entries (each with members) become its subitems: _data/audio_glossary.yml and
-# _data/ui_glossary.yml are generated with their glossary pages.
+# data file whose entries (each with members) become its subitems: _data/audio_glossary.yml,
+# _data/ui_glossary.yml and _data/randomness_glossary.yml are generated with their glossary pages.
 - group: Audio
   tree: true
   articles:
@@ -58,6 +58,21 @@
     - title: Glossary
       url: /docs/ui-glossary/
       glossary: ui_glossary
+
+- group: Randomness
+  tree: true
+  articles:
+    - title: Quick start guide
+      url: /docs/randomness/
+    - title: Random streams
+      url: /docs/randomness-streams/
+    - title: Seeds and forks
+      url: /docs/randomness-forks/
+    - title: Noise
+      url: /docs/randomness-noise/
+    - title: Glossary
+      url: /docs/randomness-glossary/
+      glossary: randomness_glossary
 
 - group: Systems
   articles:
