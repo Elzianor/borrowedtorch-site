@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 250" width="640" height="250" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="13" text-anchor="middle">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#a8834a"/>
+    </marker>
+  </defs>
+
+  <!-- the two spaces -->
+  <g fill="#8a7a63" text-anchor="start">
+    <text x="16" y="72">World space</text>
+    <text x="16" y="196">Each mesh's</text>
+    <text x="16" y="212">own space</text>
+  </g>
+  <line x1="150" y1="152" x2="610" y2="152" stroke="#8a7a63" stroke-dasharray="4 3"/>
+
+  <!-- the scene's tree -->
+  <rect x="290" y="14" width="200" height="44" rx="8" fill="#15100c" stroke="#e9c27a"/>
+  <text x="390" y="33" fill="#e9c27a" font-family="Consolas, ui-monospace, monospace">Tlas</text>
+  <text x="390" y="50" fill="#8a7a63" font-size="11">the scene's tree</text>
+
+  <g stroke="#a8834a" stroke-width="1.5" marker-end="url(#arrow)">
+    <line x1="350" y1="58" x2="232" y2="86"/>
+    <line x1="390" y1="58" x2="382" y2="86"/>
+    <line x1="430" y1="58" x2="528" y2="86"/>
+  </g>
+
+  <!-- the instances: an id, a mesh and a matrix each -->
+  <g fill="#15100c" stroke="#e9c27a">
+    <rect x="150" y="88" width="140" height="44" rx="8"/>
+    <rect x="310" y="88" width="140" height="44" rx="8"/>
+    <rect x="470" y="88" width="140" height="44" rx="8"/>
+  </g>
+  <g fill="#e9c27a">
+    <text x="220" y="107">Crate 1</text>
+    <text x="380" y="107">Crate 2</text>
+    <text x="540" y="107">Barrel</text>
+  </g>
+  <g fill="#8a7a63" font-size="11" font-family="Consolas, ui-monospace, monospace">
+    <text x="220" y="124">id 1 · its matrix</text>
+    <text x="380" y="124">id 2 · its matrix</text>
+    <text x="540" y="124">id 3 · its matrix</text>
+  </g>
+
+  <!-- the meshes, one BLAS each, shared -->
+  <g stroke="#a8834a" stroke-width="1.5" marker-end="url(#arrow)">
+    <line x1="220" y1="134" x2="276" y2="168"/>
+    <line x1="380" y1="134" x2="324" y2="168"/>
+    <line x1="540" y1="134" x2="540" y2="168"/>
+  </g>
+  <g fill="#15100c" stroke="#e9c27a">
+    <rect x="210" y="172" width="180" height="48" rx="8"/>
+    <rect x="470" y="172" width="140" height="48" rx="8"/>
+  </g>
+  <g fill="#e9c27a" font-family="Consolas, ui-monospace, monospace">
+    <text x="300" y="192">MeshBlas</text>
+    <text x="540" y="192">MeshBlas</text>
+  </g>
+  <g fill="#8a7a63" font-size="11">
+    <text x="300" y="209">the crate's triangles</text>
+    <text x="540" y="209">the barrel's</text>
+  </g>
+</svg>

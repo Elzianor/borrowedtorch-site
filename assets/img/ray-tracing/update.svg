@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 250" width="640" height="250" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="13" text-anchor="middle">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#a8834a"/>
+    </marker>
+  </defs>
+
+  <!-- the questions, in the order EndUpdate asks them -->
+  <g fill="#15100c" stroke="#e9c27a">
+    <rect x="20" y="14" width="290" height="50" rx="8"/>
+    <rect x="20" y="94" width="290" height="50" rx="8"/>
+    <rect x="20" y="174" width="290" height="62" rx="8"/>
+  </g>
+  <g fill="#d9cbb4">
+    <text x="165" y="35">Instances added, removed or reordered</text>
+    <text x="165" y="53">since the last update?</text>
+    <text x="165" y="115">Has any instance's box moved?</text>
+    <text x="165" y="197">Refit. Is the root's area past 2×,</text>
+    <text x="165" y="215">or the cost past 1.5×, the last build's?</text>
+  </g>
+  <text x="165" y="133" fill="#8a7a63" font-size="11">a new matrix, or its BLAS refitted</text>
+
+  <!-- what each answer leads to -->
+  <g fill="#15100c" stroke="#e9c27a">
+    <rect x="380" y="22" width="240" height="34" rx="8"/>
+    <rect x="380" y="102" width="240" height="34" rx="8" stroke-opacity=".45"/>
+    <rect x="380" y="168" width="240" height="34" rx="8"/>
+    <rect x="380" y="210" width="240" height="34" rx="8"/>
+  </g>
+  <g fill="#d9cbb4" text-anchor="start">
+    <text x="396" y="44">Rebuild the tree</text>
+    <text x="396" y="124">Nothing to do</text>
+    <text x="396" y="190">Rebuild the tree</text>
+    <text x="396" y="232">Keep the refit</text>
+  </g>
+  <g fill="#e9c27a" text-anchor="end" font-family="Consolas, ui-monospace, monospace" font-size="12">
+    <text x="606" y="44">Rebuilt</text>
+    <text x="606" y="124" fill="#8a7a63">Unchanged</text>
+    <text x="606" y="190">Rebuilt</text>
+    <text x="606" y="232">Refitted</text>
+  </g>
+
+  <g stroke="#a8834a" stroke-width="1.5" marker-end="url(#arrow)">
+    <line x1="312" y1="39" x2="376" y2="39"/>
+    <line x1="312" y1="119" x2="376" y2="119"/>
+    <line x1="312" y1="197" x2="376" y2="186"/>
+    <line x1="312" y1="213" x2="376" y2="226"/>
+    <line x1="165" y1="66" x2="165" y2="90"/>
+    <line x1="165" y1="146" x2="165" y2="170"/>
+  </g>
+  <g fill="#8a7a63" font-size="11">
+    <text x="344" y="32">yes</text>
+    <text x="344" y="112">no</text>
+    <text x="344" y="185">yes</text>
+    <text x="344" y="235">no</text>
+  </g>
+  <g fill="#8a7a63" font-size="11" text-anchor="start">
+    <text x="175" y="82">no</text>
+    <text x="175" y="162">yes</text>
+  </g>
+</svg>

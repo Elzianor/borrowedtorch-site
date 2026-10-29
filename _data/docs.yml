@@ -12,8 +12,8 @@
 # tree: true makes the group's title the root of a tree that opens on its pages. An article with glossary: names a
 # data file whose entries (each with members) become its subitems: _data/ecs_glossary.yml, _data/audio_glossary.yml,
 # _data/ui_glossary.yml, _data/randomness_glossary.yml, _data/camera_glossary.yml,
-# _data/transform_gizmo_glossary.yml, _data/scene_gizmo_glossary.yml, _data/shaping_functions_glossary.yml and
-# _data/monoinput_glossary.yml are generated with their glossary pages.
+# _data/transform_gizmo_glossary.yml, _data/scene_gizmo_glossary.yml, _data/shaping_functions_glossary.yml,
+# _data/monoinput_glossary.yml and _data/ray_tracing_glossary.yml are generated with their glossary pages.
 - group: ECS
   tree: true
   articles:
@@ -178,6 +178,27 @@
     - title: Glossary
       url: /docs/monoinput-glossary/
       glossary: monoinput_glossary
+
+- group: Ray tracing
+  tree: true
+  articles:
+    - title: Quick start guide
+      url: /docs/ray-tracing/
+    - title: Meshes
+      url: /docs/ray-tracing-meshes/
+    - title: The scene
+      url: /docs/ray-tracing-scene/
+    - title: CPU queries
+      url: /docs/ray-tracing-queries/
+    - title: Tracing on the GPU
+      url: /docs/ray-tracing-gpu/
+    - title: The G-buffer
+      url: /docs/ray-tracing-gbuffer/
+    - title: The BVH and performance
+      url: /docs/ray-tracing-bvh/
+    - title: Glossary
+      url: /docs/ray-tracing-glossary/
+      glossary: ray_tracing_glossary
 
 - group: Systems
   articles:

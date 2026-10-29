@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 230" width="640" height="230" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="13" text-anchor="middle">
+  <!-- the triangle: v0, v1, v2 -->
+  <polygon points="110,196 370,196 220,30" fill="#e9c27a" fill-opacity=".08" stroke="#e9c27a" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- the lines of constant U and V through the hit: here U = 0.35, V = 0.3 -->
+  <g stroke="#8a7a63" stroke-dasharray="4 3">
+    <line x1="201" y1="196" x2="272.5" y2="88.1"/>
+    <line x1="143" y1="146.2" x2="325" y2="146.2"/>
+  </g>
+  <g fill="#8a7a63" font-size="11" font-family="Consolas, ui-monospace, monospace" text-anchor="start">
+    <text x="278" y="86">U = 0.35</text>
+    <text x="331" y="150">V = 0.3</text>
+  </g>
+
+  <!-- the hit -->
+  <circle cx="234" cy="146.2" r="4.5" fill="#f28c28"/>
+  <text x="227" y="137" fill="#f28c28" text-anchor="end">hit</text>
+
+  <!-- the corners and their weights -->
+  <g font-family="Consolas, ui-monospace, monospace">
+    <text x="110" y="216" fill="#e9c27a">v0</text>
+    <text x="370" y="216" fill="#e9c27a">v1</text>
+    <text x="220" y="20" fill="#e9c27a">v2</text>
+  </g>
+  <g font-size="11" fill="#d9cbb4">
+    <text x="62" y="200">1 − U − V</text>
+    <text x="398" y="200">U</text>
+    <text x="246" y="34">V</text>
+  </g>
+
+  <!-- the sum -->
+  <g font-family="Consolas, ui-monospace, monospace" fill="#d9cbb4" text-anchor="start">
+    <text x="436" y="64">hit = v0 · (1 − U − V)</text>
+    <text x="479" y="84">+ v1 · U</text>
+    <text x="479" y="104">+ v2 · V</text>
+  </g>
+  <g fill="#8a7a63" font-size="12" text-anchor="start">
+    <text x="436" y="140">U: 0 on the edge v0–v2, 1 at v1</text>
+    <text x="436" y="160">V: 0 on the edge v0–v1, 1 at v2</text>
+    <text x="436" y="190">Inside the triangle, all three</text>
+    <text x="436" y="206">weights are between 0 and 1.</text>
+  </g>
+</svg>

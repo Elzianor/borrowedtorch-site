@@ -1,0 +1,422 @@
+# The ray tracing glossary in the docs sidebar: generated with the glossary pages, don't edit by hand.
+- title: "Meshes and the scene"
+  url: /docs/ray-tracing-glossary/scene/
+  entries:
+    - title: "ITriangle<wbr>Mesh"
+      url: /docs/ray-tracing-glossary/scene/i-triangle-mesh/
+      members:
+        - title: "Triangle<wbr>Count"
+          anchor: trianglecount
+          kind: prop
+        - title: "Get<wbr>Triangle()"
+          anchor: gettriangle
+          kind: method
+    - title: "Mesh<wbr>Blas"
+      url: /docs/ray-tracing-glossary/scene/mesh-blas/
+      members:
+        - title: "Bvh"
+          anchor: bvh
+          kind: prop
+        - title: "Geometry"
+          anchor: geometry
+          kind: prop
+        - title: "Local<wbr>Bounds"
+          anchor: localbounds
+          kind: prop
+        - title: "Triangles"
+          anchor: triangles
+          kind: prop
+        - title: "Version"
+          anchor: version
+          kind: prop
+        - title: "Build()"
+          anchor: build
+          kind: method
+        - title: "Intersect()"
+          anchor: intersect
+          kind: method
+        - title: "Intersect<wbr>Any()"
+          anchor: intersectany
+          kind: method
+        - title: "Refit()"
+          anchor: refit
+          kind: method
+    - title: "Tlas"
+      url: /docs/ray-tracing-glossary/scene/tlas/
+      members:
+        - title: "Bvh"
+          anchor: bvh
+          kind: prop
+        - title: "Flags<wbr>Version"
+          anchor: flagsversion
+          kind: prop
+        - title: "Instance<wbr>Count"
+          anchor: instancecount
+          kind: prop
+        - title: "Instances"
+          anchor: instances
+          kind: prop
+        - title: "Version"
+          anchor: version
+          kind: prop
+        - title: "Tlas()"
+          anchor: tlas
+          kind: method
+        - title: "Add()"
+          anchor: add
+          kind: method
+        - title: "Begin<wbr>Update()"
+          anchor: beginupdate
+          kind: method
+        - title: "End<wbr>Update()"
+          anchor: endupdate
+          kind: method
+        - title: "Intersect()"
+          anchor: intersect
+          kind: method
+        - title: "Intersect<wbr>Any()"
+          anchor: intersectany
+          kind: method
+    - title: "Tlas<wbr>Instance"
+      url: /docs/ray-tracing-glossary/scene/tlas-instance/
+      members:
+        - title: "Blas"
+          anchor: blas
+          kind: field
+        - title: "Flags"
+          anchor: flags
+          kind: field
+        - title: "Instance<wbr>Id"
+          anchor: instanceid
+          kind: field
+        - title: "Is<wbr>Flat"
+          anchor: isflat
+          kind: field
+        - title: "World"
+          anchor: world
+          kind: field
+        - title: "World<wbr>Inverse"
+          anchor: worldinverse
+          kind: field
+    - title: "Tlas<wbr>Update<wbr>Result"
+      url: /docs/ray-tracing-glossary/scene/tlas-update-result/
+    - title: "Ray<wbr>Tracing<wbr>Flags"
+      url: /docs/ray-tracing-glossary/scene/ray-tracing-flags/
+    - title: "Ray<wbr>Hit"
+      url: /docs/ray-tracing-glossary/scene/ray-hit/
+      members:
+        - title: "Has<wbr>Hit"
+          anchor: hashit
+          kind: prop
+        - title: "Distance"
+          anchor: distance
+          kind: field
+        - title: "Instance<wbr>Id"
+          anchor: instanceid
+          kind: field
+        - title: "Instance<wbr>Index"
+          anchor: instanceindex
+          kind: field
+        - title: "Triangle<wbr>Index"
+          anchor: triangleindex
+          kind: field
+        - title: "U"
+          anchor: u
+          kind: field
+        - title: "V"
+          anchor: v
+          kind: field
+        - title: "None()"
+          anchor: none
+          kind: method
+- title: "The GPU and the G-buffer"
+  url: /docs/ray-tracing-glossary/gpu/
+  entries:
+    - title: "Gpu<wbr>Acceleration<wbr>Structure"
+      url: /docs/ray-tracing-glossary/gpu/gpu-acceleration-structure/
+      members:
+        - title: "Blas<wbr>Nodes"
+          anchor: blasnodes
+          kind: prop
+        - title: "Instances"
+          anchor: instances
+          kind: prop
+        - title: "Is<wbr>Disposed"
+          anchor: isdisposed
+          kind: prop
+        - title: "Is<wbr>Ready"
+          anchor: isready
+          kind: prop
+        - title: "Tlas<wbr>Node<wbr>Count"
+          anchor: tlasnodecount
+          kind: prop
+        - title: "Tlas<wbr>Nodes"
+          anchor: tlasnodes
+          kind: prop
+        - title: "Triangles"
+          anchor: triangles
+          kind: prop
+        - title: "Version"
+          anchor: version
+          kind: prop
+        - title: "Gpu<wbr>Acceleration<wbr>Structure()"
+          anchor: gpuaccelerationstructure
+          kind: method
+        - title: "Bind()"
+          anchor: bind
+          kind: method
+        - title: "Dispose()"
+          anchor: dispose
+          kind: method
+        - title: "Upload()"
+          anchor: upload
+          kind: method
+    - title: "GBuffer"
+      url: /docs/ray-tracing-glossary/gpu/g-buffer/
+      members:
+        - title: "Content<wbr>Version"
+          anchor: contentversion
+          kind: prop
+        - title: "Depth"
+          anchor: depth
+          kind: prop
+        - title: "Height"
+          anchor: height
+          kind: prop
+        - title: "Is<wbr>Current"
+          anchor: iscurrent
+          kind: prop
+        - title: "Is<wbr>Disposed"
+          anchor: isdisposed
+          kind: prop
+        - title: "Is<wbr>Ready"
+          anchor: isready
+          kind: prop
+        - title: "Normal"
+          anchor: normal
+          kind: prop
+        - title: "Width"
+          anchor: width
+          kind: prop
+        - title: "GBuffer()"
+          anchor: gbuffer
+          kind: method
+        - title: "Bind<wbr>And<wbr>Clear()"
+          anchor: bindandclear
+          kind: method
+        - title: "Confirm<wbr>Current()"
+          anchor: confirmcurrent
+          kind: method
+        - title: "Dispose()"
+          anchor: dispose
+          kind: method
+        - title: "Invalidate()"
+          anchor: invalidate
+          kind: method
+        - title: "Resize()"
+          anchor: resize
+          kind: method
+        - title: "Unbind()"
+          anchor: unbind
+          kind: method
+    - title: "Gpu<wbr>Instance"
+      url: /docs/ray-tracing-glossary/gpu/gpu-instance/
+      members:
+        - title: "Blas<wbr>Node<wbr>End"
+          anchor: blasnodeend
+          kind: field
+        - title: "Blas<wbr>Node<wbr>Offset"
+          anchor: blasnodeoffset
+          kind: field
+        - title: "Flags"
+          anchor: flags
+          kind: field
+        - title: "Pad"
+          anchor: pad
+          kind: field
+        - title: "World<wbr>Inverse<wbr>W"
+          anchor: worldinversew
+          kind: field
+        - title: "World<wbr>Inverse<wbr>X"
+          anchor: worldinversex
+          kind: field
+        - title: "World<wbr>Inverse<wbr>Y"
+          anchor: worldinversey
+          kind: field
+        - title: "World<wbr>Inverse<wbr>Z"
+          anchor: worldinversez
+          kind: field
+        - title: "Gpu<wbr>Instance()"
+          anchor: gpuinstance
+          kind: method
+    - title: "Gpu<wbr>Triangle"
+      url: /docs/ray-tracing-glossary/gpu/gpu-triangle/
+      members:
+        - title: "Edge1"
+          anchor: edge1
+          kind: field
+        - title: "Edge2"
+          anchor: edge2
+          kind: field
+        - title: "V0"
+          anchor: v0
+          kind: field
+        - title: "Gpu<wbr>Triangle()"
+          anchor: gputriangle
+          kind: method
+- title: "HLSL headers"
+  url: /docs/ray-tracing-glossary/hlsl/
+  entries:
+    - title: "Ray<wbr>Traversal.fxh"
+      url: /docs/ray-tracing-glossary/hlsl/ray-traversal-fxh/
+      members:
+        - title: "Rt<wbr>Node<wbr>Hit()"
+          anchor: rtnodehit
+          kind: method
+        - title: "Rt<wbr>Slab()"
+          anchor: rtslab
+          kind: method
+        - title: "Rt<wbr>Trace<wbr>Any()"
+          anchor: rttraceany
+          kind: method
+        - title: "Rt<wbr>Trace<wbr>Any<wbr>Blas()"
+          anchor: rttraceanyblas
+          kind: method
+        - title: "Rt<wbr>Trace<wbr>Any<wbr>Counted()"
+          anchor: rttraceanycounted
+          kind: method
+        - title: "Rt<wbr>Triangle<wbr>Hit()"
+          anchor: rttrianglehit
+          kind: method
+        - title: "RT_<wbr>FLAG_<wbr>CASTS_<wbr>SHADOW"
+          anchor: rt_flag_casts_shadow
+          kind: field
+        - title: "RT_<wbr>FLAG_<wbr>VISIBLE_<wbr>TO_<wbr>GI"
+          anchor: rt_flag_visible_to_gi
+          kind: field
+        - title: "RT_<wbr>MAX_<wbr>DISTANCE"
+          anchor: rt_max_distance
+          kind: field
+        - title: "RT_<wbr>MIN_<wbr>DISTANCE"
+          anchor: rt_min_distance
+          kind: field
+        - title: "Blas<wbr>Nodes"
+          anchor: blasnodes
+          kind: field
+        - title: "Instances"
+          anchor: instances
+          kind: field
+        - title: "Tlas<wbr>Node<wbr>Count"
+          anchor: tlasnodecount
+          kind: field
+        - title: "Tlas<wbr>Nodes"
+          anchor: tlasnodes
+          kind: field
+        - title: "Triangles"
+          anchor: triangles
+          kind: field
+        - title: "Gpu<wbr>Bvh<wbr>Node"
+          anchor: gpubvhnode
+          kind: field
+        - title: "Gpu<wbr>Instance"
+          anchor: gpuinstance
+          kind: field
+        - title: "Gpu<wbr>Triangle"
+          anchor: gputriangle
+          kind: field
+    - title: "GBuffer.fxh"
+      url: /docs/ray-tracing-glossary/hlsl/g-buffer-fxh/
+      members:
+        - title: "GBuffer<wbr>Pixel<wbr>Of()"
+          anchor: gbufferpixelof
+          kind: method
+        - title: "GBuffer<wbr>View<wbr>Normal()"
+          anchor: gbufferviewnormal
+          kind: method
+        - title: "GBuffer<wbr>View<wbr>Position()"
+          anchor: gbufferviewposition
+          kind: method
+        - title: "GBuffer<wbr>World<wbr>Normal()"
+          anchor: gbufferworldnormal
+          kind: method
+        - title: "GBuffer<wbr>World<wbr>Position()"
+          anchor: gbufferworldposition
+          kind: method
+        - title: "Reduced<wbr>Grid<wbr>Position()"
+          anchor: reducedgridposition
+          kind: method
+- title: "The BVH"
+  url: /docs/ray-tracing-glossary/bvh/
+  entries:
+    - title: "Bvh"
+      url: /docs/ray-tracing-glossary/bvh/bvh/
+      members:
+        - title: "Area<wbr>Cost"
+          anchor: areacost
+          kind: prop
+        - title: "Is<wbr>Empty"
+          anchor: isempty
+          kind: prop
+        - title: "Node<wbr>Count"
+          anchor: nodecount
+          kind: prop
+        - title: "Nodes"
+          anchor: nodes
+          kind: prop
+        - title: "Primitive<wbr>Count"
+          anchor: primitivecount
+          kind: prop
+        - title: "Primitive<wbr>Indices"
+          anchor: primitiveindices
+          kind: prop
+        - title: "Root<wbr>Half<wbr>Surface<wbr>Area"
+          anchor: roothalfsurfacearea
+          kind: prop
+        - title: "Max<wbr>Tree<wbr>Depth"
+          anchor: maxtreedepth
+          kind: field
+        - title: "Bvh()"
+          anchor: bvh
+          kind: method
+        - title: "Build()"
+          anchor: build
+          kind: method
+        - title: "Hits<wbr>Node()"
+          anchor: hitsnode
+          kind: method
+        - title: "Intersect<wbr>Node()"
+          anchor: intersectnode
+          kind: method
+        - title: "Inverse<wbr>Direction()"
+          anchor: inversedirection
+          kind: method
+        - title: "Refit()"
+          anchor: refit
+          kind: method
+        - title: "Skip()"
+          anchor: skip
+          kind: method
+        - title: "Visit<wbr>Right<wbr>First()"
+          anchor: visitrightfirst
+          kind: method
+    - title: "Bvh<wbr>Node"
+      url: /docs/ray-tracing-glossary/bvh/bvh-node/
+      members:
+        - title: "Is<wbr>Leaf"
+          anchor: isleaf
+          kind: prop
+        - title: "Split<wbr>Axis"
+          anchor: splitaxis
+          kind: prop
+        - title: "Max"
+          anchor: max
+          kind: field
+        - title: "Min"
+          anchor: min
+          kind: field
+        - title: "Primitive<wbr>Count"
+          anchor: primitivecount
+          kind: field
+        - title: "Skip<wbr>Or<wbr>First"
+          anchor: skiporfirst
+          kind: field
