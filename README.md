@@ -8,13 +8,17 @@ GitHub Pages builds the site automatically on every push to `main`. There is no 
 | Path | What it is |
 | --- | --- |
 | `index.html` | Home page (torch landing) |
-| `kindling/` | Kindling engine overview |
-| `docs/` | Kindling docs, one Markdown file per article |
+| `kindling/` | Kindling engine section: About (`index.html`, with the road map) and Packages (`packages/`) |
+| `docs/` | Kindling engine docs, the section's third page, one Markdown file per article |
 | `games/` | Games page |
 | `downloads/` | Downloads page: one card per app, from `_data/downloads.yml` |
-| `_layouts/base.html` | Page shell: head, top menu, footer |
+| `_layouts/base.html` | Page shell: head, top menu, section menu, footer |
 | `_layouts/docs.html` | Docs page: sidebar, breadcrumbs, Previous / Next |
-| `_data/nav.yml` | Top menu items |
+| `_includes/section-nav.html` | The section menu under the top menu (About · Packages · Docs) on every Kindling engine page |
+| `_data/nav.yml` | Top menu items, and the pages of the Kindling engine's section menu |
+| `_config.yml` | Its `defaults` put `kindling/` and `docs/` in the Kindling engine section |
+| `_data/roadmap.yml` | The road map on the About page: Done, In progress and Planned |
+| `_data/packages.yml` | The NuGet packages on the Packages page |
 | `_data/docs.yml` | Docs sidebar groups and reading order |
 | `_data/downloads.yml` | The apps on the Downloads page, each with its current release in BorrowedTorch.Downloads |
 | `search.json` | The index of the search box in the top menu (`assets/js/search.js`), made on every build from every page with a title; `search: false` in a page's front matter leaves it out |

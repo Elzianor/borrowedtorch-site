@@ -43,6 +43,9 @@
 <body class="{{ page.body_class }}">
   <a class="skip-link" href="#content">Skip to content</a>
   {% include header.html %}
+  {%- if page.section %}
+  {% include section-nav.html %}
+  {%- endif %}
 
   <main id="content">
 {{ content }}

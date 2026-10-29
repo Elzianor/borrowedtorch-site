@@ -11,6 +11,17 @@ kramdown:
   hard_wrap: false
   syntax_highlighter: rouge
 
+# the folders of the Kindling engine's section: its menu under the top menu and its top menu item lit (_data/nav.yml)
+defaults:
+  - scope:
+      path: kindling
+    values:
+      section: kindling
+  - scope:
+      path: docs
+    values:
+      section: kindling
+
 exclude:
   - README.md
   - Gemfile

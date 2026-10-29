@@ -1,0 +1,31 @@
+{%- comment -%}
+  The menu of a section of the site, under the top menu: the pages of the top menu item whose section is the page's
+  (page.section, given to the section's folders in _config.yml's defaults; the item and its pages in _data/nav.yml). A
+  page of the menu is the current one at its own URL and, but for the section's own page (its About), at the URLs under
+  it too: the Docs item stays lit on every docs article. The variables start with sn_ (an include shares the page's
+  scope).
+{%- endcomment -%}
+{%- assign sn_item = site.data.nav | where: "section", page.section | first -%}
+{%- if sn_item %}
+<nav class="section-nav" aria-label="{{ sn_item.title }}">
+  <div class="section-nav-inner">
+    <span class="section-nav-title">
+      {%- if sn_item.icon %}<img src="{{ sn_item.icon | relative_url }}" alt="" width="22" height="22">{% endif -%}
+      {{ sn_item.title }}
+    </span>
+    <ul>
+      {%- for p in sn_item.pages -%}
+        {%- assign sn_active = false -%}
+        {%- if p.url == sn_item.url -%}
+          {%- if page.url == p.url -%}{%- assign sn_active = true -%}{%- endif -%}
+        {%- else -%}
+          {%- assign sn_len = p.url | size -%}
+          {%- assign sn_prefix = page.url | slice: 0, sn_len -%}
+          {%- if sn_prefix == p.url -%}{%- assign sn_active = true -%}{%- endif -%}
+        {%- endif %}
+      <li><a href="{{ p.url | relative_url }}"{% if sn_active %} aria-current="page"{% endif %}>{{ p.title }}</a></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</nav>
+{%- endif -%}

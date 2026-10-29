@@ -1,4 +1,4 @@
-# Borrowed Torch NuGet packages, shown on the Kindling page.
+# Borrowed Torch NuGet packages, shown on the Kindling engine's Packages page (kindling/packages/).
 # id: NuGet package ID (also builds the link and version badge)
 # needs: optional short requirements line
 - group: Core

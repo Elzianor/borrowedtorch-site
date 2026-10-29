@@ -12,7 +12,7 @@ description: Kindling is Borrowed Torch's in-house game engine, built on MonoGam
       <p class="lead">The in-house engine behind Borrowed Torch games. Built in C# on MonoGame, with a WPF editor for building worlds.</p>
       <div class="actions">
         <a class="button primary" href="{{ '/docs/' | relative_url }}">Read the docs</a>
-        <a class="button" href="#packages">NuGet packages</a>
+        <a class="button" href="{{ '/kindling/packages/' | relative_url }}">NuGet packages</a>
       </div>
     </div>
   </div>
@@ -47,28 +47,23 @@ description: Kindling is Borrowed Torch's in-house game engine, built on MonoGam
     </div>
   </section>
 
-  <section aria-labelledby="packages">
-    <h2 id="packages" class="section-title">Packages</h2>
-    <p class="lead section-lead">Parts of Kindling are already on NuGet as standalone libraries you can use in your own projects. Each card lists what the package needs.</p>
-    {%- for g in site.data.packages %}
-    <h3 class="pkg-group">{{ g.group }}</h3>
-    <div class="card-grid">
-      {%- for p in g.packages %}
-      <a class="card pkg" href="https://www.nuget.org/packages/{{ p.id }}" rel="noopener">
-        <h4>{{ p.id }}</h4>
-        <img class="pkg-badge" src="https://img.shields.io/nuget/v/{{ p.id }}?style=flat-square&amp;label=nuget&amp;color=8a5a2b" alt="Latest version on NuGet" height="20" loading="lazy">
-        <p>{{ p.summary }}</p>
-        {%- if p.needs %}
-        <p class="pkg-needs">{{ p.needs }}</p>
-        {%- endif %}
-      </a>
+  <section aria-labelledby="roadmap">
+    <h2 id="roadmap" class="section-title">Road map</h2>
+    <p class="lead section-lead">Kindling is in active development alongside our first game. The full engine will be made public in the future; until then, its libraries ship on NuGet one by one and the docs grow as the engine does.</p>
+    <ol class="roadmap">
+      {%- for s in site.data.roadmap %}
+      <li class="roadmap-stage roadmap-{{ s.state }}">
+        <h3>{{ s.stage }}</h3>
+        <ul>
+          {%- for i in s.items %}
+          <li>
+            <h4>{% if i.url %}<a href="{{ i.url | relative_url }}">{{ i.title }}</a>{% else %}{{ i.title }}{% endif %}</h4>
+            <p>{{ i.text }}</p>
+          </li>
+          {%- endfor %}
+        </ul>
+      </li>
       {%- endfor %}
-    </div>
-    {%- endfor %}
-  </section>
-
-  <section aria-labelledby="status">
-    <h2 id="status" class="section-title">Status</h2>
-    <p class="lead">Kindling is in active development alongside our first game. The full engine will be made public in the future; until then, its libraries ship on NuGet one by one and the docs grow as the engine does.</p>
+    </ol>
   </section>
 </div>

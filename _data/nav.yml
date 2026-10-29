@@ -1,10 +1,19 @@
 # Top menu. Order here is the order on the site.
+# An item with section: and pages: has a section menu of its own under the top menu, on every page of that section
+# (_includes/section-nav.html). Which folders a section takes in is set in _config.yml's defaults.
 - title: Home
   url: /
-- title: Kindling
+- title: Kindling engine
   url: /kindling/
-- title: Docs
-  url: /docs/
+  section: kindling
+  icon: /kindling-mark.svg
+  pages:
+    - title: About
+      url: /kindling/
+    - title: Packages
+      url: /kindling/packages/
+    - title: Docs
+      url: /docs/
 - title: Games
   url: /games/
 - title: Downloads

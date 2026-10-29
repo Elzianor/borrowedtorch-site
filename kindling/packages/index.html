@@ -1,0 +1,25 @@
+---
+layout: base
+title: Kindling Engine packages
+description: Parts of the Kindling engine on NuGet, as standalone libraries you can use in your own projects.
+---
+<div class="page">
+  <p class="eyebrow">Kindling engine</p>
+  <h1 class="page-title">Packages</h1>
+  <p class="lead">Parts of Kindling are already on NuGet as standalone libraries you can use in your own projects. Each card lists what the package needs.</p>
+  {%- for g in site.data.packages %}
+  <h2 class="pkg-group">{{ g.group }}</h2>
+  <div class="card-grid">
+    {%- for p in g.packages %}
+    <a class="card pkg" href="https://www.nuget.org/packages/{{ p.id }}" rel="noopener">
+      <h3>{{ p.id }}</h3>
+      <img class="pkg-badge" src="https://img.shields.io/nuget/v/{{ p.id }}?style=flat-square&amp;label=nuget&amp;color=8a5a2b" alt="Latest version on NuGet" height="20" loading="lazy">
+      <p>{{ p.summary }}</p>
+      {%- if p.needs %}
+      <p class="pkg-needs">{{ p.needs }}</p>
+      {%- endif %}
+    </a>
+    {%- endfor %}
+  </div>
+  {%- endfor %}
+</div>

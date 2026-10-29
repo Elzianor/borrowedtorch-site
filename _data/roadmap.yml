@@ -1,0 +1,33 @@
+# The road map on the Kindling engine's About page (kindling/index.html), one column per stage in this order. As an
+# item lands, move it to the stage before. state: done, now or next gives the column its colour and its items' marks.
+# url: optional, makes the item's title a link.
+- stage: Done
+  state: done
+  items:
+    - title: Engine core
+      text: The entity component system, the WPF editor, the camera system and the GPU cloth solver.
+    - title: Libraries on NuGet
+      text: Parts of the engine as standalone packages you can use in your own projects.
+      url: /kindling/packages/
+    - title: Library docs
+      text: Guides and glossaries for audio, UI, randomness, the camera, the gizmos and shaping functions.
+      url: /docs/
+
+- stage: In progress
+  state: now
+  items:
+    - title: Raytraced shadows
+      text: Shadows computed with ray tracing.
+    - title: GPU grass
+      text: Grass areas painted in the editor, with blades generated on the GPU and drawn instanced.
+    - title: Getting-started docs
+      text: Installation, the editor, entities and components, and rendering, still drafts.
+    - title: Our first game
+      text: A dungeon crawler, built on Kindling as the engine grows.
+      url: /games/
+
+- stage: Planned
+  state: next
+  items:
+    - title: Kindling made public
+      text: The full engine, released for everyone to build with.
