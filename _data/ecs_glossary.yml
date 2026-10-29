@@ -1,0 +1,138 @@
+# The ECS glossary in the docs sidebar: generated with the glossary pages, don't edit by hand.
+- title: "World and entities"
+  url: /docs/ecs-glossary/world/
+  entries:
+    - title: "ECSWorld"
+      url: /docs/ecs-glossary/world/ecs-world/
+      members:
+        - title: "ECSWorld()"
+          anchor: ecsworld
+          kind: method
+        - title: "Add<wbr>Component()"
+          anchor: addcomponent
+          kind: method
+        - title: "Create<wbr>Entity()"
+          anchor: createentity
+          kind: method
+        - title: "Destroy<wbr>Entity()"
+          anchor: destroyentity
+          kind: method
+        - title: "Get<wbr>Component()"
+          anchor: getcomponent
+          kind: method
+        - title: "Get<wbr>Component<wbr>Types()"
+          anchor: getcomponenttypes
+          kind: method
+        - title: "Has<wbr>Component()"
+          anchor: hascomponent
+          kind: method
+        - title: "Is<wbr>Entity<wbr>Alive()"
+          anchor: isentityalive
+          kind: method
+        - title: "Query()"
+          anchor: query
+          kind: method
+        - title: "Remove<wbr>Component()"
+          anchor: removecomponent
+          kind: method
+    - title: "ECSWorld.Query<wbr>Action"
+      url: /docs/ecs-glossary/world/query-action/
+    - title: "Entity"
+      url: /docs/ecs-glossary/world/entity/
+      members:
+        - title: "Is<wbr>Valid"
+          anchor: isvalid
+          kind: prop
+        - title: "Generation"
+          anchor: generation
+          kind: field
+        - title: "Id"
+          anchor: id
+          kind: field
+        - title: "Invalid"
+          anchor: invalid
+          kind: field
+        - title: "Entity()"
+          anchor: entity
+          kind: method
+        - title: "==()"
+          anchor: equality-operators
+          kind: method
+        - title: "Equals()"
+          anchor: equals
+          kind: method
+        - title: "Get<wbr>Hash<wbr>Code()"
+          anchor: gethashcode
+          kind: method
+        - title: "To<wbr>String()"
+          anchor: tostring
+          kind: method
+    - title: "IEntity"
+      url: /docs/ecs-glossary/world/i-entity/
+    - title: "ISystem"
+      url: /docs/ecs-glossary/world/i-system/
+- title: "Components and stores"
+  url: /docs/ecs-glossary/components/
+  entries:
+    - title: "IComponent"
+      url: /docs/ecs-glossary/components/i-component/
+    - title: "Component<wbr>Store&lt;T&gt;"
+      url: /docs/ecs-glossary/components/component-store/
+      members:
+        - title: "Component<wbr>Type"
+          anchor: componenttype
+          kind: prop
+        - title: "Components"
+          anchor: components
+          kind: prop
+        - title: "Count"
+          anchor: count
+          kind: prop
+        - title: "Entities"
+          anchor: entities
+          kind: prop
+        - title: "Component<wbr>Store()"
+          anchor: componentstore
+          kind: method
+        - title: "Get()"
+          anchor: get
+          kind: method
+        - title: "Has()"
+          anchor: has
+          kind: method
+        - title: "Index<wbr>Of()"
+          anchor: indexof
+          kind: method
+        - title: "Remove()"
+          anchor: remove
+          kind: method
+        - title: "Set()"
+          anchor: set
+          kind: method
+    - title: "IComponent<wbr>Store"
+      url: /docs/ecs-glossary/components/i-component-store/
+      members:
+        - title: "Component<wbr>Type"
+          anchor: componenttype
+          kind: prop
+        - title: "Count"
+          anchor: count
+          kind: prop
+        - title: "Get<wbr>Boxed()"
+          anchor: getboxed
+          kind: method
+        - title: "Has()"
+          anchor: has
+          kind: method
+        - title: "Remove()"
+          anchor: remove
+          kind: method
+        - title: "Set<wbr>Boxed()"
+          anchor: setboxed
+          kind: method
+    - title: "Component<wbr>Defaults"
+      url: /docs/ecs-glossary/components/component-defaults/
+      members:
+        - title: "Create()"
+          anchor: create
+          kind: method

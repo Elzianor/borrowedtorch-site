@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 190" width="640" height="190" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="13" text-anchor="middle">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#a8834a"/>
+    </marker>
+  </defs>
+
+  <g fill="#8a7a63" text-anchor="start">
+    <text x="16" y="58">Before</text>
+    <text x="16" y="144">After</text>
+  </g>
+
+  <!-- before: entity 1's component is removed, entity 5's is the last -->
+  <g font-family="Consolas, ui-monospace, monospace" font-size="12">
+    <rect x="130" y="36" width="110" height="34" rx="6" fill="#15100c" stroke="#e9c27a" stroke-opacity=".45"/>
+    <text x="185" y="58" fill="#d9cbb4">Entity 3</text>
+    <rect x="254" y="36" width="110" height="34" rx="6" fill="none" stroke="#f28c28" stroke-dasharray="4 3"/>
+    <text x="309" y="58" fill="#f28c28">Entity 1</text>
+    <rect x="378" y="36" width="110" height="34" rx="6" fill="#15100c" stroke="#e9c27a" stroke-opacity=".45"/>
+    <text x="433" y="58" fill="#d9cbb4">Entity 6</text>
+    <rect x="502" y="36" width="110" height="34" rx="6" fill="#15100c" stroke="#e9c27a"/>
+    <text x="557" y="58" fill="#e9c27a">Entity 5</text>
+  </g>
+  <text x="309" y="24" fill="#f28c28" font-size="11">removed</text>
+  <text x="557" y="24" fill="#8a7a63" font-size="11">the last</text>
+
+  <!-- the last moves into the hole -->
+  <path d="M557 72 C 540 100, 326 100, 311 76" fill="none" stroke="#a8834a" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="433" y="108" fill="#8a7a63" font-size="11">moves into the hole, its component with it</text>
+
+  <!-- after: still packed, one shorter -->
+  <g font-family="Consolas, ui-monospace, monospace" font-size="12">
+    <rect x="130" y="122" width="110" height="34" rx="6" fill="#15100c" stroke="#e9c27a" stroke-opacity=".45"/>
+    <text x="185" y="144" fill="#d9cbb4">Entity 3</text>
+    <rect x="254" y="122" width="110" height="34" rx="6" fill="#15100c" stroke="#e9c27a"/>
+    <text x="309" y="144" fill="#e9c27a">Entity 5</text>
+    <rect x="378" y="122" width="110" height="34" rx="6" fill="#15100c" stroke="#e9c27a" stroke-opacity=".45"/>
+    <text x="433" y="144" fill="#d9cbb4">Entity 6</text>
+    <rect x="502" y="122" width="110" height="34" rx="6" fill="none" stroke="#8a7a63" stroke-dasharray="4 3"/>
+    <text x="557" y="144" fill="#8a7a63">past Count</text>
+  </g>
+  <text x="371" y="180" fill="#8a7a63" font-size="11" font-family="Consolas, ui-monospace, monospace">sparse[5] = 1 · sparse[1] = −1 · Count = 3</text>
+</svg>

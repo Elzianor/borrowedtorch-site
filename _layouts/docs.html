@@ -215,7 +215,9 @@ layout: base
         <a href="{{ '/docs/' | relative_url }}">Docs</a>
         {%- if idx >= 0 and page.url != '/docs/' %} / {{ doc_groups[idx] }}{% endif %}
       </p>
-      <h1>{{ page.title }}{{ title_badge }}{% if page.status == 'draft' %} <span class="pill flame">Draft</span>{% endif %}</h1>
+      {%- comment %} a qualified name, such as a delegate's IAudioEmitter.StateChanged, may break after its dot on a narrow
+      screen {% endcomment %}
+      <h1>{{ page.title | replace: ".", ".<wbr>" }}{{ title_badge }}{% if page.status == 'draft' %} <span class="pill flame">Draft</span>{% endif %}</h1>
       {%- if page.description %}
       <p class="lead">{{ page.description }}</p>
       {%- endif %}

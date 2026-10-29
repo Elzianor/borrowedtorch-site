@@ -9,16 +9,30 @@
     - title: Editor basics
       url: /docs/editor/
 
-- group: Core
-  articles:
-    - title: Entities & components
-      url: /docs/ecs/
-
 # tree: true makes the group's title the root of a tree that opens on its pages. An article with glossary: names a
-# data file whose entries (each with members) become its subitems: _data/audio_glossary.yml,
+# data file whose entries (each with members) become its subitems: _data/ecs_glossary.yml, _data/audio_glossary.yml,
 # _data/ui_glossary.yml, _data/randomness_glossary.yml, _data/camera_glossary.yml,
 # _data/transform_gizmo_glossary.yml, _data/scene_gizmo_glossary.yml and _data/shaping_functions_glossary.yml are
 # generated with their glossary pages.
+- group: ECS
+  tree: true
+  articles:
+    - title: Quick start guide
+      url: /docs/ecs/
+    - title: Entities
+      url: /docs/ecs-entities/
+    - title: Components
+      url: /docs/ecs-components/
+    - title: Systems and queries
+      url: /docs/ecs-queries/
+    - title: Type-erased access
+      url: /docs/ecs-type-erased/
+    - title: Storage and performance
+      url: /docs/ecs-storage/
+    - title: Glossary
+      url: /docs/ecs-glossary/
+      glossary: ecs_glossary
+
 - group: Audio
   tree: true
   articles:

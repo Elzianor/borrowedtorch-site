@@ -30,7 +30,7 @@ audio.TryRemoveEmitter("door");
 ```
 
 <a class="ref prop" href="/docs/audio-glossary/types/audio-manager/#emittersversion">`EmittersVersion`</a> changes whenever an emitter is added or removed, so code that keeps emitter references, such as an
-ECS component, can tell when to look them up again.
+[ECS component](/docs/ecs-components/), can tell when to look them up again.
 
 ## Cached and streaming
 
