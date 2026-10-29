@@ -35,7 +35,7 @@ dotnet add package BorrowedTorch.Audio
 | .NET | 10 (`net10.0`) |
 | Operating system | Windows: the output goes through WASAPI |
 | Audio libraries | NAudio 3.3.0 and NVorbis 0.10.5, installed with the package |
-| Borrowed Torch packages | `BorrowedTorch.ShapingFunctions` 1.6.1 for attenuation curves and fade shapes, and `BorrowedTorch.Math` 0.2.2, installed with the package |
+| Borrowed Torch packages | [`BorrowedTorch.ShapingFunctions`](/docs/shaping-functions/) 1.6.1 for attenuation curves and fade shapes, and `BorrowedTorch.Math` 0.2.2, installed with the package |
 
 The package also carries a default HRTF data set inside the assembly, so spatial sound works without any extra files.
 

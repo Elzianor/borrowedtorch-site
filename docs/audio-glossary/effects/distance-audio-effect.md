@@ -19,7 +19,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <h3 id="distancecutoffattenuationfunction"><span class="prop"><code>DistanceCutoffAttenuationFunction</code></span> <a class="ctx" href="/docs/audio-positional/#distanceaudioeffect-properties" title="DistanceCutoffAttenuationFunction in context on the positional sound page" aria-label="DistanceCutoffAttenuationFunction in context on the positional sound page">→</a></h3>
 
-`BaseShapingFunction` · Turns how close the emitter is into the low-pass cutoff, from <a class="ref prop" href="/docs/audio-glossary/effects/distance-audio-effect/#distanceminimumcutoffhz">`DistanceMinimumCutoffHz`</a> at 0 to <a class="ref prop" href="/docs/audio-glossary/effects/distance-audio-effect/#distancemaximumcutoffhz">`DistanceMaximumCutoffHz`</a> at 1. `null` sets the default straight line.
+<a class="ref" href="/docs/shaping-functions-glossary/types/base-shaping-function/">`BaseShapingFunction`</a> · Turns how close the emitter is into the low-pass cutoff, from <a class="ref prop" href="/docs/audio-glossary/effects/distance-audio-effect/#distanceminimumcutoffhz">`DistanceMinimumCutoffHz`</a> at 0 to <a class="ref prop" href="/docs/audio-glossary/effects/distance-audio-effect/#distancemaximumcutoffhz">`DistanceMaximumCutoffHz`</a> at 1. `null` sets the default straight line.
 
 <h3 id="distancemaximumcutoffhz"><span class="prop"><code>DistanceMaximumCutoffHz</code></span> <a class="ctx" href="/docs/audio-positional/#distanceaudioeffect-properties" title="DistanceMaximumCutoffHz in context on the positional sound page" aria-label="DistanceMaximumCutoffHz in context on the positional sound page">→</a></h3>
 
@@ -31,7 +31,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <h3 id="distancevolumeattenuationfunction"><span class="prop"><code>DistanceVolumeAttenuationFunction</code></span> <a class="ctx" href="/docs/audio-positional/#distanceaudioeffect-properties" title="DistanceVolumeAttenuationFunction in context on the positional sound page" aria-label="DistanceVolumeAttenuationFunction in context on the positional sound page">→</a></h3>
 
-`BaseShapingFunction` · Turns how close the emitter is, 1 at the listener to 0 at the audible distance, into the gain. `null` sets the default straight line.
+<a class="ref" href="/docs/shaping-functions-glossary/types/base-shaping-function/">`BaseShapingFunction`</a> · Turns how close the emitter is, 1 at the listener to 0 at the audible distance, into the gain. `null` sets the default straight line.
 
 <h3 id="isdemomode"><span class="prop"><code>IsDemoMode</code></span> <a class="ctx" href="/docs/audio-positional/#distanceaudioeffect-properties" title="IsDemoMode in context on the positional sound page" aria-label="IsDemoMode in context on the positional sound page">→</a></h3>
 

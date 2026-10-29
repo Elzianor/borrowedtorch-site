@@ -1,0 +1,216 @@
+# The shaping functions glossary in the docs sidebar: generated with the glossary pages, don't edit by hand.
+- title: "Functions"
+  url: /docs/shaping-functions-glossary/functions/
+  groups:
+    - title: "Back"
+      entries:
+        - title: "Back<wbr>Ease<wbr>In"
+          url: /docs/shaping-functions-glossary/functions/back-ease-in/
+        - title: "Back<wbr>Ease<wbr>In<wbr>Out"
+          url: /docs/shaping-functions-glossary/functions/back-ease-in-out/
+        - title: "Back<wbr>Ease<wbr>Out"
+          url: /docs/shaping-functions-glossary/functions/back-ease-out/
+    - title: "Bezier"
+      entries:
+        - title: "Bezier<wbr>Cubic"
+          url: /docs/shaping-functions-glossary/functions/bezier-cubic/
+        - title: "Bezier<wbr>Quadratic"
+          url: /docs/shaping-functions-glossary/functions/bezier-quadratic/
+    - title: "Bounce"
+      entries:
+        - title: "Bounce<wbr>Ease<wbr>In"
+          url: /docs/shaping-functions-glossary/functions/bounce-ease-in/
+        - title: "Bounce<wbr>Ease<wbr>In<wbr>Out"
+          url: /docs/shaping-functions-glossary/functions/bounce-ease-in-out/
+        - title: "Bounce<wbr>Ease<wbr>Out"
+          url: /docs/shaping-functions-glossary/functions/bounce-ease-out/
+    - title: "Circular"
+      entries:
+        - title: "Circular<wbr>Double<wbr>Seat"
+          url: /docs/shaping-functions-glossary/functions/circular-double-seat/
+        - title: "Circular<wbr>Double<wbr>Sigmoid"
+          url: /docs/shaping-functions-glossary/functions/circular-double-sigmoid/
+        - title: "Circular<wbr>Ease<wbr>In"
+          url: /docs/shaping-functions-glossary/functions/circular-ease-in/
+        - title: "Circular<wbr>Ease<wbr>In<wbr>Out"
+          url: /docs/shaping-functions-glossary/functions/circular-ease-in-out/
+        - title: "Circular<wbr>Ease<wbr>Out"
+          url: /docs/shaping-functions-glossary/functions/circular-ease-out/
+    - title: "Elastic"
+      entries:
+        - title: "Elastic<wbr>Ease<wbr>In"
+          url: /docs/shaping-functions-glossary/functions/elastic-ease-in/
+        - title: "Elastic<wbr>Ease<wbr>In<wbr>Out"
+          url: /docs/shaping-functions-glossary/functions/elastic-ease-in-out/
+        - title: "Elastic<wbr>Ease<wbr>Out"
+          url: /docs/shaping-functions-glossary/functions/elastic-ease-out/
+    - title: "Elliptical"
+      entries:
+        - title: "Elliptical<wbr>Double<wbr>Seat"
+          url: /docs/shaping-functions-glossary/functions/elliptical-double-seat/
+        - title: "Elliptical<wbr>Double<wbr>Sigmoid"
+          url: /docs/shaping-functions-glossary/functions/elliptical-double-sigmoid/
+    - title: "Exponential"
+      entries:
+        - title: "Exponential<wbr>Double<wbr>Seat"
+          url: /docs/shaping-functions-glossary/functions/exponential-double-seat/
+        - title: "Exponential<wbr>Ease<wbr>In"
+          url: /docs/shaping-functions-glossary/functions/exponential-ease-in/
+        - title: "Exponential<wbr>Ease<wbr>In<wbr>Out"
+          url: /docs/shaping-functions-glossary/functions/exponential-ease-in-out/
+        - title: "Exponential<wbr>Ease<wbr>Out"
+          url: /docs/shaping-functions-glossary/functions/exponential-ease-out/
+        - title: "Logistic<wbr>Sigmoid"
+          url: /docs/shaping-functions-glossary/functions/logistic-sigmoid/
+    - title: "Linear"
+      entries:
+        - title: "Linear"
+          url: /docs/shaping-functions-glossary/functions/linear/
+    - title: "Quadratic"
+      entries:
+        - title: "Quadratic<wbr>Ease<wbr>In"
+          url: /docs/shaping-functions-glossary/functions/quadratic-ease-in/
+        - title: "Quadratic<wbr>Ease<wbr>In<wbr>Out"
+          url: /docs/shaping-functions-glossary/functions/quadratic-ease-in-out/
+        - title: "Quadratic<wbr>Ease<wbr>Out"
+          url: /docs/shaping-functions-glossary/functions/quadratic-ease-out/
+        - title: "Quadratic<wbr>Through<wbr>AGiven<wbr>Point"
+          url: /docs/shaping-functions-glossary/functions/quadratic-through-a-given-point/
+    - title: "Cubic"
+      entries:
+        - title: "Cubic<wbr>Double<wbr>Seat"
+          url: /docs/shaping-functions-glossary/functions/cubic-double-seat/
+        - title: "Cubic<wbr>Ease<wbr>In"
+          url: /docs/shaping-functions-glossary/functions/cubic-ease-in/
+        - title: "Cubic<wbr>Ease<wbr>In<wbr>Out"
+          url: /docs/shaping-functions-glossary/functions/cubic-ease-in-out/
+        - title: "Cubic<wbr>Ease<wbr>Out"
+          url: /docs/shaping-functions-glossary/functions/cubic-ease-out/
+    - title: "Quartic"
+      entries:
+        - title: "Quartic<wbr>Ease<wbr>In"
+          url: /docs/shaping-functions-glossary/functions/quartic-ease-in/
+        - title: "Quartic<wbr>Ease<wbr>In<wbr>Out"
+          url: /docs/shaping-functions-glossary/functions/quartic-ease-in-out/
+        - title: "Quartic<wbr>Ease<wbr>Out"
+          url: /docs/shaping-functions-glossary/functions/quartic-ease-out/
+    - title: "Quintic"
+      entries:
+        - title: "Quintic<wbr>Ease<wbr>In"
+          url: /docs/shaping-functions-glossary/functions/quintic-ease-in/
+        - title: "Quintic<wbr>Ease<wbr>In<wbr>Out"
+          url: /docs/shaping-functions-glossary/functions/quintic-ease-in-out/
+        - title: "Quintic<wbr>Ease<wbr>Out"
+          url: /docs/shaping-functions-glossary/functions/quintic-ease-out/
+    - title: "Hexic"
+      entries:
+        - title: "Blinn<wbr>Wyvill<wbr>Cosine<wbr>Approximation"
+          url: /docs/shaping-functions-glossary/functions/blinn-wyvill-cosine-approximation/
+    - title: "NOrder"
+      entries:
+        - title: "Double<wbr>Odd<wbr>Polynomial<wbr>Seat"
+          url: /docs/shaping-functions-glossary/functions/double-odd-polynomial-seat/
+        - title: "Double<wbr>Polynomial<wbr>Sigmoid"
+          url: /docs/shaping-functions-glossary/functions/double-polynomial-sigmoid/
+    - title: "Sine"
+      entries:
+        - title: "Sine<wbr>Ease<wbr>In"
+          url: /docs/shaping-functions-glossary/functions/sine-ease-in/
+        - title: "Sine<wbr>Ease<wbr>In<wbr>Out"
+          url: /docs/shaping-functions-glossary/functions/sine-ease-in-out/
+        - title: "Sine<wbr>Ease<wbr>Out"
+          url: /docs/shaping-functions-glossary/functions/sine-ease-out/
+- title: "Types"
+  url: /docs/shaping-functions-glossary/types/
+  entries:
+    - title: "Base<wbr>Shaping<wbr>Function"
+      url: /docs/shaping-functions-glossary/types/base-shaping-function/
+      members:
+        - title: "Category"
+          anchor: category
+          kind: prop
+        - title: "Has<wbr>Variable<wbr>Order"
+          anchor: hasvariableorder
+          kind: prop
+        - title: "Id"
+          anchor: id
+          kind: prop
+        - title: "Name"
+          anchor: name
+          kind: prop
+        - title: "Order"
+          anchor: order
+          kind: prop
+        - title: "Parameter<wbr>Count"
+          anchor: parametercount
+          kind: prop
+        - title: "Parametric"
+          anchor: parametric
+          kind: prop
+        - title: "Parameter<wbr>Epsilon"
+          anchor: parameterepsilon
+          kind: field
+        - title: "Base<wbr>Shaping<wbr>Function()"
+          anchor: baseshapingfunction
+          kind: method
+        - title: "Calculate<wbr>Core()"
+          anchor: calculatecore
+          kind: method
+        - title: "Calculate<wbr>Output()"
+          anchor: calculateoutput
+          kind: method
+        - title: "Clamp<wbr>Parameter()"
+          anchor: clampparameter
+          kind: method
+    - title: "Shaping<wbr>Function<wbr>Catalog"
+      url: /docs/shaping-functions-glossary/types/shaping-function-catalog/
+      members:
+        - title: "Get<wbr>Categories()"
+          anchor: getcategories
+          kind: method
+        - title: "Get<wbr>Functions()"
+          anchor: getfunctions
+          kind: method
+    - title: "Shaping<wbr>Function<wbr>Category"
+      url: /docs/shaping-functions-glossary/types/shaping-function-category/
+    - title: "Shaping<wbr>Function<wbr>Factory"
+      url: /docs/shaping-functions-glossary/types/shaping-function-factory/
+      members:
+        - title: "Create()"
+          anchor: create
+          kind: method
+    - title: "Shaping<wbr>Function<wbr>Id"
+      url: /docs/shaping-functions-glossary/types/shaping-function-id/
+- title: "Parameters"
+  url: /docs/shaping-functions-glossary/parameters/
+  entries:
+    - title: "IOne<wbr>Parameter"
+      url: /docs/shaping-functions-glossary/parameters/i-one-parameter/
+      members:
+        - title: "A"
+          anchor: a
+          kind: prop
+    - title: "ITwo<wbr>Parameters"
+      url: /docs/shaping-functions-glossary/parameters/i-two-parameters/
+      members:
+        - title: "B"
+          anchor: b
+          kind: prop
+    - title: "IThree<wbr>Parameters"
+      url: /docs/shaping-functions-glossary/parameters/i-three-parameters/
+      members:
+        - title: "C"
+          anchor: c
+          kind: prop
+    - title: "IFour<wbr>Parameters"
+      url: /docs/shaping-functions-glossary/parameters/i-four-parameters/
+      members:
+        - title: "D"
+          anchor: d
+          kind: prop
+    - title: "INOrder"
+      url: /docs/shaping-functions-glossary/parameters/i-n-order/
+      members:
+        - title: "N"
+          anchor: n
+          kind: prop

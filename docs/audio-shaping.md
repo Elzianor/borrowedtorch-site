@@ -164,7 +164,7 @@ fade.FadeOutFunction = ShapingFunctionFactory.Create(ShapingFunctionId.SineEaseI
 ```
 
 Each fade takes at most half of the clip, so a short clip fades in and straight out again. Both durations are 0 by
-default: no fade. The shape of a fade is a shaping function from `BorrowedTorch.ShapingFunctions`, a straight line by
+default: no fade. The shape of a fade is a [shaping function](/docs/shaping-functions/) from `BorrowedTorch.ShapingFunctions`, a straight line by
 default: it gets how far the fade has come, from 0 to 1, and gives the gain. The fade out runs the same shape backwards.
 
 A fade belongs to the clip, not to <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#pause">`Pause`</a> or <a class="ref method" href="/docs/audio-glossary/types/i-audio-emitter/#stop">`Stop`</a>, which act at once. To fade a sound out on demand, move a volume
@@ -179,8 +179,8 @@ effect's `Volume` down over a few frames, then stop it.
 | --- | --- | --- |
 | <a class="ref prop" href="/docs/audio-glossary/effects/fade-in-out-audio-effect/#fadeindurationms">`FadeInDurationMs`</a> | `float` | How long each clip fades in from its start, at most half the clip. Negative values are taken as 0. 0 by default: no fade in. |
 | <a class="ref prop" href="/docs/audio-glossary/effects/fade-in-out-audio-effect/#fadeoutdurationms">`FadeOutDurationMs`</a> | `float` | How long each clip fades out before its end, at most half the clip. Negative values are taken as 0. 0 by default: no fade out. |
-| <a class="ref prop" href="/docs/audio-glossary/effects/fade-in-out-audio-effect/#fadeinfunction">`FadeInFunction`</a> | `BaseShapingFunction` | Turns how far the fade in has come, 0 to 1, into the gain. `null` sets the default straight line. |
-| <a class="ref prop" href="/docs/audio-glossary/effects/fade-in-out-audio-effect/#fadeoutfunction">`FadeOutFunction`</a> | `BaseShapingFunction` | The same for the fade out, which runs it from 1 back to 0. `null` sets the default straight line. |
+| <a class="ref prop" href="/docs/audio-glossary/effects/fade-in-out-audio-effect/#fadeinfunction">`FadeInFunction`</a> | <a class="ref" href="/docs/shaping-functions-glossary/types/base-shaping-function/">`BaseShapingFunction`</a> | Turns how far the fade in has come, 0 to 1, into the gain. `null` sets the default straight line. |
+| <a class="ref prop" href="/docs/audio-glossary/effects/fade-in-out-audio-effect/#fadeoutfunction">`FadeOutFunction`</a> | <a class="ref" href="/docs/shaping-functions-glossary/types/base-shaping-function/">`BaseShapingFunction`</a> | The same for the fade out, which runs it from 1 back to 0. `null` sets the default straight line. |
 | <a class="ref prop" href="/docs/audio-glossary/effects/fade-in-out-audio-effect/#fadingstate">`FadingState`</a> | <a class="ref" href="/docs/audio-glossary/types/fading-states/">`FadingStates`</a> | Read-only. Whether the last block of sound was fading in, fading out, or neither. |
 
 #### `FadingStates`

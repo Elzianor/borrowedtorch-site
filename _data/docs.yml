@@ -17,7 +17,8 @@
 # tree: true makes the group's title the root of a tree that opens on its pages. An article with glossary: names a
 # data file whose entries (each with members) become its subitems: _data/audio_glossary.yml,
 # _data/ui_glossary.yml, _data/randomness_glossary.yml, _data/camera_glossary.yml,
-# _data/transform_gizmo_glossary.yml and _data/scene_gizmo_glossary.yml are generated with their glossary pages.
+# _data/transform_gizmo_glossary.yml, _data/scene_gizmo_glossary.yml and _data/shaping_functions_glossary.yml are
+# generated with their glossary pages.
 - group: Audio
   tree: true
   articles:
@@ -127,6 +128,23 @@
     - title: Glossary
       url: /docs/scene-gizmo-glossary/
       glossary: scene_gizmo_glossary
+
+- group: Shaping functions
+  tree: true
+  articles:
+    - title: Quick start guide
+      url: /docs/shaping-functions/
+    - title: The curves
+      url: /docs/shaping-functions-curves/
+    - title: Parameters
+      url: /docs/shaping-functions-parameters/
+    - title: Catalog and IDs
+      url: /docs/shaping-functions-catalog/
+    - title: Custom functions
+      url: /docs/shaping-functions-custom/
+    - title: Glossary
+      url: /docs/shaping-functions-glossary/
+      glossary: shaping_functions_glossary
 
 - group: Systems
   articles:

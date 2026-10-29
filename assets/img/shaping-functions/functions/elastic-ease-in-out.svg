@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 244 355" width="244" height="355" font-family="Inter, 'Segoe UI', system-ui, sans-serif">
+  <g stroke="#e9c27a" stroke-opacity=".09" stroke-width="1"><line x1="82" y1="275.7" x2="82" y2="75.7"/><line x1="32" y1="225.7" x2="232" y2="225.7"/><line x1="132" y1="275.7" x2="132" y2="75.7"/><line x1="32" y1="175.7" x2="232" y2="175.7"/><line x1="182" y1="275.7" x2="182" y2="75.7"/><line x1="32" y1="125.7" x2="232" y2="125.7"/></g>
+  <rect x="32" y="75.7" width="200" height="200" fill="none" stroke="#e9c27a" stroke-opacity=".3" stroke-width="1"/>
+  <line x1="32" y1="275.7" x2="232" y2="75.7" stroke="#8a7a63" stroke-opacity=".7" stroke-width="1" stroke-dasharray="3 4"/>
+  <g font-size="11" fill="#8a7a63"><text x="32" y="344.3" text-anchor="middle">0</text><text x="26" y="279.7" text-anchor="end">0</text><text x="132" y="344.3" text-anchor="middle">0.5</text><text x="26" y="179.7" text-anchor="end">0.5</text><text x="232" y="344.3" text-anchor="middle">1</text><text x="26" y="79.7" text-anchor="end">1</text></g>
+  <polyline points="32,275.7 49,275.5 54.7,275.8 65.3,276.6 70.4,276.6 73.6,276.2 76.8,275.4 85.3,271.9 87.7,271.1 90.1,270.7 92.3,271 94,271.7 95.7,272.9 97.3,274.5 99,276.7 102,281.9 107.8,293.8 110.1,297.5 111.3,298.7 112.4,299.3 113.4,299.2 114.4,298.5 115.4,297.2 116.3,295.3 118.1,289.5 119.8,281.3 121.6,269.9 124.5,245.9 130.3,189.3 134,159.4 139,110.1 141.3,89.8 143.1,76.6 144.8,66.8 146.6,59.3 148.4,54.5 149.6,52.8 150.8,52 152.1,52.2 153.5,53.4 154.7,54.9 156.1,57.3 162,69.4 165,74.6 166.7,76.9 168.3,78.5 170,79.7 171.8,80.4 174,80.6 176.4,80.3 178.8,79.4 187.2,76 190.4,75.2 193.6,74.7 198.7,74.7 209.3,75.6 215,75.8 232,75.7" fill="none" stroke="#e9c27a" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="112.8" cy="299.3" r="3.5" fill="#e9c27a" stroke="#100c09" stroke-width="2"/>
+  <text x="112.8" y="315.3" font-size="11" fill="#d9cbb4" text-anchor="middle">−0.12</text>
+  <circle cx="151.2" cy="52" r="3.5" fill="#e9c27a" stroke="#100c09" stroke-width="2"/>
+  <text x="151.2" y="43" font-size="11" fill="#d9cbb4" text-anchor="middle">1.12</text>
+</svg>

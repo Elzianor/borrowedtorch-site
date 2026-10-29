@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 406 238" width="406" height="238" font-family="Inter, 'Segoe UI', system-ui, sans-serif">
+  <text x="32" y="15" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#d9cbb4" text-anchor="start">DoubleOddPolynomialSeat</text>
+  <g stroke="#e9c27a" stroke-opacity=".09" stroke-width="1"><line x1="69.5" y1="176" x2="69.5" y2="26"/><line x1="32" y1="138.5" x2="182" y2="138.5"/><line x1="107" y1="176" x2="107" y2="26"/><line x1="32" y1="101" x2="182" y2="101"/><line x1="144.5" y1="176" x2="144.5" y2="26"/><line x1="32" y1="63.5" x2="182" y2="63.5"/></g>
+  <rect x="32" y="26" width="150" height="150" fill="none" stroke="#e9c27a" stroke-opacity=".3" stroke-width="1"/>
+  <line x1="32" y1="176" x2="182" y2="26" stroke="#8a7a63" stroke-opacity=".7" stroke-width="1" stroke-dasharray="3 4"/>
+  <g font-size="11" fill="#8a7a63"><text x="32" y="191" text-anchor="middle">0</text><text x="26" y="180" text-anchor="end">0</text><text x="107" y="191" text-anchor="middle">0.5</text><text x="26" y="105" text-anchor="end">0.5</text><text x="182" y="191" text-anchor="middle">1</text><text x="26" y="30" text-anchor="end">1</text></g>
+  <polyline points="32,176 36.3,163.9 40.6,153 45,143.3 49.6,134.6 54.3,126.9 59.1,120.5 64.2,115 69.3,110.5 73.6,107.6 78.1,105.3 82.8,103.5 88,102.2 92.4,101.6 97.3,101.2 113.5,101 119.5,100.7 125.3,99.9 130.6,98.7 135.9,96.7 140.9,94.1 145.7,90.7 150.3,86.6 154.6,81.9 158.8,76.4 162.9,70 166.8,62.9 170.8,54.9 174.6,46.1 178.3,36.5 182,26" fill="none" stroke="#8f6c3c" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round"/>
+  <polyline points="32,176 35,162.2 38.1,149.9 41.5,139.2 45,130 48.6,122.4 52.6,116 54.6,113.4 56.8,111.1 59.1,109 61.5,107.2 65.2,105 69.3,103.4 73.9,102.3 79.2,101.5 90.1,101 127.3,100.9 133.9,100.6 139.2,99.9 144.5,98.7 149.2,96.8 153.4,94.2 157.2,90.9 160.9,86.6 164.4,81.3 167.7,75 170.8,67.5 173.8,59.1 176.6,49.4 179.4,38.2 182,26" fill="none" stroke="#d1a65f" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round"/>
+  <polyline points="32,176 33.7,161.8 35.6,149.2 37.5,138.5 39.6,129.5 41.9,122 44.3,116 47,111.1 50,107.3 52.9,105 56.2,103.3 60,102.1 64.8,101.4 76.1,101 134.6,101 145.4,100.8 150.4,100.5 154.4,99.8 157.7,98.8 160.6,97.3 162.6,95.9 164.4,94.3 166.1,92.2 167.7,89.9 169.2,87.1 170.6,84 173.2,76.5 175.7,66.9 177.9,55.5 180.1,41.8 182,26" fill="none" stroke="#f6e2b8" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="107" cy="101" r="3.5" fill="#8f6c3c" stroke="#100c09" stroke-width="2"/>
+  <circle cx="107" cy="101" r="3.5" fill="#d1a65f" stroke="#100c09" stroke-width="2"/>
+  <circle cx="107" cy="101" r="3.5" fill="#f6e2b8" stroke="#100c09" stroke-width="2"/>
+  <line x1="32" y1="210" x2="48" y2="210" stroke="#8f6c3c" stroke-width="2" stroke-linecap="round"/>
+  <text x="54" y="214" font-size="11" fill="#d9cbb4">N = 1</text>
+  <line x1="92.6" y1="210" x2="108.6" y2="210" stroke="#d1a65f" stroke-width="2" stroke-linecap="round"/>
+  <text x="114.6" y="214" font-size="11" fill="#d9cbb4">N = 2</text>
+  <line x1="153.2" y1="210" x2="169.2" y2="210" stroke="#f6e2b8" stroke-width="2" stroke-linecap="round"/>
+  <text x="175.2" y="214" font-size="11" fill="#d9cbb4">N = 4</text>
+  <text x="244" y="15" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#d9cbb4" text-anchor="start">DoublePolynomialSigmoid</text>
+  <g stroke="#e9c27a" stroke-opacity=".09" stroke-width="1"><line x1="281.5" y1="176" x2="281.5" y2="26"/><line x1="244" y1="138.5" x2="394" y2="138.5"/><line x1="319" y1="176" x2="319" y2="26"/><line x1="244" y1="101" x2="394" y2="101"/><line x1="356.5" y1="176" x2="356.5" y2="26"/><line x1="244" y1="63.5" x2="394" y2="63.5"/></g>
+  <rect x="244" y="26" width="150" height="150" fill="none" stroke="#e9c27a" stroke-opacity=".3" stroke-width="1"/>
+  <line x1="244" y1="176" x2="394" y2="26" stroke="#8a7a63" stroke-opacity=".7" stroke-width="1" stroke-dasharray="3 4"/>
+  <g font-size="11" fill="#8a7a63"><text x="244" y="191" text-anchor="middle">0</text><text x="238" y="180" text-anchor="end">0</text><text x="319" y="191" text-anchor="middle">0.5</text><text x="238" y="105" text-anchor="end">0.5</text><text x="394" y="191" text-anchor="middle">1</text><text x="238" y="30" text-anchor="end">1</text></g>
+  <polyline points="244,176 394,26" fill="none" stroke="#86663a" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round"/>
+  <polyline points="244,176 248.7,175.7 253.4,174.8 258.1,173.3 262.8,171.3 267.5,168.7 272.1,165.5 276.8,161.7 281.5,157.2 286.5,151.9 291.6,145.8 296.6,139 301.7,131.6 306.5,124 311.3,115.7 324.6,90.3 332.1,77 336.6,69.9 341.2,63.2 345.7,57.1 350.3,51.5 355.8,45.5 361.2,40.3 366.7,35.9 372.2,32.4 377.6,29.6 383.1,27.6 388.5,26.4 394,26" fill="none" stroke="#b48b4f" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round"/>
+  <polyline points="244,176 255.8,176 262.8,175.7 268.7,175.1 273.8,174.1 278.6,172.6 283.1,170.4 287.4,167.6 291.2,164.2 295.5,159.3 299.6,153.4 303.5,146.3 307.1,138.3 310.5,129.6 313.8,119.7 316.8,109.6 322.8,87.1 325.4,78.6 328,71 331.3,62.6 334.7,55.4 338.2,49 341.9,43.5 346.2,38.3 350.8,34.3 353.2,32.6 355.8,31.1 358.4,29.8 361.1,28.8 366.8,27.3 373.3,26.4 381,26.1 394,26" fill="none" stroke="#dcb46c" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round"/>
+  <polyline points="244,176 269.6,175.9 275.7,175.6 280.6,175 285.3,173.9 289.4,172.3 293.1,170.1 296.4,167.3 298.4,165.1 300.2,162.8 303.6,157.2 306.7,150.4 309.7,142.1 312.4,132.8 315,121.9 317.3,110.8 321.9,85.4 323.9,76.1 326,67.8 328.6,59 331.4,51.2 334.4,44.8 337.6,39.6 341.2,35.1 343.1,33.3 345.1,31.8 347.3,30.4 349.5,29.3 354.6,27.6 359.8,26.7 366.4,26.2 394,26" fill="none" stroke="#f7e5bd" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round"/>
+  <line x1="244" y1="210" x2="260" y2="210" stroke="#86663a" stroke-width="2" stroke-linecap="round"/>
+  <text x="266" y="214" font-size="11" fill="#d9cbb4">N = 1</text>
+  <line x1="304.6" y1="210" x2="320.6" y2="210" stroke="#b48b4f" stroke-width="2" stroke-linecap="round"/>
+  <text x="326.6" y="214" font-size="11" fill="#d9cbb4">N = 2</text>
+  <line x1="365.2" y1="210" x2="381.2" y2="210" stroke="#dcb46c" stroke-width="2" stroke-linecap="round"/>
+  <text x="387.2" y="214" font-size="11" fill="#d9cbb4">N = 4</text>
+  <line x1="244" y1="228" x2="260" y2="228" stroke="#f7e5bd" stroke-width="2" stroke-linecap="round"/>
+  <text x="266" y="232" font-size="11" fill="#d9cbb4">N = 6</text>
+</svg>

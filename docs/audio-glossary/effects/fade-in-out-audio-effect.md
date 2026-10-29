@@ -19,7 +19,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <h3 id="fadeinfunction"><span class="prop"><code>FadeInFunction</code></span> <a class="ctx" href="/docs/audio-shaping/#fadeinoutaudioeffect-properties" title="FadeInFunction in context on the volume, tone and time page" aria-label="FadeInFunction in context on the volume, tone and time page">→</a></h3>
 
-`BaseShapingFunction` · Turns how far the fade in has come, 0 to 1, into the gain. `null` sets the default straight line.
+<a class="ref" href="/docs/shaping-functions-glossary/types/base-shaping-function/">`BaseShapingFunction`</a> · Turns how far the fade in has come, 0 to 1, into the gain. `null` sets the default straight line.
 
 <h3 id="fadeoutdurationms"><span class="prop"><code>FadeOutDurationMs</code></span> <a class="ctx" href="/docs/audio-shaping/#fadeinoutaudioeffect-properties" title="FadeOutDurationMs in context on the volume, tone and time page" aria-label="FadeOutDurationMs in context on the volume, tone and time page">→</a></h3>
 
@@ -27,7 +27,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <h3 id="fadeoutfunction"><span class="prop"><code>FadeOutFunction</code></span> <a class="ctx" href="/docs/audio-shaping/#fadeinoutaudioeffect-properties" title="FadeOutFunction in context on the volume, tone and time page" aria-label="FadeOutFunction in context on the volume, tone and time page">→</a></h3>
 
-`BaseShapingFunction` · The same for the fade out, which runs it from 1 back to 0. `null` sets the default straight line.
+<a class="ref" href="/docs/shaping-functions-glossary/types/base-shaping-function/">`BaseShapingFunction`</a> · The same for the fade out, which runs it from 1 back to 0. `null` sets the default straight line.
 
 <h3 id="fadingstate"><span class="prop"><code>FadingState</code></span> <a class="ctx" href="/docs/audio-shaping/#fadeinoutaudioeffect-properties" title="FadingState in context on the volume, tone and time page" aria-label="FadingState in context on the volume, tone and time page">→</a></h3>
 

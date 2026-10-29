@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 244 348" width="244" height="348" font-family="Inter, 'Segoe UI', system-ui, sans-serif">
+  <g stroke="#e9c27a" stroke-opacity=".09" stroke-width="1"><line x1="82" y1="272" x2="82" y2="72"/><line x1="32" y1="222" x2="232" y2="222"/><line x1="132" y1="272" x2="132" y2="72"/><line x1="32" y1="172" x2="232" y2="172"/><line x1="182" y1="272" x2="182" y2="72"/><line x1="32" y1="122" x2="232" y2="122"/></g>
+  <rect x="32" y="72" width="200" height="200" fill="none" stroke="#e9c27a" stroke-opacity=".3" stroke-width="1"/>
+  <line x1="32" y1="272" x2="232" y2="72" stroke="#8a7a63" stroke-opacity=".7" stroke-width="1" stroke-dasharray="3 4"/>
+  <g font-size="11" fill="#8a7a63"><text x="32" y="337.1" text-anchor="middle">0</text><text x="26" y="276" text-anchor="end">0</text><text x="132" y="337.1" text-anchor="middle">0.5</text><text x="26" y="176" text-anchor="end">0.5</text><text x="232" y="337.1" text-anchor="middle">1</text><text x="26" y="76" text-anchor="end">1</text></g>
+  <polyline points="32,272 34.5,272.2 37.1,272.7 39.8,273.4 42.6,274.5 48.8,277.6 61.8,285.6 67.4,288.6 70.5,290 73.3,291 76,291.6 78.5,292 81.7,292 84.7,291.5 87.6,290.5 90.4,288.9 93.1,286.9 95.8,284.3 98.4,281.2 101,277.5 103.5,273.3 105.9,268.7 108.3,263.4 110.6,257.8 115.2,244.6 119.6,229.5 123.2,215.2 126.8,199 129.8,183.9 135.2,155 139.2,135.9 143.7,117.2 148.3,101 150.7,93.7 153.2,86.8 155.7,80.6 158.3,75 160.9,70.1 163.6,65.7 166.3,62 169.1,58.8 171.3,56.8 173.5,55.2 175.8,53.9 178.2,52.9 180.6,52.3 183.1,52 185.6,52.1 188.3,52.5 192.9,53.8 198,56.2 202.9,58.9 214.6,66.1 220.7,69.2 223.7,70.4 226.6,71.3 229.4,71.9 232,72" fill="none" stroke="#e9c27a" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="80.1" cy="292.1" r="3.5" fill="#e9c27a" stroke="#100c09" stroke-width="2"/>
+  <text x="80.1" y="308.1" font-size="11" fill="#d9cbb4" text-anchor="middle">−0.1</text>
+  <circle cx="183.9" cy="52" r="3.5" fill="#e9c27a" stroke="#100c09" stroke-width="2"/>
+  <text x="183.9" y="43" font-size="11" fill="#d9cbb4" text-anchor="middle">1.1</text>
+</svg>

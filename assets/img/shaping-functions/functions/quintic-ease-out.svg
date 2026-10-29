@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 244 252" width="244" height="252" font-family="Inter, 'Segoe UI', system-ui, sans-serif">
+  <g stroke="#e9c27a" stroke-opacity=".09" stroke-width="1"><line x1="82" y1="226" x2="82" y2="26"/><line x1="32" y1="176" x2="232" y2="176"/><line x1="132" y1="226" x2="132" y2="26"/><line x1="32" y1="126" x2="232" y2="126"/><line x1="182" y1="226" x2="182" y2="26"/><line x1="32" y1="76" x2="232" y2="76"/></g>
+  <rect x="32" y="26" width="200" height="200" fill="none" stroke="#e9c27a" stroke-opacity=".3" stroke-width="1"/>
+  <line x1="32" y1="226" x2="232" y2="26" stroke="#8a7a63" stroke-opacity=".7" stroke-width="1" stroke-dasharray="3 4"/>
+  <g font-size="11" fill="#8a7a63"><text x="32" y="241" text-anchor="middle">0</text><text x="26" y="230" text-anchor="end">0</text><text x="132" y="241" text-anchor="middle">0.5</text><text x="26" y="130" text-anchor="end">0.5</text><text x="232" y="241" text-anchor="middle">1</text><text x="26" y="30" text-anchor="end">1</text></g>
+  <polyline points="32,226 35.5,209.1 39.1,192.9 42.7,177.9 46.4,163.6 50.2,150.1 54,137.7 57.9,126 61.9,115 66,104.8 70.2,95.3 74.5,86.6 79,78.4 83.6,71 88.3,64.3 93.2,58.2 98.3,52.7 103,48.3 107.9,44.4 113,40.9 118.3,37.9 123.8,35.3 129.7,33 135.9,31.1 142.6,29.6 149,28.5 156,27.6 163.7,26.9 172.2,26.5 192.1,26.1 232,26" fill="none" stroke="#e9c27a" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>
