@@ -13,7 +13,8 @@
 # data file whose entries (each with members) become its subitems: _data/ecs_glossary.yml, _data/audio_glossary.yml,
 # _data/ui_glossary.yml, _data/randomness_glossary.yml, _data/camera_glossary.yml,
 # _data/transform_gizmo_glossary.yml, _data/scene_gizmo_glossary.yml, _data/shaping_functions_glossary.yml,
-# _data/monoinput_glossary.yml and _data/ray_tracing_glossary.yml are generated with their glossary pages.
+# _data/monoinput_glossary.yml, _data/input_binder_glossary.yml and _data/ray_tracing_glossary.yml are generated with
+# their glossary pages.
 - group: ECS
   tree: true
   articles:
@@ -178,6 +179,25 @@
     - title: Glossary
       url: /docs/monoinput-glossary/
       glossary: monoinput_glossary
+
+- group: Input binder
+  tree: true
+  articles:
+    - title: Quick start guide
+      url: /docs/input-binder/
+    - title: Actions
+      url: /docs/input-binder-actions/
+    - title: Inputs
+      url: /docs/input-binder-inputs/
+    - title: Binding and rebinding
+      url: /docs/input-binder-binding/
+    - title: Updating every frame
+      url: /docs/input-binder-update/
+    - title: Modifier keys
+      url: /docs/input-binder-modifiers/
+    - title: Glossary
+      url: /docs/input-binder-glossary/
+      glossary: input_binder_glossary
 
 - group: Ray tracing
   tree: true

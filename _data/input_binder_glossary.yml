@@ -1,0 +1,227 @@
+# The input binder glossary in the docs sidebar: generated with the glossary pages, don't edit by hand.
+- title: "The binder"
+  url: /docs/input-binder-glossary/binder/
+  entries:
+    - title: "Input<wbr>Binder"
+      url: /docs/input-binder-glossary/binder/input-binder/
+      members:
+        - title: "Actions"
+          anchor: actions
+          kind: prop
+        - title: "Input<wbr>Bindings<wbr>Per<wbr>Action"
+          anchor: inputbindingsperaction
+          kind: prop
+        - title: "Input<wbr>Binder()"
+          anchor: inputbinder
+          kind: method
+        - title: "Get<wbr>Action()"
+          anchor: getaction
+          kind: method
+        - title: "Register<wbr>Action()"
+          anchor: registeraction
+          kind: method
+        - title: "Register<wbr>Action<wbr>Range()"
+          anchor: registeractionrange
+          kind: method
+        - title: "Register<wbr>Button<wbr>Action()"
+          anchor: registerbuttonaction
+          kind: method
+        - title: "Register<wbr>One<wbr>Axis<wbr>Action()"
+          anchor: registeroneaxisaction
+          kind: method
+        - title: "Register<wbr>Two<wbr>Axes<wbr>Action()"
+          anchor: registertwoaxesaction
+          kind: method
+        - title: "Unregister<wbr>Action()"
+          anchor: unregisteraction
+          kind: method
+        - title: "Update()"
+          anchor: update
+          kind: method
+    - title: "Registered<wbr>Action<wbr>Handle"
+      url: /docs/input-binder-glossary/binder/registered-action-handle/
+      members:
+        - title: "Description"
+          anchor: description
+          kind: prop
+        - title: "Inputs"
+          anchor: inputs
+          kind: prop
+        - title: "Name"
+          anchor: name
+          kind: prop
+        - title: "Representation"
+          anchor: representation
+          kind: prop
+        - title: "Type"
+          anchor: type
+          kind: prop
+        - title: "Bind()"
+          anchor: bind
+          kind: method
+        - title: "Get<wbr>Input()"
+          anchor: getinput
+          kind: method
+        - title: "Unbind()"
+          anchor: unbind
+          kind: method
+        - title: "With<wbr>Default<wbr>Binding()"
+          anchor: withdefaultbinding
+          kind: method
+    - title: "Bind<wbr>Result"
+      url: /docs/input-binder-glossary/binder/bind-result/
+      members:
+        - title: "Conflicting<wbr>Action<wbr>Handle"
+          anchor: conflictingactionhandle
+          kind: prop
+        - title: "Result"
+          anchor: result
+          kind: prop
+        - title: "Success"
+          anchor: success
+          kind: prop
+    - title: "Input<wbr>Binder<wbr>Result"
+      url: /docs/input-binder-glossary/binder/input-binder-result/
+- title: "Actions"
+  url: /docs/input-binder-glossary/actions/
+  entries:
+    - title: "Base<wbr>Action"
+      url: /docs/input-binder-glossary/actions/base-action/
+      members:
+        - title: "Description"
+          anchor: description
+          kind: prop
+        - title: "Name"
+          anchor: name
+          kind: prop
+        - title: "Representation"
+          anchor: representation
+          kind: prop
+    - title: "Button<wbr>Action"
+      url: /docs/input-binder-glossary/actions/button-action/
+      members:
+        - title: "Button<wbr>Action()"
+          anchor: buttonaction
+          kind: method
+    - title: "One<wbr>Axis<wbr>Action"
+      url: /docs/input-binder-glossary/actions/one-axis-action/
+      members:
+        - title: "One<wbr>Axis<wbr>Action()"
+          anchor: oneaxisaction
+          kind: method
+    - title: "Two<wbr>Axes<wbr>Action"
+      url: /docs/input-binder-glossary/actions/two-axes-action/
+      members:
+        - title: "Two<wbr>Axes<wbr>Action()"
+          anchor: twoaxesaction
+          kind: method
+    - title: "Input<wbr>Type"
+      url: /docs/input-binder-glossary/actions/input-type/
+- title: "Inputs"
+  url: /docs/input-binder-glossary/inputs/
+  entries:
+    - title: "Base<wbr>Input"
+      url: /docs/input-binder-glossary/inputs/base-input/
+      members:
+        - title: "Player<wbr>Number"
+          anchor: playernumber
+          kind: prop
+        - title: "Representation"
+          anchor: representation
+          kind: prop
+        - title: "Source"
+          anchor: source
+          kind: prop
+        - title: "==()"
+          anchor: equality-operators
+          kind: method
+        - title: "Equals()"
+          anchor: equals
+          kind: method
+        - title: "Get<wbr>Hash<wbr>Code()"
+          anchor: gethashcode
+          kind: method
+    - title: "Button<wbr>Input"
+      url: /docs/input-binder-glossary/inputs/button-input/
+      members:
+        - title: "Button<wbr>Id"
+          anchor: buttonid
+          kind: prop
+        - title: "Modifier"
+          anchor: modifier
+          kind: prop
+        - title: "State"
+          anchor: state
+          kind: prop
+        - title: "Button<wbr>Input()"
+          anchor: buttoninput
+          kind: method
+    - title: "One<wbr>Axis<wbr>Input"
+      url: /docs/input-binder-glossary/inputs/one-axis-input/
+      members:
+        - title: "Axis<wbr>Id"
+          anchor: axisid
+          kind: prop
+        - title: "Value"
+          anchor: value
+          kind: prop
+        - title: "One<wbr>Axis<wbr>Input()"
+          anchor: oneaxisinput
+          kind: method
+    - title: "Two<wbr>Axes<wbr>Input"
+      url: /docs/input-binder-glossary/inputs/two-axes-input/
+      members:
+        - title: "Axes<wbr>Id"
+          anchor: axesid
+          kind: prop
+        - title: "Value"
+          anchor: value
+          kind: prop
+        - title: "Two<wbr>Axes<wbr>Input()"
+          anchor: twoaxesinput
+          kind: method
+    - title: "Input<wbr>Factory"
+      url: /docs/input-binder-glossary/inputs/input-factory/
+      members:
+        - title: "Axes()"
+          anchor: axes
+          kind: method
+        - title: "Axis()"
+          anchor: axis
+          kind: method
+        - title: "Button()"
+          anchor: button
+          kind: method
+        - title: "Game<wbr>Pad<wbr>Axes()"
+          anchor: gamepadaxes
+          kind: method
+        - title: "Game<wbr>Pad<wbr>Axis()"
+          anchor: gamepadaxis
+          kind: method
+        - title: "Game<wbr>Pad<wbr>Button()"
+          anchor: gamepadbutton
+          kind: method
+        - title: "Key()"
+          anchor: key
+          kind: method
+        - title: "Midi<wbr>Axis()"
+          anchor: midiaxis
+          kind: method
+        - title: "Midi<wbr>Button()"
+          anchor: midibutton
+          kind: method
+        - title: "Mouse<wbr>Axes()"
+          anchor: mouseaxes
+          kind: method
+        - title: "Mouse<wbr>Axis()"
+          anchor: mouseaxis
+          kind: method
+        - title: "Mouse<wbr>Button()"
+          anchor: mousebutton
+          kind: method
+    - title: "Input<wbr>Source"
+      url: /docs/input-binder-glossary/inputs/input-source/
+    - title: "Button<wbr>State"
+      url: /docs/input-binder-glossary/inputs/button-state/
+    - title: "Button<wbr>Modifier"
+      url: /docs/input-binder-glossary/inputs/button-modifier/

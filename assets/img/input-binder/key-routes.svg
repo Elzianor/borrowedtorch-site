@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 230" width="640" height="230" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="13" text-anchor="middle">
+  <!-- the updates -->
+  <text x="20" y="24" fill="#8a7a63" font-size="11" text-anchor="start">Update</text>
+  <g fill="#8a7a63" font-size="11">
+    <text x="166" y="24">1</text>
+    <text x="227" y="24">2</text>
+    <text x="288" y="24">3</text>
+    <text x="349" y="24">4</text>
+    <text x="410" y="24">5</text>
+    <text x="471" y="24">6</text>
+    <text x="532" y="24">7</text>
+    <text x="593" y="24">8</text>
+  </g>
+
+  <!-- what is held, as each update reads it -->
+  <text x="20" y="52" fill="#d9cbb4" text-anchor="start">Ctrl held</text>
+  <rect x="142" y="40" width="170" height="16" rx="5" fill="#f28c28" fill-opacity=".8"/>
+  <text x="20" y="80" fill="#d9cbb4" text-anchor="start">S held</text>
+  <rect x="203" y="68" width="170" height="16" rx="5" fill="#e9c27a" fill-opacity=".85"/>
+  <rect x="447" y="68" width="109" height="16" rx="5" fill="#e9c27a" fill-opacity=".85"/>
+
+  <!-- the state of S, as polled -->
+  <text x="20" y="110" fill="#d9cbb4" text-anchor="start">S passed</text>
+  <g font-family="Consolas, ui-monospace, monospace" font-size="11">
+    <circle cx="166" cy="106" r="2" fill="#8a7a63" fill-opacity=".6"/>
+    <text x="227" y="110" fill="#e9c27a">Pressed</text>
+    <text x="288" y="110" fill="#d9cbb4">Down</text>
+    <text x="349" y="110" fill="#d9cbb4">Down</text>
+    <text x="410" y="110" fill="#f28c28">Up</text>
+    <text x="471" y="110" fill="#e9c27a">Pressed</text>
+    <text x="532" y="110" fill="#d9cbb4">Down</text>
+    <text x="593" y="110" fill="#f28c28">Up</text>
+  </g>
+
+  <line x1="20" y1="124" x2="620" y2="124" stroke="#8a7a63" stroke-opacity=".4"/>
+  <text x="20" y="142" fill="#8a7a63" font-size="11" text-anchor="start">The actions get</text>
+
+  <!-- Save, bound to Ctrl+S -->
+  <text x="20" y="166" fill="#e9c27a" text-anchor="start">Save <tspan fill="#8a7a63" font-size="11">Ctrl+S</tspan></text>
+  <g font-family="Consolas, ui-monospace, monospace" font-size="11">
+    <circle cx="166" cy="162" r="2" fill="#8a7a63" fill-opacity=".6"/>
+    <text x="227" y="166" fill="#e9c27a">Pressed</text>
+    <text x="288" y="166" fill="#d9cbb4">Down</text>
+    <text x="349" y="166" fill="#d9cbb4">Down</text>
+    <text x="410" y="166" fill="#f28c28">Up</text>
+    <circle cx="471" cy="162" r="2" fill="#8a7a63" fill-opacity=".6"/>
+    <circle cx="532" cy="162" r="2" fill="#8a7a63" fill-opacity=".6"/>
+    <circle cx="593" cy="162" r="2" fill="#8a7a63" fill-opacity=".6"/>
+  </g>
+
+  <!-- Walk back, bound to S -->
+  <text x="20" y="194" fill="#e9c27a" text-anchor="start">Walk back <tspan fill="#8a7a63" font-size="11">S</tspan></text>
+  <g font-family="Consolas, ui-monospace, monospace" font-size="11">
+    <circle cx="166" cy="190" r="2" fill="#8a7a63" fill-opacity=".6"/>
+    <circle cx="227" cy="190" r="2" fill="#8a7a63" fill-opacity=".6"/>
+    <circle cx="288" cy="190" r="2" fill="#8a7a63" fill-opacity=".6"/>
+    <circle cx="349" cy="190" r="2" fill="#8a7a63" fill-opacity=".6"/>
+    <circle cx="410" cy="190" r="2" fill="#8a7a63" fill-opacity=".6"/>
+    <text x="471" y="194" fill="#e9c27a">Pressed</text>
+    <text x="532" y="194" fill="#d9cbb4">Down</text>
+    <text x="593" y="194" fill="#f28c28">Up</text>
+  </g>
+
+  <text x="20" y="222" fill="#8a7a63" font-size="11" text-anchor="start">Ctrl is let go at update 4, yet the press that started with it stays with Save until its Up.</text>
+</svg>

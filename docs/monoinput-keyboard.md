@@ -128,8 +128,8 @@ if (KeyboardManager.IsKeyPressed(_bindings.Jump)) _player.Jump();
 Start waiting at the frame after the one that opened the screen. In that frame, the key that opened it, such as Enter,
 is `Pressed` too, and would be taken as the answer.
 
-For actions with several bindings each, rebinding with conflicts and modifier keys, the `BorrowedTorch.InputBinder`
-package builds on this; see the [packages](/kindling/packages/).
+For actions with several bindings each, rebinding with conflicts and modifier keys, see the
+[input binder](/docs/input-binder/), which MonoInput can [feed](/docs/input-binder-update/#feeding-the-binder-from-monoinput).
 
 ## Typed text
 

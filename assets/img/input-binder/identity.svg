@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 240" width="640" height="240" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="13">
+  <text x="20" y="18" fill="#8a7a63" font-size="11">A ButtonInput for the Space key</text>
+
+  <!-- its identity -->
+  <rect x="20" y="30" width="360" height="150" rx="8" fill="#15100c" stroke="#e9c27a"/>
+  <text x="36" y="54" fill="#e9c27a" font-size="14">Identity</text>
+  <text x="36" y="72" fill="#8a7a63" font-size="11">fixed when the input is made</text>
+  <g font-family="Consolas, ui-monospace, monospace" font-size="12">
+    <text x="36" y="102" fill="#8a7a63">Source</text>
+    <text x="156" y="102" fill="#d9cbb4">Keyboard</text>
+    <text x="36" y="122" fill="#8a7a63">shape</text>
+    <text x="156" y="122" fill="#d9cbb4">Button</text>
+    <text x="236" y="122" fill="#8a7a63" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="11">its class</text>
+    <text x="36" y="142" fill="#8a7a63">ButtonId</text>
+    <text x="156" y="142" fill="#d9cbb4">32</text>
+    <text x="36" y="162" fill="#8a7a63">Modifier</text>
+    <text x="156" y="162" fill="#d9cbb4">None</text>
+  </g>
+
+  <!-- its live data -->
+  <rect x="400" y="30" width="220" height="150" rx="8" fill="#15100c" stroke="#f28c28"/>
+  <text x="416" y="54" fill="#f28c28" font-size="14">Live data</text>
+  <text x="416" y="72" fill="#8a7a63" font-size="11">set again every frame</text>
+  <g font-family="Consolas, ui-monospace, monospace" font-size="12">
+    <text x="416" y="102" fill="#8a7a63">State</text>
+    <text x="530" y="102" fill="#e9c27a">Pressed</text>
+    <text x="416" y="122" fill="#8a7a63">PlayerNumber</text>
+    <text x="530" y="122" fill="#d9cbb4">0</text>
+  </g>
+
+  <!-- what each part is for -->
+  <g font-size="11" text-anchor="middle">
+    <text x="200" y="200" fill="#e9c27a">what equality, bindings and lookups compare</text>
+    <text x="510" y="200" fill="#f28c28">what the action's callback gets</text>
+  </g>
+  <line x1="20" y1="212" x2="620" y2="212" stroke="#8a7a63" stroke-opacity=".4"/>
+  <text x="20" y="230" fill="#8a7a63" font-size="11"><tspan font-family="Consolas, ui-monospace, monospace" font-size="12">Representation</tspan> is neither: kept for the game, compared by nothing, given to no callback</text>
+</svg>
