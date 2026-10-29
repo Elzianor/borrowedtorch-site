@@ -18,11 +18,11 @@ combine with `|`:
 
 | Flag | Offers |
 | --- | --- |
-| <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-capabilities/#translateglobal">`TranslateGlobal`</a> | The move arms along the world's axes. |
-| <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-capabilities/#translatelocal">`TranslateLocal`</a> | The move arms along the target's own axes. |
+| <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-capabilities/#translateglobal">`TranslateGlobal`</a> | The move arms and plane squares along the world's axes. |
+| <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-capabilities/#translatelocal">`TranslateLocal`</a> | The move arms and plane squares along the target's own axes. |
 | <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-capabilities/#rotateglobal">`RotateGlobal`</a> | The rings about the world's axes. |
 | <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-capabilities/#rotatelocal">`RotateLocal`</a> | The rings about the target's own axes. |
-| <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-capabilities/#scaleaxes">`ScaleAxes`</a> | The three scale arms, each scaling one axis. |
+| <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-capabilities/#scaleaxes">`ScaleAxes`</a> | The three scale arms, each scaling one axis, and the three plane squares, each scaling two. |
 | <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-capabilities/#scaleuniform">`ScaleUniform`</a> | The center square, scaling all three axes together. |
 
 <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-capabilities/#translate">`Translate`</a>, <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-capabilities/#rotate">`Rotate`</a> and <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-capabilities/#scale">`Scale`</a> are the two
@@ -48,11 +48,11 @@ with until it ends.
 | Value | Description |
 | --- | --- |
 | <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-capabilities/#none">`None`</a> | Nothing: the gizmo hides for the target. |
-| <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-capabilities/#translateglobal">`TranslateGlobal`</a> | The move arms along the world's axes. |
-| <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-capabilities/#translatelocal">`TranslateLocal`</a> | The move arms along the target's own axes. |
+| <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-capabilities/#translateglobal">`TranslateGlobal`</a> | The move arms and plane squares along the world's axes. |
+| <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-capabilities/#translatelocal">`TranslateLocal`</a> | The move arms and plane squares along the target's own axes. |
 | <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-capabilities/#rotateglobal">`RotateGlobal`</a> | The rings about the world's axes. |
 | <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-capabilities/#rotatelocal">`RotateLocal`</a> | The rings about the target's own axes. |
-| <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-capabilities/#scaleaxes">`ScaleAxes`</a> | The three scale arms. |
+| <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-capabilities/#scaleaxes">`ScaleAxes`</a> | The three scale arms and the three plane squares. |
 | <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-capabilities/#scaleuniform">`ScaleUniform`</a> | The center square. |
 | <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-capabilities/#translate">`Translate`</a> | <code>TranslateGlobal &#124; TranslateLocal</code>. |
 | <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-capabilities/#rotate">`Rotate`</a> | <code>RotateGlobal &#124; RotateLocal</code>. |
@@ -64,8 +64,12 @@ with until it ends.
 Move and rotate come in two frames; scale comes in one. Scaling a turned object along one of the world's axes shears
 it: a box leans over into a slanted shape. A pose made of a scale, a rotation and a position has nowhere to keep a
 shear, so a scale handle along a world axis would have nothing true to write. Scale always works along the target's
-own axes, and its two flags split it by handle instead: the arms, each scaling one axis, and the center square,
-scaling all three, which is the same in any frame.
+own axes, and its two flags split it by handle instead: the arms and the plane squares, scaling one axis or two, and
+the center square, scaling all three, which is the same in any frame.
+
+The plane squares come with the arms, not with the center square: like an arm, a square changes the target's
+proportions. So a target that offers <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-capabilities/#scaleuniform">`ScaleUniform`</a> alone, a sphere
+trigger say, keeps its shape.
 
 ## The rules
 

@@ -18,11 +18,11 @@ Nothing: the gizmo hides for the target, and clicks go to the scene.
 
 <h3 id="translateglobal"><code>TranslateGlobal</code> <a class="ctx" href="/docs/transform-gizmo-capabilities/#gizmocapabilities-values" title="TranslateGlobal in context on the capabilities page" aria-label="TranslateGlobal in context on the capabilities page">→</a></h3>
 
-The move arms along the world's axes.
+The move arms and plane squares along the world's axes.
 
 <h3 id="translatelocal"><code>TranslateLocal</code> <a class="ctx" href="/docs/transform-gizmo-capabilities/#gizmocapabilities-values" title="TranslateLocal in context on the capabilities page" aria-label="TranslateLocal in context on the capabilities page">→</a></h3>
 
-The move arms along the target's own axes.
+The move arms and plane squares along the target's own axes.
 
 <h3 id="rotateglobal"><code>RotateGlobal</code> <a class="ctx" href="/docs/transform-gizmo-capabilities/#gizmocapabilities-values" title="RotateGlobal in context on the capabilities page" aria-label="RotateGlobal in context on the capabilities page">→</a></h3>
 
@@ -34,7 +34,7 @@ The rings about the target's own axes.
 
 <h3 id="scaleaxes"><code>ScaleAxes</code> <a class="ctx" href="/docs/transform-gizmo-capabilities/#gizmocapabilities-values" title="ScaleAxes in context on the capabilities page" aria-label="ScaleAxes in context on the capabilities page">→</a></h3>
 
-The three scale arms, each scaling one of the target's own axes.
+The three scale arms, each scaling one of the target's own axes, and the three plane squares, each scaling two of them.
 
 <h3 id="scaleuniform"><code>ScaleUniform</code> <a class="ctx" href="/docs/transform-gizmo-capabilities/#gizmocapabilities-values" title="ScaleUniform in context on the capabilities page" aria-label="ScaleUniform in context on the capabilities page">→</a></h3>
 

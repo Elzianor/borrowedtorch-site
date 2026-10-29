@@ -5,7 +5,7 @@ title: "Glossary: TransformGizmo"
 description: "The members of TransformGizmo, in alphabetical order."
 ---
 
-A move, rotate and scale gizmo over a target: arms, rings or scale boxes at the target's pivot, the same size on screen at any distance, picked and dragged with the pointer.
+A move, rotate and scale gizmo over a target: arms with a square between each pair, or rings, at the target's pivot, the same size on screen at any distance, picked and dragged with the pointer.
 
 A sealed class, `IDisposable`. The [quick start guide](/docs/transform-gizmo/#setting-up-the-gizmo) shows it in context, with code.
 
@@ -15,15 +15,15 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="axisxcolor"><span class="prop"><code>AxisXColor</code></span> <a class="ctx" href="/docs/transform-gizmo-drawing/#transformgizmo-color-properties" title="AxisXColor in context on the drawing page" aria-label="AxisXColor in context on the drawing page">→</a></h3>
 
-`Color` · The color of the X arm, ring or scale box. (220, 70, 70), a red, by default. A hovered handle is drawn halfway toward white.
+`Color` · The color of the X arm, ring or scale box, and of the YZ plane square. (220, 70, 70), a red, by default. A hovered handle is drawn halfway toward white.
 
 <h3 id="axisycolor"><span class="prop"><code>AxisYColor</code></span> <a class="ctx" href="/docs/transform-gizmo-drawing/#transformgizmo-color-properties" title="AxisYColor in context on the drawing page" aria-label="AxisYColor in context on the drawing page">→</a></h3>
 
-`Color` · The color of the Y arm, ring or scale box. (90, 210, 90), a green, by default.
+`Color` · The color of the Y arm, ring or scale box, and of the XZ plane square. (90, 210, 90), a green, by default.
 
 <h3 id="axiszcolor"><span class="prop"><code>AxisZColor</code></span> <a class="ctx" href="/docs/transform-gizmo-drawing/#transformgizmo-color-properties" title="AxisZColor in context on the drawing page" aria-label="AxisZColor in context on the drawing page">→</a></h3>
 
-`Color` · The color of the Z arm, ring or scale box. (80, 140, 230), a blue, by default.
+`Color` · The color of the Z arm, ring or scale box, and of the XY plane square. (80, 140, 230), a blue, by default.
 
 <h3 id="centercolor"><span class="prop"><code>CenterColor</code></span> <a class="ctx" href="/docs/transform-gizmo-drawing/#transformgizmo-color-properties" title="CenterColor in context on the drawing page" aria-label="CenterColor in context on the drawing page">→</a></h3>
 
@@ -86,7 +86,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="trybegindrag"><span class="method"><code>TryBeginDrag()</code></span> <a class="ctx" href="/docs/transform-gizmo-dragging/#transformgizmo-pointer-methods" title="TryBeginDrag() in context on the picking and dragging page" aria-label="TryBeginDrag() in context on the picking and dragging page">→</a></h3>
 
-<a class="ref method" href="/docs/transform-gizmo-glossary/gizmo/transform-gizmo/#trybegindrag">`TryBeginDrag(Camera camera, ITransformGizmoTarget target, Point mousePixel, Ray mouseRay)`</a> · Starts a drag on the handle under the pointer and returns `true`, capturing the handle, its axis and the pose it edits. Writes nothing to the target. Returns `false` and changes nothing when no handle is under the pointer, the target is `null` or offers no mode, or a drag is running already. Throws `ArgumentNullException` for a `null` camera.
+<a class="ref method" href="/docs/transform-gizmo-glossary/gizmo/transform-gizmo/#trybegindrag">`TryBeginDrag(Camera camera, ITransformGizmoTarget target, Point mousePixel, Ray mouseRay)`</a> · Starts a drag on the handle under the pointer and returns `true`, capturing the handle, its axis or plane, and the pose it edits. Writes nothing to the target. Returns `false` and changes nothing when no handle is under the pointer, the target is `null` or offers no mode, or a drag is running already. Throws `ArgumentNullException` for a `null` camera.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
@@ -111,7 +111,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="transformmutated"><span class="event"><code>TransformMutated</code></span> <a class="ctx" href="/docs/transform-gizmo-dragging/#transformgizmo-event" title="TransformMutated in context on the picking and dragging page" aria-label="TransformMutated in context on the picking and dragging page">→</a></h3>
 
-<code>(<a href="/docs/transform-gizmo-glossary/gizmo/i-transform-gizmo-target/">ITransformGizmoTarget</a> target)</code> · An `Action<ITransformGizmoTarget>`, raised by <a class="ref method" href="/docs/transform-gizmo-glossary/gizmo/transform-gizmo/#update">`Update`</a> each frame a drag writes a pose: every frame of a drag past the dead zone, whether the pointer moved or not, but for a rotate frame with no usable angle. A click that never leaves the dead zone raises nothing.
+<code>(<a href="/docs/transform-gizmo-glossary/gizmo/i-transform-gizmo-target/">ITransformGizmoTarget</a> target)</code> · An `Action<ITransformGizmoTarget>`, raised by <a class="ref method" href="/docs/transform-gizmo-glossary/gizmo/transform-gizmo/#update">`Update`</a> each frame a drag writes a pose: every frame of a drag past the dead zone, whether the pointer moved or not, but for a rotate frame with no usable angle or a square move frame with no usable point. A click that never leaves the dead zone raises nothing.
 
 | Parameter | Type | Description |
 | --- | --- | --- |

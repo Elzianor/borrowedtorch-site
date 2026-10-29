@@ -62,15 +62,21 @@ The pointer is over a handle when it is:
 
 - **within 9 pixels of an arm**, move or scale: of the line from the pivot to the arm's tip, its box included. Where
   two arms are that close, the nearer one wins.
+- **over a plane square**, move or scale, as it is drawn on screen. Where two squares overlap, the nearer one wins.
+  An arm within 9 pixels wins over a square: the squares stand off the arms, so the two only meet where a steep view
+  lays a square across an arm, and the arm is the narrower target there.
 - **within 9 pixels of a ring**, as it is drawn on screen, sampled in 64 segments. The nearer ring wins, whether the
   pointer is at its front or its back.
 - **over the center square**, in scale mode, for a target that offers <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-capabilities/#scaleuniform">`ScaleUniform`</a>: within
   half the square's width of the pivot. The square sits over the roots of the arms, so it is tried first.
 
-Two things are left out. An arm shorter than 8 pixels on screen points nearly straight at the camera, and a drag along
-it would be ill-conditioned: the point of the axis nearest the pointer would swing along it by far more than the
+Some handles are left out. An arm shorter than 8 pixels on screen points nearly straight at the camera, and a drag
+along it would be ill-conditioned: the point of the axis nearest the pointer would swing along it by far more than the
 pointer moved, and fling the target down the axis. Such an arm can't be picked; it is a few pixels at the pivot
-anyway. And no arm or square is picked while the pivot is behind the camera, nor any part of a ring that is.
+anyway. A plane square turned within about 9 degrees of edge-on can't be picked either, for the same reason: it is a
+sliver by then, and a pixel of pointer travel across it would be a long way across its plane. And no arm or center
+square is picked while the pivot is behind the camera, no plane square with a corner behind it, and no part of a ring
+that is.
 
 <a class="ref prop" href="/docs/transform-gizmo-glossary/gizmo/transform-gizmo/#ishovering">`IsHovering`</a> is `false` without a target, and during a drag it is `true`, for the handle grabbed,
 which stays lightened.
@@ -85,7 +91,7 @@ which stays lightened.
 ## Starting a drag
 
 <a class="ref method" href="/docs/transform-gizmo-glossary/gizmo/transform-gizmo/#trybegindrag">`TryBeginDrag`</a> picks the handle under the pointer itself, so it needs no hover from an earlier
-<a class="ref method" href="/docs/transform-gizmo-glossary/gizmo/transform-gizmo/#update">`Update`</a>. When there is one, it takes what the drag needs: the handle, its axis as it points now,
+<a class="ref method" href="/docs/transform-gizmo-glossary/gizmo/transform-gizmo/#update">`Update`</a>. When there is one, it takes what the drag needs: the handle, its axis or plane as it points now,
 the part of the pose the handle edits, and the pointer. It writes nothing to the target. It returns `false`, and
 changes nothing, when no handle is under the pointer, when there is no target or the target offers no mode, and when
 a drag is running already.
@@ -100,7 +106,8 @@ stays live from then on, even back near the grab point.
 
 Each <a class="ref method" href="/docs/transform-gizmo-glossary/gizmo/transform-gizmo/#update">`Update`</a> with the button down writes the dragged pose to the target it is given and raises
 <a class="ref event" href="/docs/transform-gizmo-glossary/gizmo/transform-gizmo/#transformmutated">`TransformMutated`</a> with that target. Every frame of a drag past the dead zone writes, whether the
-pointer moved or not, but for a rotate frame with no usable angle.
+pointer moved or not, but for a rotate frame with no usable angle and a square move frame with no usable point, see
+[moving](/docs/transform-gizmo-modes/#moving).
 
 - **Keep passing the same target.** The drag writes to the target it is given, not to the one it was grabbed on. To
   change the selection while a drag runs, end the drag first.
@@ -116,7 +123,7 @@ never drifts from under the pointer.
 
 | Event | Handler | Raised when |
 | --- | --- | --- |
-| <a class="ref event" href="/docs/transform-gizmo-glossary/gizmo/transform-gizmo/#transformmutated">`TransformMutated`</a> | <code>(<a href="/docs/transform-gizmo-glossary/gizmo/i-transform-gizmo-target/">ITransformGizmoTarget</a> target)</code> | A drag writes a pose to the target: from <a class="ref method" href="/docs/transform-gizmo-glossary/gizmo/transform-gizmo/#update">`Update`</a>, every frame of a drag past the dead zone, but for a rotate frame with no usable angle. |
+| <a class="ref event" href="/docs/transform-gizmo-glossary/gizmo/transform-gizmo/#transformmutated">`TransformMutated`</a> | <code>(<a href="/docs/transform-gizmo-glossary/gizmo/i-transform-gizmo-target/">ITransformGizmoTarget</a> target)</code> | A drag writes a pose to the target: from <a class="ref method" href="/docs/transform-gizmo-glossary/gizmo/transform-gizmo/#update">`Update`</a>, every frame of a drag past the dead zone, but for a rotate frame with no usable angle or a square move frame with no usable point. |
 
 ## Ending and cancelling
 

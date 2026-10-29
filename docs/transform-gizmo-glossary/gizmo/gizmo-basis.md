@@ -49,7 +49,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span> o
 
 <h3 id="direction"><span class="method"><code>Direction()</code></span> <a class="ctx" href="/docs/transform-gizmo-targets/#gizmobasis-members" title="Direction() in context on the targets page" aria-label="Direction() in context on the targets page">→</a></h3>
 
-<a class="ref method" href="/docs/transform-gizmo-glossary/gizmo/gizmo-basis/#direction">`Direction(GizmoAxis axis)`</a> · The direction of the axis: <a class="ref" href="/docs/transform-gizmo-glossary/gizmo/gizmo-basis/#x">`X`</a>, <a class="ref" href="/docs/transform-gizmo-glossary/gizmo/gizmo-basis/#y">`Y`</a> or <a class="ref" href="/docs/transform-gizmo-glossary/gizmo/gizmo-basis/#z">`Z`</a>, or `Vector3.Zero` for `None` and `Center`.
+<a class="ref method" href="/docs/transform-gizmo-glossary/gizmo/gizmo-basis/#direction">`Direction(GizmoAxis axis)`</a> · The direction of the axis: <a class="ref" href="/docs/transform-gizmo-glossary/gizmo/gizmo-basis/#x">`X`</a>, <a class="ref" href="/docs/transform-gizmo-glossary/gizmo/gizmo-basis/#y">`Y`</a> or <a class="ref" href="/docs/transform-gizmo-glossary/gizmo/gizmo-basis/#z">`Z`</a>, or `Vector3.Zero` for `None`, `Center` and the plane handles `XY`, `XZ` and `YZ`.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
@@ -71,7 +71,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span> o
 
 <h3 id="planebasis"><span class="method"><code>PlaneBasis()</code></span> <a class="ctx" href="/docs/transform-gizmo-targets/#gizmobasis-members" title="PlaneBasis() in context on the targets page" aria-label="PlaneBasis() in context on the targets page">→</a></h3>
 
-<a class="ref method" href="/docs/transform-gizmo-glossary/gizmo/gizmo-basis/#planebasis">`PlaneBasis(GizmoAxis axis, out Vector3 u, out Vector3 v)`</a> · Two perpendicular unit vectors spanning the plane square to the axis, with u × v along the axis, so turning from `u` toward `v` is a positive turn about it. Built from the axis alone, so square to it in a skewed basis too. Where `u` lies around the circle is arbitrary: use differences of angles. For `None`, `Center` or an axis of length zero, `Vector3.UnitX` and `Vector3.UnitY`.
+<a class="ref method" href="/docs/transform-gizmo-glossary/gizmo/gizmo-basis/#planebasis">`PlaneBasis(GizmoAxis axis, out Vector3 u, out Vector3 v)`</a> · Two perpendicular unit vectors spanning the plane square to the axis, with u × v along the axis, so turning from `u` toward `v` is a positive turn about it. Built from the axis alone, so square to it in a skewed basis too. Where `u` lies around the circle is arbitrary: use differences of angles. For `None`, `Center`, a plane handle or an axis of length zero, `Vector3.UnitX` and `Vector3.UnitY`.
 
 | Parameter | Type | Description |
 | --- | --- | --- |

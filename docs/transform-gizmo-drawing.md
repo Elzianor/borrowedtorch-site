@@ -31,7 +31,8 @@ protected override void Draw(GameTime gameTime)
 It draws into the device's current viewport and render target. Nothing is drawn without a target, or for one that
 offers no mode, and like <a class="ref method" href="/docs/transform-gizmo-glossary/gizmo/transform-gizmo/#update">`Update`</a> it keeps <a class="ref prop" href="/docs/transform-gizmo-glossary/gizmo/transform-gizmo/#mode">`Mode`</a> on a mode the target offers.
 
-What it draws follows the mode: the three move arms, the three rings, or the three scale arms when the target offers
+What it draws follows the mode: the three move arms and the three plane squares, the three rings, or the three scale
+arms and the plane squares when the target offers
 <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-capabilities/#scaleaxes">`ScaleAxes`</a>. The pivot square comes with every mode.
 
 ### TransformGizmo drawing method
@@ -47,7 +48,7 @@ What it draws follows the mode: the three move arms, the three rings, or the thr
 | State | Set to | Because |
 | --- | --- | --- |
 | `DepthStencilState` | `None` | The gizmo is drawn over everything, never hidden by what is in front of it. |
-| `BlendState` | `AlphaBlend` | Colors with alpha blend with the scene. |
+| `BlendState` | `AlphaBlend` | The see-through plane squares, and colors with alpha, blend with the scene. |
 | `RasterizerState` | `CullNone` | The handles are flat, and seen from either side. |
 
 The effect gets the camera's <a class="ref prop" href="/docs/camera-glossary/cameras/camera/#view">`View`</a> and <a class="ref prop" href="/docs/camera-glossary/cameras/camera/#projection">`Projection`</a> and an identity world matrix: the
@@ -62,7 +63,7 @@ view's forward rather than in a straight line, so a gizmo at the side of a wide 
 middle. A target at or behind the camera gets the near plane's depth. Every other size is a share of the arm's length:
 
 <figure class="shot">
-  <img src="{{ '/assets/img/transform-gizmo/proportions.svg' | relative_url }}" width="640" height="316" alt="The handles measured in arm lengths L: a move arm of length L with an arrowhead 0.28 L long and 0.18 L wide on a shaft 0.05 L thick; a scale arm of length L tipped with a box 0.12 L across; a pivot square 0.12 L across; a rotate ring of radius 0.9 L">
+  <img src="{{ '/assets/img/transform-gizmo/proportions.svg' | relative_url }}" width="640" height="530" alt="The handles measured in arm lengths L: a move arm of length L with an arrowhead 0.28 L long and 0.18 L wide on a shaft 0.05 L thick; a scale arm of length L tipped with a box 0.12 L across; a pivot square 0.12 L across; a plane square 0.2 L a side, between the X and Y arms and 0.25 L out along both; a rotate ring of radius 0.9 L">
   <figcaption>The handles in arm lengths, L being 13% of the viewport's height.</figcaption>
 </figure>
 
@@ -73,17 +74,21 @@ middle. A target at or behind the camera gets the near plane's depth. Every othe
 | Arrowhead | 0.28 L long and 0.18 L wide |
 | Scale box | 0.12 L across |
 | Pivot square | 0.12 L across |
+| Plane square | 0.2 L a side, from 0.25 L to 0.45 L along both of its arms |
 | Ring | 0.9 L in radius, with a band 0.03 L wide, in 64 segments |
 
-The sizes are fixed: the gizmo has no setting for them. Arms, boxes and squares are flat and turned to face the
-camera, and each ring's band is a ribbon turned to face it all the way round, so every part keeps its width from any
-angle, a ring seen edge-on included.
+The sizes are fixed: the gizmo has no setting for them. Arms, boxes and the pivot square are flat and turned to face
+the camera, and each ring's band is a ribbon turned to face it all the way round, so they keep their width from any
+angle, a ring seen edge-on included. The plane squares lie in their planes instead, and narrow as a plane turns
+edge-on, which shows which way it lies.
 
 ## Overlap
 
 With depth testing off, the order the handles are painted in decides which covers which. The gizmo paints far to
 near:
 
+- **The plane squares** first, under the arms, by the depth of their centers. They are see-through, so where two
+  overlap both show, the nearer one on top.
 - **The arms** by the depth of their tips, so an arm pointing toward the camera lies over the others.
 - **The rings** segment by segment: the 192 segments of the three rings are sorted together by the depth of their
   middles, so where two rings cross, the nearer arc is on top from any angle. A fixed order of whole rings would get
@@ -92,15 +97,16 @@ near:
 
 ## Colors
 
-The handles take the colors of their axes, and the pivot square its own. Set them at any time:
+The handles take the colors of their axes, a plane square that of the axis it leaves out, and the pivot square its
+own. Set them at any time:
 
 ```csharp
 gizmo.AxisXColor = new Color(255, 96, 96);
 gizmo.CenterColor = Color.Gold;
 ```
 
-The handle under the pointer, and the one being dragged, is drawn halfway from its color to white. For translucent
-handles, scale the whole color rather than only its alpha: `AlphaBlend` expects colors premultiplied by their alpha.
+The handle under the pointer, and the one being dragged, is drawn halfway from its color to white. The plane squares
+are drawn at 40% of their color's opacity, and at 75% under the pointer. For translucent handles, scale the whole color rather than only its alpha: `AlphaBlend` expects colors premultiplied by their alpha.
 
 ```csharp
 gizmo.AxisZColor = new Color(80, 140, 230) * 0.6f; // 60% opaque
@@ -112,9 +118,9 @@ The highlight goes halfway to an opaque white, so a translucent handle also grow
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <a class="ref prop" href="/docs/transform-gizmo-glossary/gizmo/transform-gizmo/#axisxcolor">`AxisXColor`</a> | `Color` | The X arm, ring or scale box. (220, 70, 70), a red, by default. |
-| <a class="ref prop" href="/docs/transform-gizmo-glossary/gizmo/transform-gizmo/#axisycolor">`AxisYColor`</a> | `Color` | The Y arm, ring or scale box. (90, 210, 90), a green, by default. |
-| <a class="ref prop" href="/docs/transform-gizmo-glossary/gizmo/transform-gizmo/#axiszcolor">`AxisZColor`</a> | `Color` | The Z arm, ring or scale box. (80, 140, 230), a blue, by default. |
+| <a class="ref prop" href="/docs/transform-gizmo-glossary/gizmo/transform-gizmo/#axisxcolor">`AxisXColor`</a> | `Color` | The X arm, ring or scale box, and the YZ plane square. (220, 70, 70), a red, by default. |
+| <a class="ref prop" href="/docs/transform-gizmo-glossary/gizmo/transform-gizmo/#axisycolor">`AxisYColor`</a> | `Color` | The Y arm, ring or scale box, and the XZ plane square. (90, 210, 90), a green, by default. |
+| <a class="ref prop" href="/docs/transform-gizmo-glossary/gizmo/transform-gizmo/#axiszcolor">`AxisZColor`</a> | `Color` | The Z arm, ring or scale box, and the XY plane square. (80, 140, 230), a blue, by default. |
 | <a class="ref prop" href="/docs/transform-gizmo-glossary/gizmo/transform-gizmo/#centercolor">`CenterColor`</a> | `Color` | The pivot square. (210, 210, 210), a light gray, by default. |
 
 ## Painter's order for overlays of your own

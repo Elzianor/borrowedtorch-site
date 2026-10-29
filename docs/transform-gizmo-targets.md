@@ -288,8 +288,8 @@ object's scale. <a class="ref" href="/docs/transform-gizmo-glossary/gizmo/gizmo-
 <a class="ref" href="/docs/transform-gizmo-glossary/gizmo/gizmo-basis/">`GizmoBasis`</a> also has the maths the gizmo does with it, for tools of your own that work in the same frames: a
 snap to a target's axis, say, or a handle the gizmo doesn't have.
 
-- **<a class="ref method" href="/docs/transform-gizmo-glossary/gizmo/gizmo-basis/#direction">`Direction`</a>** looks an axis up by <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-axis/">`GizmoAxis`</a>: X, Y or Z, or `Vector3.Zero` for `None` and
-  `Center`.
+- **<a class="ref method" href="/docs/transform-gizmo-glossary/gizmo/gizmo-basis/#direction">`Direction`</a>** looks an axis up by <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-axis/">`GizmoAxis`</a>: X, Y or Z, or `Vector3.Zero` for `None`, `Center`
+  and the plane handles.
 - **<a class="ref method" href="/docs/transform-gizmo-glossary/gizmo/gizmo-basis/#planebasis">`PlaneBasis`</a>** gives two perpendicular unit vectors, `u` and `v`, spanning the plane square to an
   axis, with u × v along the axis, so turning from `u` toward `v` is a positive turn about it. A rotate ring lies in
   that plane. It is built from the axis alone, not from the other two, which a skewed frame doesn't keep square to it.
@@ -315,7 +315,7 @@ var angle = MathF.Atan2(Vector3.Dot(offset, v), Vector3.Dot(offset, u));
 | --- | --- |
 | <a class="ref" href="/docs/transform-gizmo-glossary/gizmo/gizmo-basis/#x">`X`</a>, <a class="ref" href="/docs/transform-gizmo-glossary/gizmo/gizmo-basis/#y">`Y`</a> and <a class="ref" href="/docs/transform-gizmo-glossary/gizmo/gizmo-basis/#z">`Z`</a> | Read-only fields. The three axes, as unit vectors in world space. |
 | <a class="ref prop" href="/docs/transform-gizmo-glossary/gizmo/gizmo-basis/#islefthanded">`IsLeftHanded`</a> | Read-only. Whether the frame is mirrored: (X × Y) · Z is negative. |
-| <a class="ref method" href="/docs/transform-gizmo-glossary/gizmo/gizmo-basis/#direction">`Direction(GizmoAxis axis)`</a> | The axis's direction, or `Vector3.Zero` for `None` and `Center`. |
+| <a class="ref method" href="/docs/transform-gizmo-glossary/gizmo/gizmo-basis/#direction">`Direction(GizmoAxis axis)`</a> | The axis's direction, or `Vector3.Zero` for `None`, `Center`, `XY`, `XZ` and `YZ`. |
 | <a class="ref method" href="/docs/transform-gizmo-glossary/gizmo/gizmo-basis/#planebasis">`PlaneBasis(GizmoAxis axis, out Vector3 u, out Vector3 v)`</a> | Two perpendicular unit vectors spanning the plane square to the axis, with u × v along it. `Vector3.UnitX` and `Vector3.UnitY` for an axis with no direction. |
 | <a class="ref method" href="/docs/transform-gizmo-glossary/gizmo/gizmo-basis/#orthonormalized">`Orthonormalized()`</a> | The closest frame with perpendicular axes, mirrored if this one is. A frame collapsed onto one line comes back as <a class="ref" href="/docs/transform-gizmo-glossary/gizmo/gizmo-basis/#world">`World`</a>. |
 
@@ -326,3 +326,4 @@ var angle = MathF.Atan2(Vector3.Dot(offset, v), Vector3.Dot(offset, u));
 | <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-axis/#none">`None`</a> | No handle. Its direction is `Vector3.Zero`. |
 | <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-axis/#x">`X`</a>, <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-axis/#y">`Y`</a> and <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-axis/#z">`Z`</a> | An axis, and its arm, ring or scale box. |
 | <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-axis/#center">`Center`</a> | The pivot square, the handle of uniform scale. Its direction is `Vector3.Zero`. |
+| <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-axis/#xy">`XY`</a>, <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-axis/#xz">`XZ`</a> and <a class="ref" href="/docs/transform-gizmo-glossary/types/gizmo-axis/#yz">`YZ`</a> | A plane square, between the arms of the two axes it is named after, moving or scaling along both. Its direction is `Vector3.Zero`. |

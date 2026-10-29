@@ -5,11 +5,11 @@ title: "Transform gizmo: quick start guide"
 description: Set up BorrowedTorch.TransformGizmo in a game, move, turn and scale a selected object with the pointer, and find your way around the transform gizmo pages.
 ---
 
-BorrowedTorch.TransformGizmo is the move, rotate and scale handle of Kindling's editor. It draws three arms, three
-rings or three scale boxes at the pivot of whatever is selected, the same size on screen however near or far that is,
-picks the handle under the pointer and drags it. It works on anything that exposes its pose through one small
-interface, so one gizmo serves meshes, lights and markers alike, and each of them says which modes it offers and
-whether it moves and turns along the world's axes or its own.
+BorrowedTorch.TransformGizmo is the move, rotate and scale handle of Kindling's editor. It draws three arms with a
+square between each pair, to move or to scale, or three rings to turn, at the pivot of whatever is selected, the same
+size on screen however near or far that is, picks the handle under the pointer and drags it. It works on anything that
+exposes its pose through one small interface, so one gizmo serves meshes, lights and markers alike, and each of them
+says which modes it offers and whether it moves and turns along the world's axes or its own.
 
 These pages cover the library from setup to every public type:
 
@@ -193,7 +193,8 @@ public class MyGame : Game
 ```
 
 Nothing shows until something is selected. Click the crate and the move arms appear at its center; drag one and the
-crate slides along that axis, staying under the pointer. A click that misses every handle goes to the scene, here to
+crate slides along that axis, staying under the pointer, or drag a square between two arms and it slides across
+their plane. A click that misses every handle goes to the scene, here to
 select or deselect the crate, so the gizmo never swallows a click it has no use for. The
 [modes page](/docs/transform-gizmo-modes/#choosing-a-mode) switches to rotate and scale.
 
@@ -215,7 +216,8 @@ colors on the [drawing page](/docs/transform-gizmo-drawing/#transformgizmo-drawi
 ## Conventions
 
 The gizmo uses MonoGame's right-handed frame: +X is right, +Y is up, and a camera looks down −Z. Its handles are
-colored by axis, X red, Y green and Z blue, with a light gray square at the pivot.
+colored by axis, X red, Y green and Z blue, with a light gray square at the pivot. A square between two arms takes
+the color of the axis it leaves out: the blue one, between X and Y, moves without touching Z.
 
 | Quantity | Unit |
 | --- | --- |
