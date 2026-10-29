@@ -1,0 +1,143 @@
+# The transform gizmo glossary in the docs sidebar: generated with the glossary pages, don't edit by hand.
+- title: "Gizmo and targets"
+  url: /docs/transform-gizmo-glossary/gizmo/
+  entries:
+    - title: "Transform<wbr>Gizmo"
+      url: /docs/transform-gizmo-glossary/gizmo/transform-gizmo/
+      members:
+        - title: "Axis<wbr>XColor"
+          anchor: axisxcolor
+          kind: prop
+        - title: "Axis<wbr>YColor"
+          anchor: axisycolor
+          kind: prop
+        - title: "Axis<wbr>ZColor"
+          anchor: axiszcolor
+          kind: prop
+        - title: "Center<wbr>Color"
+          anchor: centercolor
+          kind: prop
+        - title: "Is<wbr>Dragging"
+          anchor: isdragging
+          kind: prop
+        - title: "Is<wbr>Hovering"
+          anchor: ishovering
+          kind: prop
+        - title: "Mode"
+          anchor: mode
+          kind: prop
+        - title: "Space"
+          anchor: space
+          kind: prop
+        - title: "Transform<wbr>Gizmo()"
+          anchor: transformgizmo
+          kind: method
+        - title: "Cycle<wbr>Mode()"
+          anchor: cyclemode
+          kind: method
+        - title: "Dispose()"
+          anchor: dispose
+          kind: method
+        - title: "Draw()"
+          anchor: draw
+          kind: method
+        - title: "End<wbr>Drag()"
+          anchor: enddrag
+          kind: method
+        - title: "Toggle<wbr>Space()"
+          anchor: togglespace
+          kind: method
+        - title: "Try<wbr>Begin<wbr>Drag()"
+          anchor: trybegindrag
+          kind: method
+        - title: "Update()"
+          anchor: update
+          kind: method
+        - title: "Transform<wbr>Mutated"
+          anchor: transformmutated
+          kind: event
+    - title: "ITransform<wbr>Gizmo<wbr>Target"
+      url: /docs/transform-gizmo-glossary/gizmo/i-transform-gizmo-target/
+      members:
+        - title: "Capabilities"
+          anchor: capabilities
+          kind: prop
+        - title: "Local<wbr>Rotation"
+          anchor: localrotation
+          kind: prop
+        - title: "Local<wbr>Scale"
+          anchor: localscale
+          kind: prop
+        - title: "World<wbr>Axes"
+          anchor: worldaxes
+          kind: prop
+        - title: "World<wbr>Position"
+          anchor: worldposition
+          kind: prop
+    - title: "Gizmo<wbr>Basis"
+      url: /docs/transform-gizmo-glossary/gizmo/gizmo-basis/
+      members:
+        - title: "Is<wbr>Left<wbr>Handed"
+          anchor: islefthanded
+          kind: prop
+        - title: "World"
+          anchor: world
+          kind: field
+        - title: "X"
+          anchor: x
+          kind: field
+        - title: "Y"
+          anchor: y
+          kind: field
+        - title: "Z"
+          anchor: z
+          kind: field
+        - title: "Gizmo<wbr>Basis()"
+          anchor: gizmobasis
+          kind: method
+        - title: "Direction()"
+          anchor: direction
+          kind: method
+        - title: "From<wbr>Object<wbr>Axes()"
+          anchor: fromobjectaxes
+          kind: method
+        - title: "Orthonormalized()"
+          anchor: orthonormalized
+          kind: method
+        - title: "Plane<wbr>Basis()"
+          anchor: planebasis
+          kind: method
+    - title: "Gizmo<wbr>Capabilities<wbr>Extensions"
+      url: /docs/transform-gizmo-glossary/gizmo/gizmo-capabilities-extensions/
+      members:
+        - title: "Allows()"
+          anchor: allows
+          kind: method
+        - title: "Next<wbr>Mode()"
+          anchor: nextmode
+          kind: method
+        - title: "Resolve<wbr>Space()"
+          anchor: resolvespace
+          kind: method
+        - title: "Try<wbr>Clamp<wbr>Mode()"
+          anchor: tryclampmode
+          kind: method
+    - title: "Painter<wbr>Order<wbr>Depth<wbr>Sort"
+      url: /docs/transform-gizmo-glossary/gizmo/painter-order-depth-sort/
+      members:
+        - title: "Far<wbr>To<wbr>Near()"
+          anchor: fartonear
+          kind: method
+- title: "Types"
+  url: /docs/transform-gizmo-glossary/types/
+  groups:
+    - title: "Enums"
+      entries:
+        - title: "Gizmo<wbr>Axis"
+          url: /docs/transform-gizmo-glossary/types/gizmo-axis/
+        - title: "Gizmo<wbr>Capabilities"
+          url: /docs/transform-gizmo-glossary/types/gizmo-capabilities/
+        - title: "Gizmo<wbr>Mode"
+          url: /docs/transform-gizmo-glossary/types/gizmo-mode/
+        - title: "Gizmo<wbr>Space"
+          url: /docs/transform-gizmo-glossary/types/gizmo-space/

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 228" width="640" height="228" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="13" text-anchor="middle">
+  <!-- an axis drag: travel along the arm from the grab point -->
+  <line x1="34" y1="96" x2="286" y2="96" stroke="#a8834a" stroke-dasharray="4 3"/>
+  <rect x="34" y="93" width="120" height="6" fill="#dc4646"/>
+  <rect x="146.8" y="88.8" width="14.4" height="14.4" fill="#dc4646"/>
+  <rect x="26.8" y="88.8" width="14.4" height="14.4" fill="#d2d2d2"/>
+  <g stroke="#d9cbb4" stroke-width="1.5" fill="none">
+    <line x1="94" y1="87" x2="94" y2="105"/>
+    <line x1="214" y1="87" x2="214" y2="105"/>
+    <line x1="274" y1="87" x2="274" y2="105"/>
+  </g>
+  <g font-family="Consolas, ui-monospace, monospace" fill="#e9c27a" font-size="12">
+    <text x="94" y="80">×0.5</text>
+    <text x="154" y="80">×1</text>
+    <text x="214" y="80">×1.5</text>
+    <text x="274" y="80">×2</text>
+  </g>
+  <text x="154" y="124" fill="#8a7a63" font-size="12">grabbed here</text>
+  <text x="154" y="196" font-family="Consolas, ui-monospace, monospace" fill="#e9c27a">scale arm</text>
+  <text x="154" y="214" fill="#8a7a63" font-size="12">along the axis, from the grab point</text>
+  <!-- a uniform drag: travel up and to the right on screen -->
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#a8834a"/></marker></defs>
+  <line x1="416.4" y1="155.6" x2="543.6" y2="28.4" stroke="#a8834a" stroke-dasharray="4 3" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <rect x="472.8" y="84.8" width="14.4" height="14.4" fill="#d2d2d2"/>
+  <g stroke="#d9cbb4" stroke-width="1.5">
+    <line x1="432.6" y1="129.5" x2="442.5" y2="139.4"/>
+    <line x1="517.5" y1="44.6" x2="527.4" y2="54.5"/>
+  </g>
+  <g font-family="Consolas, ui-monospace, monospace" fill="#e9c27a" font-size="12" text-anchor="start">
+    <text x="447.6" y="146.4">×0.5</text>
+    <text x="532.4" y="61.6">×1.5</text>
+    <text x="494" y="110">×1</text>
+  </g>
+  <g fill="#8a7a63" font-size="12">
+    <text x="549.6" y="22.4" text-anchor="start">grows</text>
+    <text x="410.4" y="169.6" text-anchor="end">shrinks</text>
+  </g>
+  <text x="480" y="196" font-family="Consolas, ui-monospace, monospace" fill="#e9c27a">center square</text>
+  <text x="480" y="214" fill="#8a7a63" font-size="12">up and to the right on screen</text>
+</svg>
