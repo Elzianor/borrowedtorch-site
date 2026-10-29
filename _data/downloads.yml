@@ -1,15 +1,20 @@
 # Borrowed Torch apps, shown on the Downloads page.
 # id: the card's anchor on the page (/downloads/#id)
-# repo: the GitHub repository - the Download, Release notes and Guide links are built from it
-# version: the release tag. Bump it when a new release is out: the Download button fetches that release's file
-# asset: the file the Download button fetches, {version} standing for the tag
+# repo: the public repository the app's releases and guide are published to (its source stays private) - the Download,
+#   Release notes and Guide links are built from it
+# version: the release to offer. Bump it when a new release is out: the Download button fetches that release's file
+# tag_prefix: what the release tags in repo start with, before the version (several apps share the repo)
+# asset: the file the Download button fetches, {version} standing for the version
+# guide: the folder in repo that holds the app's guide (its README)
 # needs: short requirements line
 # note: optional small print at the bottom of the card
 - id: ormh-converter
   name: ORMH Converter
-  repo: BorrowedTorchStudio/BorrowedTorch.OrmhConverter
-  version: v1.0.0
+  repo: BorrowedTorchStudio/BorrowedTorch.Downloads
+  version: v1.0.1
+  tag_prefix: ormh-converter-
   asset: BorrowedTorch.OrmhConverter-{version}-win-x64.zip
+  guide: OrmhConverter
   summary: Packs the ambient occlusion, roughness, metallic and height maps of a PBR material into one RGBA texture and saves it as a PNG — byte for byte what BorrowedTorch.ContentPipeline packs in a content build.
   features:
     - One card per channel — an image, any of its channels, optionally inverted, or a constant — with a preview of every channel and of the packed result.

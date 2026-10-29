@@ -11,6 +11,7 @@ description: Free tools from Borrowed Torch, ready to download and run.
   <div class="downloads">
     {%- for d in site.data.downloads %}
     {%- assign repo_url = 'https://github.com/' | append: d.repo %}
+    {%- assign tag = d.tag_prefix | append: d.version %}
     {%- assign file = d.asset | replace: '{version}', d.version %}
     <section class="download-card" aria-labelledby="{{ d.id }}">
       <div class="download-title">
@@ -24,9 +25,9 @@ description: Free tools from Borrowed Torch, ready to download and run.
         {%- endfor %}
       </ul>
       <div class="actions">
-        <a class="button primary" href="{{ repo_url }}/releases/download/{{ d.version }}/{{ file }}">Download {{ d.version }}</a>
-        <a class="button" href="{{ repo_url }}/releases/tag/{{ d.version }}" rel="noopener">Release notes</a>
-        <a class="button" href="{{ repo_url }}#readme" rel="noopener">Guide &amp; source</a>
+        <a class="button primary" href="{{ repo_url }}/releases/download/{{ tag }}/{{ file }}">Download {{ d.version }}</a>
+        <a class="button" href="{{ repo_url }}/releases/tag/{{ tag }}" rel="noopener">Release notes</a>
+        <a class="button" href="{{ repo_url }}/tree/main/{{ d.guide }}#readme" rel="noopener">Guide</a>
       </div>
       <p class="download-needs">{{ d.needs }}</p>
       {%- if d.note %}

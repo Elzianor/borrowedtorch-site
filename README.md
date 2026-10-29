@@ -16,7 +16,7 @@ GitHub Pages builds the site automatically on every push to `main`. There is no 
 | `_layouts/docs.html` | Docs page: sidebar, breadcrumbs, Previous / Next |
 | `_data/nav.yml` | Top menu items |
 | `_data/docs.yml` | Docs sidebar groups and reading order |
-| `_data/downloads.yml` | The apps on the Downloads page, each with its GitHub repo and current release |
+| `_data/downloads.yml` | The apps on the Downloads page, each with its current release in BorrowedTorch.Downloads |
 | `search.json` | The index of the search box in the top menu (`assets/js/search.js`), made on every build from every page with a title; `search: false` in a page's front matter leaves it out |
 | `assets/` | CSS, JS and images |
 
@@ -43,9 +43,11 @@ A `<p class="todo">…</p>` line shows as a "To write" note, which is handy whil
 
 ## Releasing a new version of a download
 
-The Download button links straight to a release's file, so after an app's new release is published, set its
-`version` in `_data/downloads.yml` to the new tag (`v1.0.1`). Nothing else changes: the file name, release notes and
-guide links are built from `repo`, `version` and `asset`.
+The apps' releases live in the public
+[BorrowedTorch.Downloads](https://github.com/BorrowedTorchStudio/BorrowedTorch.Downloads) repo (their source stays
+private), each app's tags starting with its name: `ormh-converter-v1.0.1`. The Download button links straight to a
+release's file, so after an app's new release is published, set its `version` in `_data/downloads.yml` to the new one
+(`v1.0.2`). Nothing else changes: the file name, release notes and guide links are built from the other fields.
 
 ## Previewing locally
 
