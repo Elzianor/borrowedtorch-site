@@ -149,7 +149,8 @@ Mouse.SetPosition(center.X, center.Y);
 ## Snapping to an axis
 
 <a class="ref method" href="/docs/camera-glossary/cameras/free-camera-controller/#snapto">`SnapTo`</a> turns the free camera smoothly to face a direction, with its roll leveled against world +Y. It is made for
-an orientation widget such as BorrowedTorch.SceneGizmo: pass the direction of the axis the player clicked.
+an orientation widget such as [BorrowedTorch.SceneGizmo](/docs/scene-gizmo-picking/#snapping-the-view): pass the
+opposite of the axis the player clicked, so that the axis points at the viewer.
 
 ```csharp
 free.SnapTo(-Vector3.UnitX); // look along -X, level

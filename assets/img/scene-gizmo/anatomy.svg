@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 264" width="640" height="264" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="13" text-anchor="middle">
+  <!-- the widget's square, at twice its size -->
+  <rect x="30" y="14" width="220" height="220" fill="none" stroke="#8a7a63" stroke-opacity=".5" stroke-dasharray="4 3"/>
+  <!-- the widget, camera at (4, 3, 6), the pointer on +Y -->
+  <g stroke-width=".6" stroke-linejoin="round">
+    <polygon points="142.3,128 184.6,103.7 179.9,95.6 137.7,120" fill="#20385c" stroke="#20385c"/>
+    <polygon points="141.2,119.5 77.8,103.3 75.5,112.3 138.8,128.5" fill="#581c1c" stroke="#581c1c"/>
+    <polygon points="135.3,124 135.3,194.3 144.7,194.3 144.7,124" fill="#245424" stroke="#245424"/>
+    <polygon points="138.8,128.5 209.2,146.5 211.6,137.5 141.2,119.5" fill="#dc4646" stroke="#dc4646"/>
+    <polygon points="144.7,124 144.7,45.9 135.3,45.9 135.3,124" fill="#ace8ac" stroke="#ace8ac"/>
+    <polygon points="137.7,120 90.7,147 95.4,155.1 142.3,128" fill="#508ce6" stroke="#508ce6"/>
+    <polygon points="128.2,34 151.8,34 151.8,57.7 128.2,57.7" fill="#ace8ac" stroke="#ace8ac"/>
+    <polygon points="130.9,36.9 138.5,47 141.5,44.7 133.9,34.6" fill="#f5f5f5" stroke="#f5f5f5"/>
+    <polygon points="146.1,34.6 138.5,44.7 141.5,47 149.1,36.9" fill="#f5f5f5" stroke="#f5f5f5"/>
+    <polygon points="138.1,45.9 138.1,56 141.9,56 141.9,45.9" fill="#f5f5f5" stroke="#f5f5f5"/>
+    <polygon points="198.6,130.2 222.3,130.2 222.3,153.9 198.6,153.9" fill="#dc4646" stroke="#dc4646"/>
+    <polygon points="204.3,153.3 219.5,133 216.5,130.7 201.3,151" fill="#f5f5f5" stroke="#f5f5f5"/>
+    <polygon points="201.3,133 216.5,153.3 219.5,151 204.3,130.7" fill="#f5f5f5" stroke="#f5f5f5"/>
+    <polygon points="81.2,139.2 104.9,139.2 104.9,162.9 81.2,162.9" fill="#508ce6" stroke="#508ce6"/>
+    <polygon points="85.4,142.8 100.7,142.8 100.7,139 85.4,139" fill="#f5f5f5" stroke="#f5f5f5"/>
+    <polygon points="99.2,139.7 83.9,160.1 87,162.3 102.2,142" fill="#f5f5f5" stroke="#f5f5f5"/>
+    <polygon points="85.4,163.1 100.7,163.1 100.7,159.3 85.4,159.3" fill="#f5f5f5" stroke="#f5f5f5"/>
+  </g>
+  <g stroke="#a8834a" stroke-width="1" fill="none">
+    <polyline points="156,43.9 292,44"/>
+    <polyline points="186.2,99.7 292,108"/>
+    <polyline points="226.4,146 292,172"/>
+  </g>
+  <polygon points="146,44.9 146,59.9 149.6,56.5 152.4,62.3 154.6,61.3 151.9,55.6 156.8,55.6" fill="#f5f5f5" stroke="#15100c" stroke-width="1" stroke-linejoin="round"/>
+  <text x="300" y="48" font-family="Consolas, ui-monospace, monospace" fill="#e9c27a" text-anchor="start">+Y under the pointer</text>
+  <text x="300" y="65" fill="#8a7a63" font-size="12" text-anchor="start">drawn halfway from its color to white</text>
+  <text x="300" y="112" font-family="Consolas, ui-monospace, monospace" fill="#e9c27a" text-anchor="start">−X  −Y  −Z</text>
+  <text x="300" y="129" fill="#8a7a63" font-size="12" text-anchor="start">90% as long, at 40% brightness, no knob</text>
+  <text x="300" y="176" font-family="Consolas, ui-monospace, monospace" fill="#e9c27a" text-anchor="start">+X  +Y  +Z</text>
+  <text x="300" y="193" fill="#8a7a63" font-size="12" text-anchor="start">full length, with a knob and a letter at the tip</text>
+  <text x="140" y="256" fill="#8a7a63" font-size="12">the 110 px square, at twice its size</text>
+</svg>

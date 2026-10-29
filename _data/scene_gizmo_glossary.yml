@@ -1,0 +1,34 @@
+# The scene gizmo glossary in the docs sidebar: generated with the glossary pages, don't edit by hand.
+- title: "Gizmo"
+  url: /docs/scene-gizmo-glossary/gizmo/
+  entries:
+    - title: "Orientation<wbr>Gizmo"
+      url: /docs/scene-gizmo-glossary/gizmo/orientation-gizmo/
+      members:
+        - title: "Axis<wbr>Letter<wbr>Color"
+          anchor: axislettercolor
+          kind: prop
+        - title: "Axis<wbr>XColor"
+          anchor: axisxcolor
+          kind: prop
+        - title: "Axis<wbr>YColor"
+          anchor: axisycolor
+          kind: prop
+        - title: "Axis<wbr>ZColor"
+          anchor: axiszcolor
+          kind: prop
+        - title: "Orientation<wbr>Gizmo()"
+          anchor: orientationgizmo
+          kind: method
+        - title: "Dispose()"
+          anchor: dispose
+          kind: method
+        - title: "Draw()"
+          anchor: draw
+          kind: method
+        - title: "Try<wbr>Pick<wbr>Axis()"
+          anchor: trypickaxis
+          kind: method
+        - title: "Update<wbr>Hover()"
+          anchor: updatehover
+          kind: method

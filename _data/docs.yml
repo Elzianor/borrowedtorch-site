@@ -16,8 +16,8 @@
 
 # tree: true makes the group's title the root of a tree that opens on its pages. An article with glossary: names a
 # data file whose entries (each with members) become its subitems: _data/audio_glossary.yml,
-# _data/ui_glossary.yml, _data/randomness_glossary.yml, _data/camera_glossary.yml and
-# _data/transform_gizmo_glossary.yml are generated with their glossary pages.
+# _data/ui_glossary.yml, _data/randomness_glossary.yml, _data/camera_glossary.yml,
+# _data/transform_gizmo_glossary.yml and _data/scene_gizmo_glossary.yml are generated with their glossary pages.
 - group: Audio
   tree: true
   articles:
@@ -114,6 +114,19 @@
     - title: Glossary
       url: /docs/transform-gizmo-glossary/
       glossary: transform_gizmo_glossary
+
+- group: Scene gizmo
+  tree: true
+  articles:
+    - title: Quick start guide
+      url: /docs/scene-gizmo/
+    - title: Picking and snapping
+      url: /docs/scene-gizmo-picking/
+    - title: Drawing
+      url: /docs/scene-gizmo-drawing/
+    - title: Glossary
+      url: /docs/scene-gizmo-glossary/
+      glossary: scene_gizmo_glossary
 
 - group: Systems
   articles:

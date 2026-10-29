@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 290" width="640" height="290" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="13" text-anchor="middle">
+  <defs>
+    <linearGradient id="edge-top" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#e9c27a" stop-opacity="0"/><stop offset=".4" stop-color="#e9c27a" stop-opacity=".6"/></linearGradient>
+    <linearGradient id="edge-right" x1="0" x2="0" y1="0" y2="1"><stop offset=".7" stop-color="#e9c27a" stop-opacity=".6"/><stop offset="1" stop-color="#e9c27a" stop-opacity="0"/></linearGradient>
+  </defs>
+  <!-- the top and right edges of the viewport -->
+  <rect x="20" y="29" width="581" height="2" fill="url(#edge-top)"/>
+  <rect x="599" y="29" width="2" height="261" fill="url(#edge-right)"/>
+  <text x="40" y="60" fill="#8a7a63" font-size="12" text-anchor="start">the top-right corner of the current viewport</text>
+  <!-- the widget's square -->
+  <rect x="356" y="54" width="220" height="220" fill="none" stroke="#8a7a63" stroke-opacity=".5" stroke-dasharray="4 3"/>
+  <!-- the widget, camera at (4, 3, 6), the pointer on +X -->
+  <g stroke-width=".6" stroke-linejoin="round">
+    <polygon points="468.3,168 510.6,143.7 505.9,135.6 463.7,160" fill="#20385c" stroke="#20385c"/>
+    <polygon points="467.2,159.5 403.8,143.3 401.5,152.3 464.8,168.5" fill="#581c1c" stroke="#581c1c"/>
+    <polygon points="461.3,164 461.3,234.3 470.7,234.3 470.7,164" fill="#245424" stroke="#245424"/>
+    <polygon points="464.8,168.5 535.2,186.5 537.6,177.5 467.2,159.5" fill="#eda2a2" stroke="#eda2a2"/>
+    <polygon points="470.7,164 470.7,85.9 461.3,85.9 461.3,164" fill="#5ad25a" stroke="#5ad25a"/>
+    <polygon points="463.7,160 416.7,187 421.4,195.1 468.3,168" fill="#508ce6" stroke="#508ce6"/>
+    <polygon points="454.2,74 477.8,74 477.8,97.7 454.2,97.7" fill="#5ad25a" stroke="#5ad25a"/>
+    <polygon points="456.9,76.9 464.5,87 467.5,84.7 459.9,74.6" fill="#f5f5f5" stroke="#f5f5f5"/>
+    <polygon points="472.1,74.6 464.5,84.7 467.5,87 475.1,76.9" fill="#f5f5f5" stroke="#f5f5f5"/>
+    <polygon points="464.1,85.9 464.1,96 467.9,96 467.9,85.9" fill="#f5f5f5" stroke="#f5f5f5"/>
+    <polygon points="524.6,170.2 548.3,170.2 548.3,193.9 524.6,193.9" fill="#eda2a2" stroke="#eda2a2"/>
+    <polygon points="530.3,193.3 545.5,173 542.5,170.7 527.3,191" fill="#f5f5f5" stroke="#f5f5f5"/>
+    <polygon points="527.3,173 542.5,193.3 545.5,191 530.3,170.7" fill="#f5f5f5" stroke="#f5f5f5"/>
+    <polygon points="407.2,179.2 430.9,179.2 430.9,202.9 407.2,202.9" fill="#508ce6" stroke="#508ce6"/>
+    <polygon points="411.4,182.8 426.7,182.8 426.7,179 411.4,179" fill="#f5f5f5" stroke="#f5f5f5"/>
+    <polygon points="425.2,179.7 409.9,200.1 413,202.3 428.2,182" fill="#f5f5f5" stroke="#f5f5f5"/>
+    <polygon points="411.4,203.1 426.7,203.1 426.7,199.3 411.4,199.3" fill="#f5f5f5" stroke="#f5f5f5"/>
+  </g>
+  <!-- where a click picks a tip -->
+  <g fill="none" stroke="#e9c27a" stroke-opacity=".75" stroke-dasharray="3 3">
+    <circle cx="536.4" cy="182" r="28"/>
+    <circle cx="466" cy="85.9" r="28"/>
+    <circle cx="419.1" cy="191" r="28"/>
+    <circle cx="402.6" cy="147.8" r="28"/>
+    <circle cx="466" cy="234.3" r="28"/>
+    <circle cx="508.2" cy="139.7" r="28"/>
+  </g>
+  <g stroke="#a8834a" stroke-width="1" font-size="12">
+    <line x1="536.4" y1="182" x2="536.4" y2="210"/>
+    <text x="536.4" y="225" stroke="none" fill="#8a7a63">14 px</text>
+    <line x1="340" y1="30" x2="340" y2="274"/>
+    <line x1="336" y1="30" x2="344" y2="30"/>
+    <line x1="336" y1="54" x2="344" y2="54"/>
+    <line x1="336" y1="274" x2="344" y2="274"/>
+    <text x="332" y="46" stroke="none" fill="#8a7a63" text-anchor="end">12 px</text>
+    <text x="332" y="168" stroke="none" fill="#8a7a63" text-anchor="end">110 px</text>
+    <polyline fill="none" points="300,207.8 381.6,166.3"/>
+    <text x="296" y="211.8" stroke="none" fill="#8a7a63" text-anchor="end">a click picks the tip within 14 px</text>
+  </g>
+  <polygon points="545.4,175 545.4,190 549,186.6 551.8,192.4 554,191.4 551.3,185.7 556.2,185.7" fill="#f5f5f5" stroke="#15100c" stroke-width="1" stroke-linejoin="round"/>
+</svg>
