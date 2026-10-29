@@ -1,0 +1,38 @@
+---
+layout: base
+title: Downloads
+description: Free tools from Borrowed Torch, ready to download and run.
+---
+<div class="page">
+  <p class="eyebrow">Tools</p>
+  <h1 class="page-title">Downloads</h1>
+  <p class="lead">Tools we made for our own pipeline, free to use in yours.</p>
+
+  <div class="downloads">
+    {%- for d in site.data.downloads %}
+    {%- assign repo_url = 'https://github.com/' | append: d.repo %}
+    {%- assign file = d.asset | replace: '{version}', d.version %}
+    <section class="download-card" aria-labelledby="{{ d.id }}">
+      <div class="download-title">
+        <h2 id="{{ d.id }}">{{ d.name }}</h2>
+        <span class="pill">{{ d.version }}</span>
+      </div>
+      <p>{{ d.summary }}</p>
+      <ul class="download-features">
+        {%- for f in d.features %}
+        <li>{{ f }}</li>
+        {%- endfor %}
+      </ul>
+      <div class="actions">
+        <a class="button primary" href="{{ repo_url }}/releases/download/{{ d.version }}/{{ file }}">Download {{ d.version }}</a>
+        <a class="button" href="{{ repo_url }}/releases/tag/{{ d.version }}" rel="noopener">Release notes</a>
+        <a class="button" href="{{ repo_url }}#readme" rel="noopener">Guide &amp; source</a>
+      </div>
+      <p class="download-needs">{{ d.needs }}</p>
+      {%- if d.note %}
+      <p class="download-note">{{ d.note }}</p>
+      {%- endif %}
+    </section>
+    {%- endfor %}
+  </div>
+</div>

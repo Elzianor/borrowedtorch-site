@@ -11,10 +11,12 @@ GitHub Pages builds the site automatically on every push to `main`. There is no 
 | `kindling/` | Kindling engine overview |
 | `docs/` | Kindling docs, one Markdown file per article |
 | `games/` | Games page |
+| `downloads/` | Downloads page: one card per app, from `_data/downloads.yml` |
 | `_layouts/base.html` | Page shell: head, top menu, footer |
 | `_layouts/docs.html` | Docs page: sidebar, breadcrumbs, Previous / Next |
 | `_data/nav.yml` | Top menu items |
 | `_data/docs.yml` | Docs sidebar groups and reading order |
+| `_data/downloads.yml` | The apps on the Downloads page, each with its GitHub repo and current release |
 | `search.json` | The index of the search box in the top menu (`assets/js/search.js`), made on every build from every page with a title; `search: false` in a page's front matter leaves it out |
 | `assets/` | CSS, JS and images |
 
@@ -38,6 +40,12 @@ GitHub Pages builds the site automatically on every push to `main`. There is no 
 2. Add it to `_data/docs.yml` under a group. The order there is the reading order.
 
 A `<p class="todo">…</p>` line shows as a "To write" note, which is handy while drafting.
+
+## Releasing a new version of a download
+
+The Download button links straight to a release's file, so after an app's new release is published, set its
+`version` in `_data/downloads.yml` to the new tag (`v1.0.1`). Nothing else changes: the file name, release notes and
+guide links are built from `repo`, `version` and `asset`.
 
 ## Previewing locally
 

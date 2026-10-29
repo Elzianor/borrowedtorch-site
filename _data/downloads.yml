@@ -1,0 +1,19 @@
+# Borrowed Torch apps, shown on the Downloads page.
+# id: the card's anchor on the page (/downloads/#id)
+# repo: the GitHub repository - the Download, Release notes and Guide links are built from it
+# version: the release tag. Bump it when a new release is out: the Download button fetches that release's file
+# asset: the file the Download button fetches, {version} standing for the tag
+# needs: short requirements line
+# note: optional small print at the bottom of the card
+- id: ormh-converter
+  name: ORMH Converter
+  repo: BorrowedTorchStudio/BorrowedTorch.OrmhConverter
+  version: v1.0.0
+  asset: BorrowedTorch.OrmhConverter-{version}-win-x64.zip
+  summary: Packs the ambient occlusion, roughness, metallic and height maps of a PBR material into one RGBA texture and saves it as a PNG — byte for byte what BorrowedTorch.ContentPipeline packs in a content build.
+  features:
+    - One card per channel — an image, any of its channels, optionally inverted, or a constant — with a preview of every channel and of the packed result.
+    - Drop a texture pack's maps on the window and they are sorted into channels by name.
+    - Opens .ormh descriptors, and packs them from the command line for batches.
+  needs: 64-bit Windows · nothing to install, .NET included
+  note: The exe isn't code-signed yet. If Windows SmartScreen stops it, choose More info, then Run anyway. Each release has a .sha256 file to check the download against.

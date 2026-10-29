@@ -22,6 +22,15 @@
       summary: GPU cloth solver for MonoGame. A compute shader integrates particles, relaxes constraints and builds normals with positions kept on the GPU; supports colliders, self-collision, tearing and wind. Solver only — you render the cloth.
       needs: Windows · MonoGame compute fork
 
+- group: Textures
+  packages:
+    - id: BorrowedTorch.Ormh
+      summary: Packs ambient occlusion, roughness, metallic and height into one RGBA texture — the .ormh descriptor format and the packer, with no image decoder of its own. Bring yours; the content pipeline extension and the ORMH Converter pack the same bytes with it.
+      needs: .NET 8+ · no dependencies
+    - id: BorrowedTorch.ContentPipeline
+      summary: MonoGame content pipeline extension that builds ORMH textures from the separate maps an .ormh descriptor names, through the stock texture processor for mipmaps and compression. Hands mgcb its reference on every build, so Content.mgcb needs no line for it.
+      needs: MonoGame 3.8.3+ content builder · development dependency
+
 - group: Camera & editor tools
   packages:
     - id: BorrowedTorch.Camera

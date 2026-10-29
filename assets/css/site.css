@@ -99,12 +99,25 @@ a:hover { color: #fff3d6; }
 .site-nav a[aria-current="page"] { color: var(--gold); background: rgba(233, 194, 122, .1); }
 /* the menu and the search box (or its button), together at the right */
 .site-header-end { display: flex; align-items: center; gap: 4px 12px; }
-@media (max-width: 640px) {
+/* the brand on a row of its own and the menu centred under it, from the width where the brand, the five menu items and
+   the search button stop fitting on one row */
+@media (max-width: 760px) {
   :root { --header-h: 104px; }
   .site-header-inner { justify-content: center; padding: 6px 12px 4px; }
   .site-header-end { justify-content: center; gap: 4px; }
   .site-nav ul { justify-content: center; }
   .site-nav a { padding: 0 12px; }
+}
+/* on a phone the menu has its row to itself: the search button goes up beside the brand and the items close up. A
+   screen too narrow even for that scrolls the row sideways rather than breaking it onto a second line, which would
+   make the header taller than --header-h says */
+@media (max-width: 520px) {
+  .site-search-open { position: absolute; top: 6px; right: 8px; }
+  .site-header-end { width: 100%; gap: 0; }
+  .site-nav { min-width: 0; overflow-x: auto; scrollbar-width: none; }
+  .site-nav::-webkit-scrollbar { display: none; }
+  .site-nav ul { flex-wrap: nowrap; justify-content: flex-start; gap: 2px; width: max-content; margin: 0 auto; }
+  .site-nav a { padding: 0 6px; font-size: .88rem; white-space: nowrap; }
 }
 
 /* ---------- Site search (assets/js/search.js) ---------- */
@@ -378,6 +391,36 @@ a.card:hover { border-color: var(--line-strong); background: var(--surface-2); c
 }
 .game-card h2 { font-family: var(--display); font-weight: 600; color: var(--gold); font-size: 1.5rem; }
 .game-card p { color: var(--text); max-width: 60ch; }
+
+/* ---------- Downloads page ---------- */
+.downloads { display: grid; gap: 20px; margin-top: 32px; }
+/* the Games card's look, holding one app */
+.download-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 85% 0%, rgba(var(--ember), .12), transparent 55%),
+    var(--surface);
+}
+.download-title { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+.download-card h2 { font-family: var(--display); font-weight: 600; color: var(--gold); font-size: 1.5rem; }
+.download-card p { color: var(--text); max-width: 65ch; }
+/* the reset takes every list's indent away; this one keeps its bullets */
+.download-features { display: grid; gap: 6px; padding-left: 1.2em; font-size: .95rem; max-width: 70ch; }
+.download-features li::marker { color: var(--gold-dim); }
+.download-card .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
+.download-card .download-needs { color: var(--muted); font-size: .85rem; }
+.download-card .download-note {
+  max-width: none;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .8rem;
+}
 
 /* ---------- Docs ---------- */
 .docs {
