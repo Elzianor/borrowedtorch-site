@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 200" width="640" height="200" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="13" text-anchor="middle">
+  <!-- the updates -->
+  <text x="200" y="22" fill="#8a7a63" font-size="11">update 1</text>
+  <line x1="200" y1="30" x2="200" y2="180" stroke="#a8834a" stroke-opacity=".7" stroke-dasharray="3 4"/>
+  <text x="290" y="22" fill="#8a7a63" font-size="11">update 2</text>
+  <line x1="290" y1="30" x2="290" y2="180" stroke="#a8834a" stroke-opacity=".7" stroke-dasharray="3 4"/>
+  <text x="380" y="22" fill="#8a7a63" font-size="11">update 3</text>
+  <line x1="380" y1="30" x2="380" y2="180" stroke="#a8834a" stroke-opacity=".7" stroke-dasharray="3 4"/>
+  <text x="470" y="22" fill="#8a7a63" font-size="11">update 4</text>
+  <line x1="470" y1="30" x2="470" y2="180" stroke="#a8834a" stroke-opacity=".7" stroke-dasharray="3 4"/>
+  <text x="560" y="22" fill="#8a7a63" font-size="11">update 5</text>
+  <line x1="560" y1="30" x2="560" y2="180" stroke="#a8834a" stroke-opacity=".7" stroke-dasharray="3 4"/>
+
+  <!-- A key -->
+  <text x="20" y="58" fill="#e9c27a" text-anchor="start">A key</text>
+  <text x="20" y="75" fill="#8a7a63" font-size="11" text-anchor="start">read by polling</text>
+  <rect x="318" y="46" width="40" height="14" rx="5" fill="#f28c28" fill-opacity=".8"/>
+  <text x="338" y="39" fill="#f28c28" font-size="10" stroke="#100c09" stroke-width="5" stroke-linejoin="round" paint-order="stroke">tap</text>
+  <g font-family="Consolas, ui-monospace, monospace" font-size="11" stroke="#100c09" stroke-width="5" stroke-linejoin="round" paint-order="stroke">
+    <text x="200" y="82" fill="#8a7a63">Idle</text>
+    <text x="290" y="82" fill="#8a7a63">Idle</text>
+    <text x="380" y="82" fill="#8a7a63">Idle</text>
+    <text x="470" y="82" fill="#8a7a63">Idle</text>
+    <text x="560" y="82" fill="#8a7a63">Idle</text>
+  </g>
+  <text x="200" y="102" fill="#8a7a63" font-size="11" text-anchor="start" stroke="#100c09" stroke-width="5" stroke-linejoin="round" paint-order="stroke">never seen: no update came while it was held</text>
+
+  <!-- A MIDI note -->
+  <text x="20" y="132" fill="#e9c27a" text-anchor="start">A MIDI note</text>
+  <text x="20" y="149" fill="#8a7a63" font-size="11" text-anchor="start">sent as messages</text>
+  <rect x="318" y="120" width="40" height="14" rx="5" fill="#f28c28" fill-opacity=".8"/>
+  <text x="338" y="113" fill="#f28c28" font-size="10" stroke="#100c09" stroke-width="5" stroke-linejoin="round" paint-order="stroke">tap</text>
+  <g font-family="Consolas, ui-monospace, monospace" font-size="11" stroke="#100c09" stroke-width="5" stroke-linejoin="round" paint-order="stroke">
+    <text x="200" y="156" fill="#8a7a63">Idle</text>
+    <text x="290" y="156" fill="#8a7a63">Idle</text>
+    <text x="380" y="156" fill="#e9c27a">Pressed</text>
+    <text x="470" y="156" fill="#f28c28">Up</text>
+    <text x="560" y="156" fill="#8a7a63">Idle</text>
+  </g>
+  <text x="200" y="176" fill="#8a7a63" font-size="11" text-anchor="start" stroke="#100c09" stroke-width="5" stroke-linejoin="round" paint-order="stroke">kept: Pressed for one update, then Up</text>
+</svg>

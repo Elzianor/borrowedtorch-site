@@ -1,0 +1,413 @@
+# The MonoInput glossary in the docs sidebar: generated with the glossary pages, don't edit by hand.
+- title: "Button states"
+  url: /docs/monoinput-glossary/states/
+  entries:
+    - title: "Button<wbr>States"
+      url: /docs/monoinput-glossary/states/button-states/
+    - title: "Button<wbr>Info"
+      url: /docs/monoinput-glossary/states/button-info/
+      members:
+        - title: "Active"
+          anchor: active
+          kind: prop
+        - title: "Down"
+          anchor: down
+          kind: prop
+        - title: "Idle"
+          anchor: idle
+          kind: prop
+        - title: "Pressed"
+          anchor: pressed
+          kind: prop
+        - title: "State"
+          anchor: state
+          kind: prop
+        - title: "Up"
+          anchor: up
+          kind: prop
+    - title: "Active<wbr>Input<wbr>Status&lt;TId&gt;"
+      url: /docs/monoinput-glossary/states/active-input-status/
+      members:
+        - title: "State"
+          anchor: state
+          kind: prop
+        - title: "Active<wbr>Input<wbr>Status()"
+          anchor: activeinputstatus
+          kind: method
+    - title: "Active<wbr>Inputs&lt;TStatus&gt;"
+      url: /docs/monoinput-glossary/states/active-inputs/
+      members:
+        - title: "Count"
+          anchor: count
+          kind: prop
+        - title: "Get<wbr>Enumerator()"
+          anchor: getenumerator
+          kind: method
+- title: "Keyboard"
+  url: /docs/monoinput-glossary/keyboard/
+  entries:
+    - title: "Keyboard<wbr>Manager"
+      url: /docs/monoinput-glossary/keyboard/keyboard-manager/
+      members:
+        - title: "Active<wbr>Keys"
+          anchor: activekeys
+          kind: prop
+        - title: "Is<wbr>Alt<wbr>Down"
+          anchor: isaltdown
+          kind: prop
+        - title: "Is<wbr>Ctrl<wbr>Down"
+          anchor: isctrldown
+          kind: prop
+        - title: "Is<wbr>Shift<wbr>Down"
+          anchor: isshiftdown
+          kind: prop
+        - title: "Is<wbr>Key<wbr>Active()"
+          anchor: iskeyactive
+          kind: method
+        - title: "Is<wbr>Key<wbr>Down()"
+          anchor: iskeydown
+          kind: method
+        - title: "Is<wbr>Key<wbr>Idle()"
+          anchor: iskeyidle
+          kind: method
+        - title: "Is<wbr>Key<wbr>Pressed()"
+          anchor: iskeypressed
+          kind: method
+        - title: "Is<wbr>Key<wbr>Up()"
+          anchor: iskeyup
+          kind: method
+        - title: "Update()"
+          anchor: update
+          kind: method
+    - title: "Key<wbr>Status"
+      url: /docs/monoinput-glossary/keyboard/key-status/
+      members:
+        - title: "Key"
+          anchor: key
+          kind: prop
+        - title: "Key<wbr>Status()"
+          anchor: keystatus
+          kind: method
+- title: "Mouse"
+  url: /docs/monoinput-glossary/mouse/
+  entries:
+    - title: "Mouse<wbr>Manager"
+      url: /docs/monoinput-glossary/mouse/mouse-manager/
+      members:
+        - title: "Mouse<wbr>Status"
+          anchor: mousestatus
+          kind: prop
+        - title: "Get<wbr>Buttons<wbr>States()"
+          anchor: getbuttonsstates
+          kind: method
+        - title: "Update()"
+          anchor: update
+          kind: method
+        - title: "Update<wbr>Buttons<wbr>States()"
+          anchor: updatebuttonsstates
+          kind: method
+        - title: "Update<wbr>Position<wbr>Data()"
+          anchor: updatepositiondata
+          kind: method
+        - title: "Update<wbr>Wheels<wbr>Data()"
+          anchor: updatewheelsdata
+          kind: method
+        - title: "On<wbr>Buttons<wbr>States<wbr>Changed"
+          anchor: onbuttonsstateschanged
+          kind: event
+        - title: "On<wbr>Horizontal<wbr>Wheel<wbr>Delta<wbr>Changed"
+          anchor: onhorizontalwheeldeltachanged
+          kind: event
+        - title: "On<wbr>Position<wbr>Changed"
+          anchor: onpositionchanged
+          kind: event
+        - title: "On<wbr>Wheel<wbr>Delta<wbr>Changed"
+          anchor: onwheeldeltachanged
+          kind: event
+    - title: "Mouse<wbr>Status"
+      url: /docs/monoinput-glossary/mouse/mouse-status/
+      members:
+        - title: "Horizontal<wbr>Wheel<wbr>Cumulative<wbr>Value"
+          anchor: horizontalwheelcumulativevalue
+          kind: prop
+        - title: "Horizontal<wbr>Wheel<wbr>Delta"
+          anchor: horizontalwheeldelta
+          kind: prop
+        - title: "Is<wbr>Any<wbr>Button<wbr>Active"
+          anchor: isanybuttonactive
+          kind: prop
+        - title: "Is<wbr>Any<wbr>Button<wbr>Down"
+          anchor: isanybuttondown
+          kind: prop
+        - title: "Is<wbr>Any<wbr>Button<wbr>Pressed"
+          anchor: isanybuttonpressed
+          kind: prop
+        - title: "Is<wbr>Any<wbr>Button<wbr>Up"
+          anchor: isanybuttonup
+          kind: prop
+        - title: "Left<wbr>Button"
+          anchor: leftbutton
+          kind: prop
+        - title: "Middle<wbr>Button"
+          anchor: middlebutton
+          kind: prop
+        - title: "Position"
+          anchor: position
+          kind: prop
+        - title: "Position<wbr>Delta"
+          anchor: positiondelta
+          kind: prop
+        - title: "Right<wbr>Button"
+          anchor: rightbutton
+          kind: prop
+        - title: "Wheel<wbr>Cumulative<wbr>Value"
+          anchor: wheelcumulativevalue
+          kind: prop
+        - title: "Wheel<wbr>Delta"
+          anchor: wheeldelta
+          kind: prop
+        - title: "XButton1"
+          anchor: xbutton1
+          kind: prop
+        - title: "XButton2"
+          anchor: xbutton2
+          kind: prop
+        - title: "Mouse<wbr>Status()"
+          anchor: mousestatus
+          kind: method
+    - title: "Mouse<wbr>Button<wbr>Info"
+      url: /docs/monoinput-glossary/mouse/mouse-button-info/
+      members:
+        - title: "Type"
+          anchor: type
+          kind: prop
+        - title: "Mouse<wbr>Button<wbr>Info()"
+          anchor: mousebuttoninfo
+          kind: method
+        - title: "To<wbr>String()"
+          anchor: tostring
+          kind: method
+    - title: "Mouse<wbr>Buttons<wbr>States"
+      url: /docs/monoinput-glossary/mouse/mouse-buttons-states/
+      members:
+        - title: "Left<wbr>Button<wbr>State"
+          anchor: leftbuttonstate
+          kind: prop
+        - title: "Middle<wbr>Button<wbr>State"
+          anchor: middlebuttonstate
+          kind: prop
+        - title: "Right<wbr>Button<wbr>State"
+          anchor: rightbuttonstate
+          kind: prop
+        - title: "XButton1<wbr>State"
+          anchor: xbutton1state
+          kind: prop
+        - title: "XButton2<wbr>State"
+          anchor: xbutton2state
+          kind: prop
+        - title: "Mouse<wbr>Buttons<wbr>States()"
+          anchor: mousebuttonsstates
+          kind: method
+        - title: "==()"
+          anchor: equality-operators
+          kind: method
+        - title: "Equals()"
+          anchor: equals
+          kind: method
+        - title: "Get<wbr>Hash<wbr>Code()"
+          anchor: gethashcode
+          kind: method
+        - title: "To<wbr>String()"
+          anchor: tostring
+          kind: method
+    - title: "Mouse<wbr>Button<wbr>Types"
+      url: /docs/monoinput-glossary/mouse/mouse-button-types/
+    - title: "Mouse<wbr>Manager.Buttons<wbr>States<wbr>Changed"
+      url: /docs/monoinput-glossary/mouse/mouse-manager-buttons-states-changed/
+    - title: "Mouse<wbr>Manager.Horizontal<wbr>Wheel<wbr>Delta<wbr>Changed"
+      url: /docs/monoinput-glossary/mouse/mouse-manager-horizontal-wheel-delta-changed/
+    - title: "Mouse<wbr>Manager.Position<wbr>Changed"
+      url: /docs/monoinput-glossary/mouse/mouse-manager-position-changed/
+    - title: "Mouse<wbr>Manager.Wheel<wbr>Delta<wbr>Changed"
+      url: /docs/monoinput-glossary/mouse/mouse-manager-wheel-delta-changed/
+- title: "Gamepads"
+  url: /docs/monoinput-glossary/gamepads/
+  entries:
+    - title: "Game<wbr>Pad<wbr>Manager"
+      url: /docs/monoinput-glossary/gamepads/game-pad-manager/
+      members:
+        - title: "Game<wbr>Pads<wbr>Status"
+          anchor: gamepadsstatus
+          kind: prop
+        - title: "Set<wbr>Vibration()"
+          anchor: setvibration
+          kind: method
+        - title: "Update()"
+          anchor: update
+          kind: method
+        - title: "On<wbr>Status<wbr>Changed"
+          anchor: onstatuschanged
+          kind: event
+    - title: "Game<wbr>Pad<wbr>Status"
+      url: /docs/monoinput-glossary/gamepads/game-pad-status/
+      members:
+        - title: "A"
+          anchor: a
+          kind: prop
+        - title: "B"
+          anchor: b
+          kind: prop
+        - title: "Back"
+          anchor: back
+          kind: prop
+        - title: "Down"
+          anchor: down
+          kind: prop
+        - title: "Home"
+          anchor: home
+          kind: prop
+        - title: "Is<wbr>Any<wbr>Button<wbr>Active"
+          anchor: isanybuttonactive
+          kind: prop
+        - title: "Is<wbr>Any<wbr>Button<wbr>Down"
+          anchor: isanybuttondown
+          kind: prop
+        - title: "Is<wbr>Any<wbr>Button<wbr>Pressed"
+          anchor: isanybuttonpressed
+          kind: prop
+        - title: "Is<wbr>Any<wbr>Button<wbr>Up"
+          anchor: isanybuttonup
+          kind: prop
+        - title: "Is<wbr>Connected"
+          anchor: isconnected
+          kind: prop
+        - title: "Left"
+          anchor: left
+          kind: prop
+        - title: "Left<wbr>Shoulder"
+          anchor: leftshoulder
+          kind: prop
+        - title: "Left<wbr>Stick"
+          anchor: leftstick
+          kind: prop
+        - title: "Left<wbr>Stick<wbr>Shift"
+          anchor: leftstickshift
+          kind: prop
+        - title: "Left<wbr>Stick<wbr>Shift<wbr>Delta"
+          anchor: leftstickshiftdelta
+          kind: prop
+        - title: "Left<wbr>Trigger<wbr>Value"
+          anchor: lefttriggervalue
+          kind: prop
+        - title: "Left<wbr>Trigger<wbr>Value<wbr>Delta"
+          anchor: lefttriggervaluedelta
+          kind: prop
+        - title: "Player<wbr>Index"
+          anchor: playerindex
+          kind: prop
+        - title: "Right"
+          anchor: right
+          kind: prop
+        - title: "Right<wbr>Shoulder"
+          anchor: rightshoulder
+          kind: prop
+        - title: "Right<wbr>Stick"
+          anchor: rightstick
+          kind: prop
+        - title: "Right<wbr>Stick<wbr>Shift"
+          anchor: rightstickshift
+          kind: prop
+        - title: "Right<wbr>Stick<wbr>Shift<wbr>Delta"
+          anchor: rightstickshiftdelta
+          kind: prop
+        - title: "Right<wbr>Trigger<wbr>Value"
+          anchor: righttriggervalue
+          kind: prop
+        - title: "Right<wbr>Trigger<wbr>Value<wbr>Delta"
+          anchor: righttriggervaluedelta
+          kind: prop
+        - title: "Start"
+          anchor: start
+          kind: prop
+        - title: "Up"
+          anchor: up
+          kind: prop
+        - title: "X"
+          anchor: x
+          kind: prop
+        - title: "Y"
+          anchor: y
+          kind: prop
+    - title: "Game<wbr>Pad<wbr>Button<wbr>Info"
+      url: /docs/monoinput-glossary/gamepads/game-pad-button-info/
+      members:
+        - title: "Type"
+          anchor: type
+          kind: prop
+        - title: "Game<wbr>Pad<wbr>Button<wbr>Info()"
+          anchor: gamepadbuttoninfo
+          kind: method
+        - title: "To<wbr>String()"
+          anchor: tostring
+          kind: method
+    - title: "Game<wbr>Pad<wbr>Button<wbr>Types"
+      url: /docs/monoinput-glossary/gamepads/game-pad-button-types/
+    - title: "Game<wbr>Pad<wbr>Manager.Status<wbr>Changed"
+      url: /docs/monoinput-glossary/gamepads/game-pad-manager-status-changed/
+- title: "MIDI"
+  url: /docs/monoinput-glossary/midi/
+  entries:
+    - title: "Midi<wbr>Manager"
+      url: /docs/monoinput-glossary/midi/midi-manager/
+      members:
+        - title: "Active<wbr>Notes"
+          anchor: activenotes
+          kind: prop
+        - title: "Devices"
+          anchor: devices
+          kind: prop
+        - title: "Disposed"
+          anchor: disposed
+          kind: prop
+        - title: "Selected<wbr>Device"
+          anchor: selecteddevice
+          kind: prop
+        - title: "Dispose()"
+          anchor: dispose
+          kind: method
+        - title: "Try<wbr>Connect<wbr>To<wbr>Midi<wbr>Device()"
+          anchor: tryconnecttomididevice
+          kind: method
+        - title: "Update()"
+          anchor: update
+          kind: method
+        - title: "On<wbr>Devices<wbr>Changed"
+          anchor: ondeviceschanged
+          kind: event
+        - title: "On<wbr>Device<wbr>Selected"
+          anchor: ondeviceselected
+          kind: event
+    - title: "Midi<wbr>Device<wbr>Info"
+      url: /docs/monoinput-glossary/midi/midi-device-info/
+      members:
+        - title: "Id"
+          anchor: id
+          kind: prop
+        - title: "Name"
+          anchor: name
+          kind: prop
+        - title: "Midi<wbr>Device<wbr>Info()"
+          anchor: midideviceinfo
+          kind: method
+        - title: "To<wbr>String()"
+          anchor: tostring
+          kind: method
+    - title: "Note<wbr>Status"
+      url: /docs/monoinput-glossary/midi/note-status/
+      members:
+        - title: "Note"
+          anchor: note
+          kind: prop
+        - title: "Note<wbr>Status()"
+          anchor: notestatus
+          kind: method

@@ -39,7 +39,7 @@ dotnet add package BorrowedTorch.UI
 | --- | --- |
 | .NET | 10, Windows (`net10.0-windows10.0.19041.0`, the text boxes use the Windows clipboard) |
 | MonoGame | 3.8.4 or later, DesktopGL or WindowsDX: your game references the platform package, the UI doesn't pick one for you |
-| Input | `BorrowedTorch.MonoInput` 2.0.1, installed with the UI |
+| Input | [`BorrowedTorch.MonoInput`](/docs/monoinput/) 2.0.1, installed with the UI |
 
 The package also brings the default font (UbuntuMono) and the color picker's pointer texture. They are copied to
 `Content/Fonts` and `Content/Textures` next to your executable, so keep your `ContentManager.RootDirectory` set to
@@ -57,7 +57,7 @@ UI takes care of the window by itself:
 Disposing the UI unsubscribes it from the window. One thing stays with your game:
 
 - **Input.** The game polls the input. Call `KeyboardManager.Update()` and `MouseManager.Update()` from
-  BorrowedTorch.MonoInput once per frame, before the UI's `Update`. The UI reads the same managers, so polling them a
+  [BorrowedTorch.MonoInput](/docs/monoinput/#updating-every-frame) once per frame, before the UI's `Update`. The UI reads the same managers, so polling them a
   second time in a frame would lose presses.
 
 ```csharp
