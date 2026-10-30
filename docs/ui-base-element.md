@@ -33,7 +33,7 @@ margins. A `Stretch` element that has a desired size is placed at its left / top
 A child's margin counts toward the content size of a parent that fits its content only on the side the child is
 aligned to: the left / top margin for `Left` / `Top`, the right / bottom margin for `Right` / `Bottom`, both for
 `Center`, and both for a `Stretch` child without a desired size (with one, only the left / top margin). The margin on
-the other side is not counted. So in a horizontal <a class="ref" href="/docs/ui-glossary/elements/stack-panel/">`StackPanel`</a>, the <a class="ref" href="/docs/ui-glossary/types/margin/#right-1">`Margin.Right`</a> of a `Left` aligned item adds no
+the other side is not counted. So in a horizontal <a class="ref" href="/docs/ui-glossary/elements/stack-panel/">`StackPanel`</a>, the <a class="ref" href="/docs/ui-glossary/types/margin/#right">`Margin.Right`</a> of a `Left` aligned item adds no
 gap: put the gap on the left (or top) margin of the next item. A stretched child in a parent that fits its content
 counts with the size of its own content, as in WPF, except wrapping text along the width: it takes the width the rest
 of the content decides and wraps there. When nothing else gives a width, it keeps its one line, and a <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#maxwidth">`MaxWidth`</a> on the
@@ -111,10 +111,10 @@ element.Margin = (10, 20, 30, 40);  // left, top, right, bottom
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <a class="ref prop" href="/docs/ui-glossary/types/margin/#left-1">`Left`</a> | `int` | Read-only field. The left margin. |
-| <a class="ref prop" href="/docs/ui-glossary/types/margin/#top-1">`Top`</a> | `int` | Read-only field. The top margin. |
-| <a class="ref prop" href="/docs/ui-glossary/types/margin/#right-1">`Right`</a> | `int` | Read-only field. The right margin. |
-| <a class="ref prop" href="/docs/ui-glossary/types/margin/#bottom-1">`Bottom`</a> | `int` | Read-only field. The bottom margin. |
+| <a class="ref prop" href="/docs/ui-glossary/types/margin/#left">`Left`</a> | `int` | Read-only field. The left margin. |
+| <a class="ref prop" href="/docs/ui-glossary/types/margin/#top">`Top`</a> | `int` | Read-only field. The top margin. |
+| <a class="ref prop" href="/docs/ui-glossary/types/margin/#right">`Right`</a> | `int` | Read-only field. The right margin. |
+| <a class="ref prop" href="/docs/ui-glossary/types/margin/#bottom">`Bottom`</a> | `int` | Read-only field. The bottom margin. |
 | <a class="ref prop" href="/docs/ui-glossary/types/margin/#zero">`Zero`</a> | `Margin` | Static, read-only. A margin of 0 on every side. |
 
 | Method | Description |
@@ -442,7 +442,7 @@ The state an element shows, passed to <a class="ref event" href="/docs/ui-glossa
 | <a class="ref prop" href="/docs/ui-glossary/types/element-state-data/#state">`State`</a> | <a class="ref" href="/docs/ui-glossary/types/element-state/">`ElementState`</a> | Read-only. The state shown. |
 | <a class="ref prop" href="/docs/ui-glossary/types/element-state-data/#source">`Source`</a> | <a class="ref" href="/docs/ui-glossary/types/state-source/">`StateSource`</a> | Read-only. Where the state comes from. |
 | <a class="ref prop" href="/docs/ui-glossary/types/element-state-data/#mousebuttonsstates">`MouseButtonsStates`</a> | <a class="ref prop" href="/docs/ui-glossary/types/element-state-data/#mousebuttonsstates">`MouseButtonsStates`</a> | Read-only. The current states of the mouse buttons (read when you read it, not stored with the state). |
-| <a class="ref prop" href="/docs/ui-glossary/types/element-state-data/#normalown-1">`NormalOwn`</a> | `ElementStateData` | Static, read-only field. The `Normal` / `Own` state every element starts with. |
+| <a class="ref prop" href="/docs/ui-glossary/types/element-state-data/#normalown">`NormalOwn`</a> | `ElementStateData` | Static, read-only field. The `Normal` / `Own` state every element starts with. |
 
 | Method | Description |
 | --- | --- |

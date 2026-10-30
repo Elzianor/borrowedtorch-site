@@ -433,6 +433,23 @@ The static holder of the general mouse cursors set of one element type, keyed by
 | --- | --- | --- |
 | <a class="ref event" href="/docs/ui-glossary/types/generic-mouse-cursors-data/#ongeneralmousecursorssetchanged">`OnGeneralMouseCursorsSetChanged`</a> | <code>(<a href="/docs/ui-glossary/types/mouse-cursors-set/">MouseCursorsSet</a> prevMouseCursorsSet)</code> | Static. <a class="ref prop" href="/docs/ui-glossary/types/generic-mouse-cursors-data/#generalmousecursorsset">`GeneralMouseCursorsSet`</a> is replaced; the handler gets the previous set. Not raised when a property of the set changes. |
 
+### Showing the cursors
+
+The UI doesn't show a cursor itself: it hands the cursor an element asks for to
+<a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#mousecursorhandler">`BorrowedTorchUI.MouseCursorHandler`</a>. In a game that is MonoGame's `Mouse.SetCursor`, which shows it through the game
+window, and there is nothing to set. A UI hosted outside a game window, such as an editor's viewport, has no window for
+`Mouse.SetCursor`, which throws there: give the handler your host's own way of showing a `MouseCursor`, or `null` to
+show no cursors. The hover and the presses work the same either way.
+
+```csharp
+// ShowHostCursor stands for the host's own code. With WindowsDX a cursor's Handle
+// is a Windows cursor handle, the kind Win32's SetCursor takes.
+_ui.MouseCursorHandler = cursor => ShowHostCursor(cursor.Handle);
+```
+
+The handler never gets `null`: a cursor left `null` in a set isn't handed on. Set it after creating the UI, since
+disposing a UI puts MonoGame's way back for the next one.
+
 ## Texture sets
 
 An element whose <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> names a content folder draws pictures from that folder instead of its solid colors.

@@ -131,6 +131,9 @@ Two cases need more than the window:
   The mouse and the keys still come from MonoInput's managers, whose polling reads the game window. Give them the
   state your host tracks instead, with <a class="ref method" href="/docs/monoinput-glossary/keyboard/keyboard-manager/#update">`KeyboardManager.Update(keyboardState)`</a> and <a class="ref method" href="/docs/monoinput-glossary/mouse/mouse-manager/#update">`MouseManager.Update(mouseState)`</a>,
   once per frame before the UI's `Update` (see [feeding your own state](/docs/monoinput/#feeding-your-own-state)).
+  The cursors the elements ask for go through MonoGame's `Mouse.SetCursor`, which needs the game window too and throws
+  without one: give <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#mousecursorhandler">`MouseCursorHandler`</a> your own way of showing a `MouseCursor`, or `null` to show none (see
+  [showing the cursors](/docs/ui-styles/#showing-the-cursors)).
 
 ### BorrowedTorchUI
 
@@ -146,7 +149,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 | <span class="method">`GetElementByName<T>(string name)`</span> | The same, `null` also when the element is not a `T`. |
 | <span class="method">`Update(GameTime gameTime)`</span> | Runs timers and animations, lays out what changed, and handles the mouse. Poll the input before it. |
 | <span class="method">`Draw()`</span> | Draws the whole tree with the sprite batch, beginning and ending it itself. |
-| <span class="prop">`HasMouse`</span> | Read-only. Whether the UI has the mouse: it is over an element that takes the mouse (the root doesn't count), the buttons pressed on an element are still held, or a modal window is shown. Worked out from the last update's layout, so read it after <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#update">`Update`</a>. See [sharing the mouse and keys](#sharing-the-mouse-and-keys-with-the-game). |
+| <span class="prop">`HasMouse`</span> | Read-only. Whether the UI has the mouse: it is over an element that takes the mouse (the root doesn't count), the buttons pressed on an element are still held, or a modal window is shown. Buttons pressed where no element takes the mouse are the game's until they are released, also over elements. Worked out from the last update's layout, so read it after <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#update">`Update`</a>. See [sharing the mouse and keys](#sharing-the-mouse-and-keys-with-the-game). |
 | <span class="prop">`HasKeyboard`</span> | Read-only. Whether an element has the keyboard. |
 | <span class="prop">`FocusedElement`</span> | Read-only. The element that has the keyboard, `null` when none has it. |
 | <span class="method">`ElementAt(Point position)`</span> | The element the mouse would be over at a position in logical units, by the rules the UI hovers by, without hovering anything. The root where nothing else takes the mouse, `null` outside of the screen. |
@@ -161,6 +164,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 | <span class="method">`AddAnimation(BaseAnimation animation)`</span> | Starts updating an animation, see [animations](/docs/ui-styles/#animations). |
 | <span class="method">`RemoveAnimation(BaseAnimation animation)`</span> | Stops updating an animation. It keeps its state, and adding it again continues it. |
 | <span class="method">`SetDefaultMouseCursorsSet(MouseCursorsSet mouseCursorsSet)`</span> | Sets the cursors every element uses unless it has its own, see [mouse cursors](/docs/ui-styles/#mouse-cursors). |
+| <span class="prop">`MouseCursorHandler`</span> | Shows the cursors the elements ask for: MonoGame's `Mouse.SetCursor` by default. A UI hosted outside a game window gives its own way, or `null` to show none. See [showing the cursors](/docs/ui-styles/#showing-the-cursors). |
 | <span class="method">`Dispose()`</span> | Disposes the root and forgets the shared state, so a new UI can be created. |
 
 ### ITextInputEvents
@@ -208,6 +212,10 @@ protected override void Update(GameTime gameTime)
 - **The mouse is over an element that takes the mouse.** The root, where no other element is, doesn't count.
 - **The buttons pressed on an element are held**: a drag, a resize, a slider pulled past its end.
 - **A modal window is shown.**
+
+The first rule doesn't hold for a press that began where no element takes the mouse. That press is the game's: until
+its buttons are released `HasMouse` stays false, also while the mouse passes over elements, which aren't hovered
+meanwhile. So a camera dragged across a panel goes on turning.
 
 It is worked out when it is read, from the layout of the last update. An element stretched over the screen, such as a
 panel that draws a background, takes the mouse everywhere unless its <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#hittest">`HitTest`</a> is off. A `Grid`, a `StackPanel` and a

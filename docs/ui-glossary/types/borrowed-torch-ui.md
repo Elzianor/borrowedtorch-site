@@ -5,8 +5,6 @@ title: "Glossary: BorrowedTorchUI"
 description: "The members of BorrowedTorchUI, in alphabetical order."
 ---
 
-Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>.
-
 A class. The [quick start guide](/docs/ui/#borrowedtorchui) shows it in context.
 
 Names are colored by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain color.
@@ -47,7 +45,11 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="hasmouse"><span class="prop"><code>HasMouse</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="HasMouse in context on the quick start guide" aria-label="HasMouse in context on the quick start guide">🠆</a></h3>
 
-`bool` · Read-only. Whether the UI has the mouse: it is over an element that takes the mouse (the root doesn't count), the buttons pressed on an element are still held, or a modal window is shown. A game acts on the mouse itself only while it is false, so a click on a button doesn't also pick what is behind it. Worked out from the last update's layout, so read it after <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#update">`Update`</a>. See [sharing the mouse and keys](/docs/ui/#sharing-the-mouse-and-keys-with-the-game).
+`bool` · Read-only. Whether the UI has the mouse: it is over an element that takes the mouse (the root doesn't count), the buttons pressed on an element are still held, or a modal window is shown. Buttons pressed where no element takes the mouse are the game's until they are released, also while the mouse passes over elements, so a camera dragged across a panel goes on turning. A game acts on the mouse itself only while it is false, so a click on a button doesn't also pick what is behind it. Worked out from the last update's layout, so read it after <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#update">`Update`</a>. See [sharing the mouse and keys](/docs/ui/#sharing-the-mouse-and-keys-with-the-game).
+
+<h3 id="mousecursorhandler"><span class="prop"><code>MouseCursorHandler</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="MouseCursorHandler in context on the quick start guide" aria-label="MouseCursorHandler in context on the quick start guide">🠆</a></h3>
+
+`Action<MouseCursor>` · Shows the cursors the elements ask for; it never gets `null`. By default MonoGame's `Mouse.SetCursor`, which shows them through the game window and throws without one, so a UI hosted outside a game window gives its own way, or `null` to show no cursors. Disposing the UI puts MonoGame's way back. See [showing the cursors](/docs/ui-styles/#showing-the-cursors).
 
 <h3 id="rootelement"><span class="prop"><code>RootElement</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="RootElement in context on the quick start guide" aria-label="RootElement in context on the quick start guide">🠆</a></h3>
 
