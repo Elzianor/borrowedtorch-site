@@ -21,9 +21,17 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 `Matrix` · Read-only. The matrix the UI draws with. Draw code that begins its own sprite batch inside the UI passes it to draw in logical units.
 
+<h3 id="elementundermouse"><span class="prop"><code>ElementUnderMouse</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="ElementUnderMouse in context on the quick start guide" aria-label="ElementUnderMouse in context on the quick start guide">🠆</a></h3>
+
+<a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> · Read-only. <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#elementat">`ElementAt`</a> where the mouse is. See [finding the element at a point](/docs/ui/#finding-the-element-at-a-point).
+
 <h3 id="exceptionhandler"><span class="prop"><code>ExceptionHandler</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="ExceptionHandler in context on the quick start guide" aria-label="ExceptionHandler in context on the quick start guide">🠆</a></h3>
 
 `Action<Exception>` · Gets the exceptions thrown inside <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#update">`Update`</a>, <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#draw">`Draw`</a> and the handling of text input. Without a handler they are rethrown.
+
+<h3 id="focusedelement"><span class="prop"><code>FocusedElement</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="FocusedElement in context on the quick start guide" aria-label="FocusedElement in context on the quick start guide">🠆</a></h3>
+
+<a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> · Read-only. The element that has the keyboard, `null` when none has it. See [keyboard and focus](/docs/ui-base-element/#keyboard-and-focus).
 
 <h3 id="followsbackbuffer"><span class="prop"><code>FollowsBackBuffer</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="FollowsBackBuffer in context on the quick start guide" aria-label="FollowsBackBuffer in context on the quick start guide">🠆</a></h3>
 
@@ -32,6 +40,14 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 <h3 id="followsdisplayscale"><span class="prop"><code>FollowsDisplayScale</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="FollowsDisplayScale in context on the quick start guide" aria-label="FollowsDisplayScale in context on the quick start guide">🠆</a></h3>
 
 `bool` · Whether <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#scale">`Scale`</a> follows the display scale of the window's monitor, times <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#displayscalefactor">`DisplayScaleFactor`</a>. Turned on, it sets the scale at once and then follows the window to other monitors. A scale set by hand stays until the DPI changes. Off by default. Needs the window constructor, otherwise turning it on throws.
+
+<h3 id="haskeyboard"><span class="prop"><code>HasKeyboard</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="HasKeyboard in context on the quick start guide" aria-label="HasKeyboard in context on the quick start guide">🠆</a></h3>
+
+`bool` · Read-only. Whether an element has the keyboard (see <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#focusedelement">`FocusedElement`</a>). A game leaves the keys to the UI while it is true, so typing in a text box doesn't also move the player.
+
+<h3 id="hasmouse"><span class="prop"><code>HasMouse</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="HasMouse in context on the quick start guide" aria-label="HasMouse in context on the quick start guide">🠆</a></h3>
+
+`bool` · Read-only. Whether the UI has the mouse: it is over an element that takes the mouse (the root doesn't count), the buttons pressed on an element are still held, or a modal window is shown. A game acts on the mouse itself only while it is false, so a click on a button doesn't also pick what is behind it. Worked out from the last update's layout, so read it after <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#update">`Update`</a>. See [sharing the mouse and keys](/docs/ui/#sharing-the-mouse-and-keys-with-the-game).
 
 <h3 id="rootelement"><span class="prop"><code>RootElement</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="RootElement in context on the quick start guide" aria-label="RootElement in context on the quick start guide">🠆</a></h3>
 
@@ -55,7 +71,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="borrowedtorchui"><span class="method"><code>BorrowedTorchUI()</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="BorrowedTorchUI() in context on the quick start guide" aria-label="BorrowedTorchUI() in context on the quick start guide">🠆</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#borrowedtorchui">`BorrowedTorchUI(GraphicsDevice graphicsDevice, ContentManager contentManager, SpriteBatch spriteBatch, GameWindow window)`</a> · Creates the UI over the back buffer's size, with the text and keys of the window. The sprite batch is the one the UI draws with; the content manager loads the color picker's pointer and the textures named by <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a>. Disposing the UI unsubscribes from the window.
+<a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#borrowedtorchui">`BorrowedTorchUI(GraphicsDevice graphicsDevice, ContentManager contentManager, SpriteBatch spriteBatch, GameWindow window)`</a> · Creates the UI over the back buffer's size, with the text and keys of the window. The sprite batch is the one the UI draws with; the content manager loads the textures named by <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a>. Disposing the UI unsubscribes from the window.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
@@ -105,6 +121,14 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 <h3 id="draw"><span class="method"><code>Draw()</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="Draw() in context on the quick start guide" aria-label="Draw() in context on the quick start guide">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#draw">`Draw()`</a> · Draws the whole tree with the sprite batch, beginning and ending it itself.
+
+<h3 id="elementat"><span class="method"><code>ElementAt()</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="ElementAt() in context on the quick start guide" aria-label="ElementAt() in context on the quick start guide">🠆</a></h3>
+
+<a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#elementat">`ElementAt(Point position)`</a> · The element the mouse would be over at the position, by the rules the UI hovers by: the open context menu and drop-down first, then the tree from the top down (windows above their siblings, children by <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#zindex">`ZIndex`</a>); only visible elements that take the mouse and aren't cropped away; while a modal window is shown, only its elements and the root around it. The root where nothing else takes the mouse, `null` outside of the screen. Nothing is hovered by it. It can be a control's part, such as a list's row or a slider's thumb: walk up the <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#parent">`Parent`</a>s to the element you want. See [finding the element at a point](/docs/ui/#finding-the-element-at-a-point).
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `position` | `Point` | The position, in logical units (see <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#scale">`Scale`</a>). |
 
 <h3 id="getelementbyname"><span class="method"><code>GetElementByName()</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="GetElementByName() in context on the quick start guide" aria-label="GetElementByName() in context on the quick start guide">🠆</a></h3>
 

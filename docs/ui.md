@@ -14,7 +14,7 @@ These pages cover the library from setup to every public type:
 
 | Page | What it covers |
 | --- | --- |
-| [Quick start guide](/docs/ui/) (this page) | Installing, creating the UI in a game, display scaling, how sizes and alignment work, a complete pause menu |
+| [Quick start guide](/docs/ui/) (this page) | Installing, creating the UI in a game, sharing the mouse and keys with the game, display scaling, how sizes and alignment work, a complete pause menu |
 | [Base element](/docs/ui-base-element/) | What every element has: size, appearance, items, mouse, keyboard, resizing, and writing your own element |
 | [Layout elements](/docs/ui-layout/) | Stack panels, grids, scrolling, borders, separators, windows and tabs |
 | [Controls](/docs/ui-controls/) | Buttons, check boxes, sliders, progress bars, tooltips and the color picker |
@@ -38,12 +38,14 @@ dotnet add package BorrowedTorch.UI
 | Requirement | Version |
 | --- | --- |
 | .NET | 10, Windows (`net10.0-windows10.0.19041.0`, the text boxes use the Windows clipboard) |
-| MonoGame | 3.8.4 or later, DesktopGL or WindowsDX: your game references the platform package, the UI doesn't pick one for you |
-| Input | [`BorrowedTorch.MonoInput`](/docs/monoinput/) 2.0.1, installed with the UI |
+| MonoGame | 3.8.1 or later, DesktopGL or WindowsDX: your game references the platform package, the UI doesn't pick one for you |
+| Input | [`BorrowedTorch.MonoInput`](/docs/monoinput/) 2.1.0, installed with the UI |
 
-The package also brings the default font (UbuntuMono) and the color picker's pointer texture. They are copied to
-`Content/Fonts` and `Content/Textures` next to your executable, so keep your `ContentManager.RootDirectory` set to
-`Content`.
+The UI is built against MonoGame 3.8.0, and MonoInput against 3.8.1. .NET loads a library next to the MonoGame it was
+built against or a newer one, so both run on every MonoGame release from 3.8.1 on.
+
+The package also brings the default font (UbuntuMono). It is copied to `Content/Fonts` next to your executable, where
+the UI finds it.
 
 ## Setting up the UI
 
@@ -126,6 +128,9 @@ Two cases need more than the window:
   `ApplyGameWindowSize`. With following on, a size you give stays until the back buffer changes.
 - **A UI hosted outside a game window**, such as a WPF editor or a test. Pass your own <a class="ref" href="/docs/ui-glossary/types/i-text-input-events/">`ITextInputEvents`</a> instead of
   the window. <a class="ref" href="/docs/ui-glossary/types/game-window-text-input-events/">`GameWindowTextInputEvents`</a> is the adapter the window constructor uses, if you need one by hand.
+  The mouse and the keys still come from MonoInput's managers, whose polling reads the game window. Give them the
+  state your host tracks instead, with <a class="ref method" href="/docs/monoinput-glossary/keyboard/keyboard-manager/#update">`KeyboardManager.Update(keyboardState)`</a> and <a class="ref method" href="/docs/monoinput-glossary/mouse/mouse-manager/#update">`MouseManager.Update(mouseState)`</a>,
+  once per frame before the UI's `Update` (see [feeding your own state](/docs/monoinput/#feeding-your-own-state)).
 
 ### BorrowedTorchUI
 
@@ -133,7 +138,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 | Member | Description |
 | --- | --- |
-| <span class="method">`BorrowedTorchUI(GraphicsDevice graphicsDevice, ContentManager contentManager, SpriteBatch spriteBatch, GameWindow window)`</span> | Creates the UI over the back buffer's size, with the text and keys of the window. The sprite batch is the one the UI draws with; the content manager loads the color picker's pointer and the textures named by <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a>. Disposing the UI unsubscribes from the window. |
+| <span class="method">`BorrowedTorchUI(GraphicsDevice graphicsDevice, ContentManager contentManager, SpriteBatch spriteBatch, GameWindow window)`</span> | Creates the UI over the back buffer's size, with the text and keys of the window. The sprite batch is the one the UI draws with; the content manager loads the textures named by <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a>. Disposing the UI unsubscribes from the window. |
 | <span class="method">`BorrowedTorchUI(GraphicsDevice graphicsDevice, ContentManager contentManager, SpriteBatch spriteBatch, ITextInputEvents textInputEvents)`</span> | The same, with the text and keys of a source of your own, for a UI hosted outside a game window. The UI doesn't dispose the source. |
 | <span class="prop">`RootElement`</span> | Read-only. The element at the top of the tree, the size of the screen. See [the root element](/docs/ui-base-element/#the-root-element). |
 | <span class="method">`AddElementToRoot(BaseElement element)`</span> | Adds an element to the root. |
@@ -141,6 +146,11 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 | <span class="method">`GetElementByName<T>(string name)`</span> | The same, `null` also when the element is not a `T`. |
 | <span class="method">`Update(GameTime gameTime)`</span> | Runs timers and animations, lays out what changed, and handles the mouse. Poll the input before it. |
 | <span class="method">`Draw()`</span> | Draws the whole tree with the sprite batch, beginning and ending it itself. |
+| <span class="prop">`HasMouse`</span> | Read-only. Whether the UI has the mouse: it is over an element that takes the mouse (the root doesn't count), the buttons pressed on an element are still held, or a modal window is shown. Worked out from the last update's layout, so read it after <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#update">`Update`</a>. See [sharing the mouse and keys](#sharing-the-mouse-and-keys-with-the-game). |
+| <span class="prop">`HasKeyboard`</span> | Read-only. Whether an element has the keyboard. |
+| <span class="prop">`FocusedElement`</span> | Read-only. The element that has the keyboard, `null` when none has it. |
+| <span class="method">`ElementAt(Point position)`</span> | The element the mouse would be over at a position in logical units, by the rules the UI hovers by, without hovering anything. The root where nothing else takes the mouse, `null` outside of the screen. |
+| <span class="prop">`ElementUnderMouse`</span> | Read-only. <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#elementat">`ElementAt`</a> where the mouse is. |
 | <span class="prop">`FollowsBackBuffer`</span> | Whether the UI takes the back buffer's size by itself, at the start of every <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#update">`Update`</a>. On by default. Turn it off for a UI drawn into a render target of its own size. Turned on again, it takes the back buffer's size at the next update. |
 | <span class="method">`ApplyGameWindowSize(int width, int height)`</span> | Lays the UI out over a screen size in device pixels. A size of 0, such as a minimized window's, is ignored. With <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#followsbackbuffer">`FollowsBackBuffer`</a> on, the size stays until the back buffer changes. |
 | <span class="prop">`Scale`</span> | How large one logical unit is on screen, see [display scaling](#display-scaling). Between <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-ui/#minscale">`MinScale`</a> (0.25) and <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-ui/#maxscale">`MaxScale`</a> (8). |
@@ -171,6 +181,62 @@ disposes one itself.
 | --- | --- |
 | <span class="method">`GameWindowTextInputEvents(GameWindow window)`</span> | Subscribes to the window's `TextInput` and `KeyDown` events. |
 | <span class="method">`Dispose()`</span> | Unsubscribes from the window. |
+
+## Sharing the mouse and keys with the game
+
+The game reads the same mouse and keys as the UI. So that a click on a button doesn't also shoot, and typing a name
+doesn't also walk the player, ask the UI after its `Update` whether it took them:
+
+```csharp
+protected override void Update(GameTime gameTime)
+{
+    KeyboardManager.Update();
+    MouseManager.Update();
+
+    _ui.Update(gameTime);
+
+    // HandleWorldClicks and HandleMovementKeys stand for the game's own input code
+    if (!_ui.HasMouse) HandleWorldClicks();
+    if (!_ui.HasKeyboard) HandleMovementKeys();
+
+    base.Update(gameTime);
+}
+```
+
+<a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#hasmouse">`HasMouse`</a> is true while:
+
+- **The mouse is over an element that takes the mouse.** The root, where no other element is, doesn't count.
+- **The buttons pressed on an element are held**: a drag, a resize, a slider pulled past its end.
+- **A modal window is shown.**
+
+It is worked out when it is read, from the layout of the last update. An element stretched over the screen, such as a
+panel that draws a background, takes the mouse everywhere unless its <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#hittest">`HitTest`</a> is off. A `Grid`, a `StackPanel` and a
+`Label` have it off by default.
+
+<a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#haskeyboard">`HasKeyboard`</a> is true while an element has the keyboard, and <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#focusedelement">`FocusedElement`</a> says which one. A mouse
+press outside of that element takes the keyboard away from it, a press where no element takes the mouse included, so a
+click into the game ends the typing.
+
+### Finding the element at a point
+
+<a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#elementat">`ElementAt(Point position)`</a> finds the element the mouse would be over at a position in logical units, without
+hovering anything. It goes by the rules the UI hovers by (see [mouse and states](/docs/ui-base-element/#mouse-and-states)):
+
+- The open context menu and the open drop-down come first, then the tree from the top down: windows above their
+  siblings, children by <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#zindex">`ZIndex`</a>.
+- Only visible elements that take the mouse count, and only where they aren't cropped away.
+- While a modal window is shown, only its elements and the root around it count.
+
+Where nothing else takes the mouse it returns the root, and outside of the screen `null`. <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#elementundermouse">`ElementUnderMouse`</a> is the
+element at the mouse. The element found can be a part of a control, such as a list's row or a slider's thumb, so walk
+up its <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#parent">`Parent`</a>s to the element you want:
+
+```csharp
+// the window under the mouse, null where there is none
+var element = _ui.ElementUnderMouse;
+while (element != null && element is not Window) element = element.Parent;
+var window = (Window)element;
+```
 
 ## Your first elements
 

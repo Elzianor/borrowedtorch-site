@@ -379,6 +379,10 @@ Where a part of a control has no <a class="ref prop" href="/docs/ui-glossary/ele
 tooltip shows over its text, and a drop on a list's row is decided and taken by the list. Clicks stay with the part;
 the controls raise their own events for them (a selection, a value change).
 
+The UI finds the element at a point by these same rules without hovering anything (<a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#elementat">`ui.ElementAt(position)`</a>), and
+tells the game whether it has the mouse (<a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#hasmouse">`ui.HasMouse`</a>), see
+[sharing the mouse and keys with the game](/docs/ui/#sharing-the-mouse-and-keys-with-the-game).
+
 ### Mouse and states properties
 
 | Property | Type | Description |
@@ -486,7 +490,9 @@ shown for the first time). Your own elements inside a control keep theirs. <a cl
 
 One element at a time has the keyboard. <a class="ref method" href="/docs/ui-glossary/elements/base-element/#focus">`Focus()`</a> gives it to an element; the keys and the typed text then go to that
 element only, until another element is focused, a mouse press lands outside of it, or it is hidden, disabled or taken
-out of the tree. Without a focused element no element gets keys.
+out of the tree. Without a focused element no element gets keys. <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#focusedelement">`ui.FocusedElement`</a> is the element that
+has the keyboard, and <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#haskeyboard">`ui.HasKeyboard`</a> tells the game whether one has it, so it leaves the keys alone
+while the player types (see [sharing the mouse and keys with the game](/docs/ui/#sharing-the-mouse-and-keys-with-the-game)).
 
 A key goes to the focused element first, then up through its parents until one sets `Handled`. On each element the
 element's own use of the key comes first, then its <a class="ref event" href="/docs/ui-glossary/elements/base-element/#onkeydown">`OnKeyDown`</a>. The built-in controls handle the keys they use (a list
