@@ -5,7 +5,7 @@ title: "UI glossary: types"
 description: "Every other type the UI provides: classes, structs, interfaces, enums and delegates, one page per type."
 ---
 
-Every public type of the UI that isn't an element has a page with its members: the values of an enum, the properties, fields, methods and events of a class or a struct, the signature of a delegate. The styles come first, then every other type by kind.
+Every public type of the UI that isn't an element has a page with its members: the values of an enum, the properties, fields, methods and events of a class or a struct, the signature of a delegate. The styles come first, then every other type by kind, then the types of the markup package.
 
 ## Styles
 
@@ -45,7 +45,7 @@ Every public type of the UI that isn't an element has a page with its members: t
 | [`BaseAnimationFrame<T>`](/docs/ui-glossary/types/base-animation-frame/) | The abstract base of the frames an <code><a href="/docs/ui-glossary/types/animation/">Animation</a>&lt;T&gt;</code> takes. |
 | [`Bindable`](/docs/ui-glossary/types/bindable/) | The abstract base of a view model. |
 | [`BindableCollection<T>`](/docs/ui-glossary/types/bindable-collection/) | A list that raises <a class="ref event" href="/docs/ui-glossary/types/bindable-collection/#oncollectionchanged">`OnCollectionChanged`</a> for every change, so a bound <a class="ref" href="/docs/ui-glossary/elements/list-box/">`ListBox`</a>, <a class="ref" href="/docs/ui-glossary/elements/combo-box/">`ComboBox`</a>, <a class="ref" href="/docs/ui-glossary/elements/tree-view/">`TreeView`</a> or <a class="ref" href="/docs/ui-glossary/elements/context-menu/">`ContextMenu`</a> updates only the changed rows. |
-| [`BorrowedTorchUI`](/docs/ui-glossary/types/borrowed-torch-ui/) | Names are colored by what they are: a <span class="kb kb-prop">plain property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>. |
+| [`BorrowedTorchUI`](/docs/ui-glossary/types/borrowed-torch-ui/) | The UI itself: it holds the root element, updates and draws the tree, and tells the game whether it has the mouse and the keys. |
 | [`DefaultSettings`](/docs/ui-glossary/types/default-settings/) | <a class="ref" href="/docs/ui-glossary/types/default-settings/">`DefaultSettings`</a> (namespace `BorrowedTorch.UI.Settings`) is a static class of public fields that hold framework-wide defaults. |
 | [`DependencyProperty<T>`](/docs/ui-glossary/types/dependency-property/) |  |
 | [`DependencyPropertyActions<T>`](/docs/ui-glossary/types/dependency-property-actions/) | What the properties of one name share over all the elements of a class: the class's own pre- and post-action (set once, in its static constructor) and the default value. |
@@ -156,3 +156,13 @@ Every public type of the UI that isn't an element has a page with its members: t
 | [`Slider.ValueChanged`](/docs/ui-glossary/types/slider-value-changed/) |  |
 | [`TabControl.TabOpened`](/docs/ui-glossary/types/tab-control-tab-opened/) |  |
 | [`TreeView.ItemSelect`](/docs/ui-glossary/types/tree-view-item-select/) |  |
+
+## Markup
+
+The types of the [BorrowedTorch.UI.Markup](/docs/ui-markup/) package, which builds elements from XML markup.
+
+| Type | What it is |
+| --- | --- |
+| [`MarkupContext`](/docs/ui-glossary/types/markup-context/) | What a markup reaches besides the UI's own types: event handlers, a data context, and types and converters of your own. |
+| [`MarkupException`](/docs/ui-glossary/types/markup-exception/) | A markup that can't be read: what is wrong, and the line and the column. |
+| [`UiMarkup`](/docs/ui-glossary/types/ui-markup/) | Builds elements from a markup string or file. |

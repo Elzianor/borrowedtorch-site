@@ -22,6 +22,7 @@ These pages cover the library from setup to every public type:
 | [Text](/docs/ui-text/) | Labels, rich text boxes, text input and fonts |
 | [Images and drawing](/docs/ui-images/) | Images, stencils, view ports for your own drawing, and drag and drop |
 | [Styles, bindings and animation](/docs/ui-styles/) | Styles, mouse cursors, default settings, dependency properties, view model bindings and animations |
+| [Markup](/docs/ui-markup/) | The BorrowedTorch.UI.Markup package: elements, properties, items, events and bindings written as XML |
 | [Glossary](/docs/ui-glossary/) | Every element with its properties and methods in alphabetical order, one page per element |
 
 Screenshots on these pages are real renders of the snippets next to them, drawn with the theme shown on the

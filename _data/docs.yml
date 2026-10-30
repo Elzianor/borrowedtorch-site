@@ -72,6 +72,8 @@
       url: /docs/ui-images/
     - title: Styles, bindings and animation
       url: /docs/ui-styles/
+    - title: Markup
+      url: /docs/ui-markup/
     - title: Glossary
       url: /docs/ui-glossary/
       glossary: ui_glossary
