@@ -8,8 +8,8 @@ description: Set up BorrowedTorch.Camera in a game, fly a free camera, play a to
 BorrowedTorch.Camera is the camera of Kindling. A camera holds a position and an orientation, builds the view and
 projection matrices for your effects, turns a mouse click into a ray, and keeps a floating origin so a world can
 stretch far from its center without jitter. Controllers drive it: a free camera that flies under the player's input,
-and an animated camera that plays a smooth path through waypoints at a constant speed. A path also hands you the lines
-to draw it in an editor.
+and an animated camera that plays a smooth path through waypoints at a steady speed, slowing to a halt and holding
+wherever a waypoint asks it to. A path also hands you the lines to draw it in an editor.
 
 These pages cover the library from setup to every public type:
 
@@ -19,8 +19,8 @@ These pages cover the library from setup to every public type:
 | [Pose and projection](/docs/camera-pose/) | Position and orientation, looking at a point, the field of view and the clip planes, the matrices and when they change |
 | [Picking and large worlds](/docs/camera-picking/) | Rays through the mouse, the floating origin, drawing and culling relative to it |
 | [Controllers](/docs/camera-controllers/) | Attaching and switching controllers, the free camera, snapping to an axis, a controller of your own |
-| [Camera paths](/docs/camera-paths/) | Waypoints and their orientation modes, open and closed paths, sampling by distance, the nearest point, accuracy |
-| [Path playback](/docs/camera-playback/) | The animated camera: duration, the ends of a path, seeking, easing onto the path, recording and saving waypoints |
+| [Camera paths](/docs/camera-paths/) | Waypoints and their orientation modes, open and closed paths, sampling by distance, the nearest point, easing and holds, accuracy |
+| [Path playback](/docs/camera-playback/) | The animated camera: duration and speed, easing and holds in a run, the ends of a path, seeking, easing onto the path, recording and saving waypoints |
 | [Drawing a path](/docs/camera-drawing/) | The geometry of a path, fixed and adaptive lines, orientation frames, a line renderer |
 | [Glossary](/docs/camera-glossary/) | Every public type with its properties, fields and methods in alphabetical order, one page per type |
 
@@ -37,7 +37,7 @@ dotnet add package BorrowedTorch.Camera
 | .NET | 10 (`net10.0-windows`) |
 | Operating system | Windows |
 | MonoGame | The compute fork, `MonoGame.Framework.Compute.WindowsDX.NoMemoryLeak` 3.8.3.1, installed with the package |
-| Borrowed Torch packages | `BorrowedTorch.Math` 0.2.2 for the look rotations and the damping of axis snaps, installed with the package |
+| Borrowed Torch packages | [`BorrowedTorch.ShapingFunctions`](/docs/shaping-functions/) 1.6.1 for the easing curves of waypoints, and `BorrowedTorch.Math` 0.2.2 for the look rotations and the damping of axis snaps, installed with the package |
 
 The library works in MonoGame's own types: `Vector3`, `Quaternion`, `Matrix`, `Ray` and `Viewport`. Its types are in
 four namespaces:
@@ -48,6 +48,9 @@ four namespaces:
 | `BorrowedTorch.Cameras.Controllers` | <a class="ref" href="/docs/camera-glossary/cameras/free-camera-controller/">`FreeCameraController`</a> and <a class="ref" href="/docs/camera-glossary/cameras/animated-camera-controller/">`AnimatedCameraController`</a> |
 | `BorrowedTorch.Cameras.Controllers.Base` | <a class="ref" href="/docs/camera-glossary/cameras/base-camera-controller/">`BaseCameraController`</a>, for controllers of your own |
 | `BorrowedTorch.Cameras.Animation` | <a class="ref" href="/docs/camera-glossary/paths/camera-path/">`CameraPath`</a>, the waypoints, the samples, the enums and the drawing types |
+
+The curves a waypoint eases by come from `BorrowedTorch.ShapingFunctions`, see
+[easing and holds](/docs/camera-paths/#easing-and-holds).
 
 ## Setting up the camera
 

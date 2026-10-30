@@ -5,7 +5,7 @@ title: "Glossary: AnimatedCameraController"
 description: "The members of AnimatedCameraController, in alphabetical order."
 ---
 
-Moves its camera along a camera path at a constant speed, with play, pause and seek, and eases the camera onto the path when attached.
+Moves its camera along a camera path at a cruise speed, easing and holding where the path's waypoints say, with play, pause and seek, and eases the camera onto the path when attached.
 
 `AnimatedCameraController` derives from [`BaseCameraController`](/docs/camera-glossary/cameras/base-camera-controller/) and has its members too. The [path playback page](/docs/camera-playback/) shows it in context, with code.
 
@@ -15,7 +15,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span> o
 
 <h3 id="durationsec"><span class="prop"><code>DurationSec</code></span> <a class="ctx" href="/docs/camera-playback/#animatedcameracontroller-properties" title="DurationSec in context on the path playback page" aria-label="DurationSec in context on the path playback page">→</a></h3>
 
-`float` · The seconds of one run from end to end, so the speed is the path's <a class="ref prop" href="/docs/camera-glossary/paths/camera-path/#length">`Length`</a> over it. 8 by default. At 0 or less, the camera doesn't move along the path.
+`float` · The seconds of one run from end to end, easing and holds included. 8 by default. The holds take their seconds and the travel the rest, at the path's <a class="ref method" href="/docs/camera-glossary/paths/camera-path/#cruisespeed">`CruiseSpeed`</a> for the duration; without easing or holds, that is the path's <a class="ref prop" href="/docs/camera-glossary/paths/camera-path/#length">`Length`</a> over it. Travel gets at least a tenth of the duration, so holds that alone would fill it make the run longer. For a set speed, assign <a class="ref method" href="/docs/camera-glossary/paths/camera-path/#traveltime">`Path.TravelTime(speed)`</a>. At 0 or less, the camera doesn't move along the path.
 
 <h3 id="entryblenddurationsec"><span class="prop"><code>EntryBlendDurationSec</code></span> <a class="ctx" href="/docs/camera-playback/#animatedcameracontroller-properties" title="EntryBlendDurationSec in context on the path playback page" aria-label="EntryBlendDurationSec in context on the path playback page">→</a></h3>
 
@@ -23,7 +23,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span> o
 
 <h3 id="isplaying"><span class="prop"><code>IsPlaying</code></span> <a class="ctx" href="/docs/camera-playback/#animatedcameracontroller-properties" title="IsPlaying in context on the path playback page" aria-label="IsPlaying in context on the path playback page">→</a></h3>
 
-`bool` · Read-only. Whether the camera is moving along the path. `false` for a new controller, and again once a `Stop` path reaches its end.
+`bool` · Read-only. Whether the camera is moving along the path, holds included. `false` for a new controller, and again once a `Stop` path reaches its end and its last waypoint's hold is over.
 
 <h3 id="openpathanimationmode"><span class="prop"><code>OpenPathAnimationMode</code></span> <a class="ctx" href="/docs/camera-playback/#animatedcameracontroller-properties" title="OpenPathAnimationMode in context on the path playback page" aria-label="OpenPathAnimationMode in context on the path playback page">→</a></h3>
 
@@ -35,11 +35,11 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span> o
 
 <h3 id="pathdistance"><span class="prop"><code>PathDistance</code></span> <a class="ctx" href="/docs/camera-playback/#animatedcameracontroller-properties" title="PathDistance in context on the path playback page" aria-label="PathDistance in context on the path playback page">→</a></h3>
 
-`float` · Read-only. Where the camera is, as a distance along the path in world units. Set by <a class="ref method" href="/docs/camera-glossary/cameras/animated-camera-controller/#seek">`Seek`</a>, <a class="ref method" href="/docs/camera-glossary/cameras/animated-camera-controller/#seeknormalized">`SeekNormalized`</a> and, on attachment, <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#snaptonearestonentry">`SnapToNearestOnEntry`</a>.
+`float` · Read-only. Where the camera is, as a distance along the path in world units. Set by <a class="ref method" href="/docs/camera-glossary/cameras/animated-camera-controller/#seek">`Seek`</a>, <a class="ref method" href="/docs/camera-glossary/cameras/animated-camera-controller/#seeknormalized">`SeekNormalized`</a> and, on attachment, <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#snaptonearestonentry">`SnapToNearestOnEntry`</a>. While playing, the path's <a class="ref method" href="/docs/camera-glossary/paths/camera-path/#distanceattime">`DistanceAtTime`</a> for the camera's time into the run; an overshooting ease at an end of an open path can take it a little outside 0 to <a class="ref prop" href="/docs/camera-glossary/paths/camera-path/#length">`Length`</a>, where the camera stays at the end.
 
 <h3 id="snaptonearestonentry"><span class="prop"><code>SnapToNearestOnEntry</code></span> <a class="ctx" href="/docs/camera-playback/#animatedcameracontroller-properties" title="SnapToNearestOnEntry in context on the path playback page" aria-label="SnapToNearestOnEntry in context on the path playback page">→</a></h3>
 
-`bool` · Whether attaching starts from the point of the path nearest the camera; off, it starts from <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#pathdistance">`PathDistance`</a>. On by default.
+`bool` · Whether attaching starts from the point of the path nearest the camera, at the matching point of the run as a seek does; off, it starts from <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#pathdistance">`PathDistance`</a>. On by default.
 
 ## Methods
 
@@ -67,7 +67,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span> o
 
 <h3 id="seek"><span class="method"><code>Seek()</code></span> <a class="ctx" href="/docs/camera-playback/#animatedcameracontroller-methods" title="Seek() in context on the path playback page" aria-label="Seek() in context on the path playback page">→</a></h3>
 
-<a class="ref method" href="/docs/camera-glossary/cameras/animated-camera-controller/#seek">`Seek(float pathDistance)`</a> · Moves to the distance along the path, clamped to 0 to its <a class="ref prop" href="/docs/camera-glossary/paths/camera-path/#length">`Length`</a>. The camera gets there at its next update.
+<a class="ref method" href="/docs/camera-glossary/cameras/animated-camera-controller/#seek">`Seek(float pathDistance)`</a> · Moves to the distance along the path, clamped to 0 to its <a class="ref prop" href="/docs/camera-glossary/paths/camera-path/#length">`Length`</a>, and to the matching point of the run's timing, from the path's <a class="ref method" href="/docs/camera-glossary/paths/camera-path/#timeatdistance">`TimeAtDistance`</a>: the easing and holds ahead play out as they would have, and at a waypoint that holds, the camera holds first. The camera gets there at its next update.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
@@ -75,7 +75,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span> o
 
 <h3 id="seeknormalized"><span class="method"><code>SeekNormalized()</code></span> <a class="ctx" href="/docs/camera-playback/#animatedcameracontroller-methods" title="SeekNormalized() in context on the path playback page" aria-label="SeekNormalized() in context on the path playback page">→</a></h3>
 
-<a class="ref method" href="/docs/camera-glossary/cameras/animated-camera-controller/#seeknormalized">`SeekNormalized(float value)`</a> · Moves to a fraction of the path's length.
+<a class="ref method" href="/docs/camera-glossary/cameras/animated-camera-controller/#seeknormalized">`SeekNormalized(float value)`</a> · Moves to a fraction of the path's length, as <a class="ref method" href="/docs/camera-glossary/cameras/animated-camera-controller/#seek">`Seek`</a> does: a fraction of its distance, not of its time.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
@@ -83,7 +83,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span> o
 
 <h3 id="update"><span class="method"><code>Update()</code></span> <a class="ctx" href="/docs/camera-playback/#animatedcameracontroller-methods" title="Update() in context on the path playback page" aria-label="Update() in context on the path playback page">→</a></h3>
 
-<a class="ref method" href="/docs/camera-glossary/cameras/animated-camera-controller/#update">`Update(float elapsedSeconds)`</a> · Override. Moves along the path while playing, eases in after an attachment, and sets the camera's position and orientation. Does nothing while the path has no waypoints. The camera calls it.
+<a class="ref method" href="/docs/camera-glossary/cameras/animated-camera-controller/#update">`Update(float elapsedSeconds)`</a> · Override. Moves through the run's time while playing, easing and holding where the waypoints say, eases in after an attachment, and sets the camera's position and orientation. Does nothing while the path has no waypoints. The camera calls it.
 
 | Parameter | Type | Description |
 | --- | --- | --- |

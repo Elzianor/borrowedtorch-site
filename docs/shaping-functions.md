@@ -36,8 +36,9 @@ dotnet add package BorrowedTorch.ShapingFunctions
 | Operating system | Any: the library is plain managed code |
 | Borrowed Torch packages | `BorrowedTorch.Math` 0.2.2, installed with the package |
 
-[BorrowedTorch.Audio](/docs/audio/) takes its fade shapes and distance curves from this package and installs it with
-itself. Every public type is in the namespace `BorrowedTorch.ShapingFunctions`.
+[BorrowedTorch.Audio](/docs/audio/) takes its fade shapes and distance curves from this package, and
+[BorrowedTorch.Camera](/docs/camera-paths/#easing-and-holds) the easing of its path waypoints; both install it with
+themselves. Every public type is in the namespace `BorrowedTorch.ShapingFunctions`.
 
 ## A first curve
 

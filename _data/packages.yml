@@ -34,7 +34,7 @@
 - group: Camera & editor tools
   packages:
     - id: BorrowedTorch.Camera
-      summary: Cameras for MonoGame — quaternion orientation, mouse-picking rays and a floating origin for large worlds; free-flight and path-following controllers; Catmull-Rom camera paths with constant-speed travel and a path visualiser.
+      summary: Cameras for MonoGame — quaternion orientation, mouse-picking rays and a floating origin for large worlds; free-flight and path-following controllers; Catmull-Rom camera paths with constant-speed travel, eased stops and holds at waypoints, and a path visualiser.
       needs: Windows · MonoGame compute fork
     - id: BorrowedTorch.TransformGizmo
       summary: A screen-sized move / rotate / scale gizmo with drawing, picking and dragging. Per-target flags choose the modes offered and world or local space; works with any object that exposes its pose.

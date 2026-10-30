@@ -5,13 +5,25 @@ title: "Glossary: CameraWaypoint"
 description: "The members of CameraWaypoint, in alphabetical order."
 ---
 
-A point a camera path passes through, and the way the camera faces there.
+A point a camera path passes through, the way the camera faces there, and how the camera eases into, out of and waits at it.
 
-A struct of plain fields; the factories fill them for each mode. The [camera paths page](/docs/camera-paths/#waypoints) shows it in context, with code.
+A struct of plain fields; the factories fill them for each mode and leave the easing and the hold off. The [camera paths page](/docs/camera-paths/#waypoints) shows it in context, with code, and its [easing and holds](/docs/camera-paths/#easing-and-holds) section how a run is timed.
 
 Names are colored by what they are: a <span class="kb kb-method">method</span>; values and fields keep the plain color.
 
 ## Fields
+
+<h3 id="easein"><code>EaseIn</code> <a class="ctx" href="/docs/camera-paths/#camerawaypoint-fields" title="EaseIn in context on the camera paths page" aria-label="EaseIn in context on the camera paths page">→</a></h3>
+
+<a class="ref" href="/docs/shaping-functions-glossary/types/base-shaping-function/">`BaseShapingFunction?`</a> · How the camera leaves the waypoint: the curve it travels the first half of the next segment by, read as progress over time. An ease in such as <a class="ref" href="/docs/shaping-functions-glossary/functions/quadratic-ease-in/">`QuadraticEaseIn`</a> starts it from rest; the half then takes as long as the curve needs to meet cruise speed, about twice the cruise time for a quadratic and at most eight times. `null` travels the half at cruise speed: the default, and what the factories give. Set the waypoint again after changing the curve's parameters, so the path retimes itself.
+
+<h3 id="easeout"><code>EaseOut</code> <a class="ctx" href="/docs/camera-paths/#camerawaypoint-fields" title="EaseOut in context on the camera paths page" aria-label="EaseOut in context on the camera paths page">→</a></h3>
+
+<a class="ref" href="/docs/shaping-functions-glossary/types/base-shaping-function/">`BaseShapingFunction?`</a> · How the camera arrives at the waypoint: the curve it travels the second half of the segment before by, read as progress over time. An ease out such as <a class="ref" href="/docs/shaping-functions-glossary/functions/quadratic-ease-out/">`QuadraticEaseOut`</a> brings it to rest here; the half takes as long as <a class="ref" href="#easein">`EaseIn`</a>'s would. `null` travels the half at cruise speed: the default, and what the factories give.
+
+<h3 id="holdsec"><code>HoldSec</code> <a class="ctx" href="/docs/camera-paths/#camerawaypoint-fields" title="HoldSec in context on the camera paths page" aria-label="HoldSec in context on the camera paths page">→</a></h3>
+
+`float` · The seconds the camera waits at the waypoint before it leaves: at the first waypoint before it sets off, at the last of an open path before the run ends. Plain seconds, which the cruise speed doesn't change. 0, the default, passes straight through; a negative or non-finite value counts as 0.
 
 <h3 id="lookattarget"><code>LookAtTarget</code> <a class="ctx" href="/docs/camera-paths/#camerawaypoint-fields" title="LookAtTarget in context on the camera paths page" aria-label="LookAtTarget in context on the camera paths page">→</a></h3>
 

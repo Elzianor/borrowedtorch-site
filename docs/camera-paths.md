@@ -2,16 +2,17 @@
 layout: docs
 legend: [prop, method]
 title: "Camera: camera paths"
-description: Waypoints and their orientation modes, building open and closed paths, the shape of the curve, sampling by distance, the nearest point, and how accurate the travel is.
+description: Waypoints and their orientation modes, building open and closed paths, the shape of the curve, sampling by distance, the nearest point, easing and holds at waypoints, and how accurate the travel is.
 ---
 
 A <a class="ref" href="/docs/camera-glossary/paths/camera-path/">`CameraPath`</a> is a smooth curve through waypoints, with an orientation at every point of it. Give it a distance
 along the curve and it tells you where that is, which way the curve heads there and which way to face. Equal
-distances are equal lengths of curve, so a distance that grows at a steady rate moves at a steady speed. The
-[animated camera](/docs/camera-playback/) plays a path; the path itself is plain data, which you can also sample for a
-rail camera, a cutscene of your own or anything else that should glide along a curve. Names are colored by what they
-are: a <span class="kb kb-prop">property</span> or a <span class="kb kb-method">method</span>; values and fields keep
-the plain color.
+distances are equal lengths of curve, so a distance that grows at a steady rate moves at a steady speed. A waypoint
+can also slow the travel to a halt, hold it there a while and speed it up again, and the path works out where that
+puts a camera at any time of a run. The [animated camera](/docs/camera-playback/) plays a path; the path itself is
+plain data, which you can also sample for a rail camera, a cutscene of your own or anything else that should glide
+along a curve. Names are colored by what they are: a <span class="kb kb-prop">property</span> or a
+<span class="kb kb-method">method</span>; values and fields keep the plain color.
 
 ## Waypoints
 
@@ -33,7 +34,10 @@ var here = CameraWaypoint.CreateFixedFromCamera(camera); // where the camera is,
 ```
 
 A waypoint is a small struct with public fields; the factories fill the ones its mode doesn't use with defaults. A
-`Fixed` waypoint whose orientation is a zero quaternion, such as `default(CameraWaypoint)`, faces −Z.
+`Fixed` waypoint whose orientation is a zero quaternion, such as `default(CameraWaypoint)`, faces −Z. Three more
+fields, <a class="ref" href="/docs/camera-glossary/paths/camera-waypoint/#easein">`EaseIn`</a>, <a class="ref" href="/docs/camera-glossary/paths/camera-waypoint/#easeout">`EaseOut`</a> and <a class="ref" href="/docs/camera-glossary/paths/camera-waypoint/#holdsec">`HoldSec`</a>, decide how the camera travels through the waypoint
+rather than where it faces, see [easing and holds](#easing-and-holds). The factories leave them off: no easing and no
+hold.
 
 Between two waypoints, the orientation turns from one waypoint's to the next, in proportion to the distance traveled
 along the segment. So the modes mix freely: a fixed opening shot can turn smoothly toward a target at the next
@@ -54,6 +58,9 @@ closer follow.
 | <a class="ref" href="/docs/camera-glossary/paths/camera-waypoint/#orientation">`Orientation`</a> | `Quaternion` | The facing of a `Fixed` waypoint. Normalized when used; a zero quaternion faces −Z. |
 | <a class="ref" href="/docs/camera-glossary/paths/camera-waypoint/#lookattarget">`LookAtTarget`</a> | `Vector3` | The point a `LookAtTarget` waypoint faces, in world coordinates. |
 | <a class="ref" href="/docs/camera-glossary/paths/camera-waypoint/#orientationmode">`OrientationMode`</a> | <a class="ref" href="/docs/camera-glossary/types/camera-waypoint-orientation-mode/">`CameraWaypointOrientationMode`</a> | How the waypoint's facing is decided: `Fixed`, `LookAtTarget` or `TangentFollow`. |
+| <a class="ref" href="/docs/camera-glossary/paths/camera-waypoint/#easein">`EaseIn`</a> | <a class="ref" href="/docs/shaping-functions-glossary/types/base-shaping-function/">`BaseShapingFunction?`</a> | How the camera leaves the waypoint: the curve it travels the first half of the next segment by. An ease in starts it from rest. `null`, the default, travels it at cruise speed. |
+| <a class="ref" href="/docs/camera-glossary/paths/camera-waypoint/#easeout">`EaseOut`</a> | <a class="ref" href="/docs/shaping-functions-glossary/types/base-shaping-function/">`BaseShapingFunction?`</a> | How the camera arrives at the waypoint: the curve it travels the second half of the segment before by. An ease out brings it to rest there. `null`, the default, travels it at cruise speed. |
+| <a class="ref" href="/docs/camera-glossary/paths/camera-waypoint/#holdsec">`HoldSec`</a> | `float` | The seconds the camera waits at the waypoint before it leaves. 0, the default, passes straight through. |
 
 ### CameraWaypoint factory methods
 
@@ -228,10 +235,123 @@ makes it reliable on a path that folds back on itself, where a search that only 
 wrong side of a hairpin. It costs a pass over all those points, so call it when you need it, not many times a frame.
 Where two parts of the path are equally near, either may be returned.
 
+## Easing and holds
+
+Where no waypoint says otherwise, a run along the path keeps one speed from end to end: the cruise speed. A waypoint
+can change that around itself. Each segment is split at its middle, and each half belongs to the waypoint at its end
+of the segment:
+
+- <a class="ref" href="/docs/camera-glossary/paths/camera-waypoint/#easeout">`EaseOut`</a> shapes the arrival: the half of the segment coming in. An ease out such as
+  <a class="ref" href="/docs/shaping-functions-glossary/functions/quadratic-ease-out/">`QuadraticEaseOut`</a> brings the camera to rest at the waypoint.
+- <a class="ref" href="/docs/camera-glossary/paths/camera-waypoint/#easein">`EaseIn`</a> shapes the departure: the half of the segment going out. An ease in such as
+  <a class="ref" href="/docs/shaping-functions-glossary/functions/quadratic-ease-in/">`QuadraticEaseIn`</a> starts it from rest.
+- <a class="ref" href="/docs/camera-glossary/paths/camera-waypoint/#holdsec">`HoldSec`</a> keeps the camera at the waypoint for that many seconds before it leaves.
+
+<figure class="shot">
+  <img src="{{ '/assets/img/camera/easing-and-holds.svg' | relative_url }}" width="640" height="232" alt="A graph of speed over the 16 seconds of a run through four waypoints: from rest the speed climbs in a straight ramp to the cruise speed of 10, stays there past waypoint 1, falls in a ramp to rest at waypoint 2, stays at zero through the 1.5-second hold, climbs again and falls back to rest at waypoint 3">
+  <figcaption>The speed over one run of a straight path through four waypoints 30 units apart, at a cruise speed of 10 units a second, drawn from the library's own timing. Waypoint 0 eases in, waypoint 1 passes at cruise speed, waypoint 2 eases out, holds and eases in, and waypoint 3 eases out, all with quadratic curves.</figcaption>
+</figure>
+
+The curves are [shaping functions](/docs/shaping-functions/) from `BorrowedTorch.ShapingFunctions`, read as progress
+over time: the input is the share of the half's time gone by, the output the share of its length covered. Any function
+of that library will do, and so will a [custom one](/docs/shaping-functions-custom/). One instance can serve several
+waypoints.
+
+```csharp
+using BorrowedTorch.ShapingFunctions;
+
+// slow to a halt at the waypoint facing the tower, look at it for two seconds, then move on
+path.SetWaypoint(1, path.Waypoints[1] with
+{
+    EaseOut = new QuadraticEaseOut(),
+    HoldSec = 2,
+    EaseIn = new QuadraticEaseIn()
+});
+
+// set off from rest, and come to rest at the end
+var last = path.Waypoints.Count - 1;
+path.SetWaypoint(0, path.Waypoints[0] with { EaseIn = new CubicEaseIn() });
+path.SetWaypoint(last, path.Waypoints[last] with { EaseOut = new CubicEaseOut() });
+```
+
+### How long an eased half takes
+
+An eased half takes as long as its curve needs to meet the cruise speed where it joins the rest of the run, so the
+speed doesn't jump there; at the waypoint itself it is whatever the curves make it. The steeper the curve, the longer
+its half takes. Against the time the same half takes at cruise speed, the ease in or
+the ease out of each family takes about:
+
+| Curves | Time of an eased half |
+| --- | --- |
+| Sine | 1.6 times the cruise time |
+| Quadratic | 2 times |
+| Cubic | 2.9 times |
+| Quartic | 3.7 times |
+| Back | 4.4 times |
+| Quintic | 4.5 times |
+| Exponential | 5.9 times |
+| Circular | 6.2 times |
+| Elastic | 8 times, the most any curve takes |
+
+Give <a class="ref" href="/docs/camera-glossary/paths/camera-waypoint/#easein">`EaseIn`</a> an ease in and <a class="ref" href="/docs/camera-glossary/paths/camera-waypoint/#easeout">`EaseOut`</a> an ease out. A curve that is slower than a straight line at the
+end where it meets cruise speed, such as an ease in-out, a bounce or an ease out given to `EaseIn`, takes the cruise
+time and meets cruise speed with a jump.
+
+A curve that overshoots, such as a back or an elastic ease, carries the camera a little past the waypoint and back.
+Sampling clamps distances to the path, so at the ends of an open path the camera stays put for that moment instead.
+
+The path times the halves when it [rebuilds](#rebuilding-and-accuracy), so setting a waypoint retimes it. Changing
+the parameters of a function a waypoint already holds doesn't: set the waypoint again after.
+
+### Holds
+
+A hold comes just before the camera leaves its waypoint: at the first waypoint, before the camera sets off, and at the
+last waypoint of an open path, where there is nothing more to travel, before the run ends. A closed path holds at its
+first waypoint once per lap, at the start of the lap.
+
+Holds are plain seconds, which the cruise speed doesn't change. A negative or non-finite
+<a class="ref" href="/docs/camera-glossary/paths/camera-waypoint/#holdsec">`HoldSec`</a> counts as 0.
+
+### Timing a run
+
+<a class="ref method" href="/docs/camera-glossary/paths/camera-path/#traveltime">`TravelTime`</a> gives the seconds of one run at a cruise speed, easing and holds included, and
+<a class="ref method" href="/docs/camera-glossary/paths/camera-path/#distanceattime">`DistanceAtTime`</a> where along the path a camera is some seconds into the run. Together they turn the
+[sampling](#sampling) example into a run with the waypoints' easing and holds:
+
+```csharp
+// something that cruises the path at 5 units a second, eases and holds where its waypoints say,
+// and starts over at the end
+var run = path.TravelTime(5);
+
+if (run > 0)
+{
+    _seconds = (_seconds + seconds) % run;
+
+    var point = path.SampleByPathDistance(path.DistanceAtTime(_seconds, 5));
+    marker.Position = point.Position;
+    marker.Rotation = point.Orientation;
+}
+```
+
+<a class="ref method" href="/docs/camera-glossary/paths/camera-path/#cruisespeed">`CruiseSpeed`</a> works the other way, from the length of a run to its cruise speed. The holds take their
+seconds and the travel takes the rest, but never less than a tenth of the run: holds that alone would fill it make
+the run that much longer. <a class="ref method" href="/docs/camera-glossary/paths/camera-path/#timeatdistance">`TimeAtDistance`</a> turns a distance back into a time, to start a run partway
+along. The animated camera uses all four, see [its easing and holds](/docs/camera-playback/#easing-and-holds).
+
+### CameraPath timing methods
+
+| Method | Description |
+| --- | --- |
+| <a class="ref method" href="/docs/camera-glossary/paths/camera-path/#traveltime">`TravelTime(float cruiseSpeed)`</a> | The seconds of one run at the cruise speed, in units a second, easing and holds included; without either, <a class="ref prop" href="/docs/camera-glossary/paths/camera-path/#length">`Length`</a> over the speed. 0 for a path with no segment, infinity for a speed of 0 or less. |
+| <a class="ref method" href="/docs/camera-glossary/paths/camera-path/#cruisespeed">`CruiseSpeed(float durationSec)`</a> | The cruise speed at which one run takes the duration, the inverse of <a class="ref method" href="/docs/camera-glossary/paths/camera-path/#traveltime">`TravelTime`</a>. Travel gets at least a tenth of the duration, whatever the holds. 0 for a duration of 0 or less, or a path of length 0. |
+| <a class="ref method" href="/docs/camera-glossary/paths/camera-path/#distanceattime">`DistanceAtTime(float seconds, float cruiseSpeed)`</a> | The distance along the path the seconds into a run at the cruise speed; without easing or holds, the speed times the seconds. 0 before the run and <a class="ref prop" href="/docs/camera-glossary/paths/camera-path/#length">`Length`</a> after it. |
+| <a class="ref method" href="/docs/camera-glossary/paths/camera-path/#timeatdistance">`TimeAtDistance(float pathDistance, float cruiseSpeed)`</a> | The seconds into a run at the cruise speed when the camera reaches the distance, clamped to the path: the inverse of <a class="ref method" href="/docs/camera-glossary/paths/camera-path/#distanceattime">`DistanceAtTime`</a>. At a waypoint that holds, the time the camera arrives. |
+
 ## Rebuilding and accuracy
 
 A path measures itself before it can be sampled: the length of each segment, a table from distance to the curve's
-own parameter, and the orientation of each waypoint. Any edit marks it for measuring again: a waypoint added,
+own parameter, the orientation of each waypoint and the timing of each half segment. Any edit marks it for measuring
+again: a waypoint added,
 inserted, set or removed, or a change to <a class="ref prop" href="/docs/camera-glossary/paths/camera-path/#closed">`Closed`</a> or <a class="ref prop" href="/docs/camera-glossary/paths/camera-path/#worldup">`WorldUp`</a>. The next query does it, so the tables never
 disagree with the waypoints and there is nothing to remember. Many edits in a row cost one rebuild, at the next query.
 
@@ -248,4 +368,4 @@ until `float` rounding takes over at around 64. Higher values mostly cost rebuil
 
 | Method | Description |
 | --- | --- |
-| <a class="ref method" href="/docs/camera-glossary/paths/camera-path/#rebuild">`Rebuild()`</a> | Measures the path now: its length, its distance table, its waypoint orientations and, when it is drawn, its geometry. Edits schedule it for the next query on their own. |
+| <a class="ref method" href="/docs/camera-glossary/paths/camera-path/#rebuild">`Rebuild()`</a> | Measures the path now: its length, its distance table, its waypoint orientations, its timing and, when it is drawn, its geometry. Edits schedule it for the next query on their own. |

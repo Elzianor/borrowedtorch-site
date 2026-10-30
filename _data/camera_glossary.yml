@@ -200,6 +200,12 @@
         - title: "Closest<wbr>Distance()"
           anchor: closestdistance
           kind: method
+        - title: "Cruise<wbr>Speed()"
+          anchor: cruisespeed
+          kind: method
+        - title: "Distance<wbr>At<wbr>Time()"
+          anchor: distanceattime
+          kind: method
         - title: "Get<wbr>Waypoint<wbr>Orientation()"
           anchor: getwaypointorientation
           kind: method
@@ -226,6 +232,12 @@
           kind: method
         - title: "Set<wbr>Waypoint()"
           anchor: setwaypoint
+          kind: method
+        - title: "Time<wbr>At<wbr>Distance()"
+          anchor: timeatdistance
+          kind: method
+        - title: "Travel<wbr>Time()"
+          anchor: traveltime
           kind: method
     - title: "Camera<wbr>Path<wbr>Geometry<wbr>Buffers"
       url: /docs/camera-glossary/paths/camera-path-geometry-buffers/
@@ -314,6 +326,15 @@
     - title: "Camera<wbr>Waypoint"
       url: /docs/camera-glossary/paths/camera-waypoint/
       members:
+        - title: "Ease<wbr>In"
+          anchor: easein
+          kind: field
+        - title: "Ease<wbr>Out"
+          anchor: easeout
+          kind: field
+        - title: "Hold<wbr>Sec"
+          anchor: holdsec
+          kind: field
         - title: "Look<wbr>At<wbr>Target"
           anchor: lookattarget
           kind: field
