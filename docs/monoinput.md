@@ -2,7 +2,7 @@
 layout: docs
 legend: [prop, method]
 title: "MonoInput: quick start guide"
-description: Set up BorrowedTorch.MonoInput in a game, update it every frame, move a first player with keys, mouse and pad, and find your way around the input pages.
+description: Set up BorrowedTorch.MonoInput in a game, update it every frame, move a first player with keys, mouse and pad, feed it the keys and mouse of a window MonoGame didn't create, and find your way around the input pages.
 ---
 
 BorrowedTorch.MonoInput is the input layer of Kindling. MonoGame hands you a snapshot of the hardware each frame, and
@@ -16,10 +16,10 @@ These pages cover the library from setup to every public type:
 
 | Page | What it covers |
 | --- | --- |
-| [Quick start guide](/docs/monoinput/) (this page) | Installing, the parts and their namespaces, updating every frame, a first player moved with keys, mouse and pad |
+| [Quick start guide](/docs/monoinput/) (this page) | Installing, the parts and their namespaces, updating every frame, a first player moved with keys, mouse and pad, feeding your own state |
 | [Button states](/docs/monoinput-states/) | The four states, the five checks, buttons that are always there and inputs that come and go, what a frame does, events |
-| [Keyboard](/docs/monoinput-keyboard/) | Checking a key, modifiers and shortcuts, every key held, a key-binding screen, typed text |
-| [Mouse](/docs/monoinput-mouse/) | The buttons, the pointer and how far it moved, the wheels, the mouse events, snapshots of the buttons, updating part of the mouse |
+| [Keyboard](/docs/monoinput-keyboard/) | Checking a key, modifiers and shortcuts, every key held, a key-binding screen, typed text, updating from the keyboard or a state of your own |
+| [Mouse](/docs/monoinput-mouse/) | The buttons, the pointer and how far it moved, the wheels, the mouse events, snapshots of the buttons, updating part of the mouse, a state of your own |
 | [Gamepads](/docs/monoinput-gamepads/) | Four player slots, connecting and disconnecting, the buttons, sticks and their dead zone, triggers, vibration, status events |
 | [MIDI](/docs/monoinput-midi/) | Finding devices, connecting, notes and notes shorter than a frame, unplugging and switching, shutting down, threads |
 | [Glossary](/docs/monoinput-glossary/) | Every public type with its members in alphabetical order, one page per type |
@@ -52,7 +52,9 @@ the package.
 ## The parts
 
 Each kind of device has a static manager. The keyboard, the mouse and the gamepads are read from MonoGame when their
-manager updates; MIDI arrives from Windows and waits in a queue until its manager updates.
+manager updates; MIDI arrives from Windows and waits in a queue until its manager updates. The keyboard and the mouse
+managers can also take a state the game built, for a window MonoGame didn't create: see
+[feeding your own state](#feeding-your-own-state).
 
 - **Keyboard.** <a class="ref" href="/docs/monoinput-glossary/keyboard/keyboard-manager/">`KeyboardManager`</a> answers for any key, by the `Keys` value MonoGame names it with, and lists the
   keys being touched. See [keyboard](/docs/monoinput-keyboard/).
@@ -203,3 +205,43 @@ was just pressed with `IsKeyPressed`, true for one frame per press. The same two
 | <a class="ref prop" href="/docs/monoinput-glossary/mouse/mouse-manager/#mousestatus">`MouseManager.MouseStatus`</a> | <a class="ref" href="/docs/monoinput-glossary/mouse/mouse-status/">`MouseStatus`</a> | Static, read-only. The mouse as of the last update. |
 | <a class="ref prop" href="/docs/monoinput-glossary/mouse/mouse-status/#position">`MouseStatus.Position`</a> | `Point` | Read-only. Where the pointer is, in pixels from the top-left corner of the window's client area. |
 | <a class="ref prop" href="/docs/monoinput-glossary/mouse/mouse-status/#leftbutton">`MouseStatus.LeftButton`</a> | <a class="ref" href="/docs/monoinput-glossary/mouse/mouse-button-info/">`MouseButtonInfo`</a> | Read-only. The left button. |
+
+## Feeding your own state
+
+<a class="ref method" href="/docs/monoinput-glossary/keyboard/keyboard-manager/#update">`KeyboardManager.Update()`</a> and <a class="ref method" href="/docs/monoinput-glossary/mouse/mouse-manager/#update">`MouseManager.Update()`</a> read MonoGame's `Keyboard` and `Mouse`, which
+follow the window MonoGame created. A game drawn into a window of its own, such as an editor viewport in a WPF or
+WinForms tool, gets no keys and no mouse from them, and a replay or a test has no hardware to read at all. For those,
+build the state yourself and hand it to the keyboard and mouse managers, in place of their `Update()`:
+
+```csharp
+// once per frame, at the top of the view's update
+KeyboardManager.Update(new KeyboardState(_heldKeys));
+MouseManager.Update(new MouseState(_pointer.X, _pointer.Y, _wheel,
+    _left, _middle, _right, _xButton1, _xButton2,
+    _horizontalWheel));
+```
+
+`_heldKeys` is a `Keys[]` of the keys held now, `_pointer` the pointer in the view's pixels from its top-left corner,
+`_wheel` and `_horizontalWheel` the wheels' running totals, and `_left` to `_xButton2` the buttons, as `ButtonState`
+values. They stand for what your host keeps from its own key and mouse events.
+
+Everything after that is the same as with polling: the states, the checks, <a class="ref prop" href="/docs/monoinput-glossary/keyboard/keyboard-manager/#activekeys">`ActiveKeys`</a>,
+<a class="ref prop" href="/docs/monoinput-glossary/mouse/mouse-manager/#mousestatus">`MouseStatus`</a> and the mouse events. Two things are yours to get right:
+
+- **The wheels are running totals**, as MonoGame's `ScrollWheelValue` is. Add each wheel event's delta to the total,
+  120 a notch in WPF and WinForms both, and the manager works out <a class="ref prop" href="/docs/monoinput-glossary/mouse/mouse-status/#wheeldelta">`WheelDelta`</a> itself. As with polling,
+  the first update only takes the totals and the position, so neither arrives as a jump.
+- **One update per frame.** A second update in the same frame moves every input another step, so a key just pressed
+  reads `Down`. The polled and the fed updates move the same keys and the same mouse status, so call one of the two
+  for each device, not both.
+
+As with polling, only what the state holds at the update counts: a key pressed and let go between two updates is
+never seen. The [partial mouse updates](/docs/monoinput-mouse/#a-state-of-your-own) take a state too. The gamepad
+and MIDI managers have no such overload: they always read their devices themselves.
+
+### The update calls that take a state
+
+| Method | Description |
+| --- | --- |
+| <a class="ref method" href="/docs/monoinput-glossary/keyboard/keyboard-manager/#update">`KeyboardManager.Update(KeyboardState keyboardState)`</a> | Moves every key one step over the state passed, instead of reading the keyboard: the keys it holds are the keys held. |
+| <a class="ref method" href="/docs/monoinput-glossary/mouse/mouse-manager/#update">`MouseManager.Update(MouseState mouseState)`</a> | Updates the pointer, the wheels and the buttons from the state passed, in that order, raising their events, instead of reading the mouse. |

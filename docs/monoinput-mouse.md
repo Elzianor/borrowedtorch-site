@@ -2,7 +2,7 @@
 layout: docs
 legend: [prop, method, event]
 title: "MonoInput: mouse"
-description: The five buttons, the pointer and how far it moved, both wheels, the mouse events, snapshots of the buttons, and updating part of the mouse.
+description: The five buttons, the pointer and how far it moved, both wheels, the mouse events, snapshots of the buttons, updating part of the mouse, and updating from a state of your own.
 ---
 
 <a class="ref" href="/docs/monoinput-glossary/mouse/mouse-manager/">`MouseManager`</a> reads the mouse at every update into one <a class="ref" href="/docs/monoinput-glossary/mouse/mouse-status/">`MouseStatus`</a>: five buttons, the pointer and two wheels,
@@ -212,12 +212,42 @@ handlers.
 buttons. Each part also has an update method of its own, for a game that needs only one of them, or updates them at
 different moments. Each reads the mouse again, and each part's delta counts from that part's own update before.
 
+## A state of your own
+
+Each of the four update methods also takes a `MouseState`, and does the same with it instead of reading the mouse.
+They are for a mouse that never reaches MonoGame's `Mouse`, such as an editor viewport's in a window of its own, see
+[feeding your own state](/docs/monoinput/#feeding-your-own-state), and for replays and tests. The status then holds
+what the state holds, so give the position in the view's pixels from its top-left corner, and the wheels as running
+totals:
+
+```csharp
+// in the host's wheel event: keep a running total, as MonoGame does
+_wheel += e.Delta;
+
+// at the top of the view's update
+MouseManager.Update(new MouseState(_pointer.X, _pointer.Y, _wheel,
+    _left, _middle, _right, _xButton1, _xButton2));
+```
+
+`_pointer`, `_wheel` and the five `ButtonState` fields stand for what your host keeps from its mouse events. This
+`MouseState` constructor leaves the horizontal wheel at 0; the one with a ninth value takes its total last. The
+deltas, the events and the first update work as with polling: <a class="ref prop" href="/docs/monoinput-glossary/mouse/mouse-status/#wheeldelta">`WheelDelta`</a> is how far the total
+changed since the update before.
+
+A partial update takes only its part of the state: <a class="ref method" href="/docs/monoinput-glossary/mouse/mouse-manager/#updatepositiondata">`UpdatePositionData(state)`</a> leaves the wheels and the
+buttons as they were. Call the polled or the fed updates for the mouse, not both in a frame: they move the same
+status.
+
 ### MouseManager methods
 
 | Method | Description |
 | --- | --- |
 | <a class="ref method" href="/docs/monoinput-glossary/mouse/mouse-manager/#update">`Update()`</a> | Static. Reads the mouse once and updates the pointer, the wheels and the buttons, in that order, raising their events. Call it once per frame. |
+| <a class="ref method" href="/docs/monoinput-glossary/mouse/mouse-manager/#update">`Update(MouseState mouseState)`</a> | Static. The same, over a state the game built instead of the mouse. Once per frame too, in place of `Update()`. |
 | <a class="ref method" href="/docs/monoinput-glossary/mouse/mouse-manager/#updatepositiondata">`UpdatePositionData()`</a> | Static. Reads the mouse and updates the position and its delta, nothing else. Raises <a class="ref event" href="/docs/monoinput-glossary/mouse/mouse-manager/#onpositionchanged">`OnPositionChanged`</a> when the pointer moved. |
+| <a class="ref method" href="/docs/monoinput-glossary/mouse/mouse-manager/#updatepositiondata">`UpdatePositionData(MouseState mouseState)`</a> | Static. The same, with the position of the state passed. |
 | <a class="ref method" href="/docs/monoinput-glossary/mouse/mouse-manager/#updatewheelsdata">`UpdateWheelsData()`</a> | Static. Reads the mouse and updates the two wheels, nothing else. Raises the event of each wheel that turned. |
+| <a class="ref method" href="/docs/monoinput-glossary/mouse/mouse-manager/#updatewheelsdata">`UpdateWheelsData(MouseState mouseState)`</a> | Static. The same, with the wheel totals of the state passed. |
 | <a class="ref method" href="/docs/monoinput-glossary/mouse/mouse-manager/#updatebuttonsstates">`UpdateButtonsStates()`</a> | Static. Reads the mouse and moves the five buttons one step, nothing else. Raises <a class="ref event" href="/docs/monoinput-glossary/mouse/mouse-manager/#onbuttonsstateschanged">`OnButtonsStatesChanged`</a> when any changed. |
+| <a class="ref method" href="/docs/monoinput-glossary/mouse/mouse-manager/#updatebuttonsstates">`UpdateButtonsStates(MouseState mouseState)`</a> | Static. The same, with the buttons of the state passed. |
 | <a class="ref method" href="/docs/monoinput-glossary/mouse/mouse-manager/#getbuttonsstates">`GetButtonsStates()`</a> | Static. Returns a new <a class="ref" href="/docs/monoinput-glossary/mouse/mouse-buttons-states/">`MouseButtonsStates`</a>: the states of the five buttons as they are now. |

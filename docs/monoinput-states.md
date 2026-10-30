@@ -138,7 +138,8 @@ A few things follow from the list being live:
 ## What a frame does
 
 1. **The game calls `Update`** on each manager it uses, at the top of its own `Update`.
-2. **The manager reads the hardware.** The keyboard, mouse and gamepad managers ask MonoGame for its snapshot; the MIDI
+2. **The manager reads the hardware.** The keyboard, mouse and gamepad managers ask MonoGame for its snapshot, or the
+   keyboard and mouse managers take the one the game [handed them](/docs/monoinput/#feeding-your-own-state); the MIDI
    manager takes in what Windows queued since the update before.
 3. **Every input moves one step** through the states above.
 4. **Events are raised** for what changed, from inside `Update`, see [events](#events).

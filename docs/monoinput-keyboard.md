@@ -2,7 +2,7 @@
 layout: docs
 legend: [prop, method]
 title: "MonoInput: keyboard"
-description: Checking a key by its state, Ctrl, Shift and Alt, shortcuts, every key held at once, a key-binding screen, and typed text.
+description: Checking a key by its state, Ctrl, Shift and Alt, shortcuts, every key held at once, a key-binding screen, typed text, and updating from the keyboard or from a state of your own.
 ---
 
 <a class="ref" href="/docs/monoinput-glossary/keyboard/keyboard-manager/">`KeyboardManager`</a> reads the keyboard at every update and answers for any key. It knows keys by the `Keys` value
@@ -136,7 +136,8 @@ For actions with several bindings each, rebinding with conflicts and modifier ke
 <a class="ref prop" href="/docs/monoinput-glossary/keyboard/keyboard-manager/#activekeys">`ActiveKeys`</a> reports keys, not characters. It doesn't know the keyboard layout, Shift for capitals,
 dead keys, or the repeat of a key held down. For a text box, take the characters from MonoGame's `Window.TextInput`
 event, which gives them as they were typed, and keep MonoInput for the keys that act, such as Enter to confirm and
-Escape to cancel. [BorrowedTorch.UI](/docs/ui/)'s text boxes work that way.
+Escape to cancel. [BorrowedTorch.UI](/docs/ui/)'s text boxes work that way. A game in a window MonoGame didn't
+create takes the characters from its host's text events instead.
 
 ## Updating
 
@@ -145,8 +146,23 @@ down is added `Pressed`, a held one becomes `Down`, a released one `Up`, and an 
 per frame, at the top of the game's `Update`. It keeps a buffer for the keys held, so it doesn't allocate once the
 buffer fits them.
 
-### KeyboardManager update method
+<a class="ref method" href="/docs/monoinput-glossary/keyboard/keyboard-manager/#update">`Update(KeyboardState keyboardState)`</a> does the same over a state the game built, instead of reading the
+keyboard: the keys it holds are the keys held. It is for keys that never reach MonoGame's `Keyboard`, such as an
+editor viewport's in a window of its own, see [feeding your own state](/docs/monoinput/#feeding-your-own-state), and
+for replays and tests:
+
+```csharp
+// a replay: the keys held at each frame of the recording, played back
+KeyboardManager.Update(new KeyboardState(_recording[_frame]));
+_frame++;
+```
+
+`_recording` is a `Keys[][]` your own code filled, one array of held keys per frame. Call one of the two updates per
+frame, not both: they move the same keys.
+
+### KeyboardManager update methods
 
 | Method | Description |
 | --- | --- |
 | <a class="ref method" href="/docs/monoinput-glossary/keyboard/keyboard-manager/#update">`Update()`</a> | Static. Reads the keyboard and moves every key one step. Call it once per frame, before anything checks a key: a second call in the same frame moves the keys again, so a key just pressed reads `Down`. |
+| <a class="ref method" href="/docs/monoinput-glossary/keyboard/keyboard-manager/#update">`Update(KeyboardState keyboardState)`</a> | Static. The same, over a state the game built instead of the keyboard: the keys it holds are the keys held. Once per frame too, in place of `Update()`. |

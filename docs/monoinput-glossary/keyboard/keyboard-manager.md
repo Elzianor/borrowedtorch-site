@@ -5,7 +5,7 @@ title: "Glossary: KeyboardManager"
 description: "The members of KeyboardManager, in alphabetical order."
 ---
 
-Reads the keyboard at every update and answers for any key: its state, the modifiers, and every key being touched.
+Reads the keyboard at every update, or takes a state the game built, and answers for any key: its state, the modifiers, and every key being touched.
 
 A static class, in the namespace `BorrowedTorch.MonoInput.Inputs.Keyboard`. It has no events: game code asks it. Until the first <a class="ref method" href="/docs/monoinput-glossary/keyboard/keyboard-manager/#update">`Update`</a> every key is idle. The [keyboard page](/docs/monoinput-keyboard/#keyboardmanager-checks) shows it in context, with code.
 
@@ -71,6 +71,12 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span> o
 | --- | --- | --- |
 | `key` | `Keys` | The key, as MonoGame names it. |
 
-<h3 id="update"><span class="method"><code>Update()</code></span> <a class="ctx" href="/docs/monoinput-keyboard/#keyboardmanager-update-method" title="Update() in context on the keyboard page" aria-label="Update() in context on the keyboard page">→</a></h3>
+<h3 id="update"><span class="method"><code>Update()</code></span> <a class="ctx" href="/docs/monoinput-keyboard/#keyboardmanager-update-methods" title="Update() in context on the keyboard page" aria-label="Update() in context on the keyboard page">→</a></h3>
 
 <a class="ref method" href="/docs/monoinput-glossary/keyboard/keyboard-manager/#update">`Update()`</a> · Static. Reads the keyboard with `Keyboard.GetState()` and moves every key one step. Call it once per frame, before anything checks a key: a second call in the same frame moves the keys again, so a key just pressed reads `Down`. Doesn't allocate once its buffer fits the keys held.
+
+<a class="ref method" href="/docs/monoinput-glossary/keyboard/keyboard-manager/#update">`Update(KeyboardState keyboardState)`</a> · Static. The same, over a state the game built instead of the keyboard: for keys that never reach MonoGame's `Keyboard`, such as an editor viewport's in a window of its own, and for replays and tests. Once per frame too, in place of `Update()`: the two move the same keys.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `keyboardState` | `KeyboardState` | The keys held now, such as `new KeyboardState(heldKeys)`. Only its keys are read, not its Caps Lock and Num Lock. |
