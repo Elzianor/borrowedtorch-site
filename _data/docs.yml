@@ -13,8 +13,8 @@
 # data file whose entries (each with members) become its subitems: _data/ecs_glossary.yml, _data/audio_glossary.yml,
 # _data/ui_glossary.yml, _data/randomness_glossary.yml, _data/camera_glossary.yml,
 # _data/transform_gizmo_glossary.yml, _data/scene_gizmo_glossary.yml, _data/shaping_functions_glossary.yml,
-# _data/monoinput_glossary.yml, _data/input_binder_glossary.yml and _data/ray_tracing_glossary.yml are generated with
-# their glossary pages.
+# _data/monoinput_glossary.yml, _data/input_binder_glossary.yml, _data/ray_tracing_glossary.yml and
+# _data/frame_rate_counter_glossary.yml are generated with their glossary pages.
 - group: ECS
   tree: true
   articles:
@@ -219,6 +219,19 @@
     - title: Glossary
       url: /docs/ray-tracing-glossary/
       glossary: ray_tracing_glossary
+
+- group: Frame rate counter
+  tree: true
+  articles:
+    - title: Quick start guide
+      url: /docs/frame-rate-counter/
+    - title: Measuring frames
+      url: /docs/frame-rate-counter-measuring/
+    - title: The readings
+      url: /docs/frame-rate-counter-readings/
+    - title: Glossary
+      url: /docs/frame-rate-counter-glossary/
+      glossary: frame_rate_counter_glossary
 
 - group: Systems
   articles:

@@ -1,0 +1,31 @@
+# The frame rate counter glossary in the docs sidebar: generated with the glossary pages, don't edit by hand.
+- title: "Counter"
+  url: /docs/frame-rate-counter-glossary/counter/
+  entries:
+    - title: "Frame<wbr>Rate<wbr>Counter"
+      url: /docs/frame-rate-counter-glossary/counter/frame-rate-counter/
+      members:
+        - title: "Frame<wbr>Rate"
+          anchor: framerate
+          kind: prop
+        - title: "Frame<wbr>Time"
+          anchor: frametime
+          kind: prop
+        - title: "Refresh<wbr>Rate<wbr>In<wbr>Seconds"
+          anchor: refreshrateinseconds
+          kind: prop
+        - title: "Update<wbr>Every<wbr>Frame"
+          anchor: updateeveryframe
+          kind: prop
+        - title: "Worst<wbr>Frame<wbr>Time<wbr>Per<wbr>Refresh"
+          anchor: worstframetimeperrefresh
+          kind: prop
+        - title: "Frame<wbr>Rate<wbr>Counter()"
+          anchor: frameratecounter
+          kind: method
+        - title: "Reset()"
+          anchor: reset
+          kind: method
+        - title: "Update()"
+          anchor: update
+          kind: method
