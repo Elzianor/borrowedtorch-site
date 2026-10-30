@@ -447,6 +447,10 @@ collapsed and darker when expanded. The screenshot's tree gives it two pictures 
 pointing right and one pointing down, at the theme's 10 by 10 (see [texture sets](/docs/ui-styles/#texture-sets)).
 <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#subitemsshift">`SubItemsShift`</a> indents every level. The tree view's list never uses virtualization.
 
+**The list.** The list fills the whole tree view: its rows are as wide as the tree, and it scrolls when they don't
+fit. The tree view sets the list's alignments itself, so a list style aligned to a corner (<a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#listboxstyle">`ListBoxStyle`</a> or
+<a class="ref prop" href="/docs/ui-glossary/elements/list-box/#generalstyle">`ListBox.GeneralStyle`</a>) doesn't make it fit its rows instead.
+
 ### TreeView properties
 
 | Property | Type | Description |
@@ -456,7 +460,7 @@ pointing right and one pointing down, at the theme's 10 by 10 (see [texture sets
 | <a class="ref prop" href="/docs/ui-glossary/elements/tree-view/#itemstemplate">`ItemsTemplate`</a> | <a class="ref" href="/docs/ui-glossary/types/i-items-template/">`IItemsTemplate`</a> | Makes the element of each object; a label with the object's text when none is set. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#selecteditem">`SelectedItem`</a> | <a class="ref" href="/docs/ui-glossary/elements/tree-view-item/">`TreeViewItem`</a> | The selected item, `null` when nothing is selected. Only an item of this tree can be set; the branches above it are expanded. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/tree-view/#leaves">`Leaves`</a> | <code>IReadOnlyList&lt;<a href="/docs/ui-glossary/elements/tree-view-item/">TreeViewItem</a>&gt;</code> | Read-only. The top-level items. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#listboxstyle">`ListBoxStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> | The style of the list the items are shown in, for example its row colors and scroll bars. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#listboxstyle">`ListBoxStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> | The style of the list the items are shown in, for example its row colors and scroll bars. Its alignments are not used: the list always fills the tree view. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#expandiconstyle">`ExpandIconStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> | The style of the expand icon of the items, for example its size and margin. By default an 8 by 8 block, centered, with a margin of 4 before and 6 after it. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#foldediconcolor">`FoldedIconColor`</a> | `Color` | The color of the icon of a collapsed branch, when the tree view has no textures. By default `(150, 150, 160)`. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#expandediconcolor">`ExpandedIconColor`</a> | `Color` | The color of the icon of an expanded branch, when the tree view has no textures. By default `(90, 90, 100)`. |

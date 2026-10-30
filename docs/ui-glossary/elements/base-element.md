@@ -55,7 +55,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <h3 id="defaultmousecursorsset"><span class="prop"><code>DefaultMouseCursorsSet</code></span> <a class="ctx" href="/docs/ui-base-element/#baseelement-cursor-properties" title="DefaultMouseCursorsSet in context on the base element page" aria-label="DefaultMouseCursorsSet in context on the base element page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> · Static. The cursors of every element without a more specific set: an arrow on hover, a hand over an element that can be dragged, a "no" cursor over a denied drop, and the sizing arrows over resize areas. <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#setdefaultmousecursorsset">`BorrowedTorchUI.SetDefaultMouseCursorsSet`</a> sets it too.
+<a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> · Static. The cursors of every element without a more specific set: an arrow on hover, the sizing arrows over resize areas, a text cursor over editable text, a hand over a link, a hand over an element that can be dragged, while it is dragged and over an allowed drop, and a "no" cursor over a denied drop. <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#setdefaultmousecursorsset">`BorrowedTorchUI.SetDefaultMouseCursorsSet`</a> sets it too.
 
 <h3 id="desiredheight"><span class="dp"><code>DesiredHeight</code></span> <a class="ctx" href="/docs/ui-base-element/#size-and-position-properties" title="DesiredHeight in context on the base element page" aria-label="DesiredHeight in context on the base element page">🠆</a></h3>
 

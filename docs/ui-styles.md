@@ -342,9 +342,15 @@ Button.GeneralMouseCursorsSet = new MouseCursorsSet
 };
 ```
 
-A cursor property left `null` sets no cursor, so the one shown before stays. The default set shows the arrow on hover,
-the hand over a draggable element, the "no" cursor where a drop is denied, and the sizing arrows on the edges and
-corners of a resizable element; it has no pressed, drag pressed or drop allowed cursor and no rich text cursors.
+A cursor property left `null` sets no cursor, so the one shown before stays. The default set shows the arrow over the
+elements, the sizing arrows on the edges and corners of a resizable element, the text cursor over the text of an
+editable `RichTextBox` and the hand over a link of a rich text. A drag shows the hand over what can be dragged, while
+it is dragged and over an element that takes the drop, and the "no" cursor over one that doesn't. It has no other
+pressed cursors, so the hover cursor stays while a button is held.
+
+A disabled element still takes the mouse, without being hovered, and shows only the plain
+<a class="ref prop" href="/docs/ui-glossary/types/mouse-cursors-set/#hovercursor">`HoverCursor`</a> of its set (the arrow in the default set): no drag, text or link cursor, and not the cursor of
+the element the mouse came from.
 
 The Example columns below show the cursors of the `UITextures/MouseCursors` folder that comes with BorrowedTorch.UI
 (the set the snippet above loads from), the hover cursor first and the pressed one second where a set has both.
@@ -357,7 +363,7 @@ The cursors an element shows. It is disposable: disposing it disposes its <a cla
 
 | Property | Type | Description | Example |
 | --- | --- | --- | --- |
-| <a class="ref prop" href="/docs/ui-glossary/types/mouse-cursors-set/#hovercursor">`HoverCursor`</a> | `MouseCursor` | The cursor while the mouse is over the element. | <img class="cursor" src="{{ '/assets/img/ui/cursors/ArrowHover.png' | relative_url }}" width="32" height="32" alt="arrow cursor" title="Arrow cursor"> |
+| <a class="ref prop" href="/docs/ui-glossary/types/mouse-cursors-set/#hovercursor">`HoverCursor`</a> | `MouseCursor` | The cursor while the mouse is over the element. A disabled element shows only this one. | <img class="cursor" src="{{ '/assets/img/ui/cursors/ArrowHover.png' | relative_url }}" width="32" height="32" alt="arrow cursor" title="Arrow cursor"> |
 | <a class="ref prop" href="/docs/ui-glossary/types/mouse-cursors-set/#pressedcursor">`PressedCursor`</a> | `MouseCursor` | The cursor while the left button is held on the element. | <img class="cursor" src="{{ '/assets/img/ui/cursors/ArrowPressed.png' | relative_url }}" width="32" height="32" alt="pressed arrow cursor" title="Pressed arrow cursor"> |
 | <a class="ref prop" href="/docs/ui-glossary/types/mouse-cursors-set/#draganddropcursors">`DragAndDropCursors`</a> | <a class="ref" href="/docs/ui-glossary/types/drag-and-drop-cursors/">`DragAndDropCursors`</a> | The cursors of a draggable element and of drop targets. |  |
 | <a class="ref prop" href="/docs/ui-glossary/types/mouse-cursors-set/#resizecursors">`ResizeCursors`</a> | <a class="ref" href="/docs/ui-glossary/types/resize-cursors/">`ResizeCursors`</a> | The cursors on the edges and corners of a resizable element. |  |

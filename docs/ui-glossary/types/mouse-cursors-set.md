@@ -19,7 +19,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="hovercursor"><span class="prop"><code>HoverCursor</code></span> <a class="ctx" href="/docs/ui-styles/#mousecursorsset" title="HoverCursor in context on the styles page" aria-label="HoverCursor in context on the styles page">🠆</a></h3>
 
-`MouseCursor` · The cursor while the mouse is over the element.
+`MouseCursor` · The cursor while the mouse is over the element. A disabled element shows only this one.
 
 <h3 id="pressedcursor"><span class="prop"><code>PressedCursor</code></span> <a class="ctx" href="/docs/ui-styles/#mousecursorsset" title="PressedCursor in context on the styles page" aria-label="PressedCursor in context on the styles page">🠆</a></h3>
 

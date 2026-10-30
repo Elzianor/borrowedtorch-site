@@ -321,7 +321,8 @@ The mouse goes to one element at a time. The UI checks the children before their
 before the earlier ones (the ones drawn on top); the first element with <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#hittest">`HitTest`</a> on whose hit rectangle (its bounds,
 cropped by whatever clips it) contains the mouse takes it, and nothing below it is hovered. An element with <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#hittest">`HitTest`</a>
 off is passed over, so the element behind it gets the mouse. A hidden element takes no mouse. A disabled element
-still takes it (the element behind it is not hovered) but shows no state and raises no mouse events. While a modal
+still takes it (the element behind it is not hovered) but shows no state and raises no mouse events; it shows the
+plain hover cursor of its set (see [mouse cursors](/docs/ui-styles/#mouse-cursors)). While a modal
 window is shown, only its subtree gets the mouse.
 
 An element's own state is `Hover` while it takes the mouse, `MouseButtonsActivity` while a button pressed on it is
@@ -700,7 +701,7 @@ control reaches its parts (the scroll bars of a list, the title bar of a window)
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <span class="prop">`DefaultMouseCursorsSet`</span> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | Static. The cursors of every element without a more specific set: an arrow on hover, a hand over an element that can be dragged, a "no" cursor over a denied drop, and the sizing arrows over resize areas. <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#setdefaultmousecursorsset">`BorrowedTorchUI.SetDefaultMouseCursorsSet`</a> sets it too. |
+| <span class="prop">`DefaultMouseCursorsSet`</span> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | Static. The cursors of every element without a more specific set: an arrow on hover, the sizing arrows over resize areas, a text cursor over editable text, a hand over a link, a hand over an element that can be dragged, while it is dragged and over an allowed drop, and a "no" cursor over a denied drop. <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#setdefaultmousecursorsset">`BorrowedTorchUI.SetDefaultMouseCursorsSet`</a> sets it too. |
 | <a class="ref prop" href="/docs/ui-glossary/types/generic-style-and-mouse-cursors-data/#mousecursorsset">`MouseCursorsSet`</a> | <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> | Read-only. The cursors the element shows. On an element without a style: its control's cursors when it is a part of one, otherwise <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#defaultmousecursorsset">`DefaultMouseCursorsSet`</a>. |
 
 ## The root element
