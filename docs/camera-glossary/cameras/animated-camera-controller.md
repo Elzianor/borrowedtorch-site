@@ -15,7 +15,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span> o
 
 <h3 id="durationsec"><span class="prop"><code>DurationSec</code></span> <a class="ctx" href="/docs/camera-playback/#animatedcameracontroller-properties" title="DurationSec in context on the path playback page" aria-label="DurationSec in context on the path playback page">→</a></h3>
 
-`float` · The seconds of one run from end to end, easing and holds included. 8 by default. The holds take their seconds and the travel the rest, at the path's <a class="ref method" href="/docs/camera-glossary/paths/camera-path/#cruisespeed">`CruiseSpeed`</a> for the duration; without easing or holds, that is the path's <a class="ref prop" href="/docs/camera-glossary/paths/camera-path/#length">`Length`</a> over it. Travel gets at least a tenth of the duration, so holds that alone would fill it make the run longer. For a set speed, assign <a class="ref method" href="/docs/camera-glossary/paths/camera-path/#traveltime">`Path.TravelTime(speed)`</a>. At 0 or less, the camera doesn't move along the path.
+`float` · The seconds of one run from end to end, easing and holds included, while <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#timing">`Timing`</a> is `Duration`. 8 by default. The holds take their seconds and the travel the rest, at the path's <a class="ref method" href="/docs/camera-glossary/paths/camera-path/#cruisespeed">`CruiseSpeed`</a> for the duration; without easing or holds, that is the path's <a class="ref prop" href="/docs/camera-glossary/paths/camera-path/#length">`Length`</a> over it. Travel gets at least a tenth of the duration, so holds that alone would fill it make the run longer. For a set speed, use <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#speedunitspersec">`SpeedUnitsPerSec`</a> instead. At 0 or less, the camera doesn't move along the path.
 
 <h3 id="entryblenddurationsec"><span class="prop"><code>EntryBlendDurationSec</code></span> <a class="ctx" href="/docs/camera-playback/#animatedcameracontroller-properties" title="EntryBlendDurationSec in context on the path playback page" aria-label="EntryBlendDurationSec in context on the path playback page">→</a></h3>
 
@@ -41,11 +41,19 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span> o
 
 `bool` · Whether attaching starts from the point of the path nearest the camera, at the matching point of the run as a seek does; off, it starts from <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#pathdistance">`PathDistance`</a>. On by default.
 
+<h3 id="speedunitspersec"><span class="prop"><code>SpeedUnitsPerSec</code></span> <a class="ctx" href="/docs/camera-playback/#animatedcameracontroller-properties" title="SpeedUnitsPerSec in context on the path playback page" aria-label="SpeedUnitsPerSec in context on the path playback page">→</a></h3>
+
+`float` · The cruise speed, in world units a second, while <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#timing">`Timing`</a> is `Speed`: the camera's speed wherever no waypoint eases. 5 by default. A run takes the path's <a class="ref method" href="/docs/camera-glossary/paths/camera-path/#traveltime">`TravelTime`</a> at it, and the speed stays as it is when the path changes length mid-run: the run takes longer or shorter instead. At 0 or less, or not a finite number, the camera doesn't move along the path.
+
+<h3 id="timing"><span class="prop"><code>Timing</code></span> <a class="ctx" href="/docs/camera-playback/#animatedcameracontroller-properties" title="Timing in context on the path playback page" aria-label="Timing in context on the path playback page">→</a></h3>
+
+<a class="ref" href="/docs/camera-glossary/types/camera-path-timing/">`CameraPathTiming`</a> · What sets the length of a run: <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#durationsec">`DurationSec`</a> for `Duration`, the default, or <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#speedunitspersec">`SpeedUnitsPerSec`</a> for `Speed`. The other setting is kept, unused. Changing it while playing carries on from the same share of the run.
+
 ## Methods
 
 <h3 id="animatedcameracontroller"><span class="method"><code>AnimatedCameraController()</code></span> <a class="ctx" href="/docs/camera-playback/#animatedcameracontroller-methods" title="AnimatedCameraController() in context on the path playback page" aria-label="AnimatedCameraController() in context on the path playback page">→</a></h3>
 
-<a class="ref method" href="/docs/camera-glossary/cameras/animated-camera-controller/#animatedcameracontroller">`AnimatedCameraController()`</a> · A paused controller with an empty path, an 8-second duration, the `Stop` mode, a 2-second entry blend and <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#snaptonearestonentry">`SnapToNearestOnEntry`</a> on.
+<a class="ref method" href="/docs/camera-glossary/cameras/animated-camera-controller/#animatedcameracontroller">`AnimatedCameraController()`</a> · A paused controller with an empty path, timed by an 8-second duration, a speed of 5 units a second for timing by speed, the `Stop` mode, a 2-second entry blend and <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#snaptonearestonentry">`SnapToNearestOnEntry`</a> on.
 
 <h3 id="addwaypoint"><span class="method"><code>AddWaypoint()</code></span> <a class="ctx" href="/docs/camera-playback/#animatedcameracontroller-methods" title="AddWaypoint() in context on the path playback page" aria-label="AddWaypoint() in context on the path playback page">→</a></h3>
 

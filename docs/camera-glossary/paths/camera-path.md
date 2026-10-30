@@ -81,7 +81,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span> o
 
 <h3 id="cruisespeed"><span class="method"><code>CruiseSpeed()</code></span> <a class="ctx" href="/docs/camera-paths/#camerapath-timing-methods" title="CruiseSpeed() in context on the camera paths page" aria-label="CruiseSpeed() in context on the camera paths page">→</a></h3>
 
-<a class="ref method" href="/docs/camera-glossary/paths/camera-path/#cruisespeed">`CruiseSpeed(float durationSec)`</a> · The cruise speed at which one run takes the duration, the inverse of <a class="ref method" href="#traveltime">`TravelTime`</a>: the holds take their seconds, and the travel takes the rest, but at least a tenth of the duration, so holds that alone would fill it leave the run that much longer. 0 for a duration of 0 or less, or a path of length 0. The animated camera plays its <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#durationsec">`DurationSec`</a> at this speed.
+<a class="ref method" href="/docs/camera-glossary/paths/camera-path/#cruisespeed">`CruiseSpeed(float durationSec)`</a> · The cruise speed at which one run takes the duration, the inverse of <a class="ref method" href="#traveltime">`TravelTime`</a>: the holds take their seconds, and the travel takes the rest, but at least a tenth of the duration, so holds that alone would fill it leave the run that much longer. 0 for a duration of 0 or less, or a path of length 0. The animated camera timed by duration plays its <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#durationsec">`DurationSec`</a> at this speed.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
@@ -89,12 +89,21 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span> o
 
 <h3 id="distanceattime"><span class="method"><code>DistanceAtTime()</code></span> <a class="ctx" href="/docs/camera-paths/#camerapath-timing-methods" title="DistanceAtTime() in context on the camera paths page" aria-label="DistanceAtTime() in context on the camera paths page">→</a></h3>
 
-<a class="ref method" href="/docs/camera-glossary/paths/camera-path/#distanceattime">`DistanceAtTime(float seconds, float cruiseSpeed)`</a> · The distance along the path the seconds into a run at the cruise speed, easing and holds included; without either, the speed times the seconds. 0 before the run, <a class="ref prop" href="#length">`Length`</a> once it is over, and 0 for a path with no segment or a speed of 0 or less. A curve that overshoots, such as a back or elastic ease, takes the distance a little past the waypoint it eases and back, so out of 0 to <a class="ref prop" href="#length">`Length`</a> at an end of an open path; sampling clamps it there.
+<a class="ref method" href="/docs/camera-glossary/paths/camera-path/#distanceattime">`DistanceAtTime(float seconds, float cruiseSpeed)`</a> · The distance along the path the seconds into a run at the cruise speed, easing and holds included; without either, the speed times the seconds. 0 before the run, <a class="ref prop" href="#length">`Length`</a> once it is over, and 0 for a path with no segment or a speed of 0 or less. A curve that overshoots, such as a back or elastic ease, takes the speed below zero for a moment and the distance a little past the waypoint it eases and back, so out of 0 to <a class="ref prop" href="#length">`Length`</a> at an end of an open path; sampling clamps it there.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
 | `seconds` | `float` | The time into the run. |
 | `cruiseSpeed` | `float` | The speed wherever no waypoint eases, in world units a second. |
+
+<h3 id="easestretch"><span class="method"><code>EaseStretch()</code></span> <a class="ctx" href="/docs/camera-paths/#camerapath-timing-methods" title="EaseStretch() in context on the camera paths page" aria-label="EaseStretch() in context on the camera paths page">→</a></h3>
+
+<a class="ref method" href="/docs/camera-glossary/paths/camera-path/#easestretch">`EaseStretch(BaseShapingFunction? curve, bool arriving)`</a> · Static. How many times longer than at cruise speed a half segment eased by the curve takes, the rule <a class="ref method" href="#traveltime">`TravelTime`</a> times a path by: the inverse of the curve's average speed. 2 for `Linear` and every ease in-out, 3 for a quadratic ease in leaving or a quadratic ease out arriving, 1.5 the other way round, and between a hundredth and a hundred for any curve. 1 for `null`, and for a curve that on the whole goes nowhere or backwards, which travels its half at cruise speed. For whatever needs to show the timing.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `curve` | <a class="ref" href="/docs/shaping-functions-glossary/types/base-shaping-function/">`BaseShapingFunction?`</a> | The speed curve, as a waypoint's <a class="ref" href="/docs/camera-glossary/paths/camera-waypoint/#easein">`EaseIn`</a> or <a class="ref" href="/docs/camera-glossary/paths/camera-waypoint/#easeout">`EaseOut`</a> holds it. |
+| `arriving` | `bool` | `false` for the half leaving a waypoint, where the speed is the curve; `true` for the half arriving at one, where it is 1 minus the curve. |
 
 <h3 id="getwaypointorientation"><span class="method"><code>GetWaypointOrientation()</code></span> <a class="ctx" href="/docs/camera-paths/#camerapath-sampling-methods" title="GetWaypointOrientation() in context on the camera paths page" aria-label="GetWaypointOrientation() in context on the camera paths page">→</a></h3>
 
@@ -166,6 +175,15 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span> o
 | `index` | `int` | The waypoint's index in <a class="ref prop" href="/docs/camera-glossary/paths/camera-path/#waypoints">`Waypoints`</a>. |
 | `waypoint` | <a class="ref" href="/docs/camera-glossary/paths/camera-waypoint/">`CameraWaypoint`</a> | The waypoint to put there. |
 
+<h3 id="speedattime"><span class="method"><code>SpeedAtTime()</code></span> <a class="ctx" href="/docs/camera-paths/#camerapath-timing-methods" title="SpeedAtTime() in context on the camera paths page" aria-label="SpeedAtTime() in context on the camera paths page">→</a></h3>
+
+<a class="ref method" href="/docs/camera-glossary/paths/camera-path/#speedattime">`SpeedAtTime(float seconds, float cruiseSpeed)`</a> · The camera's speed, in world units a second, the seconds into a run at the cruise speed: the cruise speed wherever no waypoint eases, 0 while one holds and outside the run, below 0 where an overshooting curve backs the camera up. Read off the easing speed curve itself rather than from distances a moment apart. Where the speed jumps, as at a waypoint eased on one side only, the moment of the jump gives the speed after it. 0 for a path with no segment or a speed of 0 or less.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `seconds` | `float` | The time into the run. |
+| `cruiseSpeed` | `float` | The speed wherever no waypoint eases, in world units a second. |
+
 <h3 id="timeatdistance"><span class="method"><code>TimeAtDistance()</code></span> <a class="ctx" href="/docs/camera-paths/#camerapath-timing-methods" title="TimeAtDistance() in context on the camera paths page" aria-label="TimeAtDistance() in context on the camera paths page">→</a></h3>
 
 <a class="ref method" href="/docs/camera-glossary/paths/camera-path/#timeatdistance">`TimeAtDistance(float pathDistance, float cruiseSpeed)`</a> · The seconds into a run at the cruise speed when the camera reaches the distance, the inverse of <a class="ref method" href="#distanceattime">`DistanceAtTime`</a>, for starting a run partway along. At a waypoint that holds, the time the camera arrives, so a run started there holds first. Where an overshooting curve passes the same point more than once, the first time. 0 for a path with no segment or a speed of 0 or less.
@@ -177,8 +195,34 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span> o
 
 <h3 id="traveltime"><span class="method"><code>TravelTime()</code></span> <a class="ctx" href="/docs/camera-paths/#camerapath-timing-methods" title="TravelTime() in context on the camera paths page" aria-label="TravelTime() in context on the camera paths page">→</a></h3>
 
-<a class="ref method" href="/docs/camera-glossary/paths/camera-path/#traveltime">`TravelTime(float cruiseSpeed)`</a> · The seconds one run takes at the cruise speed, easing and holds included. Without easing, the travel is <a class="ref prop" href="#length">`Length`</a> over the speed; each eased half takes as long as its curve needs to meet cruise speed, about twice its cruise time for a quadratic, three times for a cubic and at most eight. Every waypoint's <a class="ref" href="/docs/camera-glossary/paths/camera-waypoint/#holdsec">`HoldSec`</a> is added as it is, whatever the speed. 0 for a path with no segment, infinity for a speed of 0 or less. Assign it to <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#durationsec">`DurationSec`</a> to play a path at a speed of your choosing.
+<a class="ref method" href="/docs/camera-glossary/paths/camera-path/#traveltime">`TravelTime(float cruiseSpeed)`</a> · The seconds one run takes at the cruise speed, easing and holds included. Without easing, the travel is <a class="ref prop" href="#length">`Length`</a> over the speed. A curve is the camera's speed over its half's time, so each eased half takes the inverse of its average speed in cruise times, <a class="ref method" href="#easestretch">`EaseStretch`</a>: twice its cruise time for `Linear`, three times for a quadratic ease in leaving, four for a cubic, and at most a hundred. Every waypoint's <a class="ref" href="/docs/camera-glossary/paths/camera-waypoint/#holdsec">`HoldSec`</a> is added as it is, whatever the speed. 0 for a path with no segment, infinity for a speed of 0 or less. The animated camera timed by speed takes this long for a run at its <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#speedunitspersec">`SpeedUnitsPerSec`</a>.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
 | `cruiseSpeed` | `float` | The speed wherever no waypoint eases, in world units a second. |
+
+<h3 id="waypointarrivaltime"><span class="method"><code>WaypointArrivalTime()</code></span> <a class="ctx" href="/docs/camera-paths/#camerapath-timing-methods" title="WaypointArrivalTime() in context on the camera paths page" aria-label="WaypointArrivalTime() in context on the camera paths page">→</a></h3>
+
+<a class="ref method" href="/docs/camera-glossary/paths/camera-path/#waypointarrivaltime">`WaypointArrivalTime(int index, float cruiseSpeed)`</a> · The seconds into a run at the cruise speed when the camera reaches the waypoint, before its <a class="ref" href="/docs/camera-glossary/paths/camera-waypoint/#holdsec">`HoldSec`</a>, see <a class="ref method" href="#waypointdeparturetime">`WaypointDepartureTime`</a>. Exact, read off the path's own tables, where timing the waypoint's distance with <a class="ref method" href="#timeatdistance">`TimeAtDistance`</a> can come out a little off. The first waypoint is reached at 0, a run starting on it; on a closed path the end of the run brings the camera back to it too, and its hold comes at the start. 0 for a path with no segment or a speed of 0 or less. Throws `ArgumentOutOfRangeException` for an index out of range.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | `int` | The waypoint's index in <a class="ref prop" href="/docs/camera-glossary/paths/camera-path/#waypoints">`Waypoints`</a>. |
+| `cruiseSpeed` | `float` | The speed wherever no waypoint eases, in world units a second. |
+
+<h3 id="waypointdeparturetime"><span class="method"><code>WaypointDepartureTime()</code></span> <a class="ctx" href="/docs/camera-paths/#camerapath-timing-methods" title="WaypointDepartureTime() in context on the camera paths page" aria-label="WaypointDepartureTime() in context on the camera paths page">→</a></h3>
+
+<a class="ref method" href="/docs/camera-glossary/paths/camera-path/#waypointdeparturetime">`WaypointDepartureTime(int index, float cruiseSpeed)`</a> · The seconds into a run at the cruise speed when the camera leaves the waypoint: its <a class="ref method" href="#waypointarrivaltime">`WaypointArrivalTime`</a> plus its <a class="ref" href="/docs/camera-glossary/paths/camera-waypoint/#holdsec">`HoldSec`</a>, the same moment for one that doesn't hold. For the last waypoint of an open path, the end of the run. Throws `ArgumentOutOfRangeException` for an index out of range.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | `int` | The waypoint's index in <a class="ref prop" href="/docs/camera-glossary/paths/camera-path/#waypoints">`Waypoints`</a>. |
+| `cruiseSpeed` | `float` | The speed wherever no waypoint eases, in world units a second. |
+
+<h3 id="waypointdistance"><span class="method"><code>WaypointDistance()</code></span> <a class="ctx" href="/docs/camera-paths/#camerapath-timing-methods" title="WaypointDistance() in context on the camera paths page" aria-label="WaypointDistance() in context on the camera paths page">→</a></h3>
+
+<a class="ref method" href="/docs/camera-glossary/paths/camera-path/#waypointdistance">`WaypointDistance(int index)`</a> · The distance along the path of the waypoint, where the path passes exactly through it: exact, where <a class="ref method" href="#closestdistance">`ClosestDistance`</a> of its position can come out a hair off. The first waypoint is at 0; on a closed path also at <a class="ref prop" href="#length">`Length`</a>, where the loop comes back to it. 0 for a path with fewer than two waypoints. Throws `ArgumentOutOfRangeException` for an index out of range.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | `int` | The waypoint's index in <a class="ref prop" href="/docs/camera-glossary/paths/camera-path/#waypoints">`Waypoints`</a>. |

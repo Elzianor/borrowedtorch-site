@@ -30,27 +30,45 @@ tour.Play();
 <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#path">`Path`</a> can also be assigned a path you built elsewhere, which one controller or several can share. It is never
 `null`: assigning `null` throws `ArgumentNullException`.
 
-<a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#durationsec">`DurationSec`</a> is the time of one run from end to end, easing and holds included, 8 seconds by default.
-The controller picks the cruise speed that fits the run into it. Without easing or holds, that speed is the path's
-<a class="ref prop" href="/docs/camera-glossary/paths/camera-path/#length">`Length`</a> over the duration: the same duration makes a longer path faster. For a speed of your choosing,
-set the duration from the path's <a class="ref method" href="/docs/camera-glossary/paths/camera-path/#traveltime">`TravelTime`</a>:
-
-```csharp
-tour.DurationSec = tour.Path.TravelTime(6); // cruising at 6 units a second
-```
-
-A duration set this way fits the path as it is: set it again after editing the path.
-
 A new controller is paused. <a class="ref method" href="/docs/camera-glossary/cameras/animated-camera-controller/#play">`Play`</a> starts it and <a class="ref method" href="/docs/camera-glossary/cameras/animated-camera-controller/#pause">`Pause`</a> holds it, and <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#isplaying">`IsPlaying`</a> says which it
 is doing. Paused, the controller still keeps the camera at its point of the path. With no waypoints, it leaves the
-camera where it is; with a duration of 0 or less, or a path of length 0, it doesn't move along the path.
+camera where it is; with a duration or a speed of 0 or less, or a path of length 0, it doesn't move along the path.
+
+### Duration or speed
+
+<a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#timing">`Timing`</a> decides what sets the length of a run, as a <a class="ref" href="/docs/camera-glossary/types/camera-path-timing/">`CameraPathTiming`</a>:
+
+- **`Duration`**, the default, plays one run in <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#durationsec">`DurationSec`</a>, 8 seconds by default, easing and holds included.
+  The controller picks the cruise speed that fits the run into it, from the path's
+  <a class="ref method" href="/docs/camera-glossary/paths/camera-path/#cruisespeed">`CruiseSpeed`</a>. Without easing or holds, that speed is the path's <a class="ref prop" href="/docs/camera-glossary/paths/camera-path/#length">`Length`</a> over the duration: the
+  same duration makes a longer path faster.
+- **`Speed`** cruises at <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#speedunitspersec">`SpeedUnitsPerSec`</a>, 5 units a second by default, wherever no waypoint eases.
+  A run takes as long as the path needs at that speed, its <a class="ref method" href="/docs/camera-glossary/paths/camera-path/#traveltime">`TravelTime`</a>: a longer path takes longer.
+
+```csharp
+tour.Timing = CameraPathTiming.Speed;
+tour.SpeedUnitsPerSec = 6; // cruising at 6 units a second, however long the path
+```
+
+The setting not in force is kept for when you switch back. Timed by speed, the camera keeps its speed while the path
+is edited under it, as a designer moves waypoints during playback; timed by duration, it keeps the length of the run
+and changes speed instead.
+
+### CameraPathTiming values
+
+| Value | Description |
+| --- | --- |
+| <a class="ref" href="/docs/camera-glossary/types/camera-path-timing/#duration">`Duration`</a> | A run takes <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#durationsec">`DurationSec`</a>; the cruise speed follows from it. |
+| <a class="ref" href="/docs/camera-glossary/types/camera-path-timing/#speed">`Speed`</a> | The camera cruises at <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#speedunitspersec">`SpeedUnitsPerSec`</a>; a run takes as long as that comes to. |
 
 ### AnimatedCameraController properties
 
 | Property | Type | Description |
 | --- | --- | --- |
 | <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#path">`Path`</a> | <a class="ref" href="/docs/camera-glossary/paths/camera-path/">`CameraPath`</a> | The path to follow. An empty path of its own by default. Throws `ArgumentNullException` for `null`. |
-| <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#durationsec">`DurationSec`</a> | `float` | The seconds of one run from end to end, easing and holds included. 8 by default. |
+| <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#timing">`Timing`</a> | <a class="ref" href="/docs/camera-glossary/types/camera-path-timing/">`CameraPathTiming`</a> | What sets the length of a run: `Duration` or `Speed`. `Duration` by default. |
+| <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#durationsec">`DurationSec`</a> | `float` | The seconds of one run from end to end, easing and holds included, while <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#timing">`Timing`</a> is `Duration`. 8 by default. |
+| <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#speedunitspersec">`SpeedUnitsPerSec`</a> | `float` | The cruise speed, in units a second, while <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#timing">`Timing`</a> is `Speed`. 5 by default. |
 | <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#openpathanimationmode">`OpenPathAnimationMode`</a> | <a class="ref" href="/docs/camera-glossary/types/camera-animation-mode/">`CameraAnimationMode`</a> | What an open path does at its ends: `Stop`, `Loop` or `PingPong`. `Stop` by default. A closed path always goes round. |
 | <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#entryblenddurationsec">`EntryBlendDurationSec`</a> | `float` | The seconds the camera takes to ease onto the path when the controller is attached; 0 or less jumps. 2 by default. |
 | <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#snaptonearestonentry">`SnapToNearestOnEntry`</a> | `bool` | Whether attaching starts from the point of the path nearest the camera, rather than from <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#pathdistance">`PathDistance`</a>. On by default. |
@@ -60,27 +78,31 @@ camera where it is; with a duration of 0 or less, or a path of length 0, it does
 ## Easing and holds
 
 The waypoints' [easing and holds](/docs/camera-paths/#easing-and-holds) play out in every run: the controller moves
-through the run's time, and the path says where that puts the camera. A cutscene that slows to a halt in front of the
-castle, takes it in, and moves on:
+through the run's time, and the path says where that puts the camera. A cutscene that settles to a halt in front of
+the castle, takes it in, and moves on:
 
 ```csharp
 var castleShot = CameraWaypoint.CreateLookAtTarget(new Vector3(30, 14, 30), castle) with
 {
-    EaseOut = new QuadraticEaseOut(), // slows to a halt
+    EaseOut = new QuadraticEaseOut(), // settles to a halt
     HoldSec = 3,                      // looks for three seconds
     EaseIn = new QuadraticEaseIn()    // and gathers speed again
 };
 
 _cutscene.Path.SetWaypoint(1, castleShot);
-_cutscene.DurationSec = _cutscene.Path.TravelTime(8); // cruising at 8 units a second
+_cutscene.Timing = CameraPathTiming.Speed;
+_cutscene.SpeedUnitsPerSec = 8; // cruising at 8 units a second
 ```
 
-Within <a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#durationsec">`DurationSec`</a>, the holds take their seconds and the travel takes the rest, so a longer hold makes the
-rest of the run faster. Travel always gets at least a tenth of the duration: holds that alone would fill it make the
-run that much longer.
+Timed by speed, easing and holds make the run longer: each eased half takes
+[a few times its cruise time](/docs/camera-paths/#how-long-an-eased-half-takes), three times for these quadratic
+curves, and each hold adds its seconds. Timed by duration, the run keeps its length: within
+<a class="ref prop" href="/docs/camera-glossary/cameras/animated-camera-controller/#durationsec">`DurationSec`</a>, the holds take their seconds and the travel takes the rest, so a longer hold or a slower ease makes
+the rest of the run faster. Travel always gets at least a tenth of the duration: holds that alone would fill it make
+the run that much longer.
 
-The controller keeps its place as a share of the run's time. Changing the duration or editing the path while it
-plays carries on from the same share of the new run.
+The controller keeps its place as a share of the run's time. Changing the duration, the speed or the timing, or
+editing the path, while it plays carries on from the same share of the new run.
 
 ## The ends of a path
 
@@ -139,6 +161,14 @@ A seek starts the run at the matching point of its timing, so the easing and hol
 would have. Seeking onto a waypoint that holds starts at the moment the camera arrives there: it holds first. On the
 way back of a ping-pong, the camera keeps going back after a seek.
 
+To jump to a waypoint, seek to the path's <a class="ref method" href="/docs/camera-glossary/paths/camera-path/#waypointdistance">`WaypointDistance`</a> for it, which is exact. The point nearest
+the waypoint's position comes out a hair off it, and where the camera eases into the waypoint a hair of distance is a
+long while of the run.
+
+```csharp
+tour.Seek(tour.Path.WaypointDistance(2)); // at the third waypoint, as the camera arrives
+```
+
 ## Easing onto the path
 
 Attaching the controller takes the camera over from wherever it is, in two steps:
@@ -167,7 +197,7 @@ _inCutscene = true;
 
 | Method | Description |
 | --- | --- |
-| <a class="ref method" href="/docs/camera-glossary/cameras/animated-camera-controller/#animatedcameracontroller">`AnimatedCameraController()`</a> | A paused controller with an empty path, an 8-second duration, the `Stop` mode, a 2-second entry blend and snapping to the nearest point on. |
+| <a class="ref method" href="/docs/camera-glossary/cameras/animated-camera-controller/#animatedcameracontroller">`AnimatedCameraController()`</a> | A paused controller with an empty path, timed by an 8-second duration, a speed of 5 units a second for timing by speed, the `Stop` mode, a 2-second entry blend and snapping to the nearest point on. |
 | <a class="ref method" href="/docs/camera-glossary/cameras/animated-camera-controller/#play">`Play()`</a> | Starts moving along the path. At the end of a stopped open path, starts over from the beginning. |
 | <a class="ref method" href="/docs/camera-glossary/cameras/animated-camera-controller/#pause">`Pause()`</a> | Holds the camera where it is on the path. |
 | <a class="ref method" href="/docs/camera-glossary/cameras/animated-camera-controller/#seek">`Seek(float pathDistance)`</a> | Moves to a distance along the path, clamped to 0 to its <a class="ref prop" href="/docs/camera-glossary/paths/camera-path/#length">`Length`</a>, and to the matching point of the run. At a waypoint that holds, the camera holds first. |

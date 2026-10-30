@@ -101,6 +101,12 @@
         - title: "Snap<wbr>To<wbr>Nearest<wbr>On<wbr>Entry"
           anchor: snaptonearestonentry
           kind: prop
+        - title: "Speed<wbr>Units<wbr>Per<wbr>Sec"
+          anchor: speedunitspersec
+          kind: prop
+        - title: "Timing"
+          anchor: timing
+          kind: prop
         - title: "Animated<wbr>Camera<wbr>Controller()"
           anchor: animatedcameracontroller
           kind: method
@@ -206,6 +212,9 @@
         - title: "Distance<wbr>At<wbr>Time()"
           anchor: distanceattime
           kind: method
+        - title: "Ease<wbr>Stretch()"
+          anchor: easestretch
+          kind: method
         - title: "Get<wbr>Waypoint<wbr>Orientation()"
           anchor: getwaypointorientation
           kind: method
@@ -233,11 +242,23 @@
         - title: "Set<wbr>Waypoint()"
           anchor: setwaypoint
           kind: method
+        - title: "Speed<wbr>At<wbr>Time()"
+          anchor: speedattime
+          kind: method
         - title: "Time<wbr>At<wbr>Distance()"
           anchor: timeatdistance
           kind: method
         - title: "Travel<wbr>Time()"
           anchor: traveltime
+          kind: method
+        - title: "Waypoint<wbr>Arrival<wbr>Time()"
+          anchor: waypointarrivaltime
+          kind: method
+        - title: "Waypoint<wbr>Departure<wbr>Time()"
+          anchor: waypointdeparturetime
+          kind: method
+        - title: "Waypoint<wbr>Distance()"
+          anchor: waypointdistance
           kind: method
     - title: "Camera<wbr>Path<wbr>Geometry<wbr>Buffers"
       url: /docs/camera-glossary/paths/camera-path-geometry-buffers/
@@ -366,5 +387,7 @@
       entries:
         - title: "Camera<wbr>Animation<wbr>Mode"
           url: /docs/camera-glossary/types/camera-animation-mode/
+        - title: "Camera<wbr>Path<wbr>Timing"
+          url: /docs/camera-glossary/types/camera-path-timing/
         - title: "Camera<wbr>Waypoint<wbr>Orientation<wbr>Mode"
           url: /docs/camera-glossary/types/camera-waypoint-orientation-mode/
