@@ -8,6 +8,21 @@
 # guide: the folder in repo that holds the app's guide (its README)
 # needs: short requirements line
 # note: optional small print at the bottom of the card
+- id: kindling-engine-editor
+  name: Kindling Engine Editor
+  repo: BorrowedTorchStudio/BorrowedTorch.Downloads
+  version: v0.0.1
+  tag_prefix: kindling-engine-editor-
+  asset: BorrowedTorch.EngineEditor-{version}-win-x64.zip
+  guide: KindlingEngineEditor
+  summary: The editor of Kindling, our in-house game engine — a scene lit, ray-traced and shown as the engine draws it. An early build — scenes are not saved yet.
+  features:
+    - PBR materials with GPU ray-traced shadows and ambient occlusion, see-through materials, cutouts the shadows see through, bloom, tone mapping and auto-exposure.
+    - Entities, lights and camera entities, with a transform gizmo, an inspector, camera paths and floating camera previews.
+    - The engine's shaders in an editor of their own, recompiled into the running viewport as they are edited.
+    - The game UI as markup, shown in the viewport as you type.
+  needs: 64-bit Windows · DirectX 11 · .NET 10 Desktop Runtime
+  note: Needs the .NET 10 Desktop Runtime installed — without it, the exe says so and links to the download. The exe isn't code-signed yet. If Windows SmartScreen stops it, choose More info, then Run anyway. Each release has a .sha256 file to check the download against.
 - id: ormh-converter
   name: ORMH Converter
   repo: BorrowedTorchStudio/BorrowedTorch.Downloads
