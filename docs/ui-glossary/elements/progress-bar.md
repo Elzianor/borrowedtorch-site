@@ -23,11 +23,11 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <h3 id="max"><span class="dp"><code>Max</code></span> <a class="ctx" href="/docs/ui-controls/#progressbar-properties" title="Max in context on the controls page" aria-label="Max in context on the controls page">🠆</a></h3>
 
-`float` · The value of a full bar. Setting it below <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#min">`Min`</a> moves <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#min">`Min`</a> along.
+`float` · The value of a full bar. Setting it below <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#min">`Min`</a> moves <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#min">`Min`</a> along. 1 unless set.
 
 <h3 id="min"><span class="dp"><code>Min</code></span> <a class="ctx" href="/docs/ui-controls/#progressbar-properties" title="Min in context on the controls page" aria-label="Min in context on the controls page">🠆</a></h3>
 
-`float` · The value of an empty bar. Setting it above <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#max">`Max`</a> moves <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#max">`Max`</a> along.
+`float` · The value of an empty bar. Setting it above <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#max">`Max`</a> moves <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#max">`Max`</a> along. 0 unless set.
 
 <h3 id="mousecursorsset"><span class="prop"><code>MouseCursorsSet</code></span> <a class="ctx" href="/docs/ui-base-element/#genericstyleandmousecursorsdata-properties" title="MouseCursorsSet in context on the base element page" aria-label="MouseCursorsSet in context on the base element page">🠆</a></h3>
 

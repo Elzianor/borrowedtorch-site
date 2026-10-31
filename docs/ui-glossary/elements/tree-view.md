@@ -71,7 +71,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <h3 id="subitemsshift"><span class="dp"><code>SubItemsShift</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-properties" title="SubItemsShift in context on the lists and menus page" aria-label="SubItemsShift in context on the lists and menus page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> · How far each level is indented (`Left`) and the space above every row but the first (`Top`), in units.
+<a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> · How far each level is indented (`Left`) and the space above every row but the first (`Top`), in units. `(16, 0)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaulttreeviewsubitemsshift">`DefaultSettings.DefaultTreeViewSubItemsShift`</a>).
 
 ## Methods
 

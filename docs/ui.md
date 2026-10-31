@@ -519,6 +519,8 @@ var pauseWindow = new Window("pause")
 var titleBar = (DefaultWindowTitleBar)pauseWindow.TitleBar;
 titleBar.Title.Text = "Paused";
 titleBar.CloseButton.Text = "x";
+// lit like the other buttons: a close button is flat on the bar until hovered
+titleBar.CloseButton.NormalColor = new Color(168, 131, 74);
 
 resume.OnClick += (sender, e) => pauseWindow.Hide();
 quit.OnClick += (sender, e) => Console.WriteLine("Back to the main menu");

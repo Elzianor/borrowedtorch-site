@@ -19,7 +19,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <h3 id="checkedsolidcolor"><span class="dp"><code>CheckedSolidColor</code></span> <a class="ctx" href="/docs/ui-controls/#checkbox-properties" title="CheckedSolidColor in context on the controls page" aria-label="CheckedSolidColor in context on the controls page">🠆</a></h3>
 
-`Color` · The color of the box while it is checked, without textures.
+`Color` · The color of the box while it is checked, without textures. `(86, 156, 214)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultcheckboxcheckedcolor">`DefaultSettings.DefaultCheckBoxCheckedColor`</a>).
 
 <h3 id="content"><span class="dp"><code>Content</code></span> <a class="ctx" href="/docs/ui-controls/#checkbox-properties" title="Content in context on the controls page" aria-label="Content in context on the controls page">🠆</a></h3>
 
@@ -71,7 +71,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <h3 id="uncheckedsolidcolor"><span class="dp"><code>UncheckedSolidColor</code></span> <a class="ctx" href="/docs/ui-controls/#checkbox-properties" title="UncheckedSolidColor in context on the controls page" aria-label="UncheckedSolidColor in context on the controls page">🠆</a></h3>
 
-`Color` · The color of the box while it is unchecked, without textures.
+`Color` · The color of the box while it is unchecked, without textures. `(150, 150, 160)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultcheckboxuncheckedcolor">`DefaultSettings.DefaultCheckBoxUncheckedColor`</a>).
 
 ## Methods
 

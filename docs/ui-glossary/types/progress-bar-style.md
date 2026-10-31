@@ -5,7 +5,7 @@ title: "Glossary: ProgressBarStyle"
 description: "The members of ProgressBarStyle, in alphabetical order."
 ---
 
-The style class of [`ProgressBar`](/docs/ui-controls/#progressbar): the properties a style can set on it. None. Framework defaults: none beyond the base ones.
+The style class of [`ProgressBar`](/docs/ui-controls/#progressbar): the properties a style can set on it. None. Framework defaults: <a class="ref prop" href="/docs/ui-glossary/types/base-style/#backgroundcolor">`BackgroundColor`</a> `DefaultProgressBarBackgroundColor` (the track), <a class="ref prop" href="/docs/ui-glossary/types/base-style/#foregroundcolor">`ForegroundColor`</a> `DefaultProgressBarColor` (the bar), `Max` 1.
 
 A class deriving from [`BaseStyle`](/docs/ui-glossary/types/base-style/). The [styles page](/docs/ui-styles/#style-classes) shows it in context.
 
@@ -15,11 +15,11 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="max"><span class="prop"><code>Max</code></span> <a class="ctx" href="/docs/ui-controls/#progressbar-properties" title="Max in context on the controls page" aria-label="Max in context on the controls page">🠆</a></h3>
 
-`float` · The value of a full bar. Setting it below <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#min">`Min`</a> moves <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#min">`Min`</a> along.
+`float` · The value of a full bar. Setting it below <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#min">`Min`</a> moves <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#min">`Min`</a> along. 1 unless set.
 
 <h3 id="min"><span class="prop"><code>Min</code></span> <a class="ctx" href="/docs/ui-controls/#progressbar-properties" title="Min in context on the controls page" aria-label="Min in context on the controls page">🠆</a></h3>
 
-`float` · The value of an empty bar. Setting it above <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#max">`Max`</a> moves <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#max">`Max`</a> along.
+`float` · The value of an empty bar. Setting it above <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#max">`Max`</a> moves <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#max">`Max`</a> along. 0 unless set.
 
 <h3 id="orientation"><span class="prop"><code>Orientation</code></span> <a class="ctx" href="/docs/ui-controls/#progressbar-properties" title="Orientation in context on the controls page" aria-label="Orientation in context on the controls page">🠆</a></h3>
 

@@ -184,7 +184,7 @@ clips its items, and it is removed once its last item is. The grid's <a class="r
 | <a class="ref prop" href="/docs/ui-glossary/elements/grid/#columnscount">`ColumnsCount`</a> | `int` | Read-only. The number of column definitions. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/grid/#rowscount">`RowsCount`</a> | `int` | Read-only. The number of row definitions. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/grid/#showlayout">`ShowLayout`</a> | `bool` | Draws the grid's outline, a line at the end of every column and row, and fills each of them with a dim shade of <a class="ref prop" href="/docs/ui-glossary/elements/grid/#layoutcolor">`LayoutColor`</a>. A debugging aid, off by default. |
-| <a class="ref prop" href="/docs/ui-glossary/elements/grid/#layoutcolor">`LayoutColor`</a> | `Color` | The color of the lines <a class="ref prop" href="/docs/ui-glossary/elements/grid/#showlayout">`ShowLayout`</a> draws; the fill is this color with every channel divided by 5. Set it, the default is transparent. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/grid/#layoutcolor">`LayoutColor`</a> | `Color` | The color of the lines <a class="ref prop" href="/docs/ui-glossary/elements/grid/#showlayout">`ShowLayout`</a> draws; the fill is this color with every channel divided by 5. Red unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultgridlayoutcolor">`DefaultSettings.DefaultGridLayoutColor`</a>, read when the grid is created). |
 
 ### Grid methods
 
@@ -267,10 +267,9 @@ right, the bottom), whatever the sizes; values outside are clamped. While the co
 and the value is kept for when the content grows. When the view or the content changes size, the values are adjusted
 so the same part of the content stays in view.
 
-**Scroll bars.** <a class="ref dp" href="/docs/ui-glossary/elements/scrollable-container/#scrollbars">`ScrollBars`</a> says which bars may show; a bar shows only while the content is larger than the view
-along it, at the right or the bottom edge, and the view shrinks by <a class="ref dp" href="/docs/ui-glossary/elements/scrollable-container/#scrollbarsthickness">`ScrollBarsThickness`</a>. <a class="ref dp" href="/docs/ui-glossary/elements/scrollable-container/#scrollbarsthickness">`ScrollBarsThickness`</a> is 0
-by default, so set it, directly or in a style, whenever you show scroll bars. The bars are sliders styled by
-<a class="ref dp" href="/docs/ui-glossary/elements/scrollable-container/#scrollbarsstyle">`ScrollBarsStyle`</a>. With <a class="ref" href="/docs/ui-glossary/types/scroll-bars/#none">`ScrollBars.None`</a> the content can still be scrolled from code.
+**Scroll bars.** <a class="ref dp" href="/docs/ui-glossary/elements/scrollable-container/#scrollbars">`ScrollBars`</a> says which bars may show (both unless set); a bar shows only while the content is larger than the view
+along it, at the right or the bottom edge, and the view shrinks by <a class="ref dp" href="/docs/ui-glossary/elements/scrollable-container/#scrollbarsthickness">`ScrollBarsThickness`</a>, 12 units unless set. The bars are sliders styled by
+<a class="ref dp" href="/docs/ui-glossary/elements/scrollable-container/#scrollbarsstyle">`ScrollBarsStyle`</a>, unless set one light gray track color on both sides of a gray thumb. With <a class="ref" href="/docs/ui-glossary/types/scroll-bars/#none">`ScrollBars.None`</a> the content can still be scrolled from code.
 
 **Mouse wheel.** One notch of the wheel scrolls 60 units of content, the vertical wheel up and down, the horizontal
 wheel sideways. Only a container that shows a scroll bar in that direction takes the wheel, and of nested ones only
@@ -282,9 +281,9 @@ The container's `Children` are its view and scroll bars; the item methods act on
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <a class="ref dp" href="/docs/ui-glossary/elements/scrollable-container/#scrollbars">`ScrollBars`</a> | <a class="ref" href="/docs/ui-glossary/types/scroll-bars/">`ScrollBars`</a> | Which scroll bars may show: `None` (the default), `Vertical`, `Horizontal` or `Both`. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/scrollable-container/#scrollbarsthickness">`ScrollBarsThickness`</a> | `int` | The width of a vertical bar and the height of a horizontal one, in units. The default is 0. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/scrollable-container/#scrollbarsstyle">`ScrollBarsStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/slider-style/">`SliderStyle`</a> | The style of the scroll bars (see [sliders](/docs/ui-controls/#slider)). The vertical bar gets a copy with the colors of its two line halves swapped. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/scrollable-container/#scrollbars">`ScrollBars`</a> | <a class="ref" href="/docs/ui-glossary/types/scroll-bars/">`ScrollBars`</a> | Which scroll bars may show: `None`, `Vertical`, `Horizontal` or `Both` (the default). A bar shows only while the content needs it. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/scrollable-container/#scrollbarsthickness">`ScrollBarsThickness`</a> | `int` | The width of a vertical bar and the height of a horizontal one, in units. The default is 12 (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultscrollbarsthickness">`DefaultSettings.DefaultScrollBarsThickness`</a>). |
+| <a class="ref dp" href="/docs/ui-glossary/elements/scrollable-container/#scrollbarsstyle">`ScrollBarsStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/slider-style/">`SliderStyle`</a> | The style of the scroll bars (see [sliders](/docs/ui-controls/#slider)). The vertical bar gets a copy with the colors of its two line halves swapped. Unless set, a light gray track on both sides of a gray thumb, as a scroll bar has, in the `DefaultScrollBars` colors of <a class="ref" href="/docs/ui-glossary/types/default-settings/">`DefaultSettings`</a>. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/scrollable-container/#horizontalscrollingvalue">`HorizontalScrollingValue`</a> | `float` | How far the content is scrolled sideways, from 0 (the left) to 1 (the right). |
 | <a class="ref dp" href="/docs/ui-glossary/elements/scrollable-container/#verticalscrollingvalue">`VerticalScrollingValue`</a> | `float` | How far the content is scrolled down, from 0 (the top) to 1 (the bottom). |
 | <a class="ref prop" href="/docs/ui-glossary/elements/scrollable-container/#items">`Items`</a> | <code>IReadOnlyList&lt;<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a>&gt;</code> | Read-only. The items that scroll: the elements you added. The container's `Children` are its view and scroll bars. A live view. |
@@ -321,8 +320,8 @@ The container's `Children` are its view and scroll bars; the item methods act on
 | <a class="ref" href="/docs/ui-glossary/types/scroll-bars/#horizontal">`Horizontal`</a> | A horizontal bar at the bottom while the content is wider than the view. |
 | <a class="ref" href="/docs/ui-glossary/types/scroll-bars/#both">`Both`</a> | Each bar while it is needed. |
 
-Style class: <a class="ref" href="/docs/ui-glossary/types/scrollable-container-style/">`ScrollableContainerStyle`</a> (the five dependency properties above; its default is
-<a class="ref" href="/docs/ui-glossary/types/inherit-state/#fromchildren">`InheritState.FromChildren`</a>, see [styles](/docs/ui-styles/)).
+Style class: <a class="ref" href="/docs/ui-glossary/types/scrollable-container-style/">`ScrollableContainerStyle`</a> (the five dependency properties above; its defaults are
+<a class="ref" href="/docs/ui-glossary/types/inherit-state/#fromchildren">`InheritState.FromChildren`</a> and the scroll bars above, see [styles](/docs/ui-styles/)).
 
 ## Border
 
@@ -337,26 +336,25 @@ A frame around one <a class="ref dp" href="/docs/ui-glossary/elements/border/#co
 var framed = new Border("framed")
 {
     Thickness = 2,                                 // the same on every side
-    // the content's inset, instead of the thickness
-    Padding = 14,
     ForegroundColor = new Color(233, 194, 122),    // the frame
-    BackgroundColor = new Color(40, 31, 23),       // behind the content
+    BackgroundColor = new Color(40, 31, 23),       // the content area, inside the frame
     HorizontalAlignment = HorizontalAlignment.Left,
     VerticalAlignment = VerticalAlignment.Top,
     Margin = (16, 16),
-    Content = new Label { Text = "Framed content" }
+    // 12 units from the frame, on the background
+    Content = new Label { Text = "Framed content", Margin = 12 }
 };
 
 var underlined = new Border("underlined")
 {
     // left, top, right, bottom: a bottom rule only
     Thickness = (0, 0, 0, 3),
-    Padding = (4, 4, 4, 8),
     ForegroundColor = new Color(242, 140, 40),
     HorizontalAlignment = HorizontalAlignment.Left,
     VerticalAlignment = VerticalAlignment.Top,
     Margin = (260, 26),
-    Content = new Label { Text = "Section title", FontSize = 20 }
+    // 8 units above the rule: 5 of margin on its 3
+    Content = new Label { Text = "Section title", FontSize = 20, Margin = (4, 4, 4, 5) }
 };
 
 ui.AddElementToRoot(framed);
@@ -364,11 +362,17 @@ ui.AddElementToRoot(underlined);
 ```
 
 The frame is made of four corners and four sides, as thick as <a class="ref dp" href="/docs/ui-glossary/elements/border/#thickness">`Thickness`</a> says per side; a side with a thickness of 0
-isn't drawn, and a corner is drawn only where both of its sides are. The content sits inside the <a class="ref dp" href="/docs/ui-glossary/elements/border/#padding">`Padding`</a> when there
-is one and inside the <a class="ref dp" href="/docs/ui-glossary/elements/border/#thickness">`Thickness`</a> otherwise, so a padding smaller than the thickness lets the content overlap the
-frame. A border without a size fits its content plus that inset.
+isn't drawn, and a corner is drawn only where both of its sides are. Inside the frame is the content area, which
+<a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> fills and the content sits in. It is inset from the border's outer edges by the
+<a class="ref dp" href="/docs/ui-glossary/elements/border/#thickness">`Thickness`</a>, or by the <a class="ref dp" href="/docs/ui-glossary/elements/border/#contentareamargin">`ContentAreaMargin`</a> when there is one: smaller than the thickness, that lets the
+background reach under the transparent pixels of a textured frame, such as its rounded corners. Space between the frame
+and the content is the content's own <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#margin">`Margin`</a>. In a border that fits its content, all of the margin counts
+while the content stretches (the default) or is centered, only the left and top margins while it is aligned left and
+top (see [margins](/docs/ui/#margins)). A border without a size fits its content, its margin and the inset.
 
-Without textures the frame is drawn in <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#foregroundcolor">`ForegroundColor`</a>. <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> fills only the content area, not the frame.
+Without textures the frame is drawn in <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#foregroundcolor">`ForegroundColor`</a>. Unless set, a border has a frame 1 unit thick in dark gray
+(<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultborderthickness">`DefaultSettings.DefaultBorderThickness`</a> and <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultbordercolor">`DefaultSettings.DefaultBorderColor`</a>) and no background, as a border is
+often only a frame.
 With <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> set (e.g. `"UITextures/Border/"`), the parts are drawn from the textures `LeftTop`, `RightTop`,
 `LeftBottom`, `RightBottom` (the corners) and `Left`, `Right`, `Top`, `Bottom` (the sides) in that folder, each
 stretched over its part (see [texture sets](/docs/ui-styles/#texture-sets)).
@@ -381,8 +385,8 @@ content that is disposed is cleared from <a class="ref dp" href="/docs/ui-glossa
 | Property | Type | Description |
 | --- | --- | --- |
 | <a class="ref dp" href="/docs/ui-glossary/elements/border/#content">`Content`</a> | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element inside the frame. A style can't set it. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/border/#thickness">`Thickness`</a> | <a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> | The width of the frame per side (`Left`, `Top`, `Right`, `Bottom`), in units. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/border/#padding">`Padding`</a> | <code><a href="/docs/ui-glossary/types/margin/">Margin</a>?</code> | The inset of the content from the border's edges, used instead of <a class="ref dp" href="/docs/ui-glossary/elements/border/#thickness">`Thickness`</a>. Null (the default) insets the content by the thickness. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/border/#thickness">`Thickness`</a> | <a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> | The width of the frame per side (`Left`, `Top`, `Right`, `Bottom`), in units. 1 on every side unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultborderthickness">`DefaultSettings.DefaultBorderThickness`</a>). |
+| <a class="ref dp" href="/docs/ui-glossary/elements/border/#contentareamargin">`ContentAreaMargin`</a> | <code><a href="/docs/ui-glossary/types/margin/">Margin</a>?</code> | The inset of the content area (the background and the content) from the border's outer edges, used instead of <a class="ref dp" href="/docs/ui-glossary/elements/border/#thickness">`Thickness`</a>. Smaller than the thickness, it lets the background reach under the frame's transparent pixels. Null (the default) insets the content area by the thickness. Called `Padding` before 2.0.0; for space between the frame and the content, give the content a <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#margin">`Margin`</a>. |
 
 ### Border methods
 
@@ -404,13 +408,13 @@ class of <a class="ref" href="/docs/ui-glossary/elements/separator/">`Separator`
 | --- | --- |
 | <a class="ref method" href="/docs/ui-glossary/elements/content-container/#contentcontainer">`ContentContainer(string name = null)`</a> | Creates a content container. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>. |
 
-Style class: <a class="ref" href="/docs/ui-glossary/types/border-style/">`BorderStyle`</a> (<a class="ref dp" href="/docs/ui-glossary/elements/border/#thickness">`Thickness`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/border/#padding">`Padding`</a>, see [styles](/docs/ui-styles/)). A window's frame is styled with
-one too.
+Style class: <a class="ref" href="/docs/ui-glossary/types/border-style/">`BorderStyle`</a> (<a class="ref dp" href="/docs/ui-glossary/elements/border/#thickness">`Thickness`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/border/#contentareamargin">`ContentAreaMargin`</a>; its defaults are the 1 unit dark gray frame, see [styles](/docs/ui-styles/)). A
+window's frame is styled with one too.
 
 ## Separator
 
 An empty element to draw a dividing line or leave a gap: give it a size along one side, stretch it along the other,
-and it fills itself with its <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a>.
+and it fills itself with its <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a>. Unless given a color and a size, it is a gray line (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultseparatorcolor">`DefaultSettings.DefaultSeparatorColor`</a>) at least 1 unit thick across whichever way it stretches: a horizontal line in a vertical stack panel or among a list's rows, a vertical one in a horizontal stack panel. For a gap, give it a transparent background.
 
 <figure class="shot">
   <img src="{{ '/assets/img/ui/layout-separator.png' | relative_url }}" width="254" height="137" alt="An inventory list divided by two thin horizontal lines, a golden one and a dark one">
@@ -492,6 +496,8 @@ var window = new Window("hints")
 var titleBar = (DefaultWindowTitleBar)window.TitleBar;
 titleBar.Title.Text = "Hints";
 titleBar.CloseButton.Text = "x";
+// lit like the other buttons: a close button is flat on the bar until hovered
+titleBar.CloseButton.NormalColor = new Color(168, 131, 74);
 
 ui.AddElementToRoot(window);
 window.Show();
@@ -522,7 +528,7 @@ windows stack: the one shown last is on top, and hiding it gives the mouse back 
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <a class="ref dp" href="/docs/ui-glossary/elements/window/#borderstyle">`BorderStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/border-style/">`BorderStyle`</a> | The style of the window's frame: its <a class="ref dp" href="/docs/ui-glossary/elements/border/#thickness">`Thickness`</a>, <a class="ref dp" href="/docs/ui-glossary/elements/border/#padding">`Padding`</a>, frame color (<a class="ref dp" href="/docs/ui-glossary/elements/base-element/#foregroundcolor">`ForegroundColor`</a>), content area color (<a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a>) and <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a>. The window follows changes made to the style object later. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/window/#borderstyle">`BorderStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/border-style/">`BorderStyle`</a> | The style of the window's frame: its <a class="ref dp" href="/docs/ui-glossary/elements/border/#thickness">`Thickness`</a>, <a class="ref dp" href="/docs/ui-glossary/elements/border/#contentareamargin">`ContentAreaMargin`</a>, frame color (<a class="ref dp" href="/docs/ui-glossary/elements/base-element/#foregroundcolor">`ForegroundColor`</a>), content area color (<a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a>) and <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a>. The window follows changes made to the style object later. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/window/#titlebar">`TitleBar`</a> | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element in the title row. The default is a [`DefaultWindowTitleBar`](#defaultwindowtitlebar); set your own element to replace it, and clear the value to get the default one back. A replaced title bar is detached, not disposed. A style can't set it. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/window/#content">`Content`</a> | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | The element in the content area. A replaced content is detached, not disposed, and a disposed one is cleared. A style can't set it. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/window/#ismodal">`IsModal`</a> | `bool` | Makes the window modal: drawn above everything over a shade, and the only part of the UI that gets the mouse while shown. Off by default. |
@@ -542,7 +548,7 @@ A window has no items: the item methods do nothing on it.
 
 The title bar every window starts with: a <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#background">`Background`</a> image filling the bar, a centered <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#title">`Title`</a> text and a
 <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#closebutton">`CloseButton`</a> at the right. In a window it is <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultwindowtitlethickness">`DefaultSettings.DefaultWindowTitleThickness`</a> tall (30 units by
-default), and its close button is always 4 units smaller than that, square. The bar's color comes from
+default), and its close button is always 4 units smaller than that, square, and flat on the bar until the mouse is over it. The bar's color comes from
 <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultwindowtitlebarcolor">`DefaultSettings.DefaultWindowTitleBarColor`</a> (see [styles](/docs/ui-styles/)). Reach the parts through the window:
 
 ```csharp
@@ -555,7 +561,7 @@ titleBar.OnCloseButtonClickAction = () => window.Hide();
 | Property | Type | Description |
 | --- | --- | --- |
 | <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#title">`Title`</a> | <a class="ref" href="/docs/ui-glossary/elements/label/">`Label`</a> | Read-only. The title text, centered in the bar. Set its <span class="dp">`Text`</span> and text style properties. |
-| <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#closebutton">`CloseButton`</a> | <a class="ref" href="/docs/ui-glossary/elements/button/">`Button`</a> | Read-only. The close button at the right of the bar. It shows no text until you set its <span class="dp">`Text`</span> or `Content`. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#closebutton">`CloseButton`</a> | <a class="ref" href="/docs/ui-glossary/elements/button/">`Button`</a> | Read-only. The close button at the right of the bar. It shows no text until you set its <span class="dp">`Text`</span> or `Content`. It is flat until the mouse is over it: its <a class="ref prop" href="/docs/ui-glossary/elements/button/#styleoverride">`StyleOverride`</a> gives it a transparent <a class="ref dp" href="/docs/ui-glossary/elements/button/#normalcolor">`NormalColor`</a>, so the button colors show only under the mouse and while it is pressed. Set its <a class="ref dp" href="/docs/ui-glossary/elements/button/#normalcolor">`NormalColor`</a> to light it all the time. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#background">`Background`</a> | <a class="ref" href="/docs/ui-glossary/elements/image/">`Image`</a> | Read-only. The image that fills the bar and holds the title and the close button. Its <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> is the bar's color. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#onclosebuttonclickaction">`OnCloseButtonClickAction`</a> | `Action` | What a click on the close button does. In a window's default title bar it is the window's <a class="ref method" href="/docs/ui-glossary/elements/window/#hide">`Hide`</a>. |
 

@@ -5,7 +5,7 @@ title: "Glossary: CheckBoxStyle"
 description: "The members of CheckBoxStyle, in alphabetical order."
 ---
 
-The style class of [`CheckBox`](/docs/ui-controls/#checkbox): the properties a style can set on it. Part styles <a class="ref prop" href="/docs/ui-glossary/types/check-box-style/#textstyle">`TextStyle`</a> (<a class="ref" href="/docs/ui-glossary/types/label-style/">`LabelStyle`</a>) and <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> (<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a>). Leaves out `Content`. Framework defaults: none beyond the base ones.
+The style class of [`CheckBox`](/docs/ui-controls/#checkbox): the properties a style can set on it. Part styles <a class="ref prop" href="/docs/ui-glossary/types/check-box-style/#textstyle">`TextStyle`</a> (<a class="ref" href="/docs/ui-glossary/types/label-style/">`LabelStyle`</a>) and <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> (<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a>). Leaves out `Content`. Framework defaults: `CheckedSolidColor` `DefaultCheckBoxCheckedColor`, `UncheckedSolidColor` `DefaultCheckBoxUncheckedColor`.
 
 A class deriving from [`BaseStyle`](/docs/ui-glossary/types/base-style/). The [styles page](/docs/ui-styles/#style-classes) shows it in context.
 
@@ -19,7 +19,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="checkedsolidcolor"><span class="prop"><code>CheckedSolidColor</code></span> <a class="ctx" href="/docs/ui-controls/#checkbox-properties" title="CheckedSolidColor in context on the controls page" aria-label="CheckedSolidColor in context on the controls page">🠆</a></h3>
 
-`Color` · The color of the box while it is checked, without textures.
+`Color` · The color of the box while it is checked, without textures. `(86, 156, 214)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultcheckboxcheckedcolor">`DefaultSettings.DefaultCheckBoxCheckedColor`</a>).
 
 <h3 id="direction"><span class="prop"><code>Direction</code></span> <a class="ctx" href="/docs/ui-controls/#checkbox-properties" title="Direction in context on the controls page" aria-label="Direction in context on the controls page">🠆</a></h3>
 
@@ -47,7 +47,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="uncheckedsolidcolor"><span class="prop"><code>UncheckedSolidColor</code></span> <a class="ctx" href="/docs/ui-controls/#checkbox-properties" title="UncheckedSolidColor in context on the controls page" aria-label="UncheckedSolidColor in context on the controls page">🠆</a></h3>
 
-`Color` · The color of the box while it is unchecked, without textures.
+`Color` · The color of the box while it is unchecked, without textures. `(150, 150, 160)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultcheckboxuncheckedcolor">`DefaultSettings.DefaultCheckBoxUncheckedColor`</a>).
 
 ## Methods
 

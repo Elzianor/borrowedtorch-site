@@ -67,7 +67,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <h3 id="togglebuttonstyle"><span class="dp"><code>ToggleButtonStyle</code></span> <a class="ctx" href="/docs/ui-lists/#combobox-properties" title="ToggleButtonStyle in context on the lists and menus page" aria-label="ToggleButtonStyle in context on the lists and menus page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/button-style/">`ButtonStyle`</a> · The style of the [button](/docs/ui-controls/#button) that opens and closes the list, for example its width and text.
+<a class="ref" href="/docs/ui-glossary/types/button-style/">`ButtonStyle`</a> · The style of the [button](/docs/ui-controls/#button) that opens and closes the list, for example its width and text. Unless set, a button 24 units wide (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultcomboboxtogglebuttonwidth">`DefaultSettings.DefaultComboBoxToggleButtonWidth`</a>) with the text `v`, in the colors of the other buttons.
 
 ## Methods
 

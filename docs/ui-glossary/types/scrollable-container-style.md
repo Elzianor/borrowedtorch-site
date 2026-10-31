@@ -5,7 +5,7 @@ title: "Glossary: ScrollableContainerStyle"
 description: "The members of ScrollableContainerStyle, in alphabetical order."
 ---
 
-The style class of [`ScrollableContainer`](/docs/ui-layout/#scrollablecontainer): the properties a style can set on it. Part style <a class="ref prop" href="/docs/ui-glossary/types/scrollable-container-style/#scrollbarsstyle">`ScrollBarsStyle`</a> (<a class="ref" href="/docs/ui-glossary/types/slider-style/">`SliderStyle`</a>), used by both scroll bars (the vertical one with its two line colors swapped). Framework defaults: <a class="ref" href="/docs/ui-glossary/types/inherit-state/#fromchildren">`InheritState.FromChildren`</a>.
+The style class of [`ScrollableContainer`](/docs/ui-layout/#scrollablecontainer): the properties a style can set on it. Part style <a class="ref prop" href="/docs/ui-glossary/types/scrollable-container-style/#scrollbarsstyle">`ScrollBarsStyle`</a> (<a class="ref" href="/docs/ui-glossary/types/slider-style/">`SliderStyle`</a>), used by both scroll bars (the vertical one with its two line colors swapped). Framework defaults: <a class="ref" href="/docs/ui-glossary/types/inherit-state/#fromchildren">`InheritState.FromChildren`</a>, `ScrollBars` `Both`, `ScrollBarsThickness` `DefaultScrollBarsThickness` (12), and a `ScrollBarsStyle` with `DefaultScrollBarsTrackColor` on both sides of a `DefaultScrollBarsThumbColor` thumb, and `DefaultScrollBarsButtonsColor` buttons.
 
 A class deriving from [`BaseStyle`](/docs/ui-glossary/types/base-style/). The [styles page](/docs/ui-styles/#style-classes) shows it in context.
 
@@ -19,15 +19,15 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="scrollbars"><span class="prop"><code>ScrollBars</code></span> <a class="ctx" href="/docs/ui-layout/#scrollablecontainer-properties" title="ScrollBars in context on the layout page" aria-label="ScrollBars in context on the layout page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/scroll-bars/">`ScrollBars`</a> · Which scroll bars may show: `None` (the default), `Vertical`, `Horizontal` or `Both`.
+<a class="ref" href="/docs/ui-glossary/types/scroll-bars/">`ScrollBars`</a> · Which scroll bars may show: `None`, `Vertical`, `Horizontal` or `Both` (the default). A bar shows only while the content needs it.
 
 <h3 id="scrollbarsstyle"><span class="prop"><code>ScrollBarsStyle</code></span> <a class="ctx" href="/docs/ui-layout/#scrollablecontainer-properties" title="ScrollBarsStyle in context on the layout page" aria-label="ScrollBarsStyle in context on the layout page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/slider-style/">`SliderStyle`</a> · The style of the scroll bars (see [sliders](/docs/ui-controls/#slider)). The vertical bar gets a copy with the colors of its two line halves swapped.
+<a class="ref" href="/docs/ui-glossary/types/slider-style/">`SliderStyle`</a> · The style of the scroll bars (see [sliders](/docs/ui-controls/#slider)). The vertical bar gets a copy with the colors of its two line halves swapped. Unless set, a light gray track on both sides of a gray thumb, as a scroll bar has, in the `DefaultScrollBars` colors of <a class="ref" href="/docs/ui-glossary/types/default-settings/">`DefaultSettings`</a>.
 
 <h3 id="scrollbarsthickness"><span class="prop"><code>ScrollBarsThickness</code></span> <a class="ctx" href="/docs/ui-layout/#scrollablecontainer-properties" title="ScrollBarsThickness in context on the layout page" aria-label="ScrollBarsThickness in context on the layout page">🠆</a></h3>
 
-`int` · The width of a vertical bar and the height of a horizontal one, in units. The default is 0.
+`int` · The width of a vertical bar and the height of a horizontal one, in units. The default is 12 (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultscrollbarsthickness">`DefaultSettings.DefaultScrollBarsThickness`</a>).
 
 <h3 id="verticalscrollingvalue"><span class="prop"><code>VerticalScrollingValue</code></span> <a class="ctx" href="/docs/ui-layout/#scrollablecontainer-properties" title="VerticalScrollingValue in context on the layout page" aria-label="VerticalScrollingValue in context on the layout page">🠆</a></h3>
 

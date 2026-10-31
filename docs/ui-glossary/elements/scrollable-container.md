@@ -51,15 +51,15 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <h3 id="scrollbars"><span class="dp"><code>ScrollBars</code></span> <a class="ctx" href="/docs/ui-layout/#scrollablecontainer-properties" title="ScrollBars in context on the layout page" aria-label="ScrollBars in context on the layout page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/scroll-bars/">`ScrollBars`</a> · Which scroll bars may show: `None` (the default), `Vertical`, `Horizontal` or `Both`.
+<a class="ref" href="/docs/ui-glossary/types/scroll-bars/">`ScrollBars`</a> · Which scroll bars may show: `None`, `Vertical`, `Horizontal` or `Both` (the default). A bar shows only while the content needs it.
 
 <h3 id="scrollbarsstyle"><span class="dp"><code>ScrollBarsStyle</code></span> <a class="ctx" href="/docs/ui-layout/#scrollablecontainer-properties" title="ScrollBarsStyle in context on the layout page" aria-label="ScrollBarsStyle in context on the layout page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/slider-style/">`SliderStyle`</a> · The style of the scroll bars (see [sliders](/docs/ui-controls/#slider)). The vertical bar gets a copy with the colors of its two line halves swapped.
+<a class="ref" href="/docs/ui-glossary/types/slider-style/">`SliderStyle`</a> · The style of the scroll bars (see [sliders](/docs/ui-controls/#slider)). The vertical bar gets a copy with the colors of its two line halves swapped. Unless set, a light gray track on both sides of a gray thumb, as a scroll bar has, in the `DefaultScrollBars` colors of <a class="ref" href="/docs/ui-glossary/types/default-settings/">`DefaultSettings`</a>.
 
 <h3 id="scrollbarsthickness"><span class="dp"><code>ScrollBarsThickness</code></span> <a class="ctx" href="/docs/ui-layout/#scrollablecontainer-properties" title="ScrollBarsThickness in context on the layout page" aria-label="ScrollBarsThickness in context on the layout page">🠆</a></h3>
 
-`int` · The width of a vertical bar and the height of a horizontal one, in units. The default is 0.
+`int` · The width of a vertical bar and the height of a horizontal one, in units. The default is 12 (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultscrollbarsthickness">`DefaultSettings.DefaultScrollBarsThickness`</a>).
 
 <h3 id="styleoverride"><span class="prop"><code>StyleOverride</code></span> <a class="ctx" href="/docs/ui-base-element/#genericstyleandmousecursorsdata-properties" title="StyleOverride in context on the base element page" aria-label="StyleOverride in context on the base element page">🠆</a></h3>
 

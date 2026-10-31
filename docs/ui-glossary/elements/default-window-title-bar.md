@@ -19,7 +19,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <h3 id="closebutton"><span class="prop"><code>CloseButton</code></span> <a class="ctx" href="/docs/ui-layout/#defaultwindowtitlebar" title="CloseButton in context on the layout page" aria-label="CloseButton in context on the layout page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/elements/button/">`Button`</a> · Read-only. The close button at the right of the bar. It shows no text until you set its <span class="dp">`Text`</span> or `Content`.
+<a class="ref" href="/docs/ui-glossary/elements/button/">`Button`</a> · Read-only. The close button at the right of the bar. It shows no text until you set its <span class="dp">`Text`</span> or `Content`. It is flat until the mouse is over it: its <a class="ref prop" href="/docs/ui-glossary/elements/button/#styleoverride">`StyleOverride`</a> gives it a transparent <a class="ref dp" href="/docs/ui-glossary/elements/button/#normalcolor">`NormalColor`</a>, so the button colors show only under the mouse and while it is pressed. Set its <a class="ref dp" href="/docs/ui-glossary/elements/button/#normalcolor">`NormalColor`</a> to light it all the time.
 
 <h3 id="onclosebuttonclickaction"><span class="prop"><code>OnCloseButtonClickAction</code></span> <a class="ctx" href="/docs/ui-layout/#defaultwindowtitlebar" title="OnCloseButtonClickAction in context on the layout page" aria-label="OnCloseButtonClickAction in context on the layout page">🠆</a></h3>
 

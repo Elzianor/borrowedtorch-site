@@ -27,7 +27,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <h3 id="marginfrommousecursor"><span class="dp"><code>MarginFromMouseCursor</code></span> <a class="ctx" href="/docs/ui-controls/#tooltip-properties" title="MarginFromMouseCursor in context on the controls page" aria-label="MarginFromMouseCursor in context on the controls page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> · The shift from the cursor, in units: `Left` is added to the x position and `Top` to the y position, whatever the placement (use negative values to move a `TopLeft` tooltip away from the cursor). The other sides are not used.
+<a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> · The shift from the cursor, in units: `Left` is added to the x position and `Top` to the y position, whatever the placement (use negative values to move a `TopLeft` tooltip away from the cursor). The other sides are not used. `(14, 14)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaulttooltipmarginfrommousecursor">`DefaultSettings.DefaultToolTipMarginFromMouseCursor`</a>), which keeps a `BottomRight` tooltip clear of the cursor.
 
 <h3 id="mousecursorsset"><span class="prop"><code>MouseCursorsSet</code></span> <a class="ctx" href="/docs/ui-base-element/#genericstyleandmousecursorsdata-properties" title="MouseCursorsSet in context on the base element page" aria-label="MouseCursorsSet in context on the base element page">🠆</a></h3>
 
@@ -39,7 +39,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <h3 id="placement"><span class="dp"><code>Placement</code></span> <a class="ctx" href="/docs/ui-controls/#tooltip-properties" title="Placement in context on the controls page" aria-label="Placement in context on the controls page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/tool-tip-placement/">`ToolTipPlacement`</a> · Which side of the cursor the tooltip appears on. `TopLeft` is the default.
+<a class="ref" href="/docs/ui-glossary/types/tool-tip-placement/">`ToolTipPlacement`</a> · Which side of the cursor the tooltip appears on. `BottomRight` unless set.
 
 <h3 id="styleoverride"><span class="prop"><code>StyleOverride</code></span> <a class="ctx" href="/docs/ui-base-element/#genericstyleandmousecursorsdata-properties" title="StyleOverride in context on the base element page" aria-label="StyleOverride in context on the base element page">🠆</a></h3>
 

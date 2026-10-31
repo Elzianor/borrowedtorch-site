@@ -5,7 +5,7 @@ title: "Glossary: ListBoxStyle"
 description: "The members of ListBoxStyle, in alphabetical order."
 ---
 
-The style class of [`ListBox`](/docs/ui-lists/#listbox): the properties a style can set on it. Part style <a class="ref" href="/docs/ui-glossary/types/scrollable-container-style/">`ScrollableContainerStyle`</a>. Leaves out <span class="dp">`SelectedItem`</span>, <span class="dp">`SelectedIndex`</span> and <span class="dp">`ItemsSource`</span>. Framework defaults: <a class="ref" href="/docs/ui-glossary/types/inherit-state/#fromchildren">`InheritState.FromChildren`</a>.
+The style class of [`ListBox`](/docs/ui-lists/#listbox): the properties a style can set on it. Part style <a class="ref" href="/docs/ui-glossary/types/scrollable-container-style/">`ScrollableContainerStyle`</a>. Leaves out <span class="dp">`SelectedItem`</span>, <span class="dp">`SelectedIndex`</span> and <span class="dp">`ItemsSource`</span>. Framework defaults: <a class="ref" href="/docs/ui-glossary/types/inherit-state/#fromchildren">`InheritState.FromChildren`</a>, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#backgroundcolor">`BackgroundColor`</a> `DefaultListBoxBackgroundColor`, `AlternativeItemColor`, `HoverItemColor`, `PressedItemColor` and `SelectedItemColor` from their `DefaultListBox` settings, `ItemHeight` `DefaultListBoxItemHeight` (24). `NormalItemColor` stays transparent.
 
 A class deriving from [`BaseStyle`](/docs/ui-glossary/types/base-style/). The [styles page](/docs/ui-styles/#style-classes) shows it in context.
 
@@ -15,31 +15,31 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="alternativeitemcolor"><span class="prop"><code>AlternativeItemColor</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-properties" title="AlternativeItemColor in context on the lists and menus page" aria-label="AlternativeItemColor in context on the lists and menus page">🠆</a></h3>
 
-`Color` · The background of the odd unselected rows while <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#usedualcolors">`UseDualColors`</a> is set.
+`Color` · The background of the odd unselected rows while <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#usedualcolors">`UseDualColors`</a> is set. `(240, 240, 245)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultlistboxalternativeitemcolor">`DefaultSettings.DefaultListBoxAlternativeItemColor`</a>).
 
 <h3 id="hoveritemcolor"><span class="prop"><code>HoverItemColor</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-properties" title="HoverItemColor in context on the lists and menus page" aria-label="HoverItemColor in context on the lists and menus page">🠆</a></h3>
 
-`Color?` · The background of the row under the mouse. When `null` the row keeps its normal or selected color.
+`Color?` · The background of the row under the mouse. When `null` the row keeps its normal or selected color. `(220, 232, 245)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultlistboxhoveritemcolor">`DefaultSettings.DefaultListBoxHoverItemColor`</a>).
 
 <h3 id="itemheight"><span class="prop"><code>ItemHeight</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-properties" title="ItemHeight in context on the lists and menus page" aria-label="ItemHeight in context on the lists and menus page">🠆</a></h3>
 
-`int` · The height of every row in `Fixed` mode, in units. `Fixed` mode has no effect while it is 0 or less.
+`int` · The height of every row in `Fixed` mode, in units. 24 unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultlistboxitemheight">`DefaultSettings.DefaultListBoxItemHeight`</a>); `Fixed` mode has no effect while it is 0 or less.
 
 <h3 id="normalitemcolor"><span class="prop"><code>NormalItemColor</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-properties" title="NormalItemColor in context on the lists and menus page" aria-label="NormalItemColor in context on the lists and menus page">🠆</a></h3>
 
-`Color` · The background of an unselected row (of the even rows with <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#usedualcolors">`UseDualColors`</a>).
+`Color` · The background of an unselected row (of the even rows with <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#usedualcolors">`UseDualColors`</a>). Transparent unless set, so the rows lie on the list's background.
 
 <h3 id="presseditemcolor"><span class="prop"><code>PressedItemColor</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-properties" title="PressedItemColor in context on the lists and menus page" aria-label="PressedItemColor in context on the lists and menus page">🠆</a></h3>
 
-`Color?` · The background of a row while the left button is pressed on it. When `null` it doesn't change.
+`Color?` · The background of a row while the left button is pressed on it. When `null` it doesn't change. `(160, 190, 225)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultlistboxpresseditemcolor">`DefaultSettings.DefaultListBoxPressedItemColor`</a>).
 
 <h3 id="scrollablecontainerstyle"><span class="prop"><code>ScrollableContainerStyle</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-properties" title="ScrollableContainerStyle in context on the lists and menus page" aria-label="ScrollableContainerStyle in context on the lists and menus page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/scrollable-container-style/">`ScrollableContainerStyle`</a> · The style of the [scrollable container](/docs/ui-layout/#scrollablecontainer) around the rows, for example its scroll bars and their thickness.
+<a class="ref" href="/docs/ui-glossary/types/scrollable-container-style/">`ScrollableContainerStyle`</a> · The style of the [scrollable container](/docs/ui-layout/#scrollablecontainer) around the rows, for example its scroll bars and their thickness. Unless set, the container has its own defaults: a scroll bar wherever the rows need one, 12 units thick.
 
 <h3 id="selecteditemcolor"><span class="prop"><code>SelectedItemColor</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-properties" title="SelectedItemColor in context on the lists and menus page" aria-label="SelectedItemColor in context on the lists and menus page">🠆</a></h3>
 
-`Color?` · The background of a selected row. When `null` a selected row keeps the color it had.
+`Color?` · The background of a selected row. When `null` a selected row keeps the color it had. `(190, 215, 240)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultlistboxselecteditemcolor">`DefaultSettings.DefaultListBoxSelectedItemColor`</a>).
 
 <h3 id="selectionmode"><span class="prop"><code>SelectionMode</code></span> <a class="ctx" href="/docs/ui-lists/#listbox-properties" title="SelectionMode in context on the lists and menus page" aria-label="SelectionMode in context on the lists and menus page">🠆</a></h3>
 

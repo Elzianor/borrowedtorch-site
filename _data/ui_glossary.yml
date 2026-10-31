@@ -431,6 +431,9 @@
         - title: "Content"
           anchor: content
           kind: dp
+        - title: "Content<wbr>Area<wbr>Margin"
+          anchor: contentareamargin
+          kind: dp
         - title: "General<wbr>Mouse<wbr>Cursors<wbr>Set"
           anchor: generalmousecursorsset
           kind: prop
@@ -443,9 +446,6 @@
         - title: "Mouse<wbr>Cursors<wbr>Set<wbr>Override"
           anchor: mousecursorssetoverride
           kind: prop
-        - title: "Padding"
-          anchor: padding
-          kind: dp
         - title: "Style<wbr>Override"
           anchor: styleoverride
           kind: prop

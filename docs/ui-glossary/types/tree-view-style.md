@@ -5,7 +5,7 @@ title: "Glossary: TreeViewStyle"
 description: "The members of TreeViewStyle, in alphabetical order."
 ---
 
-The style class of [`TreeView`](/docs/ui-lists/#treeview): the properties a style can set on it. Part styles <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> and <a class="ref prop" href="/docs/ui-glossary/types/tree-view-style/#expandiconstyle">`ExpandIconStyle`</a> (<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a>). Leaves out <span class="dp">`SelectedItem`</span> and <span class="dp">`ItemsSource`</span>. Framework defaults: an <a class="ref prop" href="/docs/ui-glossary/types/tree-view-style/#expandiconstyle">`ExpandIconStyle`</a> of an 8 by 8 block, centered, <a class="ref prop" href="/docs/ui-glossary/types/tree-view-style/#foldediconcolor">`FoldedIconColor`</a> (150, 150, 160), <a class="ref prop" href="/docs/ui-glossary/types/tree-view-style/#expandediconcolor">`ExpandedIconColor`</a> (90, 90, 100).
+The style class of [`TreeView`](/docs/ui-lists/#treeview): the properties a style can set on it. Part styles <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> and <a class="ref prop" href="/docs/ui-glossary/types/tree-view-style/#expandiconstyle">`ExpandIconStyle`</a> (<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a>). Leaves out <span class="dp">`SelectedItem`</span> and <span class="dp">`ItemsSource`</span>. Framework defaults: an `ExpandIconStyle` of an 8 by 8 block, centered, `FoldedIconColor` (150, 150, 160), `ExpandedIconColor` (90, 90, 100), `SubItemsShift` `DefaultTreeViewSubItemsShift` (16, 0). Its list takes the defaults of `ListBox`.
 
 A class deriving from [`BaseStyle`](/docs/ui-glossary/types/base-style/). The [styles page](/docs/ui-styles/#style-classes) shows it in context.
 
@@ -31,7 +31,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="subitemsshift"><span class="prop"><code>SubItemsShift</code></span> <a class="ctx" href="/docs/ui-lists/#treeview-properties" title="SubItemsShift in context on the lists and menus page" aria-label="SubItemsShift in context on the lists and menus page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> · How far each level is indented (`Left`) and the space above every row but the first (`Top`), in units.
+<a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> · How far each level is indented (`Left`) and the space above every row but the first (`Top`), in units. `(16, 0)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaulttreeviewsubitemsshift">`DefaultSettings.DefaultTreeViewSubItemsShift`</a>).
 
 ## Methods
 

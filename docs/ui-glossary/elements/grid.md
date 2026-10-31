@@ -19,7 +19,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <h3 id="layoutcolor"><span class="prop"><code>LayoutColor</code></span> <a class="ctx" href="/docs/ui-layout/#grid-properties" title="LayoutColor in context on the layout page" aria-label="LayoutColor in context on the layout page">🠆</a></h3>
 
-`Color` · The color of the lines <a class="ref prop" href="/docs/ui-glossary/elements/grid/#showlayout">`ShowLayout`</a> draws; the fill is this color with every channel divided by 5. Set it, the default is transparent.
+`Color` · The color of the lines <a class="ref prop" href="/docs/ui-glossary/elements/grid/#showlayout">`ShowLayout`</a> draws; the fill is this color with every channel divided by 5. Red unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultgridlayoutcolor">`DefaultSettings.DefaultGridLayoutColor`</a>, read when the grid is created).
 
 <h3 id="rowscount"><span class="prop"><code>RowsCount</code></span> <a class="ctx" href="/docs/ui-layout/#grid-properties" title="RowsCount in context on the layout page" aria-label="RowsCount in context on the layout page">🠆</a></h3>
 

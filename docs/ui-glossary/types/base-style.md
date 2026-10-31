@@ -15,7 +15,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="backgroundcolor"><span class="prop"><code>BackgroundColor</code></span> <a class="ctx" href="/docs/ui-base-element/#appearance-properties" title="BackgroundColor in context on the base element page" aria-label="BackgroundColor in context on the base element page">🠆</a></h3>
 
-`Color` · The color the element's background is filled with. `Transparent` (the default) fills nothing.
+`Color` · The color the element's background is filled with. `Transparent` (the default) fills nothing; lists, combo boxes, tooltips, progress bars and separators have a color of their own unless set (see [default settings](/docs/ui-styles/#default-settings)).
 
 <h3 id="cropoutsideofparentborder"><span class="prop"><code>CropOutsideOfParentBorder</code></span> <a class="ctx" href="/docs/ui-base-element/#appearance-properties" title="CropOutsideOfParentBorder in context on the base element page" aria-label="CropOutsideOfParentBorder in context on the base element page">🠆</a></h3>
 

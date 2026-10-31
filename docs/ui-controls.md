@@ -58,7 +58,8 @@ releasing cancels it. A `Repeat` button raises `OnClick` as soon as it is presse
 <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#timebeforerepeatstartsms">`TimeBeforeRepeatStartsMs`</a> and every <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#timebetweenrepeatsms">`TimeBetweenRepeatsMs`</a> while held (see the
 [base element](/docs/ui-base-element/#click-timing)).
 
-Without textures the button is drawn in the solid color of its state. With <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> set, it draws the
+Without textures the button is drawn in the solid color of its state: unless set, light gray, light blue under the
+mouse, a deeper blue while pressed and blue while a toggle button is on. With <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> set, it draws the
 `Normal`, `Hover`, `Pressed` and `Toggled` textures from that folder instead (see [texture sets](/docs/ui-styles/#texture-sets)).
 
 ### Button properties
@@ -69,10 +70,10 @@ Without textures the button is drawn in the solid color of its state. With <a cl
 | <a class="ref dp" href="/docs/ui-glossary/elements/button/#content">`Content`</a> | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | Any element shown inside the button instead of a text. A content you give is detached, not disposed, when it is replaced. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/button/#type">`Type`</a> | <a class="ref" href="/docs/ui-glossary/types/button-type/">`ButtonType`</a> | How the button reacts to the mouse: `Normal`, `Repeat` or `Toggle`. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/button/#toggledon">`ToggledOn`</a> | `bool` | Whether a `Toggle` button is on. Set it to switch the button from code; <a class="ref event" href="/docs/ui-glossary/elements/button/#ontoggled">`OnToggled`</a> is raised. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/button/#normalcolor">`NormalColor`</a> | `Color` | The solid color while nothing happens. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/button/#hovercolor">`HoverColor`</a> | `Color` | The solid color while the mouse is over the button. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/button/#pressedcolor">`PressedColor`</a> | `Color` | The solid color while the button is pressed. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/button/#toggledcolor">`ToggledColor`</a> | `Color` | The solid color of a `Toggle` button that is on. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/button/#normalcolor">`NormalColor`</a> | `Color` | The solid color while nothing happens. `(225, 225, 230)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultbuttonnormalcolor">`DefaultSettings.DefaultButtonNormalColor`</a>). |
+| <a class="ref dp" href="/docs/ui-glossary/elements/button/#hovercolor">`HoverColor`</a> | `Color` | The solid color while the mouse is over the button. `(200, 220, 240)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultbuttonhovercolor">`DefaultSettings.DefaultButtonHoverColor`</a>). |
+| <a class="ref dp" href="/docs/ui-glossary/elements/button/#pressedcolor">`PressedColor`</a> | `Color` | The solid color while the button is pressed. `(160, 190, 225)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultbuttonpressedcolor">`DefaultSettings.DefaultButtonPressedColor`</a>). |
+| <a class="ref dp" href="/docs/ui-glossary/elements/button/#toggledcolor">`ToggledColor`</a> | `Color` | The solid color of a `Toggle` button that is on. `(86, 156, 214)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultbuttontoggledcolor">`DefaultSettings.DefaultButtonToggledColor`</a>). |
 | <a class="ref dp" href="/docs/ui-glossary/elements/button/#textstyle">`TextStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/label-style/">`LabelStyle`</a> | The style of the text content made from <a class="ref dp" href="/docs/ui-glossary/elements/button/#text">`Text`</a>. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/button/#backgroundstyle">`BackgroundStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> | The style of the image the button draws its background with. |
 
@@ -98,7 +99,8 @@ Clicks come through the inherited `OnClick`.
 | <a class="ref" href="/docs/ui-glossary/types/button-type/#repeat">`Repeat`</a> | `OnClick` on press, then repeatedly while held. |
 | <a class="ref" href="/docs/ui-glossary/types/button-type/#toggle">`Toggle`</a> | Each click switches <a class="ref dp" href="/docs/ui-glossary/elements/button/#toggledon">`ToggledOn`</a>. |
 
-Style class: <a class="ref" href="/docs/ui-glossary/types/button-style/">`ButtonStyle`</a> (the same properties, see [styles](/docs/ui-styles/)).
+Style class: <a class="ref" href="/docs/ui-glossary/types/button-style/">`ButtonStyle`</a> (the same properties, see [styles](/docs/ui-styles/)). Its defaults set the four
+solid colors.
 
 ## CheckBox
 
@@ -207,8 +209,7 @@ Radio buttons with the same <a class="ref dp" href="/docs/ui-glossary/elements/c
 
 A radio button without a <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#groupid">`GroupId`</a> is a group of its own: a click checks it and nothing unchecks it.
 
-Without textures the box is a solid square in <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#checkedsolidcolor">`CheckedSolidColor`</a> or <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#uncheckedsolidcolor">`UncheckedSolidColor`</a>. These have no default
-color, so give them in a style or on the element. With <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> set, the box shows the <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#checked">`Checked`</a> and
+Without textures the box is a solid square in <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#checkedsolidcolor">`CheckedSolidColor`</a> or <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#uncheckedsolidcolor">`UncheckedSolidColor`</a>, blue and gray unless set. With <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> set, the box shows the <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#checked">`Checked`</a> and
 `Unchecked` textures from that folder instead, stretched over the square (see [texture sets](/docs/ui-styles/#texture-sets)).
 
 ### CheckBox properties
@@ -221,8 +222,8 @@ color, so give them in a style or on the element. With <a class="ref dp" href="/
 | <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#type">`Type`</a> | <a class="ref" href="/docs/ui-glossary/types/check-box-type/">`CheckBoxType`</a> | `CheckBox` (the default) or `RadioButton`. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#groupid">`GroupId`</a> | `string` | The group of a radio button: the radio buttons in the tree with the same id uncheck each other. Not used by a `CheckBox`. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#direction">`Direction`</a> | <a class="ref" href="/docs/ui-glossary/types/check-box-direction/">`CheckBoxDirection`</a> | Which side of the content the box is on: `Left` (the default) or `Right`. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#checkedsolidcolor">`CheckedSolidColor`</a> | `Color` | The color of the box while it is checked, without textures. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#uncheckedsolidcolor">`UncheckedSolidColor`</a> | `Color` | The color of the box while it is unchecked, without textures. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#checkedsolidcolor">`CheckedSolidColor`</a> | `Color` | The color of the box while it is checked, without textures. `(86, 156, 214)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultcheckboxcheckedcolor">`DefaultSettings.DefaultCheckBoxCheckedColor`</a>). |
+| <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#uncheckedsolidcolor">`UncheckedSolidColor`</a> | `Color` | The color of the box while it is unchecked, without textures. `(150, 150, 160)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultcheckboxuncheckedcolor">`DefaultSettings.DefaultCheckBoxUncheckedColor`</a>). |
 | <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#textstyle">`TextStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/label-style/">`LabelStyle`</a> | The style of the text content made from <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#text">`Text`</a>. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/check-box/#imagestyle">`ImageStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> | The style of the image that draws the box. |
 
@@ -252,7 +253,8 @@ color, so give them in a style or on the element. With <a class="ref dp" href="/
 | <a class="ref" href="/docs/ui-glossary/types/check-box-direction/#left">`Left`</a> | The box is on the left, the content on its right. |
 | <a class="ref" href="/docs/ui-glossary/types/check-box-direction/#right">`Right`</a> | The box is on the right, the content on its left. |
 
-Style class: <a class="ref" href="/docs/ui-glossary/types/check-box-style/">`CheckBoxStyle`</a> (the same properties except `Content`, see [styles](/docs/ui-styles/)).
+Style class: <a class="ref" href="/docs/ui-glossary/types/check-box-style/">`CheckBoxStyle`</a> (the same properties except `Content`, see [styles](/docs/ui-styles/)). Its
+defaults set the two solid colors.
 
 ## Slider
 
@@ -368,6 +370,7 @@ Slider Scaled(float x, float y, int top) => new()
     Max = 100,
     Value = 40,
     ThumbScale = new Vector2(x, y),
+    ThumbMinSize = 0,    // no smallest thumb: the narrow one stays 7.2 units wide
     HorizontalAlignment = HorizontalAlignment.Left,
     VerticalAlignment = VerticalAlignment.Top,
     Margin = (16, top)
@@ -404,7 +407,7 @@ ui.AddElementToRoot(Small(Margin.Zero, 16));
 ui.AddElementToRoot(Small((0, 8), 50));
 ```
 
-**Value.** <a class="ref dp" href="/docs/ui-glossary/elements/slider/#min">`Min`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/slider/#max">`Max`</a> both start at 0, so set <a class="ref dp" href="/docs/ui-glossary/elements/slider/#max">`Max`</a>. <a class="ref dp" href="/docs/ui-glossary/elements/slider/#value">`Value`</a> is always kept inside the range, and the order you
+**Value.** <a class="ref dp" href="/docs/ui-glossary/elements/slider/#min">`Min`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/slider/#max">`Max`</a> are 0 and 1 unless set. <a class="ref dp" href="/docs/ui-glossary/elements/slider/#value">`Value`</a> is always kept inside the range, and the order you
 set the three in does not matter: a value outside the range is clamped, and comes back once the range is widened to
 include it. Setting <a class="ref dp" href="/docs/ui-glossary/elements/slider/#min">`Min`</a> above <a class="ref dp" href="/docs/ui-glossary/elements/slider/#max">`Max`</a> moves <a class="ref dp" href="/docs/ui-glossary/elements/slider/#max">`Max`</a> along, and the other way round. A vertical slider has <a class="ref dp" href="/docs/ui-glossary/elements/slider/#min">`Min`</a> at the
 bottom.
@@ -441,8 +444,8 @@ the slider is too short for its buttons and thumb, its parts are not drawn.
 
 **Drawing.** Without textures the parts are solid rectangles: <a class="ref dp" href="/docs/ui-glossary/elements/slider/#buttonssolidcolor">`ButtonsSolidColor`</a> for the end buttons and caps,
 <a class="ref dp" href="/docs/ui-glossary/elements/slider/#linedecreasesolidcolor">`LineDecreaseSolidColor`</a> for the track from the start (left, or bottom) to the thumb, <a class="ref dp" href="/docs/ui-glossary/elements/slider/#lineincreasesolidcolor">`LineIncreaseSolidColor`</a> for
-the rest of the track, and <a class="ref dp" href="/docs/ui-glossary/elements/slider/#thumbsolidcolor">`ThumbSolidColor`</a> for the thumb. These have no default color, so give them in a style or
-on the element. With <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> set, the slider draws these textures from that folder instead (the track halves
+the rest of the track, and <a class="ref dp" href="/docs/ui-glossary/elements/slider/#thumbsolidcolor">`ThumbSolidColor`</a> for the thumb. Unless set, the track is blue up to the thumb
+and gray after it, the thumb dark gray and the buttons gray. With <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a> set, the slider draws these textures from that folder instead (the track halves
 and the thumb's middle are tiled, the rest stretched; [texture sets](/docs/ui-styles/#texture-sets) has examples):
 
 | Part | Horizontal | Vertical |
@@ -459,29 +462,29 @@ marks are drawn in their colors with or without textures.
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#min">`Min`</a> | `float` | The smallest value. Setting it above <a class="ref dp" href="/docs/ui-glossary/elements/slider/#max">`Max`</a> moves <a class="ref dp" href="/docs/ui-glossary/elements/slider/#max">`Max`</a> along. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#max">`Max`</a> | `float` | The largest value. Setting it below <a class="ref dp" href="/docs/ui-glossary/elements/slider/#min">`Min`</a> moves <a class="ref dp" href="/docs/ui-glossary/elements/slider/#min">`Min`</a> along. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#min">`Min`</a> | `float` | The smallest value. Setting it above <a class="ref dp" href="/docs/ui-glossary/elements/slider/#max">`Max`</a> moves <a class="ref dp" href="/docs/ui-glossary/elements/slider/#max">`Max`</a> along. 0 unless set. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#max">`Max`</a> | `float` | The largest value. Setting it below <a class="ref dp" href="/docs/ui-glossary/elements/slider/#min">`Min`</a> moves <a class="ref dp" href="/docs/ui-glossary/elements/slider/#min">`Min`</a> along. 1 unless set. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/slider/#value">`Value`</a> | `float` | The value, between <a class="ref dp" href="/docs/ui-glossary/elements/slider/#min">`Min`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/slider/#max">`Max`</a>. A value you set is clamped to the range and snapped to the ticks. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/slider/#normalizedvalue">`NormalizedValue`</a> | `float` | Read-only. Where the value lies in the range, from 0 at <a class="ref dp" href="/docs/ui-glossary/elements/slider/#min">`Min`</a> to 1 at <a class="ref dp" href="/docs/ui-glossary/elements/slider/#max">`Max`</a> (0 when <a class="ref dp" href="/docs/ui-glossary/elements/slider/#min">`Min`</a> equals <a class="ref dp" href="/docs/ui-glossary/elements/slider/#max">`Max`</a>). |
 | <a class="ref dp" href="/docs/ui-glossary/elements/slider/#orientation">`Orientation`</a> | <a class="ref" href="/docs/ui-glossary/types/orientation/">`Orientation`</a> | `Horizontal` (the default) or `Vertical`. A vertical slider has <a class="ref dp" href="/docs/ui-glossary/elements/slider/#min">`Min`</a> at the bottom. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/slider/#type">`Type`</a> | <a class="ref" href="/docs/ui-glossary/types/slider-type/">`SliderType`</a> | The kind of slider: `Slider` (the default), `SliderWithCaps`, `ScrollBar` or `ScrollBarNoButtons`. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/slider/#tick">`Tick`</a> | `float` | The step the value snaps to, from <a class="ref dp" href="/docs/ui-glossary/elements/slider/#min">`Min`</a>. 0 (the default) means no snapping and no tick marks. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/slider/#tickplacement">`TickPlacement`</a> | <a class="ref" href="/docs/ui-glossary/types/tick-placement/">`TickPlacement`</a> | Where the tick marks are drawn. `None` (the default) draws none. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#ticksize">`TickSize`</a> | `Point` | The width and height of a tick mark, in units. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#tickoffset">`TickOffset`</a> | `int` | The gap between the slider's edge and the tick marks, in units. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#tickpassedcolor">`TickPassedColor`</a> | `Color` | The color of the tick marks at or below the value. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#tickremainingcolor">`TickRemainingColor`</a> | `Color` | The color of the tick marks above the value. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#ticksize">`TickSize`</a> | `Point` | The width and height of a tick mark, in units. 2 by 2 unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultsliderticksize">`DefaultSettings.DefaultSliderTickSize`</a>). |
+| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#tickoffset">`TickOffset`</a> | `int` | The gap between the slider's edge and the tick marks, in units. 2 unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultslidertickoffset">`DefaultSettings.DefaultSliderTickOffset`</a>). |
+| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#tickpassedcolor">`TickPassedColor`</a> | `Color` | The color of the tick marks at or below the value. `(86, 156, 214)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultslidertickpassedcolor">`DefaultSettings.DefaultSliderTickPassedColor`</a>). |
+| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#tickremainingcolor">`TickRemainingColor`</a> | `Color` | The color of the tick marks above the value. `(150, 150, 160)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultslidertickremainingcolor">`DefaultSettings.DefaultSliderTickRemainingColor`</a>). |
 | <a class="ref dp" href="/docs/ui-glossary/elements/slider/#thumbscale">`ThumbScale`</a> | `Vector2` | The thumb's width (`X`) and height (`Y`) as a share of the slider's thickness. On a scroll bar with <a class="ref prop" href="/docs/ui-glossary/elements/slider/#contentsize">`ContentSize`</a> and <a class="ref prop" href="/docs/ui-glossary/elements/slider/#viewsize">`ViewSize`</a>, the length along the track comes from them instead. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/slider/#thumbmargin">`ThumbMargin`</a> | <a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> | Moves the thumb across the track: it is centered in the slider's thickness minus `ThumbMargin.Top` (horizontal) or `ThumbMargin.Left` (vertical). The other sides are not used. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#thumbminsize">`ThumbMinSize`</a> | `float` | The smallest length of the thumb along the track, in units. It keeps a scroll bar's thumb usable over long content. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#thumbminsize">`ThumbMinSize`</a> | `float` | The smallest length of the thumb along the track, in units. It keeps a scroll bar's thumb usable over long content. 10 unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultsliderthumbminsize">`DefaultSettings.DefaultSliderThumbMinSize`</a>). |
 | <a class="ref dp" href="/docs/ui-glossary/elements/slider/#movetopoint">`MoveToPoint`</a> | `bool` | When set, a click on the track moves the thumb to the clicked point instead of stepping. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/slider/#contentsize">`ContentSize`</a> | `Point` | The size of the content a scroll bar scrolls, in units. Changing it keeps the same content in view. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/slider/#viewsize">`ViewSize`</a> | `Point` | The size of the visible part of that content, in units. Changing it keeps the same content in view. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/slider/#scrollareasize">`ScrollAreaSize`</a> | `Vector2` | Read-only. <a class="ref prop" href="/docs/ui-glossary/elements/slider/#contentsize">`ContentSize`</a> minus <a class="ref prop" href="/docs/ui-glossary/elements/slider/#viewsize">`ViewSize`</a>: how far the content can scroll. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#buttonssolidcolor">`ButtonsSolidColor`</a> | `Color` | The color of the end buttons and caps, without textures. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#linedecreasesolidcolor">`LineDecreaseSolidColor`</a> | `Color` | The color of the track between the start and the thumb, without textures. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#lineincreasesolidcolor">`LineIncreaseSolidColor`</a> | `Color` | The color of the track between the thumb and the end, without textures. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#thumbsolidcolor">`ThumbSolidColor`</a> | `Color` | The color of the thumb, without textures. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#buttonssolidcolor">`ButtonsSolidColor`</a> | `Color` | The color of the end buttons and caps, without textures. `(150, 150, 160)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultsliderbuttonscolor">`DefaultSettings.DefaultSliderButtonsColor`</a>). |
+| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#linedecreasesolidcolor">`LineDecreaseSolidColor`</a> | `Color` | The color of the track between the start and the thumb, without textures. `(86, 156, 214)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultsliderlinedecreasecolor">`DefaultSettings.DefaultSliderLineDecreaseColor`</a>). |
+| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#lineincreasesolidcolor">`LineIncreaseSolidColor`</a> | `Color` | The color of the track between the thumb and the end, without textures. `(150, 150, 160)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultsliderlineincreasecolor">`DefaultSettings.DefaultSliderLineIncreaseColor`</a>). |
+| <a class="ref dp" href="/docs/ui-glossary/elements/slider/#thumbsolidcolor">`ThumbSolidColor`</a> | `Color` | The color of the thumb, without textures. `(80, 80, 80)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultsliderthumbcolor">`DefaultSettings.DefaultSliderThumbColor`</a>). |
 
 ### Slider events
 
@@ -521,7 +524,7 @@ from them.
 
 Style class: <a class="ref" href="/docs/ui-glossary/types/slider-style/">`SliderStyle`</a> (the same properties except the four that are not dependency properties, see
 [styles](/docs/ui-styles/)). Its defaults set <a class="ref dp" href="/docs/ui-glossary/elements/slider/#thumbscale">`ThumbScale`</a> to (1, 1) and <a class="ref" href="/docs/ui-glossary/types/inherit-state/">`InheritState`</a> to `FromChildren`, so the
-slider shows the hover and pressed states of its parts.
+slider shows the hover and pressed states of its parts, and the range, colors, tick marks and smallest thumb given above.
 
 ## ProgressBar
 
@@ -568,18 +571,18 @@ ui.AddElementToRoot(charge);
 ```
 
 The bar fills from the left, or from the bottom when vertical. At <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#min">`Min`</a> there is no bar. <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#value">`Value`</a>, <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#min">`Min`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#max">`Max`</a>
-behave as on a slider: <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#min">`Min`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#max">`Max`</a> start at 0, the value is clamped to the range, the order you set them in does
+behave as on a slider: <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#min">`Min`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#max">`Max`</a> are 0 and 1 unless set, the value is clamped to the range, the order you set them in does
 not matter, and setting one bound past the other moves the other along.
 
-Without textures the inherited <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> is the track and <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#foregroundcolor">`ForegroundColor`</a> the bar. With <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a>
-set, it tiles the <a class="ref prop" href="/docs/ui-glossary/elements/default-window-title-bar/#background">`Background`</a> texture over the whole element and the `Bar` texture over the filled part instead (see [texture sets](/docs/ui-styles/#texture-sets)).
+Without textures the inherited <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> is the track and <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#foregroundcolor">`ForegroundColor`</a> the bar, light gray and blue unless set. With <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#texturespath">`TexturesPath`</a>
+set, it tiles the `Background` texture over the whole element and the `Bar` texture over the filled part instead (see [texture sets](/docs/ui-styles/#texture-sets)).
 
 ### ProgressBar properties
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#min">`Min`</a> | `float` | The value of an empty bar. Setting it above <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#max">`Max`</a> moves <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#max">`Max`</a> along. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#max">`Max`</a> | `float` | The value of a full bar. Setting it below <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#min">`Min`</a> moves <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#min">`Min`</a> along. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#min">`Min`</a> | `float` | The value of an empty bar. Setting it above <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#max">`Max`</a> moves <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#max">`Max`</a> along. 0 unless set. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#max">`Max`</a> | `float` | The value of a full bar. Setting it below <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#min">`Min`</a> moves <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#min">`Min`</a> along. 1 unless set. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#value">`Value`</a> | `float` | The current value, clamped to the range between <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#min">`Min`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#max">`Max`</a>. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#orientation">`Orientation`</a> | <a class="ref" href="/docs/ui-glossary/types/orientation/">`Orientation`</a> | `Horizontal` (the default, fills from the left) or `Vertical` (fills from the bottom). |
 
@@ -589,7 +592,8 @@ set, it tiles the <a class="ref prop" href="/docs/ui-glossary/elements/default-w
 | --- | --- |
 | <a class="ref method" href="/docs/ui-glossary/elements/progress-bar/#progressbar">`ProgressBar(string name = null)`</a> | Creates a progress bar. The name is used by <a class="ref method" href="/docs/ui-glossary/elements/base-element/#getelementbyname">`GetElementByName`</a>. |
 
-Style class: <a class="ref" href="/docs/ui-glossary/types/progress-bar-style/">`ProgressBarStyle`</a> (the same properties, see [styles](/docs/ui-styles/)).
+Style class: <a class="ref" href="/docs/ui-glossary/types/progress-bar-style/">`ProgressBarStyle`</a> (the same properties, see [styles](/docs/ui-styles/)). Its defaults
+set the two colors and a <a class="ref dp" href="/docs/ui-glossary/elements/progress-bar/#max">`Max`</a> of 1.
 
 ## ToolTip
 
@@ -626,10 +630,11 @@ is placed once, when it appears, and goes away when the mouse leaves the element
 parts of a control (a slider's thumb, a list's rows) show the tooltip of their control. Only one tooltip is on screen
 at a time, drawn above the element tree.
 
-<a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#placement">`Placement`</a> says which corner of the tooltip is at the cursor, and <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#marginfrommousecursor">`MarginFromMouseCursor`</a> shifts it from there. The
-tooltip is then moved as needed to stay inside the screen. A tooltip ignores the mouse (its style sets <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#hittest">`HitTest`</a> to
+<a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#placement">`Placement`</a> says which corner of the tooltip is at the cursor, and <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#marginfrommousecursor">`MarginFromMouseCursor`</a> shifts it from there: unless set, the
+tooltip shows below and to the right of the cursor, 14 units from it. It is then moved as needed to stay inside the screen. A tooltip ignores the mouse (its style sets <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#hittest">`HitTest`</a> to
 false), so it never hides the element under it from the cursor. A text tooltip has 5 units of space around its text,
-which does not wrap; the tooltip's own <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> is drawn behind it.
+which does not wrap; the tooltip's own <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> is drawn behind it, light yellow unless set
+(<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaulttooltipbackgroundcolor">`DefaultSettings.DefaultToolTipBackgroundColor`</a>).
 
 ### ToolTip properties
 
@@ -637,8 +642,8 @@ which does not wrap; the tooltip's own <a class="ref dp" href="/docs/ui-glossary
 | --- | --- | --- |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#text">`Text`</a> | `string` | Creates a centered <a class="ref" href="/docs/ui-glossary/elements/label/">`Label`</a> content showing this text, styled by <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#textstyle">`TextStyle`</a>. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#content">`Content`</a> | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | Any element shown in the tooltip instead of a text. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#placement">`Placement`</a> | <a class="ref" href="/docs/ui-glossary/types/tool-tip-placement/">`ToolTipPlacement`</a> | Which side of the cursor the tooltip appears on. `TopLeft` is the default. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#marginfrommousecursor">`MarginFromMouseCursor`</a> | <a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> | The shift from the cursor, in units: `Left` is added to the x position and `Top` to the y position, whatever the placement (use negative values to move a `TopLeft` tooltip away from the cursor). The other sides are not used. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#placement">`Placement`</a> | <a class="ref" href="/docs/ui-glossary/types/tool-tip-placement/">`ToolTipPlacement`</a> | Which side of the cursor the tooltip appears on. `BottomRight` unless set. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#marginfrommousecursor">`MarginFromMouseCursor`</a> | <a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> | The shift from the cursor, in units: `Left` is added to the x position and `Top` to the y position, whatever the placement (use negative values to move a `TopLeft` tooltip away from the cursor). The other sides are not used. `(14, 14)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaulttooltipmarginfrommousecursor">`DefaultSettings.DefaultToolTipMarginFromMouseCursor`</a>), which keeps a `BottomRight` tooltip clear of the cursor. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#timebeforeshowms">`TimeBeforeShowMs`</a> | `int` | How long the mouse rests on the element before the tooltip appears, in milliseconds. 0 shows it at once. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#textstyle">`TextStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/label-style/">`LabelStyle`</a> | The style of the text content made from <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#text">`Text`</a>. |
 
@@ -659,7 +664,8 @@ which does not wrap; the tooltip's own <a class="ref dp" href="/docs/ui-glossary
 | <a class="ref" href="/docs/ui-glossary/types/tool-tip-placement/#bottomright">`BottomRight`</a> | Below and to the right: its top left corner is at the cursor. |
 
 Style class: <a class="ref" href="/docs/ui-glossary/types/tool-tip-style/">`ToolTipStyle`</a> (the same properties except `Content`, see [styles](/docs/ui-styles/)). Its defaults set
-<a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#timebeforeshowms">`TimeBeforeShowMs`</a>, <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#hittest">`HitTest`</a> to false, and left and top alignment.
+<a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#timebeforeshowms">`TimeBeforeShowMs`</a>, <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#hittest">`HitTest`</a> to false, left and top alignment, a light yellow <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a>,
+<a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#placement">`Placement`</a> `BottomRight` and a <a class="ref dp" href="/docs/ui-glossary/elements/tool-tip/#marginfrommousecursor">`MarginFromMouseCursor`</a> of (14, 14).
 
 ## ColorPicker
 

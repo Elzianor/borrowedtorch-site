@@ -5,7 +5,7 @@ title: "Glossary: ToolTipStyle"
 description: "The members of ToolTipStyle, in alphabetical order."
 ---
 
-The style class of [`ToolTip`](/docs/ui-controls/#tooltip): the properties a style can set on it. Part style <a class="ref prop" href="/docs/ui-glossary/types/tool-tip-style/#textstyle">`TextStyle`</a> (<a class="ref" href="/docs/ui-glossary/types/label-style/">`LabelStyle`</a>). Leaves out `Content`. Framework defaults: aligned left and top, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#hittest">`HitTest`</a> off, <a class="ref prop" href="/docs/ui-glossary/types/tool-tip-style/#timebeforeshowms">`TimeBeforeShowMs`</a> `DefaultTimeBeforeShowToolTipMs`.
+The style class of [`ToolTip`](/docs/ui-controls/#tooltip): the properties a style can set on it. Part style <a class="ref prop" href="/docs/ui-glossary/types/tool-tip-style/#textstyle">`TextStyle`</a> (<a class="ref" href="/docs/ui-glossary/types/label-style/">`LabelStyle`</a>). Leaves out `Content`. Framework defaults: aligned left and top, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#hittest">`HitTest`</a> off, `TimeBeforeShowMs` `DefaultTimeBeforeShowToolTipMs`, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#backgroundcolor">`BackgroundColor`</a> `DefaultToolTipBackgroundColor`, `Placement` `BottomRight`, `MarginFromMouseCursor` `DefaultToolTipMarginFromMouseCursor` (14, 14).
 
 A class deriving from [`BaseStyle`](/docs/ui-glossary/types/base-style/). The [styles page](/docs/ui-styles/#style-classes) shows it in context.
 
@@ -15,11 +15,11 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="marginfrommousecursor"><span class="prop"><code>MarginFromMouseCursor</code></span> <a class="ctx" href="/docs/ui-controls/#tooltip-properties" title="MarginFromMouseCursor in context on the controls page" aria-label="MarginFromMouseCursor in context on the controls page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> · The shift from the cursor, in units: `Left` is added to the x position and `Top` to the y position, whatever the placement (use negative values to move a `TopLeft` tooltip away from the cursor). The other sides are not used.
+<a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> · The shift from the cursor, in units: `Left` is added to the x position and `Top` to the y position, whatever the placement (use negative values to move a `TopLeft` tooltip away from the cursor). The other sides are not used. `(14, 14)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaulttooltipmarginfrommousecursor">`DefaultSettings.DefaultToolTipMarginFromMouseCursor`</a>), which keeps a `BottomRight` tooltip clear of the cursor.
 
 <h3 id="placement"><span class="prop"><code>Placement</code></span> <a class="ctx" href="/docs/ui-controls/#tooltip-properties" title="Placement in context on the controls page" aria-label="Placement in context on the controls page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/tool-tip-placement/">`ToolTipPlacement`</a> · Which side of the cursor the tooltip appears on. `TopLeft` is the default.
+<a class="ref" href="/docs/ui-glossary/types/tool-tip-placement/">`ToolTipPlacement`</a> · Which side of the cursor the tooltip appears on. `BottomRight` unless set.
 
 <h3 id="text"><span class="prop"><code>Text</code></span> <a class="ctx" href="/docs/ui-controls/#tooltip-properties" title="Text in context on the controls page" aria-label="Text in context on the controls page">🠆</a></h3>
 

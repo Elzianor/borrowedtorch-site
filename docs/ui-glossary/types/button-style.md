@@ -5,7 +5,7 @@ title: "Glossary: ButtonStyle"
 description: "The members of ButtonStyle, in alphabetical order."
 ---
 
-The style class of [`Button`](/docs/ui-controls/#button): the properties a style can set on it. Part styles <a class="ref prop" href="/docs/ui-glossary/types/button-style/#textstyle">`TextStyle`</a> (<a class="ref" href="/docs/ui-glossary/types/label-style/">`LabelStyle`</a>) and <a class="ref prop" href="/docs/ui-glossary/types/button-style/#backgroundstyle">`BackgroundStyle`</a> (<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a>). Leaves out `Content`. Framework defaults: none beyond the base ones.
+The style class of [`Button`](/docs/ui-controls/#button): the properties a style can set on it. Part styles <a class="ref prop" href="/docs/ui-glossary/types/button-style/#textstyle">`TextStyle`</a> (<a class="ref" href="/docs/ui-glossary/types/label-style/">`LabelStyle`</a>) and <a class="ref prop" href="/docs/ui-glossary/types/button-style/#backgroundstyle">`BackgroundStyle`</a> (<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a>). Leaves out `Content`. Framework defaults: `NormalColor`, `HoverColor`, `PressedColor` and `ToggledColor` from `DefaultButtonNormalColor`, `DefaultButtonHoverColor`, `DefaultButtonPressedColor` and `DefaultButtonToggledColor`.
 
 A class deriving from [`BaseStyle`](/docs/ui-glossary/types/base-style/). The [styles page](/docs/ui-styles/#style-classes) shows it in context.
 
@@ -19,15 +19,15 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="hovercolor"><span class="prop"><code>HoverColor</code></span> <a class="ctx" href="/docs/ui-controls/#button-properties" title="HoverColor in context on the controls page" aria-label="HoverColor in context on the controls page">🠆</a></h3>
 
-`Color` · The solid color while the mouse is over the button.
+`Color` · The solid color while the mouse is over the button. `(200, 220, 240)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultbuttonhovercolor">`DefaultSettings.DefaultButtonHoverColor`</a>).
 
 <h3 id="normalcolor"><span class="prop"><code>NormalColor</code></span> <a class="ctx" href="/docs/ui-controls/#button-properties" title="NormalColor in context on the controls page" aria-label="NormalColor in context on the controls page">🠆</a></h3>
 
-`Color` · The solid color while nothing happens.
+`Color` · The solid color while nothing happens. `(225, 225, 230)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultbuttonnormalcolor">`DefaultSettings.DefaultButtonNormalColor`</a>).
 
 <h3 id="pressedcolor"><span class="prop"><code>PressedColor</code></span> <a class="ctx" href="/docs/ui-controls/#button-properties" title="PressedColor in context on the controls page" aria-label="PressedColor in context on the controls page">🠆</a></h3>
 
-`Color` · The solid color while the button is pressed.
+`Color` · The solid color while the button is pressed. `(160, 190, 225)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultbuttonpressedcolor">`DefaultSettings.DefaultButtonPressedColor`</a>).
 
 <h3 id="text"><span class="prop"><code>Text</code></span> <a class="ctx" href="/docs/ui-controls/#button-properties" title="Text in context on the controls page" aria-label="Text in context on the controls page">🠆</a></h3>
 
@@ -39,7 +39,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="toggledcolor"><span class="prop"><code>ToggledColor</code></span> <a class="ctx" href="/docs/ui-controls/#button-properties" title="ToggledColor in context on the controls page" aria-label="ToggledColor in context on the controls page">🠆</a></h3>
 
-`Color` · The solid color of a `Toggle` button that is on.
+`Color` · The solid color of a `Toggle` button that is on. `(86, 156, 214)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultbuttontoggledcolor">`DefaultSettings.DefaultButtonToggledColor`</a>).
 
 <h3 id="toggledon"><span class="prop"><code>ToggledOn</code></span> <a class="ctx" href="/docs/ui-controls/#button-properties" title="ToggledOn in context on the controls page" aria-label="ToggledOn in context on the controls page">🠆</a></h3>
 

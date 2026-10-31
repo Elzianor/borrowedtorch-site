@@ -5,7 +5,7 @@ title: "Glossary: RichTextBoxStyle"
 description: "The members of RichTextBoxStyle, in alphabetical order."
 ---
 
-The style class of [`RichTextBox`](/docs/ui-text/#richtextbox): the properties a style can set on it. Part styles <a class="ref prop" href="/docs/ui-glossary/types/rich-text-box-style/#scrollbarsstyle">`ScrollBarsStyle`</a> (<a class="ref" href="/docs/ui-glossary/types/slider-style/">`SliderStyle`</a>) and <a class="ref prop" href="/docs/ui-glossary/types/rich-text-box-style/#backgroundstyle">`BackgroundStyle`</a> (<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a>). Framework defaults: <a class="ref prop" href="/docs/ui-glossary/types/rich-text-box-style/#text">`Text`</a> empty, <a class="ref" href="/docs/ui-glossary/types/inherit-state/#fromchildren">`InheritState.FromChildren`</a>, and <a class="ref prop" href="/docs/ui-glossary/types/rich-text-box-style/#fontsize">`FontSize`</a>, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#foregroundcolor">`ForegroundColor`</a>, <a class="ref prop" href="/docs/ui-glossary/types/rich-text-box-style/#textcursorthickness">`TextCursorThickness`</a>, <a class="ref prop" href="/docs/ui-glossary/types/rich-text-box-style/#textcursorcolor">`TextCursorColor`</a>, <a class="ref prop" href="/docs/ui-glossary/types/rich-text-box-style/#textselectioncolor">`TextSelectionColor`</a> from <a class="ref" href="/docs/ui-glossary/types/default-settings/">`DefaultSettings`</a>.
+The style class of [`RichTextBox`](/docs/ui-text/#richtextbox): the properties a style can set on it. Part styles <a class="ref prop" href="/docs/ui-glossary/types/rich-text-box-style/#scrollbarsstyle">`ScrollBarsStyle`</a> (<a class="ref" href="/docs/ui-glossary/types/slider-style/">`SliderStyle`</a>) and <a class="ref prop" href="/docs/ui-glossary/types/rich-text-box-style/#backgroundstyle">`BackgroundStyle`</a> (<a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a>). Framework defaults: `Text` empty, <a class="ref" href="/docs/ui-glossary/types/inherit-state/#fromchildren">`InheritState.FromChildren`</a>, and `FontSize`, <a class="ref prop" href="/docs/ui-glossary/types/base-style/#foregroundcolor">`ForegroundColor`</a>, `TextCursorThickness`, `TextCursorColor`, `TextSelectionColor` and `ScrollBarsThickness` from <a class="ref" href="/docs/ui-glossary/types/default-settings/">`DefaultSettings`</a>.
 
 A class deriving from [`BaseStyle`](/docs/ui-glossary/types/base-style/). The [styles page](/docs/ui-styles/#style-classes) shows it in context.
 
@@ -59,7 +59,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="scrollbarsthickness"><span class="prop"><code>ScrollBarsThickness</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-properties" title="ScrollBarsThickness in context on the text page" aria-label="ScrollBarsThickness in context on the text page">🠆</a></h3>
 
-`int` · The thickness of the scroll bars in units. Default 0.
+`int` · The thickness of the scroll bars in units. Default 12 (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultscrollbarsthickness">`DefaultSettings.DefaultScrollBarsThickness`</a>).
 
 <h3 id="scrolltoendduringtextanimation"><span class="prop"><code>ScrollToEndDuringTextAnimation</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-properties" title="ScrollToEndDuringTextAnimation in context on the text page" aria-label="ScrollToEndDuringTextAnimation in context on the text page">🠆</a></h3>
 

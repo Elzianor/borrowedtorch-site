@@ -11,6 +11,46 @@ A static class. The [styles page](/docs/ui-styles/#default-settings) shows it in
 
 ## Fields
 
+<h3 id="defaultbordercolor"><code>DefaultBorderColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultBorderColor in context on the styles page" aria-label="DefaultBorderColor in context on the styles page">🠆</a></h3>
+
+`Color` · Static. The frame color (<a class="ref dp" href="/docs/ui-glossary/elements/base-element/#foregroundcolor">`ForegroundColor`</a>) default of <a class="ref" href="/docs/ui-glossary/types/border-style/">`BorderStyle`</a>. Default: `new(80, 80, 80, 255)`.
+
+<h3 id="defaultborderthickness"><code>DefaultBorderThickness</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultBorderThickness in context on the styles page" aria-label="DefaultBorderThickness in context on the styles page">🠆</a></h3>
+
+`int` · Static. The `Thickness` default of <a class="ref" href="/docs/ui-glossary/types/border-style/">`BorderStyle`</a>, in units. Default: `1`.
+
+<h3 id="defaultbuttonhovercolor"><code>DefaultButtonHoverColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultButtonHoverColor in context on the styles page" aria-label="DefaultButtonHoverColor in context on the styles page">🠆</a></h3>
+
+`Color` · Static. The `HoverColor` default of <a class="ref" href="/docs/ui-glossary/types/button-style/">`ButtonStyle`</a>. Default: `new(200, 220, 240, 255)`.
+
+<h3 id="defaultbuttonnormalcolor"><code>DefaultButtonNormalColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultButtonNormalColor in context on the styles page" aria-label="DefaultButtonNormalColor in context on the styles page">🠆</a></h3>
+
+`Color` · Static. The `NormalColor` default of <a class="ref" href="/docs/ui-glossary/types/button-style/">`ButtonStyle`</a>. Default: `new(225, 225, 230, 255)`.
+
+<h3 id="defaultbuttonpressedcolor"><code>DefaultButtonPressedColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultButtonPressedColor in context on the styles page" aria-label="DefaultButtonPressedColor in context on the styles page">🠆</a></h3>
+
+`Color` · Static. The `PressedColor` default of <a class="ref" href="/docs/ui-glossary/types/button-style/">`ButtonStyle`</a>. Default: `new(160, 190, 225, 255)`.
+
+<h3 id="defaultbuttontoggledcolor"><code>DefaultButtonToggledColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultButtonToggledColor in context on the styles page" aria-label="DefaultButtonToggledColor in context on the styles page">🠆</a></h3>
+
+`Color` · Static. The `ToggledColor` default of <a class="ref" href="/docs/ui-glossary/types/button-style/">`ButtonStyle`</a>. Default: `new(86, 156, 214, 255)`.
+
+<h3 id="defaultcheckboxcheckedcolor"><code>DefaultCheckBoxCheckedColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultCheckBoxCheckedColor in context on the styles page" aria-label="DefaultCheckBoxCheckedColor in context on the styles page">🠆</a></h3>
+
+`Color` · Static. The `CheckedSolidColor` default of <a class="ref" href="/docs/ui-glossary/types/check-box-style/">`CheckBoxStyle`</a>. Default: `new(86, 156, 214, 255)`.
+
+<h3 id="defaultcheckboxuncheckedcolor"><code>DefaultCheckBoxUncheckedColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultCheckBoxUncheckedColor in context on the styles page" aria-label="DefaultCheckBoxUncheckedColor in context on the styles page">🠆</a></h3>
+
+`Color` · Static. The `UncheckedSolidColor` default of <a class="ref" href="/docs/ui-glossary/types/check-box-style/">`CheckBoxStyle`</a>. Default: `new(150, 150, 160, 255)`.
+
+<h3 id="defaultcomboboxbackgroundcolor"><code>DefaultComboBoxBackgroundColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultComboBoxBackgroundColor in context on the styles page" aria-label="DefaultComboBoxBackgroundColor in context on the styles page">🠆</a></h3>
+
+`Color` · Static. The <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> default of <a class="ref" href="/docs/ui-glossary/types/combo-box-style/">`ComboBoxStyle`</a>. Default: `Color.White`.
+
+<h3 id="defaultcomboboxtogglebuttonwidth"><code>DefaultComboBoxToggleButtonWidth</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultComboBoxToggleButtonWidth in context on the styles page" aria-label="DefaultComboBoxToggleButtonWidth in context on the styles page">🠆</a></h3>
+
+`int` · Static. The width of the toggle button in the default `ToggleButtonStyle` of <a class="ref" href="/docs/ui-glossary/types/combo-box-style/">`ComboBoxStyle`</a>, in units. Default: `24`.
+
 <h3 id="defaultcontextmenubackgroundcolor"><code>DefaultContextMenuBackgroundColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultContextMenuBackgroundColor in context on the styles page" aria-label="DefaultContextMenuBackgroundColor in context on the styles page">🠆</a></h3>
 
 `Color` · Static. The background color of <a class="ref" href="/docs/ui-glossary/types/context-menu-style/">`ContextMenuStyle`</a>'s default border. Default: `Color.White`.
@@ -35,6 +75,34 @@ A static class. The [styles page](/docs/ui-styles/#default-settings) shows it in
 
 `int` · Static. The <span class="dp">`FontSize`</span> default of <a class="ref" href="/docs/ui-glossary/types/label-style/">`LabelStyle`</a> and <a class="ref" href="/docs/ui-glossary/types/rich-text-box-style/">`RichTextBoxStyle`</a>. Default: `14`.
 
+<h3 id="defaultgridlayoutcolor"><code>DefaultGridLayoutColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultGridLayoutColor in context on the styles page" aria-label="DefaultGridLayoutColor in context on the styles page">🠆</a></h3>
+
+`Color` · Static. The <a class="ref prop" href="/docs/ui-glossary/elements/grid/#layoutcolor">`LayoutColor`</a> of every <a class="ref" href="/docs/ui-glossary/elements/grid/">`Grid`</a>, read when a grid is created. Default: `new(255, 0, 0, 255)`.
+
+<h3 id="defaultlistboxalternativeitemcolor"><code>DefaultListBoxAlternativeItemColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultListBoxAlternativeItemColor in context on the styles page" aria-label="DefaultListBoxAlternativeItemColor in context on the styles page">🠆</a></h3>
+
+`Color` · Static. The `AlternativeItemColor` default of <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a>, shown with `UseDualColors`. Default: `new(240, 240, 245, 255)`.
+
+<h3 id="defaultlistboxbackgroundcolor"><code>DefaultListBoxBackgroundColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultListBoxBackgroundColor in context on the styles page" aria-label="DefaultListBoxBackgroundColor in context on the styles page">🠆</a></h3>
+
+`Color` · Static. The <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> default of <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a>. Default: `Color.White`.
+
+<h3 id="defaultlistboxhoveritemcolor"><code>DefaultListBoxHoverItemColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultListBoxHoverItemColor in context on the styles page" aria-label="DefaultListBoxHoverItemColor in context on the styles page">🠆</a></h3>
+
+`Color` · Static. The `HoverItemColor` default of <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a>. Default: `new(220, 232, 245, 255)`.
+
+<h3 id="defaultlistboxitemheight"><code>DefaultListBoxItemHeight</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultListBoxItemHeight in context on the styles page" aria-label="DefaultListBoxItemHeight in context on the styles page">🠆</a></h3>
+
+`int` · Static. The `ItemHeight` default of <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a>: the row height of a `Fixed` list, in units. Default: `24`.
+
+<h3 id="defaultlistboxpresseditemcolor"><code>DefaultListBoxPressedItemColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultListBoxPressedItemColor in context on the styles page" aria-label="DefaultListBoxPressedItemColor in context on the styles page">🠆</a></h3>
+
+`Color` · Static. The `PressedItemColor` default of <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a>. Default: `new(160, 190, 225, 255)`.
+
+<h3 id="defaultlistboxselecteditemcolor"><code>DefaultListBoxSelectedItemColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultListBoxSelectedItemColor in context on the styles page" aria-label="DefaultListBoxSelectedItemColor in context on the styles page">🠆</a></h3>
+
+`Color` · Static. The `SelectedItemColor` default of <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a>. Default: `new(190, 215, 240, 255)`.
+
 <h3 id="defaultmaxdepth"><code>DefaultMaxDepth</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultMaxDepth in context on the styles page" aria-label="DefaultMaxDepth in context on the styles page">🠆</a></h3>
 
 `float` · Static. The <a class="ref dp" href="/docs/ui-glossary/elements/view-port/#maxdepth">`MaxDepth`</a> default of <a class="ref" href="/docs/ui-glossary/types/view-port-style/">`ViewPortStyle`</a>. Default: `1`.
@@ -42,6 +110,14 @@ A static class. The [styles page](/docs/ui-styles/#default-settings) shows it in
 <h3 id="defaultmindepth"><code>DefaultMinDepth</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultMinDepth in context on the styles page" aria-label="DefaultMinDepth in context on the styles page">🠆</a></h3>
 
 `float` · Static. The <a class="ref dp" href="/docs/ui-glossary/elements/view-port/#mindepth">`MinDepth`</a> default of <a class="ref" href="/docs/ui-glossary/types/view-port-style/">`ViewPortStyle`</a>. Default: `0`.
+
+<h3 id="defaultprogressbarbackgroundcolor"><code>DefaultProgressBarBackgroundColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultProgressBarBackgroundColor in context on the styles page" aria-label="DefaultProgressBarBackgroundColor in context on the styles page">🠆</a></h3>
+
+`Color` · Static. The track color (<a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a>) default of <a class="ref" href="/docs/ui-glossary/types/progress-bar-style/">`ProgressBarStyle`</a>. Default: `new(225, 225, 230, 255)`.
+
+<h3 id="defaultprogressbarcolor"><code>DefaultProgressBarColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultProgressBarColor in context on the styles page" aria-label="DefaultProgressBarColor in context on the styles page">🠆</a></h3>
+
+`Color` · Static. The bar color (<a class="ref dp" href="/docs/ui-glossary/elements/base-element/#foregroundcolor">`ForegroundColor`</a>) default of <a class="ref" href="/docs/ui-glossary/types/progress-bar-style/">`ProgressBarStyle`</a>. Default: `new(86, 156, 214, 255)`.
 
 <h3 id="defaultresizeareahalfwidth"><code>DefaultResizeAreaHalfWidth</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultResizeAreaHalfWidth in context on the styles page" aria-label="DefaultResizeAreaHalfWidth in context on the styles page">🠆</a></h3>
 
@@ -54,6 +130,62 @@ A static class. The [styles page](/docs/ui-styles/#default-settings) shows it in
 <h3 id="defaultresizecontourhalfwidth"><code>DefaultResizeContourHalfWidth</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultResizeContourHalfWidth in context on the styles page" aria-label="DefaultResizeContourHalfWidth in context on the styles page">🠆</a></h3>
 
 `int` · Static. On use. Half the width of the contour drawn while an element is resized, in units. Default: `1`.
+
+<h3 id="defaultscrollbarsbuttonscolor"><code>DefaultScrollBarsButtonsColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultScrollBarsButtonsColor in context on the styles page" aria-label="DefaultScrollBarsButtonsColor in context on the styles page">🠆</a></h3>
+
+`Color` · Static. The color of the end buttons in the default `ScrollBarsStyle` of <a class="ref" href="/docs/ui-glossary/types/scrollable-container-style/">`ScrollableContainerStyle`</a>. Default: `new(190, 190, 200, 255)`.
+
+<h3 id="defaultscrollbarsthickness"><code>DefaultScrollBarsThickness</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultScrollBarsThickness in context on the styles page" aria-label="DefaultScrollBarsThickness in context on the styles page">🠆</a></h3>
+
+`int` · Static. The `ScrollBarsThickness` default of <a class="ref" href="/docs/ui-glossary/types/scrollable-container-style/">`ScrollableContainerStyle`</a> and <a class="ref" href="/docs/ui-glossary/types/rich-text-box-style/">`RichTextBoxStyle`</a>, in units. Default: `12`.
+
+<h3 id="defaultscrollbarsthumbcolor"><code>DefaultScrollBarsThumbColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultScrollBarsThumbColor in context on the styles page" aria-label="DefaultScrollBarsThumbColor in context on the styles page">🠆</a></h3>
+
+`Color` · Static. The thumb color in the default `ScrollBarsStyle` of <a class="ref" href="/docs/ui-glossary/types/scrollable-container-style/">`ScrollableContainerStyle`</a>. Default: `new(150, 150, 160, 255)`.
+
+<h3 id="defaultscrollbarstrackcolor"><code>DefaultScrollBarsTrackColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultScrollBarsTrackColor in context on the styles page" aria-label="DefaultScrollBarsTrackColor in context on the styles page">🠆</a></h3>
+
+`Color` · Static. The color of both track halves in the default `ScrollBarsStyle` of <a class="ref" href="/docs/ui-glossary/types/scrollable-container-style/">`ScrollableContainerStyle`</a>. Default: `new(230, 230, 235, 255)`.
+
+<h3 id="defaultseparatorcolor"><code>DefaultSeparatorColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultSeparatorColor in context on the styles page" aria-label="DefaultSeparatorColor in context on the styles page">🠆</a></h3>
+
+`Color` · Static. The <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> default of every <a class="ref" href="/docs/ui-glossary/elements/separator/">`Separator`</a>, read when a separator is created. Default: `new(150, 150, 160, 255)`.
+
+<h3 id="defaultsliderbuttonscolor"><code>DefaultSliderButtonsColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultSliderButtonsColor in context on the styles page" aria-label="DefaultSliderButtonsColor in context on the styles page">🠆</a></h3>
+
+`Color` · Static. The `ButtonsSolidColor` default of <a class="ref" href="/docs/ui-glossary/types/slider-style/">`SliderStyle`</a>. Default: `new(150, 150, 160, 255)`.
+
+<h3 id="defaultsliderlinedecreasecolor"><code>DefaultSliderLineDecreaseColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultSliderLineDecreaseColor in context on the styles page" aria-label="DefaultSliderLineDecreaseColor in context on the styles page">🠆</a></h3>
+
+`Color` · Static. The `LineDecreaseSolidColor` default of <a class="ref" href="/docs/ui-glossary/types/slider-style/">`SliderStyle`</a>. Default: `new(86, 156, 214, 255)`.
+
+<h3 id="defaultsliderlineincreasecolor"><code>DefaultSliderLineIncreaseColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultSliderLineIncreaseColor in context on the styles page" aria-label="DefaultSliderLineIncreaseColor in context on the styles page">🠆</a></h3>
+
+`Color` · Static. The `LineIncreaseSolidColor` default of <a class="ref" href="/docs/ui-glossary/types/slider-style/">`SliderStyle`</a>. Default: `new(150, 150, 160, 255)`.
+
+<h3 id="defaultsliderthumbcolor"><code>DefaultSliderThumbColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultSliderThumbColor in context on the styles page" aria-label="DefaultSliderThumbColor in context on the styles page">🠆</a></h3>
+
+`Color` · Static. The `ThumbSolidColor` default of <a class="ref" href="/docs/ui-glossary/types/slider-style/">`SliderStyle`</a>. Default: `new(80, 80, 80, 255)`.
+
+<h3 id="defaultsliderthumbminsize"><code>DefaultSliderThumbMinSize</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultSliderThumbMinSize in context on the styles page" aria-label="DefaultSliderThumbMinSize in context on the styles page">🠆</a></h3>
+
+`float` · Static. The `ThumbMinSize` default of <a class="ref" href="/docs/ui-glossary/types/slider-style/">`SliderStyle`</a>, in units. Default: `10`.
+
+<h3 id="defaultslidertickoffset"><code>DefaultSliderTickOffset</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultSliderTickOffset in context on the styles page" aria-label="DefaultSliderTickOffset in context on the styles page">🠆</a></h3>
+
+`int` · Static. The `TickOffset` default of <a class="ref" href="/docs/ui-glossary/types/slider-style/">`SliderStyle`</a>, in units. Default: `2`.
+
+<h3 id="defaultslidertickpassedcolor"><code>DefaultSliderTickPassedColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultSliderTickPassedColor in context on the styles page" aria-label="DefaultSliderTickPassedColor in context on the styles page">🠆</a></h3>
+
+`Color` · Static. The `TickPassedColor` default of <a class="ref" href="/docs/ui-glossary/types/slider-style/">`SliderStyle`</a>. Default: `new(86, 156, 214, 255)`.
+
+<h3 id="defaultslidertickremainingcolor"><code>DefaultSliderTickRemainingColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultSliderTickRemainingColor in context on the styles page" aria-label="DefaultSliderTickRemainingColor in context on the styles page">🠆</a></h3>
+
+`Color` · Static. The `TickRemainingColor` default of <a class="ref" href="/docs/ui-glossary/types/slider-style/">`SliderStyle`</a>. Default: `new(150, 150, 160, 255)`.
+
+<h3 id="defaultsliderticksize"><code>DefaultSliderTickSize</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultSliderTickSize in context on the styles page" aria-label="DefaultSliderTickSize in context on the styles page">🠆</a></h3>
+
+`Point` · Static. The `TickSize` default of <a class="ref" href="/docs/ui-glossary/types/slider-style/">`SliderStyle`</a>, in units. Default: `new(2, 2)`.
 
 <h3 id="defaulttextcolor"><code>DefaultTextColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultTextColor in context on the styles page" aria-label="DefaultTextColor in context on the styles page">🠆</a></h3>
 
@@ -86,6 +218,18 @@ A static class. The [styles page](/docs/ui-styles/#default-settings) shows it in
 <h3 id="defaulttimebetweenrepeatsms"><code>DefaultTimeBetweenRepeatsMs</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultTimeBetweenRepeatsMs in context on the styles page" aria-label="DefaultTimeBetweenRepeatsMs in context on the styles page">🠆</a></h3>
 
 `int` · Static. On use. The <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#timebetweenrepeatsms">`TimeBetweenRepeatsMs`</a> default of every element. Default: `300`.
+
+<h3 id="defaulttooltipbackgroundcolor"><code>DefaultToolTipBackgroundColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultToolTipBackgroundColor in context on the styles page" aria-label="DefaultToolTipBackgroundColor in context on the styles page">🠆</a></h3>
+
+`Color` · Static. The <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> default of <a class="ref" href="/docs/ui-glossary/types/tool-tip-style/">`ToolTipStyle`</a>. Default: `new(255, 255, 225, 255)`.
+
+<h3 id="defaulttooltipmarginfrommousecursor"><code>DefaultToolTipMarginFromMouseCursor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultToolTipMarginFromMouseCursor in context on the styles page" aria-label="DefaultToolTipMarginFromMouseCursor in context on the styles page">🠆</a></h3>
+
+<a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> · Static. The `MarginFromMouseCursor` default of <a class="ref" href="/docs/ui-glossary/types/tool-tip-style/">`ToolTipStyle`</a>, in units. Default: `(14, 14)`.
+
+<h3 id="defaulttreeviewsubitemsshift"><code>DefaultTreeViewSubItemsShift</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultTreeViewSubItemsShift in context on the styles page" aria-label="DefaultTreeViewSubItemsShift in context on the styles page">🠆</a></h3>
+
+<a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> · Static. The `SubItemsShift` default of <a class="ref" href="/docs/ui-glossary/types/tree-view-style/">`TreeViewStyle`</a>: the indent of each level, in units. Default: `(16, 0)`.
 
 <h3 id="defaultwindowbackgroundcolor"><code>DefaultWindowBackgroundColor</code> <a class="ctx" href="/docs/ui-styles/#default-settings" title="DefaultWindowBackgroundColor in context on the styles page" aria-label="DefaultWindowBackgroundColor in context on the styles page">🠆</a></h3>
 

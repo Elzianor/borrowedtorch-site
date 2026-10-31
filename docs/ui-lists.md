@@ -175,14 +175,14 @@ Ctrl and Shift held with these keys work as with clicks in `Multiple` mode.
 | <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#itemssource">`ItemsSource`</a> | `IEnumerable` | The objects to show, one row each. A <code><a href="/docs/ui-glossary/types/bindable-collection/">BindableCollection</a>&lt;T&gt;</code> is followed. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/list-box/#itemstemplate">`ItemsTemplate`</a> | <a class="ref" href="/docs/ui-glossary/types/i-items-template/">`IItemsTemplate`</a> | Makes the element of each <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#itemssource">`ItemsSource`</a> object; a label with the object's text when none is set. Changing it builds the rows again. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#usedualcolors">`UseDualColors`</a> | `bool` | Alternates the background of unselected rows: <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#normalitemcolor">`NormalItemColor`</a> for even rows, <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#alternativeitemcolor">`AlternativeItemColor`</a> for odd ones, counted without the separators (a separator row lies on the normal color). |
-| <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#normalitemcolor">`NormalItemColor`</a> | `Color` | The background of an unselected row (of the even rows with <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#usedualcolors">`UseDualColors`</a>). |
-| <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#alternativeitemcolor">`AlternativeItemColor`</a> | `Color` | The background of the odd unselected rows while <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#usedualcolors">`UseDualColors`</a> is set. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#hoveritemcolor">`HoverItemColor`</a> | `Color?` | The background of the row under the mouse. When `null` the row keeps its normal or selected color. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#presseditemcolor">`PressedItemColor`</a> | `Color?` | The background of a row while the left button is pressed on it. When `null` it doesn't change. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#selecteditemcolor">`SelectedItemColor`</a> | `Color?` | The background of a selected row. When `null` a selected row keeps the color it had. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#scrollablecontainerstyle">`ScrollableContainerStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/scrollable-container-style/">`ScrollableContainerStyle`</a> | The style of the [scrollable container](/docs/ui-layout/#scrollablecontainer) around the rows, for example its scroll bars and their thickness. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#normalitemcolor">`NormalItemColor`</a> | `Color` | The background of an unselected row (of the even rows with <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#usedualcolors">`UseDualColors`</a>). Transparent unless set, so the rows lie on the list's background. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#alternativeitemcolor">`AlternativeItemColor`</a> | `Color` | The background of the odd unselected rows while <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#usedualcolors">`UseDualColors`</a> is set. `(240, 240, 245)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultlistboxalternativeitemcolor">`DefaultSettings.DefaultListBoxAlternativeItemColor`</a>). |
+| <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#hoveritemcolor">`HoverItemColor`</a> | `Color?` | The background of the row under the mouse. When `null` the row keeps its normal or selected color. `(220, 232, 245)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultlistboxhoveritemcolor">`DefaultSettings.DefaultListBoxHoverItemColor`</a>). |
+| <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#presseditemcolor">`PressedItemColor`</a> | `Color?` | The background of a row while the left button is pressed on it. When `null` it doesn't change. `(160, 190, 225)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultlistboxpresseditemcolor">`DefaultSettings.DefaultListBoxPressedItemColor`</a>). |
+| <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#selecteditemcolor">`SelectedItemColor`</a> | `Color?` | The background of a selected row. When `null` a selected row keeps the color it had. `(190, 215, 240)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultlistboxselecteditemcolor">`DefaultSettings.DefaultListBoxSelectedItemColor`</a>). |
+| <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#scrollablecontainerstyle">`ScrollableContainerStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/scrollable-container-style/">`ScrollableContainerStyle`</a> | The style of the [scrollable container](/docs/ui-layout/#scrollablecontainer) around the rows, for example its scroll bars and their thickness. Unless set, the container has its own defaults: a scroll bar wherever the rows need one, 12 units thick. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#virtualizationmode">`VirtualizationMode`</a> | <a class="ref" href="/docs/ui-glossary/types/list-box-virtualization-mode/">`ListBoxVirtualizationMode`</a> | Whether every row has an element (`None`, the default) or only the rows around the view (`Fixed`). |
-| <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#itemheight">`ItemHeight`</a> | `int` | The height of every row in `Fixed` mode, in units. `Fixed` mode has no effect while it is 0 or less. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#itemheight">`ItemHeight`</a> | `int` | The height of every row in `Fixed` mode, in units. 24 unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultlistboxitemheight">`DefaultSettings.DefaultListBoxItemHeight`</a>); `Fixed` mode has no effect while it is 0 or less. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/list-box/#rowsperpage">`RowsPerPage`</a> | `int` | Read-only. The number of rows that fit the view, at least one: the view's height divided by <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#itemheight">`ItemHeight`</a> in `Fixed` mode, by the average row height otherwise. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/list-box/#contentwidth">`ContentWidth`</a> | `int` | Read-only. The width of the widest row content, in units (in `Fixed` mode the widest seen since the rows were cleared). |
 | <a class="ref prop" href="/docs/ui-glossary/elements/list-box/#contentheight">`ContentHeight`</a> | `int` | Read-only. The height of all the shown rows together, in units (<a class="ref prop" href="/docs/ui-glossary/elements/list-box/#count">`Count`</a> times <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#itemheight">`ItemHeight`</a> in `Fixed` mode). |
@@ -236,7 +236,8 @@ Ctrl and Shift held with these keys work as with clicks in `Multiple` mode.
 | <a class="ref" href="/docs/ui-glossary/types/list-box-virtualization-mode/#fixed">`Fixed`</a> | Every row is <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#itemheight">`ItemHeight`</a> high and only the rows in view, plus a small buffer, have elements, reused while scrolling. |
 
 Style class: <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> (the same properties except <span class="dp">`SelectedItem`</span>, <span class="dp">`SelectedIndex`</span> and <span class="dp">`ItemsSource`</span>, see
-[styles](/docs/ui-styles/)).
+[styles](/docs/ui-styles/)). Its defaults give the list a white background (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultlistboxbackgroundcolor">`DefaultSettings.DefaultListBoxBackgroundColor`</a>)
+and rows lit under the mouse, while pressed and when selected, and set <a class="ref dp" href="/docs/ui-glossary/elements/list-box/#itemheight">`ItemHeight`</a> to 24.
 
 ### ListBoxItem
 
@@ -318,7 +319,7 @@ already). A selection made in code closes an open list as well.
 | <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#selectedindex">`SelectedIndex`</a> | `int` | The index of the selected row, `-1` when nothing is selected. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/combo-box/#selectedsource">`SelectedSource`</a> | `object` | Read-only. The <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#itemssource">`ItemsSource`</a> object of the selected row, `null` without one. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#selectionstyle">`SelectionStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> | The style of the image that shows the selected row. The image is only as large as the row's content, so a background color here lies just behind the chosen value; the combo box's own <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#backgroundcolor">`BackgroundColor`</a> colors the whole field. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#togglebuttonstyle">`ToggleButtonStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/button-style/">`ButtonStyle`</a> | The style of the [button](/docs/ui-controls/#button) that opens and closes the list, for example its width and text. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#togglebuttonstyle">`ToggleButtonStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/button-style/">`ButtonStyle`</a> | The style of the [button](/docs/ui-controls/#button) that opens and closes the list, for example its width and text. Unless set, a button 24 units wide (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultcomboboxtogglebuttonwidth">`DefaultSettings.DefaultComboBoxToggleButtonWidth`</a>) with the text `v`, in the colors of the other buttons. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#listboxstyle">`ListBoxStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/list-box-style/">`ListBoxStyle`</a> | The style of the drop-down list, for example its row colors. |
 
 ### ComboBox events
@@ -350,7 +351,8 @@ already). A selection made in code closes an open list as well.
 | <a class="ref method" href="/docs/ui-glossary/elements/combo-box/#selectnext">`SelectNext()`</a> | Selects the next row (separators passed over). Does nothing without a selection. |
 
 Style class: <a class="ref" href="/docs/ui-glossary/types/combo-box-style/">`ComboBoxStyle`</a> (<a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#selectionstyle">`SelectionStyle`</a>, <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#togglebuttonstyle">`ToggleButtonStyle`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/combo-box/#listboxstyle">`ListBoxStyle`</a>, see
-[styles](/docs/ui-styles/)).
+[styles](/docs/ui-styles/)). Its defaults give it a white background (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultcomboboxbackgroundcolor">`DefaultSettings.DefaultComboBoxBackgroundColor`</a>) and a
+toggle button 24 units wide with the text `v`; the toggle button and the list take the colors of every button and list.
 
 ## TreeView
 
@@ -464,7 +466,7 @@ fit. The tree view sets the list's alignments itself, so a list style aligned to
 | <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#expandiconstyle">`ExpandIconStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> | The style of the expand icon of the items, for example its size and margin. By default an 8 by 8 block, centered, with a margin of 4 before and 6 after it. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#foldediconcolor">`FoldedIconColor`</a> | `Color` | The color of the icon of a collapsed branch, when the tree view has no textures. By default `(150, 150, 160)`. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#expandediconcolor">`ExpandedIconColor`</a> | `Color` | The color of the icon of an expanded branch, when the tree view has no textures. By default `(90, 90, 100)`. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#subitemsshift">`SubItemsShift`</a> | <a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> | How far each level is indented (`Left`) and the space above every row but the first (`Top`), in units. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#subitemsshift">`SubItemsShift`</a> | <a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> | How far each level is indented (`Left`) and the space above every row but the first (`Top`), in units. `(16, 0)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaulttreeviewsubitemsshift">`DefaultSettings.DefaultTreeViewSubItemsShift`</a>). |
 
 ### TreeView events
 
@@ -494,7 +496,8 @@ Items the tree view made (around your elements, for texts, or for source objects
 removed; your own <a class="ref" href="/docs/ui-glossary/elements/tree-view-item/">`TreeViewItem`</a>s are let go with their branches and can be added again.
 
 Style class: <a class="ref" href="/docs/ui-glossary/types/tree-view-style/">`TreeViewStyle`</a> (the same properties except <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#selecteditem">`SelectedItem`</a> and <a class="ref dp" href="/docs/ui-glossary/elements/tree-view/#itemssource">`ItemsSource`</a>, see
-[styles](/docs/ui-styles/)).
+[styles](/docs/ui-styles/)). Its defaults indent each level by 16 units
+(<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaulttreeviewsubitemsshift">`DefaultSettings.DefaultTreeViewSubItemsShift`</a>); its list takes the colors of every list.
 
 ### TreeViewItem
 

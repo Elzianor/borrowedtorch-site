@@ -31,7 +31,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <h3 id="hovercolor"><span class="dp"><code>HoverColor</code></span> <a class="ctx" href="/docs/ui-controls/#button-properties" title="HoverColor in context on the controls page" aria-label="HoverColor in context on the controls page">🠆</a></h3>
 
-`Color` · The solid color while the mouse is over the button.
+`Color` · The solid color while the mouse is over the button. `(200, 220, 240)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultbuttonhovercolor">`DefaultSettings.DefaultButtonHoverColor`</a>).
 
 <h3 id="mousecursorsset"><span class="prop"><code>MouseCursorsSet</code></span> <a class="ctx" href="/docs/ui-base-element/#genericstyleandmousecursorsdata-properties" title="MouseCursorsSet in context on the base element page" aria-label="MouseCursorsSet in context on the base element page">🠆</a></h3>
 
@@ -43,11 +43,11 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <h3 id="normalcolor"><span class="dp"><code>NormalColor</code></span> <a class="ctx" href="/docs/ui-controls/#button-properties" title="NormalColor in context on the controls page" aria-label="NormalColor in context on the controls page">🠆</a></h3>
 
-`Color` · The solid color while nothing happens.
+`Color` · The solid color while nothing happens. `(225, 225, 230)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultbuttonnormalcolor">`DefaultSettings.DefaultButtonNormalColor`</a>).
 
 <h3 id="pressedcolor"><span class="dp"><code>PressedColor</code></span> <a class="ctx" href="/docs/ui-controls/#button-properties" title="PressedColor in context on the controls page" aria-label="PressedColor in context on the controls page">🠆</a></h3>
 
-`Color` · The solid color while the button is pressed.
+`Color` · The solid color while the button is pressed. `(160, 190, 225)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultbuttonpressedcolor">`DefaultSettings.DefaultButtonPressedColor`</a>).
 
 <h3 id="styleoverride"><span class="prop"><code>StyleOverride</code></span> <a class="ctx" href="/docs/ui-base-element/#genericstyleandmousecursorsdata-properties" title="StyleOverride in context on the base element page" aria-label="StyleOverride in context on the base element page">🠆</a></h3>
 
@@ -63,7 +63,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <h3 id="toggledcolor"><span class="dp"><code>ToggledColor</code></span> <a class="ctx" href="/docs/ui-controls/#button-properties" title="ToggledColor in context on the controls page" aria-label="ToggledColor in context on the controls page">🠆</a></h3>
 
-`Color` · The solid color of a `Toggle` button that is on.
+`Color` · The solid color of a `Toggle` button that is on. `(86, 156, 214)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultbuttontoggledcolor">`DefaultSettings.DefaultButtonToggledColor`</a>).
 
 <h3 id="toggledon"><span class="dp"><code>ToggledOn</code></span> <a class="ctx" href="/docs/ui-controls/#button-properties" title="ToggledOn in context on the controls page" aria-label="ToggledOn in context on the controls page">🠆</a></h3>
 

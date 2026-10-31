@@ -17,6 +17,10 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> · The element inside the frame. A style can't set it.
 
+<h3 id="contentareamargin"><span class="dp"><code>ContentAreaMargin</code></span> <a class="ctx" href="/docs/ui-layout/#border-properties" title="ContentAreaMargin in context on the layout page" aria-label="ContentAreaMargin in context on the layout page">🠆</a></h3>
+
+<code><a href="/docs/ui-glossary/types/margin/">Margin</a>?</code> · The inset of the content area (the background and the content) from the border's outer edges, used instead of <a class="ref dp" href="/docs/ui-glossary/elements/border/#thickness">`Thickness`</a>. Smaller than the thickness, it lets the background reach under the frame's transparent pixels. Null (the default) insets the content area by the thickness. Called `Padding` before 2.0.0; for space between the frame and the content, give the content a <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#margin">`Margin`</a>.
+
 <h3 id="generalmousecursorsset"><span class="prop"><code>GeneralMouseCursorsSet</code></span> <a class="ctx" href="/docs/ui-base-element/#genericstyleandmousecursorsdata-properties" title="GeneralMouseCursorsSet in context on the base element page" aria-label="GeneralMouseCursorsSet in context on the base element page">🠆</a></h3>
 
 <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> · Static. The cursors of every element of this style type; null (the default) falls back to <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#defaultmousecursorsset">`DefaultMouseCursorsSet`</a>.
@@ -33,17 +37,13 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a> · The cursors of this element only, passed on to its parts that have none of their own.
 
-<h3 id="padding"><span class="dp"><code>Padding</code></span> <a class="ctx" href="/docs/ui-layout/#border-properties" title="Padding in context on the layout page" aria-label="Padding in context on the layout page">🠆</a></h3>
-
-<code><a href="/docs/ui-glossary/types/margin/">Margin</a>?</code> · The inset of the content from the border's edges, used instead of <a class="ref dp" href="/docs/ui-glossary/elements/border/#thickness">`Thickness`</a>. Null (the default) insets the content by the thickness.
-
 <h3 id="styleoverride"><span class="prop"><code>StyleOverride</code></span> <a class="ctx" href="/docs/ui-base-element/#genericstyleandmousecursorsdata-properties" title="StyleOverride in context on the base element page" aria-label="StyleOverride in context on the base element page">🠆</a></h3>
 
 <a class="ref" href="/docs/ui-glossary/types/border-style/">`BorderStyle`</a> · A style for this element only, applied over the general style. Setting it to null takes its values back out.
 
 <h3 id="thickness"><span class="dp"><code>Thickness</code></span> <a class="ctx" href="/docs/ui-layout/#border-properties" title="Thickness in context on the layout page" aria-label="Thickness in context on the layout page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> · The width of the frame per side (`Left`, `Top`, `Right`, `Bottom`), in units.
+<a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> · The width of the frame per side (`Left`, `Top`, `Right`, `Bottom`), in units. 1 on every side unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultborderthickness">`DefaultSettings.DefaultBorderThickness`</a>).
 
 ## Methods
 

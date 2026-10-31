@@ -434,7 +434,7 @@ With <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#character
 | <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#textselectioncolor">`TextSelectionColor`</a> | `Color` | The color behind selected text. Default <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaulttextselectioncolor">`DefaultSettings.DefaultTextSelectionColor`</a> (light blue). |
 | <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#richoutlinethickness">`RichOutlineThickness`</a> | `float` | How far the outline of an `[o=n]` tag reaches around the letters, in units. Default 1. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#scrollbars">`ScrollBars`</a> | <a class="ref" href="/docs/ui-glossary/types/scroll-bars/">`ScrollBars`</a> | Which scroll bars the box may show when its text is larger than the box. Default `None`. |
-| <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#scrollbarsthickness">`ScrollBarsThickness`</a> | `int` | The thickness of the scroll bars in units. Default 0. |
+| <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#scrollbarsthickness">`ScrollBarsThickness`</a> | `int` | The thickness of the scroll bars in units. Default 12 (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultscrollbarsthickness">`DefaultSettings.DefaultScrollBarsThickness`</a>). |
 | <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#scrollbarsstyle">`ScrollBarsStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/slider-style/">`SliderStyle`</a> | The style of the scroll bars. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#backgroundstyle">`BackgroundStyle`</a> | <a class="ref" href="/docs/ui-glossary/types/image-style/">`ImageStyle`</a> | The style of the image the box draws behind its text. |
 | <a class="ref dp" href="/docs/ui-glossary/elements/rich-text-box/#characterprintdelayms">`CharacterPrintDelayMs`</a> | `int` | The time between two characters printed by <a class="ref method" href="/docs/ui-glossary/elements/rich-text-box/#animatetext">`AnimateText`</a>, in milliseconds. Negative values become 0; 0 sets the text at once. |
@@ -494,7 +494,7 @@ Positions count the characters of <a class="ref dp" href="/docs/ui-glossary/elem
 
 Style class: <a class="ref" href="/docs/ui-glossary/types/rich-text-box-style/">`RichTextBoxStyle`</a> (the same properties, see [styles](/docs/ui-styles/)). Its defaults are an empty
 <span class="dp">`Text`</span>, <span class="dp">`FontSize`</span> 14, <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#foregroundcolor">`ForegroundColor`</a> <a class="ref" href="/docs/ui-glossary/types/default-settings/#defaulttextcolor">`DefaultSettings.DefaultTextColor`</a> (black), the caret and selection settings
-from <a class="ref" href="/docs/ui-glossary/types/default-settings/">`DefaultSettings`</a>, and <a class="ref" href="/docs/ui-glossary/types/inherit-state/#fromchildren">`InheritState.FromChildren`</a>.
+and the scroll bar thickness from <a class="ref" href="/docs/ui-glossary/types/default-settings/">`DefaultSettings`</a>, and <a class="ref" href="/docs/ui-glossary/types/inherit-state/#fromchildren">`InheritState.FromChildren`</a>.
 
 ## Fonts
 

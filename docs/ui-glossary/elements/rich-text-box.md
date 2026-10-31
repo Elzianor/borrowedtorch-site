@@ -91,7 +91,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <h3 id="scrollbarsthickness"><span class="dp"><code>ScrollBarsThickness</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-properties" title="ScrollBarsThickness in context on the text page" aria-label="ScrollBarsThickness in context on the text page">🠆</a></h3>
 
-`int` · The thickness of the scroll bars in units. Default 0.
+`int` · The thickness of the scroll bars in units. Default 12 (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultscrollbarsthickness">`DefaultSettings.DefaultScrollBarsThickness`</a>).
 
 <h3 id="scrolltoendduringtextanimation"><span class="dp"><code>ScrollToEndDuringTextAnimation</code></span> <a class="ctx" href="/docs/ui-text/#richtextbox-properties" title="ScrollToEndDuringTextAnimation in context on the text page" aria-label="ScrollToEndDuringTextAnimation in context on the text page">🠆</a></h3>
 

@@ -5,7 +5,7 @@ title: "Glossary: BorderStyle"
 description: "The members of BorderStyle, in alphabetical order."
 ---
 
-The style class of [`Border`](/docs/ui-layout/#border): the properties a style can set on it. Leaves out `Content`. Framework defaults: none beyond the base ones.
+The style class of [`Border`](/docs/ui-layout/#border): the properties a style can set on it. Leaves out `Content`. Framework defaults: `Thickness` `DefaultBorderThickness` (1) and <a class="ref prop" href="/docs/ui-glossary/types/base-style/#foregroundcolor">`ForegroundColor`</a> `DefaultBorderColor`: a frame that shows, around a clear content area.
 
 A class deriving from [`BaseStyle`](/docs/ui-glossary/types/base-style/). The [styles page](/docs/ui-styles/#style-classes) shows it in context.
 
@@ -13,13 +13,13 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 ## Properties
 
-<h3 id="padding"><span class="prop"><code>Padding</code></span> <a class="ctx" href="/docs/ui-layout/#border-properties" title="Padding in context on the layout page" aria-label="Padding in context on the layout page">🠆</a></h3>
+<h3 id="contentareamargin"><span class="prop"><code>ContentAreaMargin</code></span> <a class="ctx" href="/docs/ui-layout/#border-properties" title="ContentAreaMargin in context on the layout page" aria-label="ContentAreaMargin in context on the layout page">🠆</a></h3>
 
-<code><a href="/docs/ui-glossary/types/margin/">Margin</a>?</code> · The inset of the content from the border's edges, used instead of <a class="ref dp" href="/docs/ui-glossary/elements/border/#thickness">`Thickness`</a>. Null (the default) insets the content by the thickness.
+<code><a href="/docs/ui-glossary/types/margin/">Margin</a>?</code> · The inset of the content area (the background and the content) from the border's outer edges, used instead of <a class="ref dp" href="/docs/ui-glossary/elements/border/#thickness">`Thickness`</a>. Smaller than the thickness, it lets the background reach under the frame's transparent pixels. Null (the default) insets the content area by the thickness. Called `Padding` before 2.0.0; for space between the frame and the content, give the content a <a class="ref dp" href="/docs/ui-glossary/elements/base-element/#margin">`Margin`</a>.
 
 <h3 id="thickness"><span class="prop"><code>Thickness</code></span> <a class="ctx" href="/docs/ui-layout/#border-properties" title="Thickness in context on the layout page" aria-label="Thickness in context on the layout page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> · The width of the frame per side (`Left`, `Top`, `Right`, `Bottom`), in units.
+<a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> · The width of the frame per side (`Left`, `Top`, `Right`, `Bottom`), in units. 1 on every side unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultborderthickness">`DefaultSettings.DefaultBorderThickness`</a>).
 
 ## Methods
 

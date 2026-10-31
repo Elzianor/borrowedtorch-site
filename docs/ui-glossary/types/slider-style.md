@@ -5,7 +5,7 @@ title: "Glossary: SliderStyle"
 description: "The members of SliderStyle, in alphabetical order."
 ---
 
-The style class of [`Slider`](/docs/ui-controls/#slider): the properties a style can set on it. None. Framework defaults: <a class="ref" href="/docs/ui-glossary/types/inherit-state/#fromchildren">`InheritState.FromChildren`</a>, <a class="ref prop" href="/docs/ui-glossary/types/slider-style/#thumbscale">`ThumbScale`</a> (1, 1).
+The style class of [`Slider`](/docs/ui-controls/#slider): the properties a style can set on it. None. Framework defaults: <a class="ref" href="/docs/ui-glossary/types/inherit-state/#fromchildren">`InheritState.FromChildren`</a>, `ThumbScale` (1, 1), `Max` 1, and the solid colors, tick colors, `TickSize`, `TickOffset` and `ThumbMinSize` from their `DefaultSlider` settings.
 
 A class deriving from [`BaseStyle`](/docs/ui-glossary/types/base-style/). The [styles page](/docs/ui-styles/#style-classes) shows it in context.
 
@@ -15,23 +15,23 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="buttonssolidcolor"><span class="prop"><code>ButtonsSolidColor</code></span> <a class="ctx" href="/docs/ui-controls/#slider-properties" title="ButtonsSolidColor in context on the controls page" aria-label="ButtonsSolidColor in context on the controls page">🠆</a></h3>
 
-`Color` · The color of the end buttons and caps, without textures.
+`Color` · The color of the end buttons and caps, without textures. `(150, 150, 160)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultsliderbuttonscolor">`DefaultSettings.DefaultSliderButtonsColor`</a>).
 
 <h3 id="linedecreasesolidcolor"><span class="prop"><code>LineDecreaseSolidColor</code></span> <a class="ctx" href="/docs/ui-controls/#slider-properties" title="LineDecreaseSolidColor in context on the controls page" aria-label="LineDecreaseSolidColor in context on the controls page">🠆</a></h3>
 
-`Color` · The color of the track between the start and the thumb, without textures.
+`Color` · The color of the track between the start and the thumb, without textures. `(86, 156, 214)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultsliderlinedecreasecolor">`DefaultSettings.DefaultSliderLineDecreaseColor`</a>).
 
 <h3 id="lineincreasesolidcolor"><span class="prop"><code>LineIncreaseSolidColor</code></span> <a class="ctx" href="/docs/ui-controls/#slider-properties" title="LineIncreaseSolidColor in context on the controls page" aria-label="LineIncreaseSolidColor in context on the controls page">🠆</a></h3>
 
-`Color` · The color of the track between the thumb and the end, without textures.
+`Color` · The color of the track between the thumb and the end, without textures. `(150, 150, 160)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultsliderlineincreasecolor">`DefaultSettings.DefaultSliderLineIncreaseColor`</a>).
 
 <h3 id="max"><span class="prop"><code>Max</code></span> <a class="ctx" href="/docs/ui-controls/#slider-properties" title="Max in context on the controls page" aria-label="Max in context on the controls page">🠆</a></h3>
 
-`float` · The largest value. Setting it below <a class="ref dp" href="/docs/ui-glossary/elements/slider/#min">`Min`</a> moves <a class="ref dp" href="/docs/ui-glossary/elements/slider/#min">`Min`</a> along.
+`float` · The largest value. Setting it below <a class="ref dp" href="/docs/ui-glossary/elements/slider/#min">`Min`</a> moves <a class="ref dp" href="/docs/ui-glossary/elements/slider/#min">`Min`</a> along. 1 unless set.
 
 <h3 id="min"><span class="prop"><code>Min</code></span> <a class="ctx" href="/docs/ui-controls/#slider-properties" title="Min in context on the controls page" aria-label="Min in context on the controls page">🠆</a></h3>
 
-`float` · The smallest value. Setting it above <a class="ref dp" href="/docs/ui-glossary/elements/slider/#max">`Max`</a> moves <a class="ref dp" href="/docs/ui-glossary/elements/slider/#max">`Max`</a> along.
+`float` · The smallest value. Setting it above <a class="ref dp" href="/docs/ui-glossary/elements/slider/#max">`Max`</a> moves <a class="ref dp" href="/docs/ui-glossary/elements/slider/#max">`Max`</a> along. 0 unless set.
 
 <h3 id="movetopoint"><span class="prop"><code>MoveToPoint</code></span> <a class="ctx" href="/docs/ui-controls/#slider-properties" title="MoveToPoint in context on the controls page" aria-label="MoveToPoint in context on the controls page">🠆</a></h3>
 
@@ -47,7 +47,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="thumbminsize"><span class="prop"><code>ThumbMinSize</code></span> <a class="ctx" href="/docs/ui-controls/#slider-properties" title="ThumbMinSize in context on the controls page" aria-label="ThumbMinSize in context on the controls page">🠆</a></h3>
 
-`float` · The smallest length of the thumb along the track, in units. It keeps a scroll bar's thumb usable over long content.
+`float` · The smallest length of the thumb along the track, in units. It keeps a scroll bar's thumb usable over long content. 10 unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultsliderthumbminsize">`DefaultSettings.DefaultSliderThumbMinSize`</a>).
 
 <h3 id="thumbscale"><span class="prop"><code>ThumbScale</code></span> <a class="ctx" href="/docs/ui-controls/#slider-properties" title="ThumbScale in context on the controls page" aria-label="ThumbScale in context on the controls page">🠆</a></h3>
 
@@ -55,7 +55,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="thumbsolidcolor"><span class="prop"><code>ThumbSolidColor</code></span> <a class="ctx" href="/docs/ui-controls/#slider-properties" title="ThumbSolidColor in context on the controls page" aria-label="ThumbSolidColor in context on the controls page">🠆</a></h3>
 
-`Color` · The color of the thumb, without textures.
+`Color` · The color of the thumb, without textures. `(80, 80, 80)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultsliderthumbcolor">`DefaultSettings.DefaultSliderThumbColor`</a>).
 
 <h3 id="tick"><span class="prop"><code>Tick</code></span> <a class="ctx" href="/docs/ui-controls/#slider-properties" title="Tick in context on the controls page" aria-label="Tick in context on the controls page">🠆</a></h3>
 
@@ -63,11 +63,11 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="tickoffset"><span class="prop"><code>TickOffset</code></span> <a class="ctx" href="/docs/ui-controls/#slider-properties" title="TickOffset in context on the controls page" aria-label="TickOffset in context on the controls page">🠆</a></h3>
 
-`int` · The gap between the slider's edge and the tick marks, in units.
+`int` · The gap between the slider's edge and the tick marks, in units. 2 unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultslidertickoffset">`DefaultSettings.DefaultSliderTickOffset`</a>).
 
 <h3 id="tickpassedcolor"><span class="prop"><code>TickPassedColor</code></span> <a class="ctx" href="/docs/ui-controls/#slider-properties" title="TickPassedColor in context on the controls page" aria-label="TickPassedColor in context on the controls page">🠆</a></h3>
 
-`Color` · The color of the tick marks at or below the value.
+`Color` · The color of the tick marks at or below the value. `(86, 156, 214)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultslidertickpassedcolor">`DefaultSettings.DefaultSliderTickPassedColor`</a>).
 
 <h3 id="tickplacement"><span class="prop"><code>TickPlacement</code></span> <a class="ctx" href="/docs/ui-controls/#slider-properties" title="TickPlacement in context on the controls page" aria-label="TickPlacement in context on the controls page">🠆</a></h3>
 
@@ -75,11 +75,11 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="tickremainingcolor"><span class="prop"><code>TickRemainingColor</code></span> <a class="ctx" href="/docs/ui-controls/#slider-properties" title="TickRemainingColor in context on the controls page" aria-label="TickRemainingColor in context on the controls page">🠆</a></h3>
 
-`Color` · The color of the tick marks above the value.
+`Color` · The color of the tick marks above the value. `(150, 150, 160)` unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultslidertickremainingcolor">`DefaultSettings.DefaultSliderTickRemainingColor`</a>).
 
 <h3 id="ticksize"><span class="prop"><code>TickSize</code></span> <a class="ctx" href="/docs/ui-controls/#slider-properties" title="TickSize in context on the controls page" aria-label="TickSize in context on the controls page">🠆</a></h3>
 
-`Point` · The width and height of a tick mark, in units.
+`Point` · The width and height of a tick mark, in units. 2 by 2 unless set (<a class="ref" href="/docs/ui-glossary/types/default-settings/#defaultsliderticksize">`DefaultSettings.DefaultSliderTickSize`</a>).
 
 <h3 id="type"><span class="prop"><code>Type</code></span> <a class="ctx" href="/docs/ui-controls/#slider-properties" title="Type in context on the controls page" aria-label="Type in context on the controls page">🠆</a></h3>
 
