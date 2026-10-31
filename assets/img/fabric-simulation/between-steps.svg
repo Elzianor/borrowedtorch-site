@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 230" width="640" height="230" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="13" text-anchor="middle">
+  <!-- the time -->
+  <line x1="120" y1="26" x2="120" y2="212" stroke="#a8834a" stroke-opacity=".25" stroke-dasharray="3 4"/>
+  <text x="120" y="18" fill="#8a7a63" font-size="11">0 ms</text>
+  <line x1="190" y1="26" x2="190" y2="212" stroke="#a8834a" stroke-opacity=".25" stroke-dasharray="3 4"/>
+  <text x="190" y="18" fill="#8a7a63" font-size="11">5</text>
+  <line x1="260" y1="26" x2="260" y2="212" stroke="#a8834a" stroke-opacity=".25" stroke-dasharray="3 4"/>
+  <text x="260" y="18" fill="#8a7a63" font-size="11">10</text>
+  <line x1="330" y1="26" x2="330" y2="212" stroke="#a8834a" stroke-opacity=".25" stroke-dasharray="3 4"/>
+  <text x="330" y="18" fill="#8a7a63" font-size="11">15</text>
+  <line x1="400" y1="26" x2="400" y2="212" stroke="#a8834a" stroke-opacity=".25" stroke-dasharray="3 4"/>
+  <text x="400" y="18" fill="#8a7a63" font-size="11">20</text>
+  <line x1="470" y1="26" x2="470" y2="212" stroke="#a8834a" stroke-opacity=".25" stroke-dasharray="3 4"/>
+  <text x="470" y="18" fill="#8a7a63" font-size="11">25</text>
+  <line x1="540" y1="26" x2="540" y2="212" stroke="#a8834a" stroke-opacity=".25" stroke-dasharray="3 4"/>
+  <text x="540" y="18" fill="#8a7a63" font-size="11">30</text>
+  <line x1="610" y1="26" x2="610" y2="212" stroke="#a8834a" stroke-opacity=".25" stroke-dasharray="3 4"/>
+  <text x="610" y="18" fill="#8a7a63" font-size="11">35 ms</text>
+  <!-- the steps, every 8.3 ms -->
+  <text x="16" y="50" fill="#d9cbb4" text-anchor="start">Steps</text>
+  <text x="16" y="64" fill="#8a7a63" font-size="11" text-anchor="start">120 a second</text>
+  <rect x="115" y="38" width="10" height="20" rx="3" fill="#f28c28" fill-opacity=".85"/>
+  <rect x="231.7" y="38" width="10" height="20" rx="3" fill="#f28c28" fill-opacity=".85"/>
+  <rect x="348.3" y="38" width="10" height="20" rx="3" fill="#f28c28" fill-opacity=".85"/>
+  <rect x="465" y="38" width="10" height="20" rx="3" fill="#f28c28" fill-opacity=".85"/>
+  <rect x="581.7" y="38" width="10" height="20" rx="3" fill="#f28c28" fill-opacity=".85"/>
+  <!-- the frames, every 6.9 ms -->
+  <text x="16" y="96" fill="#d9cbb4" text-anchor="start">Frames</text>
+  <text x="16" y="110" fill="#8a7a63" font-size="11" text-anchor="start">144 a second</text>
+  <rect x="116" y="84" width="8" height="20" rx="3" fill="#e9c27a" fill-opacity=".85"/>
+  <rect x="213.2" y="84" width="8" height="20" rx="3" fill="#e9c27a" fill-opacity=".85"/>
+  <rect x="310.4" y="84" width="8" height="20" rx="3" fill="#e9c27a" fill-opacity=".85"/>
+  <rect x="407.7" y="84" width="8" height="20" rx="3" fill="#e9c27a" fill-opacity=".85"/>
+  <rect x="504.9" y="84" width="8" height="20" rx="3" fill="#e9c27a" fill-opacity=".85"/>
+  <rect x="602.1" y="84" width="8" height="20" rx="3" fill="#e9c27a" fill-opacity=".85"/>
+  <!-- drawn at the latest step: each frame trails by what its last step left over -->
+  <text x="16" y="142" fill="#d9cbb4" text-anchor="start">Latest step</text>
+  <text x="16" y="156" fill="#8a7a63" font-size="11" text-anchor="start">uneven</text>
+  <rect x="120" y="134" width="97.2" height="12" rx="3" fill="#e9c27a" fill-opacity=".25" stroke="#e9c27a" stroke-opacity=".7"/>
+  <text x="168.6" y="164" fill="#8a7a63" font-size="10">6.9</text>
+  <rect x="236.7" y="134" width="77.8" height="12" rx="3" fill="#e9c27a" fill-opacity=".25" stroke="#e9c27a" stroke-opacity=".7"/>
+  <text x="275.6" y="164" fill="#8a7a63" font-size="10">5.6</text>
+  <rect x="353.3" y="134" width="58.3" height="12" rx="3" fill="#e9c27a" fill-opacity=".25" stroke="#e9c27a" stroke-opacity=".7"/>
+  <text x="382.5" y="164" fill="#8a7a63" font-size="10">4.2</text>
+  <rect x="470" y="134" width="38.9" height="12" rx="3" fill="#e9c27a" fill-opacity=".25" stroke="#e9c27a" stroke-opacity=".7"/>
+  <text x="489.4" y="164" fill="#8a7a63" font-size="10">2.8</text>
+  <rect x="586.7" y="134" width="19.4" height="12" rx="3" fill="#e9c27a" fill-opacity=".25" stroke="#e9c27a" stroke-opacity=".7"/>
+  <text x="596.4" y="164" fill="#8a7a63" font-size="10">1.4</text>
+  <!-- drawn between steps: every frame trails by the same time -->
+  <text x="16" y="192" fill="#d9cbb4" text-anchor="start">Between steps</text>
+  <text x="16" y="206" fill="#8a7a63" font-size="11" text-anchor="start">even</text>
+  <rect x="121" y="180" width="95.2" height="9" rx="3" fill="#f28c28" fill-opacity=".25" stroke="#f28c28" stroke-opacity=".8"/>
+  <text x="168.6" y="214" fill="#8a7a63" font-size="10">6.9</text>
+  <rect x="218.2" y="192" width="95.2" height="9" rx="3" fill="#f28c28" fill-opacity=".25" stroke="#f28c28" stroke-opacity=".8"/>
+  <text x="265.8" y="214" fill="#8a7a63" font-size="10">6.9</text>
+  <rect x="315.4" y="180" width="95.2" height="9" rx="3" fill="#f28c28" fill-opacity=".25" stroke="#f28c28" stroke-opacity=".8"/>
+  <text x="363.1" y="214" fill="#8a7a63" font-size="10">6.9</text>
+  <rect x="412.7" y="192" width="95.2" height="9" rx="3" fill="#f28c28" fill-opacity=".25" stroke="#f28c28" stroke-opacity=".8"/>
+  <text x="460.3" y="214" fill="#8a7a63" font-size="10">6.9</text>
+  <rect x="509.9" y="180" width="95.2" height="9" rx="3" fill="#f28c28" fill-opacity=".25" stroke="#f28c28" stroke-opacity=".8"/>
+  <text x="557.5" y="214" fill="#8a7a63" font-size="10">6.9</text>
+</svg>

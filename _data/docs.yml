@@ -13,8 +13,10 @@
 # data file whose entries (each with members) become its subitems: _data/ecs_glossary.yml, _data/audio_glossary.yml,
 # _data/ui_glossary.yml, _data/randomness_glossary.yml, _data/camera_glossary.yml,
 # _data/transform_gizmo_glossary.yml, _data/scene_gizmo_glossary.yml, _data/shaping_functions_glossary.yml,
-# _data/monoinput_glossary.yml, _data/input_binder_glossary.yml, _data/ray_tracing_glossary.yml and
-# _data/frame_rate_counter_glossary.yml are generated with their glossary pages.
+# _data/monoinput_glossary.yml, _data/input_binder_glossary.yml, _data/ray_tracing_glossary.yml,
+# _data/frame_rate_counter_glossary.yml and _data/fabric_simulation_glossary.yml are generated with their glossary
+# pages. standalone: true marks a page of its own, a static HTML file outside the docs layout: the sidebar and the docs
+# index link to it, with the description given here, and Previous / Next skip it.
 - group: ECS
   tree: true
   articles:
@@ -234,6 +236,37 @@
     - title: Glossary
       url: /docs/frame-rate-counter-glossary/
       glossary: frame_rate_counter_glossary
+
+- group: Fabric simulation
+  tree: true
+  articles:
+    - title: Quick start guide
+      url: /docs/fabric-simulation/
+    - title: The sheet and the step
+      url: /docs/fabric-simulation-sheet/
+    - title: Drawing the cloth
+      url: /docs/fabric-simulation-drawing/
+    - title: Placement and pins
+      url: /docs/fabric-simulation-pins/
+    - title: Settings
+      url: /docs/fabric-simulation-settings/
+    - title: Wind and air
+      url: /docs/fabric-simulation-wind/
+    - title: Collisions and rest
+      url: /docs/fabric-simulation-collisions/
+    - title: Cuts and tears
+      url: /docs/fabric-simulation-cuts/
+    - title: Cutting what you see
+      url: /docs/fabric-simulation-picking/
+    - title: Diagnostics
+      url: /docs/fabric-simulation-diagnostics/
+    - title: Tour of the solver
+      url: /docs/fabric-simulation-tour/
+      standalone: true
+      description: An illustrated walk through the solver's source, layer by layer, from the particle record and the step loop to the kernels, the cuts and the demo.
+    - title: Glossary
+      url: /docs/fabric-simulation-glossary/
+      glossary: fabric_simulation_glossary
 
 - group: Systems
   articles:

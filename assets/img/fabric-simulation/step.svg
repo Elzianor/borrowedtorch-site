@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 210" width="640" height="210" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="13" text-anchor="middle">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#a8834a"/>
+    </marker>
+  </defs>
+
+  <!-- integrate: always -->
+  <rect x="16" y="56" width="104" height="58" rx="8" fill="#15100c" stroke="#e9c27a"/>
+  <text x="68" y="80" fill="#e9c27a">Integrate</text>
+  <text x="68" y="97" fill="#8a7a63" font-size="11">forces, motion,</text>
+  <text x="68" y="110" fill="#8a7a63" font-size="11">creases, rest</text>
+
+  <!-- pressure: with UseAerodynamicPressure -->
+  <rect x="138" y="56" width="104" height="58" rx="8" fill="#15100c" stroke="#e9c27a" stroke-dasharray="5 4"/>
+  <text x="190" y="80" fill="#e9c27a">Pressure</text>
+  <text x="190" y="97" fill="#8a7a63" font-size="11">a pass per level,</text>
+  <text x="190" y="110" fill="#8a7a63" font-size="11">then apply</text>
+
+  <!-- the neighbor search: with UseSelfCollision -->
+  <rect x="260" y="56" width="116" height="58" rx="8" fill="#15100c" stroke="#e9c27a" stroke-dasharray="5 4"/>
+  <text x="318" y="80" fill="#e9c27a">Neighbor search</text>
+  <text x="318" y="97" fill="#8a7a63" font-size="11">clear, build,</text>
+  <text x="318" y="110" fill="#8a7a63" font-size="11">gather partners</text>
+
+  <!-- the rounds -->
+  <rect x="394" y="30" width="230" height="122" rx="10" fill="none" stroke="#a8834a" stroke-opacity=".7"/>
+  <text x="509" y="22" fill="#d9cbb4">The rounds, × RelaxationIterations</text>
+  <rect x="406" y="56" width="96" height="58" rx="8" fill="#15100c" stroke="#e9c27a" stroke-dasharray="5 4"/>
+  <text x="454" y="80" fill="#e9c27a">Fold pass</text>
+  <text x="454" y="97" fill="#8a7a63" font-size="11">on rounds</text>
+  <text x="454" y="110" fill="#8a7a63" font-size="11">that bend</text>
+  <rect x="518" y="56" width="96" height="58" rx="8" fill="#15100c" stroke="#e9c27a"/>
+  <text x="566" y="80" fill="#e9c27a">Constraints</text>
+  <text x="566" y="97" fill="#8a7a63" font-size="10">threads, pins,</text>
+  <text x="566" y="110" fill="#8a7a63" font-size="10">contacts, colliders</text>
+
+  <g stroke="#a8834a" stroke-width="1.5" marker-end="url(#arrow)">
+    <line x1="121" y1="85" x2="135" y2="85"/>
+    <line x1="243" y1="85" x2="257" y2="85"/>
+    <line x1="377" y1="85" x2="403" y2="85"/>
+    <line x1="503" y1="85" x2="515" y2="85"/>
+  </g>
+  <!-- each round back to the next -->
+  <path d="M566 116 V128 H454 V118" fill="none" stroke="#a8834a" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="510" y="143" fill="#8a7a63" font-size="11">next round</text>
+
+  <!-- the last round hands the step over -->
+  <line x1="566" y1="153" x2="566" y2="165" stroke="#a8834a" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="402" y="168" width="222" height="30" rx="8" fill="#e9c27a" fill-opacity=".14" stroke="#e9c27a"/>
+  <text x="513" y="188" fill="#e9c27a">The last writes the records</text>
+
+  <!-- the legend -->
+  <g text-anchor="start" font-size="11" fill="#8a7a63">
+    <rect x="16" y="158" width="22" height="14" rx="3" fill="none" stroke="#e9c27a"/>
+    <text x="46" y="169">every step</text>
+    <rect x="16" y="180" width="22" height="14" rx="3" fill="none" stroke="#e9c27a" stroke-dasharray="4 3"/>
+    <text x="46" y="191">only with its feature on</text>
+  </g>
+</svg>

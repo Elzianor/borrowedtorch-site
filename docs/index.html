@@ -16,7 +16,7 @@ description: Guides for building games with Kindling, Borrowed Torch's in-house 
   {%- assign doc = site.pages | where: "url", a.url | first %}
   <a class="card" href="{{ a.url | relative_url }}">
     <h3>{{ a.title }}{% if doc.status == 'draft' %} <span class="pill flame">Draft</span>{% endif %}</h3>
-    <p>{{ doc.description }}</p>
+    <p>{{ doc.description | default: a.description }}</p>
   </a>
   {%- endif %}
   {%- endfor %}

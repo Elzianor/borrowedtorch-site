@@ -1,0 +1,640 @@
+# The fabric simulation glossary in the docs sidebar: generated with the glossary pages, don't edit by hand.
+- title: "The sheet"
+  url: /docs/fabric-simulation-glossary/sheet/
+  entries:
+    - title: "Fabric"
+      url: /docs/fabric-simulation-glossary/sheet/fabric/
+      members:
+        - title: "Built<wbr>Height"
+          anchor: builtheight
+          kind: prop
+        - title: "Built<wbr>Width"
+          anchor: builtwidth
+          kind: prop
+        - title: "Effect"
+          anchor: effect
+          kind: prop
+        - title: "Has<wbr>Tears"
+          anchor: hastears
+          kind: prop
+        - title: "Height"
+          anchor: height
+          kind: prop
+        - title: "Height<wbr>In<wbr>Particles"
+          anchor: heightinparticles
+          kind: prop
+        - title: "Is<wbr>Built"
+          anchor: isbuilt
+          kind: prop
+        - title: "Orientation"
+          anchor: orientation
+          kind: prop
+        - title: "Origin"
+          anchor: origin
+          kind: prop
+        - title: "Particle<wbr>Count"
+          anchor: particlecount
+          kind: prop
+        - title: "Pin<wbr>Mode"
+          anchor: pinmode
+          kind: prop
+        - title: "Pinned<wbr>Indices"
+          anchor: pinnedindices
+          kind: prop
+        - title: "Rest<wbr>Length"
+          anchor: restlength
+          kind: prop
+        - title: "Rotation"
+          anchor: rotation
+          kind: prop
+        - title: "Settings"
+          anchor: settings
+          kind: prop
+        - title: "Triangle<wbr>Count"
+          anchor: trianglecount
+          kind: prop
+        - title: "Width"
+          anchor: width
+          kind: prop
+        - title: "Width<wbr>In<wbr>Particles"
+          anchor: widthinparticles
+          kind: prop
+        - title: "Fabric()"
+          anchor: fabric
+          kind: method
+        - title: "Capture<wbr>Surface()"
+          anchor: capturesurface
+          kind: method
+        - title: "Clear<wbr>Tears()"
+          anchor: cleartears
+          kind: method
+        - title: "Copy<wbr>Tear<wbr>State()"
+          anchor: copytearstate
+          kind: method
+        - title: "Create<wbr>Cut<wbr>Mesh()"
+          anchor: createcutmesh
+          kind: method
+        - title: "Create<wbr>Triangle<wbr>Indices()"
+          anchor: createtriangleindices
+          kind: method
+        - title: "Cut()"
+          anchor: cut
+          kind: method
+        - title: "Is<wbr>Pinned()"
+          anchor: ispinned
+          kind: method
+        - title: "Particle<wbr>Index()"
+          anchor: particleindex
+          kind: method
+        - title: "Rebuild()"
+          anchor: rebuild
+          kind: method
+        - title: "Refresh<wbr>Anchors()"
+          anchor: refreshanchors
+          kind: method
+        - title: "Set<wbr>Pinned()"
+          anchor: setpinned
+          kind: method
+        - title: "Step()"
+          anchor: step
+          kind: method
+        - title: "Tear()"
+          anchor: tear
+          kind: method
+        - title: "Update()"
+          anchor: update
+          kind: method
+        - title: "Rebuilt"
+          anchor: rebuilt
+          kind: event
+    - title: "Fabric<wbr>Settings"
+      url: /docs/fabric-simulation-glossary/sheet/fabric-settings/
+      members:
+        - title: "Added<wbr>Mass<wbr>Coefficient"
+          anchor: addedmasscoefficient
+          kind: prop
+        - title: "Air<wbr>Density"
+          anchor: airdensity
+          kind: prop
+        - title: "Areal<wbr>Density"
+          anchor: arealdensity
+          kind: prop
+        - title: "Auto<wbr>Rebuild"
+          anchor: autorebuild
+          kind: prop
+        - title: "Bending<wbr>Iterations"
+          anchor: bendingiterations
+          kind: prop
+        - title: "Bending<wbr>Plastic<wbr>Rate"
+          anchor: bendingplasticrate
+          kind: prop
+        - title: "Bending<wbr>Plastic<wbr>Yield<wbr>Degrees"
+          anchor: bendingplasticyielddegrees
+          kind: prop
+        - title: "Bending<wbr>Stiffness"
+          anchor: bendingstiffness
+          kind: prop
+        - title: "Collider<wbr>Friction"
+          anchor: colliderfriction
+          kind: prop
+        - title: "Compression<wbr>Slack"
+          anchor: compressionslack
+          kind: prop
+        - title: "Contact<wbr>Iterations"
+          anchor: contactiterations
+          kind: prop
+        - title: "Damping"
+          anchor: damping
+          kind: prop
+        - title: "Drag<wbr>Coefficient"
+          anchor: dragcoefficient
+          kind: prop
+        - title: "Gravity"
+          anchor: gravity
+          kind: prop
+        - title: "Ground<wbr>Collider<wbr>Height"
+          anchor: groundcolliderheight
+          kind: prop
+        - title: "Height<wbr>In<wbr>Particles"
+          anchor: heightinparticles
+          kind: prop
+        - title: "Max<wbr>Steps<wbr>Per<wbr>Frame"
+          anchor: maxstepsperframe
+          kind: prop
+        - title: "Minimum<wbr>Compression<wbr>Slack<wbr>For<wbr>Contacts"
+          anchor: minimumcompressionslackforcontacts
+          kind: prop
+        - title: "Particle<wbr>Mass"
+          anchor: particlemass
+          kind: prop
+        - title: "Relaxation<wbr>Iterations"
+          anchor: relaxationiterations
+          kind: prop
+        - title: "Rest<wbr>Drive<wbr>Fraction"
+          anchor: restdrivefraction
+          kind: prop
+        - title: "Rest<wbr>Hold<wbr>Delay"
+          anchor: restholddelay
+          kind: prop
+        - title: "Rest<wbr>Hold<wbr>Wake<wbr>Fraction"
+          anchor: restholdwakefraction
+          kind: prop
+        - title: "Rest<wbr>Length"
+          anchor: restlength
+          kind: prop
+        - title: "Rest<wbr>Speed<wbr>Threshold"
+          anchor: restspeedthreshold
+          kind: prop
+        - title: "Seed<wbr>Ripple"
+          anchor: seedripple
+          kind: prop
+        - title: "Self<wbr>Collision<wbr>Friction"
+          anchor: selfcollisionfriction
+          kind: prop
+        - title: "Self<wbr>Collision<wbr>Stiffness"
+          anchor: selfcollisionstiffness
+          kind: prop
+        - title: "Self<wbr>Collision<wbr>Thickness"
+          anchor: selfcollisionthickness
+          kind: prop
+        - title: "Self<wbr>Collision<wbr>Thickness<wbr>Ratio"
+          anchor: selfcollisionthicknessratio
+          kind: prop
+        - title: "Shearing<wbr>Rest<wbr>Length"
+          anchor: shearingrestlength
+          kind: prop
+        - title: "Solver<wbr>Frequency<wbr>Hz"
+          anchor: solverfrequencyhz
+          kind: prop
+        - title: "Sphere<wbr>Collider<wbr>Center"
+          anchor: spherecollidercenter
+          kind: prop
+        - title: "Sphere<wbr>Collider<wbr>Radius"
+          anchor: spherecolliderradius
+          kind: prop
+        - title: "Stiffness"
+          anchor: stiffness
+          kind: prop
+        - title: "Time<wbr>Step"
+          anchor: timestep
+          kind: prop
+        - title: "Use<wbr>Aerodynamic<wbr>Pressure"
+          anchor: useaerodynamicpressure
+          kind: prop
+        - title: "Use<wbr>Bending<wbr>Constraints"
+          anchor: usebendingconstraints
+          kind: prop
+        - title: "Use<wbr>Ground<wbr>Collider"
+          anchor: usegroundcollider
+          kind: prop
+        - title: "Use<wbr>Long<wbr>Range<wbr>Attachments"
+          anchor: uselongrangeattachments
+          kind: prop
+        - title: "Use<wbr>Rest<wbr>Hold"
+          anchor: useresthold
+          kind: prop
+        - title: "Use<wbr>Rest<wbr>Threshold"
+          anchor: userestthreshold
+          kind: prop
+        - title: "Use<wbr>Self<wbr>Collision"
+          anchor: useselfcollision
+          kind: prop
+        - title: "Use<wbr>Shearing<wbr>Constraints"
+          anchor: useshearingconstraints
+          kind: prop
+        - title: "Use<wbr>Sphere<wbr>Collider"
+          anchor: usespherecollider
+          kind: prop
+        - title: "Width<wbr>In<wbr>Particles"
+          anchor: widthinparticles
+          kind: prop
+        - title: "Wind"
+          anchor: wind
+          kind: prop
+        - title: "Every<wbr>Round"
+          anchor: everyround
+          kind: field
+        - title: "Max<wbr>Seed<wbr>Ripple"
+          anchor: maxseedripple
+          kind: field
+    - title: "Fabric<wbr>Orientation"
+      url: /docs/fabric-simulation-glossary/sheet/fabric-orientation/
+    - title: "Fabric<wbr>Pin<wbr>Mode"
+      url: /docs/fabric-simulation-glossary/sheet/fabric-pin-mode/
+- title: "The solver"
+  url: /docs/fabric-simulation-glossary/solver/
+  entries:
+    - title: "Fabric<wbr>Effect"
+      url: /docs/fabric-simulation-glossary/solver/fabric-effect/
+      members:
+        - title: "Dispatches<wbr>Per<wbr>Step"
+          anchor: dispatchesperstep
+          kind: prop
+        - title: "Interpolation<wbr>Fraction"
+          anchor: interpolationfraction
+          kind: prop
+        - title: "Is<wbr>Saturated"
+          anchor: issaturated
+          kind: prop
+        - title: "Last<wbr>Step<wbr>Count"
+          anchor: laststepcount
+          kind: prop
+        - title: "Particle<wbr>Buffer"
+          anchor: particlebuffer
+          kind: prop
+        - title: "Particle<wbr>Count"
+          anchor: particlecount
+          kind: prop
+        - title: "Shader"
+          anchor: shader
+          kind: prop
+        - title: "Time"
+          anchor: time
+          kind: prop
+        - title: "Total<wbr>Step<wbr>Count"
+          anchor: totalstepcount
+          kind: prop
+        - title: "Compute<wbr>Group<wbr>Size"
+          anchor: computegroupsize
+          kind: field
+        - title: "Contact<wbr>Candidate<wbr>Capacity"
+          anchor: contactcandidatecapacity
+          kind: field
+        - title: "Default<wbr>Effect<wbr>Path"
+          anchor: defaulteffectpath
+          kind: field
+        - title: "Max<wbr>Particles"
+          anchor: maxparticles
+          kind: field
+        - title: "Spatial<wbr>Hash<wbr>Max<wbr>Per<wbr>Cell"
+          anchor: spatialhashmaxpercell
+          kind: field
+        - title: "Fabric<wbr>Effect()"
+          anchor: fabriceffect
+          kind: method
+        - title: "Apply()"
+          anchor: apply
+          kind: method
+        - title: "Dispose()"
+          anchor: dispose
+          kind: method
+        - title: "Read<wbr>Back()"
+          anchor: readback
+          kind: method
+        - title: "Sample<wbr>Coincident<wbr>Contacts()"
+          anchor: samplecoincidentcontacts
+          kind: method
+        - title: "Sample<wbr>Held<wbr>Fraction()"
+          anchor: sampleheldfraction
+          kind: method
+        - title: "Sample<wbr>Resting<wbr>Fraction()"
+          anchor: samplerestingfraction
+          kind: method
+        - title: "Sample<wbr>Spatial<wbr>Hash<wbr>Overflow()"
+          anchor: samplespatialhashoverflow
+          kind: method
+        - title: "Sample<wbr>Worst<wbr>Step<wbr>Motion()"
+          anchor: sampleworststepmotion
+          kind: method
+        - title: "Set<wbr>Particles()"
+          anchor: setparticles
+          kind: method
+        - title: "Step()"
+          anchor: step
+          kind: method
+        - title: "Update()"
+          anchor: update
+          kind: method
+        - title: "Update<wbr>Particles()"
+          anchor: updateparticles
+          kind: method
+        - title: "Update<wbr>Tear<wbr>State()"
+          anchor: updatetearstate
+          kind: method
+    - title: "Fabric<wbr>Effect.Spatial<wbr>Hash<wbr>Overflow"
+      url: /docs/fabric-simulation-glossary/solver/fabric-effect-spatial-hash-overflow/
+      members:
+        - title: "Dropped<wbr>Candidates<wbr>Per<wbr>Step"
+          anchor: droppedcandidatesperstep
+          kind: prop
+        - title: "Dropped<wbr>Entries<wbr>Per<wbr>Step"
+          anchor: droppedentriesperstep
+          kind: prop
+        - title: "Peak<wbr>Candidates"
+          anchor: peakcandidates
+          kind: prop
+        - title: "Peak<wbr>Occupancy"
+          anchor: peakoccupancy
+          kind: prop
+    - title: "Fabric<wbr>Effect.Step<wbr>Motion"
+      url: /docs/fabric-simulation-glossary/solver/fabric-effect-step-motion/
+      members:
+        - title: "Fast<wbr>Particle<wbr>Steps"
+          anchor: fastparticlesteps
+          kind: prop
+        - title: "Peak<wbr>Ratio"
+          anchor: peakratio
+          kind: prop
+    - title: "Fabric<wbr>Effect.Coincident<wbr>Contacts"
+      url: /docs/fabric-simulation-glossary/solver/fabric-effect-coincident-contacts/
+      members:
+        - title: "Per<wbr>Step"
+          anchor: perstep
+          kind: prop
+        - title: "Total"
+          anchor: total
+          kind: prop
+    - title: "Fabric<wbr>Particle"
+      url: /docs/fabric-simulation-glossary/solver/fabric-particle/
+      members:
+        - title: "Anchor<wbr>Index"
+          anchor: anchorindex
+          kind: field
+        - title: "Is<wbr>Pinned"
+          anchor: ispinned
+          kind: field
+        - title: "Max<wbr>Anchor<wbr>Distance"
+          anchor: maxanchordistance
+          kind: field
+        - title: "Normal"
+          anchor: normal
+          kind: field
+        - title: "Position"
+          anchor: position
+          kind: field
+        - title: "Previous<wbr>Normal"
+          anchor: previousnormal
+          kind: field
+        - title: "Prev<wbr>Position"
+          anchor: prevposition
+          kind: field
+        - title: "Rest<wbr>Angles"
+          anchor: restangles
+          kind: field
+        - title: "Shader<wbr>Contract<wbr>Version"
+          anchor: shadercontractversion
+          kind: field
+        - title: "Size<wbr>In<wbr>Bytes"
+          anchor: sizeinbytes
+          kind: field
+        - title: "Pack<wbr>Normal()"
+          anchor: packnormal
+          kind: method
+        - title: "Unpack<wbr>Normal()"
+          anchor: unpacknormal
+          kind: method
+- title: "Cuts and picking"
+  url: /docs/fabric-simulation-glossary/cuts/
+  entries:
+    - title: "Fabric<wbr>Tear<wbr>Flags"
+      url: /docs/fabric-simulation-glossary/cuts/fabric-tear-flags/
+    - title: "Fabric<wbr>Cut<wbr>Mesh"
+      url: /docs/fabric-simulation-glossary/cuts/fabric-cut-mesh/
+      members:
+        - title: "Indices"
+          anchor: indices
+          kind: prop
+        - title: "Seam<wbr>Vertices"
+          anchor: seamvertices
+          kind: prop
+        - title: "Triangle<wbr>Count"
+          anchor: trianglecount
+          kind: prop
+    - title: "Fabric<wbr>Seam<wbr>Vertex"
+      url: /docs/fabric-simulation-glossary/cuts/fabric-seam-vertex/
+      members:
+        - title: "Index<wbr>A"
+          anchor: indexa
+          kind: field
+        - title: "Index<wbr>B"
+          anchor: indexb
+          kind: field
+        - title: "Index<wbr>C"
+          anchor: indexc
+          kind: field
+        - title: "Size<wbr>In<wbr>Bytes"
+          anchor: sizeinbytes
+          kind: field
+        - title: "Tex<wbr>Coord"
+          anchor: texcoord
+          kind: field
+        - title: "Weight<wbr>A"
+          anchor: weighta
+          kind: field
+        - title: "Weight<wbr>B"
+          anchor: weightb
+          kind: field
+        - title: "Weight<wbr>C"
+          anchor: weightc
+          kind: field
+    - title: "Fabric<wbr>Surface"
+      url: /docs/fabric-simulation-glossary/cuts/fabric-surface/
+      members:
+        - title: "Triangle<wbr>Count"
+          anchor: trianglecount
+          kind: prop
+        - title: "Raycast()"
+          anchor: raycast
+          kind: method
+        - title: "Try<wbr>Raycast()"
+          anchor: tryraycast
+          kind: method
+    - title: "Fabric<wbr>Surface<wbr>Hit"
+      url: /docs/fabric-simulation-glossary/cuts/fabric-surface-hit/
+      members:
+        - title: "Cloth"
+          anchor: cloth
+          kind: prop
+        - title: "Distance"
+          anchor: distance
+          kind: prop
+        - title: "World"
+          anchor: world
+          kind: prop
+    - title: "Fabric<wbr>Stroke"
+      url: /docs/fabric-simulation-glossary/cuts/fabric-stroke/
+      members:
+        - title: "Count"
+          anchor: count
+          kind: prop
+        - title: "Surface"
+          anchor: surface
+          kind: prop
+        - title: "Fabric<wbr>Stroke()"
+          anchor: fabricstroke
+          kind: method
+        - title: "Add()"
+          anchor: add
+          kind: method
+        - title: "Clear()"
+          anchor: clear
+          kind: method
+- title: "Diagnostics"
+  url: /docs/fabric-simulation-glossary/diagnostics/
+  entries:
+    - title: "Penetration<wbr>Check"
+      url: /docs/fabric-simulation-glossary/diagnostics/penetration-check/
+      members:
+        - title: "Deep<wbr>Overlap<wbr>Ratio"
+          anchor: deepoverlapratio
+          kind: field
+        - title: "Run()"
+          anchor: run
+          kind: method
+    - title: "Penetration<wbr>Check.Result"
+      url: /docs/fabric-simulation-glossary/diagnostics/penetration-check-result/
+      members:
+        - title: "Contacts"
+          anchor: contacts
+          kind: prop
+        - title: "Penetrations"
+          anchor: penetrations
+          kind: prop
+        - title: "Worst<wbr>Overlap<wbr>Ratio"
+          anchor: worstoverlapratio
+          kind: prop
+    - title: "Crease<wbr>Check"
+      url: /docs/fabric-simulation-glossary/diagnostics/crease-check/
+      members:
+        - title: "Sharp<wbr>Fold<wbr>Degrees"
+          anchor: sharpfolddegrees
+          kind: field
+        - title: "Run()"
+          anchor: run
+          kind: method
+    - title: "Crease<wbr>Check.Result"
+      url: /docs/fabric-simulation-glossary/diagnostics/crease-check-result/
+      members:
+        - title: "Creased<wbr>Edges"
+          anchor: creasededges
+          kind: prop
+        - title: "Fold<wbr>At<wbr>Creases<wbr>Degrees"
+          anchor: foldatcreasesdegrees
+          kind: prop
+        - title: "Mean<wbr>Fold<wbr>Degrees"
+          anchor: meanfolddegrees
+          kind: prop
+        - title: "Mean<wbr>Rest<wbr>Fold<wbr>Degrees"
+          anchor: meanrestfolddegrees
+          kind: prop
+    - title: "Numeric<wbr>Checks"
+      url: /docs/fabric-simulation-glossary/diagnostics/numeric-checks/
+      members:
+        - title: "Is<wbr>Finite()"
+          anchor: isfinite
+          kind: method
+- title: "HLSL"
+  url: /docs/fabric-simulation-glossary/hlsl/
+  entries:
+    - title: "Fabric<wbr>Particle.fxh"
+      url: /docs/fabric-simulation-glossary/hlsl/fabric-particle-fxh/
+      members:
+        - title: "Fabric<wbr>Octahedron<wbr>Wrap()"
+          anchor: fabricoctahedronwrap
+          kind: method
+        - title: "Fabric<wbr>Pack<wbr>Normal()"
+          anchor: fabricpacknormal
+          kind: method
+        - title: "Fabric<wbr>Texture<wbr>Coordinates()"
+          anchor: fabrictexturecoordinates
+          kind: method
+        - title: "Fabric<wbr>Unpack<wbr>Normal()"
+          anchor: fabricunpacknormal
+          kind: method
+        - title: "Fabric<wbr>Shader<wbr>Contract<wbr>Version"
+          anchor: fabricshadercontractversion
+          kind: field
+        - title: "Fabric<wbr>Height<wbr>In<wbr>Particles"
+          anchor: fabricheightinparticles
+          kind: field
+        - title: "Fabric<wbr>Width<wbr>In<wbr>Particles"
+          anchor: fabricwidthinparticles
+          kind: field
+        - title: "Fabric<wbr>Particle"
+          anchor: fabricparticle
+          kind: field
+    - title: "Fabric<wbr>Particle<wbr>Buffer.fxh"
+      url: /docs/fabric-simulation-glossary/hlsl/fabric-particle-buffer-fxh/
+      members:
+        - title: "Fabric<wbr>Evaluate<wbr>Vertex()"
+          anchor: fabricevaluatevertex
+          kind: method
+        - title: "Fabric<wbr>Interpolated<wbr>Normal()"
+          anchor: fabricinterpolatednormal
+          kind: method
+        - title: "Fabric<wbr>Interpolated<wbr>Position()"
+          anchor: fabricinterpolatedposition
+          kind: method
+        - title: "Fabric<wbr>Particles"
+          anchor: fabricparticles
+          kind: field
+        - title: "Fabric<wbr>Seam<wbr>Vertices"
+          anchor: fabricseamvertices
+          kind: field
+        - title: "Fabric<wbr>Seam<wbr>Vertex"
+          anchor: fabricseamvertex
+          kind: field
+    - title: "Fabric<wbr>Compute.fx"
+      url: /docs/fabric-simulation-glossary/hlsl/fabric-compute-fx/
+      members:
+        - title: "Contact<wbr>Candidate<wbr>Capacity"
+          anchor: contactcandidatecapacity
+          kind: field
+        - title: "FABRIC_<wbr>COUNT_<wbr>COINCIDENT"
+          anchor: fabric_count_coincident
+          kind: field
+        - title: "FABRIC_<wbr>WIND_<wbr>AT"
+          anchor: fabric_wind_at
+          kind: field
+        - title: "Group<wbr>Size"
+          anchor: groupsize
+          kind: field
+        - title: "Fabric<wbr>Time"
+          anchor: fabrictime
+          kind: field
+        - title: "Wind"
+          anchor: wind
+          kind: field
+        - title: "Fabric<wbr>Technique"
+          anchor: fabrictechnique
+          kind: field

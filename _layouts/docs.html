@@ -1,12 +1,16 @@
 ---
 layout: base
 ---
-{%- comment -%} Flatten _data/docs.yml into reading order for breadcrumbs and Previous / Next. {%- endcomment -%}
+{%- comment -%}
+  Flatten _data/docs.yml into reading order for breadcrumbs and Previous / Next. A standalone page has no layout, so no
+  Previous / Next to come back by: the pager steps over it.
+{%- endcomment -%}
 {%- assign doc_urls = "" | split: "" -%}
 {%- assign doc_titles = "" | split: "" -%}
 {%- assign doc_groups = "" | split: "" -%}
 {%- for g in site.data.docs -%}
   {%- for a in g.articles -%}
+    {%- if a.standalone -%}{%- continue -%}{%- endif -%}
     {%- assign doc_urls = doc_urls | push: a.url -%}
     {%- assign doc_titles = doc_titles | push: a.title -%}
     {%- assign doc_groups = doc_groups | push: g.group -%}

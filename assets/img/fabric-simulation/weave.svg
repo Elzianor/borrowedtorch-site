@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 250" width="640" height="250" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="13" text-anchor="middle">
+  <!-- the threads of the patch: along the grid and across both diagonals -->
+  <g stroke="#8a7a63" stroke-opacity=".6" stroke-width="1.2">
+    <line x1="50" y1="200" x2="120" y2="200"/>
+    <line x1="50" y1="200" x2="50" y2="130"/>
+    <line x1="50" y1="200" x2="120" y2="130" stroke-dasharray="4 3"/>
+    <line x1="120" y1="200" x2="50" y2="130" stroke-dasharray="4 3"/>
+    <line x1="120" y1="200" x2="190" y2="200"/>
+    <line x1="120" y1="200" x2="120" y2="130"/>
+    <line x1="120" y1="200" x2="190" y2="130" stroke-dasharray="4 3"/>
+    <line x1="190" y1="200" x2="120" y2="130" stroke-dasharray="4 3"/>
+    <line x1="190" y1="200" x2="190" y2="130"/>
+    <line x1="50" y1="130" x2="120" y2="130"/>
+    <line x1="50" y1="130" x2="50" y2="60"/>
+    <line x1="50" y1="130" x2="120" y2="60" stroke-dasharray="4 3"/>
+    <line x1="120" y1="130" x2="50" y2="60" stroke-dasharray="4 3"/>
+    <line x1="190" y1="130" x2="190" y2="60"/>
+    <line x1="50" y1="60" x2="120" y2="60"/>
+    <line x1="120" y1="60" x2="190" y2="60"/>
+  </g>
+  <!-- the four P owns -->
+  <g stroke="#e9c27a" stroke-width="3" stroke-linecap="round">
+    <line x1="120" y1="130" x2="120" y2="60"/>
+    <line x1="120" y1="130" x2="190" y2="130"/>
+    <line x1="120" y1="130" x2="190" y2="60"/>
+    <line x1="190" y1="130" x2="120" y2="60"/>
+  </g>
+  <g fill="#d9cbb4">
+    <circle cx="50" cy="200" r="4"/>
+    <circle cx="120" cy="200" r="4"/>
+    <circle cx="190" cy="200" r="4"/>
+    <circle cx="50" cy="130" r="4"/>
+    <circle cx="120" cy="130" r="6" fill="#f28c28"/>
+    <circle cx="190" cy="130" r="4"/>
+    <circle cx="50" cy="60" r="4"/>
+    <circle cx="120" cy="60" r="4"/>
+    <circle cx="190" cy="60" r="4"/>
+  </g>
+  <text x="108" y="148" fill="#f28c28" font-weight="600">P</text>
+  <g text-anchor="start" font-size="11" fill="#8a7a63">
+    <line x1="236" y1="74" x2="258" y2="74" stroke="#e9c27a" stroke-width="3"/><text x="264" y="78">owned by P</text>
+    <line x1="236" y1="96" x2="258" y2="96" stroke="#8a7a63" stroke-width="1.2"/><text x="264" y="100">along the grid</text>
+    <line x1="236" y1="118" x2="258" y2="118" stroke="#8a7a63" stroke-width="1.2" stroke-dasharray="4 3"/><text x="264" y="122">diagonals</text>
+  </g>
+  <text x="120" y="236" fill="#d9cbb4">Threads</text>
+  <line x1="340" y1="20" x2="340" y2="230" stroke="#8a7a63" stroke-opacity=".4"/>
+  <g stroke="#8a7a63" stroke-opacity=".35" stroke-width="1">
+    <line x1="360" y1="190" x2="440" y2="190"/>
+    <line x1="360" y1="150" x2="440" y2="150"/>
+    <line x1="360" y1="110" x2="440" y2="110"/>
+    <line x1="360" y1="190" x2="360" y2="110"/>
+    <line x1="400" y1="190" x2="400" y2="110"/>
+    <line x1="440" y1="190" x2="440" y2="110"/>
+    <line x1="360" y1="150" x2="400" y2="190"/>
+    <line x1="400" y1="150" x2="440" y2="190"/>
+    <line x1="360" y1="110" x2="400" y2="150"/>
+    <line x1="400" y1="110" x2="440" y2="150"/>
+  </g>
+  <path d="M400 150 L440 150 L400 110 z" fill="#e9c27a" fill-opacity=".18" stroke="#e9c27a" stroke-opacity=".6"/>
+  <path d="M400 150 L440 150 L440 190 z" fill="#e9c27a" fill-opacity=".18" stroke="#e9c27a" stroke-opacity=".6"/>
+  <line x1="400" y1="150" x2="440" y2="150" stroke="#e9c27a" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="400" cy="150" r="5" fill="#f28c28"/>
+  <text x="400" y="212" fill="#8a7a63" font-size="11">Across</text>
+  <g stroke="#8a7a63" stroke-opacity=".35" stroke-width="1">
+    <line x1="456" y1="190" x2="536" y2="190"/>
+    <line x1="456" y1="150" x2="536" y2="150"/>
+    <line x1="456" y1="110" x2="536" y2="110"/>
+    <line x1="456" y1="190" x2="456" y2="110"/>
+    <line x1="496" y1="190" x2="496" y2="110"/>
+    <line x1="536" y1="190" x2="536" y2="110"/>
+    <line x1="456" y1="150" x2="496" y2="190"/>
+    <line x1="496" y1="150" x2="536" y2="190"/>
+    <line x1="456" y1="110" x2="496" y2="150"/>
+    <line x1="496" y1="110" x2="536" y2="150"/>
+  </g>
+  <path d="M496 150 L496 110 L536 150 z" fill="#e9c27a" fill-opacity=".18" stroke="#e9c27a" stroke-opacity=".6"/>
+  <path d="M496 150 L496 110 L456 110 z" fill="#e9c27a" fill-opacity=".18" stroke="#e9c27a" stroke-opacity=".6"/>
+  <line x1="496" y1="150" x2="496" y2="110" stroke="#e9c27a" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="496" cy="150" r="5" fill="#f28c28"/>
+  <text x="496" y="212" fill="#8a7a63" font-size="11">Down</text>
+  <g stroke="#8a7a63" stroke-opacity=".35" stroke-width="1">
+    <line x1="552" y1="190" x2="632" y2="190"/>
+    <line x1="552" y1="150" x2="632" y2="150"/>
+    <line x1="552" y1="110" x2="632" y2="110"/>
+    <line x1="552" y1="190" x2="552" y2="110"/>
+    <line x1="592" y1="190" x2="592" y2="110"/>
+    <line x1="632" y1="190" x2="632" y2="110"/>
+    <line x1="552" y1="150" x2="592" y2="190"/>
+    <line x1="592" y1="150" x2="632" y2="190"/>
+    <line x1="552" y1="110" x2="592" y2="150"/>
+    <line x1="592" y1="110" x2="632" y2="150"/>
+  </g>
+  <path d="M592 110 L632 150 L592 150 z" fill="#e9c27a" fill-opacity=".18" stroke="#e9c27a" stroke-opacity=".6"/>
+  <path d="M592 110 L632 150 L632 110 z" fill="#e9c27a" fill-opacity=".18" stroke="#e9c27a" stroke-opacity=".6"/>
+  <line x1="592" y1="110" x2="632" y2="150" stroke="#e9c27a" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="592" cy="150" r="5" fill="#f28c28"/>
+  <text x="592" y="212" fill="#8a7a63" font-size="11">Diagonal</text>
+  <text x="496" y="236" fill="#d9cbb4">Folds</text>
+  <text x="496" y="72" fill="#8a7a63" font-size="11">each a hinge, in gold, between two triangles</text>
+</svg>
