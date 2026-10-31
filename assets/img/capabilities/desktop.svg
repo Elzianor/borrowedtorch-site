@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 250" width="640" height="250" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="13" text-anchor="middle">
+  <!-- one desktop, drawn at 0.12 of its pixels: a 1920 x 1080 display left of the 2560 x 1600 primary one -->
+
+  <!-- the display on the left: negative coordinates -->
+  <rect x="30" y="30" width="230.4" height="129.6" rx="3" fill="#e9c27a" fill-opacity=".14" stroke="#e9c27a" stroke-opacity=".8"/>
+  <text x="145.2" y="80" fill="#d9cbb4">\\.\DISPLAY2</text>
+  <text x="145.2" y="99" fill="#8a7a63" font-size="11">1920 × 1080</text>
+  <text x="145.2" y="115" fill="#8a7a63" font-size="11">Bounds −1920, 0</text>
+  <circle cx="30" cy="30" r="3" fill="#e9c27a"/>
+  <text x="30" y="20" fill="#8a7a63" font-size="11" text-anchor="start">−1920, 0</text>
+
+  <!-- the primary display: the desktop's origin at its top left corner -->
+  <rect x="260.4" y="30" width="307.2" height="192" rx="3" fill="#e9c27a" fill-opacity=".22" stroke="#e9c27a"/>
+  <text x="414" y="98" fill="#d9cbb4">\\.\DISPLAY1, primary</text>
+  <text x="414" y="117" fill="#8a7a63" font-size="11">2560 × 1600</text>
+  <text x="414" y="133" fill="#8a7a63" font-size="11">Bounds 0, 0, 2560 × 1600</text>
+  <text x="414" y="149" fill="#8a7a63" font-size="11">WorkArea 0, 0, 2560 × 1528</text>
+  <circle cx="260.4" cy="30" r="3" fill="#f28c28"/>
+  <text x="264" y="20" fill="#f28c28" font-size="11" text-anchor="start">0, 0</text>
+
+  <!-- the work area: the bounds without the taskbar -->
+  <rect x="264.4" y="34" width="299.2" height="175.4" rx="2" fill="none" stroke="#a8834a" stroke-opacity=".9" stroke-dasharray="3 4"/>
+  <rect x="260.9" y="213.4" width="306.2" height="8.1" fill="#f28c28" fill-opacity=".85"/>
+  <text x="414" y="242" fill="#8a7a63" font-size="11">the taskbar, 72 pixels: not in the work area</text>
+</svg>

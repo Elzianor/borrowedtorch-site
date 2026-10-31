@@ -84,6 +84,9 @@
 
 - group: Utilities
   packages:
+    - id: BorrowedTorch.Capabilities
+      summary: What the machine a game runs on offers — its video cards with memory and vendor, the one the game draws with and Windows' per-app graphics preference to pick another, and its displays with bounds, scale, exact refresh rate and every resolution each supports. For a settings screen, and for the game's start.
+      needs: Windows 10 · .NET 10 · no dependencies
     - id: BorrowedTorch.FrameRateCounter
       summary: A simple FPS counter that also tracks frame time and the worst frame in the window, to expose stutters an average would hide.
       needs: .NET Standard 2.0 · no dependencies

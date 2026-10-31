@@ -1,0 +1,208 @@
+# The capabilities glossary in the docs sidebar: generated with the glossary pages, don't edit by hand.
+- title: "Video cards"
+  url: /docs/capabilities-glossary/video-cards/
+  entries:
+    - title: "Video<wbr>Cards"
+      url: /docs/capabilities-glossary/video-cards/video-cards/
+      members:
+        - title: "List()"
+          anchor: list
+          kind: method
+    - title: "Video<wbr>Card"
+      url: /docs/capabilities-glossary/video-cards/video-card/
+      members:
+        - title: "Dedicated<wbr>System<wbr>Memory"
+          anchor: dedicatedsystemmemory
+          kind: prop
+        - title: "Dedicated<wbr>Video<wbr>Memory"
+          anchor: dedicatedvideomemory
+          kind: prop
+        - title: "Device<wbr>Id"
+          anchor: deviceid
+          kind: prop
+        - title: "Is<wbr>Default"
+          anchor: isdefault
+          kind: prop
+        - title: "Is<wbr>Preferred<wbr>For<wbr>High<wbr>Performance"
+          anchor: ispreferredforhighperformance
+          kind: prop
+        - title: "Is<wbr>Preferred<wbr>For<wbr>Power<wbr>Saving"
+          anchor: ispreferredforpowersaving
+          kind: prop
+        - title: "Is<wbr>Software"
+          anchor: issoftware
+          kind: prop
+        - title: "Luid"
+          anchor: luid
+          kind: prop
+        - title: "Name"
+          anchor: name
+          kind: prop
+        - title: "Reached<wbr>By"
+          anchor: reachedby
+          kind: prop
+        - title: "Revision"
+          anchor: revision
+          kind: prop
+        - title: "Shared<wbr>System<wbr>Memory"
+          anchor: sharedsystemmemory
+          kind: prop
+        - title: "Sub<wbr>System<wbr>Id"
+          anchor: subsystemid
+          kind: prop
+        - title: "Vendor"
+          anchor: vendor
+          kind: prop
+        - title: "Vendor<wbr>Id"
+          anchor: vendorid
+          kind: prop
+        - title: "Vendor<wbr>Of()"
+          anchor: vendorof
+          kind: method
+    - title: "Gpu<wbr>Vendor"
+      url: /docs/capabilities-glossary/video-cards/gpu-vendor/
+    - title: "Gpu<wbr>Preferences"
+      url: /docs/capabilities-glossary/video-cards/gpu-preferences/
+      members:
+        - title: "Can<wbr>Set<wbr>For<wbr>Current<wbr>Process"
+          anchor: cansetforcurrentprocess
+          kind: prop
+        - title: "Get()"
+          anchor: get
+          kind: method
+        - title: "Remove()"
+          anchor: remove
+          kind: method
+        - title: "Set()"
+          anchor: set
+          kind: method
+    - title: "Gpu<wbr>Preference"
+      url: /docs/capabilities-glossary/video-cards/gpu-preference/
+- title: "Displays"
+  url: /docs/capabilities-glossary/displays/
+  entries:
+    - title: "Displays"
+      url: /docs/capabilities-glossary/displays/displays/
+      members:
+        - title: "List()"
+          anchor: list
+          kind: method
+    - title: "Display"
+      url: /docs/capabilities-glossary/displays/display/
+      members:
+        - title: "Bounds"
+          anchor: bounds
+          kind: prop
+        - title: "Current<wbr>Mode"
+          anchor: currentmode
+          kind: prop
+        - title: "Device<wbr>Name"
+          anchor: devicename
+          kind: prop
+        - title: "Dpi"
+          anchor: dpi
+          kind: prop
+        - title: "Is<wbr>Built<wbr>In"
+          anchor: isbuiltin
+          kind: prop
+        - title: "Is<wbr>Primary"
+          anchor: isprimary
+          kind: prop
+        - title: "Modes"
+          anchor: modes
+          kind: prop
+        - title: "Name"
+          anchor: name
+          kind: prop
+        - title: "Orientation"
+          anchor: orientation
+          kind: prop
+        - title: "Refresh<wbr>Rate"
+          anchor: refreshrate
+          kind: prop
+        - title: "Resolutions"
+          anchor: resolutions
+          kind: prop
+        - title: "Scale"
+          anchor: scale
+          kind: prop
+        - title: "Video<wbr>Card<wbr>Luid"
+          anchor: videocardluid
+          kind: prop
+        - title: "Work<wbr>Area"
+          anchor: workarea
+          kind: prop
+        - title: "Refresh<wbr>Rates<wbr>At()"
+          anchor: refreshratesat
+          kind: method
+    - title: "Display<wbr>Mode"
+      url: /docs/capabilities-glossary/displays/display-mode/
+      members:
+        - title: "Bits<wbr>Per<wbr>Pixel"
+          anchor: bitsperpixel
+          kind: prop
+        - title: "Height"
+          anchor: height
+          kind: prop
+        - title: "Refresh<wbr>Rate"
+          anchor: refreshrate
+          kind: prop
+        - title: "Resolution"
+          anchor: resolution
+          kind: prop
+        - title: "Width"
+          anchor: width
+          kind: prop
+        - title: "Display<wbr>Mode()"
+          anchor: displaymode
+          kind: method
+        - title: "To<wbr>String()"
+          anchor: tostring
+          kind: method
+    - title: "Resolution"
+      url: /docs/capabilities-glossary/displays/resolution/
+      members:
+        - title: "Aspect<wbr>Ratio"
+          anchor: aspectratio
+          kind: prop
+        - title: "Height"
+          anchor: height
+          kind: prop
+        - title: "Width"
+          anchor: width
+          kind: prop
+        - title: "Resolution()"
+          anchor: resolution
+          kind: method
+        - title: "To<wbr>String()"
+          anchor: tostring
+          kind: method
+    - title: "Pixel<wbr>Rectangle"
+      url: /docs/capabilities-glossary/displays/pixel-rectangle/
+      members:
+        - title: "Bottom"
+          anchor: bottom
+          kind: prop
+        - title: "Height"
+          anchor: height
+          kind: prop
+        - title: "Right"
+          anchor: right
+          kind: prop
+        - title: "Width"
+          anchor: width
+          kind: prop
+        - title: "X"
+          anchor: x
+          kind: prop
+        - title: "Y"
+          anchor: y
+          kind: prop
+        - title: "Contains()"
+          anchor: contains
+          kind: method
+        - title: "Pixel<wbr>Rectangle()"
+          anchor: pixelrectangle
+          kind: method
+    - title: "Display<wbr>Orientation"
+      url: /docs/capabilities-glossary/displays/display-orientation/

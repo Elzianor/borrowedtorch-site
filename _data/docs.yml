@@ -14,9 +14,9 @@
 # _data/ui_glossary.yml, _data/randomness_glossary.yml, _data/camera_glossary.yml,
 # _data/transform_gizmo_glossary.yml, _data/scene_gizmo_glossary.yml, _data/shaping_functions_glossary.yml,
 # _data/monoinput_glossary.yml, _data/input_binder_glossary.yml, _data/ray_tracing_glossary.yml,
-# _data/frame_rate_counter_glossary.yml and _data/fabric_simulation_glossary.yml are generated with their glossary
-# pages. standalone: true marks a page of its own, a static HTML file outside the docs layout: the sidebar and the docs
-# index link to it, with the description given here, and Previous / Next skip it.
+# _data/frame_rate_counter_glossary.yml, _data/fabric_simulation_glossary.yml and _data/capabilities_glossary.yml are
+# generated with their glossary pages. standalone: true marks a page of its own, a static HTML file outside the docs
+# layout: the sidebar and the docs index link to it, with the description given here, and Previous / Next skip it.
 - group: ECS
   tree: true
   articles:
@@ -267,6 +267,23 @@
     - title: Glossary
       url: /docs/fabric-simulation-glossary/
       glossary: fabric_simulation_glossary
+
+- group: Capabilities
+  tree: true
+  articles:
+    - title: Quick start guide
+      url: /docs/capabilities/
+    - title: Video cards
+      url: /docs/capabilities-video-cards/
+    - title: Picking the video card
+      url: /docs/capabilities-gpu-preference/
+    - title: Displays
+      url: /docs/capabilities-displays/
+    - title: Resolutions and modes
+      url: /docs/capabilities-modes/
+    - title: Glossary
+      url: /docs/capabilities-glossary/
+      glossary: capabilities_glossary
 
 - group: Systems
   articles:
