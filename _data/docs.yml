@@ -239,3 +239,12 @@
   articles:
     - title: Rendering & materials
       url: /docs/rendering/
+
+# The apps of the Downloads page, a page each; the sidebar lists a page's ## sections under it.
+- group: Tools
+  tree: true
+  articles:
+    - title: ORMH Converter
+      url: /docs/ormh-converter/
+    - title: Localization Helper
+      url: /docs/localization-helper/
