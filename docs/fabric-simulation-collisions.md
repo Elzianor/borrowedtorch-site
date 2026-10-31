@@ -42,7 +42,7 @@ triangles between them, so a sphere much smaller than the spacing can slip throu
 | <a class="ref prop" href="/docs/fabric-simulation-glossary/sheet/fabric-settings/#spherecolliderradius">`SphereColliderRadius`</a> | `float`. Its radius, in meters. 1 by default; below 0 counts as 0. |
 | <a class="ref prop" href="/docs/fabric-simulation-glossary/sheet/fabric-settings/#usegroundcollider">`UseGroundCollider`</a> | `bool`. A level floor. `true` by default. |
 | <a class="ref prop" href="/docs/fabric-simulation-glossary/sheet/fabric-settings/#groundcolliderheight">`GroundColliderHeight`</a> | `float`. The floor's world Y. 0 by default. |
-| <a class="ref prop" href="/docs/fabric-simulation-glossary/sheet/fabric-settings/#colliderfriction">`ColliderFriction`</a> | `float`. The grip of the sphere and the floor, per 1/120 s, 0 to 1. Read as it is, also the static friction that holds resting cloth on them. 0.35 by default. |
+| <a class="ref prop" href="/docs/fabric-simulation-glossary/sheet/fabric-settings/#colliderfriction">`ColliderFriction`</a> | `float`. The grip of the sphere and the floor, per 1/120 s, 0 to 1. Unscaled, it also sets the static friction that holds resting cloth on them, of coefficient `f / (1 − f)`. 0.35 by default. |
 
 ## Self-collision
 
@@ -65,7 +65,7 @@ other cloth, rather than being skipped.
 | <a class="ref prop" href="/docs/fabric-simulation-glossary/sheet/fabric-settings/#useselfcollision">`UseSelfCollision`</a> | `bool`. Stops the cloth passing through itself. `true` by default. |
 | <a class="ref prop" href="/docs/fabric-simulation-glossary/sheet/fabric-settings/#selfcollisionthicknessratio">`SelfCollisionThicknessRatio`</a> | `float`. The cloth's thickness as a share of the spacing, 0.05 to 0.9. 0.75 by default; below 0.05 counts as 0.05. |
 | <a class="ref prop" href="/docs/fabric-simulation-glossary/sheet/fabric-settings/#selfcollisionstiffness">`SelfCollisionStiffness`</a> | `float`. The share of an overlap pushed apart a round, 0 to 1. 1 by default. |
-| <a class="ref prop" href="/docs/fabric-simulation-glossary/sheet/fabric-settings/#selfcollisionfriction">`SelfCollisionFriction`</a> | `float`. The grip between touching layers, per 1/120 s, 0 to 1. Read as it is, also the static friction that holds cloth resting on cloth. 0.35 by default. |
+| <a class="ref prop" href="/docs/fabric-simulation-glossary/sheet/fabric-settings/#selfcollisionfriction">`SelfCollisionFriction`</a> | `float`. The grip between touching layers, per 1/120 s, 0 to 1. Unscaled, it also sets the static friction that holds cloth resting on cloth, of coefficient `f / (1 − f)`. 0.35 by default. |
 | <a class="ref prop" href="/docs/fabric-simulation-glossary/sheet/fabric-settings/#contactiterations">`ContactIterations`</a> | `int`. How many of the rounds also solve contacts. 4 by default; large grids want 1 or 2. |
 | <a class="ref prop" href="/docs/fabric-simulation-glossary/sheet/fabric-settings/#selfcollisionthickness">`SelfCollisionThickness`</a> | `float`, read-only. The thickness in meters, `SelfCollisionThicknessRatio × RestLength`. |
 | <a class="ref prop" href="/docs/fabric-simulation-glossary/sheet/fabric-settings/#minimumcompressionslackforcontacts">`MinimumCompressionSlackForContacts`</a> | `float`, read-only. The lowest `CompressionSlack` that doesn't fight self-collision: half the thickness ratio. |
@@ -140,8 +140,10 @@ still takes part in every round, with every force, but:
 
 - **A push it can ignore isn't applied.** A resting point gets no push into what carries it, which keeps a settling
   pile from sinking into itself. Of the rest of the push, down a slope or from the wind, static friction holds what
-  lies within its cone, the friction setting read as a coefficient: <a class="ref prop" href="/docs/fabric-simulation-glossary/sheet/fabric-settings/#colliderfriction">`ColliderFriction`</a> on a collider and
-  <a class="ref prop" href="/docs/fabric-simulation-glossary/sheet/fabric-settings/#selfcollisionfriction">`SelfCollisionFriction`</a> on cloth, so 0.35 holds about 28°. What is left under <a class="ref prop" href="/docs/fabric-simulation-glossary/sheet/fabric-settings/#restholdwakefraction">`RestHoldWakeFraction`</a> of the
+  lies within its cone. The friction setting `f` is <a class="ref prop" href="/docs/fabric-simulation-glossary/sheet/fabric-settings/#colliderfriction">`ColliderFriction`</a> on a collider and
+  <a class="ref prop" href="/docs/fabric-simulation-glossary/sheet/fabric-settings/#selfcollisionfriction">`SelfCollisionFriction`</a> on cloth, and the cone's coefficient is `f / (1 − f)`: the push along the carrier
+  it holds is that many times the push into it. So 0.35 holds a slope of about 28°, 0.5 one of 45°, and 1 any slope;
+  0 holds nothing. What is left under <a class="ref prop" href="/docs/fabric-simulation-glossary/sheet/fabric-settings/#restholdwakefraction">`RestHoldWakeFraction`</a> of the
   rest threshold per 1/120 s, 3.6 m/s² at the defaults, is ignored too.
 - **A small net move snaps back.** At the end of the step, a move within its wake was noise, and the point goes back
   to where the step began. The wake is `RestHoldWakeFraction` of the distance the rest threshold covers in 1/120 s,

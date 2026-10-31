@@ -42,8 +42,8 @@ each point carries from one step to the next is rescaled the same way when the r
 
 So <a class="ref prop" href="/docs/fabric-simulation-glossary/sheet/fabric-settings/#solverfrequencyhz">`SolverFrequencyHz`</a> changes the cost and the stability, not how the cloth moves. Raise it, even while the
 cloth runs, and every step is shorter, every round has less to correct, and fast motion is caught that a longer step
-would let one layer through another, at the price of more steps a second. The two frictions are also read as they
-are, unscaled, as the static friction that holds resting cloth on a slope, see [rest](/docs/fabric-simulation-collisions/#rest).
+would let one layer through another, at the price of more steps a second. The two frictions also set, unscaled, the
+static friction that holds resting cloth on a slope, see [holding settled cloth still](/docs/fabric-simulation-collisions/#holding-settled-cloth-still).
 
 ## The solver
 
