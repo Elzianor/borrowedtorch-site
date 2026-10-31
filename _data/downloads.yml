@@ -23,3 +23,18 @@
     - Opens .ormh descriptors, and packs them from the command line for batches.
   needs: 64-bit Windows · nothing to install, .NET included
   note: The exe isn't code-signed yet. If Windows SmartScreen stops it, choose More info, then Run anyway. Each release has a .sha256 file to check the download against.
+- id: localization-helper
+  name: Localization Helper
+  repo: BorrowedTorchStudio/BorrowedTorch.Downloads
+  version: v1.1.0
+  tag_prefix: localization-helper-
+  asset: BorrowedTorch.LocalizationHelper-{version}-win-x64.zip
+  guide: LocalizationHelper
+  summary: Keeps a game's translations in order — its languages, the folders and JSON files the texts are split into, the string IDs, and the text of every ID in every language.
+  features:
+    - One files structure, mirrored into every language's folder — add, rename, move or remove a file once and every language follows.
+    - String IDs that belong to a file; adding, renaming, moving or removing one updates that file in every language.
+    - The reference language's text above the one being written, and a mark on every language and ID that still lacks a text.
+    - Plain JSON files the game reads without the app, safe to edit or merge outside it.
+  needs: 64-bit Windows · nothing to install, .NET included
+  note: The exe isn't code-signed yet. If Windows SmartScreen stops it, choose More info, then Run anyway. Each release has a .sha256 file to check the download against.
