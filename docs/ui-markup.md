@@ -42,7 +42,7 @@ dotnet add package BorrowedTorch.UI.Markup
 | UI | [`BorrowedTorch.UI`](/docs/ui/#installing) 1.6.1 or later, installed with the markup |
 | .NET | 10, Windows (`net10.0-windows10.0.19041.0`), as the UI |
 
-The types are in the `BorrowedTorch.UI.Markup` namespace. This page covers version 1.3.0.
+The types are in the `BorrowedTorch.UI.Markup` namespace. This page covers version 1.4.0.
 
 ## Loading markup
 
@@ -58,7 +58,8 @@ is read.
 <a class="ref method" href="/docs/ui-glossary/types/ui-markup/#loaddocument">`LoadDocument`</a> and <a class="ref method" href="/docs/ui-glossary/types/ui-markup/#loaddocumentfile">`LoadDocumentFile`</a> return the same elements in a <a class="ref" href="/docs/ui-glossary/types/markup-document/">`MarkupDocument`</a>, which
 remembers every element the markup made. Disposing the document disposes all of them, the items and contents of its
 panels included, which disposing a panel only detaches. That is the way to take a whole UI away: a screen that is left,
-or a markup loaded again in its place, as a tool does after an edit.
+or a markup loaded again in its place, as a tool does after an edit. A document also has the markup's
+[elements as written](#the-elements-as-written), with where each one is.
 
 ```csharp
 _menu?.Dispose();
@@ -95,9 +96,12 @@ A sealed class, `IDisposable`.
 | Property | Type | Description |
 | --- | --- | --- |
 | <a class="ref prop" href="/docs/ui-glossary/types/markup-document/#elements">`Elements`</a> | `IReadOnlyList<BaseElement>` | Read-only. The elements under `<Ui>`, in the order they are written. |
+| <a class="ref prop" href="/docs/ui-glossary/types/markup-document/#nodes">`Nodes`</a> | <code>IReadOnlyList&lt;<a href="/docs/ui-glossary/types/markup-node/">MarkupNode</a>&gt;</code> | Read-only. The markup's elements as written, in a tree: the ones under `<Ui>`, with the elements written in them, an include holding the elements of its UI. |
 
 | Method | Description |
 | --- | --- |
+| <a class="ref method" href="/docs/ui-glossary/types/markup-document/#nodeof">`NodeOf(BaseElement element)`</a> | The node of an element the markup has, `null` for one it doesn't, such as a part a control made for itself (a slider's thumb): walk up its parents to the element written. |
+| <a class="ref method" href="/docs/ui-glossary/types/markup-document/#nodeat">`NodeAt(string position)`</a> | The node at a <a class="ref prop" href="/docs/ui-glossary/types/markup-node/#position">`Position`</a>, `null` where there is none. |
 | <a class="ref method" href="/docs/ui-glossary/types/markup-document/#dispose">`Dispose()`</a> | Disposes every element the markup made, the items and contents of its panels included; a disposed element leaves its parent, the root as well. Elements added to them since are only detached, as a panel's own items are. |
 
 ## Writing markup
@@ -389,6 +393,72 @@ files a markup read.
 An include holds nothing and takes a `Source` and a `Name` (only a `Source` among styles). A file that can't be read, a
 file that includes itself, a UI included among styles and a style dictionary included among elements are errors at the
 include. An error inside an included file is reported at the include too, with the file, line and column it is at.
+
+## The elements as written
+
+A <a class="ref" href="/docs/ui-glossary/types/markup-document/">`MarkupDocument`</a> keeps the markup's elements as they are written, for a tool that shows them or finds where
+one is written. <a class="ref prop" href="/docs/ui-glossary/types/markup-document/#nodes">`Nodes`</a> is a tree of <a class="ref" href="/docs/ui-glossary/types/markup-node/">`MarkupNode`</a>s, one per element written: the element it made, its type
+name, the property a property element gives it to, the file, line and column it is written at, and the elements written
+in it. An include is a node too, with its `Source` and no element, holding the elements of the UI it includes. Styles
+are no nodes: only elements are.
+
+```csharp
+// the markup's tree, with where each element is written
+void Print(MarkupNode node, int depth)
+{
+    Console.WriteLine($"{new string(' ', depth * 2)}{node} at {node.Line}:{node.Column}");
+
+    foreach (var child in node.Children)
+        Print(child, depth + 1);
+}
+
+foreach (var node in document.Nodes)
+    Print(node, 0);
+```
+
+<a class="ref method" href="/docs/ui-glossary/types/markup-document/#nodeof">`NodeOf`</a> finds an element's node, for example the one clicked in a tool's view. A part a control made for itself,
+such as a slider's thumb or a list's row, has none: walk up its <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#parent">`Parent`</a>s to the element written.
+
+```csharp
+MarkupNode WrittenAt(BaseElement element)
+{
+    for (var current = element; current != null; current = current.Parent)
+        if (document.NodeOf(current) is { } node)
+            return node;
+
+    return null;
+}
+```
+
+A node's <a class="ref prop" href="/docs/ui-glossary/types/markup-node/#position">`Position`</a> is the indexes of the XML elements from the root down to it, from 0, through the
+includes: `1/0/2`. The element at a position is the same element in the markup loaded again after an edit elsewhere in
+it, so <a class="ref method" href="/docs/ui-glossary/types/markup-document/#nodeat">`NodeAt`</a> keeps a tool's selection across reloads:
+
+```csharp
+var position = document.NodeOf(selected)?.Position;
+
+document.Dispose();
+document = UiMarkup.LoadDocumentFile(path, context);
+
+selected = document.NodeAt(position)?.Element;
+```
+
+### MarkupNode
+
+A sealed class. Its `ToString()` is the type name and the element's name, or `Include` and the source.
+
+| Property | Type | Description |
+| --- | --- | --- |
+| <a class="ref prop" href="/docs/ui-glossary/types/markup-node/#element">`Element`</a> | `BaseElement` | Read-only. The element made, `null` for an include. |
+| <a class="ref prop" href="/docs/ui-glossary/types/markup-node/#typename">`TypeName`</a> | `string` | Read-only. The type name as written (`Button`), or `Include`. |
+| <a class="ref prop" href="/docs/ui-glossary/types/markup-node/#property">`Property`</a> | `string` | Read-only. The property a property element gives the element to (`ToolTip` for one in `<Button.ToolTip>`), `null` for an item, a content or an element under the root. |
+| <a class="ref prop" href="/docs/ui-glossary/types/markup-node/#source">`Source`</a> | `string` | Read-only. An include's `Source` as written, `null` for an element. |
+| <a class="ref prop" href="/docs/ui-glossary/types/markup-node/#file">`File`</a> | `string` | Read-only. The full path of the file it is written in, the one loaded or an included one; `null` for a markup given as text. |
+| <a class="ref prop" href="/docs/ui-glossary/types/markup-node/#line">`Line`</a> | `int` | Read-only. The line of its start tag in its file, from 1. |
+| <a class="ref prop" href="/docs/ui-glossary/types/markup-node/#column">`Column`</a> | `int` | Read-only. The column of its start tag's name, from 1. |
+| <a class="ref prop" href="/docs/ui-glossary/types/markup-node/#position">`Position`</a> | `string` | Read-only. The indexes of the XML elements from the root down to it, from 0, through the includes (`1/0/2`). Property elements and `<Ui.Styles>` are counted. |
+| <a class="ref prop" href="/docs/ui-glossary/types/markup-node/#parent">`Parent`</a> | <a class="ref" href="/docs/ui-glossary/types/markup-node/">`MarkupNode`</a> | Read-only. The node it is written in, `null` for one under the root. |
+| <a class="ref prop" href="/docs/ui-glossary/types/markup-node/#children">`Children`</a> | <code>IReadOnlyList&lt;<a href="/docs/ui-glossary/types/markup-node/">MarkupNode</a>&gt;</code> | Read-only. The elements written in it, in the order they are written: its items or its content, the elements given to its properties, an include's elements. |
 
 ## A pause menu in markup
 

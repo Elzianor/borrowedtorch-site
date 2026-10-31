@@ -49,7 +49,7 @@
       summary: UI framework for MonoGame — WPF-style measure and arrange layout, dependency properties set by hand, by styles or bound to view models, and ready-made controls from buttons and sliders to tree views, windows and rich text boxes, all drawn with one SpriteBatch.
       needs: Windows 10 · .NET 10 · MonoGame DesktopGL or WindowsDX
     - id: BorrowedTorch.UI.Markup
-      summary: Builds BorrowedTorch.UI element trees from XML markup — elements by type name, properties as attributes, items and content as child elements, events by handler name, bindings to a view model, style dictionaries and files included in others — for UI written as data, loaded at run time or edited live in a tool.
+      summary: Builds BorrowedTorch.UI element trees from XML markup — elements by type name, properties as attributes, items and content as child elements, events by handler name, bindings to a view model, style dictionaries, files included in others, and where each element is written — for UI written as data, loaded at run time or edited live in a tool.
       needs: Windows 10 · .NET 10 · BorrowedTorch.UI 1.6.1+
     - id: BorrowedTorch.UIDPGenerator
       summary: Build tool that generates BorrowedTorch.UI dependency properties and style classes from .dpg files before every build.
