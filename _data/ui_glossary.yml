@@ -2182,7 +2182,11 @@
       entries:
         - title: "Markup<wbr>Context"
           url: /docs/ui-glossary/types/markup-context/
+        - title: "Markup<wbr>Document"
+          url: /docs/ui-glossary/types/markup-document/
         - title: "Markup<wbr>Exception"
           url: /docs/ui-glossary/types/markup-exception/
+        - title: "Style<wbr>Dictionary"
+          url: /docs/ui-glossary/types/style-dictionary/
         - title: "Ui<wbr>Markup"
           url: /docs/ui-glossary/types/ui-markup/
