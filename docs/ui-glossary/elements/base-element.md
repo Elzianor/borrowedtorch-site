@@ -153,6 +153,10 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 `bool` · Read-only. True while the element has the keyboard.
 
+<h3 id="ispart"><span class="prop"><code>IsPart</code></span> <a class="ctx" href="/docs/ui-base-element/#inspecting-elements" title="IsPart in context on the base element page" aria-label="IsPart in context on the base element page">🠆</a></h3>
+
+`bool` · Read-only. Whether the element is a part of its control: made by the control as one of the pieces it is drawn with (a button's label, a combo box's list), not given to it as content or as an item. For a tool that shows the element tree.
+
 <h3 id="isresizable"><span class="dp"><code>IsResizable</code></span> <a class="ctx" href="/docs/ui-base-element/#resizing" title="IsResizable in context on the base element page" aria-label="IsResizable in context on the base element page">🠆</a></h3>
 
 `bool` · Lets the user resize the element by dragging its edges and corners.
@@ -683,6 +687,14 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 <h3 id="unsubscribeself"><span class="method"><code>UnsubscribeSelf()</code></span> <a class="ctx" href="/docs/ui-base-element/#members-for-derived-elements" title="UnsubscribeSelf() in context on the base element page" aria-label="UnsubscribeSelf() in context on the base element page">🠆</a></h3>
 
 <a class="ref method" href="/docs/ui-glossary/elements/base-element/#unsubscribeself">`UnsubscribeSelf()`</a> · Protected virtual. Called on dispose: release the element's subscriptions to other objects here.
+
+<h3 id="valuesourceof"><span class="method"><code>ValueSourceOf()</code></span> <a class="ctx" href="/docs/ui-base-element/#inspecting-elements" title="ValueSourceOf() in context on the base element page" aria-label="ValueSourceOf() in context on the base element page">🠆</a></h3>
+
+<a class="ref method" href="/docs/ui-glossary/elements/base-element/#valuesourceof">`ValueSourceOf(string propertyName)`</a> · Where the value of the element's dependency property of that name comes from now, a <a class="ref" href="/docs/ui-glossary/types/value-sources/">`ValueSources`</a>: set on the element (`ManualAssign`), by its style override (`StyleOverride`), by its type's general style (`GeneralStyle`), or none of them (`None`: its default). It doesn't create the dependency property, so one the element hasn't used yet is `None`. `null` for a name that is no dependency property of the element. For a tool that shows an element's properties.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `propertyName` | `string` | The name of the property, such as `"Text"` or `"NormalColor"` (`nameof(Button.Text)`). A dependency property of a base class counts too; an empty name or `null` gives `null`. |
 
 <h3 id="visibilitychangedhandleroverride"><span class="method"><code>VisibilityChangedHandlerOverride()</code></span> <a class="ctx" href="/docs/ui-base-element/#handler-overrides" title="VisibilityChangedHandlerOverride() in context on the base element page" aria-label="VisibilityChangedHandlerOverride() in context on the base element page">🠆</a></h3>
 

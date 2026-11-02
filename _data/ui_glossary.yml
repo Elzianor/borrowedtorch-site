@@ -110,6 +110,9 @@
         - title: "Is<wbr>Focused"
           anchor: isfocused
           kind: prop
+        - title: "Is<wbr>Part"
+          anchor: ispart
+          kind: prop
         - title: "Is<wbr>Resizable"
           anchor: isresizable
           kind: dp
@@ -388,6 +391,9 @@
           kind: method
         - title: "Unsubscribe<wbr>Self()"
           anchor: unsubscribeself
+          kind: method
+        - title: "Value<wbr>Source<wbr>Of()"
+          anchor: valuesourceof
           kind: method
         - title: "Visibility<wbr>Changed<wbr>Handler<wbr>Override()"
           anchor: visibilitychangedhandleroverride
@@ -2180,6 +2186,8 @@
               url: /docs/ui-glossary/types/tree-view-item-select/
     - title: "Markup"
       entries:
+        - title: "Markup<wbr>Animation"
+          url: /docs/ui-glossary/types/markup-animation/
         - title: "Markup<wbr>Context"
           url: /docs/ui-glossary/types/markup-context/
         - title: "Markup<wbr>Document"

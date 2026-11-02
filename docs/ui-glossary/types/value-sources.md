@@ -22,4 +22,4 @@ A value from the general style of the type, or from the framework defaults under
 
 <h3 id="none"><code>None</code> <a class="ctx" href="/docs/ui-styles/#valuesources" title="None in context on the styles page" aria-label="None in context on the styles page">🠆</a></h3>
 
-No source has a value: the property reads its default. Returned by `ValueSource`; setting or clearing with it does nothing.
+No source has a value: the property reads its default. Returned by `ValueSource` and `ValueSourceOf`; setting or clearing with it does nothing.

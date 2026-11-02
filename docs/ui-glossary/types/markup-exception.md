@@ -31,7 +31,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="reason"><span class="prop"><code>Reason</code></span> <a class="ctx" href="/docs/ui-markup/#markupexception" title="Reason in context on the markup page" aria-label="Reason in context on the markup page">🠆</a></h3>
 
-`string` · Read-only. What is wrong, without the place.
+`string` · Read-only. What is wrong, without the place. For a value that can't be read, the attribute's name and the reason <a class="ref method" href="/docs/ui-glossary/types/ui-markup/#readvalue">`UiMarkup.ReadValue`</a> gives for the same text: `Margin: '1, 2, 3, 4, 5' is no all, or left, top[, right[, bottom]]`.
 
 ## Methods
 

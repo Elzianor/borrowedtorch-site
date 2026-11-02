@@ -15,7 +15,7 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 
 <h3 id="usetargetappearance"><span class="prop"><code>UseTargetAppearance</code></span> <a class="ctx" href="/docs/ui-images/#draganddroprepresentation-properties" title="UseTargetAppearance in context on the images page" aria-label="UseTargetAppearance in context on the images page">🠆</a></h3>
 
-`bool` · Whether each drag takes a picture of the dragged element, at the start of the drag, and shows it at the element's size instead of <a class="ref dp" href="/docs/ui-glossary/elements/image/#source">`Source`</a>. The representation owns that picture and disposes it.
+`bool` · Whether each drag takes a picture of the dragged element, at the start of the drag, and shows it at the element's size instead of <a class="ref dp" href="/docs/ui-glossary/elements/image/#source">`Source`</a>. The representation owns that picture and disposes it. The picture is drawn into a render target of its own, after which the render targets set before are set back.
 
 ## Methods
 

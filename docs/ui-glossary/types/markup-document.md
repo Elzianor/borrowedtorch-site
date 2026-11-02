@@ -5,13 +5,17 @@ title: "Glossary: MarkupDocument"
 description: "The members of MarkupDocument, in alphabetical order."
 ---
 
-What a markup made, returned by <a class="ref method" href="/docs/ui-glossary/types/ui-markup/#loaddocument">`LoadDocument`</a> and <a class="ref method" href="/docs/ui-glossary/types/ui-markup/#loaddocumentfile">`LoadDocumentFile`</a>: the elements under `<Ui>`, every element made for them, which <a class="ref method" href="/docs/ui-glossary/types/markup-document/#dispose">`Dispose`</a> disposes, and the markup's elements as written, with where each one is. For a UI that goes away as a whole, a screen left or a markup loaded again in its place, and for a tool that shows a markup's elements.
+What a markup made, returned by <a class="ref method" href="/docs/ui-glossary/types/ui-markup/#loaddocument">`LoadDocument`</a> and <a class="ref method" href="/docs/ui-glossary/types/ui-markup/#loaddocumentfile">`LoadDocumentFile`</a>: the elements under `<Ui>`, every element made for them, which <a class="ref method" href="/docs/ui-glossary/types/markup-document/#dispose">`Dispose`</a> disposes, the markup's elements as written, with where each one is, and its animations. For a UI that goes away as a whole, a screen left or a markup loaded again in its place, and for a tool that shows a markup's elements or plays its animations.
 
 A sealed class of the BorrowedTorch.UI.Markup package (namespace `BorrowedTorch.UI.Markup`), `IDisposable`. The [markup page](/docs/ui-markup/#markupdocument) shows it in context.
 
 Names are colored by what they are: a <span class="kb kb-prop">property</span>, a <span class="kb kb-method">method</span> or an <span class="kb kb-event">event</span>; values and fields keep the plain color.
 
 ## Properties
+
+<h3 id="animations"><span class="prop"><code>Animations</code></span> <a class="ctx" href="/docs/ui-markup/#markupdocument" title="Animations in context on the markup page" aria-label="Animations in context on the markup page">🠆</a></h3>
+
+<code>IReadOnlyList&lt;<a href="/docs/ui-glossary/types/markup-animation/">MarkupAnimation</a>&gt;</code> · Read-only. The animations of the markup's `<Ui.Animations>` and of the UIs it includes, each with its <a class="ref method" href="/docs/ui-glossary/types/markup-animation/#start">`Start`</a>, <a class="ref method" href="/docs/ui-glossary/types/markup-animation/#stop">`Stop`</a> and <a class="ref method" href="/docs/ui-glossary/types/markup-animation/#seek">`Seek`</a>. Empty once the document is disposed. See [animations](/docs/ui-markup/#animations).
 
 <h3 id="elements"><span class="prop"><code>Elements</code></span> <a class="ctx" href="/docs/ui-markup/#markupdocument" title="Elements in context on the markup page" aria-label="Elements in context on the markup page">🠆</a></h3>
 
@@ -25,7 +29,15 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="dispose"><span class="method"><code>Dispose()</code></span> <a class="ctx" href="/docs/ui-markup/#markupdocument" title="Dispose() in context on the markup page" aria-label="Dispose() in context on the markup page">🠆</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/types/markup-document/#dispose">`Dispose()`</a> · Disposes every element the markup made, the items and contents of its panels included, which disposing a panel leaves alone (it only detaches them). A disposed element leaves its parent, the root as well. Elements added to them since are only detached, as a panel's own items are.
+<a class="ref method" href="/docs/ui-glossary/types/markup-document/#dispose">`Dispose()`</a> · Stops the markup's animations, which would otherwise set the properties of disposed elements, and empties <a class="ref prop" href="/docs/ui-glossary/types/markup-document/#animations">`Animations`</a>. Then disposes every element the markup made, the items and contents of its panels included, which disposing a panel leaves alone (it only detaches them). A disposed element leaves its parent, the root as well. Elements added to them since are only detached, as a panel's own items are.
+
+<h3 id="findanimation"><span class="method"><code>FindAnimation()</code></span> <a class="ctx" href="/docs/ui-markup/#markupdocument" title="FindAnimation() in context on the markup page" aria-label="FindAnimation() in context on the markup page">🠆</a></h3>
+
+<a class="ref method" href="/docs/ui-glossary/types/markup-document/#findanimation">`FindAnimation(string key)`</a> · The animation of the key, `null` for none (or for a `null` key).
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `key` | `string` | An animation's `Key`, with the include's name before it for one of an included UI: `left.pulse` for the `pulse` of a UI included with `Name="left"`. |
 
 <h3 id="nodeat"><span class="method"><code>NodeAt()</code></span> <a class="ctx" href="/docs/ui-markup/#markupdocument" title="NodeAt() in context on the markup page" aria-label="NodeAt() in context on the markup page">🠆</a></h3>
 
@@ -42,3 +54,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 | Parameter | Type | Description |
 | --- | --- | --- |
 | `element` | <a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> | An element, for example the one clicked in a tool's view. |
+
+<h3 id="startloadanimations"><span class="method"><code>StartLoadAnimations()</code></span> <a class="ctx" href="/docs/ui-markup/#markupdocument" title="StartLoadAnimations() in context on the markup page" aria-label="StartLoadAnimations() in context on the markup page">🠆</a></h3>
+
+<a class="ref method" href="/docs/ui-glossary/types/markup-document/#startloadanimations">`StartLoadAnimations()`</a> · Starts the animations started as the markup is loaded (a `StartOn` with `Load`), from their beginnings: what a load does, unless its context's <a class="ref prop" href="/docs/ui-glossary/types/markup-context/#startsloadanimations">`StartsLoadAnimations`</a> is `false`. For a tool that shows the UI as it is written until it plays it.

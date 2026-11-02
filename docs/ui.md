@@ -22,7 +22,7 @@ These pages cover the library from setup to every public type:
 | [Text](/docs/ui-text/) | Labels, rich text boxes, text input and fonts |
 | [Images and drawing](/docs/ui-images/) | Images, stencils, view ports for your own drawing, and drag and drop |
 | [Styles, bindings and animation](/docs/ui-styles/) | Styles, mouse cursors, default settings, dependency properties, view model bindings and animations |
-| [Markup](/docs/ui-markup/) | The BorrowedTorch.UI.Markup package: elements, properties, items, events, bindings and styles written as XML, in files that include others |
+| [Markup](/docs/ui-markup/) | The BorrowedTorch.UI.Markup package: elements, properties, items, events, bindings, styles and animations written as XML, in files that include others |
 | [Glossary](/docs/ui-glossary/) | Every element with its properties and methods in alphabetical order, one page per element |
 
 Screenshots on these pages are real renders of the snippets next to them, drawn with the theme shown on the
@@ -126,7 +126,9 @@ dispose them, so dispose the ones that hold resources yourself.
 Two cases need more than the window:
 
 - **A UI drawn into a render target of its own size.** Set `FollowsBackBuffer` to `false` and give the size with
-  `ApplyGameWindowSize`. With following on, a size you give stays until the back buffer changes.
+  `ApplyGameWindowSize`. With following on, a size you give stays until the back buffer changes. When the target is
+  shown scaled or moved, tell the UI where with `ShownAt`, so it reads the mouse there (see
+  [drawing into a render target](#drawing-into-a-render-target)).
 - **A UI hosted outside a game window**, such as a WPF editor or a test. Pass your own <a class="ref" href="/docs/ui-glossary/types/i-text-input-events/">`ITextInputEvents`</a> instead of
   the window. <a class="ref" href="/docs/ui-glossary/types/game-window-text-input-events/">`GameWindowTextInputEvents`</a> is the adapter the window constructor uses, if you need one by hand.
   The mouse and the keys still come from MonoInput's managers, whose polling reads the game window. Give them the
@@ -135,6 +137,43 @@ Two cases need more than the window:
   The cursors the elements ask for go through MonoGame's `Mouse.SetCursor`, which needs the game window too and throws
   without one: give <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#mousecursorhandler">`MouseCursorHandler`</a> your own way of showing a `MouseCursor`, or `null` to show none (see
   [showing the cursors](/docs/ui-styles/#showing-the-cursors)).
+
+### Drawing into a render target
+
+The UI draws into the render target that is set when <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#draw">`Draw`</a> is called. A few elements draw pictures of their own
+into render targets of their own: a [stencil](/docs/ui-images/#stencil) its scaled textures, a
+[drag and drop representation](/docs/ui-images/#draganddroprepresentation) its picture of the dragged element, a
+[combo box](/docs/ui-lists/#combobox) its picture of the chosen row. Each sets back the render targets that were set
+before (before 2.3.0, the back buffer), so a UI drawn into a target of yours goes on drawing into it.
+
+A tool that previews a game's UI at the game's resolution draws it into a target of that size and shows the target
+scaled, inside its own window. The mouse is still read in the window's device pixels, so give the UI the rectangle
+the target is shown in with <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#shownat">`ShownAt`</a>, in those pixels:
+
+```csharp
+// the game's 1920 x 1080 UI, shown at half its size 100 by 50 pixels into the tool's window
+var target = new RenderTarget2D(GraphicsDevice, 1920, 1080);
+
+_ui.FollowsBackBuffer = false;
+_ui.ApplyGameWindowSize(1920, 1080);
+_ui.ShownAt = new Rectangle(100, 50, 960, 540);
+
+// every frame: the UI into its target, then the target where ShownAt says
+GraphicsDevice.SetRenderTarget(target);
+GraphicsDevice.Clear(Color.Black);
+_ui.Draw();
+GraphicsDevice.SetRenderTarget(null);
+
+_spriteBatch.Begin();
+_spriteBatch.Draw(target, _ui.ShownAt.Value, Color.White);
+_spriteBatch.End();
+```
+
+The mouse is then read through the rectangle: a position in it is mapped onto the UI's screen, so the window pixel
+(579, 319) is the screen's (959, 539) above, and a position outside of it is outside of the screen, over no element.
+Moves and the mouse positions of the events are mapped the same way. <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#mouseposition">`MousePosition`</a> gives the mouse as the
+elements read it, in logical units, for a tool that works over the UI with the mouse. While `ShownAt` is `null`, the
+default, or a rectangle without a size, the mouse is read as it is.
 
 ### BorrowedTorchUI
 
@@ -154,15 +193,17 @@ Names are colored by what they are: a <span class="kb kb-prop">plain property</s
 | <span class="prop">`HasKeyboard`</span> | Read-only. Whether an element has the keyboard. |
 | <span class="prop">`FocusedElement`</span> | Read-only. The element that has the keyboard, `null` when none has it. |
 | <span class="method">`ElementAt(Point position)`</span> | The element the mouse would be over at a position in logical units, by the rules the UI hovers by, without hovering anything. The root where nothing else takes the mouse, `null` outside of the screen. |
-| <span class="prop">`ElementUnderMouse`</span> | Read-only. <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#elementat">`ElementAt`</a> where the mouse is. |
+| <span class="prop">`ElementUnderMouse`</span> | Read-only. <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#elementat">`ElementAt`</a> where the mouse is (<a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#mouseposition">`MousePosition`</a>). |
+| <span class="prop">`MousePosition`</span> | Read-only. Where the mouse is, in logical units and through <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#shownat">`ShownAt`</a>: the position the elements read, outside of the screen while the mouse is outside of it. |
 | <span class="prop">`FollowsBackBuffer`</span> | Whether the UI takes the back buffer's size by itself, at the start of every <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#update">`Update`</a>. On by default. Turn it off for a UI drawn into a render target of its own size. Turned on again, it takes the back buffer's size at the next update. |
 | <span class="method">`ApplyGameWindowSize(int width, int height)`</span> | Lays the UI out over a screen size in device pixels. A size of 0, such as a minimized window's, is ignored. With <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#followsbackbuffer">`FollowsBackBuffer`</a> on, the size stays until the back buffer changes. |
+| <span class="prop">`ShownAt`</span> | The rectangle the UI's screen is shown in, in device pixels of the window the mouse is read in, for a UI drawn into a render target of its own size and shown scaled or moved: the mouse is read through it (see [drawing into a render target](#drawing-into-a-render-target)). `null` by default: the screen is shown as it is drawn. A rectangle without a size counts as `null`. |
 | <span class="prop">`Scale`</span> | How large one logical unit is on screen, see [display scaling](#display-scaling). Between <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-ui/#minscale">`MinScale`</a> (0.25) and <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-ui/#maxscale">`MaxScale`</a> (8). |
 | <span class="prop">`FollowsDisplayScale`</span> | Whether <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#scale">`Scale`</a> follows the display scale of the window's monitor, times <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#displayscalefactor">`DisplayScaleFactor`</a>. Turned on, it sets the scale at once and then follows the window to other monitors. A scale set by hand stays until the DPI changes. Off by default. Needs the window constructor, otherwise turning it on throws. |
 | <span class="prop">`DisplayScaleFactor`</span> | What the display scale is multiplied with while following: a UI size setting of the game. 1 by default, a positive number. Set while following, it applies at once. |
 | <span class="prop">`DrawTransform`</span> | Read-only. The matrix the UI draws with. Draw code that begins its own sprite batch inside the UI passes it to draw in logical units. |
 | <span class="prop">`ExceptionHandler`</span> | Gets the exceptions thrown inside <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#update">`Update`</a>, <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#draw">`Draw`</a> and the handling of text input. Without a handler they are rethrown. |
-| <span class="method">`AddAnimation(BaseAnimation animation)`</span> | Starts updating an animation, see [animations](/docs/ui-styles/#animations). |
+| <span class="method">`AddAnimation(BaseAnimation animation)`</span> | Starts updating an animation, which plays once it is started. <a class="ref method" href="/docs/ui-glossary/types/animation/#start">`Animation.Start`</a> adds it as well, so this is needed only for one you start later. See [animations](/docs/ui-styles/#animations). |
 | <span class="method">`RemoveAnimation(BaseAnimation animation)`</span> | Stops updating an animation. It keeps its state, and adding it again continues it. |
 | <span class="method">`SetDefaultMouseCursorsSet(MouseCursorsSet mouseCursorsSet)`</span> | Sets the cursors every element uses unless it has its own, see [mouse cursors](/docs/ui-styles/#mouse-cursors). |
 | <span class="prop">`MouseCursorHandler`</span> | Shows the cursors the elements ask for: MonoGame's `Mouse.SetCursor` by default. A UI hosted outside a game window gives its own way, or `null` to show none. See [showing the cursors](/docs/ui-styles/#showing-the-cursors). |
@@ -237,8 +278,9 @@ hovering anything. It goes by the rules the UI hovers by (see [mouse and states]
 - While a modal window is shown, only its elements and the root around it count.
 
 Where nothing else takes the mouse it returns the root, and outside of the screen `null`. <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#elementundermouse">`ElementUnderMouse`</a> is the
-element at the mouse. The element found can be a part of a control, such as a list's row or a slider's thumb, so walk
-up its <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#parent">`Parent`</a>s to the element you want:
+element at the mouse, read where the elements read it (<a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#mouseposition">`MousePosition`</a>). The element found can be a part of a
+control, such as a list's row or a slider's thumb (<a class="ref prop" href="/docs/ui-glossary/elements/base-element/#ispart">`IsPart`</a> tells a part from what you gave the control, see
+[inspecting elements](/docs/ui-base-element/#inspecting-elements)), so walk up its <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#parent">`Parent`</a>s to the element you want:
 
 ```csharp
 // the window under the mouse, null where there is none

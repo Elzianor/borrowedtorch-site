@@ -5,7 +5,7 @@ title: "Glossary: MarkupContext"
 description: "The members of MarkupContext, in alphabetical order."
 ---
 
-What a markup reaches besides the UI's own types: the object whose methods handle the events it names, the object its bindings read, the style dictionaries its keys name, where it finds and how it reads the files it includes, element and style types of your own, and converters for the property types it can't read from text by itself.
+What a markup reaches besides the UI's own types: the object whose methods handle the events it names, the object its bindings read, the style dictionaries its keys name, where it finds and how it reads the files it includes, element and style types of your own, and converters for the property types it can't read from text by itself. It also tells whether the animations a markup starts on load start as it is loaded.
 
 A sealed class of the BorrowedTorch.UI.Markup package (namespace `BorrowedTorch.UI.Markup`). The [markup page](/docs/ui-markup/#markupcontext) shows it in context.
 
@@ -33,6 +33,10 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 `Func<string, string>` · Reads a markup file, given its full path: the one loaded from its file (<a class="ref method" href="/docs/ui-glossary/types/ui-markup/#loadfile">`LoadFile`</a>, <a class="ref method" href="/docs/ui-glossary/types/ui-markup/#loaddocumentfile">`LoadDocumentFile`</a>, <a class="ref method" href="/docs/ui-glossary/types/ui-markup/#loadstylesfile">`LoadStylesFile`</a>) and the ones included. `File.ReadAllText` without one; a game whose files are elsewhere, such as in a content package, gives its own, and a tool may follow what is read with it.
 
+<h3 id="startsloadanimations"><span class="prop"><code>StartsLoadAnimations</code></span> <a class="ctx" href="/docs/ui-markup/#markupcontext" title="StartsLoadAnimations in context on the markup page" aria-label="StartsLoadAnimations in context on the markup page">🠆</a></h3>
+
+`bool` · Whether the animations a markup starts as it is loaded (`StartOn="Load"`) are started then: `true` by default. `false`, they wait for <a class="ref method" href="/docs/ui-glossary/types/markup-document/#startloadanimations">`MarkupDocument.StartLoadAnimations`</a>, and the elements keep their values as written: for a tool showing the UI as it is written until it is played. The animations started by events start on them either way. See [animations in a tool](/docs/ui-markup/#animations-in-a-tool).
+
 ## Methods
 
 <h3 id="markupcontext"><span class="method"><code>MarkupContext()</code></span> <a class="ctx" href="/docs/ui-markup/#markupcontext" title="MarkupContext() in context on the markup page" aria-label="MarkupContext() in context on the markup page">🠆</a></h3>
@@ -41,7 +45,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="addconverter"><span class="method"><code>AddConverter()</code></span> <a class="ctx" href="/docs/ui-markup/#markupcontext" title="AddConverter() in context on the markup page" aria-label="AddConverter() in context on the markup page">🠆</a></h3>
 
-<a class="ref method" href="/docs/ui-glossary/types/markup-context/#addconverter">`AddConverter<T>(Func<string, T> convert)`</a> · Reads the values of type `T` (and `T?`) from text, in place of the markup's own way for that type. The markup reads text, numbers, enums, `Color`, `Margin`, `Point`, `Vector2` and the types that convert from a string by itself. An exception the converter throws becomes the inner exception of a <a class="ref" href="/docs/ui-glossary/types/markup-exception/">`MarkupException`</a>. Returns this context, so the calls chain. A `null` converter throws an `ArgumentNullException`.
+<a class="ref method" href="/docs/ui-glossary/types/markup-context/#addconverter">`AddConverter<T>(Func<string, T> convert)`</a> · Reads the values of type `T` (and `T?`) from text, in place of the markup's own way for that type. The markup reads text, numbers, enums, `Color`, `Margin`, `Point`, `Vector2` and the types that convert from a string by itself. An exception the converter throws becomes the inner exception of a <a class="ref" href="/docs/ui-glossary/types/markup-exception/">`MarkupException`</a>. The converter reads the `From` and `To` of an animation too, so a property of type `T` can be animated, and <a class="ref method" href="/docs/ui-glossary/types/ui-markup/#readvalue">`UiMarkup.ReadValue`</a> given this context uses it. Returns this context, so the calls chain. A `null` converter throws an `ArgumentNullException`.
 
 | Parameter | Type | Description |
 | --- | --- | --- |

@@ -21,7 +21,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="elementundermouse"><span class="prop"><code>ElementUnderMouse</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="ElementUnderMouse in context on the quick start guide" aria-label="ElementUnderMouse in context on the quick start guide">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> · Read-only. <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#elementat">`ElementAt`</a> where the mouse is. See [finding the element at a point](/docs/ui/#finding-the-element-at-a-point).
+<a class="ref" href="/docs/ui-glossary/elements/base-element/">`BaseElement`</a> · Read-only. <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#elementat">`ElementAt`</a> where the mouse is, as the elements read it (<a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#mouseposition">`MousePosition`</a>). See [finding the element at a point](/docs/ui/#finding-the-element-at-a-point).
 
 <h3 id="exceptionhandler"><span class="prop"><code>ExceptionHandler</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="ExceptionHandler in context on the quick start guide" aria-label="ExceptionHandler in context on the quick start guide">🠆</a></h3>
 
@@ -51,6 +51,10 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 `Action<MouseCursor>` · Shows the cursors the elements ask for; it never gets `null`. By default MonoGame's `Mouse.SetCursor`, which shows them through the game window and throws without one, so a UI hosted outside a game window gives its own way, or `null` to show no cursors. Disposing the UI puts MonoGame's way back. See [showing the cursors](/docs/ui-styles/#showing-the-cursors).
 
+<h3 id="mouseposition"><span class="prop"><code>MousePosition</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="MousePosition in context on the quick start guide" aria-label="MousePosition in context on the quick start guide">🠆</a></h3>
+
+`Point` · Read-only. Where the mouse is, in logical units (see <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#scale">`Scale`</a>) and read through <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#shownat">`ShownAt`</a>: the position the elements read, for a tool that works over the UI with the mouse. Outside of the screen while the mouse is outside of it. See [drawing into a render target](/docs/ui/#drawing-into-a-render-target).
+
 <h3 id="rootelement"><span class="prop"><code>RootElement</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="RootElement in context on the quick start guide" aria-label="RootElement in context on the quick start guide">🠆</a></h3>
 
 <a class="ref" href="/docs/ui-glossary/elements/root-element/">`RootElement`</a> · Read-only. The element at the top of the tree, the size of the screen. See [the root element](/docs/ui-base-element/#the-root-element).
@@ -58,6 +62,10 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 <h3 id="scale"><span class="prop"><code>Scale</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="Scale in context on the quick start guide" aria-label="Scale in context on the quick start guide">🠆</a></h3>
 
 `float` · How large one logical unit is on screen, see [display scaling](/docs/ui/#display-scaling). Between <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-ui/#minscale">`MinScale`</a> (0.25) and <a class="ref" href="/docs/ui-glossary/types/borrowed-torch-ui/#maxscale">`MaxScale`</a> (8).
+
+<h3 id="shownat"><span class="prop"><code>ShownAt</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="ShownAt in context on the quick start guide" aria-label="ShownAt in context on the quick start guide">🠆</a></h3>
+
+`Rectangle?` · Where the UI's screen is shown, in device pixels of the window the mouse is read in, when it is not shown where it is drawn: drawn into a render target of its own size (see <a class="ref prop" href="/docs/ui-glossary/types/borrowed-torch-ui/#followsbackbuffer">`FollowsBackBuffer`</a>) and that target shown scaled or moved, as a tool previewing a game's UI at the game's resolution inside its own window does. The mouse is read through it: a position in the rectangle is mapped onto the UI's screen, one outside of it is outside of the screen, over no element. Changing it has the UI work out again what the mouse is over, though the mouse didn't move. `null`, the default, shows the screen as it is drawn and reads the mouse as it is; a rectangle without a size counts as `null`. Disposing the UI puts it back to `null`. See [drawing into a render target](/docs/ui/#drawing-into-a-render-target).
 
 ## Fields
 
@@ -93,7 +101,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="addanimation"><span class="method"><code>AddAnimation()</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="AddAnimation() in context on the quick start guide" aria-label="AddAnimation() in context on the quick start guide">🠆</a></h3>
 
-<span class="method"><code><a href="/docs/ui-glossary/types/borrowed-torch-ui/#addanimation">AddAnimation</a>(<a href="/docs/ui-glossary/types/base-animation/">BaseAnimation</a> animation)</code></span> · Starts updating an animation, see [animations](/docs/ui-styles/#animations).
+<span class="method"><code><a href="/docs/ui-glossary/types/borrowed-torch-ui/#addanimation">AddAnimation</a>(<a href="/docs/ui-glossary/types/base-animation/">BaseAnimation</a> animation)</code></span> · Starts updating an animation, which plays once it is started. <a class="ref method" href="/docs/ui-glossary/types/animation/#start">`Animation.Start`</a> adds the animation as well, so this is needed only for one you start later. Adding it again while it is updated, or adding `null`, does nothing. See [animations](/docs/ui-styles/#animations).
 
 | Parameter | Type | Description |
 | --- | --- | --- |
@@ -148,7 +156,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="removeanimation"><span class="method"><code>RemoveAnimation()</code></span> <a class="ctx" href="/docs/ui/#borrowedtorchui" title="RemoveAnimation() in context on the quick start guide" aria-label="RemoveAnimation() in context on the quick start guide">🠆</a></h3>
 
-<span class="method"><code><a href="/docs/ui-glossary/types/borrowed-torch-ui/#removeanimation">RemoveAnimation</a>(<a href="/docs/ui-glossary/types/base-animation/">BaseAnimation</a> animation)</code></span> · Stops updating an animation. It keeps its state, and adding it again continues it.
+<span class="method"><code><a href="/docs/ui-glossary/types/borrowed-torch-ui/#removeanimation">RemoveAnimation</a>(<a href="/docs/ui-glossary/types/base-animation/">BaseAnimation</a> animation)</code></span> · Stops updating an animation. It keeps its state, and adding it again continues it. <a class="ref method" href="/docs/ui-glossary/types/animation/#stop">`Animation.Stop`</a> takes an animation out as well, and puts it back at its start.
 
 | Parameter | Type | Description |
 | --- | --- | --- |

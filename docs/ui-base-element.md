@@ -251,7 +251,8 @@ Tooltips, context menus, drop-downs and modal windows are never clipped by the e
 ## Items and content
 
 The elements you put into another element are its items. <a class="ref method" href="/docs/ui-glossary/elements/base-element/#additem">`AddItem`</a> and the other item methods act on them only, never
-on the parts an element made itself (a slider's buttons, a window's title bar). Containers override them: a stack
+on the parts an element made itself (a slider's buttons, a window's title bar), which <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#ispart">`IsPart`</a> tells apart (see
+[inspecting elements](#inspecting-elements)). Containers override them: a stack
 panel, for example, wraps each item (see its section). Elements that host a single child give it through a `Content`
 or <span class="dp">`Text`</span> property instead, and they and the other elements without items (sliders, progress bars, text elements)
 ignore the item methods.
@@ -672,6 +673,43 @@ cells (see [Grid](/docs/ui-layout/#grid)).
 | <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#showactualsizerectangle">`ShowActualSizeRectangle`</a> | `bool` | Outlines the element's <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#bounds">`Bounds`</a>, without clipping. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#showactualsizerectanglediagonals">`ShowActualSizeRectangleDiagonals`</a> | `bool` | Adds the diagonals to the bounds outline. |
 | <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#actualsizerectanglecolor">`ActualSizeRectangleColor`</a> | `Color` | The color of the bounds outline, `Green` by default. |
+
+## Inspecting elements
+
+A tool that shows the element tree and its properties, such as an editor's view of a game's UI, reads two more things
+of an element. <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#ispart">`IsPart`</a> tells the parts a control is made of (a button's label, a combo box's list) from the
+elements given to it as content or items. <a class="ref method" href="/docs/ui-glossary/elements/base-element/#valuesourceof">`ValueSourceOf`</a> tells where the value of a dependency property comes from
+now: set on the element, by its style override, by its type's general style, or none of them (see
+[value priority](/docs/ui-styles/#value-priority)).
+
+```csharp
+// the tree as a tool lists it: every element, its parts marked, and where its text color comes from
+void List(BaseElement element, int depth)
+{
+    var part = element.IsPart ? " (part)" : "";
+    var source = element.ValueSourceOf(nameof(BaseElement.ForegroundColor));
+
+    Console.WriteLine($"{new string(' ', depth * 2)}{element.GetType().Name} {element.Name}{part}: {source}");
+
+    foreach (var child in element.Children) List(child, depth + 1);
+}
+
+List(ui.RootElement, 0);
+```
+
+A button given a <a class="ref dp" href="/docs/ui-glossary/elements/button/#text">`Text`</a> lists the label it made for the text as a part; a button given a
+<a class="ref dp" href="/docs/ui-glossary/elements/button/#content">`Content`</a> lists that element without the mark. Asking for a value source doesn't create the dependency
+property, so a property the element hasn't used yet reads `None`. Dependency properties of the element's base classes
+are found too (<a class="ref dp" href="/docs/ui-glossary/elements/base-element/#margin">`Margin`</a> on a button), and a name that is no dependency property of the element (`ActualWidth`, an
+empty name, `null`) gives `null`.
+
+| Property | Type | Description |
+| --- | --- | --- |
+| <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#ispart">`IsPart`</a> | `bool` | Read-only. Whether the element is a part of its control: made by the control as one of the pieces it is drawn with (a button's label, a combo box's list), not given to it as content or as an item. |
+
+| Method | Description |
+| --- | --- |
+| <a class="ref method" href="/docs/ui-glossary/elements/base-element/#valuesourceof">`ValueSourceOf(string propertyName)`</a> | Where the value of the element's dependency property of that name (`"Text"`, `"NormalColor"`) comes from now, a <a class="ref" href="/docs/ui-glossary/types/value-sources/">`ValueSources`</a>: `ManualAssign`, `StyleOverride`, `GeneralStyle`, or `None` for its default. `null` for a name that is no dependency property of the element. It doesn't create the dependency property. |
 
 ## Styles and cursors
 

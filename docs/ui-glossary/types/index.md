@@ -163,9 +163,10 @@ The types of the [BorrowedTorch.UI.Markup](/docs/ui-markup/) package, which buil
 
 | Type | What it is |
 | --- | --- |
-| [`MarkupContext`](/docs/ui-glossary/types/markup-context/) | What a markup reaches besides the UI's own types: event handlers, a data context, style dictionaries, how its files are read, and types and converters of your own. |
-| [`MarkupDocument`](/docs/ui-glossary/types/markup-document/) | What a markup made: its elements, every element made for them, disposed at once, and its elements as written. |
+| [`MarkupAnimation`](/docs/ui-glossary/types/markup-animation/) | An animation of a markup's `<Ui.Animations>`: the element and property it animates, what starts and stops it, and its time line, to start, stop or seek from code. |
+| [`MarkupContext`](/docs/ui-glossary/types/markup-context/) | What a markup reaches besides the UI's own types: event handlers, a data context, style dictionaries, how its files are read, types and converters of your own, and whether its load animations start. |
+| [`MarkupDocument`](/docs/ui-glossary/types/markup-document/) | What a markup made: its elements, every element made for them, disposed at once, its elements as written, and its animations. |
 | [`MarkupException`](/docs/ui-glossary/types/markup-exception/) | A markup that can't be read: what is wrong, and the line and the column. |
 | [`MarkupNode`](/docs/ui-glossary/types/markup-node/) | An element of a markup as it is written: the element made, its file, line and column, and the elements in it. |
 | [`StyleDictionary`](/docs/ui-glossary/types/style-dictionary/) | The styles of a style dictionary: keyed ones for markups to name, and general ones to apply. |
-| [`UiMarkup`](/docs/ui-glossary/types/ui-markup/) | Builds elements from a markup string or file, and reads style dictionaries. |
+| [`UiMarkup`](/docs/ui-glossary/types/ui-markup/) | Builds elements from a markup string or file, reads style dictionaries, and reads single values as a markup does, for tools. |

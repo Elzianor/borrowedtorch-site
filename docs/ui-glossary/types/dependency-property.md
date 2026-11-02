@@ -25,7 +25,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="valuesource"><span class="prop"><code>ValueSource</code></span> <a class="ctx" href="/docs/ui-styles/#dependencypropertyt-properties" title="ValueSource in context on the styles page" aria-label="ValueSource in context on the styles page">🠆</a></h3>
 
-<a class="ref" href="/docs/ui-glossary/types/value-sources/">`ValueSources`</a> · Read-only. The source the value in effect comes from, `None` when the property reads its default.
+<a class="ref" href="/docs/ui-glossary/types/value-sources/">`ValueSources`</a> · Read-only. The source the value in effect comes from, `None` when the property reads its default. <a class="ref method" href="/docs/ui-glossary/elements/base-element/#valuesourceof">`BaseElement.ValueSourceOf`</a> reads the same by the property's name, without creating it.
 
 ## Methods
 

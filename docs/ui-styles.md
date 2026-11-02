@@ -241,6 +241,23 @@ write `ManualAssign` values like code does. To give a property set in code back 
 button.NormalColorDP.ClearValue(ValueSources.ManualAssign); // the style's color again
 ```
 
+<a class="ref prop" href="/docs/ui-glossary/types/dependency-property/#valuesource">`FooDP.ValueSource`</a> tells where the value in effect comes from. A tool that shows an element's properties asks
+the element instead, by the property's name: <a class="ref method" href="/docs/ui-glossary/elements/base-element/#valuesourceof">`ValueSourceOf`</a> doesn't create the dependency property, so a property
+the element hasn't used yet reads `None`, and it gives `null` for a name that is no dependency property of the element
+(see [inspecting elements](/docs/ui-base-element/#inspecting-elements)).
+
+```csharp
+var button = new Button();
+
+button.ValueSourceOf(nameof(Button.NormalColor)); // GeneralStyle: Button.GeneralStyle sets it
+button.ValueSourceOf(nameof(Button.Text));        // None: no source has a value
+
+button.StyleOverride = new ButtonStyle { NormalColor = Color.DarkRed };
+button.ValueSourceOf(nameof(Button.NormalColor)); // StyleOverride
+
+button.ValueSourceOf("ActualWidth");              // null: no dependency property
+```
+
 #### `ValueSources`
 
 | Value | Meaning |
@@ -248,7 +265,7 @@ button.NormalColorDP.ClearValue(ValueSources.ManualAssign); // the style's color
 | <a class="ref" href="/docs/ui-glossary/types/value-sources/#manualassign">`ManualAssign`</a> | A value set in code (`element.Foo = ...` or `FooDP.SetValue`), by a binding or by an animation. Highest priority. |
 | <a class="ref" href="/docs/ui-glossary/types/value-sources/#styleoverride">`StyleOverride`</a> | A value from the element's <a class="ref" href="/docs/ui-glossary/types/value-sources/#styleoverride">`StyleOverride`</a>. |
 | <a class="ref" href="/docs/ui-glossary/types/value-sources/#generalstyle">`GeneralStyle`</a> | A value from the general style of the type, or from the framework defaults under it. Lowest priority. |
-| <a class="ref" href="/docs/ui-glossary/types/value-sources/#none">`None`</a> | No source has a value: the property reads its default. Returned by `ValueSource`; setting or clearing with it does nothing. |
+| <a class="ref" href="/docs/ui-glossary/types/value-sources/#none">`None`</a> | No source has a value: the property reads its default. Returned by `ValueSource` and `ValueSourceOf`; setting or clearing with it does nothing. |
 
 ### BaseStyle
 
@@ -1055,10 +1072,11 @@ public class LevelTemplate : IItemsTemplate
 
 ## Animations
 
-An <code><a href="/docs/ui-glossary/types/animation/">Animation</a>&lt;T&gt;</code> drives one or more dependency properties of type `T` along a time line of `durationMs`. Frames
-describe the values: <code><a href="/docs/ui-glossary/types/smooth-animation-frame/">SmoothAnimationFrame</a>&lt;T&gt;</code> goes from one value to another over a stretch of the time line,
-<code><a href="/docs/ui-glossary/types/discrete-animation-frame/">DiscreteAnimationFrame</a>&lt;T&gt;</code> sets a value at a point of it. Register the animation with <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#addanimation">`BorrowedTorchUI.AddAnimation`</a>
-and start it.
+An <code><a href="/docs/ui-glossary/types/animation/">Animation</a>&lt;T&gt;</code> drives one or more targets of type `T` along a time line of `durationMs`: dependency
+properties, or any other property through its setter (see [setter targets](#setter-targets)). Frames describe the
+values: <code><a href="/docs/ui-glossary/types/smooth-animation-frame/">SmoothAnimationFrame</a>&lt;T&gt;</code> goes from one value to another over a stretch of the time line,
+<code><a href="/docs/ui-glossary/types/discrete-animation-frame/">DiscreteAnimationFrame</a>&lt;T&gt;</code> sets a value at a point of it. <a class="ref method" href="/docs/ui-glossary/types/animation/#start">`Start`</a> runs the animation and adds it to the UI's
+animations, which the UI advances on every `Update`.
 
 <figure class="shot">
   <img src="{{ '/assets/img/ui/styles-animation.png' | relative_url }}" width="494" height="134" alt="Two columns, Smooth frames and Discrete frames, each with the banner Level complete sliding in and a progress bar filling: on the left both move evenly, on the right they jump in steps, and the banner's color fades on the left and blinks on the right">
@@ -1120,7 +1138,7 @@ var discrete = Example(1, "Discrete frames");
 
 ui.AddElementToRoot(grid);
 
-// one animation of a property, started at once
+// one animation of a property, started at once (Start adds it to the UI's animations)
 void Animate<T>(DependencyProperty<T> property, int durationMs, bool pulse,
     params BaseAnimationFrame<T>[] frames)
 {
@@ -1132,7 +1150,6 @@ void Animate<T>(DependencyProperty<T> property, int durationMs, bool pulse,
     foreach (var frame in frames) animation.AddFrame(frame);
 
     animation.AddDependencyProperty(property);
-    ui.AddAnimation(animation);
     animation.Start();
 }
 
@@ -1169,15 +1186,93 @@ The UI advances its running animations on every `Update`, by the frame's elapsed
 frame doesn't skip boundaries: the animation still turns around, ends its runs and lands on the exact end values.
 
 - A run goes once along the time line, or forth and back with `autoReverse`. <a class="ref" href="/docs/ui-glossary/types/animation-repeat-type/#none">`AnimationRepeatType.None`</a> plays one run,
-  `NumberOfTimes` plays `repeatsNumber` runs, `Infinite` repeats until you pause or remove it.
+  `NumberOfTimes` plays `repeatsNumber` runs, `Infinite` repeats until you pause or stop it.
 - When it completes, the animation applies the values of the end of its time line (its start, with `autoReverse`),
   then <a class="ref prop" href="/docs/ui-glossary/types/run-boundary-values/#endvalue">`RunBoundaryValues.EndValue`</a> if it has one. With `deleteOnComplete` (the default) it is then removed from the
-  UI; add it again to play it after a `Reset`.
-- Animated values are `ManualAssign` values: they win over styles and stay after the animation. Clear them with
-  <code>FooDP.ClearValue(<a href="/docs/ui-glossary/types/value-sources/#manualassign">ValueSources.ManualAssign</a>)</code> to give the property back to its style.
-- `int`, `float`, <a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> and `Color` are interpolated. A smooth frame of any other type keeps `From` until the end of
-  the frame, then switches to `To`.
-- An animation whose properties all belong to disposed elements is removed automatically.
+  UI's animations; after a `Reset`, `Start` plays it again and adds it back.
+- Animated values of dependency properties are `ManualAssign` values: they win over styles and stay after the
+  animation, completed or stopped. Clear them with <code>FooDP.ClearValue(<a href="/docs/ui-glossary/types/value-sources/#manualassign">ValueSources.ManualAssign</a>)</code> to give the property
+  back to its style.
+- A smooth frame blends `int`, `float`, `double`, `Color`, <a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a>, `Point`, `Vector2` and `Rectangle` values by itself,
+  rounding the whole numbers (an `int`, the sides of a `Margin`, the coordinates of a `Point` or a `Rectangle`, the
+  channels of a `Color`). A smooth frame of any other type keeps `From` until the end of the frame, then switches to
+  `To`, unless it is given a blend of its own (see [blends of your own](#blends-of-your-own)).
+- An animation whose targets all belong to disposed elements is removed automatically.
+
+### Setter targets
+
+<a class="ref method" href="/docs/ui-glossary/types/animation/#adddependencyproperty">`AddDependencyProperty`</a> adds a dependency property as a target. <a class="ref method" href="/docs/ui-glossary/types/animation/#addtarget">`AddTarget`</a> adds anything else a value can be
+given to, through a setter: a property that is no dependency property, or a value of your own that your drawing reads.
+The setter gets each value, as a dependency property would. The element passed with it is the one the value belongs
+to: once every target of an animation belongs to a disposed element, the UI lets go of the animation, as it does for
+dependency properties. Pass `null` for a value that belongs to no element; such a target never counts as disposed, so
+stop its animation yourself when you are done with it.
+
+```csharp
+// a value of your own that a view port draws with (see the view port on the
+// images page): no property of an element, so the animation sets it through a setter
+var angle = 0f;
+var scene = new ViewPort("scene") { DesiredWidth = 280, DesiredHeight = 168 };
+scene.DrawInstructions = () => DrawLogo(angle);   // DrawLogo stands for your drawing code
+ui.AddElementToRoot(scene);
+
+var spin = new Animation<float>(4000, AnimationRepeatType.Infinite);
+spin.AddFrame(new SmoothAnimationFrame<float>(0, MathHelper.TwoPi, 4000));
+spin.AddTarget(scene, value => angle = value);    // let go of once the view port is disposed
+spin.Start();
+```
+
+### Blends of your own
+
+A smooth frame of a type it doesn't blend by itself, such as `Vector3`, takes a <a class="ref prop" href="/docs/ui-glossary/types/smooth-animation-frame/#blend">`Blend`</a> of its own. It gets
+`From`, `To` and the share of the way between them (0 at `From`, 1 at `To`, past them under a shaping function that
+overshoots), and returns the value there. Given, it is used for the types the frame blends by itself as well.
+
+```csharp
+// MonoGame's Vector3.Lerp has the shape of a blend: (from, to, amount)
+var rise = new SmoothAnimationFrame<Vector3>(Vector3.Zero, new Vector3(0, 10, 0), 500)
+{
+    Blend = Vector3.Lerp
+};
+```
+
+### Starting, stopping and seeking
+
+<a class="ref method" href="/docs/ui-glossary/types/animation/#start">`Start`</a> adds the animation to the UI's animations when it isn't there yet, so <a class="ref method" href="/docs/ui-glossary/types/borrowed-torch-ui/#addanimation">`BorrowedTorchUI.AddAnimation`</a> is
+needed only to register an animation that you start later (before 2.1.0, every animation had to be added first).
+<a class="ref method" href="/docs/ui-glossary/types/animation/#stop">`Stop`</a> is its counterpart, for an animation you are done with before its elements are: it takes the animation out
+of the UI's animations and puts it back to not started, at the start of its time line. The values it set stay, and the
+next `Start` runs it from the beginning. <a class="ref method" href="/docs/ui-glossary/types/animation/#pause">`Pause`</a> keeps the animation where it is, and <a class="ref method" href="/docs/ui-glossary/types/animation/#reset">`Reset`</a> puts it back to not
+started; neither takes it out of the UI's animations.
+
+<a class="ref method" href="/docs/ui-glossary/types/animation/#seek">`Seek(int positionMs)`</a> puts the time line at a moment, in milliseconds from its start (kept between 0 and
+<a class="ref prop" href="/docs/ui-glossary/types/base-animation/#durationms">`DurationMs`</a>), and gives the targets the values the animation has there, as a run going forward shows them,
+whatever they showed before:
+
+- The smooth frames are taken in the order they start: each one the moment is past gives its end value, and the one
+  the moment is in gives its value there. Before the start of every smooth frame, the first one gives its start value.
+- Of the discrete frames, the latest one at or before the moment gives its value.
+- <a class="ref prop" href="/docs/ui-glossary/types/animation/#runboundaryvalues">`RunBoundaryValues`</a> are not applied.
+
+A running animation goes on from there, forward. One that isn't running (not started, paused or completed) is paused
+there, and `Start` goes on from it, so a seek before the first start skips <a class="ref prop" href="/docs/ui-glossary/types/run-boundary-values/#startvalue">`StartValue`</a>.
+<a class="ref prop" href="/docs/ui-glossary/types/base-animation/#positionms">`PositionMs`</a> tells where the time line is. Together they let a tool show any moment of an animation:
+
+```csharp
+// a slider that shows any moment of the spin above
+spin.Pause();
+
+var scrubber = new Slider
+{
+    DesiredWidth = 200,
+    DesiredHeight = 18,
+    Max = spin.DurationMs,
+    Value = spin.PositionMs
+};
+scrubber.OnValueChanged += (sender, value) => spin.Seek((int)value);
+
+ui.AddElementToRoot(scrubber);
+```
 
 ### Animation&lt;T&gt;
 
@@ -1193,18 +1288,23 @@ An animation of properties of type `T`. It has the properties of [`BaseAnimation
 | <span class="method"><code><a href="/docs/ui-glossary/types/animation/#animation">Animation</a>(int durationMs, <a href="/docs/ui-glossary/types/animation-repeat-type/">AnimationRepeatType</a> repeatType = <a href="/docs/ui-glossary/types/animation-repeat-type/#none">AnimationRepeatType.None</a>, bool autoReverse = false, bool deleteOnComplete = true, <a href="/docs/ui-glossary/types/run-boundary-values/">RunBoundaryValues</a>&lt;T&gt; runBoundaryValues = null, uint repeatsNumber = 1)</code></span> | Creates an animation with a time line of `durationMs` milliseconds. `repeatsNumber` counts the runs of a `NumberOfTimes` animation. A duration of 0 or less completes at once with the end values. |
 | <span class="method"><code><a href="/docs/ui-glossary/types/animation/#addframe">AddFrame</a>(<a href="/docs/ui-glossary/types/base-animation-frame/">BaseAnimationFrame</a>&lt;T&gt; frame)</code></span> | Adds a smooth or discrete frame. |
 | <span class="method"><code><a href="/docs/ui-glossary/types/animation/#adddependencyproperty">AddDependencyProperty</a>(<a href="/docs/ui-glossary/types/dependency-property/">DependencyProperty</a>&lt;T&gt; property)</code></span> | Adds a property the animation drives. One animation can drive several properties. |
-| <a class="ref method" href="/docs/ui-glossary/types/animation/#start">`Start()`</a> | Runs a not started or paused animation. On the first start it applies <a class="ref prop" href="/docs/ui-glossary/types/run-boundary-values/#startvalue">`RunBoundaryValues.StartValue`</a>, then the values of the time line's start, so a frame that applies at 0 ms replaces `StartValue` at once. Does nothing on a completed animation (call <a class="ref method" href="/docs/ui-glossary/types/animation/#reset">`Reset`</a> first) or on a `NumberOfTimes` animation with 0 repeats. |
+| <span class="method"><code><a href="/docs/ui-glossary/types/animation/#addtarget">AddTarget</a>(<a href="/docs/ui-glossary/elements/base-element/">BaseElement</a> owner, Action&lt;T&gt; set)</code></span> | Adds a target set through a setter: `set` gets each value, as a dependency property would. `owner` is the element the value belongs to, `null` for none; an animation whose targets all belong to disposed elements is let go of. Throws an `ArgumentNullException` when `set` is `null`. See [setter targets](#setter-targets). |
+| <a class="ref method" href="/docs/ui-glossary/types/animation/#start">`Start()`</a> | Runs a not started or paused animation and adds it to the UI's animations if it isn't there, so `AddAnimation` isn't needed first. Started from not started (the first time, or after <a class="ref method" href="/docs/ui-glossary/types/animation/#stop">`Stop`</a> or <a class="ref method" href="/docs/ui-glossary/types/animation/#reset">`Reset`</a>), it applies <a class="ref prop" href="/docs/ui-glossary/types/run-boundary-values/#startvalue">`RunBoundaryValues.StartValue`</a>, then the values of the time line's start, so a frame that applies at 0 ms replaces `StartValue` at once. Does nothing on a completed animation (call <a class="ref method" href="/docs/ui-glossary/types/animation/#reset">`Reset`</a> first) or on a `NumberOfTimes` animation with 0 repeats. |
 | <a class="ref method" href="/docs/ui-glossary/types/animation/#pause">`Pause()`</a> | Pauses a running animation; <a class="ref method" href="/docs/ui-glossary/types/animation/#start">`Start`</a> continues it. |
-| <a class="ref method" href="/docs/ui-glossary/types/animation/#reset">`Reset()`</a> | Puts the animation back to not started, at the start of its time line with its repeats restored. The properties keep their current values. |
+| <a class="ref method" href="/docs/ui-glossary/types/animation/#seek">`Seek(int positionMs)`</a> | Puts the time line at `positionMs` (kept between 0 and <a class="ref prop" href="/docs/ui-glossary/types/base-animation/#durationms">`DurationMs`</a>) and gives the targets the values there, as a run going forward shows them. A running animation goes on from there; one that isn't running is paused there. See [seeking](#starting-stopping-and-seeking). |
+| <a class="ref method" href="/docs/ui-glossary/types/animation/#stop">`Stop()`</a> | Takes the animation out of the UI's animations and puts it back to not started, at the start of its time line; the values it set stay. <a class="ref method" href="/docs/ui-glossary/types/animation/#start">`Start`</a> runs it again from the beginning. |
+| <a class="ref method" href="/docs/ui-glossary/types/animation/#reset">`Reset()`</a> | Puts the animation back to not started, at the start of its time line with its repeats restored. The properties keep their current values, and the animation stays among the UI's animations. |
 
 ### BaseAnimation
 
-The abstract base of animations, the type `AddAnimation` takes. Its properties are set by the constructor.
+The abstract base of animations, the type `AddAnimation` takes. Its properties other than `State` and `PositionMs` are
+set by the constructor.
 
 | Property | Type | Description |
 | --- | --- | --- |
 | <a class="ref prop" href="/docs/ui-glossary/types/base-animation/#state">`State`</a> | <a class="ref" href="/docs/ui-glossary/types/animation-state/">`AnimationState`</a> | Read-only. The state of the animation. |
 | <a class="ref prop" href="/docs/ui-glossary/types/base-animation/#durationms">`DurationMs`</a> | `int` | Read-only. The length of the time line in milliseconds. |
+| <a class="ref prop" href="/docs/ui-glossary/types/base-animation/#positionms">`PositionMs`</a> | `int` | Read-only. Where the time line is, in milliseconds from its start. It goes back toward 0 while an auto reversing run goes back. |
 | <a class="ref prop" href="/docs/ui-glossary/types/base-animation/#repeattype">`RepeatType`</a> | <a class="ref" href="/docs/ui-glossary/types/animation-repeat-type/">`AnimationRepeatType`</a> | Read-only. How the runs repeat. |
 | <a class="ref prop" href="/docs/ui-glossary/types/base-animation/#repeatsnumber">`RepeatsNumber`</a> | `uint` | Read-only. The number of runs of a `NumberOfTimes` animation. |
 | <a class="ref prop" href="/docs/ui-glossary/types/base-animation/#autoreverse">`AutoReverse`</a> | `bool` | Read-only. Whether a run goes forth and back along the time line. |
@@ -1246,6 +1346,7 @@ with `ShapingFunctionFactory.Create(ShapingFunctionId.CubicEaseInOut)`.
 | <a class="ref prop" href="/docs/ui-glossary/types/smooth-animation-frame/#durationms">`DurationMs`</a> | `int` | Read-only. The length of the frame in milliseconds. |
 | <a class="ref prop" href="/docs/ui-glossary/types/smooth-animation-frame/#startatms">`StartAtMs`</a> | `int` | Read-only. Where the frame starts on the time line, in milliseconds. |
 | <a class="ref prop" href="/docs/ui-glossary/types/smooth-animation-frame/#shapingfunction">`ShapingFunction`</a> | `BaseShapingFunction` | Read-only. The function that maps the frame's progress (0 to 1) to the share of the way from <a class="ref prop" href="/docs/ui-glossary/types/smooth-animation-frame/#from">`From`</a> to <a class="ref prop" href="/docs/ui-glossary/types/smooth-animation-frame/#to">`To`</a>. `Linear` when none is given. |
+| <a class="ref prop" href="/docs/ui-glossary/types/smooth-animation-frame/#blend">`Blend`</a> | `Func<T, T, float, T>` | Init-only. The value between <a class="ref prop" href="/docs/ui-glossary/types/smooth-animation-frame/#from">`From`</a> and <a class="ref prop" href="/docs/ui-glossary/types/smooth-animation-frame/#to">`To`</a> at a share of the way (0 at `From`, 1 at `To`, past them under a shaping function that overshoots), for a type the frame doesn't blend by itself. `int`, `float`, `double`, `Color`, `Margin`, `Point`, `Vector2` and `Rectangle` are blended without one; any other type switches from `From` to `To` at the frame's end. Given, it is used for every type. `null` by default. |
 
 | Method | Description |
 | --- | --- |
@@ -1291,5 +1392,5 @@ when it completes. Pass it to the <code><a href="/docs/ui-glossary/types/animati
 
 | Method | Description |
 | --- | --- |
-| <span class="method">`AddAnimation(BaseAnimation animation)`</span> | Registers the animation so the UI advances it while it runs. Adding it again while registered, or adding `null`, does nothing. |
-| <span class="method">`RemoveAnimation(BaseAnimation animation)`</span> | Stops advancing the animation. It keeps its state; adding it again continues it. |
+| <span class="method">`AddAnimation(BaseAnimation animation)`</span> | Registers the animation so the UI advances it while it runs, without starting it. <a class="ref method" href="/docs/ui-glossary/types/animation/#start">`Start`</a> registers it as well, so this is needed only for an animation you start later. Adding it again while registered, or adding `null`, does nothing. |
+| <span class="method">`RemoveAnimation(BaseAnimation animation)`</span> | Stops advancing the animation. It keeps its state; adding it again continues it. <a class="ref method" href="/docs/ui-glossary/types/animation/#stop">`Stop`</a> takes an animation out as well, and puts it back at its start. |

@@ -13,6 +13,10 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 ## Properties
 
+<h3 id="blend"><span class="prop"><code>Blend</code></span> <a class="ctx" href="/docs/ui-styles/#smoothanimationframet" title="Blend in context on the styles page" aria-label="Blend in context on the styles page">🠆</a></h3>
+
+`Func<T, T, float, T>` · Init-only. The value between <a class="ref prop" href="/docs/ui-glossary/types/smooth-animation-frame/#from">`From`</a> and <a class="ref prop" href="/docs/ui-glossary/types/smooth-animation-frame/#to">`To`</a> at a share of the way (0 at `From`, 1 at `To`, past them under a shaping function that overshoots), for a type the frame doesn't blend by itself. `int`, `float`, `double`, `Color`, `Margin`, `Point`, `Vector2` and `Rectangle` are blended without one; any other type switches from `From` to `To` at the frame's end. Given, it is used for every type. `null` by default. See [blends of your own](/docs/ui-styles/#blends-of-your-own).
+
 <h3 id="durationms"><span class="prop"><code>DurationMs</code></span> <a class="ctx" href="/docs/ui-styles/#smoothanimationframet" title="DurationMs in context on the styles page" aria-label="DurationMs in context on the styles page">🠆</a></h3>
 
 `int` · Read-only. The length of the frame in milliseconds.

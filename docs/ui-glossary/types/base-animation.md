@@ -1,11 +1,11 @@
 ---
 layout: docs
-legend: [prop]
+legend: [prop, method]
 title: "Glossary: BaseAnimation"
 description: "The members of BaseAnimation, in alphabetical order."
 ---
 
-The abstract base of animations, the type `AddAnimation` takes. Its properties are set by the constructor.
+The abstract base of animations, the type `AddAnimation` takes. Its properties other than `State` and `PositionMs` are set by the constructor.
 
 An abstract class. The [styles page](/docs/ui-styles/#baseanimation) shows it in context.
 
@@ -24,6 +24,10 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 <h3 id="durationms"><span class="prop"><code>DurationMs</code></span> <a class="ctx" href="/docs/ui-styles/#baseanimation" title="DurationMs in context on the styles page" aria-label="DurationMs in context on the styles page">🠆</a></h3>
 
 `int` · Read-only. The length of the time line in milliseconds.
+
+<h3 id="positionms"><span class="prop"><code>PositionMs</code></span> <a class="ctx" href="/docs/ui-styles/#baseanimation" title="PositionMs in context on the styles page" aria-label="PositionMs in context on the styles page">🠆</a></h3>
+
+`int` · Read-only. Where the time line is, in milliseconds from its start. It goes back toward 0 while an auto reversing run goes back. <a class="ref method" href="/docs/ui-glossary/types/animation/#seek">`Seek`</a> puts it at a moment.
 
 <h3 id="repeatsnumber"><span class="prop"><code>RepeatsNumber</code></span> <a class="ctx" href="/docs/ui-styles/#baseanimation" title="RepeatsNumber in context on the styles page" aria-label="RepeatsNumber in context on the styles page">🠆</a></h3>
 

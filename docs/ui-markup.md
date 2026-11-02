@@ -2,13 +2,13 @@
 layout: docs
 legend: [prop, dp, method, event]
 title: "UI: markup"
-description: Build element trees from XML with BorrowedTorch.UI.Markup, with properties, items, events, bindings, style dictionaries, included files, your own types and errors.
+description: Build element trees from XML with BorrowedTorch.UI.Markup, with properties, items, events, bindings, style dictionaries, included files, animations, your own types and errors.
 ---
 
 BorrowedTorch.UI.Markup builds elements from XML markup, so a UI can be written as data instead of code: loaded by the
 game at run time, or edited live in a tool. A markup names the UI's elements by their type names and sets the same
-properties code sets. Styles can be written as markup too, in style dictionaries, and a markup can include other files.
-It is a package of its own next to BorrowedTorch.UI, with
+properties code sets. Styles can be written as markup too, in style dictionaries, a markup can include other files, and
+a UI can animate the properties of its elements. It is a package of its own next to BorrowedTorch.UI, with
 [a repository of its own](https://github.com/BorrowedTorchStudio/BorrowedTorch.UI.Markup).
 
 ```xml
@@ -39,10 +39,13 @@ dotnet add package BorrowedTorch.UI.Markup
 
 | Requirement | Version |
 | --- | --- |
-| UI | [`BorrowedTorch.UI`](/docs/ui/#installing) 1.6.1 or later, installed with the markup |
+| UI | [`BorrowedTorch.UI`](/docs/ui/#installing) 2.2.0 or later, installed with the markup |
 | .NET | 10, Windows (`net10.0-windows10.0.19041.0`), as the UI |
 
-The types are in the `BorrowedTorch.UI.Markup` namespace. This page covers version 1.4.0.
+The types are in the `BorrowedTorch.UI.Markup` namespace. This page covers version 1.7.0: 1.5.0 added
+[reading values](#reading-values-in-a-tool) as the markup does, 1.6.0 [animations](#animations), and 1.7.0 their
+[steps](#steps), `StopOn` and [seeking](#animations-in-a-tool). Each version asks for the BorrowedTorch.UI it is built
+against: 2.2.0 for 1.7.0, 2.1.0 for 1.6.0, 2.0.0 for 1.5.0, and 1.6.1 for the ones before.
 
 ## Loading markup
 
@@ -59,7 +62,8 @@ is read.
 remembers every element the markup made. Disposing the document disposes all of them, the items and contents of its
 panels included, which disposing a panel only detaches. That is the way to take a whole UI away: a screen that is left,
 or a markup loaded again in its place, as a tool does after an edit. A document also has the markup's
-[elements as written](#the-elements-as-written), with where each one is.
+[elements as written](#the-elements-as-written), with where each one is, and its [animations](#animations), which
+disposing it stops.
 
 ```csharp
 _menu?.Dispose();
@@ -88,6 +92,8 @@ A static class.
 | <a class="ref method" href="/docs/ui-glossary/types/ui-markup/#loadstylesfile">`LoadStylesFile(string path, MarkupContext context = null)`</a> | <a class="ref method" href="/docs/ui-glossary/types/ui-markup/#loadstyles">`LoadStyles`</a> of the text of a file, read as <a class="ref method" href="/docs/ui-glossary/types/ui-markup/#loadfile">`LoadFile`</a> reads it. |
 | <a class="ref method" href="/docs/ui-glossary/types/ui-markup/#isstyledictionary">`IsStyleDictionary(string markup)`</a> | Whether a markup's root is `<Styles>` (for <a class="ref method" href="/docs/ui-glossary/types/ui-markup/#loadstyles">`LoadStyles`</a>) rather than `<Ui>` (for <a class="ref method" href="/docs/ui-glossary/types/ui-markup/#load">`Load`</a>), for a tool that takes both. It reads up to the root only; a markup that isn't well formed that far is no dictionary. |
 | <a class="ref method" href="/docs/ui-glossary/types/ui-markup/#tryreadcolor">`TryReadColor(string text, out Color color)`</a> | Reads a text as a `Color` property's value is read, and returns whether it could. For a tool that shows the colors of a markup. |
+| <a class="ref method" href="/docs/ui-glossary/types/ui-markup/#readvalue">`ReadValue(string text, Type type, MarkupContext context = null)`</a> | Reads a text as an attribute setting a property of the type is read, the context's converters first, and returns the value. A text that can't be read throws a `FormatException` with the reason a markup gives for it. For a tool that sets properties from text. |
+| <a class="ref method" href="/docs/ui-glossary/types/ui-markup/#canreadvalue">`CanReadValue(Type type, MarkupContext context = null)`</a> | Whether a value of the type is written as text, so that <a class="ref method" href="/docs/ui-glossary/types/ui-markup/#readvalue">`ReadValue`</a> reads it. A type that isn't is given in a property element. |
 
 ### MarkupDocument
 
@@ -97,21 +103,24 @@ A sealed class, `IDisposable`.
 | --- | --- | --- |
 | <a class="ref prop" href="/docs/ui-glossary/types/markup-document/#elements">`Elements`</a> | `IReadOnlyList<BaseElement>` | Read-only. The elements under `<Ui>`, in the order they are written. |
 | <a class="ref prop" href="/docs/ui-glossary/types/markup-document/#nodes">`Nodes`</a> | <code>IReadOnlyList&lt;<a href="/docs/ui-glossary/types/markup-node/">MarkupNode</a>&gt;</code> | Read-only. The markup's elements as written, in a tree: the ones under `<Ui>`, with the elements written in them, an include holding the elements of its UI. |
+| <a class="ref prop" href="/docs/ui-glossary/types/markup-document/#animations">`Animations`</a> | <code>IReadOnlyList&lt;<a href="/docs/ui-glossary/types/markup-animation/">MarkupAnimation</a>&gt;</code> | Read-only. The animations of the markup's `<Ui.Animations>` and of the UIs it includes. Empty once the document is disposed. |
 
 | Method | Description |
 | --- | --- |
 | <a class="ref method" href="/docs/ui-glossary/types/markup-document/#nodeof">`NodeOf(BaseElement element)`</a> | The node of an element the markup has, `null` for one it doesn't, such as a part a control made for itself (a slider's thumb): walk up its parents to the element written. |
 | <a class="ref method" href="/docs/ui-glossary/types/markup-document/#nodeat">`NodeAt(string position)`</a> | The node at a <a class="ref prop" href="/docs/ui-glossary/types/markup-node/#position">`Position`</a>, `null` where there is none. |
-| <a class="ref method" href="/docs/ui-glossary/types/markup-document/#dispose">`Dispose()`</a> | Disposes every element the markup made, the items and contents of its panels included; a disposed element leaves its parent, the root as well. Elements added to them since are only detached, as a panel's own items are. |
+| <a class="ref method" href="/docs/ui-glossary/types/markup-document/#findanimation">`FindAnimation(string key)`</a> | The animation of the key (`left.pulse` for one of a UI included with `Name="left"`), `null` for none. |
+| <a class="ref method" href="/docs/ui-glossary/types/markup-document/#startloadanimations">`StartLoadAnimations()`</a> | Starts the animations whose `StartOn` has `Load`, from their beginnings: what a load does, unless the context's <a class="ref prop" href="/docs/ui-glossary/types/markup-context/#startsloadanimations">`StartsLoadAnimations`</a> is `false`. |
+| <a class="ref method" href="/docs/ui-glossary/types/markup-document/#dispose">`Dispose()`</a> | Stops the markup's animations, then disposes every element the markup made, the items and contents of its panels included; a disposed element leaves its parent, the root as well. Elements added to them since are only detached, as a panel's own items are. |
 
 ## Writing markup
 
 ### Elements
 
-The root is `<Ui>`, with no attributes; it holds the UI's elements and its own [styles](#a-uis-own-styles). Every
-element in it is one of the UI's elements by its type name: `<Button>`, `<StackPanel>`, `<Grid>`, `<Window>`. The
-markup knows every public class of the UI that isn't abstract or generic: the elements, the styles and the objects they
-take, such as a <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a>.
+The root is `<Ui>`, with no attributes; it holds the UI's elements, its own [styles](#a-uis-own-styles) and its
+[animations](#animations). Every element in it is one of the UI's elements by its type name: `<Button>`,
+`<StackPanel>`, `<Grid>`, `<Window>`. The markup knows every public class of the UI that isn't abstract or generic: the
+elements, the styles and the objects they take, such as a <a class="ref" href="/docs/ui-glossary/types/mouse-cursors-set/">`MouseCursorsSet`</a>.
 <a class="ref method" href="/docs/ui-glossary/types/markup-context/#addtype">`MarkupContext.AddType`</a> adds types of your own.
 
 `Name` is the element's <a class="ref prop" href="/docs/ui-glossary/elements/base-element/#name">`Name`</a>, given to its constructor (an element's name never changes). An element
@@ -135,13 +144,46 @@ read by the property's type:
 | <a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a> | `5` (every side), `10, 20` (left, top), `10, 20, 30` (left, top, right) or `10, 20, 30, 40`, as in code. The sides not written are 0. |
 | `Point`, `Vector2` | `x, y`. |
 | A type that converts from a string | An image's <a class="ref dp" href="/docs/ui-glossary/elements/image/#source">`Source`</a> (<a class="ref" href="/docs/ui-glossary/types/source-data/">`SourceData`</a>): a content path, loaded through the UI's `ContentManager`. |
-| A nullable type | An empty text is `null`, any other is read as the type. |
+| A nullable type | An empty or blank text is `null`, any other is read as the type. |
 
 Any other type can't be written as text: give it in a [property element](#property-elements), or add a
 [converter of your own](#types-and-converters-of-your-own) to the context. A tool that shows the colors of a markup
-reads them as the markup does with <a class="ref method" href="/docs/ui-glossary/types/ui-markup/#tryreadcolor">`UiMarkup.TryReadColor`</a>.
+reads them as the markup does with <a class="ref method" href="/docs/ui-glossary/types/ui-markup/#tryreadcolor">`UiMarkup.TryReadColor`</a>, and any value with
+[`ReadValue`](#reading-values-in-a-tool).
 
 The text inside an element is its `Text`: `<Label>Score</Label>` is `<Label Text="Score" />`. Giving both is an error.
+
+### Reading values in a tool
+
+<a class="ref method" href="/docs/ui-glossary/types/ui-markup/#readvalue">`UiMarkup.ReadValue`</a> reads a text as an attribute setting a property of a type is read: the formats of the
+table above, the context's converters first, and a blank text as `null` for a nullable type. <a class="ref method" href="/docs/ui-glossary/types/ui-markup/#canreadvalue">`CanReadValue`</a>
+tells whether a type is written as text at all; a type that isn't, such as a style, is given in a property element. A
+tool that sets an element's properties from what is typed, such as an editor's list of an element's properties, sets
+them as a markup would:
+
+```csharp
+void SetTyped(BaseElement element, PropertyInfo property, string typed)
+{
+    // a style or an element is no text: it is given in a property element
+    if (!UiMarkup.CanReadValue(property.PropertyType, context)) return;
+
+    try
+    {
+        property.SetValue(element, UiMarkup.ReadValue(typed, property.PropertyType, context));
+    }
+    catch (FormatException exception)
+    {
+        // Margin: '1, 2, 3, 4, 5' is no all, or left, top[, right[, bottom]]
+        errorLabel.Text = $"{property.Name}: {exception.Message}";
+    }
+}
+```
+
+A text that can't be read throws a `FormatException` whose message is the reason a markup gives for it after the
+attribute's name, so the tool says what a load would. An exception a converter or a type's own conversion from text
+throws (an image's `Source` loading its texture) comes inside a `FormatException` with its message; a converter's own
+`FormatException` comes as it is. `ReadValue` reads values only: a `{Binding ...}`, a `{Style ...}` or a leading `{}` is
+read as any other text.
 
 ### Items and content
 
@@ -394,13 +436,156 @@ An include holds nothing and takes a `Source` and a `Name` (only a `Source` amon
 file that includes itself, a UI included among styles and a style dictionary included among elements are errors at the
 include. An error inside an included file is reported at the include too, with the file, line and column it is at.
 
+## Animations
+
+A UI's `<Ui.Animations>` takes properties of its elements from a value to another over a time, as code does with the
+UI's [animations](/docs/ui-styles/#animations). Each `<Animation>` in it animates one property of one element and is
+given by its attributes. Here a button pulses from the moment the markup is loaded, grows as the mouse enters it and
+shrinks back as the mouse leaves:
+
+```xml
+<Ui>
+    <Ui.Animations>
+        <Animation Key="pulse" Target="play" Property="NormalColor" From="SteelBlue" To="Gold" Duration="600"
+                   Repeat="Forever" AutoReverse="true" Easing="CubicEaseInOut" StartOn="Load" />
+        <Animation Target="play" Property="DesiredWidth" To="220" Duration="150" StartOn="play.OnMouseEnter" />
+        <Animation Target="play" Property="DesiredWidth" To="160" Duration="150" StartOn="play.OnMouseLeave" />
+    </Ui.Animations>
+
+    <Button Name="play" Text="Play" DesiredWidth="160" DesiredHeight="40" />
+</Ui>
+```
+
+`<Ui.Animations>` is read once the UI's elements are made, wherever it is written in `<Ui>`, so it can come before them
+as here. A UI has one at most. It takes no attributes and holds only `<Animation>`s, which hold nothing but their
+[steps](#steps).
+
+| Attribute | Description |
+| --- | --- |
+| `Target` | The `Name` of the element whose property it animates, an element of the markup. The elements of an included UI are named with the include's name before theirs (`left.play`); the included UI's own animations name them without it. |
+| `Property` | The property, one that can be read and set, of a type written as text (see [properties](#properties)) or one the context has a converter for. A property with a dependency property (`NormalColorDP` for `NormalColor`) is animated through it, any other through its setter (see [setter targets](/docs/ui-styles/#setter-targets)). |
+| `From` | The value it starts from. Without one, the value the property has as the animation starts, at each start. |
+| `To` | The value it ends at. |
+| `Duration` | Its time from the one to the other, in milliseconds: a whole number, 0 or more. |
+| `Delay` | The time before it moves, in milliseconds, 0 or more; none without. |
+| `Repeat` | `Forever`, or a number of runs, 1 or more. One run without. |
+| `AutoReverse` | `true`: each run goes back to its start after reaching its end. `false` without. |
+| `Easing` | The curve of its way: a [shaping function](/docs/shaping-functions-curves/) of BorrowedTorch.ShapingFunctions, which the UI installs, by its class name in any case, such as `CubicEaseInOut` or `BounceEaseOut`; one that takes parameters has its defaults. `Linear` without. |
+| `StartOn` | `Load`, an element's event (`play.OnMouseEnter`), or several of them, comma-separated: `Load, play.OnClick`. Without one, only code starts it. |
+| `StopOn` | An element's event, or several, comma-separated: each stops it where it is. |
+| `Key` | Its name for code, which <a class="ref method" href="/docs/ui-glossary/types/markup-document/#findanimation">`FindAnimation`</a> finds. The keys of an included UI have the include's name before them (`left.pulse`). |
+
+`Target` and `Property` are needed, and so are `To` and `Duration` unless it has [steps](#steps); the others may be
+left out. `From` and `To` are written as the
+property's attribute is, the context's converters included. The UI blends the values of `int`, `float`, `double`,
+`Color`, <a class="ref" href="/docs/ui-glossary/types/margin/">`Margin`</a>, `Point`, `Vector2` and `Rectangle` properties along the way; a property of any other type, such as an
+enum or a `bool`, keeps the value it starts from to the end of the time and takes `To` there.
+
+An animation started on `Load` starts as the markup is loaded, one started by an event each time its element raises
+it. An event is named after its element, the event's name after the last dot, so the dotted name of an included
+element is fine: `left.play.OnMouseEnter`. Any event of the element does, whatever it passes its handlers, such as a
+check box's <a class="ref event" href="/docs/ui-glossary/elements/check-box/#oncheckedunchecked">`OnCheckedUnchecked`</a>. A start runs the animation from its beginning, again if it ran before; a
+stop leaves it where it is, the property keeping the value it set last.
+
+Starting an animation stops the markup's other animations of the same property of the same element, wherever they are
+written. The two animations of the button's `DesiredWidth` take turns that way: a mouse leaving before the button has
+grown to 220 shrinks it back from wherever it is, since the second animation has no `From`.
+
+### Steps
+
+An animation goes through several values one after another with `<Step>`s in place of its own `To` and `Duration`.
+Each step goes on from where the one before ends, the first from the animation's `From` (or the property's value), to
+its own `To` over its own `Duration`, after a `Delay` of its own, eased by its own `Easing` or else by the
+animation's. The animation's `Delay` comes before the first step, and its `Repeat` and `AutoReverse` take its steps as
+one run. A logo bouncing:
+
+```xml
+<Animation Key="bounce" Target="logo" Property="Margin" From="0, 40" Repeat="Forever" Easing="CubicEaseOut"
+           StartOn="Load">
+    <Step To="0, 10" Duration="300" />
+    <Step To="0, 40" Duration="300" Easing="CubicEaseIn" />
+    <Step To="0, 40" Duration="0" Delay="600" />
+</Animation>
+```
+
+The logo rises for 300 ms and falls back for 300 ms; the last step, with no time of its own, holds it there for 600 ms
+before the next run. A step takes a `To` and a `Duration`, which it needs, a `Delay` and an `Easing`, and holds
+nothing. An animation with steps takes no `To` or `Duration` of its own.
+
+### Starting and stopping from code
+
+<a class="ref prop" href="/docs/ui-glossary/types/markup-document/#animations">`MarkupDocument.Animations`</a> lists the animations of the markup and of the UIs it includes, and
+<a class="ref method" href="/docs/ui-glossary/types/markup-document/#findanimation">`FindAnimation`</a> finds one by its key. <a class="ref method" href="/docs/ui-glossary/types/markup-animation/#start">`Start`</a> runs it from its beginning, <a class="ref method" href="/docs/ui-glossary/types/markup-animation/#stop">`Stop`</a> stops it where it
+is, and <a class="ref prop" href="/docs/ui-glossary/types/markup-animation/#isrunning">`IsRunning`</a> tells whether it runs. Disposing the document stops them all before it disposes the elements.
+
+```csharp
+var pulse = _menu.FindAnimation("pulse");
+
+// no pulse while the options are open over the menu
+pulse.Stop();
+
+// and from its beginning once they are closed
+pulse.Start();
+```
+
+<a class="ref method" href="/docs/ui-glossary/types/ui-markup/#load">`Load`</a> and <a class="ref method" href="/docs/ui-glossary/types/ui-markup/#loadfile">`LoadFile`</a> start the animations too, but give no document to reach them by: load a markup whose
+animations code starts, stops or seeks with <a class="ref method" href="/docs/ui-glossary/types/ui-markup/#loaddocument">`LoadDocument`</a> or <a class="ref method" href="/docs/ui-glossary/types/ui-markup/#loaddocumentfile">`LoadDocumentFile`</a>.
+
+### Animations in a tool
+
+A tool showing a markup as it is written sets its context's <a class="ref prop" href="/docs/ui-glossary/types/markup-context/#startsloadanimations">`StartsLoadAnimations`</a> to `false`: the animations
+started on `Load` then wait, the elements keeping their values as written, until
+<a class="ref method" href="/docs/ui-glossary/types/markup-document/#startloadanimations">`StartLoadAnimations`</a> starts them, when the tool plays the UI. The events still start theirs.
+
+<a class="ref method" href="/docs/ui-glossary/types/markup-animation/#seek">`Seek`</a> shows a moment of an animation, for a tool scrubbing through it: the property takes the value the
+animation gives it at a position, in milliseconds from its start, kept within 0 and <a class="ref prop" href="/docs/ui-glossary/types/markup-animation/#durationms">`DurationMs`</a>, its time line
+of one run (its delay, and its steps' pauses and times). The markup's other animations of the property stop first. A
+running animation goes on from there; one that isn't running stays there until <a class="ref method" href="/docs/ui-glossary/types/markup-animation/#start">`Start`</a> runs it from its beginning.
+<a class="ref prop" href="/docs/ui-glossary/types/markup-animation/#positionms">`PositionMs`</a> tells where its time line is. Both are its
+[animation's](/docs/ui-styles/#starting-stopping-and-seeking).
+
+```csharp
+var context = new MarkupContext { StartsLoadAnimations = false, MissingHandler = (_, _, _) => { } };
+var document = UiMarkup.LoadDocumentFile(path, context);
+var bounce = document.FindAnimation("bounce");
+
+// a slider of the tool, along the animation's time line
+timeline.Max = bounce.DurationMs;
+timeline.OnValueChanged += (_, value) => bounce.Seek((int)value);
+```
+
+<a class="ref prop" href="/docs/ui-glossary/types/markup-animation/#easingnames">`MarkupAnimation.EasingNames`</a> lists the names an `Easing` takes, for a tool offering them.
+
+### MarkupAnimation
+
+A sealed class.
+
+| Property | Type | Description |
+| --- | --- | --- |
+| <a class="ref prop" href="/docs/ui-glossary/types/markup-animation/#key">`Key`</a> | `string` | Read-only. The key the markup gives it, the include's name before it for one of an included UI; `null` for none. |
+| <a class="ref prop" href="/docs/ui-glossary/types/markup-animation/#target">`Target`</a> | `BaseElement` | Read-only. The element whose property it animates. |
+| <a class="ref prop" href="/docs/ui-glossary/types/markup-animation/#property">`Property`</a> | `string` | Read-only. The name of the property it animates. |
+| <a class="ref prop" href="/docs/ui-glossary/types/markup-animation/#starton">`StartOn`</a> | `string` | Read-only. What starts it, as the markup has it: `Load`, events (`play.OnMouseEnter`) or a list of them (`Load, play.OnClick`); `null` for none. |
+| <a class="ref prop" href="/docs/ui-glossary/types/markup-animation/#stopon">`StopOn`</a> | `string` | Read-only. The events that stop it, as the markup has them; `null` for none. |
+| <a class="ref prop" href="/docs/ui-glossary/types/markup-animation/#durationms">`DurationMs`</a> | `int` | Read-only. Its time line in milliseconds: its delay, and its steps' pauses and times. One run, without its repeats and the way back of an auto reversing one. |
+| <a class="ref prop" href="/docs/ui-glossary/types/markup-animation/#positionms">`PositionMs`</a> | `int` | Read-only. Where its time line is now, in milliseconds from its start; 0 before it first starts or seeks, and after it stops. |
+| <a class="ref prop" href="/docs/ui-glossary/types/markup-animation/#isrunning">`IsRunning`</a> | `bool` | Read-only. Whether it runs now: started, and neither completed nor stopped. |
+| <a class="ref prop" href="/docs/ui-glossary/types/markup-animation/#animation">`Animation`</a> | <a class="ref" href="/docs/ui-glossary/types/base-animation/">`BaseAnimation`</a> | Read-only. The BorrowedTorch.UI animation of its last start, made anew at each; `null` before its first start or seek. |
+| <a class="ref prop" href="/docs/ui-glossary/types/markup-animation/#easingnames">`EasingNames`</a> | `IReadOnlyList<string>` | Static, read-only. The names an `Easing` takes, in any case: the class names of the shaping functions of BorrowedTorch.ShapingFunctions made by a constructor without parameters (`Linear`, `CubicEaseOut`). |
+
+| Method | Description |
+| --- | --- |
+| <a class="ref method" href="/docs/ui-glossary/types/markup-animation/#start">`Start()`</a> | Runs it from its beginning, again if it ran before, the markup's other animations of the same property of the same element stopped first. |
+| <a class="ref method" href="/docs/ui-glossary/types/markup-animation/#stop">`Stop()`</a> | Stops it where it is: the property keeps the value it set last. |
+| <a class="ref method" href="/docs/ui-glossary/types/markup-animation/#seek">`Seek(int positionMs)`</a> | Shows a moment of it: the property given its value at the position, kept within 0 and <a class="ref prop" href="/docs/ui-glossary/types/markup-animation/#durationms">`DurationMs`</a>, the markup's other animations of the same property of the same element stopped first. A running one goes on from there; one not running stays there until <a class="ref method" href="/docs/ui-glossary/types/markup-animation/#start">`Start`</a> runs it from its beginning. |
+
 ## The elements as written
 
 A <a class="ref" href="/docs/ui-glossary/types/markup-document/">`MarkupDocument`</a> keeps the markup's elements as they are written, for a tool that shows them or finds where
 one is written. <a class="ref prop" href="/docs/ui-glossary/types/markup-document/#nodes">`Nodes`</a> is a tree of <a class="ref" href="/docs/ui-glossary/types/markup-node/">`MarkupNode`</a>s, one per element written: the element it made, its type
 name, the property a property element gives it to, the file, line and column it is written at, and the elements written
 in it. An include is a node too, with its `Source` and no element, holding the elements of the UI it includes. Styles
-are no nodes: only elements are.
+and animations are no nodes: only elements are.
 
 ```csharp
 // the markup's tree, with where each element is written
@@ -456,7 +641,7 @@ A sealed class. Its `ToString()` is the type name and the element's name, or `In
 | <a class="ref prop" href="/docs/ui-glossary/types/markup-node/#file">`File`</a> | `string` | Read-only. The full path of the file it is written in, the one loaded or an included one; `null` for a markup given as text. |
 | <a class="ref prop" href="/docs/ui-glossary/types/markup-node/#line">`Line`</a> | `int` | Read-only. The line of its start tag in its file, from 1. |
 | <a class="ref prop" href="/docs/ui-glossary/types/markup-node/#column">`Column`</a> | `int` | Read-only. The column of its start tag's name, from 1. |
-| <a class="ref prop" href="/docs/ui-glossary/types/markup-node/#position">`Position`</a> | `string` | Read-only. The indexes of the XML elements from the root down to it, from 0, through the includes (`1/0/2`). Property elements and `<Ui.Styles>` are counted. |
+| <a class="ref prop" href="/docs/ui-glossary/types/markup-node/#position">`Position`</a> | `string` | Read-only. The indexes of the XML elements from the root down to it, from 0, through the includes (`1/0/2`). Property elements, `<Ui.Styles>` and `<Ui.Animations>` are counted. |
 | <a class="ref prop" href="/docs/ui-glossary/types/markup-node/#parent">`Parent`</a> | <a class="ref" href="/docs/ui-glossary/types/markup-node/">`MarkupNode`</a> | Read-only. The node it is written in, `null` for one under the root. |
 | <a class="ref prop" href="/docs/ui-glossary/types/markup-node/#children">`Children`</a> | <code>IReadOnlyList&lt;<a href="/docs/ui-glossary/types/markup-node/">MarkupNode</a>&gt;</code> | Read-only. The elements written in it, in the order they are written: its items or its content, the elements given to its properties, an include's elements. |
 
@@ -578,6 +763,7 @@ A sealed class.
 | <a class="ref prop" href="/docs/ui-glossary/types/markup-context/#datacontext">`DataContext`</a> | `object` | The object `{Binding Name}` binds to, usually a <a class="ref" href="/docs/ui-glossary/types/bindable/">`Bindable`</a> view model. |
 | <a class="ref prop" href="/docs/ui-glossary/types/markup-context/#basedirectory">`BaseDirectory`</a> | `string` | The directory a markup given as text finds its includes from. Without one, the current directory. |
 | <a class="ref prop" href="/docs/ui-glossary/types/markup-context/#readfile">`ReadFile`</a> | `Func<string, string>` | Reads a markup file given its full path: the one loaded and the ones included. `File.ReadAllText` without one. |
+| <a class="ref prop" href="/docs/ui-glossary/types/markup-context/#startsloadanimations">`StartsLoadAnimations`</a> | `bool` | Whether the [animations](#animations) started on `Load` start as the markup is loaded: `true` by default. `false` for a tool showing the UI as it is written, which starts them with <a class="ref method" href="/docs/ui-glossary/types/markup-document/#startloadanimations">`StartLoadAnimations`</a>. |
 
 | Method | Description |
 | --- | --- |
@@ -598,11 +784,18 @@ mistake is reported where it is written:
 - a binding without a data context, or to a property the data context doesn't have;
 - an event handler that is missing (without a <a class="ref prop" href="/docs/ui-glossary/types/markup-context/#missinghandler">`MissingHandler`</a>), or takes other parameters;
 - a style that isn't there or doesn't fit, two styles with one key, or two of one type without a key;
+- a second `<Ui.Animations>`, or an animation naming an element, a property or an event that isn't there, a property
+  that isn't written as text, an attribute it doesn't take, a value, time, `Repeat` or `Easing` that can't be read, or a
+  key given twice;
+- an animation without steps missing its `To` or `Duration`, one with `<Step>`s giving either, or a step missing its
+  own;
 - an include whose file can't be read, that includes itself, or that holds a UI where styles are taken (or the other
   way round).
 
 An error in an included file is reported at the include, followed by the file and its own place:
-`Line 4, column 9: Parts/Header.btui, line 2, column 17: Button has no property Txt to set`.
+`Line 4, column 9: Parts/Header.btui, line 2, column 17: Button has no property Txt to set`. An animation's value that
+can't be read is reported at its attribute, the reason starting with the attribute's name:
+`Duration: 'soon' is no time in milliseconds (0 or more)`.
 
 An exception thrown on the way, by a constructor, a setter or a converter, is the
 <a class="ref prop" href="/docs/ui-glossary/types/markup-exception/#innerexception">`InnerException`</a>. A load that fails keeps nothing of what it made: every element made so far is disposed.

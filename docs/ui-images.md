@@ -157,6 +157,10 @@ The result is computed on the CPU and kept in a texture, so a stencil costs text
 the result, each of its device size). It is computed again only when a texture, the size, <a class="ref dp" href="/docs/ui-glossary/elements/stencil/#keycolor">`KeyColor`</a> or <a class="ref dp" href="/docs/ui-glossary/elements/stencil/#tolerance">`Tolerance`</a>
 changes, not every frame. The result is shown by an inner <a class="ref" href="/docs/ui-glossary/elements/image/">`Image`</a> stretched over the stencil.
 
+The two textures are scaled on the GPU, each drawn into a render target of its own. The stencil then sets back the
+render targets that were set before, so it also works in a UI drawn into a render target of yours (see
+[drawing into a render target](/docs/ui/#drawing-into-a-render-target)).
+
 A stencil without a size of its own that fits its content takes the size of <a class="ref dp" href="/docs/ui-glossary/elements/stencil/#stenciltexture">`StencilTexture`</a>. It takes no items: it is
 made of its own parts only. The stencil doesn't dispose the textures you give it.
 
@@ -378,7 +382,7 @@ mouse; the constructor sets <a class="ref dp" href="/docs/ui-glossary/elements/b
 
 | Property | Type | Description |
 | --- | --- | --- |
-| <a class="ref prop" href="/docs/ui-glossary/elements/drag-and-drop-representation/#usetargetappearance">`UseTargetAppearance`</a> | `bool` | Whether each drag takes a picture of the dragged element, at the start of the drag, and shows it at the element's size instead of <a class="ref dp" href="/docs/ui-glossary/elements/image/#source">`Source`</a>. The representation owns that picture and disposes it. |
+| <a class="ref prop" href="/docs/ui-glossary/elements/drag-and-drop-representation/#usetargetappearance">`UseTargetAppearance`</a> | `bool` | Whether each drag takes a picture of the dragged element, at the start of the drag, and shows it at the element's size instead of <a class="ref dp" href="/docs/ui-glossary/elements/image/#source">`Source`</a>. The representation owns that picture and disposes it. The picture is drawn into a render target of its own, after which the render targets set before are set back. |
 
 ### DragAndDropRepresentation methods
 

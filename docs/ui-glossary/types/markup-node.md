@@ -39,7 +39,7 @@ Names are colored by what they are: a <span class="kb kb-prop">property</span>, 
 
 <h3 id="position"><span class="prop"><code>Position</code></span> <a class="ctx" href="/docs/ui-markup/#markupnode" title="Position in context on the markup page" aria-label="Position in context on the markup page">🠆</a></h3>
 
-`string` · Read-only. Where it is in the markup: the indexes of the XML elements from the root down to it, from 0, through the includes (`1/0/2`). Property elements and `<Ui.Styles>` are counted. The node at the same position in the markup loaded again after an edit elsewhere in it is the same element; <a class="ref method" href="/docs/ui-glossary/types/markup-document/#nodeat">`NodeAt`</a> finds it.
+`string` · Read-only. Where it is in the markup: the indexes of the XML elements from the root down to it, from 0, through the includes (`1/0/2`). Property elements, `<Ui.Styles>` and `<Ui.Animations>` are counted. The node at the same position in the markup loaded again after an edit elsewhere in it is the same element; <a class="ref method" href="/docs/ui-glossary/types/markup-document/#nodeat">`NodeAt`</a> finds it.
 
 <h3 id="property"><span class="prop"><code>Property</code></span> <a class="ctx" href="/docs/ui-markup/#markupnode" title="Property in context on the markup page" aria-label="Property in context on the markup page">🠆</a></h3>
 
