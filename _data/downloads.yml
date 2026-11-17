@@ -11,18 +11,18 @@
 - id: kindling-engine-editor
   name: Kindling Engine Editor
   repo: BorrowedTorchStudio/BorrowedTorch.Downloads
-  version: v0.0.1
+  version: v1.1.0
   tag_prefix: kindling-engine-editor-
   asset: BorrowedTorch.EngineEditor-{version}-win-x64.zip
   guide: KindlingEngineEditor
-  summary: The editor of Kindling, our in-house game engine — a scene lit, ray-traced and shown as the engine draws it. An early build — scenes are not saved yet.
+  summary: The editor of Kindling, our in-house game engine — a scene lit, ray-traced and shown as the engine draws it, saved as a project and played in a player of its own.
   features:
-    - PBR materials with GPU ray-traced shadows and ambient occlusion, see-through materials, cutouts the shadows see through, bloom, tone mapping and auto-exposure.
-    - Entities, lights and camera entities, with a transform gizmo, an inspector, camera paths and floating camera previews.
-    - The engine's shaders in an editor of their own, recompiled into the running viewport as they are edited.
-    - The game UI as markup, shown in the viewport as you type.
+    - PBR materials with GPU ray-traced shadows, ambient occlusion, bounced light and reflections, glass that bends what is seen through it, fog, wind, grass and cloth — bloom, tone mapping and auto-exposure.
+    - Projects of scenes and assets, a player that plays them as the game will be, and game types to start from — an empty game, a game with code, a first-person walker, a 2D platformer.
+    - The game's own C# code, built and run in place as you edit it — with editor code of its own adding inspectors, panels, menus and surface-graph nodes.
+    - Surfaces made as node graphs, the engine's shaders in an editor of their own, and the game UI as markup, shown in the viewport as you type.
   needs: 64-bit Windows · DirectX 11 · .NET 10 Desktop Runtime
-  note: Needs the .NET 10 Desktop Runtime installed — without it, the exe says so and links to the download. The exe isn't code-signed yet. If Windows SmartScreen stops it, choose More info, then Run anyway. Each release has a .sha256 file to check the download against.
+  note: Needs the .NET 10 Desktop Runtime installed — without it, the exe says so and links to the download; building a game's own code takes the .NET 10 SDK. The exes aren't code-signed yet. If Windows SmartScreen stops one, choose More info, then Run anyway. Each release has a .sha256 file to check the download against.
 - id: ormh-converter
   name: ORMH Converter
   repo: BorrowedTorchStudio/BorrowedTorch.Downloads
