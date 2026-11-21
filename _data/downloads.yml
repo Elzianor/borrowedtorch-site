@@ -11,7 +11,7 @@
 - id: kindling-engine-editor
   name: Kindling Engine Editor
   repo: BorrowedTorchStudio/BorrowedTorch.Downloads
-  version: v1.1.0
+  version: v1.1.3
   tag_prefix: kindling-engine-editor-
   asset: BorrowedTorch.EngineEditor-{version}-win-x64.zip
   guide: KindlingEngineEditor
